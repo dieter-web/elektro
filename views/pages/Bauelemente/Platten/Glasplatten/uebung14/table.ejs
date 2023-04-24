@@ -1,0 +1,46 @@
+<table class="table table-bordered" id="ergebnis">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col" colspan="1">Betriebsmittel</th>
+            <th scope="col" colspan="4">Parameter</th>
+            <th scope="col" colspan="2">Ergebnis</th>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <th>Material</th>
+            <th>Länge</th>
+            <th>Breite</th>
+            <th>Dicke</th>
+            <th>Rmin</th>
+            <th>Rmax</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <%= Aerg.Betriebsmittel.Platte.Kennzeichnung.Art %>
+                <%= Aerg.Betriebsmittel.Platte.Kennzeichnung.Zaehlnummer %>
+                <%= Aerg.Betriebsmittel.Platte.Kennzeichnung.Funktion %>
+            </td>
+
+            <td>
+                <%= Aerg.Parameter.Material %>
+            </td>
+            <td>
+                <%= Aerg.Parameter.Laenge %>
+            </td>
+            <td>
+                <%= Aerg.Parameter.Breite %>
+            </td>
+            <td>
+                <%= Aerg.Parameter.Dicke %>
+            </td>
+            <td>
+                <%= Aerg.Ergebnis.Rmin %>
+            </td>
+            <td>
+                <%= Aerg.Ergebnis.Rmax %>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -13,8 +13,8 @@
   "keywords": [
     "elektro"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "dieterkrause31960@gmail.com",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/dieter-web/elektro/issues"
   },
@@ -24,6 +24,7 @@
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-ejs-layouts": "^2.5.1",
+    "lodash": "^4.17.21",
     "node": "^19.8.1",
     "use-strict": "^1.0.1"
   },

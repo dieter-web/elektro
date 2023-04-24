@@ -1,6 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-primary" id="nav-main">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">elektro</a>
+        >>
+        <a class="navbar-brand" href="/bauelemente">mechanische Bauelemente</a>
+        >>
+        <a class="navbar-brand" href="/bauelemente/platten">Platten</a>
+        >>
+        <a class="navbar-brand" href="/bauelemente/platten/glasplatten">Glasplatten</a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -13,9 +20,15 @@
 </nav>
 
 <script>
-
+    function init ()
+    {
+        // svg = d3.select( "body" )
+        //   .append( "svg" )
+        //   .style( "border", "1px solid black" );
+    }
     let dataMain=[
-        {"name": "Mechanische Bauelemente","link": "/bauelemente","class": "nav-link"},
+        {"name": "Projektmanagment","link": "/projektmanagment","class": "nav-link enabled"},
+
     ];
 
     d3.select( "#nav-main" ).select( "div" ).select( "div" ).select( "ul" ).selectAll( "li" ).select( "a" )

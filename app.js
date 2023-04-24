@@ -2,22 +2,36 @@ require('use-strict')
 const path = require('path')
 const ejs = require('ejs')
 const express = require('express')
+const expressLayouts = require('express-ejs-layouts')
 const cors = require('cors')
 const port = 8000
 
 const requestLogger = require(path.join(__dirname, 'middleware/requestLogger'))
-const expressLayouts = require('express-ejs-layouts')
-
 const app = express()
 
-app.use(expressLayouts)
 app.engine('html', ejs.renderFile)
 app.set('views', path.join(__dirname, 'views'))
 app.set('layout', path.join('layouts/default'))
 app.set('view engine', 'ejs')
 
+app.use(expressLayouts)
+
 const corsOptions = { origin: 'http://localhost:8000' }
 app.use(cors(corsOptions))
+
+const staticOptions = {
+  dotfiles: 'ignore',
+  etag: false,
+  extensions: ['htm', 'html', 'js', 'css', 'css.map', 'jpg', 'json'],
+  fallthrough: true,
+  immutable: false,
+  index: false,
+  lastModified: true,
+  maxAge: 0,
+  redirect: true
+}
+app.use(express.static('public', staticOptions))
+app.use(express.static('src', staticOptions))
 
 const jsonOptions = {
   inflate: true,
@@ -43,19 +57,6 @@ const RouterOptions = {
   strict: true
 }
 app.use(express.Router(RouterOptions))
-
-const staticOptions = {
-  dotfiles: 'ignore',
-  etag: false,
-  extensions: ['htm', 'html', 'js', 'css', 'jpg', 'json'],
-  fallthrough: true,
-  immutable: false,
-  index: false,
-  lastModified: true,
-  maxAge: 0,
-  redirect: true
-}
-app.use(express.static('public', staticOptions))
 
 const textOptions = {
   defaultCharset: 'utf-8',
@@ -84,8 +85,18 @@ app.use((req, res, next) => {
 })
 
 app.get('/', (req, res) => {
-  res.render('index', { text: 'Grundlagen der Elektrotechnik' })
+  res.render(
+    'index',
+    { text: 'Grundlagen der Elektrotechnik' },
+    (err, html) => {
+      res.send(html)
+    }
+  )
 })
+
+const routerBauelemente = require(path.resolve('routes/bauelemente'))
+
+app.use('/bauelemente', routerBauelemente)
 
 app.locals.title = 'Elektro'
 app.locals.email = 'dieterkrause31960@gmail.com'
