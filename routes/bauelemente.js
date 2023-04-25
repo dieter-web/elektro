@@ -19,37 +19,37 @@ const layout = path.resolve('views/layouts/Bauelemente/layout.ejs')
 routerGet(router, '/', viewBauelemente, layout)
 
 /**SECTION Platten */
+
 const routePlatten = '/platten'
 const viewPlatten = `${viewBauelemente}/Platten`
 const layoutPlatten = path.resolve(
   'views/layouts/Bauelemente/Platten/layout.ejs'
 )
-
 routerGet(router, routePlatten, viewPlatten, layoutPlatten)
 
 /**SECTION Glasplatten */
-const routeGlasplatten = `${routePlatten}/glasplatten}`
-const viewGlasplatten = `${viewPlatten}/Glasplatten}`
-const layoutGlasplatten = path.resolve(
-  'views/layouts/Bauelemente/Platten/Glasplatten/layout.ejs'
+routerGet(
+  router,
+  `${routePlatten}/glasplatten`,
+  `${viewPlatten}/Glasplatten`,
+  path.resolve('views/layouts/Bauelemente/Platten/Glasplatten/layout.ejs')
 )
-
-routerGet(router, routeGlasplatten, viewGlasplatten, layoutGlasplatten)
 
 /** NOTE Übung 1.4 */
 routerGet(
   router,
-  `${routeGlasplatten}/uebung14/aufgabe`,
-  `${viewGlasplatten}/Uebung14/aufgabe`,
-  layoutGlasplatten
+  `${routePlatten}/glasplatten/uebung14/aufgabe`,
+  `${viewPlatten}/Glasplatten/Uebung14/aufgabe`,
+  path.resolve('views/layouts/Bauelemente/Platten/Glasplatten/layout.ejs')
 )
 routerPost(
   router,
-  `${routeGlasplatten}/uebung14/aufgabe`,
-  `${viewGlasplatten}/Uebung14/ergebnis`,
+  `${routePlatten}/glasplatten/uebung14/aufgabe`,
+  `${viewPlatten}/Glasplatten/Uebung14/ergebnis`,
   `${exampleBauelemente}/Uebung14`,
-  layoutGlasplatten
+  path.resolve('views/layouts/Bauelemente/Platten/Glasplatten/layout.ejs')
 )
+
 /**!SECTION */
 /**!SECTION */
 

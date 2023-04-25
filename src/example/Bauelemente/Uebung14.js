@@ -10,13 +10,18 @@ const { PlanemetrieKernel } = require(path.resolve(
   'src/components/Mathematik/Planemetrie/kernel.js'
 ))
 
+const { BEGlasplatte } = require(path.resolve(
+  'src/components/Bauelemente/Platten/Glasplatte/Glasplatte.js'
+))
+
 function Uebung14 (input) {
   const jsonfile = path.resolve('src/json/example/uebung14.json')
-  const ρgl_min = dbJson.readJSONFile(path.resolve('src/json/Tafel11.json'))[
+
+  let ρgl_min = dbJson.readJSONFile(path.resolve('src/json/Tafel11.json'))[
     input.Material
   ].ρ[0]
 
-  const ρgl_max = dbJson.readJSONFile(path.resolve('src/json/Tafel11.json'))[
+  let ρgl_max = dbJson.readJSONFile(path.resolve('src/json/Tafel11.json'))[
     input.Material
   ].ρ[1]
 

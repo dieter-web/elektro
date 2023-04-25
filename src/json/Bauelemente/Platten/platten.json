@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "href": "/bauelemente/platten/glasplatten",
+        "name": "Glasplatten",
+        "text": "Glasplatten aller Art"
+    },
+    {
+        "id": 2,
+        "href": "/bauelemente/platten/metallplatten",
+        "name": "Metallplatten",
+        "text": "Metallplatten aller Art"
+    }
+]
