@@ -1,0 +1,11 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "",
+  "directories": {
+    "example": "example"
+  },
+  "keywords": [ ],
+  "author": "dieterkrause31960@gmail.com",
+  "license": "MIT"
+}

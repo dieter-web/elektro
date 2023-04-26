@@ -1,0 +1,11 @@
+{
+  "name": "routes",
+  "version": "1.0.0",
+  "description": "",
+  "files": [
+    "bauelemente.js"
+  ],
+  "keywords": [ ],
+  "author": "dieterkrause31960@gmail.com",
+  "license": "MIT"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "controllers",
+  "version": "1.0.0",
+  "description": "",
+  "files": [
+    "dbJson.js"
+  ],
+  "keywords": [ ],
+  "author": "dieterkrause31960@gmail.com",
+  "license": "MIT"
+}

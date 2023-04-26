@@ -2,7 +2,22 @@
   "name": "elektro",
   "version": "1.0.0",
   "description": "Lösen von Aufgaben aus dem Bereich  Grundlagen der Elektrotechnik",
-  "main": "index.js",
+  "main": "app.js",
+  "directories": {
+    "controllers": "controllers",
+    "middleware": "middleware",
+    "node_modules": "node_modules",
+    "public": "public",
+    "routes": "routes",
+    "src": "src",
+    "views": "views"
+  },
+  "files": [
+    ".gitignore",
+    "LICENSE",
+    "package.json",
+    "README.md"
+  ],
   "scripts": {
     "dev": "nodemon app.js"
   },
