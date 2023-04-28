@@ -1,0 +1,25 @@
+<table class="table table-bordered" id="ergebnis">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col" colspan="1">Betriebsmittel</th>
+            <th scope="col" rowspan="1">Parameter für Berechnung</th>
+            <th scope="col" colspan="2">Ergebnis</th>
+        </tr>
+        <tr>
+            <th scope="col">Widerstand</th>
+            <th scope="col">Spannung</th>
+            <th scope="col">I</th>
+            <th scope="col">G</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% Aerg.Betriebsmittel.BEWiderstand.map((R,i) => {%>
+        <tr>
+            <td><%= R.Parameter.Wert %></td>
+            <td rowspan="1"><%= Aerg.Parameter.U %></td>
+            <td><%= Aerg.Ergebnis.I.items[i].toString() %></td>
+            <td><%= Aerg.Ergebnis.G.items[i].toString() %></td>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>

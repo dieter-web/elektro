@@ -1,0 +1,21 @@
+<h4>
+    <%= locals.text %>
+</h4>
+<template id="betriebsmittel-card-template">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a class="nav-link link" href=""></a>
+            </h5>
+            <p class="card-text"></p>
+        </div>
+    </div>
+</template>
+
+<div id="betriebsmittel"></div>
+
+<script type="module">
+    import {showCards} from '/modules/showCards.js';
+    showCards( "/json/Betriebsmittel/index.json",
+        "betriebsmittel-card-template","betriebsmittel" );
+</script>

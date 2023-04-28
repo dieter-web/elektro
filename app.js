@@ -95,9 +95,8 @@ app.get('/', (req, res) => {
   )
 })
 
-const routerBauelemente = require(path.resolve('routes/bauelemente'))
-
-app.use('/bauelemente', routerBauelemente)
+app.use('/bauelemente', require(path.resolve('routes/bauelemente')))
+app.use('/betriebsmittel', require(path.resolve('routes/betriebsmittel')))
 
 app.locals.title = 'Elektro'
 app.locals.email = 'dieterkrause31960@gmail.com'
