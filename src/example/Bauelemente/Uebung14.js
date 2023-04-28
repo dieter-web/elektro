@@ -17,15 +17,15 @@ const { BEGlasplatte } = require(path.resolve(
 function Uebung14 (input) {
   const jsonfile = path.resolve('src/json/example/uebung14.json')
 
-  let ρgl_min = dbJson.readJSONFile(path.resolve('src/json/Tafel11.json'))[
-    input.Material
+  const ρgl_min = dbJson.readJSONFile(path.resolve('src/json/Tafel11.json'))[
+    'Glas' // input.Material
   ].ρ[0]
 
-  let ρgl_max = dbJson.readJSONFile(path.resolve('src/json/Tafel11.json'))[
-    input.Material
+  const ρgl_max = dbJson.readJSONFile(path.resolve('src/json/Tafel11.json'))[
+    'Glas' // input.Material
   ].ρ[1]
 
-  let Kennzeichnung = {
+  const Kennzeichnung = {
     '=': {
       Anlage: {
         1: '00',
@@ -65,7 +65,7 @@ function Uebung14 (input) {
     }
   }
 
-  let P1 = new BEGlasplatte(
+  const P1 = new BEGlasplatte(
     Kennzeichnung,
     {
       Material: input.Material,
