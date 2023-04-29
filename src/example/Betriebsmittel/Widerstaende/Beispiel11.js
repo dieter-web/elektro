@@ -12,13 +12,21 @@ const { Stack } = require(path.resolve(
   'src/components/Datenverarbeitung/dynamischeDatenstrukturen/listen/stapel/stack.js'
 ))
 
+/**
+ * @function Beispiel11
+ * @description
+ * @author Dieter Krause
+ * @date 29/04/2023
+ * @param {*} input
+ * @returns {*}
+ */
 function Beispiel11 (input) {
   const jsonfile = path.resolve('src/json/example/beispiel11.json')
   const IStack = new Stack()
   const GStack = new Stack()
 
   let R = input.R.split(',')
-  
+
   let R1 = new BEWiderstand({}, { Wert: R[0] }, {})
   let R2 = new BEWiderstand({}, { Wert: R[1] }, {})
   let R3 = new BEWiderstand({}, { Wert: R[2] }, {})

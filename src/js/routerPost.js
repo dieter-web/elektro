@@ -1,11 +1,14 @@
 const path = require('path')
 
 /**
- * @param  {object} router
- * @param  {string} route
- * @param  {string} view
- * @param  {string} codepath
- * @param  {string} layout=path.resolve('views/layouts/default.ejs'
+ * @description
+ * @author Dieter Krause
+ * @date 29/04/2023
+ * @param {*} router
+ * @param {*} route
+ * @param {*} view
+ * @param {*} codepath
+ * @param {string} [layout=path.resolve('views/layouts/default.ejs')]
  */
 function routerPost (
   router,

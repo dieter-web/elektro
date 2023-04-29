@@ -1,0 +1,18 @@
+{
+  "name": "betriebsmittel",
+  "version": "1.0.0",
+  "description": "",
+  "directories": {
+    "Kondensatoren": "Kondensatoren",
+    "Widerstände": "Widerstaende"
+  },
+  "files": [
+    "Betriebsmittel.js"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [ ],
+  "author": "",
+  "license": "ISC"
+}

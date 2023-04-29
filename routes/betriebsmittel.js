@@ -13,6 +13,7 @@ const routerOptions = {
 const router = express.Router(routerOptions)
 
 const exampleBetriebsmittel = path.resolve('src/example/Betriebsmittel')
+
 const viewBetriebsmittel = 'pages/Betriebsmittel'
 const layout = path.resolve('views/layouts/Betriebsmittel/layout.ejs')
 
@@ -36,11 +37,12 @@ routerGet(
     'views/layouts/Betriebsmittel/Widerstaende/Beispiel11/layout.ejs'
   )
 )
+
 routerPost(
   router,
   `${routeWiderstaende}/beispiel11/aufgabe`,
   `${viewWiderstaende}/Beispiel11/ergebnis`,
-  `${exampleBetriebsmittel}/Widerstaende/Beispiel11`,
+  `${exampleBetriebsmittel}/Widerstaende/Beispiel11.js`,
   path.resolve(
     'views/layouts/Betriebsmittel/Widerstaende/Beispiel11/layout.ejs'
   )
