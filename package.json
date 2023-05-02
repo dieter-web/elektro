@@ -35,12 +35,14 @@
   },
   "homepage": "https://github.com/dieter-web/elektro#readme",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
     "express-ejs-layouts": "^2.5.1",
     "lodash": "^4.17.21",
     "mathjs": "^11.8.0",
+    "multer": "^1.4.5-lts.1",
     "node": "^19.8.1",
     "scss": "^0.2.4",
     "use-strict": "^1.0.1"

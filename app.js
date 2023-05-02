@@ -22,7 +22,7 @@ app.use(cors(corsOptions))
 const staticOptions = {
   dotfiles: 'ignore',
   etag: false,
-  extensions: ['htm', 'html', 'js', 'css', 'css.map', 'jpg', 'json'],
+  extensions: ['htm', 'html','ejs', 'js', 'css', 'css.map', 'jpg', 'json'],
   fallthrough: true,
   immutable: false,
   index: false,

@@ -1,56 +1,55 @@
 require('use-strict')
 const path = require('path')
 const express = require('express')
-
-const { routerGet } = require(path.resolve('src/js/routerGet'))
-const { routerPost } = require(path.resolve('src/js/routerPost'))
-
-const routerOptions = {
-  caseSensitive: true,
-  mergeParams: false,
-  strict: true
-}
-const router = express.Router(routerOptions)
+const bodyParser = require('body-parser')
+const multer = require('multer')
+const upload = multer()
+const router = express.Router()
 
 const exampleBauelemente = path.resolve('src/example/Bauelemente')
 const viewBauelemente = 'pages/Bauelemente'
 const layout = path.resolve('views/layouts/Bauelemente/layout.ejs')
 
-routerGet(router, '/', viewBauelemente, layout)
+router.get('/', function (req, res) {
+  res.render(viewBauelemente, {
+    layout: layout
+  })
+})
 
 /**SECTION Platten */
 
-const routePlatten = '/platten'
-const viewPlatten = `${viewBauelemente}/Platten`
-const layoutPlatten = path.resolve(
-  'views/layouts/Bauelemente/Platten/layout.ejs'
-)
-routerGet(router, routePlatten, viewPlatten, layoutPlatten)
+router.route('/platten').get((req, res) => {
+  res.render('pages/Bauelemente/Platten', {
+    layout: 'layouts/Bauelemente/Platten/layout.ejs'
+  })
+})
 
 /**SECTION Glasplatten */
-routerGet(
-  router,
-  `${routePlatten}/glasplatten`,
-  `${viewPlatten}/Glasplatten`,
-  path.resolve('views/layouts/Bauelemente/Platten/Glasplatten/layout.ejs')
-)
+router.route('/platten/glasplatten').get((req, res) => {
+  res.render('pages/Bauelemente/Platten/Glasplatten', {
+    layout: 'layouts/Bauelemente/Platten/Glasplatten/layout.ejs'
+  })
+})
 
 /** NOTE Übung 1.4 */
-routerGet(
-  router,
-  `${routePlatten}/glasplatten/uebung14/aufgabe`,
-  `${viewPlatten}/Glasplatten/Uebung14/aufgabe`,
-  path.resolve('views/layouts/Bauelemente/Platten/Glasplatten/layout.ejs')
-)
-routerPost(
-  router,
-  `${routePlatten}/glasplatten/uebung14/aufgabe`,
-  `${viewPlatten}/Glasplatten/Uebung14/ergebnis`,
-  `${exampleBauelemente}/Uebung14`,
-  path.resolve('views/layouts/Bauelemente/Platten/Glasplatten/layout.ejs')
-)
+router
+  .use(bodyParser.json())
+  .use(bodyParser.urlencoded({ extended: true }))
+  .route('/platten/glasplatten/uebung14/aufgabe', upload.array())
+  .get((req, res) => {
+    res.render('pages/Bauelemente/Platten/Glasplatten/Uebung14/aufgabe', {
+      layout: 'layouts/Bauelemente/Platten/Glasplatten/layout.ejs'
+    })
+  })
+  .post((req, res) => {
+    const { func } = require(`${exampleBauelemente}/Uebung14`)
+    res.locals.Aerg = func(req.body)
+    res.render('pages/Bauelemente/Platten/Glasplatten/Uebung14/ergebnis', {
+      layout: 'layouts/Bauelemente/Platten/Glasplatten/layout.ejs'
+    })
+  })
 
-/**!SECTION */
-/**!SECTION */
+// /**!SECTION */
+// /**!SECTION */
 
 module.exports = router

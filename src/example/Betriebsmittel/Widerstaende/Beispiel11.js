@@ -25,12 +25,12 @@ function Beispiel11 (input) {
   const IStack = new Stack()
   const GStack = new Stack()
 
-  let R = input.R.split(',')
+  let Rl = input.R.split(',')
 
-  let R1 = new BEWiderstand({}, { Wert: R[0] }, {})
-  let R2 = new BEWiderstand({}, { Wert: R[1] }, {})
-  let R3 = new BEWiderstand({}, { Wert: R[2] }, {})
-  let R4 = new BEWiderstand({}, { Wert: R[3] }, {})
+  let R1 = new BEWiderstand({}, { Wert: Rl[0] }, {})
+  let R2 = new BEWiderstand({}, { Wert: Rl[1] }, {})
+  let R3 = new BEWiderstand({}, { Wert: Rl[2] }, {})
+  let R4 = new BEWiderstand({}, { Wert: Rl[3] }, {})
   let RBEA = [R1, R2, R3, R4]
 
   const EK = new ElektroKernel()
