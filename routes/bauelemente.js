@@ -8,7 +8,7 @@ const router = express.Router()
 
 const exampleBauelemente = path.resolve('src/example/Bauelemente')
 const viewBauelemente = 'pages/Bauelemente'
-const layout = path.resolve('views/layouts/Bauelemente/layout.ejs')
+const layout = 'layouts/Bauelemente/layout.ejs'
 
 router.get('/', function (req, res) {
   res.render(viewBauelemente, {
