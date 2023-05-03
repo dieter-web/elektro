@@ -22,7 +22,7 @@ app.use(cors(corsOptions))
 const staticOptions = {
   dotfiles: 'ignore',
   etag: false,
-  extensions: ['htm', 'html','ejs', 'js', 'css', 'css.map', 'jpg', 'json'],
+  extensions: ['htm', 'html', 'ejs', 'js', 'css', 'css.map', 'jpg', 'json'],
   fallthrough: true,
   immutable: false,
   index: false,
@@ -97,6 +97,7 @@ app.get('/', (req, res) => {
 
 app.use('/bauelemente', require(path.resolve('routes/bauelemente')))
 app.use('/betriebsmittel', require(path.resolve('routes/betriebsmittel')))
+app.use('/elektrotechnik', require(path.resolve('routes/elektrotechnik')))
 
 app.locals.title = 'Elektro'
 app.locals.email = 'dieterkrause31960@gmail.com'

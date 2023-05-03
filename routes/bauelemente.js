@@ -6,28 +6,28 @@ const multer = require('multer')
 const upload = multer()
 const router = express.Router()
 
-const exampleBauelemente = path.resolve('src/example/Bauelemente')
-const viewBauelemente = 'pages/Bauelemente'
-const layout = 'layouts/Bauelemente/layout.ejs'
+const eB = path.resolve('src/example/Bauelemente')
+const vB = 'pages/Bauelemente'
+const lB = 'layouts/Bauelemente'
 
 router.get('/', function (req, res) {
-  res.render(viewBauelemente, {
-    layout: layout
+  res.render(vB, {
+    layout: `${lB}/layout.ejs`
   })
 })
 
 /**SECTION Platten */
 
 router.route('/platten').get((req, res) => {
-  res.render('pages/Bauelemente/Platten', {
-    layout: 'layouts/Bauelemente/Platten/layout.ejs'
+  res.render(`${vB}/Platten`, {
+    layout: `${lB}/Platten/layout.ejs`
   })
 })
 
-/**SECTION Glasplatten */
+/** ANCHOR Glasplatten */
 router.route('/platten/glasplatten').get((req, res) => {
-  res.render('pages/Bauelemente/Platten/Glasplatten', {
-    layout: 'layouts/Bauelemente/Platten/Glasplatten/layout.ejs'
+  res.render(`${vB}/Platten/Glasplatten`, {
+    layout: `${lB}/Platten/Glasplatten/layout.ejs`
   })
 })
 
@@ -37,15 +37,15 @@ router
   .use(bodyParser.urlencoded({ extended: true }))
   .route('/platten/glasplatten/uebung14/aufgabe', upload.array())
   .get((req, res) => {
-    res.render('pages/Bauelemente/Platten/Glasplatten/Uebung14/aufgabe', {
-      layout: 'layouts/Bauelemente/Platten/Glasplatten/layout.ejs'
+    res.render(`${vB}/Platten/Glasplatten/Uebung14/aufgabe`, {
+      layout: `${lB}/Platten/Glasplatten/layout.ejs`
     })
   })
   .post((req, res) => {
-    const { func } = require(`${exampleBauelemente}/Uebung14`)
+    const { func } = require(`${eB}/Uebung14`)
     res.locals.Aerg = func(req.body)
-    res.render('pages/Bauelemente/Platten/Glasplatten/Uebung14/ergebnis', {
-      layout: 'layouts/Bauelemente/Platten/Glasplatten/layout.ejs'
+    res.render(`${vB}/Platten/Glasplatten/Uebung14/ergebnis`, {
+      layout: `${lB}/Platten/Glasplatten/layout.ejs`
     })
   })
 

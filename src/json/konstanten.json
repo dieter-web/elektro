@@ -1,0 +1,140 @@
+{
+  "konstanten":
+  {
+
+    "Vergleichstemperatur": {
+      "name": "δ20",
+      "wert": "20 celsius"
+    },
+
+    "Normalelement": {
+      "t": "20°C",
+      "U": "1.0183 V",
+      "Imax": "50 µA"
+    },
+    "Protonenmasse": {
+      "name": "m_p",
+      "wert": "1.6726231E-27 kg"
+    },
+    "Faraday_Konstante": {
+      "name": "F",
+      "wert": "96485.309 C / mol"
+    },
+    "Bohr_Radius": {
+      "name": "a_0",
+      "wert": "5.29177249E-11 m"
+    },
+    "Lichtgeschwindigkeit": {
+      "name": "c",
+      "wert": "299792458 m / s"
+    },
+    "PlanckscheKonstante": {
+      "name": "h",
+      "wert": "6.6260755E-34 J * s"
+    },
+    "GravitationsKonstante": {
+      "name": "G",
+      "wert": "6.6725E-11 N * m ^ 2 / kg ^ 2"
+    },
+    "Elementarladung": {
+      "name": "e",
+      "wert": "1.60217733E-19 C"
+    },
+    "ElektronenRestmasse": {
+      "name": "m_e",
+      "wert": "9.1093897E-31 kg"
+    },
+    "Atommasseneinheit": {
+      "name": "u",
+      "wert": "1.6605402E-27 kg"
+    },
+    "AvogadrischeZahl": {
+      "name": "N_A",
+      "wert": "6.0221367E23 mol ^ -1"
+    },
+    "Molvolumen": {
+      "name": "V_m",
+      "wert": "0.0224141 m ^ 3 / mol"
+    },
+    "Erdbeschleunigung": {
+      "name": "g",
+      "wert": "9.80665 m / s ^ 2"
+    },
+    "MolgasKonstante": {
+      "name": "R",
+      "wert": "8.31451 J / /(mol * K)"
+    },
+    "ElektrischeFeldkonstante": {
+      "name": "ε_0",
+      "wert": "8.85418781762E-12 F / m"
+    },
+    "LeerInduktion": {
+      "name": "µ_0",
+      "wert": "1.25563706144 H / m"
+    },
+    "mProtonenMoment": {
+      "name": "µ_p",
+      "wert": "1.41060761 A * m ^ 2"
+    },
+    "mElektronenmoment": {
+      "name": "µ_e",
+      "wert": "9.2847701E-24 A * m ^ 2"
+    },
+    "NuklearMagneton": {
+      "name": "µ_N",
+      "wert": "5.0507866E-27 A * m ^ 2"
+    },
+    "BohrMagneton": {
+      "name": "µ_B",
+      "wert": "9.2740154E-24 A * m ^ 2"
+    },
+    "FeinstrukturKonstante": {
+      "name": "α",
+      "wert": 7.29735308E-3
+    },
+    "ElektronenRadius": {
+      "name": "r_e",
+      "wert": "2.81794092E-15 m"
+    },
+    "NeutronenRestmasse": {
+      "name": "m_a",
+      "wert": "1.6749286E-27 kg"
+    },
+    "GyromagnetischerKoeffizient": {
+      "name": "γ_p",
+      "wert": "267522128 A * m ^ 2 / ( J * s )"
+    },
+    "ComptonWellenlänge_p": {
+      "name": "λ_cp",
+      "wert": "1.32141002E-15 m"
+    },
+    "ComptonWellenlänge_n": {
+      "name": "λ_cn",
+      "wert": "1.31959110E-15 m"
+    },
+    "RydbergKonstante": {
+      "name": "R",
+      "wert": "10973731.534 m ^ -1"
+    },
+    "ErsteStrahlungsKonstante": {
+      "name": "cl",
+      "wert": "3.7417749E-16 W * m ^ 2"
+    },
+    "ZweiteStrahlungsKonstante": {
+      "name": "c2",
+      "wert": "0.01438769 m * K"
+    },
+    "StefanBoltzmannKonstante": {
+      "name": "σ",
+      "wert": "5.67051E-8 W * m ^ -2 / K ^ -4"
+    },
+    "BoltzmannKonstante": {
+      "name": "k",
+      "wert": "1.380649E-23 J / K"
+    },
+    "Flußquantum": {
+      "name": "φ_0",
+      "wert": "2.06783461E-15 Wb"
+    }
+  }
+}
