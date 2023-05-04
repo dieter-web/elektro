@@ -1,21 +1,8 @@
-<h4>
-    <%= locals.text %>
-</h4>
-<template id="widerstaende-card-template">
-    <div class="card" style="width: 30rem;">
-        <div class="card-body">
-            <h5 class="card-title">
-                <a class="nav-link link" href=""></a>
-            </h5>
-            <p class="card-text"></p>
-        </div>
-    </div>
-</template>
-
-<div id="widerstaende"></div>
+<%- include('../../../layouts/partials/e1CardTemplate',{}) %>
+<div id="e1"></div>
 
 <script type="module">
     import {showCards} from '/modules/showCards.js';
     showCards( "/json/Betriebsmittel/Widerstaende/index.json",
-        "widerstaende-card-template","widerstaende" );
+        "e1-card-template","e1" );
 </script>

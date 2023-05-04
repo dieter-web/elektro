@@ -1,44 +1,12 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-primary" id="nav-main">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/">elektro</a>
-        >>
-        <a class="navbar-brand" href="/elektrotechnik">Elektrotechnik</a>
-        >>
-        <a class="navbar-brand" href="/elektrotechnik/gleichspannung">Gleichspannung</a>
-        >>
-        <a class="navbar-brand" href="/elektrotechnik/gleichspannung/grundbegriffe">Grundbegriffe</a>
-        >>
-        <a class="navbar-brand"
-            href="/elektrotechnik/gleichspannung/grundbegriffe/temperaturkoeffizient">Temperaturkoeffizient</a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<script>
-    function init ()
-    {
-        // svg = d3.select( "body" )
-        //   .append( "svg" )
-        //   .style( "border", "1px solid black" );
-    }
-    let dataMain=[
-        {"name": "Projektmanagment","link": "/projektmanagment","class": "nav-link enabled"},
-
-    ];
-
-    d3.select( "#nav-main" ).select( "div" ).select( "div" ).select( "ul" ).selectAll( "li" ).select( "a" )
-        .data( dataMain )
-        .enter()
-        .append( "a" )
-        .attr( "class",function( d,i ) {return d.class;} )
-        .attr( "href",function( d,i ) {return d.link;} )
-        .text( ( t ) => {return t.name;} )
+<%- include('../../../../partials/navbarTemplate', {}) %>
+<script type="module">
+    import {mainNavbar} from "/modules/mainNavbar.js"
+    let menu=[
+        {"name": "elektro","link": "/","class": "nav-link"},
+        {"name": "Elektrotechnik","link": "/elektrotechnik","class": "nav-link"},
+        {"name": "Gleichspannung","link": "/elektrotechnik/gleichspannung","class": "nav-link"},
+        {"name": "Grundbegriffe","link": "/elektrotechnik/gleichspannung/grundbegriffe","class": "nav-link"},
+        {"name": "Temperaturkoeffizient","link": "/elektrotechnik/gleichspannung/grundbegriffe/temperaturkoeffizient","class": "nav-link"},
+    ]
+    mainNavbar( menu );
 </script>

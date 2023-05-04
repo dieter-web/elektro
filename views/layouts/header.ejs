@@ -1,31 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-primary" id="nav-main">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/">elektro</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<script>
-
-    let dataMain=[
+<%- include('partials/navbarTemplate',{}) %>
+<script type="module">
+    import {mainNavbar} from "/modules/mainNavbar.js"
+    let menu=[
+        {"name": "elektro","link": "/","class": "nav-link"},
         {"name": "Elektrotechnik","link": "/elektrotechnik","class": "nav-link"},
         {"name": "Bauelemente","link": "/bauelemente","class": "nav-link"},
         {"name": "Betriebsmittel","link": "/betriebsmittel","class": "nav-link"},
     ];
-
-    d3.select( "#nav-main" ).select( "div" ).select( "div" ).select( "ul" ).selectAll( "li" ).select( "a" )
-        .data( dataMain )
-        .enter()
-        .append( "a" )
-        .attr( "class",function( d,i ) {return d.class;} )
-        .attr( "href",function( d,i ) {return d.link;} )
-        .text( ( t ) => {return t.name;} )
+    mainNavbar( menu );
 </script>

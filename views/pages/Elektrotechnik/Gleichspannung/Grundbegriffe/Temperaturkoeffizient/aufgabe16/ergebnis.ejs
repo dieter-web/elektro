@@ -1,0 +1,15 @@
+<%- include('aufgabe.ejs',{}) %>
+
+<div class="container px-4 text-left">
+    <div class="row gx-5">
+        <div class="col">
+            <div class="p-3  bg-secondary">
+                <%- include('table.ejs',{}) %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="module">
+    Material.value=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )[ 0 ];
+</script>

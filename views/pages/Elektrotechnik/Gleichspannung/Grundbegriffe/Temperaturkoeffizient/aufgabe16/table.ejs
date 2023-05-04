@@ -1,0 +1,32 @@
+<table class="table table-bordered" id="ergebnis">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Legierung</th>
+            <th scope="col" colspan="2">Parameter</th>
+            <th scope="col">Ergebnis</th>
+        </tr>
+        <tr>
+            <th scope="col">Material</th>
+            <th scope="col">α20</th>
+            <th scope="col">δ20</th>
+            <th scope="col">Temperaturkonstante</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <%= Aerg.Legierung.Material %>
+            </td>
+            <td>
+                <%= Aerg.Parameter.Konstanteα20 %>
+            </td>
+            <td>
+                <%= Aerg.Parameter.Konstanteδ20 %>
+            </td>
+            <td>
+                <%= Aerg.Ergebnis.Temperaturkonstante %>
+            </td>
+        </tr>
+    </tbody>
+</table>
+

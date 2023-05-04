@@ -1,0 +1,17 @@
+<h4>
+    <%= locals.text %>
+</h4>
+<div class="container px-4 text-left">
+    <div class="row gx-5">
+        <div class="col">
+            <div class="p-3  bg-secondary">
+                <%- include('text.ejs',{}) %>
+            </div>
+        </div>
+        <div class="col">
+            <div class="p-3 bg-secondary">
+                <%- include('form.ejs',{}) %>
+            </div>
+        </div>
+    </div>
+</div>
