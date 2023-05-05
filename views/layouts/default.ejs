@@ -1,7 +1,17 @@
 <%- include('partials/head',{}) %>
 
 <body>
-    <%- include('header',{}) %>
+    <%- include('partials/navbarTemplate',{}) %>
+    <script type="module">
+        import {mainNavbar} from "/modules/mainNavbar.js"
+        let menu=[
+            {"name": "elektro","link": "/","class": "nav-link"},
+            {"name": "Elektrotechnik","link": "/elektrotechnik","class": "nav-link"},
+            {"name": "Bauelemente","link": "/bauelemente","class": "nav-link"},
+            {"name": "Betriebsmittel","link": "/betriebsmittel","class": "nav-link"},
+        ];
+        mainNavbar( menu );
+    </script>
     <%- body %>
     <%- include('partials/footer',{})%>
 </body>

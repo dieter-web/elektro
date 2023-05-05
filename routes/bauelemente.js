@@ -24,7 +24,7 @@ router.route('/platten').get((req, res) => {
   })
 })
 
-/** ANCHOR Glasplatten */
+/** SECTION Glasplatten */
 router.route('/platten/glasplatten').get((req, res) => {
   res.render(`${vB}/Platten/Glasplatten`, {
     layout: `${lB}/Platten/Glasplatten/layout.ejs`
@@ -49,6 +49,7 @@ router
     })
   })
 
+/** !SECTION Glasplatten */
 /**!SECTION Platten */
 
 module.exports = router

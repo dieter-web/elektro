@@ -24,14 +24,14 @@ router.route('/gleichspannung').get((req, res) => {
   })
 })
 
-/** SECTION Grundbegriffe */
+/** SECTION Gleichspannung Grundbegriffe */
 router.route('/gleichspannung/grundbegriffe').get((req, res) => {
   res.render(`${vE}/Gleichspannung/Grundbegriffe`, {
     layout: `${lE}/Gleichspannung/Grundbegriffe/layout.ejs`
   })
 })
 
-/** ANCHOR Temperaturkoeffizient */
+/** SECTION Gleichspannung Grundbegriffe Temperaturkoeffizient */
 router
   .route('/gleichspannung/grundbegriffe/temperaturkoeffizient')
   .get((req, res) => {
@@ -41,9 +41,28 @@ router
   })
 
 /** ANCHOR Aufgabe 16 */
-/** TODO Hier weitermachen */
+router
+  .use(bodyParser.json())
+  .use(bodyParser.urlencoded({ extended: true }))
+  .route(
+    '/gleichspannung/grundbegriffe/temperaturkoeffizient/aufgabe16/aufgabe',
+    upload.array()
+  )
+  .get((req, res) => {
+    res.render(
+      `${vE}/Gleichspannung/Grundbegriffe/Temperaturkoeffizient/Aufgabe16/aufgabe`
+    )
+  })
+  .post((req, res) => {
+    const { func } = require(`${eE}/Aufgabe16`)
+    res.locals.Aerg = func(req.body)
+    res.render(
+      `${vE}/Gleichspannung/Grundbegriffe/Temperaturkoeffizient/Aufgabe16/ergebnis`
+    )
+  })
 
-/** !SECTION Grundbegriffe */
+/** !SECTION Gleichspannung Grundbegriffe Temperaturkoeffizient */
+/** !SECTION Gleichspannung Grundbegriffe */
 /** !SECTION Gleichspannung */
 
 module.exports = router
