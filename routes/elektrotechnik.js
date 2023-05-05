@@ -10,6 +10,7 @@ const eE = path.resolve('src/example/Elektrotechnik')
 const vE = 'pages/Elektrotechnik'
 const lE = 'layouts/Elektrotechnik'
 
+/** SECTION Elektrotechnik */
 router.get('/', function (req, res) {
   res.render(vE, {
     layout: `${lE}/layout.ejs`
@@ -45,24 +46,33 @@ router
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({ extended: true }))
   .route(
-    '/gleichspannung/grundbegriffe/temperaturkoeffizient/aufgabe16/aufgabe',
+    `/gleichspannung/grundbegriffe/temperaturkoeffizient/aufgabe16`,
     upload.array()
   )
   .get((req, res) => {
     res.render(
-      `${vE}/Gleichspannung/Grundbegriffe/Temperaturkoeffizient/Aufgabe16/aufgabe`
+      `${vE}/Gleichspannung/Grundbegriffe/Temperaturkoeffizient/Aufgabe16/aufgabe`,
+      {
+        layout: `${lE}/Gleichspannung/Grundbegriffe/Temperaturkoeffizient/layout.ejs`
+      }
     )
   })
   .post((req, res) => {
-    const { func } = require(`${eE}/Aufgabe16`)
+    const {
+      func
+    } = require(`${eE}/Gleichspannung/Grundbegriffe/Temperaturkoeffizient/Aufgabe16`)
     res.locals.Aerg = func(req.body)
     res.render(
-      `${vE}/Gleichspannung/Grundbegriffe/Temperaturkoeffizient/Aufgabe16/ergebnis`
+      `${vE}/Gleichspannung/Grundbegriffe/Temperaturkoeffizient/Aufgabe16/ergebnis`,
+      {
+        layout: `${lE}/Gleichspannung/Grundbegriffe/Temperaturkoeffizient/layout.ejs`
+      }
     )
   })
 
 /** !SECTION Gleichspannung Grundbegriffe Temperaturkoeffizient */
 /** !SECTION Gleichspannung Grundbegriffe */
 /** !SECTION Gleichspannung */
+/** !SECTION Elektrotechnik */
 
 module.exports = router
