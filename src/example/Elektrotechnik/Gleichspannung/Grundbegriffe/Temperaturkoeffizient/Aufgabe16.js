@@ -50,5 +50,5 @@ function Aufgabe16 (input) {
 let input = {
   Material: 'GoldChrom'
 }
-console.log(Aufgabe16(input))
+// console.log(Aufgabe16(input))
 exports.func = Aufgabe16

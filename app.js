@@ -33,6 +33,7 @@ const staticOptions = {
 app.use(express.static('public', staticOptions))
 app.use(express.static('src', staticOptions))
 app.use(express.static('controllers', staticOptions))
+app.use(express.static('lib', staticOptions))
 
 const jsonOptions = {
   inflate: true,
