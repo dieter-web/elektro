@@ -30,10 +30,10 @@ const staticOptions = {
   maxAge: 0,
   redirect: true
 }
-app.use(express.static('public', staticOptions))
-app.use(express.static('src', staticOptions))
-app.use(express.static('controllers', staticOptions))
-app.use(express.static('lib', staticOptions))
+app.use(express.static(`${__dirname}/public`, staticOptions))
+app.use(express.static(`${__dirname}/src`, staticOptions))
+app.use(express.static(`${__dirname}/controllers`, staticOptions))
+app.use(express.static(`${__dirname}/lib`, staticOptions))
 
 const jsonOptions = {
   inflate: true,
