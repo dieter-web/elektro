@@ -2,7 +2,11 @@ const bodyParser = require('body-parser')
 const multer = require('multer')
 const upload = multer()
 
-function erouter (router, vE, lE, eE, str1, str2, str3, str4, str5) {
+function erouter (router, vE, lE, eE, str1, str2) {
+  const str3 = '/aufgabe'
+  const str4 = '/layout.ejs'
+  const str5 = '/ergebnis'
+
   router
     .use(bodyParser.json())
     .use(bodyParser.urlencoded({ extended: true }))

@@ -89,7 +89,10 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
   res.render(
     'index',
-    { text: 'Grundlagen der Elektrotechnik' },
+    {
+      text: 'Grundlagen der Elektrotechnik',
+      teil: 'Band 1'
+    },
     (err, html) => {
       res.send(html)
     }
