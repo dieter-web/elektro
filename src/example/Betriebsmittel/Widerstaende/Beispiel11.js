@@ -15,6 +15,9 @@ const { Stack } = require(path.resolve(
 /**
  * @function Beispiel11
  * @description
+ * An den Klemmen der vier Widerstände R1...R4 liegt eine Spannung von U = 60V
+ * R1 = 2.5Mohm, R2=80kohm,R3= 500 ohm und R4 = 75 ohm.
+ * Wie groß sind die Ströme durch diese Widerstände und welche Leitwertgrößen besitzen sie?
  * @author Dieter Krause
  * @date 29/04/2023
  * @param {*} input

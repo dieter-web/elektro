@@ -1,0 +1,39 @@
+<table class="table table-bordered" id="ergebnis">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Bauelement</th>
+            <th scope="col" colspan="4">Parameter</th>
+            <th scope="col">Ergebnis</th>
+        </tr>
+        <tr>
+            <th scope="col">Thermistor</th>
+            <th scope="col">R20</th>
+            <th scope="col">Rδ2</th>
+            <th scope="col">δ2</th>
+            <th scope="col">δ20</th>
+            <th scope="col">Temperaturkonstante</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <%= Aerg.Bauelement.Thermistor %>
+            </td>
+            <td>
+                <%= Aerg.Parameter.R20 %>
+            </td>
+            <td>
+                <%= Aerg.Parameter.Rδ2 %>
+            </td>
+            <td>
+                <%= Aerg.Parameter.δ2 %>
+            </td>
+            <td>
+                <%= Aerg.Parameter.δ20 %>
+            </td>
+            <td>
+                <%= Aerg.Ergebnis.α20 %>
+            </td>
+        </tr>
+    </tbody>
+</table>

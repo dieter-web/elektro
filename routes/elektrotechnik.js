@@ -38,6 +38,12 @@ router.get('/', function (req, res) {
     const str2 = '/Aufgabe16'
     erouter(router, vE, lE, eE, str1, str2)
   }
+
+  /** NOTE Übung 1.9 */
+  {
+    const str2 = '/Uebung19'
+    erouter(router, vE, lE, eE, str1, str2)
+  }
 }
 /** !SECTION Gleichspannung Grundbegriffe Temperaturkoeffizient */
 /** !SECTION Gleichspannung Grundbegriffe */

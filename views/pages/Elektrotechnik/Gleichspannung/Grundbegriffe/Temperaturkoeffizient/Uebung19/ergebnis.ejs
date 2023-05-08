@@ -1,0 +1,18 @@
+<%- include('aufgabe.ejs',{}) %>
+
+<div class="container px-4 text-left">
+    <div class="row gx-5">
+        <div class="col">
+            <div class="p-3 m-1  bg-secondary">
+                <%- include('table.ejs',{}) %>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="module">
+    const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
+    R20.value=sel[ 1 ]
+    Rδ2.value=sel[ 2 ]
+    δ2.value=sel[ 3 ]
+    δ20.value=sel[ 4 ]
+</script>

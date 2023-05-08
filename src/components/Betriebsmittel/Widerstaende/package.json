@@ -2,6 +2,12 @@
   "name": "widerstaende",
   "version": "1.0.0",
   "description": "",
+  "directories": {
+    "Feldplatten": "Feldplatten",
+    "Fotowiderstand": "Fotowiderstand",
+    "Thermistor": "Thermistor",
+    "Variator": "Varistor"
+  },
   "files": [
     "BEWiderstand.js"
   ],
