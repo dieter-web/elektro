@@ -1,0 +1,26 @@
+<table class="table table-bordered" id="ergebnis">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col" colspan="2">Parameter</th>
+            <th scope="col">Ergebnis</th>
+        </tr>
+        <tr>
+            <th scope="col">Leitwert</th>
+            <th scope="col">Stromstärke</th>
+            <th scope="col">Spannung</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <%= Aerg.Parameter.G %>
+            </td>
+            <td>
+                <%= Aerg.Parameter.I %>
+            </td>
+            <td>
+                <%= Aerg.Ergebnis.U %>
+            </td>
+        </tr>
+    </tbody>
+</table>

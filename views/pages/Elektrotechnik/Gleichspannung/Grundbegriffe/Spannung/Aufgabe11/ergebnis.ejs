@@ -1,0 +1,17 @@
+<%- include('aufgabe.ejs',{}) %>
+
+<div class="container px-4 text-left">
+    <div class="row gx-5">
+        <div class="col">
+            <div class="p-3 m-1  bg-secondary">
+                <%- include('table.ejs',{}) %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="module">
+    const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
+    G.value=tab[ 0 ]
+    I.value=tab[ 1 ]
+</script>

@@ -4,5 +4,17 @@
         "href": "/elektrotechnik/gleichspannung/grundbegriffe/temperaturkoeffizient",
         "name": "Temperaturkoeffizient",
         "text": "Temperaturkoeffizient"
+    },
+    {
+        "id": 2,
+        "href": "/elektrotechnik/gleichspannung/grundbegriffe/spannung",
+        "name": "Spannung",
+        "text": "Spannung"
+    },
+    {
+        "id": 3,
+        "href": "/elektrotechnik/gleichspannung/grundbegriffe/spezifischerwiderstand",
+        "name": "Spezifischer Widerstand",
+        "text": "Bemessungsgleichungen des elektrischen Widerstands"
     }
 ]

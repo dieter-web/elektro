@@ -46,6 +46,30 @@ router.get('/', function (req, res) {
   }
 }
 /** !SECTION Gleichspannung Grundbegriffe Temperaturkoeffizient */
+/** SECTION Gleichspannung Grundbegriffe Spannung */
+{
+  const str1 = '/Gleichspannung/Grundbegriffe/Spannung'
+  routerGet(router, str1.toLowerCase(), vE, lE, str1)
+
+  /** NOTE Aufgabe 1.1 */
+  {
+    const str2 = '/Aufgabe11'
+    erouter(router, vE, lE, eE, str1, str2)
+  }
+}
+/** !SECTION Gleichspannung Grundbegriffe Spannung */
+/** SECTION Gleichspannung Grundbegriffe spezifischer Widerstand */
+{
+  const str1 = '/Gleichspannung/Grundbegriffe/SpezifischerWiderstand'
+  routerGet(router, str1.toLowerCase(), vE, lE, str1)
+
+  /** NOTE Beispiel 1.2 */
+  {
+    const str2 = '/Beispiel12'
+    erouter(router, vE, lE, eE, str1, str2)
+  }
+}
+/** !SECTION Gleichspannung Grundbegriffe spezifischer Widerstand */
 /** !SECTION Gleichspannung Grundbegriffe */
 /** !SECTION Gleichspannung */
 /** !SECTION Elektrotechnik */

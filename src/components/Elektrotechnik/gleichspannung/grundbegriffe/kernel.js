@@ -41,6 +41,7 @@ class ElektroKernel {
       R1: obj.R1 ? math.unit(obj.R1) : null,
       R20: obj.R20 ? math.unit(obj.R20) : null,
       Rδ2: obj.Rδ2 ? math.unit(obj.Rδ2) : null,
+      G: obj.G ? math.unit(obj.G) : null,
       I: obj.I ? math.unit(obj.I) : null,
       I1: obj.I1 ? math.unit(obj.I1) : null,
       S: obj.S ? math.unit(obj.S) : null,
@@ -113,6 +114,9 @@ class ElektroKernel {
   }
   UIR () {
     return run('I * R', this.param)
+  }
+  UIG () {
+    return run('I / G', this.param)
   }
   UUiNiNsum () {
     return run('( Ui * Nsum ) / Ni', this.param)

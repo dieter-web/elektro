@@ -1,0 +1,30 @@
+<table class="table table-bordered" id="ergebnis">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col" colspan="3">Parameter</th>
+            <th scope="col">Ergebnis</th>
+        </tr>
+        <tr>
+            <th scope="col">Länge</th>
+            <th scope="col">Durchmesser</th>
+            <th scope="col">Widerstand</th>
+            <th scope="col">spezifischer Widerstand</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <%= Aerg.Parameter.l %>
+            </td>
+            <td>
+                <%= Aerg.Parameter.d %>
+            </td>
+            <td>
+                <%= Aerg.Parameter.R %>
+            </td>
+            <td>
+                <%= Aerg.Ergebnis.ρ %>
+            </td>
+        </tr>
+    </tbody>
+</table>
