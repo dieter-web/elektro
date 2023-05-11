@@ -1,3 +1,9 @@
+const {
+  query,
+  body,
+  matchedData,
+  validationResult
+} = require('express-validator')
 const bodyParser = require('body-parser')
 const multer = require('multer')
 const upload = multer()
@@ -16,13 +22,16 @@ function erouter (router, vE, lE, eE, str1, str2) {
         layout: `${lE}${str1}${str4}`
       })
     })
-    .post((req, res) => {
-      const { func } = require(`${eE}${str1}${str2}`)
-      res.locals.Aerg = func(req.body)
-      res.render(`${vE}${str1}${str2}${str5}`, {
-        layout: `${lE}${str1}${str4}`
-      })
-    })
+    .post(
+      body().isJSON(), // Validierung
+      (req, res) => {
+        const { func } = require(`${eE}${str1}${str2}`)
+        res.locals.Aerg = func(req.body)
+        res.render(`${vE}${str1}${str2}${str5}`, {
+          layout: `${lE}${str1}${str4}`
+        })
+      }
+    )
 }
 
 exports.erouter = erouter
