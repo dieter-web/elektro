@@ -30,4 +30,24 @@ router.get('/', function (req, res) {
 }
 /** !SECTION Widerstände */
 
+/** SECTION Betriebsmittel Übertragungswege */
+{
+  const str1 = '/Uebertragungswege'
+  routerGet(router, str1.toLowerCase(), vBM, lBM, str1)
+
+  /** SECTION Betriebsmittel Übertragungswege Leitung */
+  {
+    const str1 = '/Uebertragungswege/Leitung'
+    routerGet(router, str1.toLowerCase(), vBM, lBM, str1)
+
+    /** NOTE Betriebsmittel Übertragungswege Leitung Beispiel14  */
+    {
+      const str2 = '/Beispiel14'
+      erouter(router, vBM, lBM, eBM, str1, str2);
+    }
+  }
+}
+/** !SECTION Betriebsmittel Übertragungswege */
+
+
 module.exports = router

@@ -4,5 +4,11 @@
     "href": "/betriebsmittel/widerstaende",
     "name": "Widerstände",
     "text": "Widerstände"
+  },
+  {
+    "id": 2,
+    "href": "/betriebsmittel/uebertragungswege",
+    "name": "Übertragungswege",
+    "text": "Antenne, Draht, Kabel, Leitung, Sammelschiene"
   }
 ]

@@ -1,0 +1,20 @@
+<%- include('aufgabe.ejs',{}) %>
+<div class="container text-left">
+    <div class="row">
+        <div class="col">
+            <div class="bg-secondary">
+                <%- include('table.ejs',{}) %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="module">
+    let sel=d3.select( 'tbody' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
+    Material.value=sel[ 1 ];
+    l.value=sel[ 2 ];
+    a.value=sel[ 3 ];
+    U.value=sel[ 4 ];
+    p.value=sel[ 5 ];
+    I.value=sel[ 6 ];
+</script>
