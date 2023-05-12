@@ -1,18 +1,10 @@
 <form action="/elektrotechnik/gleichspannung/grundbegriffe/spannung/aufgabe11/aufgabe" method="POST">
-    <div class="input-group">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Leitwert</span>
-        </div>
-        <input type="text" class="form-control" placeholder="Wert eingeben" aria-label="Wert eingeben"
-            aria-roledescription="basic-addon1" aria-required="true" id="G" name="G" value="3E-2 S" />
-    </div>
-    <div class="input-group">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1" >Stromstärke</span>
-        </div>
-        <input type="text" class="form-control" placeholder="Wert eingeben" aria-label="Wert eingeben"
-            aria-roledescription="basic-addon1" aria-required="true" id="I" name="I" value="600 mA" />
-    </div>
+    <%- include('./../../../../../../layouts/partials/finput.ejs', {
+        text: "Leitwert",id: "G",name: "G",value: "3E-2S"}) %>
+
+    <%- include('./../../../../../../layouts/partials/finput.ejs', {
+        text: "Stromstärke",id: "I",name: "I",value: '600mA'}) %>
+
     <div class="form-group row">
         <div class="col-sm-10">
             <button type="submit" class="btn btn-success">Rechnen</button>

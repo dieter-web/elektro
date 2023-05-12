@@ -1,25 +1,12 @@
 <form action="/elektrotechnik/gleichspannung/grundbegriffe/spezifischerwiderstand/beispiel12/aufgabe" method="POST">
-    <div class="input-group">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1" >Länge</span>
-        </div>
-        <input type="text" class="form-control" placeholder="Wert eingeben" aria-label="Wert eingeben"
-            aria-roledescription="basic-addon1" aria-required="true" id="l" name="l" value="3 km" />
-    </div>
-    <div class="input-group">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1" >Durchmesser</span>
-        </div>
-        <input type="text" class="form-control" placeholder="Wert eingeben" aria-label="Wert eingeben"
-            aria-roledescription="basic-addon1" aria-required="true" id="d" name="d" value="0.9 mm" />
-    </div>
-    <div class="input-group">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1" >Widerstand</span>
-        </div>
-        <input type="text" class="form-control" placeholder="Wert eingeben" aria-label="Wert eingeben"
-            aria-roledescription="basic-addon1" aria-required="true" id="R" name="R" value="84.5 ohm" />
-    </div>
+    <%- include('./../../../../../../layouts/partials/finput.ejs', {
+        text: "Länge",id: "l",name: "l",value: "3km"}) %>
+
+    <%- include('./../../../../../../layouts/partials/finput.ejs', {
+        text: "Durchmesser",id: "d",name: "d",value: '0.9mm'}) %>
+
+    <%- include('./../../../../../../layouts/partials/finput.ejs', {
+        text: "Widerstand",id: "R",name: "R",value: '84.5ohm'}) %>
 
     <div class="form-group row">
         <div class="col-sm-10">

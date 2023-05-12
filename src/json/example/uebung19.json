@@ -1,1 +1,1 @@
-{"Bauelement":{"Thermistor":"40 kohm"},"Parameter":{"R20":"40 kohm","Rδ2":"41 kohm","δ2":"25.5 celsius","δ20":"20 celsius"},"Ergebnis":{"α20":{"mathjs":"Unit","value":0.00454545454545453,"unit":"celsius^-1","fixPrefix":false}}}
+{"Bauelement":{"Thermistor":"40kohm"},"Parameter":{"R20":"40kohm","Rδ2":"41kohm","δ2":"25.5celsius","δ20":"20celsius"},"Ergebnis":{"α20":{"mathjs":"Unit","value":0.00454545454545453,"unit":"celsius^-1","fixPrefix":false}}}

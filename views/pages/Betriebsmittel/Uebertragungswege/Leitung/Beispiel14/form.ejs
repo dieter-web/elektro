@@ -1,47 +1,22 @@
 <form action="/betriebsmittel/uebertragungswege/leitung/beispiel14/aufgabe" method="POST">
-    <!-- <%#- include('input.ejs,',{text : "Material",id:"Material",name: "Material"})%> -->
-    <div class="input-group ">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Material</span>
-        </div>
-        <input type="text" class="form-control" placeholder="Wert eingeben" aria-label="Wert eingeben"
-            aria-roledescription="basic-addon1" aria-required="true" id="Material" name="Material" value="Aluminium" />
-    </div>
-    <div class="input-group ">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Netzspannung</span>
-        </div>
-        <input type="text" class="form-control" placeholder="Wert eingeben" aria-label="Wert eingeben"
-            aria-roledescription="basic-addon1" aria-required="true" id="U" name="U" value="230 V" />
-    </div>
-    <div class="input-group ">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">max. Spannungsabfall in %</span>
-        </div>
-        <input type="text" class="form-control" placeholder="Wert eingeben" aria-label="Wert eingeben"
-            aria-roledescription="basic-addon1" aria-required="true" id="p" name="p" value="5" />
-    </div>
-    <div class="input-group ">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Kabellänge</span>
-        </div>
-        <input type="text" class="form-control" placeholder="Wert eingeben" aria-label="Wert eingeben"
-            aria-roledescription="basic-addon1" aria-required="true" id="l" name="l" value="800 m" />
-    </div>
-    <div class="input-group ">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Anzahl der Adern</span>
-        </div>
-        <input type="text" class="form-control" placeholder="Wert eingeben" aria-label="Wert eingeben"
-            aria-roledescription="basic-addon1" aria-required="true" id="a" name="a" value="2" />
-    </div>
-    <div class="input-group ">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Stromstärke</span>
-        </div>
-        <input type="text" class="form-control" placeholder="Wert eingeben" aria-label="Wert eingeben"
-            aria-roledescription="basic-addon1" aria-required="true" id="I" name="I" value="11 A" />
-    </div>
+    <%- include('./../../../../../layouts/partials/finput.ejs', {
+        text: "Material",id: "Material",name: "Material",value: "Aluminium"}) %>
+
+    <%- include('./../../../../../layouts/partials/finput.ejs', {
+        text: "Netzspannung",id: "U",name: "U",value: '230V'}) %>
+
+    <%- include('./../../../../../layouts/partials/finput.ejs', {
+        text: "max. Spannungsabfall in %",id: "p",name: "p",value: "5"}) %>
+
+    <%- include('./../../../../../layouts/partials/finput.ejs', {
+        text: "Kabellänge",id: "l",name: "l",value: "800m"}) %>
+
+    <%- include('./../../../../../layouts/partials/finput.ejs', {
+        text: "Anzahl der Adern",id: "a",name: "a",value: "2"}) %>
+
+    <%- include('./../../../../../layouts/partials/finput.ejs', {
+        text: "Stromstärke",id: "I",name: "I",value: "11A"}) %>
+
     <div class="form-group row">
         <div class="col-sm-10">
             <button type="submit" class="btn btn-success">Rechnen</button>
