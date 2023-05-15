@@ -1,12 +1,3 @@
-<div class="card">
-    <div class="card-body">
-        <h5 class="card-title">Beispiel 1.4</h5>
-        <h6 class="card-subtitle text-muted">Bemessungsgleichungen des elektrischen Widerstands</h6>
-        <p class="card-text">
-            Eine zweiadrige Aluminiumleitung verbindet ein Gleichstromnetz von 230V Netzspannung mit einem
-            800m entfernt liegenden Verbraucher. Die Leitung wird mit einem Strom I = 11A belastet.
-            Wie groß muß der erforderliche Querschnitt sein, wenn der Spannungsverlust längs der Leitung
-            maximal 5% der Netzspannung betragen darf ?
-        </p>
-    </div>
-</div>
+<%- include('./../../../../../layouts/partials/text.ejs', {
+        title: "Beispiel 1.4",
+        subtitle: "Bemessung des elektrischen Widerstands",text: `Eine zweiadrige Aluminiumleitung verbindet ein Gleichstromnetz von 230V Netzspannung mit einem 800m entfernt liegenden Verbraucher. Die Leitung wird mit einem Strom I = 11A belastet. Wie groß muß der erforderliche Querschnitt sein, wenn der längs der Leitung maximal 5% der Netzspannung betragen darf ?`}) %>
