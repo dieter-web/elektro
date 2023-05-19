@@ -91,7 +91,13 @@ app.get('/', (req, res) => {
     'index',
     {
       text: 'Grundlagen der Elektrotechnik',
-      teil: 'Band 1'
+      teil: 'Band 1',
+      menu: [
+        { name: 'elektro', link: '/', class: 'nav-link' },
+        { name: 'Elektrotechnik', link: '/elektrotechnik', class: 'nav-link' },
+        { name: 'Bauelemente', link: '/bauelemente', class: 'nav-link' },
+        { name: 'Betriebsmittel', link: '/betriebsmittel', class: 'nav-link' }
+      ]
     },
     (err, html) => {
       res.send(html)

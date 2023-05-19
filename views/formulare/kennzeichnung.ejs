@@ -1,28 +1,16 @@
-<form action="/elektrotechnik/gleichspannung/grundbegriffe/spezifischerwiderstand/beispiel12/aufgabe" method="POST">
-    <%- include('./../../../../../../layouts/partials/finput.ejs', {
-        text: "Länge",id: "l",name: "l",value: "3km"}) %>
+<!-- <!doctype html>
+<html lang="de">
 
-    <%- include('./../../../../../../layouts/partials/finput.ejs', {
-        text: "Durchmesser",id: "d",name: "d",value: '0.9mm'}) %>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <title>Hello, modularity!</title>
+</head> -->
 
-    <%- include('./../../../../../../layouts/partials/finput.ejs', {
-        text: "Widerstand",id: "R",name: "R",value: '84.5ohm'}) %>
-
-    <div class="form-group row">
-        <div class="col-sm-10">
-            <button type="button" id="kennzeichnung" class="btn btn-info">Kennzeichnung eingeben</button>
-            <button type="submit" class="btn btn-success">Rechnen</button>
-        </div>
-
-    </div>
-</form>
-<div id="ke"></div>
-<script>
-    document.getElementById( "kennzeichnung" ).addEventListener( "click",() =>
-    {
-        console.log( "click !!" );
-        document.getElementById( "ke" ).innerHTML=`
-        <form action="/formulare/kennzeichnung" method="POST">
+<!-- <body> -->
+<form action="/formulare/kennzeichnung" method="POST">
   <div class="input-group input-group-sm">
     <span class="input-group-text">Anlage</span>
     <input type="text" aria-label="1" class="form-control" maxlength="2" value="00">
@@ -117,6 +105,7 @@
       <option value="Z">Digital</option>
     </select>
   </div>
+  <HR>
   <div class="input-group input-group-sm">
     <span class="input-group-text">Anschluss</span>
     <label class="input-group-text" for="AnschlussArt">Art</label>
@@ -130,12 +119,25 @@
     <input type="text" aria-label="2" class="form-control" maxlength="4" value="0000">
   </div>
 
-  <div>
-    <button class="btn btn-info" type="submit">Übernehmen</button>
-    <button class="btn btn-info" type="button">Abbrechen</button>
+  <div class="col-4 p-2 ">
+    <button class="btn btn-primary" type="submit">Übernehmen</button>
   </div>
   </div>
 </form>
-        `
-    } )
+
+<script async src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js"
+  crossorigin="anonymous"></script>
+<script type="importmap">
+    {
+      "imports": {
+        "@popperjs/core": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/esm/popper.min.js",
+        "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.esm.min.js"
+      }
+    }
+    </script>
+<script type="module">
+
 </script>
+</body>
+
+</html>

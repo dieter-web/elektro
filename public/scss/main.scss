@@ -1,3 +1,31 @@
 body {
     background-color: rgb(123, 145, 151);
 }
+
+#mainnav {
+    margin: 0;
+    padding: 5px 5px;
+    border: 0;
+    width: 180px;
+    display: table-cell;
+}
+
+main {
+    padding: 25px 25px;
+    margin: 10px;
+    border: 1px solid yellow;
+    // display: table-cell;
+}
+
+.container {
+    height: 200px;
+    // display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
+}
+
+.item {
+    width: 10em;
+}
+

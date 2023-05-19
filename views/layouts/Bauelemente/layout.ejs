@@ -3,7 +3,7 @@
 <body>
 
     <%- include('../partials/navbarTemplate', {}) %>
-    
+
     <script type="module">
         import {mainNavbar} from "/modules/mainNavbar.js"
         let menu=[
@@ -12,6 +12,8 @@
         ]
         mainNavbar( menu );
     </script>
-    <%- body %>
+    <main>
+        <%- body %>
+    </main>
     <%- include('./../partials/footer',{}) %>
 </body>
