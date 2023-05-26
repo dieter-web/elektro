@@ -1,16 +1,7 @@
-<!-- <!doctype html>
-<html lang="de">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  <title>Hello, modularity!</title>
-</head> -->
-
-<!-- <body> -->
-<form action="/formulare/kennzeichnung" method="POST">
+function update () {
+  if (document.Kennzeichnung.Kennzeichnung.checked) {
+    document.getElementById('ke').innerHTML = `
+        <form action="/formulare/kennzeichnung" method="POST">
   <div class="input-group input-group-sm">
     <span class="input-group-text">Anlage</span>
     <input type="text" aria-label="1" class="form-control" maxlength="2" value="00">
@@ -105,7 +96,6 @@
       <option value="Z">Digital</option>
     </select>
   </div>
-  <HR>
   <div class="input-group input-group-sm">
     <span class="input-group-text">Anschluss</span>
     <label class="input-group-text" for="AnschlussArt">Art</label>
@@ -119,25 +109,15 @@
     <input type="text" aria-label="2" class="form-control" maxlength="4" value="0000">
   </div>
 
-  <div class="col-4 p-2 ">
-    <button class="btn btn-primary" type="submit">Übernehmen</button>
+  <div>
+    <button class="btn btn-info" type="submit">Übernehmen</button>
   </div>
   </div>
 </form>
+        `
+  } else {
+    document.getElementById('ke').innerHTML = ''
+  }
+}
 
-<script async src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js" crossorigin="anonymous">
-</script>
-<script type="importmap">
-    {
-      "imports": {
-        "@popperjs/core": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/esm/popper.min.js",
-        "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.esm.min.js"
-      }
-    }
-    </script>
-<script type="module">
-
-</script>
-</body>
-
-</html>
+export { update }
