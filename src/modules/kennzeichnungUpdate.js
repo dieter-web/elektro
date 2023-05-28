@@ -1,6 +1,7 @@
 function update () {
+  const d = document.createElement('div')
   if (document.Kennzeichnung.Kennzeichnung.checked) {
-    document.getElementById('ke').innerHTML = `
+    d.innerHTML = `
         <form action="/formulare/kennzeichnung" method="POST">
   <div class="input-group input-group-sm">
     <span class="input-group-text">Anlage</span>
@@ -113,10 +114,11 @@ function update () {
     <button class="btn btn-info" type="submit">Übernehmen</button>
   </div>
   </div>
-</form>
-        `
+</form>`
+    document.body.appendChild(d)
   } else {
-    document.getElementById('ke').innerHTML = ''
+    d.innerHTML = ''
+    document.body.replaceChild(d)
   }
 }
 

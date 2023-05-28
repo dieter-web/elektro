@@ -67,6 +67,13 @@ router.get('/', function (req, res) {
   {
     const str2 = '/Beispiel12'
     erouter(router, vE, lE, eE, str1, str2)
+
+    const str3 = '/kennzeichnung'
+    router
+      .route(router, `${str1}${str2}${str3}`.toLowerCase())
+      .get((req, res) => {
+        res.render('über die Route Kennzeichnung ausgegeben.')
+      })
   }
 }
 /** !SECTION Gleichspannung Grundbegriffe spezifischer Widerstand */

@@ -108,6 +108,7 @@ app.get('/', (req, res) => {
 app.use('/bauelemente', require(path.resolve('routes/bauelemente')))
 app.use('/betriebsmittel', require(path.resolve('routes/betriebsmittel')))
 app.use('/elektrotechnik', require(path.resolve('routes/elektrotechnik')))
+app.use('/formulare', require(path.resolve('routes/formulare')))
 
 app.locals.title = 'Elektro'
 app.locals.email = 'dieterkrause31960@gmail.com'

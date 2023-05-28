@@ -17,13 +17,14 @@
       <input type="checkbox" name="Kennzeichnung">Kennzeichnung
       eingeben ?
     </form>
-    <div class="col" id="ke">
 
-    </div>
+    <!-- Platzhalter -->
+    <div class="col" id="ke"></div>
   </div>
 </div>
 
 <script type="module">
   import {update} from "/modules/kennzeichnungUpdate.js";
+  const action = '/Gleichspannung/Grundbegriffe/SpezifischerWiderstand/Beispiel12/kennzeichnung';
   addEventListener( "click",( event ) => update() )
 </script>
