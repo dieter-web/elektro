@@ -15,15 +15,22 @@ function frouter (router, vR, lR, str1, str2) {
     .use(bodyParser.urlencoded({ extended: true }))
     .route(`${str1}${str2}`.toLowerCase(), upload.array())
     .get((req, res) => {
-      res.render(`${vR}${str1}${str2}`, {
-        layout: `${lR}${str1}${str3}`
-      })
+      res.render(`${vR}${str2}`)
+      // ,
+      // {
+      //   layout: `${lR}${str1}${str3}`
+      // })
     })
-    .post(body().isJSON(), (req, res) => {
+    // .post(body().isJSON(), (req, res) => {
+    .post((req, res) => {
       res.locals.Aerg = req.body
-      res.render(`${vR}${str1}${str2}`, {
-        layout: `${lR}${str1}${str3}`
-      })
+      res.render(`${vR}${str2}`)
+
+      // res.locals.Aerg = req.body
+
+      // , {
+      //   layout: `${lR}${str1}${str3}`
+      // })
     })
 }
 

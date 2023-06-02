@@ -18,4 +18,12 @@ const str1 = '/Formulare'
   frouter(router, vF, lF, str1, str2)
 }
 
+{
+  router.post('/formulare/kennzeichnung', (req, res) => {
+    req.body
+    res.json(req.body)
+  })
+}
+
 /** !SECTION Formulare */
+module.exports = router

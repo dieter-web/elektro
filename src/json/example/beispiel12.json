@@ -1,1 +1,1 @@
-{"Parameter":{"l":"3km","d":"0.9mm","R":"84.5ohm"},"Ergebnis":{"ρ":{"mathjs":"Unit","value":17.918859097912783,"unit":"(ohm mm^2) / km","fixPrefix":false}}}
+{"Parameter":{"l":"13km","d":"0.9mm","R":"84.5ohm"},"Ergebnis":{"ρ":{"mathjs":"Unit","value":4.135121330287566,"unit":"(ohm mm^2) / km","fixPrefix":false}}}
