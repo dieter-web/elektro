@@ -1,12 +1,8 @@
 require('use-strict')
 const path = require('path')
-const dbJson = require(path.resolve('controllers/dbJson'))
 
-const { ElektroKernel } = require(path.resolve(
-  'src/components/Elektrotechnik/gleichspannung/grundbegriffe/kernel.js'
-))
-const { PlanemetrieKernel } = require(path.resolve(
-  'src/components/Mathematik/Planemetrie/kernel.js'
+const { dbJson, ElektroKernel, PlanemetrieKernel } = require(path.resolve(
+  'include/system'
 ))
 
 // const { BEDraht } = require(path.resolve(

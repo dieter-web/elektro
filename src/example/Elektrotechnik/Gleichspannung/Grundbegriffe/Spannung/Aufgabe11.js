@@ -1,10 +1,6 @@
 require('use-strict')
 const path = require('path')
-const dbJson = require(path.resolve('controllers/dbJson'))
-
-const { ElektroKernel } = require(path.resolve(
-  'src/components/Elektrotechnik/gleichspannung/grundbegriffe/kernel.js'
-))
+const { dbJson, ElektroKernel } = require(path.resolve('include/system'))
 
 /**
  * @description

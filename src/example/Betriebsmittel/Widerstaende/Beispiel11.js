@@ -1,15 +1,8 @@
 require('use-strict')
 const path = require('path')
-const dbJson = require(path.resolve('controllers/dbJson'))
 
-const { ElektroKernel } = require(path.resolve(
-  'src/components/Elektrotechnik/gleichspannung/grundbegriffe/kernel.js'
-))
-const { BEWiderstand } = require(path.resolve(
-  'src/components/Betriebsmittel/Widerstaende/BEWiderstand.js'
-))
-const { Stack } = require(path.resolve(
-  'src/components/Datenverarbeitung/dynamischeDatenstrukturen/listen/stapel/stack.js'
+const { dbJson, ElektroKernel, BEWiderstand, Stack } = require(path.resolve(
+  'include/system'
 ))
 
 /**

@@ -1,18 +1,10 @@
-require('use-strict')
 const path = require('path')
-const dbJson = require(path.resolve('controllers/dbJson'))
-
-const { ElektroKernel } = require(path.resolve(
-  'src/components/Elektrotechnik/gleichspannung/grundbegriffe/kernel.js'
-))
-
-const { PlanemetrieKernel } = require(path.resolve(
-  'src/components/Mathematik/Planemetrie/kernel.js'
-))
-
-const { BEGlasplatte } = require(path.resolve(
-  'src/components/Bauelemente/Platten/Glasplatte/Glasplatte.js'
-))
+const {
+  dbJson,
+  ElektroKernel,
+  PlanemetrieKernel,
+  BEGlasplatte
+} = require(path.resolve('include/system'))
 
 function Uebung14 (input) {
   const jsonfile = path.resolve('src/json/example/uebung14.json')
