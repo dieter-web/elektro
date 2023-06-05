@@ -1,17 +1,4 @@
-<!-- <script>
-  const update=require( path.join( __dirname,'/src/modules/kennzeichnungUpdate.js' ) )
-  const test="TEST"
-  function lupdate ()
-  {
-    console.log( "lupdate aufgerufen" )
-    update();
-  } 
-</script> -->
-
-<h4>
-  <%= locals.text %>
-</h4>
-<div class="container text-left">
+<div class="container text-left" id="1">
 
   <div class="row ">
     <div class="col">
@@ -29,24 +16,30 @@
     <div class="col">
       <div class="bg-secondary">
         <form name="Kennzeichnung">
-          <input type="checkbox" name="Kennzeichnung">Kennzeichnung
-          eingeben ?
+          <input type="checkbox" name="Kennzeichnung">Kennzeichnung eingeben ?
         </form>
-      </div>
-    </div>
-
-    <div class="col">
-      <div class="bg-secondary">
-        <!-- Platzhalter -->
-        <div class="col" id="ke"></div>
       </div>
     </div>
   </div>
 
-  <script type="module">
-    import {update} from "/modules/kennzeichnungUpdate.js";
+  <div class="container text-left">
+    <div class="row">
+      <div class="col">
+        <div class="bg-secondary" id="ke">
+          <!-- Platzhalter für Kennzeichnung -->
+        </div>
+      </div>
+    </div>
+  </div>
 
-    const checkbox=document.querySelector( 'input[type="checkbox"]' )
-    checkbox.addEventListener( "click",( event ) => update() )
+</div>
 
-  </script>
+<script type="module">
+
+  import {update} from "/modules/kennzeichnungUpdate.js";
+  // const route='/elektrotechnik/gleichspannung/grundbegriffe/spezifischerwiderstand/beispiel12/kennzeichnung'
+  const checkbox=document.querySelector( 'input[type="checkbox"]' )
+  // Eingabeformular
+  checkbox.addEventListener( "click",( event ) => update() )
+
+</script>

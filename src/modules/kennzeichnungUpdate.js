@@ -1,14 +1,13 @@
-function update () {
+function update (route) {
   // Wenn schon vorhanden, nicht noch einmal erzeugen !!
   if (!document.getElementById('kennzeichnung')) {
     const d = document.createElement('div')
     if (document.Kennzeichnung.Kennzeichnung.checked) {
       d.innerHTML = `
-      <div class="container text-left">
-      <div class="row">
-      <div class="col">
-      <div class="bg-secondary">
-          <form action="" method="POST" id="kennzeichnung">
+      <div class="container">
+        <div class="row>
+        <div class="bg-secondary">
+          <form action = ${route} method="POST" id="kennzeichnung">
           <div class="input-group input-group-sm">
           <span class="input-group-text">Anlage</span>
           <input type="text" aria-label="1" id="Anlage1" class="form-control" maxlength="2" value="00" size="10">
@@ -35,7 +34,7 @@ function update () {
         <div class="input-group input-group-sm">
           <label class="input-group-text" for="Art">Art</label>
           <select class="form-select" id="Art">
-            <option selected>Choose...</option>
+            <option selected>?</option>
             <option value="V">Halbleiter</option>
             <option value="R">Widerstand</option>
             <option value="Y">Geräte mit Elektrischen Antrieb</option>
@@ -73,7 +72,7 @@ function update () {
         <div class="input-group input-group-sm">
           <label class="input-group-text" for="Funktion">Funktion</label>
           <select class="form-select" id="Funktion">
-            <option selected>Choose...</option>
+            <option selected>?</option>
             <option value="A">Hilfsfunktion</option>
             <option value="A">Aus</option>
             <option value="B">Bewegungsrichtung</option>
@@ -107,7 +106,7 @@ function update () {
           <span class="input-group-text">Anschluss</span>
           <label class="input-group-text" for="AnschlussArt">Art</label>
           <select class="form-select" id="AnschlussArt">
-            <option selected>Choose...</option>
+            <option selected>?</option>
             <option value="A">Klemmleiste</option>
             <option value="B">Stecker</option>
             <option value="C">Draht</option>
@@ -116,50 +115,42 @@ function update () {
               <input type="text" aria-label="2" class="form-control" id="Anzahl" maxlength="4" value="0000">
         </div>
         <div>
-          <input class="btn btn-info" type="button" value="übernehmen"></button>
+          <input class="btn btn-info" type="submit" value="übernehmen"></button>
         </div>
         </div>
       </form>
       </div>
       </div>
       </div>
-      </div>
-`
+      `
+
       document.body.appendChild(d)
     } else {
-      d.innerHTML = ''
+      d.innerHTML = ' '
       document.body.replaceChild(d)
     }
   }
   // Werte auslesen über button-click
-  const button = document.querySelector('input[type="button"]')
+  const button = document.querySelector('input[type="submit"]')
+
   button.addEventListener('click', event => {
     let Kennzeichnung = {
-      Anlage: `=${Anlage1.value}${Anlage2.value}${Anlage3.value}-${Anlage4.value}${Anlage5.value}`,
-      Ort: `+${Aufstellungsort1.value}${Aufstellungsort2.value}${Aufstellungsort3.value}${Aufstellungsort4.value}${Aufstellungsort5.value}-${Einbauort1.value}${Einbauort2.value}${Einbauort3.value}${Einbauort4.value}`,
-      Art: `-${Art.value}`,
+      Anlage: ` = ${Anlage1.value}${Anlage2.value}${Anlage3.value}-${Anlage4.value}${Anlage5.value}`,
+      Ort: ` + ${Aufstellungsort1.value}${Aufstellungsort2.value}${Aufstellungsort3.value}${Aufstellungsort4.value}${Aufstellungsort5.value}-${Einbauort1.value}${Einbauort2.value}${Einbauort3.value}${Einbauort4.value}`,
+      Art: ` - ${Art.value}`,
       Zählnummer: `${zaehlnummer.value}`,
       Funktion: `${Funktion.value}`,
-      Anschlussart: `${AnschlussArt.value}`,
+      Anschlussart: ` : ${AnschlussArt.value}`,
       Anzahl: `${Anzahl.value}`
     }
 
-    // Ausgabe auf der aktuellen Seite --> Vor der Ausgabetabelle ausgeben möglich ? append ?
-    const d1 = document.createElement('div')
-    d1.innerHTML = `
-    <div class="container text-left">
-      <div class="row">
-      <div class="col">
-      <div class="bg-secondary">
-      ${Kennzeichnung}
-      </div>
-      </div>
-      </div>
-      </div>
-    `
-    document.body.appendChild(d1)
+    const d1 = document.querySelector('div[id="ke"]')
 
-    console.log(Kennzeichnung[Anlage])
+    d1.innerHTML = `
+      ${Kennzeichnung.Anlage}${Kennzeichnung.Ort}${Kennzeichnung.Art}${Kennzeichnung.Zählnummer}${Kennzeichnung.Funktion}${Kennzeichnung.Anschlussart}${Kennzeichnung.Anzahl}
+      `
+    // Weitere Verarbeitung ausschalten
+    event.preventDefault()
   })
 }
 export { update }
