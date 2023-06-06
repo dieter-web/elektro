@@ -1,3 +1,5 @@
+// import { group, index } from 'd3-array'
+
 function update (route) {
   // Wenn schon vorhanden, nicht noch einmal erzeugen !!
   if (!document.getElementById('kennzeichnung')) {
