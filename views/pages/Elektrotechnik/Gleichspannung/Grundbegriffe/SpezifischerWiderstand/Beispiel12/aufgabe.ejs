@@ -1,4 +1,4 @@
-<div class="container text-left" id="1">
+<div class="container text-left">
 
   <div class="row ">
     <div class="col">
@@ -22,24 +22,50 @@
     </div>
   </div>
 
-  <div class="container text-left">
+  <!-- <div class="container text-left">
     <div class="row">
       <div class="col">
         <div class="bg-secondary" id="ke">
-          <!-- Platzhalter für Kennzeichnung -->
+          
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
 </div>
 
 <script type="module">
   // import {group,index} from 'd3-array'; hier nicht !!
-  import {update} from "/modules/kennzeichnungUpdate.mjs";
-  // const route='/elektrotechnik/gleichspannung/grundbegriffe/spezifischerwiderstand/beispiel12/kennzeichnung'
+  import {formularKennzeichnung} from "/modules/kennzeichnungUpdate.mjs";
+
+  const route='/elektrotechnik/gleichspannung/grundbegriffe/spezifischerwiderstand/beispiel12/kennzeichnung'
+
   const checkbox=document.querySelector( 'input[type="checkbox"]' )
   // Eingabeformular
-  checkbox.addEventListener( "click",( event ) => update() )
+  checkbox.addEventListener( "click",( event ) => formularKennzeichnung( route ) )
+  // {
+  //   if( document.Kennzeichnung.Kennzeichnung.checked )
+  //   {
+  //     console.log( "addEvent checkbox true" )
+  //   } else
+  //   {
+  //     console.log( "addEvent checkbox false" )
+  //   }
+  //   // event.preventDefault() // Das aktuelle Event ausblenden
+  // } )
+
+  // submits von mehreren Formularen auf einer Seite unterscheiden
+  const kennzeichnung=document.querySelector( 'form[id="Kennzeichnung"]' )
+  if( kennzeichnung )
+  {
+    kennzeichnung.addEventListener( "click",( event ) =>
+    {
+
+      // Eigene Aktionen festlegen 
+      console.log( "addEvent form" )
+
+      event.preventDefault() // Das aktuelle Event ausblenden
+    } )
+  }
 
 </script>

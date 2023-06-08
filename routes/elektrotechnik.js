@@ -6,76 +6,46 @@ const router = express.Router()
 const { routerGet } = require(path.resolve('src/js/routerGet.js'))
 const { erouter } = require(path.resolve('src/js/erouter.js'))
 
-const eE = path.resolve('src/example/Elektrotechnik')
-const vE = 'pages/Elektrotechnik'
-const lE = 'layouts/Elektrotechnik'
+const er = require(path.resolve('include/routenElektrotechnik.js'))
 
 /** SECTION Elektrotechnik */
 router.get('/', function (req, res) {
-  res.render(vE, {
-    layout: `${lE}/layout.ejs`
+  res.render(er.vE, {
+    layout: `${er.lE}/layout.ejs`
   })
 })
 
 /** SECTION Gleichspannung */
-{
-  const str = '/Gleichspannung'
-  routerGet(router, str.toLowerCase(), vE, lE, str)
-}
+routerGet(router, er.Gs.toLowerCase(), er.vE, er.lE, er.Gs)
+
 /** SECTION Gleichspannung Grundbegriffe */
-{
-  const str = '/Gleichspannung/Grundbegriffe'
-  routerGet(router, str.toLowerCase(), vE, lE, str)
-}
+routerGet(router, er.Gs_Gb.toLowerCase(), er.vE, er.lE, er.Gs_Gb)
 
 /** SECTION Gleichspannung Grundbegriffe Temperaturkoeffizient */
-{
-  const str1 = '/Gleichspannung/Grundbegriffe/Temperaturkoeffizient'
-  routerGet(router, str1.toLowerCase(), vE, lE, str1)
+routerGet(router, er.Gs_Gb_Tk.toLowerCase(), er.vE, er.lE, er.Gs_Gb_Tk)
 
-  /** NOTE Aufgabe 1.6 */
-  {
-    const str2 = '/Aufgabe16'
-    erouter(router, vE, lE, eE, str1, str2)
-  }
+/** NOTE Aufgabe 1.6 */
+erouter(router, er.vE, er.lE, er.eE, er.Gs_Gb_Tk, er.a16)
 
-  /** NOTE Übung 1.9 */
-  {
-    const str2 = '/Uebung19'
-    erouter(router, vE, lE, eE, str1, str2)
-  }
-}
+/** NOTE Übung 1.9 */
+erouter(router, er.vE, er.lE, er.eE, er.Gs_Gb_Tk, er.u19)
+
 /** !SECTION Gleichspannung Grundbegriffe Temperaturkoeffizient */
+
 /** SECTION Gleichspannung Grundbegriffe Spannung */
-{
-  const str1 = '/Gleichspannung/Grundbegriffe/Spannung'
-  routerGet(router, str1.toLowerCase(), vE, lE, str1)
+routerGet(router, er.Gs_Gb_Sp.toLowerCase(), er.vE, er.lE, er.Gs_Gb_Sp)
 
-  /** NOTE Aufgabe 1.1 */
-  {
-    const str2 = '/Aufgabe11'
-    erouter(router, vE, lE, eE, str1, str2)
-  }
-}
+/** NOTE Aufgabe 1.1 */
+erouter(router, er.vE, er.lE, er.eE, er.Gs_Gr_Sp, er.a11)
+
 /** !SECTION Gleichspannung Grundbegriffe Spannung */
+
 /** SECTION Gleichspannung Grundbegriffe spezifischer Widerstand */
-{
-  const str1 = '/Gleichspannung/Grundbegriffe/SpezifischerWiderstand'
-  routerGet(router, str1.toLowerCase(), vE, lE, str1)
+routerGet(router, er.Gs_Gb_SpWi.toLowerCase(), er.vE, er.lE, er.Gs_Gb_SpWi)
 
-  /** NOTE Beispiel 1.2 */
-  {
-    const str2 = '/Beispiel12'
-    erouter(router, vE, lE, eE, str1, str2)
+/** NOTE Beispiel 1.2 */
+erouter(router, er.vE, er.lE, er.eE, er.Gs_Gb_SpWi, er.b12)
 
-    // const str3 = '/kennzeichnung'
-    // router
-    //   .route(router, `${str1}${str2}${str3}`.toLowerCase())
-    //   .get((req, res) => {
-    //     res.render('über die Route Kennzeichnung ausgegeben.')
-    //   })
-  }
-}
 /** !SECTION Gleichspannung Grundbegriffe spezifischer Widerstand */
 /** !SECTION Gleichspannung Grundbegriffe */
 /** !SECTION Gleichspannung */

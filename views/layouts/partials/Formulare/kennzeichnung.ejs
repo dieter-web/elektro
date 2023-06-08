@@ -1,18 +1,8 @@
-// import { group, index } from 'd3-array'
-
-function formularKennzeichnung (route) {
-  // Wenn schon vorhanden, nicht noch einmal erzeugen !!
-  // if (!document.getElementById('kennzeichnung')) {
-  // let d = document.createElement('div')
-  let kenn = document.createElement('div')
-
-  if (document.Kennzeichnung.Kennzeichnung.checked) {
-    kenn.innerHTML = `
-      <div class="container text-left">
-        <div class="row>
-        <div class="bg-secondary">
-          <form action = ${route} method="POST" id="kennzeichnung">
-          <div class="input-group input-group-sm">
+<div class="container">
+  <div class="row">
+    <div class=" bg-secondary">
+      <form action=${route} method="POST" id="kennzeichnung">
+        <div class="input-group input-group-sm">
           <span class="input-group-text">Anlage</span>
           <input type="text" aria-label="1" id="Anlage1" class="form-control" maxlength="2" value="00" size="10">
           <input type="text" aria-label="2" id="Anlage2" class="form-control" maxlength="2" value="00">
@@ -22,7 +12,7 @@ function formularKennzeichnung (route) {
         </div>
         <div class="input-group input-group-sm">
           <span class="input-group-text">Aufstellungsort</span>
-            <input type="text" aria-label="1" id="Aufstellungsort1" class="form-control" maxlength="2" value="00">
+          <input type="text" aria-label="1" id="Aufstellungsort1" class="form-control" maxlength="2" value="00">
           <input type="text" aria-label="2" id="Aufstellungsort2" class="form-control" maxlength="2" value="00">
           <input type="text" aria-label="3" id="Aufstellungsort3" class="form-control" maxlength="2" value="00">
           <input type="text" aria-label="4" id="Aufstellungsort4" class="form-control" maxlength="2" value="00">
@@ -116,45 +106,13 @@ function formularKennzeichnung (route) {
             <option value="C">Draht</option>
           </select>
           <span class="input-group-text">Anzahl</span>
-              <input type="text" aria-label="2" class="form-control" id="Anzahl" maxlength="4" value="0000">
+          <input type="text" aria-label="2" class="form-control" id="Anzahl" maxlength="4" value="0000">
         </div>
         <div>
           <input class="btn btn-info" type="submit" value="übernehmen"></button>
         </div>
-        </div>
-      </form>
-      </div>
-      </div>
-      </div>
-      `
-    document.body.appendChild(kenn)
-  } else {
-    let tmp = document.getElementById('kennzeichnung')
-    tmp.innerHTML = ''
-    document.body.replaceChild(kenn, tmp)
-  }
-
-  // Werte auslesen über button-click
-  const button = document.querySelector('input[type="submit"]')
-
-  button.addEventListener('click', event => {
-    let Kennzeichnung = {
-      Anlage: ` = ${Anlage1.value}${Anlage2.value}${Anlage3.value}-${Anlage4.value}${Anlage5.value}`,
-      Ort: ` + ${Aufstellungsort1.value}${Aufstellungsort2.value}${Aufstellungsort3.value}${Aufstellungsort4.value}${Aufstellungsort5.value}-${Einbauort1.value}${Einbauort2.value}${Einbauort3.value}${Einbauort4.value}`,
-      Art: ` - ${Art.value}`,
-      Zählnummer: `${zaehlnummer.value}`,
-      Funktion: `${Funktion.value}`,
-      Anschlussart: ` : ${AnschlussArt.value}`,
-      Anzahl: `${Anzahl.value}`
-    }
-
-    const d1 = document.querySelector('div[id="ke"]')
-
-    d1.innerHTML = `
-      ${Kennzeichnung.Anlage}${Kennzeichnung.Ort}${Kennzeichnung.Art}${Kennzeichnung.Zählnummer}${Kennzeichnung.Funktion}${Kennzeichnung.Anschlussart}${Kennzeichnung.Anzahl}
-      `
-    // Weitere Verarbeitung ausschalten
-    event.preventDefault()
-  })
-}
-export { formularKennzeichnung }
+    </div>
+    </form>
+  </div>
+</div>
+</div>
