@@ -6,34 +6,21 @@ const router = express.Router()
 const { routerGet } = require(path.resolve('src/js/routerGet.js'))
 const { erouter } = require(path.resolve('src/js/erouter.js'))
 
-const eB = path.resolve('src/example/Bauelemente')
-const vB = 'pages/Bauelemente'
-const lB = 'layouts/Bauelemente'
+const R3 = require(path.resolve('include/routenBauelemente'))
 
 /** SECTION Bauelemente */
 router.get('/', function (req, res) {
-  res.render(vB, {
-    layout: `${lB}/layout.ejs`
+  res.render(R3.p3, {
+    layout: `${R3.l3}/layout.ejs`
   })
 })
 
 /**SECTION Platten */
-{
-  const str = '/Platten'
-  routerGet(router, str.toLowerCase(), vB, lB, str)
-}
-
+routerGet(router, R3.r.toLowerCase(), R3.p3, R3.l3, R3.r3_1)
 /** SECTION Platten Glasplatten */
-{
-  const str1 = '/Platten/Glasplatten'
-  routerGet(router, str1.toLowerCase(), vB, lB, str1)
-
-  /** NOTE Übung 1.4 */
-  {
-    const str2 = '/Uebung14'
-    erouter(router, vB, lB, eB, str1, str2)
-  }
-}
+routerGet(router, R3.BE1_1.toLowerCase(), R3.p3, R3.l3, R3.r3_1_1)
+/** NOTE Übung 1.4 */
+erouter(router, R3.p3, R3.l3, R3.e3_1_1, R3.r3_1_1, R3.U14)
 /** !SECTION Glasplatten */
 /**!SECTION Platten */
 

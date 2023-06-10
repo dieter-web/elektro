@@ -13,9 +13,10 @@
 </div>
 
 <script type="module">
-    const sel=d3.select( '#ergebnis' ).select( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
-    Material.value=sel[ 1 ];
-    l.value=sel[ 2 ];
-    b.value=sel[ 3 ];
-    d.value=sel[ 4 ];
+
+    const sel=d3.select( 'table#ergebnis' ).selectAll( 'tr' ).selectAll( 'td' )._parents[ 2 ].innerText.split( '\t' )
+    Material.value=sel[ 0 ];
+    l.value=sel[ 1 ];
+    b.value=sel[ 2 ];
+    d.value=sel[ 3 ];
 </script>

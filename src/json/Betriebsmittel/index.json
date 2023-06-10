@@ -1,14 +1,21 @@
 [
   {
     "id": 1,
-    "href": "/betriebsmittel/widerstaende",
-    "name": "Widerstände",
-    "text": "Widerstände"
+    "href": "/betriebsmittel/baugruppen",
+    "name": "Baugruppen",
+    "text": "Baugruppen"
   },
+
   {
     "id": 2,
     "href": "/betriebsmittel/uebertragungswege",
     "name": "Übertragungswege",
     "text": "Antenne, Draht, Kabel, Leitung, Sammelschiene"
+  },
+  {
+    "id": 3,
+    "href": "/betriebsmittel/widerstaende",
+    "name": "Widerstände",
+    "text": "Widerstände"
   }
 ]
