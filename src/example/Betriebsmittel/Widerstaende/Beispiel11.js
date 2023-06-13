@@ -21,12 +21,12 @@ function Beispiel11 (input) {
   const IStack = new Stack()
   const GStack = new Stack()
 
-  let Rl = input.R.split(',')
+  // let Rl = input.R.split(',')
 
-  let R1 = new BEWiderstand({}, { Wert: Rl[0] }, {})
-  let R2 = new BEWiderstand({}, { Wert: Rl[1] }, {})
-  let R3 = new BEWiderstand({}, { Wert: Rl[2] }, {})
-  let R4 = new BEWiderstand({}, { Wert: Rl[3] }, {})
+  let R1 = new BEWiderstand({}, { Wert: input.R1 }, {})
+  let R2 = new BEWiderstand({}, { Wert: input.R2 }, {})
+  let R3 = new BEWiderstand({}, { Wert: input.R3 }, {})
+  let R4 = new BEWiderstand({}, { Wert: input.R4 }, {})
   let RBEA = [R1, R2, R3, R4]
 
   const EK = new ElektroKernel()
@@ -58,8 +58,11 @@ function Beispiel11 (input) {
 }
 
 // let input = {
-//     "R": "2.5 Mohm, 80 kohm, 500 ohm, 75 ohm",
-//     "U": "60 V"
+//   R1: '2.5 Mohm',
+//   R2: '80 kohm',
+//   R3: '500 ohm',
+//   R4: '75 ohm',
+//   U: '60 V'
 // }
 // console.log(Beispiel11(input))
 exports.func = Beispiel11

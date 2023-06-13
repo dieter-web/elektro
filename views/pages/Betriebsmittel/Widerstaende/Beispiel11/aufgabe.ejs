@@ -6,41 +6,47 @@
             </div>
         </div>
         <div class="col">
-            <div class="bg-secondary">
+            <div>
                 <form id="beispiel11" action="/betriebsmittel/widerstaende/beispiel11/aufgabe" method="POST"></form>
             </div>
         </div>
     </div>
 </div>
+<!-- TODO: Abstand halten aber wie ?? (anders Layout wählen ?) -->
 <script type="module">
     import {finput} from '/modules/finput.mjs'
     import {fsubmit} from '/modules/fsubmit.mjs'
-    
-    const data_submit=[ 0 ]
+
+    const data_submit=[ 0 ] // 1 Button 
     const data=[
         {
-            id: 0,
-            text: "R1",
+            id: 'R1',
+            text: "Widerstand R1",
+            name: "R1",
             value: "2.5Mohm"
         },
         {
-            id: 1,
-            text: "R2",
+            id: 'R2',
+            text: "Widerstand R2",
+            name: "R2",
             value: "80kohm"
         },
         {
-            id: 2,
-            text: "R3",
+            id: 'R3',
+            text: "Widerstand R3",
+            name: "R3",
             value: "500ohm"
         },
         {
-            id: 3,
-            text: "R3",
+            id: 'R4',
+            text: "Widerstand R4",
+            name: "R4",
             value: "75ohm"
         },
         {
             id: "U",
-            text: "U ",
+            text: "Spannung U",
+            name: "U",
             value: "60V"
         }
     ]

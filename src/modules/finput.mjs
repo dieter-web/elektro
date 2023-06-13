@@ -5,9 +5,9 @@ function finput (data) {
     .data(data)
     .enter()
     .append('div')
-    .attr('class', 'input-group input-group-sm')
+    .attr('class', 'input-group')
     .append('div')
-    .attr('class', 'input-group-sm')
+    .attr('class', 'input-group')
     .append('span')
     .attr('class', 'input-group-text')
     .attr('id', 'basic-addon1')
@@ -32,5 +32,4 @@ function finput (data) {
       return data.value
     })
 }
-
 export { finput }
