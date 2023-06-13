@@ -1,17 +1,18 @@
-<%- include ('../partials/head.ejs', {}) %>
+<%- include ('../../partials/head.ejs', {}) %>
 
 <body>
-    <%- include('../partials/navbarTemplate', {}) %>
+    <%- include('../../partials/navbarTemplate', {}) %>
     <script type="module">
         import {mainNavbar} from "/modules/mainNavbar.js"
         let menu=[
             {"name": "elektro","link": "/","class": "nav-link"},
             {"name": "Betriebsmittel","link": "/betriebsmittel","class": "nav-link"},
+            {"name": "Baugruppen","link": "/betriebsmittel/baugruppen","class": "nav-link"},
         ]
         mainNavbar( menu );
     </script>
     <main>
         <%- body %>
     </main>
-    <%#- include('./../partials/footer',{}) %>
+    <%#- include('../../partials/footer',{}) %>
 </body>

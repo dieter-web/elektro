@@ -1,0 +1,24 @@
+<%- include('aufgabe.ejs',{}) %>
+<div class="container text-left">
+    <div class="row">
+        <div class="col">
+            <div class="bg-secondary">
+                <%- include('table.ejs',{}) %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="module">
+
+    let sel=d3.select( 'tbody' ).selectAll( 'tr' )._groups[ 0 ];
+
+    // let R1=sel[ 0 ].innerText.split( '\t' )[ 0 ];
+    // let R2=sel[ 1 ].innerText.split( '\t' )[ 0 ];
+    // let R3=sel[ 2 ].innerText.split( '\t' )[ 0 ];
+    // let R4=sel[ 3 ].innerText.split( '\t' )[ 0 ];
+
+    // R.value=[ R1,R2,R3,R4 ];
+    // U.value=sel[ 0 ].innerText.split( '\t' )[ 1 ];
+
+</script>

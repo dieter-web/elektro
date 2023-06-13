@@ -18,7 +18,8 @@ router.get('/', function (req, res) {
 /** SECTION Elektrotechnik Gleichspannung */
 routerGet(router, R1.r1.toLowerCase(), R1.p1, R1.l1, R1.r1)
 
-/** SECTION Gleichspannung Grundbegriffe */
+
+/** SECTION Elektrotechnik Gleichspannung Grundbegriffe */
 routerGet(router, R1.r1_1.toLowerCase(), R1.p1, R1.l1, R1.r1_1)
 
 /** SECTION Gleichspannung Grundbegriffe Temperaturkoeffizient */

@@ -1,0 +1,65 @@
+<form id="uebung111" action="/betriebsmittel/baugruppen/zweipole/passiverzweipol/uebung111/aufgabe" method="POST">
+    <!-- <%#- include("../../../../../../../layouts/partials/finput.ejs", {
+        text: "Widerstand",id: "R1",name: "R1",value: "5.2ohm"}) %>
+
+    <%#- include("../../../../../../../layouts/partials/finput.ejs", {
+        text: "Widerstand",id: "R2",name: "R2",value: "6.9ohm"}) %>
+
+    <%#- include("../../../../../../../layouts/partials/finput.ejs", {
+        text: "Widerstand",id: "R3",name: "R3",value: "3.4ohm"}) %>
+
+    <%#- include("../../../../../../../layouts/partials/finput.ejs", {
+        text: "Bezugsspannung",id: "Up",name: "Up",value: "0V"}) %>
+
+    <%#- include('../../../../../../../layouts/partials/finput.ejs', {
+        text: "Strom",id: "I",name: "I",value: '2A'}) %>
+
+    <%#- include('../../../../../../../layouts/partials/fsubmit.ejs') %> -->
+
+</form>
+<script>
+    function fsubmit ( formid )
+    {
+        let form=d3.select( formid )
+            .append( 'div' )
+            .attr( "class","form-group row" )
+            .append( 'div' )
+            .attr( "class","col-sm-10" )
+            .append( "button" )
+            .attr( "class","btn btn-success" )
+            .attr( "type","submit" )
+            .text( "Rechnen" )
+    }
+
+    function texteingabe ( formid,id,text,name,value )
+    {
+        let form=d3.select( formid )
+            .append( 'div' )
+            .attr( "class","input-group input-group-sm" )
+            .append( 'div' )
+            .attr( "class","input-group-sm" )
+            .append( 'span' )
+            .attr( "class","input-group-text" )
+            .attr( "id","basic-addon1" )
+            .text( `${ text }` )
+            .append( 'input' )
+            .attr( "type","text" )
+            .attr( "aria-label","1" )
+            .attr( "class","form-control" )
+            .attr( "placeholder","Wert eingeben" )
+            .attr( "aria-label","Wert eingeben" )
+            .attr( "aria-roledescription","basic-addon1" )
+            .attr( "aria-required","true" )
+            .attr( "id",`${ id }` )
+            .attr( "name",`${ name }` )
+            .attr( "value",`${ value }` )
+    }
+
+    texteingabe( "uebung111","R1","Widerstand","R1","5.2ohm" )
+    texteingabe( "uebung111","R2","Widerstand","R2","6.9ohm" )
+    texteingabe( "uebung111","R3","Widerstand","R3","3.4ohm" )
+    texteingabe( "uebung111","Up","Bezugsspannung","Up","0V" )
+    texteingabe( "uebung111","I","Stromstärke","I","2A" )
+    fsubmit();
+
+</script>

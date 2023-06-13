@@ -1,6 +1,3 @@
-<h4>
-    <%= locals.text %>
-</h4>
 <div class="container text-left">
     <div class="row">
         <div class="col">
@@ -10,8 +7,43 @@
         </div>
         <div class="col">
             <div class="bg-secondary">
-                <%- include('form.ejs',{}) %>
+                <form id="beispiel11" action="/betriebsmittel/widerstaende/beispiel11/aufgabe" method="POST"></form>
             </div>
         </div>
     </div>
 </div>
+<script type="module">
+    import {finput} from '/modules/finput.mjs'
+    import {fsubmit} from '/modules/fsubmit.mjs'
+    
+    const data_submit=[ 0 ]
+    const data=[
+        {
+            id: 0,
+            text: "R1",
+            value: "2.5Mohm"
+        },
+        {
+            id: 1,
+            text: "R2",
+            value: "80kohm"
+        },
+        {
+            id: 2,
+            text: "R3",
+            value: "500ohm"
+        },
+        {
+            id: 3,
+            text: "R3",
+            value: "75ohm"
+        },
+        {
+            id: "U",
+            text: "U ",
+            value: "60V"
+        }
+    ]
+    finput( data )
+    fsubmit( data_submit )
+</script>

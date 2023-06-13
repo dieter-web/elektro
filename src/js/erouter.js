@@ -8,27 +8,36 @@ const bodyParser = require('body-parser')
 const multer = require('multer')
 const upload = multer()
 
-function erouter (router, vR, lR, eR, str1, str2) {
-  const str3 = '/aufgabe'
-  const str4 = '/layout.ejs'
-  const str5 = '/ergebnis'
+/**
+ *
+ * @param {*} router
+ * @param {*} p Page
+ * @param {*} l Layout
+ * @param {*} e Example
+ * @param {*} route locale Route
+ * @param {*} example Beispiel | Aufgabe | Übung
+ */
+function erouter (router, p, l, e, route, example) {
+  const aufgabe = '/aufgabe'
+  const layout = '/layout.ejs'
+  const ergebnis = '/ergebnis'
 
   router
     .use(bodyParser.json())
     .use(bodyParser.urlencoded({ extended: true }))
-    .route(`${str1}${str2}${str3}`.toLowerCase(), upload.array())
+    .route(`${route}${example}${aufgabe}`.toLowerCase(), upload.array())
     .get((req, res) => {
-      res.render(`${vR}${str1}${str2}${str3}`, {
-        layout: `${lR}${str1}${str4}`
+      res.render(`${p}${route}${example}${aufgabe}`, {
+        layout: `${l}${route}${layout}`
       })
     })
     .post(
       body().isJSON(), // Validierung
       (req, res) => {
-        const { func } = require(`${eR}${str1}${str2}`)
+        const { func } = require(`${e}${route}${example}`)
         res.locals.Aerg = func(req.body)
-        res.render(`${vR}${str1}${str2}${str5}`, {
-          layout: `${lR}${str1}${str4}`
+        res.render(`${p}${route}${example}${ergebnis}`, {
+          layout: `${l}${route}${layout}`
         })
       }
     )
