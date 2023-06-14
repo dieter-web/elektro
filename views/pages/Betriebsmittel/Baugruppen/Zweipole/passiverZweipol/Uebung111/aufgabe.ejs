@@ -1,12 +1,7 @@
-<h4>
-    <%= locals.text %>
-</h4>
 <div class="container text-left">
     <div class="row">
         <div class="col">
-            <div class="bg-secondary">
-                <%- include('text.ejs',{}) %>
-            </div>
+            <div id="text" class="bg-secondary"></div>
         </div>
         <div class="col">
             <div class="bg-secondary">
@@ -15,3 +10,35 @@
         </div>
     </div>
 </div>
+<script type="module">
+    import {finput} from '/modules/finput.mjs'
+    import {fsubmit} from '/modules/fsubmit.mjs'
+    import {ftext} from '/modules/ftext.mjs'
+
+    const idBeispiel="#uebung111"
+    const idText="#text"
+
+    const dataSubmit=[ "Rechnen" ]
+    const dataText=[
+        {
+            title: "Übung 1.11",
+            subtitle: "Grundbegriffe Elektrischer Widerstand",
+            text: `Die Widerstände der Schaltung nach Bild 1.27 haben folgende Werte: R1 = 5.2 ohm; R2 = 6.9 ohm; R3 = 3.4 ohm. Der Strom I ist 2 A groß. Das Potential Φc des Punktes C ist gleich Null. Wie groß sind die Potentiale an den Punkten A, B und D ?`
+        }
+
+    ]
+
+    const dataForm=[
+        {id: 'R1',text: 'Widerstand R1',name: 'R1',value: '5.2ohm'},
+        {id: 'R2',text: 'Widerstand R2',name: 'R2',value: '6.9ohm'},
+        {id: 'R3',text: 'Widerstand R3',name: 'R3',value: '3.4ohm'},
+        {id: 'Up',text: 'Bezugsspannung',name: 'Up',value: '0V'},
+        {id: 'I',text: 'Stromstärke',name: 'I',value: '2A'}
+
+    ]
+
+    ftext( dataText,idText )
+    finput( dataForm,idBeispiel )
+    fsubmit( dataSubmit,idBeispiel )
+
+</script>

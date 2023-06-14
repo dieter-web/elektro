@@ -1,6 +1,6 @@
-function finput (data) {
+function finput (data, id) {
   let f = d3
-    .select('#beispiel11')
+    .select(id)
     .selectAll('div')
     .data(data)
     .enter()

@@ -1,6 +1,6 @@
-function fsubmit (data) {
+function fsubmit (data, beispiel) {
   let f = d3
-    .select('#beispiel11')
+    .select(beispiel)
     .selectAll('button')
     .data(data)
     .enter()
@@ -11,7 +11,9 @@ function fsubmit (data) {
     .append('button')
     .attr('type', 'submit')
     .attr('class', 'btn btn-success')
-    .text('Rechnen')
+    .text(d => {
+      return d
+    })
 }
 
 export { fsubmit }

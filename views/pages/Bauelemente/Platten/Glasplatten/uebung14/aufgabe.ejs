@@ -1,17 +1,40 @@
-<h4>
-    <%= locals.text %>
-</h4>
 <div class="container text-left">
     <div class="row">
         <div class="col">
-            <div class="bg-secondary">
-                <%- include('text.ejs', { }) %>
-            </div>
+            <div id="text" class="bg-secondary"></div>
         </div>
         <div class="col">
-            <div class="bg-secondary">
-                <%- include('form.ejs', { }) %>
-            </div>
+            <form id="uebung14" action="/bauelemente/platten/glasplatten/uebung14/aufgabe" method="POST">
+            </form>
         </div>
     </div>
 </div>
+<script type="module">
+    import {finput} from '/modules/finput.mjs'
+    import {fsubmit} from '/modules/fsubmit.mjs'
+    import {ftext} from '/modules/ftext.mjs'
+
+    const idBeispiel="#uebung14"
+    const idText="#text"
+
+    const dataSubmit=[ "Rechnen" ]
+
+    const dataText=[
+        {
+            title: "Übung 1.4",
+            subtitle: "Bauelemente/Platten",
+            text: `Zwischen zwei Metallplatten mit einer Fläche von je 0.8 m x 1.25 m befindet sich eine 1 mm dicke, gleichgroße Glasplatte. Wie groß ist der Widerstand zwischen den Metallplatten ? (roh_glas = 10^12 ohm cm)`
+        }
+    ]
+
+    const dataForm=[
+        {id: 'Material',text: 'Material',name: 'Material',value: 'Aluminium'},
+        {id: 'l',text: 'Länge',name: 'l',value: '0.8m'},
+        {id: 'b',text: 'Breite',name: 'b',value: '1.25m'},
+        {id: 'd',text: 'Dicke',name: 'd',value: '1mm'},
+    ]
+
+    ftext( dataText,idText )
+    finput( dataForm,idBeispiel )
+    fsubmit( dataSubmit,idBeispiel )
+</script>

@@ -27,6 +27,9 @@
           "-webkit-overflow-scrolling"
         ]
       }
-    ]
+    ],
+    "content-type": [ "error", {
+        ".*\\.js": "application/javascript; charset=utf-8"
+      } ]
   }
 }

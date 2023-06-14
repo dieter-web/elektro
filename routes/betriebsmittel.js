@@ -15,13 +15,13 @@ router.get('/', function (req, res) {
   })
 })
 
-/** SECTION Betriebsmittel Baugruppen */
+/** SECTION  Baugruppen */
 routerGet(router, R2.r2_1.toLowerCase(), R2.p2, R2.l2, R2.r2_1)
 
-/** SECTION Zweipole */
+/** SECTION Baugruppen Zweipole */
 routerGet(router, R2.r2_1_1.toLowerCase(), R2.p2, R2.l2, R2.r2_1_1)
 
-/** SECTION passive Zweipole */
+/** SECTION Baugruppen Zweipole passiver Zweipol */
 routerGet(router, R2.r2_1_1_1.toLowerCase(), R2.p2, R2.l2, R2.r2_1_1_1)
 
 

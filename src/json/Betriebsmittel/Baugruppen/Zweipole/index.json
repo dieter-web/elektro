@@ -1,7 +1,13 @@
 [
     {
         "id": 1,
-        "href": "/betriebsmittel/baugruppen/zweipole/passiverzweipole",
+        "href": "/betriebsmittel/baugruppen/zweipole/aktiverzweipol",
+        "name": "aktiverZweipol",
+        "text": "aktiver Zweipol"
+    },
+    {
+        "id": 2,
+        "href": "/betriebsmittel/baugruppen/zweipole/passiverzweipol",
         "name": "passiverZweipol",
         "text": "passiver Zweipol"
     }
