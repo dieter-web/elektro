@@ -1,8 +1,15 @@
-<%- include('../../../layouts/partials/e1CardTemplate',{}) %>
 <div id="e1"></div>
 
 <script type="module">
-    import {showCards} from '/modules/showCards.js';
-    showCards( "/json/Elektrotechnik/Gleichspannung/index.json",
-        "e1-card-template","e1" );
+    import {showCards} from '/modules/showCards.mjs'
+    const id="#e1"
+    const data=[
+        {
+            "id": 1,
+            "href": "/elektrotechnik/gleichspannung/grundbegriffe",
+            "name": "Grundbegriffe",
+            "text": "Grundbegriffe"
+        }
+    ]
+    showCards( data,id )
 </script>

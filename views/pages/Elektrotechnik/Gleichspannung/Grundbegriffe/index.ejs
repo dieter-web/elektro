@@ -1,7 +1,27 @@
-<%- include('../../../../layouts/partials/e1CardTemplate',{}) %>
 <div id="e1"></div>
 
 <script type="module">
-    import {showCards} from '/modules/showCards.js';
-    showCards( "/json/Elektrotechnik/Gleichspannung/Grundbegriffe/index.json","e1-card-template","e1" );
+    import {showCards} from '/modules/showCards.mjs';
+    const id="#e1"
+    const data=[
+        {
+            "id": 1,
+            "href": "/elektrotechnik/gleichspannung/grundbegriffe/temperaturkoeffizient",
+            "name": "Temperaturkoeffizient",
+            "text": "Berechnungen Temperaturkoeffizient"
+        },
+        {
+            "id": 2,
+            "href": "/elektrotechnik/gleichspannung/grundbegriffe/spannung",
+            "name": "Spannung",
+            "text": "Berechnungen Spannung"
+        },
+        {
+            "id": 3,
+            "href": "/elektrotechnik/gleichspannung/grundbegriffe/spezifischerwiderstand",
+            "name": "Spezifischer Widerstand",
+            "text": "Bemessungsgleichungen des elektrischen Widerstands"
+        }
+    ]
+    showCards( data,id )
 </script>
