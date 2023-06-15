@@ -1,7 +1,16 @@
-<%- include('../../layouts/partials/e1CardTemplate',{}) %>
 <div id="e1"></div>
 
 <script type="module">
-    import {showCards} from '/modules/showCards.js';
-    showCards( "/json/Bauelemente/bauelemente.json","e1-card-template","e1" );
+    import {showCards} from '/modules/showCards.mjs';
+    const id="#e1"
+    const data=[
+        {
+            "id": 1,
+            "href": "/bauelemente/platten",
+            "name": "Platten",
+            "text": "Platten aller Art"
+        }
+    ]
+    showCards( data,id )
+
 </script>

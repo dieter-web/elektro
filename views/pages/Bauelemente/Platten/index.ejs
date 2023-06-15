@@ -1,9 +1,21 @@
-<%- include('../../../layouts/partials/e1CardTemplate',{}) %>
 <div id="e1"></div>
 
-
 <script type="module">
-    import {showCards} from '/modules/showCards.js';
-    showCards( "/json/Bauelemente/Platten/platten.json",
-        "e1-card-template","e1" );
+    import {showCards} from '/modules/showCards.mjs';
+    const id="#e1"
+    const data=[
+        {
+            "id": 1,
+            "href": "/bauelemente/platten/glasplatten",
+            "name": "Glasplatten",
+            "text": "Glasplatten aller Art"
+        },
+        {
+            "id": 2,
+            "href": "/bauelemente/platten/metallplatten",
+            "name": "Metallplatten",
+            "text": "Metallplatten aller Art"
+        }
+    ]
+    showCards( data,id )
 </script>

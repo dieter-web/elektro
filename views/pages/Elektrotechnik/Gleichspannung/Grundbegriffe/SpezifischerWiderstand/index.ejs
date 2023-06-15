@@ -1,7 +1,15 @@
-<%- include('../../../../../layouts/partials/e1CardTemplate',{}) %>
 <div id="e1"></div>
 
 <script type="module">
-    import {showCards} from '/modules/showCards.js';
-    showCards( "/json/Elektrotechnik/Gleichspannung/Grundbegriffe/SpezifischerWiderstand/index.json","e1-card-template","e1" );
+    import {showCards} from '/modules/showCards.mjs';
+    const id="#e1"
+    const data=[
+        {
+            "id": 1,
+            "href": "/elektrotechnik/gleichspannung/grundbegriffe/spezifischerwiderstand/beispiel12/aufgabe",
+            "name": "Beispiel 1.2",
+            "text": "Wie groß ist der spezifische Widerstand eines 3 km langen Drahtes mit 0.9 mm Durchmesser, der einen Widerstand von 84.5 ohm hat?"
+        }
+    ]
+    showCards( data,id )
 </script>

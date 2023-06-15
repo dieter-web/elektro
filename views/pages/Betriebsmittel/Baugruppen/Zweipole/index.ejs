@@ -1,7 +1,21 @@
-<%- include('../../../../layouts/partials/e1CardTemplate',{}) %>
 <div id="e1"></div>
 
 <script type="module">
-    import {showCards} from '/modules/showCards.js';
-    showCards( "/json/Betriebsmittel/Baugruppen/Zweipole/index.json","e1-card-template","e1" );
+    import {showCards} from '/modules/showCards.mjs';
+    const id="#e1"
+    const data=[
+        {
+            "id": 1,
+            "href": "/betriebsmittel/baugruppen/zweipole/aktiverzweipol",
+            "name": "aktiverZweipol",
+            "text": "aktiver Zweipol"
+        },
+        {
+            "id": 2,
+            "href": "/betriebsmittel/baugruppen/zweipole/passiverzweipol",
+            "name": "passiverZweipol",
+            "text": "passiver Zweipol"
+        }
+    ]
+    showCards( data,id )
 </script>

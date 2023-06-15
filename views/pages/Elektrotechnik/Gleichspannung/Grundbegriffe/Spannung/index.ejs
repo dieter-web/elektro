@@ -1,7 +1,15 @@
-<%- include('../../../../../layouts/partials/e1CardTemplate',{}) %>
 <div id="e1"></div>
 
 <script type="module">
-    import {showCards} from '/modules/showCards.js';
-    showCards( "/json/Elektrotechnik/Gleichspannung/Grundbegriffe/Spannung/index.json","e1-card-template","e1" );
+    import {showCards} from '/modules/showCards.mjs';
+    const id="#e1"
+    const data=[
+        {
+            "id": 1,
+            "href": "/elektrotechnik/gleichspannung/grundbegriffe/spannung/aufgabe11/aufgabe",
+            "name": "Aufgabe11",
+            "text": "Wie groß ist die Spannung, die an einem Widerstand liegt, dessen Leitwert 3E-2 S beträgt und der von einem Strom der Stärke 600 mA durchflossen wird?"
+        }
+    ]
+    showCards( data,id )
 </script>

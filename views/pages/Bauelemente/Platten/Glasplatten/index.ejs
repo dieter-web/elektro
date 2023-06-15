@@ -1,7 +1,15 @@
-<%- include('../../../../layouts/partials/e1CardTemplate',{}) %>
 <div id="e1"></div>
 
 <script type="module">
-    import {showCards} from '/modules/showCards.js';
-    showCards( "/json/Bauelemente/Platten/Glasplatten/glasplatten.json","e1-card-template","e1" );
+    import {showCards} from '/modules/showCards.mjs';
+    const id="#e1"
+    const data=[
+        {
+            "id": 1,
+            "href": "/bauelemente/platten/glasplatten/uebung14/aufgabe",
+            "name": "Übung 14",
+            "text": "Zwischen zwei Metallplatten mit einer Fläche von je 0.8m x 1.25m befindet sich eine 1 mm dicke, gleichgroße Glasplatte. Wie groß ist der Widerstand zwischen den Metallplatten ?"
+        }
+    ]
+    showCards( data,id )
 </script>

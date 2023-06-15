@@ -1,7 +1,22 @@
-<%- include('../../../../../layouts/partials/e1CardTemplate',{}) %>
 <div id="e1"></div>
 
 <script type="module">
-    import {showCards} from '/modules/showCards.js';
-    showCards( "/json/Elektrotechnik/Gleichspannung/Grundbegriffe/Temperaturkoeffizient/index.json","e1-card-template","e1" );
+    import {showCards} from '/modules/showCards.mjs';
+    const id="#e1"
+    const data=[
+        {
+            "id": 1,
+            "href": "/elektrotechnik/gleichspannung/grundbegriffe/temperaturkoeffizient/aufgabe16/aufgabe",
+            "name": "Aufgabe1.6",
+            "text": "Wie groß ist die Temperaturkonstante δ0 für Gold-Chrom"
+        },
+        {
+            "id": 2,
+            "href": "/elektrotechnik/gleichspannung/grundbegriffe/temperaturkoeffizient/uebung19/aufgabe",
+            "name": "Übung 1.9",
+            "text": "Ein temperaturabhängiger Widerstand hat bei 20°C einen Gleichstromwiderstand von 40 kohm. Wie groß ist der Temperaturkoeffizient, wenn bei 25.5°C der Widerstand 41 kohm beträgt"
+        }
+    ]
+    showCards( data,id )
+
 </script>

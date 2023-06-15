@@ -1,8 +1,0 @@
-[
-  {
-    "id": 1,
-    "href": "/betriebsmittel/widerstaende/beispiel11/aufgabe",
-    "name": "Beispiel 1.1",
-    "text": "An den Klemmen der Widerstände\nR1...R4 liegt eine Spannung von U = 60 V.\nR0 = 2.5 Mohm, R1  80 kohm, R2 = 500 ohm, R3 = 75 ohm\n Wie groß sind die Ströme durch diese Widerstände ? Wie groß sind die Leitwerte ?"
-  }
-]

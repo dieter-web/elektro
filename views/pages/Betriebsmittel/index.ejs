@@ -1,8 +1,28 @@
-<%- include('../../layouts/partials/e1CardTemplate',{}) %>
 <div id="e1"></div>
 
 <script type="module">
-    import {showCards} from '/modules/showCards.js';
-    showCards( "/json/Betriebsmittel/index.json",
-        "e1-card-template","e1" );
+    import {showCards} from '/modules/showCards.mjs';
+    const id="#e1"
+    const data=[
+        {
+            "id": 1,
+            "href": "/betriebsmittel/baugruppen",
+            "name": "Baugruppen",
+            "text": "Baugruppen"
+        },
+
+        {
+            "id": 2,
+            "href": "/betriebsmittel/uebertragungswege",
+            "name": "Übertragungswege",
+            "text": "Antenne, Draht, Kabel, Leitung, Sammelschiene"
+        },
+        {
+            "id": 3,
+            "href": "/betriebsmittel/widerstaende",
+            "name": "Widerstände",
+            "text": "Widerstände"
+        }
+    ]
+    showCards( data,id )
 </script>
