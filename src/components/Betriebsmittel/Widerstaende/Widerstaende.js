@@ -5,7 +5,7 @@ const { Betriebsmittel } = require(path.resolve(
   'src/components/Betriebsmittel/Betriebsmittel.js'
 ))
 
-class BEWiderstand extends Betriebsmittel {
+class Widerstaende extends Betriebsmittel {
   constructor (Kennzeichnung, Parameter, Visual) {
     super(Kennzeichnung)
     this.Parameter = Parameter
@@ -18,4 +18,4 @@ class BEWiderstand extends Betriebsmittel {
 //   return [x, y]
 // }
 
-exports.BEWiderstand = BEWiderstand
+exports.Widerstaende = Widerstaende

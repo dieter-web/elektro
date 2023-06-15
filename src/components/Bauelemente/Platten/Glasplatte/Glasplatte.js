@@ -1,11 +1,11 @@
 require('use-strict')
 const path = require('path')
 
-const { Bauelemente } = require(path.resolve(
-  'src/components/Bauelemente/Bauelemente.js'
+const { Platten } = require(path.resolve(
+  'src/components/Bauelemente/Platten/Platten.js'
 ))
 
-class BEGlasplatte extends Bauelemente {
+class BEGlasplatte extends Platten {
   constructor (kennzeichnung, parameter, views) {
     super(kennzeichnung)
     this.Parameter = parameter
