@@ -1,12 +1,15 @@
 {
-  "name": "platten",
+  "name": "modules",
   "version": "1.0.0",
   "description": "",
-  "directories": {
-    "Glasplatte": "Glasplatte"
-  },
   "files": [
-    "Platten.js"
+    "finput.mjs",
+    "fsubmit.mjs",
+    "ftext.mjs",
+    "kennzeichnungUpdate.mjs",
+    "mainNavbar.js",
+    "showCards_old.js",
+    "showCards.mjs"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

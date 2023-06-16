@@ -2,10 +2,16 @@
   "name": "example",
   "version": "1.0.0",
   "description": "",
-  "directories": {
-    "Bauelemente": "Bauelemente",
-    "Betriebsmittel": "Betriebsmittel"
-  },
+  "files": [
+    "Aufgabe11.js",
+    "Aufgabe16.js",
+    "Beispiel11.js",
+    "Beispiel12.js",
+    "Beispiel14.js",
+    "Uebung14.js",
+    "Uebung19.js",
+    "Uebung111.js"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

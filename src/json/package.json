@@ -1,13 +1,14 @@
 {
-  "name": "platten",
+  "name": "json",
   "version": "1.0.0",
   "description": "",
-  "directories": {
-    "Glasplatte": "Glasplatte"
-  },
   "files": [
-    "Platten.js"
+    "konstanten.json",
+    "Tafel11.json"
   ],
+  "directories": {
+    "example": "example"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -5,6 +5,9 @@
   "main": "app.js",
   "directories": {
     "controllers": "controllers",
+    "hint-report": "hint-report",
+    "include": "include",
+    "lib": "lib",
     "middleware": "middleware",
     "node_modules": "node_modules",
     "public": "public",

@@ -5,7 +5,8 @@
   "files": [
     "bauelemente.js",
     "betriebsmittel.js",
-    "elektrotechnik.js"
+    "elektrotechnik.js",
+    "formulare.js"
   ],
   "keywords": [ ],
   "author": "dieterkrause31960@gmail.com",

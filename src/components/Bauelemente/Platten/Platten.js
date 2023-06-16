@@ -7,6 +7,7 @@ const Bauelemente = require(path.resolve(
 
 class Platten extends Bauelemente {
   constructor (Kennzeichnung) {
+    super(Kennzeichnung)
     this.Kennzeichnung = Kennzeichnung
   }
 }

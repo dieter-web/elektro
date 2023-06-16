@@ -1,12 +1,13 @@
 {
-  "name": "platten",
+  "name": "js",
   "version": "1.0.0",
   "description": "",
-  "directories": {
-    "Glasplatte": "Glasplatte"
-  },
   "files": [
-    "Platten.js"
+    "erouter.js",
+    "frouter.js",
+    "routerGet.js",
+    "routerPost.js",
+    "run.js"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

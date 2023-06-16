@@ -4,6 +4,8 @@
   "description": "",
   "directories": {
     "components": "components",
+    "csv": "csv",
+    "d3": "d3",
     "example": "example",
     "js": "js",
     "json": "json",
