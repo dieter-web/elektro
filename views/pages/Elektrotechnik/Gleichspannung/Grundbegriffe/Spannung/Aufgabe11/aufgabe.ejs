@@ -1,17 +1,36 @@
-<h4>
-    <%= locals.text %>
-</h4>
 <div class="container text-left">
     <div class="row">
         <div class="col">
-            <div class="bg-secondary">
-                <%- include('text.ejs',{}) %>
-            </div>
+            <div id="text" class="bg-secondary"></div>
         </div>
         <div class="col">
-            <div class="bg-secondary">
-                <%- include('form.ejs',{}) %>
-            </div>
+            <form id="aufgabe11" action="/elektrotechnik/gleichspannung/grundbegriffe/spannung/aufgabe11/aufgabe"
+                method="POST"></form>
         </div>
     </div>
 </div>
+<script type="module">
+    import {finput} from '/modules/finput.mjs'
+    import {fsubmit} from '/modules/fsubmit.mjs'
+    import {ftext} from '/modules/ftext.mjs'
+
+    const idBeispiel="#aufgabe11"
+    const idText="#text"
+    const dataSubmit=[ "Rechnen" ]
+    const dataText=[
+        {
+            title: "Aufgabe 1.1",
+            subtitle: "Widerstand und Leitwert",
+            text: `Wie groß ist die Spannung, die an einem Widerstand liegt, dessen Leitwert 3E-2 S beträgt und der von einem Strom der Stärke 600 mA durchflossen wird?`
+        }
+    ]
+    const dataForm=[
+        {id: 'G',text: "Leitwert",name: "G",value: "3E-2S"},
+        {id: 'I',text: "Stromstärke",name: "I",value: "600mA"},
+    ]
+
+    ftext( dataText,idText )
+    finput( dataForm,idBeispiel )
+    fsubmit( dataSubmit,idBeispiel )
+
+</script>

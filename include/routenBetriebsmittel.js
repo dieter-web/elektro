@@ -3,16 +3,7 @@ const path = require('path')
 
 // Betriebsmittel
 
-const e2 = path.resolve('src/example/Betriebsmittel')
-const e2_1 = `${e2}/Baugruppen`
-const e2_2 = `${e2}/Kondensatoren`
-const e2_3 = `${e2}/Uebertragungswege`
-const e2_3_1 = `${e2_3}/Antennen`
-const e2_3_2 = `${e2_3}/Draht`
-const e2_3_3 = `${e2_3}/Kabel`
-const e2_3_4 = `${e2_3}/Leitungen`
-const e2_3_5 = `${e2_3}/Sammelschiene`
-const e2_4 = `${e2}`
+const e = path.resolve('src/example')
 
 const p2 = 'pages/Betriebsmittel'
 const l2 = 'layouts/Betriebsmittel'
@@ -36,16 +27,8 @@ const r2_4 = '/Widerstaende'
 const b11 = '/Beispiel11'
 const b14 = '/Beispiel14'
 
-exports.e2 = e2
-exports.e2_1 = e2_1
-exports.e2_2 = e2_2
-exports.e2_3 = e2_3
-exports.e2_3_1 = e2_3_1
-exports.e2_3_2 = e2_3_2
-exports.e2_3_3 = e2_3_3
-exports.e2_3_4 = e2_3_4
-exports.e2_3_5 = e2_3_5
-exports.e2_4 = e2_4
+exports.e = e
+
 exports.p2 = p2
 exports.l2 = l2
 exports.r2 = r2

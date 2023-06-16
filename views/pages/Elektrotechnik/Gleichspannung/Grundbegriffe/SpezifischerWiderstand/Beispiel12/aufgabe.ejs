@@ -1,28 +1,54 @@
 <div class="container text-left">
-
   <div class="row ">
     <div class="col">
-      <div class="bg-secondary">
-        <%- include('text.ejs',{}) %>
-      </div>
+      <div id="text" class="bg-secondary"></div>
     </div>
 
     <div class="col">
-      <div class="bg-secondary">
-        <%- include('form.ejs',{}) %>
-      </div>
+      <form id="beispiel12"
+        action="/elektrotechnik/gleichspannung/grundbegriffe/spezifischerwiderstand/beispiel12/aufgabe" method="POST">
+      </form>
     </div>
+  </div>
+</div>
 
-    <div class="col">
+<script type="module">
+  import {finput} from '/modules/finput.mjs'
+  import {fsubmit} from '/modules/fsubmit.mjs'
+  import {ftext} from '/modules/ftext.mjs'
+
+  const idBeispiel="#beispiel12"
+  const idText="#text"
+  const dataSubmit=[ "Rechnen" ]
+  const dataText=[
+    {
+      title: "Beispiel 1.2",
+      subtitle: "Bemessungsgleichungen des elektrischen Widerstands",
+      text: `Wie groß ist der spezifische Widerstand eines 3 km langen Drahtes mit 0.9 mm Durchmesser, einen Widerstand von 84.5 ohm hat?`
+    }
+  ]
+  const dataForm=[
+    {id: 'l',text: "Länge",name: "l",value: "3km"},
+    {id: 'd',text: "Durchmesser",name: "d",value: "0.9mm"},
+    {id: 'R',text: "Widerstand",name: "R",value: "84.5ohm"},
+  ]
+
+  ftext( dataText,idText )
+  finput( dataForm,idBeispiel )
+  fsubmit( dataSubmit,idBeispiel )
+
+</script>
+
+<!-- <div class="col">
       <div class="bg-secondary">
         <form name="Kennzeichnung">
           <input type="checkbox" name="Kennzeichnung">Kennzeichnung eingeben ?
         </form>
       </div>
-    </div>
-  </div>
+    </div> -->
 
-  <!-- <div class="container text-left">
+
+<!-- <div class="container text-left">
     <div class="row">
       <div class="col">
         <div class="bg-secondary" id="ke">
@@ -32,9 +58,9 @@
     </div>
   </div> -->
 
-</div>
 
-<script type="module">
+
+<!-- <script type="module">
   // import {group,index} from 'd3-array'; hier nicht !!
   import {formularKennzeichnung} from "/modules/kennzeichnungUpdate.mjs";
 
@@ -68,4 +94,4 @@
     } )
   }
 
-</script>
+</script> -->

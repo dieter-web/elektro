@@ -1,17 +1,41 @@
-<h4>
-    <%= locals.text %>
-</h4>
 <div class="container px-4 text-left">
     <div class="row">
         <div class="col">
-            <div class="bg-secondary">
-                <%- include('text.ejs',{}) %>
-            </div>
+            <!-- <div class="bg-secondary">
+                <%#- include('text.ejs',{}) %>
+            </div> -->
+            <div id="text" class="bg-secondary"></div>
         </div>
         <div class="col">
-            <div class="bg-secondary">
-                <%- include('form.ejs',{}) %>
-            </div>
+            <form id="aufgabe16"
+                action="/elektrotechnik/gleichspannung/grundbegriffe/temperaturkoeffizient/aufgabe16/aufgabe"
+                method="POST"></form>
         </div>
     </div>
 </div>
+
+<script type="module">
+    import {finput} from '/modules/finput.mjs'
+    import {fsubmit} from '/modules/fsubmit.mjs'
+    import {ftext} from '/modules/ftext.mjs'
+
+    const idBeispiel="#aufgabe16"
+    const idText="#text"
+    const dataSubmit=[ "Rechnen" ]
+    const dataText=[
+        {
+            title: "Aufgabe 1.6",
+            subtitle: "Nichtlinearität durch systembedingten Stromwärmefluss",
+            text: `Wie groß ist die Temperaturkonstante theta0 für Gold-Chrom ?`
+        }
+    ]
+
+    const dataForm=[
+        {id: "Material",text: "Material",name: "Material",value: "GoldChrom"}
+    ]
+
+    ftext( dataText,idText )
+    finput( dataForm,idBeispiel )
+    fsubmit( dataSubmit,idBeispiel )
+
+</script>
