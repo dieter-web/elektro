@@ -27,9 +27,14 @@ const { Reihenschaltung } = require(path.resolve(
   `${Betriebsmittel}/Baugruppen/Zweipole/PassiverZweipol/Reihenschaltung.js`
 ))
 
-const { BEWiderstand } = require(path.resolve(
-  `${Betriebsmittel}/Widerstaende/BEWiderstand.js`
+const { Widerstaende } = require(path.resolve(
+  `${Betriebsmittel}/Widerstaende/Widerstaende.js`
 ))
+
+const { Widerstaende } = require(path.resolve(
+  `${Betriebsmittel}/Widerstaende/Widerstaende.js`
+))
+
 
 const { Leitung } = require(path.resolve(
   `${Betriebsmittel}/Uebertragungswege/Leitung/Leitung.js`

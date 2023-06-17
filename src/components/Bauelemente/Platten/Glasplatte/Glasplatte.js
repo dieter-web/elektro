@@ -1,7 +1,7 @@
 require('use-strict')
 const path = require('path')
 
-const {Platten} = require(path.resolve(
+const { Platten } = require(path.resolve(
   'src/components/Bauelemente/Platten/Platten.js'
 ))
 

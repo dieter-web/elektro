@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "directories": {
+    "Allgemein": "Allgemein",
     "Feldplatten": "Feldplatten",
     "Fotowiderstand": "Fotowiderstand",
     "Thermistor": "Thermistor",
     "Variator": "Varistor"
   },
   "files": [
-    "BEWiderstand.js"
+    "Widerstaende.js"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
