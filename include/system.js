@@ -31,11 +31,6 @@ const { Widerstaende } = require(path.resolve(
   `${Betriebsmittel}/Widerstaende/Widerstaende.js`
 ))
 
-const { Widerstaende } = require(path.resolve(
-  `${Betriebsmittel}/Widerstaende/Widerstaende.js`
-))
-
-
 const { Leitung } = require(path.resolve(
   `${Betriebsmittel}/Uebertragungswege/Leitung/Leitung.js`
 ))
@@ -53,7 +48,7 @@ exports.ElektroKernel = ElektroKernel
 exports.ArithmetikKernel = ArithmetikKernel
 exports.PlanemetrieKernel = PlanemetrieKernel
 exports.Reihenschaltung = Reihenschaltung
-exports.BEWiderstand = BEWiderstand
+exports.Widerstaende = Widerstaende
 exports.BEGlasplatte = BEGlasplatte
 exports.Leitung = Leitung
 exports.BEDraht = BEDraht

@@ -28,3 +28,54 @@
         </tr>
     </tbody>
 </table>
+<table class="table table-bordered" id="test"></table>
+<script>
+
+    let data=[
+        {"date": '2013-01-01',"close": 45},
+        {"date": '2013-02-01',"close": 50},
+        {"date": '2013-03-01',"close": 55},
+        {"date": '2013-04-01',"close": 50},
+        {"date": '2013-05-01',"close": 45},
+        {"date": '2013-06-01',"close": 50},
+        {"date": '2013-07-01',"close": 50},
+        {"date": '2013-08-01',"close": 52}
+    ]
+
+    function tabulate ( data,columns )
+    {
+        let table=d3.select( '#test' )
+        let thead=table.append( 'thead' )
+        let tbody=table.append( 'tbody' )
+
+        thead.append( 'tr' )
+            .selectAll( 'th' )
+            .data( columns )
+            .enter()
+            .append( 'th' )
+            .text( ( column ) => {return column;} )
+
+        let row=tbody.selectAll( 'tr' )
+            .data( data )
+            .enter()
+            .append( 'tr' )
+
+        let cells=row.selectAll( 'td' )
+            .data( ( row ) =>
+            {
+                return columns.map( ( column ) =>
+                {
+                    return {column: column,value: row[ column ]}
+                } )
+            } )
+            .enter()
+            .append( 'td' )
+            .text( ( d ) => {return d.value;} )
+
+        return table;
+    }
+
+    // render the tables 
+    tabulate( data,[ 'date','close' ] ); // 2 column table
+
+</script>

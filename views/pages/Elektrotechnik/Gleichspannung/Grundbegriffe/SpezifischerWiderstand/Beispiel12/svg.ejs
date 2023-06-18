@@ -1,6 +1,54 @@
-<div class="col-xs-3 ng-scope">
-
+<!-- <div class="col-xs-3 ng-scope"> -->
+<div>
+    <svg></svg>
 </div>
 <script>
-    let svg=d3.select( 'div.col-xs-3' ).append( 'svg' )
+    // let svg=d3.select( 'div.col-xs-3' ).append( 'svg' )
+    const svg=d3.select( 'svg' )
+        .attr( 'width',800 )
+        .attr( 'height',100 )
+    const g=svg.append( 'g' )
+
+    // const Widerstand=d3.create( 'svg:g' )
+    // Widerstand.selectAll( 'g' )
+    //     .data( [ 0,100,200,300,400,500,600 ] )
+    //     .enter()
+    //     .append( 'rect' )
+    //     .attr( 'fill','green' )
+    //     .attr( 'fill-opacity',0.0 )
+    //     .attr( 'style',"stroke:#999; stroke-width:3.5;" )
+    //     .attr( 'x',d => d )
+    //     .attr( 'y',50 )
+    //     .attr( 'height',20 )
+    //     .attr( 'width',50 )
+
+    // g.append( () => Widerstand.node() )
+
+    const W1=d3.create( 'svg:g' )
+    W1.selectAll( 'g' )
+        .data( [ 1 ] )
+        .enter()
+        .append( 'rect' )
+        .attr( 'fill','brown' )
+        .attr( 'fill-opacity',0.25 )
+        .attr( 'style',"stroke:#999;stroke-width:1.5;" )
+        .attr( 'x',50 )
+        .attr( 'y',50 )
+        .attr( 'height',9 )
+        .attr( 'width',300 );
+
+    W1.selectAll( 'text' )
+        .data( [
+            [ "W1",10 ],
+            [ "l = 3 km",100 ],
+            [ "d = 0.9 mm",200 ],
+            [ "R = 84.5 ohm",300 ]
+        ] )
+        .enter()
+        .append( 'text' )
+        .attr( "y",40 )
+        .attr( "x",( d ) => d[ 1 ] )
+        .text( ( d ) => d[ 0 ] )
+
+    g.append( () => W1.node() )
 </script>
