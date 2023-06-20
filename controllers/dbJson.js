@@ -9,6 +9,19 @@ function opencreateJSONFile (name) {
   })
 }
 
+// TODO: richtig ?
+// function opencreateJSONFile (name) {
+//   return new Promise((resolve, reject) => {
+//     fs.open(name, 'a+', (err, fd) => {
+//       if (err) {
+//         reject(err)
+//       } else {
+//         resolve(fd)
+//       }
+//     })
+//   })
+// }
+
 function deleteJSONFile (name) {
   fs.unlink(name, err => {
     if (err) throw err

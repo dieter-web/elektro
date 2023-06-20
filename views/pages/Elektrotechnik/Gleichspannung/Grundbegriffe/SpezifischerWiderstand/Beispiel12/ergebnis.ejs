@@ -17,6 +17,20 @@
 </div>
 
 <script type="module">
+
+    const j= await d3.json( "http://localhost:8000/json/example/beispiel12.json" )
+
+    let erg = {
+        "Parameter": {
+            "l": j.Parameter.l,
+            "d": j.Parameter.d,
+            "R": j.Parameter.R
+        },
+        "Ergebnis": {
+            'ρ': j.Ergebnis.ρ.value + j.Ergebnis.ρ.unit
+        }
+    }
+
     const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
     l.value=tab[ 0 ]
     d.value=tab[ 1 ]

@@ -1,5 +1,4 @@
 <%- include('aufgabe.ejs',{}) %>
-
 <div class="container text-left">
     <div class="row">
         <div class="col">
@@ -8,9 +7,17 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col">
+            <div class="bg-secondary">
+                <%- include('svg.ejs',{}) %>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script type="module">
+
     const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
     G.value=tab[ 0 ]
     I.value=tab[ 1 ]

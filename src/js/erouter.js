@@ -38,6 +38,7 @@ function erouter (router, p, l, e, route, example) {
         const { func } = require(`${e}${example}`)
         res.locals.Aerg = func(req.body)
         res.render(`${p}${route}${example}${ergebnis}`, {
+          resData: res.locals.Aerg,
           layout: `${l}${route}${layout}`
         })
       }

@@ -14,23 +14,28 @@
     import {fsubmit} from '/modules/fsubmit.mjs'
     import {ftext} from '/modules/ftext.mjs'
 
-    const idBeispiel="#aufgabe11"
-    const idText="#text"
-    const dataSubmit=[ "Rechnen" ]
-    const dataText=[
-        {
-            title: "Aufgabe 1.1",
-            subtitle: "Widerstand und Leitwert",
-            text: `Wie groß ist die Spannung, die an einem Widerstand liegt, dessen Leitwert 3E-2 S beträgt und der von einem Strom der Stärke 600 mA durchflossen wird?`
-        }
-    ]
-    const dataForm=[
-        {id: 'G',text: "Leitwert",name: "G",value: "3E-2S"},
-        {id: 'I',text: "Stromstärke",name: "I",value: "600mA"},
-    ]
+    function eingabe ()
+    {
+        const idBeispiel="#aufgabe11"
+        const idText="#text"
+        const dataSubmit=[ "Rechnen" ]
+        const dataText=[
+            {
+                title: "Aufgabe 1.1",
+                subtitle: "Widerstand und Leitwert",
+                text: `Wie groß ist die Spannung, die an einem Widerstand liegt, dessen Leitwert 3E-2 S beträgt und der von einem Strom der Stärke 600 mA durchflossen wird?`
+            }
+        ]
+        const dataForm=[
+            {id: 'G',text: "Leitwert",name: "G",value: "3E-2S"},
+            {id: 'I',text: "Stromstärke",name: "I",value: "600mA"},
+        ]
 
-    ftext( dataText,idText )
-    finput( dataForm,idBeispiel )
-    fsubmit( dataSubmit,idBeispiel )
+        ftext( dataText,idText )
+        finput( dataForm,idBeispiel )
+        fsubmit( dataSubmit,idBeispiel )
+    }
+
+    eingabe()
 
 </script>

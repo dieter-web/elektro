@@ -1,5 +1,5 @@
 <table class="table table-bordered" id="ergebnis">
-    <thead class="thead-dark">
+    <!-- <thead class="thead-dark">
         <tr>
             <th scope="col" colspan="2">Parameter</th>
             <th scope="col">Ergebnis</th>
@@ -13,14 +13,30 @@
     <tbody>
         <tr>
             <td>
-                <%= Aerg.Parameter.G %>
+                <%#= Aerg.Parameter.G %>
             </td>
             <td>
-                <%= Aerg.Parameter.I %>
+                <%#= Aerg.Parameter.I %>
             </td>
             <td>
-                <%= Aerg.Ergebnis.U %>
+                <%#= Aerg.Ergebnis.U %>
             </td>
         </tr>
-    </tbody>
+    </tbody> -->
 </table>
+
+<script type="module">
+    const jsonData=await d3.json( "http://localhost:8000/json/example/aufgabe11" )
+
+    import {tabulate} from '/modules/tabulate.mjs'
+
+    let data=[
+        {
+            "G": jsonData.Parameter.G,
+            "I": jsonData.Parameter.I,
+            "U": jsonData.Ergebnis.U
+        }
+    ]
+
+    tabulate( data,[ 'G','I','U' ],"#ergebnis" )
+</script>

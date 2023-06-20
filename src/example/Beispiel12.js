@@ -23,6 +23,7 @@ const { dbJson, ElektroKernel, PlanemetrieKernel } = require(path.resolve(
  *  l = "3 km", d = "0.9 mm", R = "84.5 ohm"
  */
 function Beispiel12 (input) {
+  
   const jsonfile = path.resolve('src/json/example/beispiel12.json')
 
   //   let Parameter = {
