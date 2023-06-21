@@ -1,38 +1,58 @@
 <%- include('aufgabe.ejs',{}) %>
+
 <div class="container text-left">
     <div class="row">
         <div class="col">
             <div class="bg-secondary">
-                <%- include('table.ejs',{}) %>
+                <!-- Platzhalter für table -->
+                <table class="table table-bordered" id="ergebnis"></table>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col">
             <div class="bg-secondary">
-                <%- include('svg.ejs',{}) %>
+                <!-- Platzhalter für svg -->
+                <svg id="grafik"></svg>
             </div>
         </div>
     </div>
 </div>
 
 <script type="module">
+    import {tabulate} from '/modules/tabulate.mjs'
+    import {canvas} from '/modules/canvas.mjs'
 
-    const j= await d3.json( "http://localhost:8000/json/example/beispiel12.json" )
+    import {vW} from '/d3/lib/vW.mjs'
 
-    let erg = {
-        "Parameter": {
-            "l": j.Parameter.l,
-            "d": j.Parameter.d,
-            "R": j.Parameter.R
-        },
-        "Ergebnis": {
-            'ρ': j.Ergebnis.ρ.value + j.Ergebnis.ρ.unit
-        }
-    }
+    const j=await d3.json( "http://localhost:8000/json/example/beispiel12.json" )
 
+    const g=canvas( 800,100,'#grafik' )
+
+    const datatable=[ {
+        "l": j.Parameter.l,
+        "d": j.Parameter.d,
+        "R": j.Parameter.R,
+        'ρ': j.Ergebnis.ρ.value+j.Ergebnis.ρ.unit
+    } ]
+
+    // tabelle füllen
+    tabulate( datatable,[ 'l','d','R','ρ' ],"#ergebnis" )
+
+    const dataW=[
+        [ "W1",10 ],
+        [ "l = 3 km",100 ],
+        [ "d = 0.9 mm",200 ],
+        [ "R = 84.5 ohm",300 ]
+    ]
+
+    g.append( () => vW( dataW ) )
+
+
+    // Schleife für das Einfügen von geänderten Werten im Formular
     const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
     l.value=tab[ 0 ]
     d.value=tab[ 1 ]
     R.value=tab[ 2 ]
+
 </script>

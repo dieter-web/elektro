@@ -17,81 +17,29 @@
   import {fsubmit} from '/modules/fsubmit.mjs'
   import {ftext} from '/modules/ftext.mjs'
 
-  const idBeispiel="#beispiel12"
-  const idText="#text"
-  const dataSubmit=[ "Rechnen" ]
-  const dataText=[
-    {
-      title: "Beispiel 1.2",
-      subtitle: "Bemessungsgleichungen des elektrischen Widerstands",
-      text: `Wie groß ist der spezifische Widerstand eines 3 km langen Drahtes mit 0.9 mm Durchmesser, einen Widerstand von 84.5 ohm hat?`
-    }
-  ]
-  const dataForm=[
-    {id: 'l',text: "Länge",name: "l",value: "3km"},
-    {id: 'd',text: "Durchmesser",name: "d",value: "0.9mm"},
-    {id: 'R',text: "Widerstand",name: "R",value: "84.5ohm"},
-  ]
-
-  ftext( dataText,idText )
-  finput( dataForm,idBeispiel )
-  fsubmit( dataSubmit,idBeispiel )
-
-</script>
-
-<!-- <div class="col">
-      <div class="bg-secondary">
-        <form name="Kennzeichnung">
-          <input type="checkbox" name="Kennzeichnung">Kennzeichnung eingeben ?
-        </form>
-      </div>
-    </div> -->
-
-
-<!-- <div class="container text-left">
-    <div class="row">
-      <div class="col">
-        <div class="bg-secondary" id="ke">
-          
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-
-
-<!-- <script type="module">
-  // import {group,index} from 'd3-array'; hier nicht !!
-  import {formularKennzeichnung} from "/modules/kennzeichnungUpdate.mjs";
-
-  const route='/elektrotechnik/gleichspannung/grundbegriffe/spezifischerwiderstand/beispiel12/kennzeichnung'
-
-  const checkbox=document.querySelector( 'input[type="checkbox"]' )
-  // Eingabeformular
-  checkbox.addEventListener( "click",( event ) => formularKennzeichnung( route ) )
-  // {
-  //   if( document.Kennzeichnung.Kennzeichnung.checked )
-  //   {
-  //     console.log( "addEvent checkbox true" )
-  //   } else
-  //   {
-  //     console.log( "addEvent checkbox false" )
-  //   }
-  //   // event.preventDefault() // Das aktuelle Event ausblenden
-  // } )
-
-  // submits von mehreren Formularen auf einer Seite unterscheiden
-  const kennzeichnung=document.querySelector( 'form[id="Kennzeichnung"]' )
-  if( kennzeichnung )
+  function aufgabe ()
   {
-    kennzeichnung.addEventListener( "click",( event ) =>
-    {
+    const idBeispiel="#beispiel12"
+    const idText="#text"
+    const dataSubmit=[ "Rechnen" ]
+    const dataText=[
+      {
+        title: "Beispiel 1.2",
+        subtitle: "Bemessungsgleichungen des elektrischen Widerstands",
+        text: `Wie groß ist der spezifische Widerstand eines 3 km langen Drahtes mit 0.9 mm Durchmesser, einen Widerstand von 84.5 ohm hat?`
+      }
+    ]
+    const dataForm=[
+      {id: 'l',text: "Länge",name: "l",value: "3km"},
+      {id: 'd',text: "Durchmesser",name: "d",value: "0.9mm"},
+      {id: 'R',text: "Widerstand",name: "R",value: "84.5ohm"},
+    ]
 
-      // Eigene Aktionen festlegen 
-      console.log( "addEvent form" )
-
-      event.preventDefault() // Das aktuelle Event ausblenden
-    } )
+    ftext( dataText,idText )
+    finput( dataForm,idBeispiel )
+    fsubmit( dataSubmit,idBeispiel )
   }
 
-</script> -->
+  aufgabe()
+
+</script>
