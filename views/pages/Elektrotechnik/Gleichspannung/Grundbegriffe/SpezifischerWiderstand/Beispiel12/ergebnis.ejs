@@ -4,7 +4,15 @@
     <div class="row">
         <div class="col">
             <div class="bg-secondary">
-                <!-- Platzhalter für table -->
+                <!-- Platzhalter für table kennzeichnung -->
+                <table class="table table-bordered" id="kennzeichnung"></table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="bg-secondary">
+                <!-- Platzhalter für table ergebnis -->
                 <table class="table table-bordered" id="ergebnis"></table>
             </div>
         </div>
@@ -27,9 +35,9 @@
 
     const j=await d3.json( "http://localhost:8000/json/example/beispiel12.json" )
 
-    const g=canvas( 800,100,'#grafik' )
+    const g=canvas( 800,100,'#grafik' ) // Gesamtgröße
 
-    const datatable=[ {
+    const datatablekennzeichnung=[ {
         "l": j.Parameter.l,
         "d": j.Parameter.d,
         "R": j.Parameter.R,
@@ -37,20 +45,30 @@
     } ]
 
     // tabelle füllen
-    tabulate( datatable,[ 'l','d','R','ρ' ],"#ergebnis" )
+    // tabulate( datatablekennzeichnung,[ 'l','d','R','ρ' ],"#kennzeichnung" )
+
+    const datatableergebnis=[ {
+        "l": j.Parameter.l,
+        "d": j.Parameter.d,
+        "R": j.Parameter.R,
+        'ρ': j.Ergebnis.ρ.value+j.Ergebnis.ρ.unit
+    } ]
+
+    // tabelle füllen
+    tabulate( datatableergebnis,[ 'l','d','R','ρ' ],"#ergebnis" )
 
     // canvas füllen
     const dataW=[ {
-        'opacity': 0.25,
-        'x': 50,
-        'y': 50,
-        'height': 5,
-        'width': 600,
+        'opacity': j.Betriebsmittel.Visual.opacity,
+        'x': j.Betriebsmittel.Visual.x,
+        'y': j.Betriebsmittel.Visual.y,
+        'height': j.Betriebsmittel.Visual.height,
+        'width': j.Betriebsmittel.Visual.width,
         'text': [
             "W1",
-            "l = 3 km",
-            "d = 0.9 mm",
-            "R = 84.5 ohm"
+            `l = ${ j.Parameter.l }`,
+            `d = ${ j.Parameter.d }`,
+            `R = ${ j.Parameter.R }`
         ]
     }
     ]
