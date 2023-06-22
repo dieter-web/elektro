@@ -35,8 +35,8 @@ const { Leitung } = require(path.resolve(
   `${Betriebsmittel}/Uebertragungswege/Leitung/Leitung.js`
 ))
 
-const { BEDraht } = require(path.resolve(
-  `${Betriebsmittel}/Uebertragungswege/Draht/BEDraht.js`
+const { Draht } = require(path.resolve(
+  `${Betriebsmittel}/Uebertragungswege/Draht/Draht.js`
 ))
 
 const { Stack } = require(path.resolve(
@@ -51,5 +51,5 @@ exports.Reihenschaltung = Reihenschaltung
 exports.Widerstaende = Widerstaende
 exports.BEGlasplatte = BEGlasplatte
 exports.Leitung = Leitung
-exports.BEDraht = BEDraht
+exports.Draht = Draht
 exports.Stack = Stack

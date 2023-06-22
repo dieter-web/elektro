@@ -23,7 +23,7 @@
     import {tabulate} from '/modules/tabulate.mjs'
     import {canvas} from '/modules/canvas.mjs'
 
-    import {vW} from '/d3/lib/vW.mjs'
+    import {vW} from '/d3/lib/Betriebsmittel/vW.mjs'
 
     const j=await d3.json( "http://localhost:8000/json/example/beispiel12.json" )
 
@@ -39,11 +39,20 @@
     // tabelle füllen
     tabulate( datatable,[ 'l','d','R','ρ' ],"#ergebnis" )
 
-    const dataW=[
-        [ "W1",10 ],
-        [ "l = 3 km",100 ],
-        [ "d = 0.9 mm",200 ],
-        [ "R = 84.5 ohm",300 ]
+    // canvas füllen
+    const dataW=[ {
+        'opacity': 0.25,
+        'x': 50,
+        'y': 50,
+        'height': 5,
+        'width': 600,
+        'text': [
+            "W1",
+            "l = 3 km",
+            "d = 0.9 mm",
+            "R = 84.5 ohm"
+        ]
+    }
     ]
 
     g.append( () => vW( dataW ) )

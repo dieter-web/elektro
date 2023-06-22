@@ -5,7 +5,9 @@ const { Betriebsmittel } = require(path.resolve(
   'src/components/Betriebsmittel/Betriebsmittel.js'
 ))
 
-class BEDraht extends Betriebsmittel {
+// const { vW } = require(path.resolve('include/visual'))
+
+class Draht extends Betriebsmittel {
   /**
    *
    * @param {object} Parameter
@@ -18,4 +20,4 @@ class BEDraht extends Betriebsmittel {
     this.id = 'Draht'
   }
 }
-exports.BEDraht = BEDraht
+exports.Draht = Draht

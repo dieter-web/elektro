@@ -1,4 +1,4 @@
-/**
+/*
  * @description Visualisirung einer Leitung (W)
  * @author Dieter Krause
  * @date 21/06/2023
@@ -8,28 +8,25 @@
 function vW (data) {
   const W = d3.create('svg:g')
   W.selectAll('g')
-    .data([1])
+    .data(data)
     .enter()
     .append('rect')
     .attr('fill', 'brown')
-    .attr('fill-opacity', 0.25)
+    .attr('fill-opacity', d => d.opacity)
     .attr('style', 'stroke:#999;stroke-width:1.5;')
-    .attr('x', 50)
-    .attr('y', 50)
-    .attr('height', 9)
-    .attr('width', 300)
+    .attr('x', d => d.x)
+    .attr('y', d => d.y)
+    .attr('height', d => d.height)
+    .attr('width', d => d.width)
   W.selectAll('text')
-    .data([
-      ['W1', 10],
-      ['l = 3 km', 100],
-      ['d = 0.9 mm', 200],
-      ['R = 84.5 ohm', 300]
-    ])
+    .data(data)
     .enter()
     .append('text')
-    .attr('y', 40)
-    .attr('x', d => d[1])
-    .text(d => d[0])
+    .attr('y', d => d.y - 10)
+    .attr('x', d => d.x)
+    .text(d => {
+      return d.text.map(t => t)
+    })
   return W.node()
 }
 export { vW }

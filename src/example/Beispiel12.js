@@ -5,9 +5,9 @@ const { dbJson, ElektroKernel, PlanemetrieKernel } = require(path.resolve(
   'include/system'
 ))
 
-// const { BEDraht } = require(path.resolve(
-//   'src/components/Betriebsmittel//Uebertragungswege/Draht/BEDraht.js'
-// ))
+const { Draht } = require(path.resolve(
+  'src/components/Betriebsmittel/Uebertragungswege/Draht/Draht.js'
+))
 
 /**
  * @function Beispiel12
@@ -23,15 +23,16 @@ const { dbJson, ElektroKernel, PlanemetrieKernel } = require(path.resolve(
  *  l = "3 km", d = "0.9 mm", R = "84.5 ohm"
  */
 function Beispiel12 (input) {
-  
   const jsonfile = path.resolve('src/json/example/beispiel12.json')
 
-  //   let Parameter = {
-  //     l: input.l,
-  //     d: input.d
-  //   }
-
-  //   const W1 = new BEDraht(Kennzeichnung, Parameter, {})
+  const Kennzeichnung = {}
+  const Parameter = {
+    l: input.l,
+    d: input.d,
+    R: input.R
+  }
+  const Visual = {}
+  const W1 = new Draht(Kennzeichnung, Parameter, Visual)
 
   const PK = new PlanemetrieKernel()
   const EK = new ElektroKernel()

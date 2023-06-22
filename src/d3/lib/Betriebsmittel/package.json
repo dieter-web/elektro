@@ -1,0 +1,33 @@
+{
+  "name": "betriebsmittel",
+  "version": "1.0.0",
+  "description": "",
+  "files": [
+    "vA.mjs",
+    "vB.mjs",
+    "vC.mjs",
+    "vE.mjs",
+    "vF.mjs",
+    "vG.mjs",
+    "vH.mjs",
+    "vK.mjs",
+    "vL.mjs",
+    "vM.mjs",
+    "vN.mjs",
+    "vP.mjs",
+    "vQ.mjs",
+    "vR.mjs",
+    "vS.mjs",
+    "vT.mjs",
+    "vU.mjs",
+    "vV.mjs",
+    "vW.mjs"
+  ],
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [ ],
+  "author": "",
+  "license": "ISC"
+}
