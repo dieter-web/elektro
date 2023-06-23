@@ -1,15 +1,12 @@
-<div class="container text-left">
-    <div class="row">
-        <div class="col">
-            <div id="text" class="bg-secondary"></div>
-        </div>
-        <div class="col">
-            <div class="bg-secondary">
-                <%- include('form.ejs',{}) %>
-            </div>
-        </div>
+<div class="container text-left row">
+    <div class="col bg-secondary" id="text">
+
+    </div>
+    <div class="col bg-secondary">
+        <%- include('form.ejs',{}) %>
     </div>
 </div>
+
 <script type="module">
     import {finput} from '/modules/finput.mjs'
     import {fsubmit} from '/modules/fsubmit.mjs'

@@ -10,17 +10,14 @@ const { Draht } = require(path.resolve(
 ))
 
 /**
- * @function Beispiel12
- *
+ * @description
  * Wie groß ist der spezifische Widerstand eines 3 km langen Drahtes
  * mit 0.9 mm Durchmesser, der
  * einen Widerstand von 84.5 Ohm hat ?
- *
- * @param {string} l - Drahtlänge
- * @param {string} d - Durchmesser
- * @param {string} R - Widerstand
- * @returns {math.Unit} ρ - spezifischer Widerstand
- *  l = "3 km", d = "0.9 mm", R = "84.5 ohm"
+ * @author Dieter Krause
+ * @date 23/06/2023
+ * @param {*} input
+ * @returns {*}
  */
 function Beispiel12 (input) {
   // Speicherort für Daten
@@ -71,10 +68,10 @@ function Beispiel12 (input) {
   dbJson.writeJSONItem(jsonfile, erg)
   return erg
 }
-let input = {
-  l: '3 km',
-  d: '0.9 mm',
-  R: '84.5 ohm'
-}
-console.log(Beispiel12(input))
-// exports.func = Beispiel12
+// let input = {
+//   l: '3 km',
+//   d: '0.9 mm',
+//   R: '84.5 ohm'
+// }
+// console.log(Beispiel12(input))
+exports.func = Beispiel12
