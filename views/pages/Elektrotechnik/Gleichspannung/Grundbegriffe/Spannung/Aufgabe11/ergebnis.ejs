@@ -1,16 +1,44 @@
 <%- include('aufgabe.ejs',{}) %>
 
 <div class="container text-left">
-    <div class="row col bg-secondary">
-        <%- include('table.ejs',{}) %>
+    <!-- <div class="row col bg-secondary">
+        <table class="table table-bordered" id="kennzeichnung"></table>
+    </div> -->
+
+    <div class="row col">
+        <table class="table table-bordered" id="ergebnis"></table>
     </div>
-    <div class="row col bg-secondary">
-        <%- include('svg.ejs',{}) %>
-    </div>
+
+    <!-- <div class="row col bg-secondary">
+        <svg id="grafik"></svg>
+    </div> -->
 </div>
 
 <script type="module">
+    import {populate} from '/modules/populate.mjs'
+    import {tabulate} from '/modules/tabulate.mjs'
+    import {canvas} from '/modules/canvas.mjs'
+    import {vR} from '/d3/lib/Betriebsmittel/vR.mjs'
 
+    const width=800
+    const height=100
+
+    const data=await populate( "http://localhost:8000/json/example/aufgabe11.json" )
+
+    const g=canvas( width,height,'#grafik' )
+
+    // const datakenzeichnung=data.Betriebsmittel.Kennzeichnung
+    // tabulate( datakenzeichnung,[ "Kennzeichnung" ],"#kennzeichnung" ) //
+
+    const dataE=Object.values( data.Ergebnis )
+
+    // tabulate( dataE,Object.keys( data.Ergebnis ),"#ergebnis" )
+    tabulate( data,"#ergebnis" )
+
+    // const dataR=data.Betriebsmittel.Visual;
+    // g.append( () => vR( dataR ) )
+
+    // Rückkopplung
     const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
     G.value=tab[ 0 ]
     I.value=tab[ 1 ]
