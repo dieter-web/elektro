@@ -5,6 +5,9 @@ const { dbJson, ElektroKernel, Widerstand } = require(path.resolve(
   'include/system'
 ))
 
+// Moduleimplementierung funktioniert hier nicht !
+// const {VR} = require(path.resolve('d3/lib/Betriebsmittel/vR.mjs'))
+
 /**
  * @description
  * Wie groß ist die Spannung, die an einem Widerstand liegt, dessen Leitwert 3*E-2 S beträgt und

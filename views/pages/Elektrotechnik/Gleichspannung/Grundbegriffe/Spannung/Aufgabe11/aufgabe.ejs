@@ -6,12 +6,15 @@
         <form id="aufgabe11" action="/elektrotechnik/gleichspannung/grundbegriffe/spannung/aufgabe11/aufgabe"
             method="POST"></form>
     </div>
+    <div class="row" id="ke">
 
+    </div>
 </div>
 <script type="module">
     import {finput} from '/modules/finput.mjs'
     import {fsubmit} from '/modules/fsubmit.mjs'
     import {ftext} from '/modules/ftext.mjs'
+    import {formularKennzeichnung} from '/modules/kennzeichnungUpdate.mjs'
 
     function eingabe ()
     {
@@ -35,6 +38,10 @@
         fsubmit( dataSubmit,idBeispiel )
     }
 
+    formularKennzeichnung()
     eingabe()
+
+
+
 
 </script>

@@ -9,13 +9,13 @@ function showCards (data, id) {
     .attr('class', 'card-body')
     .append('h5')
     .attr('class', 'card-title')
-    .text(d => {
-      return d.name
-    })
     .append('a')
     .attr('class', 'nav-link link')
     .attr('href', d => {
       return d.href
+    })
+    .text(d => {
+      return d.name
     })
     .append('h6')
     .attr('class', 'card-text')

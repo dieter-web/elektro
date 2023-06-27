@@ -8,8 +8,12 @@ const { Widerstaende } = require(path.resolve(
 class Widerstand extends Widerstaende {
   constructor (Kennzeichnung, Parameter, Visual) {
     super(Kennzeichnung)
-    this.Parameter = Parameter
-    this.Visual = Visual
+    this.Parameter = Parameter // Parameter der Aufgabenstellung (dynamisch)
+    this.Vis = {
+      Visual: Visual,
+      width: 60,
+      height: 20
+    }
   }
 }
 

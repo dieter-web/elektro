@@ -1,17 +1,18 @@
 // import { group, index } from 'd3-array'
 
 function formularKennzeichnung (route) {
+  // action = route
   // Wenn schon vorhanden, nicht noch einmal erzeugen !!
   // if (!document.getElementById('kennzeichnung')) {
   // let d = document.createElement('div')
   let kenn = document.createElement('div')
 
-  if (document.Kennzeichnung.Kennzeichnung.checked) {
+  // if (document.Kennzeichnung.Kennzeichnung.checked) {
     kenn.innerHTML = `
       <div class="container text-left">
         <div class="row>
         <div class="bg-secondary">
-          <form action = ${route} method="POST" id="kennzeichnung">
+          <form method="POST" id="kennzeichnung">
           <div class="input-group input-group-sm">
           <span class="input-group-text">Anlage</span>
           <input type="text" aria-label="1" id="Anlage1" class="form-control" maxlength="2" value="00" size="10">
@@ -128,11 +129,11 @@ function formularKennzeichnung (route) {
       </div>
       `
     document.body.appendChild(kenn)
-  } else {
-    let tmp = document.getElementById('kennzeichnung')
-    tmp.innerHTML = ''
-    document.body.replaceChild(kenn, tmp)
-  }
+  // } else {
+  //   let tmp = document.getElementById('kennzeichnung')
+  //   tmp.innerHTML = ''
+  //   document.body.replaceChild(kenn, tmp)
+  // }
 
   // Werte auslesen über button-click
   const button = document.querySelector('input[type="submit"]')
@@ -150,8 +151,7 @@ function formularKennzeichnung (route) {
 
     const d1 = document.querySelector('div[id="ke"]')
 
-    d1.innerHTML = `
-      ${Kennzeichnung.Anlage}${Kennzeichnung.Ort}${Kennzeichnung.Art}${Kennzeichnung.Zählnummer}${Kennzeichnung.Funktion}${Kennzeichnung.Anschlussart}${Kennzeichnung.Anzahl}
+    d1.innerHTML = `${Kennzeichnung.Anlage}${Kennzeichnung.Ort}${Kennzeichnung.Art}${Kennzeichnung.Zählnummer}${Kennzeichnung.Funktion}${Kennzeichnung.Anschlussart}${Kennzeichnung.Anzahl}
       `
     // Weitere Verarbeitung ausschalten
     event.preventDefault()

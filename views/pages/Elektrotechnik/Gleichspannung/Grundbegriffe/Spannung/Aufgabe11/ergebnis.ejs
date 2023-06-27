@@ -9,9 +9,9 @@
         <table class="table table-bordered" id="ergebnis"></table>
     </div>
 
-    <!-- <div class="row col bg-secondary">
+    <div class="row col bg-secondary">
         <svg id="grafik"></svg>
-    </div> -->
+    </div>
 </div>
 
 <script type="module">
@@ -25,18 +25,19 @@
 
     const data=await populate( "http://localhost:8000/json/example/aufgabe11.json" )
 
+    tabulate( data,"#ergebnis" )
+
     const g=canvas( width,height,'#grafik' )
 
     // const datakenzeichnung=data.Betriebsmittel.Kennzeichnung
     // tabulate( datakenzeichnung,[ "Kennzeichnung" ],"#kennzeichnung" ) //
-
-    const dataE=Object.values( data.Ergebnis )
-
-    // tabulate( dataE,Object.keys( data.Ergebnis ),"#ergebnis" )
-    tabulate( data,"#ergebnis" )
-
+    // const dataE=Object.values( data.Ergebnis )
     // const dataR=data.Betriebsmittel.Visual;
-    // g.append( () => vR( dataR ) )
+
+    const datVis=data.Betriebsmittel.Vis;
+    const dataVis=[ datVis.height,datVis.width ]
+    g.append( () => vR( dataVis,[ 100,50 ] ) )
+    g.append( () => vR( dataVis,[ 200,50 ] ) )
 
     // Rückkopplung
     const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );

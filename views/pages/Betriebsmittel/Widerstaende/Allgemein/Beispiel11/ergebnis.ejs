@@ -1,7 +1,7 @@
 <%- include('aufgabe.ejs',{}) %>
 
 <div class="container text-left">
-    
+
     <div class="row col bg-secondary">
         <table class="table table-bordered" id="kennzeichnung"></table>
     </div>
@@ -27,11 +27,11 @@
 
     const g=canvas( 800,100,'#grafik' )
 
-    const datakenzeichnung=[ {} ]
-    tabulate( datakenzeichnung,[],"#kennzeichnung" )
+    // const datakenzeichnung=[ {} ]
+    // tabulate( datakenzeichnung,[],"#kennzeichnung" )
 
-    const dataergebnis=[ {} ]
-    tabulate( dataergebnis,[],"#ergebnis" )
+    // const dataergebnis=[ {} ]
+    // tabulate( dataergebnis,[],"#ergebnis" )
 
     const dataR=[ {} ];
     g.append( () => vR( dataR ) )

@@ -7,7 +7,8 @@
     "Betriebsmittel": "Betriebsmittel",
     "Datenverarbeitung": "Datenverarbeitung",
     "Elektrotechnik": "Elektrotechnik",
-    "Mathematik": "Mathematik"
+    "Mathematik": "Mathematik",
+    "Kennzeichnung": "Kennzeichnung"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
