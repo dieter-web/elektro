@@ -2,62 +2,51 @@ require('use-strict')
 const path = require('path')
 
 // Betriebsmittel
+module.exports = {
+  e: path.resolve('src/example'),
+  p2: 'pages/Betriebsmittel',
+  l2: 'layouts/Betriebsmittel',
+  r2: '/Betriebsmittel',
+  r2_1: '/Abschluesse',
+  r2_2: '/Baugruppen',
+  r2_2_1: '/Baugruppen/Zweipole',
+  r2_2_1_1: '/Baugruppen/Zweipole/passiverZweipol',
+  r2_3: '/Filter',
+  r2_4: '/Generatoren',
+  r2_5: '/GeraeteMitElektrischenAntrieb',
+  r2_6: '/Halbleiter',
+  r2_7: '/Induktivitaeten',
+  r2_8: '/Kondensatoren',
+  r2_9: '/Melder',
+  r2_10: '/Messgeraete',
+  r2_11: '/Motoren',
+  r2_12: '/Pruefgeraete',
+  r2_13: '/Regler',
+  r2_14: '/Relais',
+  r2_15: '/Schalter',
+  r2_16: '/Schuetze',
+  r2_17: '/Schutzeinrichtungen',
+  r2_18: '/Sensoren',
+  r2_19: '/Steckvorrichtungen',
+  r2_20: '/Transformatoren',
+  r2_21: '/Uebertragungswege',
+  r2_21_1: '/Uebertragungswege/Antennen',
+  r2_21_2: '/Uebertragungswege/Draht',
+  r2_21_3: '/Uebertragungswege/Kabel',
+  r2_21_4: '/Uebertragungswege/Leitung',
+  r2_21_5: '/Uebertragungswege/Sammelschiene',
+  r2_22: '/Umformer',
+  r2_23: '/Umsetzer',
+  r2_24: '/Verschiedenes',
+  r2_25: '/Verstaerker',
+  r2_26: '/Waehler',
+  r2_27: '/Widerstaende',
+  r2_27_1: '/Widerstaende/allgemein',
+  r2_27_2: '/Widerstaende/feldplatten',
+  r2_27_3: '/Widerstaende/fotowiderstand',
+  r2_27_4: '/Widerstaende/thermistor',
+  r2_27_5: '/Widerstaende/varistor',
 
-const e = path.resolve('src/example')
-
-const p2 = 'pages/Betriebsmittel'
-const l2 = 'layouts/Betriebsmittel'
-
-const r2 = '/Betriebsmittel'
-const r2_1 = '/Baugruppen'
-const r2_1_1 = `${r2_1}/Zweipole`
-const r2_1_1_1 = `${r2_1_1}/passiverZweipol`
-
-const r2_2 = '/Kondensatoren'
-
-const r2_3 = '/Uebertragungswege'
-const r2_3_1 = `${r2_3}/Antennen`
-const r2_3_2 = `${r2_3}/Draht`
-const r2_3_3 = `${r2_3}/Kabel`
-const r2_3_4 = `${r2_3}/Leitung`
-const r2_3_5 = `${r2_3}/Sammelschiene`
-
-const r2_4 = '/Widerstaende'
-const r2_4_1 = `${r2_4}/allgemein`
-const r2_4_2 = `${r2_4}/feldplatten`
-const r2_4_3 = `${r2_4}/fotowiderstand`
-const r2_4_4 = `${r2_4}/thermistor`
-const r2_4_5 = `${r2_4}/varistor`
-
-const b11 = '/Beispiel11'
-const b14 = '/Beispiel14'
-
-exports.e = e
-
-exports.p2 = p2
-exports.l2 = l2
-exports.r2 = r2
-
-exports.r2_1 = r2_1
-exports.r2_1_1 = r2_1_1
-exports.r2_1_1_1 = r2_1_1_1
-
-exports.r2_2 = r2_2
-
-exports.r2_3 = r2_3
-
-exports.r2_3_1 = r2_3_1
-exports.r2_3_2 = r2_3_2
-exports.r2_3_3 = r2_3_3
-exports.r2_3_4 = r2_3_4
-exports.r2_3_5 = r2_3_5
-
-exports.r2_4 = r2_4
-exports.r2_4_1 = r2_4_1
-exports.r2_4_2 = r2_4_2
-exports.r2_4_3 = r2_4_3
-exports.r2_4_4 = r2_4_4
-exports.r2_4_5 = r2_4_5
-
-exports.b11 = b11
-exports.b14 = b14
+  b11: '/Beispiel11',
+  b14: '/Beispiel14'
+}

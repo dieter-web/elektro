@@ -16,16 +16,14 @@ router.get('/', function (req, res) {
 })
 
 /**SECTION Bauelemente Platten */
-routerGet(router, R3.r3.toLowerCase(), R3.p3, R3.l3, R3.r3)
+routerGet(router, R3.r3_40.toLowerCase(), R3.p3, R3.l3, R3.r3_40)
 
 /** SECTION Bauelemente Platten Glasplatten */
-routerGet(router, R3.r3_1.toLowerCase(), R3.p3, R3.l3, R3.r3_1)
+routerGet(router, R3.r3_40_1.toLowerCase(), R3.p3, R3.l3, R3.r3_40_1)
 
 /** NOTE Übung 1.4 */
-erouter(router, R3.p3, R3.l3, R3.e, R3.r3_1, R3.u14)
+erouter(router, R3.p3, R3.l3, R3.e, R3.r3_40_1, R3.u14)
 /** !SECTION Glasplatten */
 /**!SECTION Platten */
-
-
 
 module.exports = router
