@@ -8,7 +8,8 @@
     "Datenverarbeitung": "Datenverarbeitung",
     "Elektrotechnik": "Elektrotechnik",
     "Mathematik": "Mathematik",
-    "Kennzeichnung": "Kennzeichnung"
+    "Kennzeichnung": "Kennzeichnung",
+    "Rohrleitungstechnik": "Rohrleitungstechnik"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

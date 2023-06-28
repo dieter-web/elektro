@@ -105,12 +105,12 @@ function Uebung14 (input) {
   return erg
 }
 
-// let input = {
-//   Material: 'Glas',
-//   l: '0.8m',
-//   b: '1.25m',
-//   d: '1 mm'
-// }
-// console.log(Uebung14(input))
+let input = {
+  Material: 'Glas',
+  l: '0.8m',
+  b: '1.25m',
+  d: '1 mm'
+}
+console.log(Uebung14(input))
 
-exports.func = Uebung14
+// exports.func = Uebung14

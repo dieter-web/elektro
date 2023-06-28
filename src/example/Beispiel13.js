@@ -1,19 +1,10 @@
-require('use-strict')
-const path = require(
-  'path')
-const { dbJson, RohrleitungstechnikKernel, PlanemetrieKernel} = require(path.resolve('include/system'))
-
-// const { RohrleitungstechnikKernel } = require(path.resolve(
-//   'src/rohrleitungstechnik/kernel.js'
-// ))
-
-// const { PlanemetrieKernel } = require(path.resolve(
-//   'src/components/Mathematik/Planemetrie/kernel.js'
-// ))
-
-const { BERohr } = require(path.resolve(
-  'src/components/Betriebsmittel//Verschiedenes/Rohre/BERohr.js'
-))
+const path = require('path')
+const {
+  dbJson,
+  RohrleitungstechnikKernel,
+  Bleirohr,
+  PlanemetrieKernel
+} = require(path.resolve('include/system'))
 
 /**
  * @function Beispiel13
@@ -27,12 +18,16 @@ const { BERohr } = require(path.resolve(
  *  Material = 'Blei', G = "1285 S", d = "2.5 cm", D = "3.0 cm"
  */
 function Beispiel13 (input) {
-  const ρbl = dbJson.readJSONFile(
-    path.resolve('src/json/Tafel11.json')[input.Material].ρ[0]
-  )
+  const jsonfile = path.resolve('src/json/example/beispiel13.json')
+
+  const { readMaterialParameter } = require(path.resolve(
+    'src/js/readMaterialParameter.js'
+  ))
+
+  const ρbl = readMaterialParameter(input.Material, 'ρ')
+
   const RK = new RohrleitungstechnikKernel()
   const PK = new PlanemetrieKernel()
-  const jsonfile = path.resolve('src/json/example/beispiel13.json')
 
   let Kennzeichnung = {
     '=': {
@@ -81,21 +76,18 @@ function Beispiel13 (input) {
     G: input.G
   }
 
-  let Rohr = new BERohr(Kennzeichnung, Parameter, {})
+  let PtRohr = new Bleirohr(Kennzeichnung, Parameter, {})
 
-  PK.parameter({ d: Rohr.Parameter.d, D: Rohr.Parameter.D })
+  PK.parameter({ d: PtRohr.Parameter.d, D: PtRohr.Parameter.D })
   let Ar = PK.KRADd()
 
-  RK.parameter({ ρ: ρbl, A: Ar, G: Rohr.Parameter.G })
+  RK.parameter({ ρ: ρbl, A: Ar, G: PtRohr.Parameter.G })
   let l = RK.lAρG()
 
   let erg = {
-    Betriebsmittel: {
-      Rohr: Rohr
-    },
+    Betriebsmittel: PtRohr,
     Parameter: {
       ρ: ρbl,
-
       Ar: Ar
     },
     Ergebnis: {
@@ -107,10 +99,10 @@ function Beispiel13 (input) {
 }
 
 // let input = {
-//     "Material": "Blei",
-//     "G": "1285 S",
-//     "d": "2.5 cm",
-//     "D": "3.0 cm"
-// };
-// console.log( Beispiel13( input ) );
+//   Material: 'Blei',
+//   G: '1285 S',
+//   d: '2.5 cm',
+//   D: '3.0 cm'
+// }
+// console.log(Beispiel13(input))
 exports.func = Beispiel13
