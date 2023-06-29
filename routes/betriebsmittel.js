@@ -16,53 +16,48 @@ router.get('/', function (req, res) {
 })
 
 /** SECTION  Baugruppen */
-routerGet(router, R2.r2_1.toLowerCase(), R2.p2, R2.l2, R2.r2_1)
+routerGet(router, R2.r2_2, R2.p2, R2.l2)
 
 /** SECTION Baugruppen Zweipole */
-routerGet(router, R2.r2_1_1.toLowerCase(), R2.p2, R2.l2, R2.r2_1_1)
+routerGet(router, R2.r2_2_1, R2.p2, R2.l2)
 
 /** SECTION Baugruppen Zweipole passiver Zweipol */
-routerGet(router, R2.r2_1_1_1.toLowerCase(), R2.p2, R2.l2, R2.r2_1_1_1)
+routerGet(router, R2.r2_2_1_1, R2.p2, R2.l2)
 
 /** !SECTION Betriebsmittel Baugruppen */
 
 /** SECTION  Betriebsmittel Widerstände */
-routerGet(router, R2.r2_4.toLowerCase(), R2.p2, R2.l2, R2.r2_4)
+routerGet(router, R2.r2_27, R2.p2, R2.l2)
 
 /** SECTION Betriebsmittel Widerstände allgemein */
-routerGet(
-  router,
-  '/Widerstaende/Allgemein'.toLowerCase(),
-  R2.p2,
-  R2.l2,
-  'Widerstaende/Allgemein'
-)
+// routerGet(router,'/Widerstaende/Allgemein',R2.p2,R2.l2,'Widerstaende/Allgemein')
+routerGet(router, R2.r_27_1, R2.p2, R2.l2)
 
 /** NOTE Beispiel 1.1 */
 erouter(router, R2.p2, R2.l2, R2.e, '/Widerstaende/allgemein', R2.b11)
 
 /** SECTION Betriebsmittel Widerstände feldplatten */
-routerGet(router, R2.r2_4_2.toLowerCase(), R2.p2, R2.l2, R2.r2_4_2)
+routerGet(router, R2.r2_27_2, R2.p2, R2.l2)
 
 /** SECTION Betriebsmittel Widerstände fotowiderstand */
-routerGet(router, R2.r2_4_3.toLowerCase(), R2.p2, R2.l2, R2.r2_4_3)
+routerGet(router, R2.r2_27_3, R2.p2, R2.l2)
 
 /** SECTION Betriebsmittel Widerstände thermistor */
-routerGet(router, R2.r2_4_4.toLowerCase(), R2.p2, R2.l2, R2.r2_4_4)
+routerGet(router, R2.r2_27_4, R2.p2, R2.l2)
 
 /** SECTION Betriebsmittel Widerstände varistor */
-routerGet(router, R2.r2_4_5.toLowerCase(), R2.p2, R2.l2, R2.r2_4_5)
+routerGet(router, R2.r2_27_5, R2.p2, R2.l2)
 
 /** !SECTION Widerstände */
 
 /** SECTION Betriebsmittel Übertragungswege */
-routerGet(router, R2.r2_3.toLowerCase(), R2.p2, R2.l2, R2.r2_3)
+routerGet(router, R2.r2_21, R2.p2, R2.l2)
 
 /** SECTION Betriebsmittel Übertragungswege Leitung */
-routerGet(router, R2.r2_3_4.toLowerCase(), R2.p2, R2.l2, R2.r2_3_4)
+routerGet(router, R2.r2_21_4, R2.p2, R2.l2)
 
 /** NOTE Betriebsmittel Übertragungswege Leitung Beispiel14  */
-erouter(router, R2.p2, R2.l2, R2.e, R2.r2_3_4, R2.b14)
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_4, R2.b14)
 /** !SECTION Betriebsmittel Übertragungswege Leitungen */
 /** !SECTION Betriebsmittel Übertragungswege */
 

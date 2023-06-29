@@ -51,7 +51,17 @@ module.exports = {
   r3_40_1: '/Platten/Glasplatten',
 
   r3_41: '/Riementriebe',
+
   r3_42: '/Rohrleitungen',
+  r3_42_1: '/Rohrleitungen/Aluminiumrohre',
+  r3_42_2: '/Rohrleitungen/Betonrohre',
+  r3_42_3: '/Rohrleitungen/Bleirohre',
+  r3_42_4: '/Rohrleitungen/Faserzementrohre',
+  r3_42_5: '/Rohrleitungen/Gussrohre',
+  r3_42_6: '/Rohrleitungen/Kunststoffrohre',
+  r3_42_7: '/Rohrleitungen/Kupferrohre',
+  r3_42_8: '/Rohrleitungen/Stahlrohre',
+
   r3_43: '/Sauelen',
   r3_44: '/Schrauben',
   r3_45: '/Schraubenraeder',
@@ -67,5 +77,6 @@ module.exports = {
   r3_55: '/Zapfen',
   r3_56: '/Zylinder',
 
-  u14: '/Uebung14'
+  u14: '/Uebung14',
+  b13: '/Beispiel13'
 }

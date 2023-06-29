@@ -16,14 +16,27 @@ router.get('/', function (req, res) {
 })
 
 /**SECTION Bauelemente Platten */
-routerGet(router, R3.r3_40.toLowerCase(), R3.p3, R3.l3, R3.r3_40)
+routerGet(router, R3.r3_40, R3.p3, R3.l3)
 
 /** SECTION Bauelemente Platten Glasplatten */
-routerGet(router, R3.r3_40_1.toLowerCase(), R3.p3, R3.l3, R3.r3_40_1)
+routerGet(router, R3.r3_40_1, R3.p3, R3.l3)
 
 /** NOTE Übung 1.4 */
 erouter(router, R3.p3, R3.l3, R3.e, R3.r3_40_1, R3.u14)
-/** !SECTION Glasplatten */
-/**!SECTION Platten */
+/** !SECTION Bauelemente Platten Glasplatten */
+/**!SECTION Bauelemente Platten */
+
+/** SECTION Bauelemente Rohrleitungen r3_42 */
+routerGet(router, R3.r3_42, R3.p3, R3.l3)
+
+/** SECTION Bauelemente Rohrleitungen Bleirohre r3_42_3 */
+routerGet(router, R3.r3_42_3, R3.p3, R3.l3)
+
+/** NOTE Beispiel 1.3 */
+erouter(router, R3.p3, R3.l3, R3.e, R3.r3_42_3, R3.b13)
+
+/** !SECTION Bauelemente Rohrleitungen Bleirohre r3_42_3 */
+
+/** !SECTION Bauelemente Rohrleitungen r3_42 */
 
 module.exports = router

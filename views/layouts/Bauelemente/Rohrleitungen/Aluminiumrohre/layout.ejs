@@ -1,0 +1,21 @@
+<%- include('./../../../partials/head.ejs',{}) %>
+
+<body>
+
+    <%- include('../../../partials/navbarTemplate', {}) %>
+
+    <script type="module">
+        import {mainNavbar} from "/modules/mainNavbar.js"
+        let menu=[
+            {"name": "elektro","link": "/","class": "nav-link"},
+            {"name": "Bauelemente","link": "/bauelemente","class": "nav-link"},
+            {"name": "Rohrleitungen","link": "/rohrleitungen","class": "nav-link"},
+            {"name": "Aluminiumrohre","link": "/rohrleitungen/aluminiumrohre","class": "nav-link"},
+        ]
+        mainNavbar( menu );
+    </script>
+    <main>
+        <%- body %>
+    </main>
+    <%#- include('./../partials/footer',{}) %>
+</body>

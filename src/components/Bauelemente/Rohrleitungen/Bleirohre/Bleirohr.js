@@ -1,4 +1,4 @@
-require('use-strict')
+ require('use-strict')
 const path = require('path')
 
 const { Rohrleitungen } = require(path.resolve(

@@ -1,6 +1,6 @@
 const path = require('path')
 
-const str4 = '/layout.ejs'
+// const str4 = '/layout.ejs'
 
 /**
  * @description
@@ -8,14 +8,13 @@ const str4 = '/layout.ejs'
  * @date 08/05/2023
  * @param {*} router
  * @param {*} route
- * @param {*} v
- * @param {*} l
- * @param {*} str1
+ * @param {*} p - Page
+ * @param {*} l - Layout
  */
-function routerGet (router, route, v, l, str1) {
-  router.route(route).get((req, res) => {
-    res.render(`${v}${str1}`, {
-      layout: `${l}${str1}${str4}`
+function routerGet (router, route, p, l) {
+  router.route(String(route).toLowerCase()).get((req, res) => {
+    res.render(`${p}${route}`, {
+      layout: `${l}${route}/layout.ejs`
     })
   })
 }
