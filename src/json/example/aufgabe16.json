@@ -1,1 +1,1 @@
-{"Material":"GoldChrom","Ergebnis":{"Temperaturkonstante":{"mathjs":"Unit","value":-100019.99999999999,"unit":"K","fixPrefix":false}}}
+{"Object":{"Name":"GoldChrom","Parameter":{"δ20":"20 celsius"},"Visual":{},"data":{"ρ":["0.33 ohm*mm^2/m"],"κ":["3.0 S*m/mm^2"],"δ0":["-"],"α20":["-0.00001 K^-1"],"β20":["0.0000001 K/K^3"]}},"Ergebnis":{"Temperaturkonstante":[{"mathjs":"Unit","value":-100019.99999999999,"unit":"K","fixPrefix":false}]}}

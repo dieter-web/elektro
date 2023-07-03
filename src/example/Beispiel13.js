@@ -25,6 +25,7 @@ function Beispiel13 (input) {
   ))
 
   const ρbl = readMaterialParameter(input.Material, 'ρ')
+  
   // const ρbl = dbJson.readJSONFile(path.resolve('src/json/Tafel11.json'))[
   //   'Blei' // input.Material
   // ].ρ[0]
