@@ -15,7 +15,11 @@ const dbJson = require(path.resolve('controllers/dbJson.js'))
 function Aufgabe16 (input) {
   const jsonfile = path.resolve('src/json/example/aufgabe16.json')
 
-  const GoCh = new Material.Material('GoldChrom', { δ20: '20 celsius' }, {})
+  const δ20 = require(path.resolve('src/json/konstanten.json'))[
+    'Vergleichstemperatur'
+  ]['wert']
+
+  const GoCh = new Material.Material('GoldChrom', { δ20: δ20 }, {})
 
   const Ek = new ElektroKernel()
   Ek.parameter({
@@ -35,5 +39,5 @@ function Aufgabe16 (input) {
 let input = {
   Material: 'GoldChrom'
 }
-// Aufgabe16(input)
-exports.func = Aufgabe16
+Aufgabe16(input)
+// exports.func = Aufgabe16
