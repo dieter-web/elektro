@@ -40,7 +40,7 @@ function Aufgabe11 (input) {
 
   dbJson.writeJSONItem(jsonfile, erg)
   // TODO: Kann ich es zurückgeben, oder sollte es prinzipiell über jsonfile laufen ?
-  return erg
+  // return erg
 }
 // let input = {
 //   G: '3E-2 S',

@@ -36,9 +36,10 @@ function erouter (router, p, l, e, route, example) {
       (req, res) => {
         // const { func } = require(`${e}${route}${example}`)
         const { func } = require(`${e}${example}`)
-        res.locals.Aerg = func(req.body)
+        // res.locals.Aerg = func(req.body)
+        func(req.body) // Daten werden in die json-Datei geschrieben
         res.render(`${p}${route}${example}${ergebnis}`, {
-          resData: res.locals.Aerg,
+          // resData: res.locals.Aerg,
           layout: `${l}${route}${layout}`
         })
       }

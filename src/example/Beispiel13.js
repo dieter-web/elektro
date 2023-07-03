@@ -25,6 +25,13 @@ function Beispiel13 (input) {
   ))
 
   const ρbl = readMaterialParameter(input.Material, 'ρ')
+  // const ρbl = dbJson.readJSONFile(path.resolve('src/json/Tafel11.json'))[
+  //   'Blei' // input.Material
+  // ].ρ[0]
+
+  // const ρbl = dbJson.readJSONFile(path.resolve('src/json/Tafel11.json'))[
+  //   'Blei' // input.Material
+  // ]['ρ'][0]
 
   const RK = new RohrleitungstechnikKernel()
   const PK = new PlanemetrieKernel()
@@ -69,12 +76,14 @@ function Beispiel13 (input) {
     }
   }
 
-  const Parameter = {
-    Material: input.Material,
-    d: input.d,
-    D: input.D,
-    G: input.G
-  }
+  // const Parameter = {
+  //   Material: input.Material,
+  //   d: input.d,
+  //   D: input.D,
+  //   G: input.G
+  // }
+
+  const Parameter = input
 
   let PtRohr = new Bleirohr(Kennzeichnung, Parameter, {})
 

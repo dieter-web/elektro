@@ -1,6 +1,5 @@
 require('use-strict')
 const path = require('path')
-
 class Kennzeichnung {
   constructor (Anlage, Ort, Art, Zaehlnummer, Funktion, Anschlussart, Anzahl) {
     this.Anlage = Anlage

@@ -1,1 +1,1 @@
-{"Legierung":{"Material":"GoldChrom"},"Parameter":{"Konstanteα20":"-0.00001 K^-1","Konstanteδ20":"20 celsius"},"Ergebnis":{"Temperaturkonstante":{"mathjs":"Unit","value":-100019.99999999999,"unit":"K","fixPrefix":false}}}
+{"Material":"GoldChrom","Ergebnis":{"Temperaturkonstante":{"mathjs":"Unit","value":-100019.99999999999,"unit":"K","fixPrefix":false}}}

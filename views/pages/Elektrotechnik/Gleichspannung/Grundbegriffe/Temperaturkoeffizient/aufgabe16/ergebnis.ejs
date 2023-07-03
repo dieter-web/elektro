@@ -2,11 +2,29 @@
 
 <div class="container text-left">
 
+    <div class="row col">
+        <!-- <%#- include('table.ejs',{}) %> -->
+        <table class="table table-bordered" id="ergebnis"></table>
+    </div>
+
     <div class="row col bg-secondary">
-        <%- include('table.ejs',{}) %>
+        <svg id="grafik"></svg>
     </div>
 </div>
 
 <script type="module">
+    import {populate} from '/modules/populate.mjs'
+    import {tabulate} from '/modules/tabulate.mjs'
+    import {canvas} from '/modules/canvas.mjs'
+    import {vMaterial1} from '/d3/lib/Material/vMaterial1.mjs'
+
+    const data=await populate( "http://localhost:8000/json/example/aufgabe16.json" )
+
+    tabulate(data,"#ergebnis")
+
+    const g = canvas(800, 100, '#grafik')
+    
+
+    // Rückkopplung
     Material.value=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )[ 0 ];
 </script>

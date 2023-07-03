@@ -1,7 +1,9 @@
 require('use-strict')
 const path = require('path')
 
-const { dbJson, ElektroKernel } = require(path.resolve('include/system'))
+const { dbJson, ElektroKernel, Material } = require(path.resolve(
+  'include/system'
+))
 
 /**
  * @description
@@ -12,40 +14,35 @@ const { dbJson, ElektroKernel } = require(path.resolve('include/system'))
  * @param {*} input
  */
 function Aufgabe16 (input) {
-  const α20 = dbJson.readJSONFile(path.resolve('src/json/Tafel11.json'))[
-    input.Material
-  ].α20[0]
-  const δ20 = dbJson.readJSONFile(path.resolve('src/json/konstanten.json'))
-    .konstanten.Vergleichstemperatur.wert
+  const jsonfile = path.resolve('src/json/example/aufgabe16.json')
+  const Ma = new Material.Material(
+    {},
+    {
+      δ20: '20 celsius'
+    },
+    {}
+  )
+  Ma.Parameter.α20 = Ma.fα20('GoldChrom')[0]
 
   const Ek = new ElektroKernel()
-  const jsonfile = path.resolve('src/json/example/aufgabe16.json')
 
   Ek.parameter({
-    α20: α20,
-    δ20: δ20
+    α20: Ma.Parameter.α20,
+    δ20: Ma.Parameter.δ20
   })
 
   let theta0 = Ek.δM()
 
   let erg = {
-    Legierung: {
-      Material: input.Material
-    },
-    Parameter: {
-      Konstanteα20: α20,
-      Konstanteδ20: δ20
-    },
+    Material: input.Material,
     Ergebnis: {
       Temperaturkonstante: theta0
     }
   }
-
   dbJson.writeJSONItem(jsonfile, erg)
-  return erg
 }
-let input = {
-  Material: 'GoldChrom'
-}
-// console.log(Aufgabe16(input))
+// let input = {
+//   Material: 'GoldChrom'
+// }
+// Aufgabe16(input)
 exports.func = Aufgabe16

@@ -19,31 +19,16 @@
 <script type="module">
     import {tabulate} from '/modules/tabulate.mjs'
     import {canvas} from '/modules/canvas.mjs'
+    import {populate} from '/modules/populate.mjs'
 
     import {vW} from '/d3/lib/Betriebsmittel/vW.mjs'
 
-    const j=await d3.json( "http://localhost:8000/json/example/beispiel12.json" )
+    const j=await populate( "http://localhost:8000/json/example/beispiel12.json" )
 
     const g=canvas( 800,100,'#grafik' ) // Gesamtgröße
 
-    const datakennzeichnung=[ {
-        // "l": j.Parameter.l,
-        // "d": j.Parameter.d,
-        // "R": j.Parameter.R,
-        // 'ρ': j.Ergebnis.ρ.value+j.Ergebnis.ρ.unit
-    } ]
     // tabelle füllen
-    // tabulate( datatablekennzeichnung,[ 'l','d','R','ρ' ],"#kennzeichnung" )
-
-    const dataergebnis=[ {
-        "l": j.Parameter.l,
-        "d": j.Parameter.d,
-        "R": j.Parameter.R,
-        'ρ': j.Ergebnis.ρ.value+j.Ergebnis.ρ.unit
-    } ]
-
-    // tabelle füllen
-    tabulate( dataergebnis,[ 'l','d','R','ρ' ],"#ergebnis" )
+    tabulate( j,"#ergebnis" )
 
     // canvas füllen
     const dataW=[ {
@@ -56,7 +41,8 @@
             "W1",
             `l = ${ j.Parameter.l }`,
             `d = ${ j.Parameter.d }`,
-            `R = ${ j.Parameter.R }`
+            `R = ${ j.Parameter.R }`,
+            `ρ= ${ j.Ergebnis.ρ.value } ${ j.Ergebnis.ρ.unit }`
         ]
     }
     ]

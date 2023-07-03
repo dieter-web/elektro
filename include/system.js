@@ -9,8 +9,11 @@ const PMathematik = 'src/components/Mathematik'
 const PBauelemente = 'src/components/Bauelemente'
 const PBetriebsmittel = 'src/components/Betriebsmittel'
 const PDatenverarbeitung = 'src/components/Datenverarbeitung'
+// const PMaterial = 'src/components/Material'
 
 const dbJson = require(path.resolve('controllers/dbJson.js'))
+
+const Material = require(path.resolve('src/components/Material/Material.js'))
 
 const { Bauelemente } = require(path.resolve(`${PBauelemente}/Bauelemente.js`))
 
@@ -67,6 +70,7 @@ const { Stack } = require(path.resolve(
 ))
 
 exports.dbJson = dbJson
+exports.Material = Material
 exports.Bauelemente = Bauelemente
 exports.Rohrleitungen = Rohrleitungen
 exports.Bleirohr = Bleirohr
