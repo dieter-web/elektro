@@ -3,13 +3,11 @@ const path = require('path')
 const dbJson = require(path.resolve('controllers/dbJson.js'))
 
 class Material {
-  constructor (Name, Parameter, Visual) {
-    this.Name = Name
+  constructor (Kennzeichnung, Parameter, Visual) {
+    this.Kennzeichnung = Kennzeichnung
     this.Parameter = Parameter
     this.Visual = Visual
-    this.data = dbJson.readJSONFile(path.resolve('src/json/Tafel11.json'))[
-      this.Name
-    ]
+    this.data = dbJson.readJSONFile(path.resolve('src/json/Tafel11.json'))[Parameter.Material]
   }
 
   fρ (name) {

@@ -82,20 +82,7 @@ function Uebung14 (input) {
   let Rmax = EK.RρlA()
 
   let erg = {
-    // TODO Es muss nicht immer ein Betriebsmittel sein !
     Object: P1,
-    // Betriebsmittel: P1,
-    // {
-    //   Platte: P1
-    // },
-    Parameter: {
-      // TODO: In diesem Fall gibt es keine externen Parameter !
-      // Parameter der Platte sind schon in P1 enthalten !
-      // Material: P1.Parameter.Material,
-      // Laenge: P1.Parameter.l,
-      // Breite: P1.Parameter.b,
-      // Dicke: P1.Parameter.d
-    },
     Ergebnis: {
       Rmin: Rmin,
       Rmax: Rmax

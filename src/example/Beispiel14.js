@@ -90,7 +90,7 @@ function Beispiel14 (input) {
   let A = EK.AρlUI()
 
   let erg = {
-    Betriebsmittel: {
+    Object: {
       Leitung: W1
     },
     Parameter: {

@@ -16,14 +16,14 @@
     import {populate} from '/modules/populate.mjs'
     import {tabulate} from '/modules/tabulate.mjs'
     import {canvas} from '/modules/canvas.mjs'
-    import {vMaterial1} from '/d3/lib/Material/vMaterial1.mjs'
+    // import {vMaterial1} from '/d3/lib/Material/vMaterial1.mjs'
 
     const data=await populate( "http://localhost:8000/json/example/aufgabe16.json" )
 
-    tabulate(data,"#ergebnis")
+    tabulate( data,"#ergebnis" )
 
-    const g = canvas(800, 100, '#grafik')
-    
+    const g=canvas( 800,100,'#grafik' )
+
 
     // Rückkopplung
     Material.value=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )[ 0 ];

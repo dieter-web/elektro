@@ -42,9 +42,7 @@ function Uebung111 (input) {
   let Φd = AK.sub()
 
   let erg = {
-    Betriebsmittel: {
-      Reihenschaltung: RS1
-    },
+    Object: RS1,
     Parameter: {
       R: input.R,
       I: input.I,

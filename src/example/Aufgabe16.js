@@ -19,14 +19,21 @@ function Aufgabe16 (input) {
     'Vergleichstemperatur'
   ]['wert']
 
-  const GoCh = new Material.Material('GoldChrom', { δ20: δ20 }, {})
+  // Es wird noch die Vergleichstemperatur benötigt δ20
+  const GoCh = new Material.Material(
+    {},
+    {
+      Material: input.Material
+    },
+    {}
+  )
 
   const Ek = new ElektroKernel()
   Ek.parameter({
-    α20: GoCh.data['α20'],
-    δ20: GoCh.Parameter['δ20']
+    α20: GoCh.fα20(),
+    δ20: δ20
   })
-  let theta0 = Ek.δM()
+  let theta0 = Ek.δM().toString()
 
   let erg = {
     Object: GoCh, // Material
@@ -36,8 +43,8 @@ function Aufgabe16 (input) {
   }
   dbJson.writeJSONItem(jsonfile, erg)
 }
-let input = {
-  Material: 'GoldChrom'
-}
-Aufgabe16(input)
-// exports.func = Aufgabe16
+// let input = {
+//   Material: 'GoldChrom'
+//  }
+// Aufgabe16(input)
+exports.func = Aufgabe16

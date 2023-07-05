@@ -30,11 +30,18 @@ routerGet(router, R2.r2_2_1_1, R2.p2, R2.l2)
 routerGet(router, R2.r2_27, R2.p2, R2.l2)
 
 /** SECTION Betriebsmittel Widerstände allgemein */
-// routerGet(router,'/Widerstaende/Allgemein',R2.p2,R2.l2,'Widerstaende/Allgemein')
-routerGet(router, R2.r_27_1, R2.p2, R2.l2)
+// routerGet(
+//   router,
+//   '/Widerstaende/Allgemein',
+//   R2.p2,
+//   R2.l2
+//   // 'Widerstaende/Allgemein'
+// )
+routerGet(router, R2.r2_27_1, R2.p2, R2.l2)
+// routerGet(router, '/Widerstaende/Allgemein', R2.p2, R2.l2)
 
 /** NOTE Beispiel 1.1 */
-erouter(router, R2.p2, R2.l2, R2.e, '/Widerstaende/allgemein', R2.b11)
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_27_1, R2.b11)
 
 /** SECTION Betriebsmittel Widerstände feldplatten */
 routerGet(router, R2.r2_27_2, R2.p2, R2.l2)

@@ -28,24 +28,32 @@ module.exports = {
   r2_17: '/Schutzeinrichtungen',
   r2_18: '/Sensoren',
   r2_19: '/Steckvorrichtungen',
+  
   r2_20: '/Transformatoren',
+  
   r2_21: '/Uebertragungswege',
   r2_21_1: '/Uebertragungswege/Antennen',
   r2_21_2: '/Uebertragungswege/Draht',
   r2_21_3: '/Uebertragungswege/Kabel',
   r2_21_4: '/Uebertragungswege/Leitung',
   r2_21_5: '/Uebertragungswege/Sammelschiene',
+  
   r2_22: '/Umformer',
+  
   r2_23: '/Umsetzer',
+  
   r2_24: '/Verschiedenes',
+  
   r2_25: '/Verstaerker',
+  
   r2_26: '/Waehler',
+
   r2_27: '/Widerstaende',
-  r2_27_1: '/Widerstaende/allgemein',
-  r2_27_2: '/Widerstaende/feldplatten',
-  r2_27_3: '/Widerstaende/fotowiderstand',
-  r2_27_4: '/Widerstaende/thermistor',
-  r2_27_5: '/Widerstaende/varistor',
+  r2_27_1: '/Widerstaende/Allgemein',
+  r2_27_2: '/Widerstaende/Feldplatten',
+  r2_27_3: '/Widerstaende/Fotowiderstand',
+  r2_27_4: '/Widerstaende/Thermistor',
+  r2_27_5: '/Widerstaende/Varistor',
 
   b11: '/Beispiel11',
   b14: '/Beispiel14'

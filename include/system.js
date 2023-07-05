@@ -1,3 +1,4 @@
+require('use-strict')
 const path = require('path')
 
 // Klassenstrukturen

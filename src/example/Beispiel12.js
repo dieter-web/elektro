@@ -54,7 +54,7 @@ function Beispiel12 (input) {
   let ρ = EK.ρRAl()
 
   let erg = {
-    Betriebsmittel: W1,
+    Object: W1,
     Parameter: {
       l: input.l,
       d: input.d,

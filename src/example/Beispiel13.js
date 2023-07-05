@@ -95,7 +95,7 @@ function Beispiel13 (input) {
   let l = RK.lAρG()
 
   let erg = {
-    Betriebsmittel: PtRohr,
+    Object: PtRohr,
     Parameter: {
       ρ: ρbl,
       Ar: Ar

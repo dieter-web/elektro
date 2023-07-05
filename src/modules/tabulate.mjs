@@ -3,17 +3,17 @@ function tabulate (data, id) {
   let thead = table.append('thead')
   let tbody = table.append('tbody')
 
-  let theadData = Object.keys(data.Betriebsmittel.Parameter)
-  theadData.push(Object.keys(data.Ergebnis))
-  let datath = theadData.map(d => {
+  let theadParameter = Object.keys(data.Object[0].Parameter)
+  let theadErgebnis = Object.keys(data.Ergebnis)
+  let theadData = theadParameter.concat(theadErgebnis).map(d => {
     let a = []
     a.push(d)
     return a
   })
 
-  let tbodyValues = Object.values(data.Betriebsmittel.Parameter)
-  tbodyValues.push(Object.values(data.Ergebnis))
-  let datab = tbodyValues.map(d => {
+  let tbodyValues = Object.values(data.Object[0].Parameter)
+  let tbodyErgebnis = Object.values(data.Ergebnis)
+  let tbodyData = tbodyValues.concat(tbodyErgebnis).map(d => {
     let a = []
     a.push(d)
     return a
@@ -22,7 +22,7 @@ function tabulate (data, id) {
   thead
     .append('tr')
     .selectAll('th')
-    .data(datath) // .data(theadData)
+    .data(theadData)
     .enter()
     .append('th')
     .text(d => {
@@ -32,7 +32,7 @@ function tabulate (data, id) {
   tbody
     .append('tr')
     .selectAll('td')
-    .data(datab) // .data(tbodyValues)
+    .data(tbodyData)
     .enter()
     .append('td')
     .text(d => {

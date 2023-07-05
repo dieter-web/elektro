@@ -20,7 +20,7 @@ function Uebung19 (input) {
   let Rα20 = EK.α20()
 
   let erg = {
-    Bauelement: {
+    Object: {
       Thermistor: input.R20
     },
     Parameter: {

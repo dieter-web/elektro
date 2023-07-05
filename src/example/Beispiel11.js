@@ -1,9 +1,11 @@
 require('use-strict')
 const path = require('path')
 
-const { dbJson, ElektroKernel, BEWiderstand, Stack } = require(path.resolve(
+const { ElektroKernel, Widerstand, Stack } = require(path.resolve(
   'include/system'
 ))
+
+const dbJson = require(path.resolve('controllers/dbJson.js'))
 
 /**
  * @function Beispiel11
@@ -18,51 +20,52 @@ const { dbJson, ElektroKernel, BEWiderstand, Stack } = require(path.resolve(
  */
 function Beispiel11 (input) {
   const jsonfile = path.resolve('src/json/example/beispiel11.json')
+
   const IStack = new Stack()
   const GStack = new Stack()
 
   // let Rl = input.R.split(',')
 
-  let R1 = new BEWiderstand({}, { Wert: input.R1 }, {})
-  let R2 = new BEWiderstand({}, { Wert: input.R2 }, {})
-  let R3 = new BEWiderstand({}, { Wert: input.R3 }, {})
-  let R4 = new BEWiderstand({}, { Wert: input.R4 }, {})
+  let R1 = new Widerstand({}, { R: input.R1, U: input.U }, {})
+  let R2 = new Widerstand({}, { R: input.R2, U: input.U }, {})
+  let R3 = new Widerstand({}, { R: input.R3, U: input.U }, {})
+  let R4 = new Widerstand({}, { R: input.R4, U: input.U }, {})
+
   let RBEA = [R1, R2, R3, R4]
 
   const EK = new ElektroKernel()
   RBEA.map((R, i) => {
-    EK.parameter({ U: input.U, R: RBEA[i].Parameter.Wert })
+    EK.parameter({ U: R.Parameter.U, R: RBEA[i].Parameter.R })
     IStack.push(EK.IUR())
-  })
-
-  IStack.items.map(I => {
-    EK.parameter({ U: input.U, I: I })
+    let I = IStack.items[i]
+    EK.parameter({ I: I, U: R.Parameter.U })
     GStack.push(EK.GIU())
   })
 
+  // mathobject umwandeln in stringobject
+  let IStackString = IStack.items.map(d => {
+    return d.toString()
+  })
+  let GStackString = GStack.items.map(d => {
+    return d.toString()
+  })
+
   let erg = {
-    Betriebsmittel: {
-      Widerstand: RBEA
-    },
-    Parameter: {
-      U: input.U
-    },
+    Object: RBEA, // Array von Objekten
     Ergebnis: {
-      I: IStack,
-      G: GStack
+      I: IStackString,
+      G: GStackString
     }
   }
-
   dbJson.writeJSONItem(jsonfile, erg)
-  return erg
 }
 
-// let input = {
-//   R1: '2.5 Mohm',
-//   R2: '80 kohm',
-//   R3: '500 ohm',
-//   R4: '75 ohm',
-//   U: '60 V'
-// }
-// console.log(Beispiel11(input))
-exports.func = Beispiel11
+let input = {
+  R1: '2.5 Mohm',
+  R2: '80 kohm',
+  R3: '500 ohm',
+  R4: '75 ohm',
+  U: '60 V'
+}
+Beispiel11(input)
+// exports.func = Beispiel11

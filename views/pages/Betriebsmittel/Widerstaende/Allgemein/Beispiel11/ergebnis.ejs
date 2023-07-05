@@ -1,16 +1,16 @@
 <%- include('aufgabe.ejs',{}) %>
 
-<div class="container text-left">
+<div class="container text-left row">
 
-    <div class="row col bg-secondary">
+    <div class="row">
         <table class="table table-bordered" id="kennzeichnung"></table>
     </div>
 
-    <div class="row col bg-secondary">
+    <div class="row ">
         <table class="table table-bordered" id="ergebnis"></table>
     </div>
 
-    <div class="row col bg-secondary">
+    <div class="row ">
         <svg id="grafik"></svg>
     </div>
 </div>
@@ -20,29 +20,23 @@
 
     import {tabulate} from '/modules/tabulate.mjs'
     import {canvas} from '/modules/canvas.mjs'
+    import {populate} from '/modules/populate.mjs'
     import {vR} from '/d3/lib/Betriebsmittel/vR.mjs'
 
 
-    const j=await d3.json( "http://localhost:8000/json/example/beispiel11.json" )
+    const data=await populate( "http://localhost:8000/json/example/beispiel11.json" )
+    tabulate( data,"#ergebnis" )
 
     const g=canvas( 800,100,'#grafik' )
-
-    // const datakenzeichnung=[ {} ]
-    // tabulate( datakenzeichnung,[],"#kennzeichnung" )
-
-    // const dataergebnis=[ {} ]
-    // tabulate( dataergebnis,[],"#ergebnis" )
-
-    const dataR=[ {} ];
-    g.append( () => vR( dataR ) )
+    // g.append( () => vR( dataR ) )
 
 
-    const sel=d3.select( 'tbody' ).selectAll( 'tr' )._groups[ 0 ];
+    // const sel=d3.select( 'tbody' ).selectAll( 'tr' )._groups[ 0 ];
 
-    R1.value=sel[ 0 ].innerText.split( '\t' )[ 0 ];
-    R2.value=sel[ 1 ].innerText.split( '\t' )[ 0 ];
-    R3.value=sel[ 2 ].innerText.split( '\t' )[ 0 ];
-    R4.value=sel[ 3 ].innerText.split( '\t' )[ 0 ];
-    U.value=sel[ 0 ].innerText.split( '\t' )[ 1 ];
+    // R1.value=sel[ 0 ].innerText.split( '\t' )[ 0 ];
+    // R2.value=sel[ 1 ].innerText.split( '\t' )[ 0 ];
+    // R3.value=sel[ 2 ].innerText.split( '\t' )[ 0 ];
+    // R4.value=sel[ 3 ].innerText.split( '\t' )[ 0 ];
+    // U.value=sel[ 0 ].innerText.split( '\t' )[ 1 ];
 
 </script>

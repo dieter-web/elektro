@@ -32,7 +32,7 @@ function Aufgabe11 (input) {
   let U12 = EK.UIG().toString()
 
   let erg = {
-    Betriebsmittel: R1,
+    Object: R1,
     Ergebnis: {
       U: U12
     }
