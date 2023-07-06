@@ -7,20 +7,21 @@ function tabulate (data, id) {
   let theadParameter = Object.keys(data.Object[0].Parameter)
   let theadErgebnis = Object.keys(data.Ergebnis)
   let theadData = theadParameter.concat(theadErgebnis)
+  let tbodyErgebnis = Object.values(data.Ergebnis)
 
   let tbodyValues = []
+
   data.Object.map((d, i) => {
     let t = d.Parameter
     let tv = Object.values(t)
-    
-    // TODO: Jedes Ergebnis eintragen, muss er aber selbst finden !!
-    let I = data.Ergebnis.I[i]
-    let G = data.Ergebnis.G[i]
+    let tvg = []
 
-    let tvg = tv.concat(I).concat(G)
-    tbodyValues.push(tvg)
+    for (let x = 0; x < tbodyErgebnis.length; x++) {
+      tvg = tvg.concat(tbodyErgebnis[x][i])
+    }
+    let tvgg = tv.concat(tvg)
+    tbodyValues.push(tvgg)
   })
-  console.log(tbodyValues)
 
   thead
     .append('tr')
