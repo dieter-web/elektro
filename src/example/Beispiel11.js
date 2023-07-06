@@ -60,12 +60,12 @@ function Beispiel11 (input) {
   dbJson.writeJSONItem(jsonfile, erg)
 }
 
-let input = {
-  R1: '2.5 Mohm',
-  R2: '80 kohm',
-  R3: '500 ohm',
-  R4: '75 ohm',
-  U: '60 V'
-}
-Beispiel11(input)
-// exports.func = Beispiel11
+// let input = {
+//   R1: '2.5 Mohm',
+//   R2: '80 kohm',
+//   R3: '500 ohm',
+//   R4: '75 ohm',
+//   U: '60 V'
+// }
+// Beispiel11(input)
+exports.func = Beispiel11

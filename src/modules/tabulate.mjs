@@ -3,21 +3,24 @@ function tabulate (data, id) {
   let thead = table.append('thead')
   let tbody = table.append('tbody')
 
+  // Hier gibt es nur einen Objecttyp deswegen [0] möglich !
   let theadParameter = Object.keys(data.Object[0].Parameter)
   let theadErgebnis = Object.keys(data.Ergebnis)
-  let theadData = theadParameter.concat(theadErgebnis).map(d => {
-    let a = []
-    a.push(d)
-    return a
-  })
+  let theadData = theadParameter.concat(theadErgebnis)
 
-  let tbodyValues = Object.values(data.Object[0].Parameter)
-  let tbodyErgebnis = Object.values(data.Ergebnis)
-  let tbodyData = tbodyValues.concat(tbodyErgebnis).map(d => {
-    let a = []
-    a.push(d)
-    return a
+  let tbodyValues = []
+  data.Object.map((d, i) => {
+    let t = d.Parameter
+    let tv = Object.values(t)
+    
+    // TODO: Jedes Ergebnis eintragen, muss er aber selbst finden !!
+    let I = data.Ergebnis.I[i]
+    let G = data.Ergebnis.G[i]
+
+    let tvg = tv.concat(I).concat(G)
+    tbodyValues.push(tvg)
   })
+  console.log(tbodyValues)
 
   thead
     .append('tr')
@@ -29,15 +32,16 @@ function tabulate (data, id) {
       return d
     })
 
-  tbody
-    .append('tr')
-    .selectAll('td')
-    .data(tbodyData)
-    .enter()
-    .append('td')
-    .text(d => {
-      return d
-    })
+  data.Object.map((d, i) => {
+    tbody
+      .append('tr')
+      .selectAll('td')
+      .data(tbodyValues[i])
+      .enter()
+      .append('td')
+      .text(d => {
+        return d
+      })
+  })
 }
-
 export { tabulate }
