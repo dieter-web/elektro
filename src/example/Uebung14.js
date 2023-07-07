@@ -1,10 +1,10 @@
+require('use-strict')
 const path = require('path')
-const {
-  dbJson,
-  ElektroKernel,
-  PlanemetrieKernel,
-  BEGlasplatte
-} = require(path.resolve('include/system'))
+const { ElektroKernel, PlanemetrieKernel, BEGlasplatte } = require(path.resolve(
+  'include/system'
+))
+
+const dbJson = require(path.resolve('controllers/dbJson.js'))
 
 function Uebung14 (input) {
   const jsonfile = path.resolve('src/json/example/uebung14.json')
@@ -89,7 +89,6 @@ function Uebung14 (input) {
     }
   }
   dbJson.writeJSONItem(jsonfile, erg)
-  return erg
 }
 
 let input = {
@@ -98,6 +97,6 @@ let input = {
   b: '1.25m',
   d: '1 mm'
 }
-console.log(Uebung14(input))
+Uebung14(input)
 
 // exports.func = Uebung14

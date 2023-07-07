@@ -1,9 +1,11 @@
 require('use-strict')
 const path = require('path')
 
-const { dbJson, ElektroKernel, PlanemetrieKernel } = require(path.resolve(
+const { ElektroKernel, PlanemetrieKernel } = require(path.resolve(
   'include/system'
 ))
+
+const dbJson = require(path.resolve('controllers/dbJson.js'))
 
 const { Draht } = require(path.resolve(
   'src/components/Betriebsmittel/Uebertragungswege/Draht/Draht.js'
@@ -64,14 +66,12 @@ function Beispiel12 (input) {
       ρ: ρ //unit( ρ ).to( 'ohm (mm^2 / m)' )
     }
   }
-
   dbJson.writeJSONItem(jsonfile, erg)
-  return erg
 }
 // let input = {
 //   l: '3 km',
 //   d: '0.9 mm',
 //   R: '84.5 ohm'
 // }
-// console.log(Beispiel12(input))
+// Beispiel12(input)
 exports.func = Beispiel12

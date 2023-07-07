@@ -1,10 +1,12 @@
+require('use-strict')
 const path = require('path')
 const {
-  dbJson,
   RohrleitungstechnikKernel,
   Bleirohr,
   PlanemetrieKernel
 } = require(path.resolve('include/system'))
+
+const dbJson = require(path.resolve('controllers/dbJson.js'))
 
 /**
  * @function Beispiel13
@@ -25,7 +27,7 @@ function Beispiel13 (input) {
   ))
 
   const ρbl = readMaterialParameter(input.Material, 'ρ')
-  
+
   // const ρbl = dbJson.readJSONFile(path.resolve('src/json/Tafel11.json'))[
   //   'Blei' // input.Material
   // ].ρ[0]
@@ -105,7 +107,6 @@ function Beispiel13 (input) {
     }
   }
   dbJson.writeJSONItem(jsonfile, erg)
-  return erg
 }
 
 // let input = {
@@ -114,5 +115,5 @@ function Beispiel13 (input) {
 //   d: '2.5 cm',
 //   D: '3.0 cm'
 // }
-// console.log(Beispiel13(input))
+// Beispiel13(input)
 exports.func = Beispiel13

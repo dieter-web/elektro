@@ -1,12 +1,11 @@
 require('use-strict')
 const path = require('path')
 
-const {
-  dbJson,
-  ElektroKernel,
-  ArithmetikKernel,
-  Leitung
-} = require(path.resolve('include/system'))
+const { ElektroKernel, ArithmetikKernel, Leitung } = require(path.resolve(
+  'include/system'
+))
+
+const dbJson = require(path.resolve('controllers/dbJson.js'))
 
 /**
  * @function Beispiel14
@@ -107,8 +106,6 @@ function Beispiel14 (input) {
   }
 
   dbJson.writeJSONItem(jsonfile, erg)
-
-  return erg
 }
 // let input = {
 //   p: '5', //  ArithmetikKernel
@@ -118,5 +115,5 @@ function Beispiel14 (input) {
 //   l: '800 m',
 //   I: '11 A'
 // }
-// console.log(Beispiel14(input))
+// Beispiel14(input)
 exports.func = Beispiel14

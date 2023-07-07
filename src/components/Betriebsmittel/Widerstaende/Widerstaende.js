@@ -10,7 +10,6 @@ class Widerstaende extends Betriebsmittel {
     super(Kennzeichnung)
     this.Parameter = Parameter
     this.Visual = Visual
-    this.name = 'Widerstand'
   }
 }
 

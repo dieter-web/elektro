@@ -2,7 +2,6 @@ require('use-strict')
 const path = require('path')
 
 const { ElektroKernel, Material } = require(path.resolve('include/system'))
-
 const dbJson = require(path.resolve('controllers/dbJson.js'))
 
 /**

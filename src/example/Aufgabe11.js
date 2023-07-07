@@ -1,12 +1,8 @@
 require('use-strict')
 const path = require('path')
 
-const { dbJson, ElektroKernel, Widerstand } = require(path.resolve(
-  'include/system'
-))
-
-// Moduleimplementierung funktioniert hier nicht !
-// const {VR} = require(path.resolve('d3/lib/Betriebsmittel/vR.mjs'))
+const { ElektroKernel, Widerstand } = require(path.resolve('include/system'))
+const dbJson = require(path.resolve('controllers/dbJson.js'))
 
 /**
  * @description
@@ -17,9 +13,9 @@ const { dbJson, ElektroKernel, Widerstand } = require(path.resolve(
  * @param {*} input
  */
 function Aufgabe11 (input) {
+  const Kennzeichnung = {}
   const Parameter = input
   const Visual = {}
-  const Kennzeichnung = {}
 
   // Speicherort für data
   const jsonfile = path.resolve('src/json/example/aufgabe11.json')
@@ -37,14 +33,11 @@ function Aufgabe11 (input) {
       U: U12
     }
   }
-
   dbJson.writeJSONItem(jsonfile, erg)
-  // TODO: Kann ich es zurückgeben, oder sollte es prinzipiell über jsonfile laufen ?
-  // return erg
 }
-// let input = {
-//   G: '3E-2 S',
-//   I: '600 mA'
-// }
-// console.log(Aufgabe11(input))
-exports.func = Aufgabe11
+let input = {
+  G: '3E-2 S',
+  I: '600 mA'
+}
+Aufgabe11(input)
+// exports.func = Aufgabe11

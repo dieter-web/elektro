@@ -4,7 +4,6 @@ const path = require('path')
 const { ElektroKernel, Widerstand, Stack } = require(path.resolve(
   'include/system'
 ))
-
 const dbJson = require(path.resolve('controllers/dbJson.js'))
 
 /**

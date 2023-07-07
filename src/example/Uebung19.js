@@ -1,7 +1,8 @@
 require('use-strict')
 const path = require('path')
 
-const { dbJson, ElektroKernel } = require(path.resolve('include/system'))
+const { ElektroKernel } = require(path.resolve('include/system'))
+const dbJson = require(path.resolve('controllers/dbJson.js'))
 
 /**
  * @function Uebung19
@@ -34,12 +35,11 @@ function Uebung19 (input) {
     }
   }
   dbJson.writeJSONItem(jsonfile, erg)
-  return erg
 }
 // const input = {
 //   R20: '40 kohm',
 //   Rδ2: '41 kohm',
 //   δ2: '25.5 celsius'
 // }
-// console.log(Uebung19(input))
+// Uebung19(input)
 exports.func = Uebung19
