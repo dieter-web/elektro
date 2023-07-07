@@ -17,58 +17,14 @@ function Uebung14 (input) {
     'Glas' // input.Material
   ].ρ[1]
 
-  // TODO Hier sollte eine Eingabemöglichkeit geschaffen werden! Überarbeiten !!
-
-  const Kennzeichnung = {
-    '=': {
-      Anlage: {
-        1: '00',
-        2: '00',
-        3: '00',
-        Trennzeichen: '-',
-        4: '00',
-        5: '00'
-      }
-    },
-    '+': {
-      Ort: {
-        Aufstellungsort: {
-          1: '00',
-          2: '00',
-          3: '00',
-          4: '00',
-          5: '00'
-        },
-        Trennzeichen: '-',
-        Einbauort: {
-          6: '00',
-          7: '00',
-          8: '00',
-          9: '00'
-        }
-      }
-    },
-    Art: 'A',
-    Zaehlnummer: 1,
-    Funktion: 'A',
-    ':': {
-      Anschluss: {
-        1: '00',
-        2: '00'
-      }
-    }
-  }
-
-  const P1 = new BEGlasplatte(
-    Kennzeichnung,
-    {
-      Material: input.Material,
-      l: input.l,
-      b: input.b,
-      d: input.d
-    },
-    {}
+  const Kennzeichnung = dbJson.readJSONFile(
+    path.resolve('src/json/kennzeichnung.json')
   )
+
+  const Parameter = input
+  const Visual = {}
+
+  const P1 = new BEGlasplatte(Kennzeichnung, Parameter, Visual)
 
   const PK = new PlanemetrieKernel()
   const EK = new ElektroKernel()

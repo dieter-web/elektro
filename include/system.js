@@ -55,6 +55,26 @@ const { Widerstand } = require(path.resolve(
   `${PBetriebsmittel}/Widerstaende/Allgemein/Widerstand.js`
 ))
 
+const { Feldplatte } = require(path.resolve(
+  `${PBetriebsmittel}/Widerstaende/Feldplatten/Feldplatte.js`
+))
+
+const { Fotowiderstand } = require(path.resolve(
+  `${PBetriebsmittel}/Widerstaende/Fotowiderstand/Fotowiderstand.js`
+))
+
+const { Heissleiter } = require(path.resolve(
+  `${PBetriebsmittel}/Widerstaende/Thermistor/Heissleiter/Heissleiter.js`
+))
+
+const { Kaltleiter } = require(path.resolve(
+  `${PBetriebsmittel}/Widerstaende/Thermistor/Kaltleiter/Kaltleiter.js`
+))
+
+const { Varistor } = require(path.resolve(
+  `${PBetriebsmittel}/Widerstaende/Varistoren/Varistor.js`
+))
+
 const { Leitung } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Leitung/Leitung.js`
 ))
@@ -78,6 +98,11 @@ exports.RohrleitungstechnikKernel = RohrleitungstechnikKernel
 exports.Reihenschaltung = Reihenschaltung
 exports.Widerstaende = Widerstaende
 exports.Widerstand = Widerstand
+exports.Feldplatte = Feldplatte
+exports.Fotowiderstand = Fotowiderstand
+exports.Heissleiter = Heissleiter
+exports.Kaltleiter = Kaltleiter
+exports.Varistor = Varistor
 exports.BEGlasplatte = BEGlasplatte
 exports.Leitung = Leitung
 exports.Draht = Draht

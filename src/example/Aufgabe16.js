@@ -18,14 +18,15 @@ function Aufgabe16 (input) {
     'Vergleichstemperatur'
   ]['wert']
 
-  // Es wird noch die Vergleichstemperatur benötigt δ20
-  const GoCh = new Material.Material(
-    {},
-    {
-      Material: input.Material
-    },
-    {}
+  const Kennzeichnung = dbJson.readJSONFile(
+    path.resolve('src/json/kennzeichnung.json')
   )
+
+  const Parameter = input
+  const Visual = {}
+
+  // Es wird noch die Vergleichstemperatur benötigt δ20
+  const GoCh = new Material.Material(Kennzeichnung, Parameter, {})
 
   const Ek = new ElektroKernel()
   Ek.parameter({

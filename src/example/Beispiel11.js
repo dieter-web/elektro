@@ -23,13 +23,12 @@ function Beispiel11 (input) {
   const IStack = new Stack()
   const GStack = new Stack()
 
-  // let Rl = input.R.split(',')
-
   let R1 = new Widerstand({}, { R: input.R1, U: input.U }, {})
   let R2 = new Widerstand({}, { R: input.R2, U: input.U }, {})
   let R3 = new Widerstand({}, { R: input.R3, U: input.U }, {})
   let R4 = new Widerstand({}, { R: input.R4, U: input.U }, {})
 
+  // TODO: Mehr als ein Widerstand (Ein Object besteht aus mehreren Objecten)
   let RBEA = [R1, R2, R3, R4]
 
   const EK = new ElektroKernel()

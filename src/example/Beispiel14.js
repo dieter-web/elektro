@@ -25,54 +25,16 @@ const dbJson = require(path.resolve('controllers/dbJson.js'))
  */
 function Beispiel14 (input) {
   const jsonfile = path.resolve('src/json/example/beispiel14.json')
+  
   const ρal = dbJson.readJSONFile(path.resolve('src/json/Tafel11.json'))[
     input.Material
   ].ρ[0]
 
-  let Kennzeichnung = {
-    '=': {
-      Anlage: {
-        1: '00',
-        2: '00',
-        3: '00',
-        Trennzeichen: '-',
-        4: '00',
-        5: '00'
-      }
-    },
-    '+': {
-      Ort: {
-        Aufstellungsort: {
-          1: '00',
-          2: '00',
-          3: '00',
-          4: '00',
-          5: '00'
-        },
-        Trennzeichen: '-',
-        Einbauort: {
-          6: '00',
-          7: '00',
-          8: '00',
-          9: '00'
-        }
-      }
-    },
-    Art: 'W',
-    Zaehlnummer: 1,
-    Funktion: 'L',
-    ':': {
-      Anschluss: {
-        1: '00',
-        2: '00'
-      }
-    }
-  }
-  let Parameter = {
-    Material: input.Material,
-    l: input.l,
-    a: input.a
-  }
+  const Kennzeichnung = dbJson.readJSONFile(
+    path.resolve('src/json/kennzeichnung.json')
+  )
+
+  const Parameter = input
 
   const W1 = new Leitung(Kennzeichnung, Parameter, {})
 
@@ -89,20 +51,8 @@ function Beispiel14 (input) {
   let A = EK.AρlUI()
 
   let erg = {
-    Object: {
-      Leitung: W1
-    },
-    Parameter: {
-      Material: W1.Parameter.Material,
-      l: W1.Parameter.l,
-      a: W1.Parameter.a, // Anzahl der Adern
-      U: input.U,
-      p: input.p, // Prozentsatz
-      I: input.I
-    },
-    Ergebnis: {
-      A: A
-    }
+    Object: W1,
+    Ergebnis: A
   }
 
   dbJson.writeJSONItem(jsonfile, erg)

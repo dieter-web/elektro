@@ -16,7 +16,7 @@
 
 <script type="module">
     import {populate} from '/modules/populate.mjs'
-    import {tabulate} from '/modules/tabulate.mjs'
+    import {tabulate1} from '/modules/tabulate1.mjs'
     import {canvas} from '/modules/canvas.mjs'
     import {vR} from '/d3/lib/Betriebsmittel/vR.mjs'
 
@@ -25,7 +25,7 @@
 
     const data=await populate( "http://localhost:8000/json/example/aufgabe11.json" )
 
-    tabulate( data,"#ergebnis" )
+    tabulate1( data,"#ergebnis" )
 
     const g=canvas( width,height,'#grafik' )
 

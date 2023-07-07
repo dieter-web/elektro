@@ -39,52 +39,9 @@ function Beispiel13 (input) {
   const RK = new RohrleitungstechnikKernel()
   const PK = new PlanemetrieKernel()
 
-  let Kennzeichnung = {
-    '=': {
-      Anlage: {
-        1: '00',
-        2: '00',
-        3: '00',
-        Trennzeichen: '-',
-        4: '00',
-        5: '00'
-      }
-    },
-    '+': {
-      Ort: {
-        Aufstellungsort: {
-          1: '01',
-          2: '01',
-          3: '03',
-          4: '04',
-          5: '05'
-        },
-        Trennzeichen: '-',
-        Einbauort: {
-          6: '06',
-          7: '07',
-          8: '08',
-          9: '09'
-        }
-      }
-    },
-    Art: '0E',
-    Zaehlnummer: 1,
-    Funktion: '00',
-    ':': {
-      Anschluss: {
-        1: '00',
-        2: '00'
-      }
-    }
-  }
-
-  // const Parameter = {
-  //   Material: input.Material,
-  //   d: input.d,
-  //   D: input.D,
-  //   G: input.G
-  // }
+  const Kennzeichnung = dbJson.readJSONFile(
+    path.resolve('src/json/kennzeichnung.json')
+  )
 
   const Parameter = input
 

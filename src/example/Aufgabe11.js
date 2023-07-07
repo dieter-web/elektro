@@ -13,7 +13,9 @@ const dbJson = require(path.resolve('controllers/dbJson.js'))
  * @param {*} input
  */
 function Aufgabe11 (input) {
-  const Kennzeichnung = {}
+  const Kennzeichnung = dbJson.readJSONFile(
+    path.resolve('src/json/kennzeichnung.json')
+  )
   const Parameter = input
   const Visual = {}
 
@@ -35,9 +37,9 @@ function Aufgabe11 (input) {
   }
   dbJson.writeJSONItem(jsonfile, erg)
 }
-let input = {
-  G: '3E-2 S',
-  I: '600 mA'
-}
-Aufgabe11(input)
-// exports.func = Aufgabe11
+// let input = {
+//   G: '3E-2 S',
+//   I: '600 mA'
+// }
+// Aufgabe11(input)
+exports.func = Aufgabe11

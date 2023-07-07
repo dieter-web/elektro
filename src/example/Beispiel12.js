@@ -1,7 +1,7 @@
 require('use-strict')
 const path = require('path')
 
-const { ElektroKernel, PlanemetrieKernel } = require(path.resolve(
+const { ElektroKernel, PlanemetrieKernel, Draht } = require(path.resolve(
   'include/system'
 ))
 
@@ -31,13 +31,7 @@ function Beispiel12 (input) {
   )
 
   const Parameter = input
-
-  // TODO:  Hier wird das Aussehen des W1 bestimmt
-  // Die Koordinaten sind hier vieleicht noch zu früh
-  // z.B. Schutzleiter, Außenleiter, Nulleiter  ...
   const Visual = {
-    // vis: 'vW', // Funktionsname zum Zeichnen des Betriebsmittel
-    // id: 'W1',  ist Kennzeichnung
     opacity: 0.25,
     x: 50,
     y: 50,
@@ -57,11 +51,6 @@ function Beispiel12 (input) {
 
   let erg = {
     Object: W1,
-    Parameter: {
-      l: input.l,
-      d: input.d,
-      R: input.R
-    },
     Ergebnis: {
       ρ: ρ //unit( ρ ).to( 'ohm (mm^2 / m)' )
     }
