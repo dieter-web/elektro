@@ -24,6 +24,27 @@ routerGet(router, R2.r2_2_1, R2.p2, R2.l2)
 /** SECTION Baugruppen Zweipole passiver Zweipol */
 routerGet(router, R2.r2_2_1_1, R2.p2, R2.l2)
 
+/** SECTION Baugruppen Zweipole passiver Zweipol gemischte Schaltung */
+routerGet(router, R2.r2_2_1_1_1, R2.p2, R2.l2)
+/** !SECTION Baugruppen Zweipole passiver Zweipol gemischteSchaltung */
+
+/** SECTION Baugruppen Zweipole passiver Zweipol Kettenschaltung */
+routerGet(router, R2.r2_2_1_1_2, R2.p2, R2.l2)
+/** !SECTION Baugruppen Zweipole passiver Zweipol Kettenschaltung */
+
+/** SECTION Baugruppen Zweipole passiver Zweipol Parallelschaltung */
+routerGet(router, R2.r2_2_1_1_3, R2.p2, R2.l2)
+/** !SECTION Baugruppen Zweipole passiver Zweipol Parallelschaltung */
+routerGet(router, R2.r2_2_1_1_4, R2.p2, R2.l2)
+/** SECTION Baugruppen Zweipole passiver Zweipol Reihenschaltung */
+
+/** NOTE Übung 1.111 */
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_2_1_1, R2.u111)
+
+/** !SECTION Baugruppen Zweipole passiver Zweipol Reihenschaltung */
+
+/** !SECTION Baugruppen Zweipole passiver Zweipol */
+
 /** !SECTION Betriebsmittel Baugruppen */
 
 /** SECTION  Betriebsmittel Widerstände */

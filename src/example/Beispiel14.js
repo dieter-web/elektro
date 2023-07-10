@@ -5,6 +5,10 @@ const { ElektroKernel, ArithmetikKernel, Leitung } = require(path.resolve(
   'include/system'
 ))
 
+const { readMaterialParameter } = require(path.resolve(
+  'src/js/readMaterialParameter.js'
+))
+
 const dbJson = require(path.resolve('controllers/dbJson.js'))
 
 /**
@@ -25,10 +29,12 @@ const dbJson = require(path.resolve('controllers/dbJson.js'))
  */
 function Beispiel14 (input) {
   const jsonfile = path.resolve('src/json/example/beispiel14.json')
-  
-  const ρal = dbJson.readJSONFile(path.resolve('src/json/Tafel11.json'))[
-    input.Material
-  ].ρ[0]
+
+  const ρal = readMaterialParameter(input.Material, 'ρ')
+
+  // const ρal = dbJson.readJSONFile(path.resolve('src/json/Tafel11.json'))[
+  //   input.Material
+  // ].ρ[0]
 
   const Kennzeichnung = dbJson.readJSONFile(
     path.resolve('src/json/kennzeichnung.json')

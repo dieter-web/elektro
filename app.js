@@ -45,6 +45,8 @@ app.use(express.static(`${__dirname}/src`, staticOptions))
 app.use(express.static(`${__dirname}/controllers`, staticOptions))
 app.use(express.static(`${__dirname}/lib`, staticOptions))
 
+app.use(express.static(`${__dirname}/include`, staticOptions))
+
 const jsonOptions = {
   inflate: true,
   limit: '100kb',

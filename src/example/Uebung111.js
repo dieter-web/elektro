@@ -4,56 +4,50 @@ const {
   ElektroKernel,
   ArithmetikKernel,
   Reihenschaltung,
-  BEWiderstand
-} = require(path.resolve('include/system'))
+  Widerstand
+} = require(path.resolve('include/system.js'))
 
 const dbJson = require(path.resolve('controllers/dbJson.js'))
 
 function Uebung111 (input) {
-  const jsonfile = path.resolve('src/json/example/beispiel111.json')
+  const jsonfile = path.resolve('src/json/example/uebung111.json')
 
-  const R1 = new BEWiderstand({}, { Wert: input.R[0] }, {})
-  const R2 = new BEWiderstand({}, { Wert: input.R[1] }, {})
-  const R3 = new BEWiderstand({}, { Wert: input.R[2] }, {})
+  // Object ist Reihenschaltung von Widerstaenden
+
+  const R1 = new Widerstand({}, { Wert: input.R[0], Name: 'R1' }, {})
+  const R2 = new Widerstand({}, { Wert: input.R[1], Name: 'R2' }, {})
+  const R3 = new Widerstand({}, { Wert: input.R[2], Name: 'R3' }, {})
 
   let Parameter = {
-    R: [R1, R2, R3]
+    Widerstaende: [R1, R2, R3]
   }
+
   const RS1 = new Reihenschaltung({}, Parameter, {})
 
   const EK = new ElektroKernel()
   const AK = new ArithmetikKernel()
 
-  let a = [] // [Φab, Φbc, Φcd]
-
-  RS1.Parameter.R.map(R => {
+  RS1.Parameter.Widerstaende.map(R => {
     EK.parameter({ R: R.Parameter.Wert, I: input.I })
-    a.push(EK.ΦRI())
+    RS1.Stack.push(EK.ΦRI())
   })
 
-  AK.parameter({ a: a[0], b: a[1] })
+  AK.parameter({ a: RS1.Stack.items[0], b: RS1.Stack.items[1] })
   let tmp = AK.add()
 
   AK.parameter({ a: tmp, b: input.Φc })
-  let Φa = AK.sub()
+  RS1.Stack.push(AK.sub())
 
-  AK.parameter({ a: a[0], b: input.Φc })
-  let Φb = AK.sub()
+  AK.parameter({ a: RS1.Stack.items[0], b: input.Φc })
+  RS1.Stack.push(AK.sub())
 
-  AK.parameter({ a: input.Φc, b: a[2] })
-  let Φd = AK.sub()
+  AK.parameter({ a: input.Φc, b: RS1.Stack.items[2] })
+  RS1.Stack.push(AK.sub())
 
   let erg = {
     Object: RS1,
-    Parameter: {
-      R: input.R,
-      I: input.I,
-      Φc: input.Φc
-    },
     Ergebnis: {
-      Φa: Φa,
-      Φb: Φb,
-      Φd: Φd
+      stack: RS1.Stack
     }
   }
   dbJson.writeJSONItem(jsonfile, erg)

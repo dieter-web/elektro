@@ -13,6 +13,7 @@ const dbJson = require(path.resolve('controllers/dbJson.js'))
  */
 function Uebung19 (input) {
   const jsonfile = path.resolve('src/json/example/uebung19.json')
+
   const δ20 = dbJson.readJSONFile(path.resolve('src/json/konstanten.json'))
     .konstanten.Vergleichstemperatur.wert
 
@@ -27,8 +28,8 @@ function Uebung19 (input) {
     Parameter: {
       R20: input.R20,
       Rδ2: input.Rδ2,
-      δ2: input.δ2,
-      δ20: input.δ20
+      δ2: input.δ2
+      // δ20: input.δ20
     },
     Ergebnis: {
       α20: Rα20

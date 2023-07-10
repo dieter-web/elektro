@@ -5,6 +5,8 @@ const { Betriebsmittel } = require(path.resolve(
   'src/components/Betriebsmittel/Betriebsmittel.js'
 ))
 
+// const  {Betriebsmittel}  = require(path.resolve('include/system'))
+
 class Widerstaende extends Betriebsmittel {
   constructor (Kennzeichnung, Parameter, Visual) {
     super(Kennzeichnung)

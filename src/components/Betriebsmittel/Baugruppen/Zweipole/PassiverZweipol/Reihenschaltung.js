@@ -6,14 +6,17 @@ const { PassiverZweipol } = require(path.resolve(
   'src/components/Betriebsmittel/Baugruppen/Zweipole/PassiverZweipol/PassiverZweipol.js'
 ))
 
+const { Stack } = require(path.resolve(
+  'src/components/Datenverarbeitung/dynamischeDatenstrukturen/listen/stapel/stack.js'
+))
+
 class Reihenschaltung extends PassiverZweipol {
   // mehr als 2 Widerstände
   constructor (Kennzeichnung, Parameter, Visual) {
     super(Kennzeichnung)
     this.Parameter = Parameter
-    this.id = 'Reihenschaltung'
     this.Visual = Visual
-    this.id = 'Reihenschaltung'
+    this.Stack = new Stack()
   }
 }
 

@@ -1,8 +1,7 @@
 require('use-strict')
 
-class Betriebsmittel extends Object {
+class Betriebsmittel {
   constructor (Kennzeichnung) {
-    super()
     this.Kennzeichnung = Kennzeichnung
   }
 }

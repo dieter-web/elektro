@@ -11,6 +11,10 @@ module.exports = {
   r2_2: '/Baugruppen',
   r2_2_1: '/Baugruppen/Zweipole',
   r2_2_1_1: '/Baugruppen/Zweipole/passiverZweipol',
+  r2_2_1_1_1: '/Baugruppen/Zweipole/passiverZweipol/gemischteSchaltung',
+  r2_2_1_1_2: '/Baugruppen/Zweipole/passiverZweipol/Kettenschaltung',
+  r2_2_1_1_3: '/Baugruppen/Zweipole/passiverZweipol/Parallelschaltung',
+  r2_2_1_1_4: '/Baugruppen/Zweipole/passiverZweipol/Reihenschaltung',
   r2_3: '/Filter',
   r2_4: '/Generatoren',
   r2_5: '/GeraeteMitElektrischenAntrieb',
@@ -28,24 +32,24 @@ module.exports = {
   r2_17: '/Schutzeinrichtungen',
   r2_18: '/Sensoren',
   r2_19: '/Steckvorrichtungen',
-  
+
   r2_20: '/Transformatoren',
-  
+
   r2_21: '/Uebertragungswege',
   r2_21_1: '/Uebertragungswege/Antennen',
   r2_21_2: '/Uebertragungswege/Draht',
   r2_21_3: '/Uebertragungswege/Kabel',
   r2_21_4: '/Uebertragungswege/Leitung',
   r2_21_5: '/Uebertragungswege/Sammelschiene',
-  
+
   r2_22: '/Umformer',
-  
+
   r2_23: '/Umsetzer',
-  
+
   r2_24: '/Verschiedenes',
-  
+
   r2_25: '/Verstaerker',
-  
+
   r2_26: '/Waehler',
 
   r2_27: '/Widerstaende',
@@ -56,5 +60,6 @@ module.exports = {
   r2_27_5: '/Widerstaende/Varistor',
 
   b11: '/Beispiel11',
-  b14: '/Beispiel14'
+  b14: '/Beispiel14',
+  u111: '/Uebung111'
 }

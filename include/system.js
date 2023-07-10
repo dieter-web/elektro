@@ -15,6 +15,10 @@ const Material = require(path.resolve('src/components/Material/Material.js'))
 
 const { Bauelemente } = require(path.resolve(`${PBauelemente}/Bauelemente.js`))
 
+const { Betriebsmittel } = require(path.resolve(
+  `${PBetriebsmittel}/Betriebsmittel.js`
+))
+
 const { ElektroKernel } = require(path.resolve(
   `${PElektrotechnik}/gleichspannung/grundbegriffe/kernel.js`
 ))
@@ -39,7 +43,7 @@ const { PlanemetrieKernel } = require(path.resolve(
   `${PMathematik}/Planemetrie/kernel.js`
 ))
 
-const { BEGlasplatte } = require(path.resolve(
+const { Glasplatte } = require(path.resolve(
   `${PBauelemente}/Platten/Glasplatte/Glasplatte.js`
 ))
 
@@ -89,6 +93,7 @@ const { Stack } = require(path.resolve(
 
 exports.Material = Material
 exports.Bauelemente = Bauelemente
+exports.Betriebsmittel = Betriebsmittel
 exports.Rohrleitungen = Rohrleitungen
 exports.Bleirohr = Bleirohr
 exports.ElektroKernel = ElektroKernel
@@ -103,7 +108,7 @@ exports.Fotowiderstand = Fotowiderstand
 exports.Heissleiter = Heissleiter
 exports.Kaltleiter = Kaltleiter
 exports.Varistor = Varistor
-exports.BEGlasplatte = BEGlasplatte
+exports.Glasplatte = Glasplatte
 exports.Leitung = Leitung
 exports.Draht = Draht
 exports.Stack = Stack

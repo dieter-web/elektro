@@ -4,18 +4,17 @@ const { ElektroKernel, PlanemetrieKernel, BEGlasplatte } = require(path.resolve(
   'include/system'
 ))
 
+const { readMaterialParameter } = require(path.resolve(
+  'src/js/readMaterialParameter.js'
+))
+
 const dbJson = require(path.resolve('controllers/dbJson.js'))
 
 function Uebung14 (input) {
   const jsonfile = path.resolve('src/json/example/uebung14.json')
 
-  const ρgl_min = dbJson.readJSONFile(path.resolve('src/json/Tafel11.json'))[
-    'Glas' // input.Material
-  ].ρ[0]
-
-  const ρgl_max = dbJson.readJSONFile(path.resolve('src/json/Tafel11.json'))[
-    'Glas' // input.Material
-  ].ρ[1]
+  // Beinhaltet immer den min und max Wert
+  const ρgl = readMaterialParameter(input.Material, 'ρ')
 
   const Kennzeichnung = dbJson.readJSONFile(
     path.resolve('src/json/kennzeichnung.json')
@@ -32,9 +31,9 @@ function Uebung14 (input) {
   PK.parameter({ g: P1.Parameter.l, h: P1.Parameter.b })
   let Ap = PK.RAgh()
 
-  EK.parameter({ ρ: ρgl_min, l: P1.Parameter.d, A: Ap })
+  EK.parameter({ ρ: ρgl[0], l: P1.Parameter.d, A: Ap })
   let Rmin = EK.RρlA()
-  EK.parameter({ ρ: ρgl_max, l: P1.Parameter.l, A: Ap })
+  EK.parameter({ ρ: ρgl[1], l: P1.Parameter.l, A: Ap })
   let Rmax = EK.RρlA()
 
   let erg = {
