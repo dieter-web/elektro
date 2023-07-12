@@ -12,6 +12,7 @@ class Widerstand extends Betriebsmittel {
     super(Kennzeichnung)
     this.Parameter = Parameter
     this.Visual = Visual
+    this.Type = 'single'
   }
 }
 

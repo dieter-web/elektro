@@ -12,31 +12,26 @@ const dbJson = require(path.resolve('controllers/dbJson.js'))
 function Uebung111 (input) {
   const jsonfile = path.resolve('src/json/example/uebung111.json')
 
-  // const R1 = new Widerstand({}, { Wert: input.R1, Name: 'R1' }, {})
-  // const R2 = new Widerstand({}, { Wert: input.R2, Name: 'R2' }, {})
-  // const R3 = new Widerstand({}, { Wert: input.R3, Name: 'R3' }, {})
-
   const R1 = new Widerstand(
     { Art: 'R', Zaehlnummer: 1 },
-    { type: 'single', value: input.R1 },
+    { value: input.R1 },
     {}
   )
   const R2 = new Widerstand(
     { Art: 'R', Zaehlnummer: 2 },
-    { type: 'single', value: input.R2 },
+    { value: input.R2 },
     {}
   )
   const R3 = new Widerstand(
     { Art: 'R', Zaehlnummer: 3 },
-    { type: 'single', value: input.R3 },
+    { value: input.R3 },
     {}
   )
 
   let Parameter = {
     Objecte: [R1, R2, R3],
     Φc: '0 V',
-    I: '2 A',
-    type: 'group'
+    I: '2 A'
   }
 
   const RS1 = new Reihenschaltung({}, Parameter, {})

@@ -18,7 +18,7 @@ class Reihenschaltung extends PassiverZweipol {
     this.Visual = Visual
     this.Stack = new Stack()
 
-    this.Parameter.Type = 'Gruppe'
+    this.Type = 'group'
   }
 }
 
@@ -29,7 +29,7 @@ class Spannungsteiler extends Reihenschaltung {
     this.Parameter = Parameter
     this.Visual = Visual
 
-    this.Parameter.Type = 'Gruppe'
+    this.Parameter.Type = 'group'
   }
 }
 

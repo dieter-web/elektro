@@ -23,9 +23,7 @@
 
     const data=await populate( "http://localhost:8000/json/example/uebung111.json" )
 
-    tabulate( data," ","#ergebnis" )
-
-
+    tabulate( data,"group","#ergebnis" )
 
     let sel=d3.select( 'tbody' ).selectAll( 'tr' )._groups[ 0 ];
 
