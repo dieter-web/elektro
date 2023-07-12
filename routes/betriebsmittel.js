@@ -35,11 +35,12 @@ routerGet(router, R2.r2_2_1_1_2, R2.p2, R2.l2)
 /** SECTION Baugruppen Zweipole passiver Zweipol Parallelschaltung */
 routerGet(router, R2.r2_2_1_1_3, R2.p2, R2.l2)
 /** !SECTION Baugruppen Zweipole passiver Zweipol Parallelschaltung */
-routerGet(router, R2.r2_2_1_1_4, R2.p2, R2.l2)
+
 /** SECTION Baugruppen Zweipole passiver Zweipol Reihenschaltung */
+routerGet(router, R2.r2_2_1_1_4, R2.p2, R2.l2)
 
 /** NOTE Übung 1.111 */
-erouter(router, R2.p2, R2.l2, R2.e, R2.r2_2_1_1, R2.u111)
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_2_1_1_4, R2.u111)
 
 /** !SECTION Baugruppen Zweipole passiver Zweipol Reihenschaltung */
 

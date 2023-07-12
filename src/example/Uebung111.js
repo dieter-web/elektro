@@ -12,14 +12,31 @@ const dbJson = require(path.resolve('controllers/dbJson.js'))
 function Uebung111 (input) {
   const jsonfile = path.resolve('src/json/example/uebung111.json')
 
-  // Object ist Reihenschaltung von Widerstaenden
+  // const R1 = new Widerstand({}, { Wert: input.R1, Name: 'R1' }, {})
+  // const R2 = new Widerstand({}, { Wert: input.R2, Name: 'R2' }, {})
+  // const R3 = new Widerstand({}, { Wert: input.R3, Name: 'R3' }, {})
 
-  const R1 = new Widerstand({}, { Wert: input.R[0], Name: 'R1' }, {})
-  const R2 = new Widerstand({}, { Wert: input.R[1], Name: 'R2' }, {})
-  const R3 = new Widerstand({}, { Wert: input.R[2], Name: 'R3' }, {})
+  const R1 = new Widerstand(
+    { Art: 'R', Zaehlnummer: 1 },
+    { type: 'single', value: input.R1 },
+    {}
+  )
+  const R2 = new Widerstand(
+    { Art: 'R', Zaehlnummer: 2 },
+    { type: 'single', value: input.R2 },
+    {}
+  )
+  const R3 = new Widerstand(
+    { Art: 'R', Zaehlnummer: 3 },
+    { type: 'single', value: input.R3 },
+    {}
+  )
 
   let Parameter = {
-    Widerstaende: [R1, R2, R3]
+    Objecte: [R1, R2, R3],
+    Φc: '0 V',
+    I: '2 A',
+    type: 'group'
   }
 
   const RS1 = new Reihenschaltung({}, Parameter, {})
@@ -27,8 +44,8 @@ function Uebung111 (input) {
   const EK = new ElektroKernel()
   const AK = new ArithmetikKernel()
 
-  RS1.Parameter.Widerstaende.map(R => {
-    EK.parameter({ R: R.Parameter.Wert, I: input.I })
+  RS1.Parameter.Objecte.map(R => {
+    EK.parameter({ R: R.Parameter.value, I: input.I })
     RS1.Stack.push(EK.ΦRI())
   })
 
@@ -47,13 +64,17 @@ function Uebung111 (input) {
   let erg = {
     Object: RS1,
     Ergebnis: {
-      stack: RS1.Stack
+      Φa: RS1.Stack.items[3],
+      Φb: RS1.Stack.items[1],
+      Φd: RS1.Stack.items[5]
     }
   }
   dbJson.writeJSONItem(jsonfile, erg)
 }
 // let input = {
-//   R: ['5.2 ohm', '6.9 ohm', '3.4 ohm'],
+//   R1: '5.2 ohm',
+//   R2: '6.9 ohm',
+//   R3: '3.4 ohm',
 //   Φc: '0 V',
 //   I: '2 A'
 // }

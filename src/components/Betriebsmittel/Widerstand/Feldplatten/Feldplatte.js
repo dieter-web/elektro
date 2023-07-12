@@ -1,10 +1,11 @@
 require('use-strict')
 const path = require('path')
-const { Widerstaende } = require(path.resolve(
-  'src/components/Betriebsmittel/Widerstaende/Widerstaende.js'
+
+const { Widerstand } = require(path.resolve(
+  'src/components/Betriebsmittel/Widerstand/Widerstand.js'
 ))
 
-class Thermistor extends Widerstaende {
+class Feldplatte extends Widerstand {
   constructor (Kennzeichnung, Parameter, Visual) {
     super(Kennzeichnung)
     this.Parameter = Parameter
@@ -12,4 +13,4 @@ class Thermistor extends Widerstaende {
   }
 }
 
-exports.Thermistor = Thermistor
+exports.Feldplatte = Feldplatte

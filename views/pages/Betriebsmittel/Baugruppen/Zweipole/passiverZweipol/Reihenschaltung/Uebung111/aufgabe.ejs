@@ -1,10 +1,13 @@
 <div class="container text-left row">
-    <div class="col bg-secondary" id="text">
-
+    <div class="col" id="text"></div>
+    <div class="col">
+        <form id="uebung111"
+            action="/betriebsmittel/baugruppen/zweipole/passiverzweipol/reihenschaltung/uebung111/aufgabe"
+            method="POST"></form>
     </div>
-    <div class="col bg-secondary">
-        <%- include('form.ejs',{}) %>
-    </div>
+</div>
+<div class="container text-left row">
+    <!-- TODO: Abstandhalter  -->
 </div>
 
 <script type="module">
@@ -29,7 +32,7 @@
         {id: 'R1',text: 'Widerstand R1',name: 'R1',value: '5.2ohm'},
         {id: 'R2',text: 'Widerstand R2',name: 'R2',value: '6.9ohm'},
         {id: 'R3',text: 'Widerstand R3',name: 'R3',value: '3.4ohm'},
-        {id: 'Up',text: 'Bezugsspannung',name: 'Up',value: '0V'},
+        {id: 'Φc',text: 'Potential Φc',name: 'Φc',value: '0V'},
         {id: 'I',text: 'Stromstärke',name: 'I',value: '2A'}
 
     ]

@@ -51,32 +51,28 @@ const { Reihenschaltung } = require(path.resolve(
   `${PBetriebsmittel}/Baugruppen/Zweipole/PassiverZweipol/Reihenschaltung.js`
 ))
 
-const { Widerstaende } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstaende/Widerstaende.js`
-))
-
 const { Widerstand } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstaende/Allgemein/Widerstand.js`
+  `${PBetriebsmittel}/Widerstand/Widerstand.js`
 ))
 
 const { Feldplatte } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstaende/Feldplatten/Feldplatte.js`
+  `${PBetriebsmittel}/Widerstand/Feldplatten/Feldplatte.js`
 ))
 
 const { Fotowiderstand } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstaende/Fotowiderstand/Fotowiderstand.js`
+  `${PBetriebsmittel}/Widerstand/Fotowiderstand/Fotowiderstand.js`
 ))
 
 const { Heissleiter } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstaende/Thermistor/Heissleiter/Heissleiter.js`
+  `${PBetriebsmittel}/Widerstand/Thermistor/Heissleiter/Heissleiter.js`
 ))
 
 const { Kaltleiter } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstaende/Thermistor/Kaltleiter/Kaltleiter.js`
+  `${PBetriebsmittel}/Widerstand/Thermistor/Kaltleiter/Kaltleiter.js`
 ))
 
 const { Varistor } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstaende/Varistoren/Varistor.js`
+  `${PBetriebsmittel}/Widerstand/Varistoren/Varistor.js`
 ))
 
 const { Leitung } = require(path.resolve(
@@ -101,7 +97,6 @@ exports.ArithmetikKernel = ArithmetikKernel
 exports.PlanemetrieKernel = PlanemetrieKernel
 exports.RohrleitungstechnikKernel = RohrleitungstechnikKernel
 exports.Reihenschaltung = Reihenschaltung
-exports.Widerstaende = Widerstaende
 exports.Widerstand = Widerstand
 exports.Feldplatte = Feldplatte
 exports.Fotowiderstand = Fotowiderstand

@@ -52,12 +52,11 @@ module.exports = {
 
   r2_26: '/Waehler',
 
-  r2_27: '/Widerstaende',
-  r2_27_1: '/Widerstaende/Allgemein',
-  r2_27_2: '/Widerstaende/Feldplatten',
-  r2_27_3: '/Widerstaende/Fotowiderstand',
-  r2_27_4: '/Widerstaende/Thermistor',
-  r2_27_5: '/Widerstaende/Varistor',
+  r2_27: '/Widerstand',
+  r2_27_1: '/Widerstand/Feldplatten',
+  r2_27_2: '/Widerstand/Fotowiderstand',
+  r2_27_3: '/Widerstand/Thermistor',
+  r2_27_4: '/Widerstand/Varistor',
 
   b11: '/Beispiel11',
   b14: '/Beispiel14',

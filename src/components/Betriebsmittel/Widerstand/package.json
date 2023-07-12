@@ -1,16 +1,15 @@
 {
-  "name": "widerstaende",
+  "name": "widerstand",
   "version": "1.0.0",
   "description": "",
   "directories": {
-    "Allgemein": "Allgemein",
     "Feldplatten": "Feldplatten",
     "Fotowiderstand": "Fotowiderstand",
     "Thermistor": "Thermistor",
     "Variator": "Varistor"
   },
   "files": [
-    "Widerstaende.js"
+    "Widerstand.js"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

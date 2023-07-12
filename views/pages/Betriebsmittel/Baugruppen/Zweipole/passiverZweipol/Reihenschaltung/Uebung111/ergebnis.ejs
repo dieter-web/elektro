@@ -16,14 +16,14 @@
 
 <script type="module">
 
-    import {tabulate} from '/modules/tabulate.mjs'
+    import {tabulate} from '/modules/tabulate2.mjs'
     import {canvas} from '/modules/canvas.mjs'
     import {populate} from '/modules/populate.mjs'
     import {vR} from '/d3/lib/Betriebsmittel/vR.mjs'
 
     const data=await populate( "http://localhost:8000/json/example/uebung111.json" )
-    
-    tabulate( data,"#ergebnis" )
+
+    tabulate( data," ","#ergebnis" )
 
 
 

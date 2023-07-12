@@ -3,8 +3,30 @@
   "version": "1.0.0",
   "description": "",
   "directories": {
+    "Abschlüsse": "Abschluesse",
+    "Baugruppen": "Baugruppen",
+    "Filter": "Filter",
+    "Generatoren": "Generatoren",
+    "Geräte mit elektrischen Antrieb": "GeraeteMitElektrischenAntrieb",
+    "Halbleiter": "Halbleiter",
+    "Induktivitäten": "Induktivitaeten",
     "Kondensatoren": "Kondensatoren",
-    "Widerstände": "Widerstaende"
+    "Melder": "Melder",
+    "Messgeräte": "Messgeraete",
+    "Motoren": "Motoren",
+    "Prüfgeräte": "Pruefgeraete",
+    "Regler": "Regler",
+    "Relais": "Relais",
+    "Schalter": "Schalter",
+    "Schütze": "Schuetze",
+    "Schutzeinrichtungen": "Schutzeinrichtungen",
+    "Transformatoren": "Transformatoren",
+    "Übertragungswege": "Uebertragungswege",
+    "Umformer": "Umformer",
+    "Verschiedenes": "Verschiedenes",
+    "Verstärker": "Verstäerker",
+    "Wähler": "Waehler",
+    "Widerstand": "Widerstand"
   },
   "files": [
     "Betriebsmittel.js"

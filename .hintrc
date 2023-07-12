@@ -1,6 +1,14 @@
 {
+  "connector": "local",
   "extends": [
-    "development"
+    "development",
+    "accessibility",
+    "progressive-web-apps"
+  ],
+  "formatters": [
+    "html",
+    "summary",
+    "codeframe"
   ],
   "browserslist": [
     "defaults",
@@ -19,6 +27,13 @@
     "not ios_saf <= 16.3"
   ],
   "hints": {
+    "axe": "error",
+    "babel-config/is-valid": "error",
+    "disown-opener": "error",
+    "highest-available-document-mode": "error",
+    "manifest-exists": "off",
+    "meta-charset-utf-8": "error",
+    "meta-viewport": "error",
     "compat-api/css": [
       "off",
       {
@@ -31,5 +46,6 @@
     "content-type": [ "error", {
         ".*\\.js": "application/javascript; charset=utf-8"
       } ]
-  }
+  },
+  "hintsTimeout": 10000
 }
