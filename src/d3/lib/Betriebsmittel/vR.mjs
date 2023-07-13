@@ -6,18 +6,25 @@ function vR (data, pos) {
     .append('rect')
     .attr('fill', 'none')
     .attr('fill-opacity', '0.3')
-    .attr('style', 'stroke:#999;stroke-width:2.5;')
+    .attr('style', 'stroke:#fff;stroke-width:2.5;')
     .attr('x', pos[0])
     .attr('y', pos[1])
-    .attr('height', data.height)
-    .attr('width', data.width)
+    .attr('height', d => {
+      return d.height
+    })
+    .attr('width', d => {
+      return d.width
+    })
   R.selectAll('text')
     .data(data)
     .enter()
     .append('text')
-    .attr('x', pos[0] + 5)
-    .attr('y', pos[1] + data.heigth / 2 + 5)
-    .text('R')
+    .attr('x', pos[0])
+    .attr('y', pos[1] - 5)
+    .text(R => {
+      return R.id
+    })
+
   return R.node()
 }
 
