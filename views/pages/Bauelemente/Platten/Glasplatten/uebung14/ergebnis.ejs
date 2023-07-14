@@ -1,16 +1,31 @@
 <%- include('aufgabe.ejs', { }) %>
-
-<div class="container text-left">
-    <div class="row col bg-secondary">
-        <%- include('table.ejs', { }) %>
-    </div>
-</div>
+<%- include('../../../../../layouts/partials/ergebnis.ejs') %>
 
 <script type="module">
 
+    import {tabulate} from '/modules/tabulate2.mjs'
+    import {canvas} from '/modules/canvas.mjs'
+    import {populate} from '/modules/populate.mjs'
+    // import {vR} from '/d3/lib/Betriebsmittel/vR.mjs' Glasplatte !
+
+    //tabelle ergebnis
+    const data=await populate( "http://localhost:8000/json/example/uebung14.json" )
+
+    tabulate( data,"single","#ergebnis" )
+
+    // Rückkopplung
     const sel=d3.select( 'table#ergebnis' ).selectAll( 'tr' ).selectAll( 'td' )._parents[ 2 ].innerText.split( '\t' )
+
     Material.value=sel[ 0 ];
     l.value=sel[ 1 ];
     b.value=sel[ 2 ];
     d.value=sel[ 3 ];
+
+    // svg grafik 
+    const g=canvas( 800,300,'#grafik' )
+
+    let dataGP=[ {} ]
+
+    g.append( () => vR( dataR1,[ 50,50 ] ) )
+
 </script>

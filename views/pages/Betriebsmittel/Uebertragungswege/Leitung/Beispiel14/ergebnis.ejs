@@ -1,17 +1,34 @@
 <%- include('aufgabe.ejs',{}) %>
-<div class="container text-left">
-
-    <div class="row col bg-secondary">
-        <%- include('table.ejs',{}) %>
-    </div>
-</div>
+<%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
 
 <script type="module">
+
+    import {tabulate} from '/modules/tabulate2.mjs'
+    import {canvas} from '/modules/canvas.mjs'
+    import {populate} from '/modules/populate.mjs'
+    import {vR} from '/d3/lib/Betriebsmittel/vR.mjs'
+
+    //tabelle ergebnis
+    const data=await populate( "http://localhost:8000/json/example/beispiel14.json" )
+
+    tabulate( data,"single","#ergebnis" )
+
+
+    // Rückkopplung
     let sel=d3.select( 'tbody' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
+
     Material.value=sel[ 1 ];
     l.value=sel[ 2 ];
     a.value=sel[ 3 ];
     U.value=sel[ 4 ];
     p.value=sel[ 5 ];
     I.value=sel[ 6 ];
+
+    // svg grafik
+    const g=canvas( 800,300,'#grafik' )
+
+    let dataW1=[ {} ]
+
+    g.append( () => vR( dataW1,[ 50,50 ] ) )
+
 </script>

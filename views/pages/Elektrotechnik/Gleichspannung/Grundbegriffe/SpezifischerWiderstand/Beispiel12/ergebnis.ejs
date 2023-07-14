@@ -1,36 +1,26 @@
 <%- include('aufgabe.ejs',{}) %>
+<%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
 
-<div class="container bg-secondary">
-
-    <div class="row">
-        <table class="table table-bordered" id="kennzeichnung"></table>
-    </div>
-
-    <div class="row">
-        <table class="table table-bordered" id="ergebnis"></table>
-    </div>
-
-    <div class="row">
-        <svg id="grafik"></svg>
-    </div>
-
-</div>
 
 <script type="module">
     import {tabulate} from '/modules/tabulate.mjs'
     import {canvas} from '/modules/canvas.mjs'
     import {populate} from '/modules/populate.mjs'
-
     import {vW} from '/d3/lib/Betriebsmittel/vW.mjs'
 
-    const j=await populate( "http://localhost:8000/json/example/beispiel12.json" )
+    // tabelle ergebnis
+    const data=await populate( "http://localhost:8000/json/example/beispiel12.json" )
+    tabulate( data,"single","#ergebnis" )
 
-    const g=canvas( 800,100,'#grafik' ) // Gesamtgröße
+    // Rückkopplung
+    const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
+    l.value=tab[ 0 ]
+    d.value=tab[ 1 ]
+    R.value=tab[ 2 ]
 
-    // tabelle füllen
-    tabulate( j,"#ergebnis" )
+    // svg grafik
+    const g=canvas( 800,100,'#grafik' )
 
-    // canvas füllen
     const dataW=[ {
         'opacity': j.Betriebsmittel.Visual.opacity,
         'x': j.Betriebsmittel.Visual.x,
@@ -48,12 +38,5 @@
     ]
 
     g.append( () => vW( dataW ) )
-
-
-    // Schleife für das Einfügen von geänderten Werten im Formular
-    const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
-    l.value=tab[ 0 ]
-    d.value=tab[ 1 ]
-    R.value=tab[ 2 ]
 
 </script>

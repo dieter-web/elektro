@@ -1,30 +1,24 @@
 <%- include('aufgabe.ejs',{}) %>
-
-<div class="container text-left">
-
-    <div class="row col">
-        <!-- <%#- include('table.ejs',{}) %> -->
-        <table class="table table-bordered" id="ergebnis"></table>
-    </div>
-
-    <div class="row col bg-secondary">
-        <svg id="grafik"></svg>
-    </div>
-</div>
+<%- include('../../../../../../layouts/partials/ergebnis.ejs') %>
 
 <script type="module">
     import {populate} from '/modules/populate.mjs'
-    import {tabulate} from '/modules/tabulate.mjs'
+    import {tabulate} from '/modules/tabulate_aufgabe16.mjs'
     import {canvas} from '/modules/canvas.mjs'
     // import {vMaterial1} from '/d3/lib/Material/vMaterial1.mjs'
 
+    // tabelle ergebnis
     const data=await populate( "http://localhost:8000/json/example/aufgabe16.json" )
-
-    tabulate( data,"#ergebnis" )
-
-    const g=canvas( 800,100,'#grafik' )
-
+    tabulate( data,"single","#ergebnis" )
 
     // Rückkopplung
-    Material.value=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )[ 0 ];
+    // Material.value=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )[ 0 ];
+
+    // svg grafik
+    const g=canvas( 800,100,'#grafik' )
+
+    let dataT=[ {} ]
+
+    g.append( () => vR( dataR1,[ 50,50 ] ) )
+
 </script>

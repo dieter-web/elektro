@@ -1,72 +1,30 @@
 <%- include('aufgabe.ejs',{}) %>
-
-<div class="container bg-secondary">
-
-    <!-- <div class="row">
-        <table class="table table-bordered" id="kennzeichnung"></table>
-    </div> -->
-
-    <div class="row">
-        <table class="table table-bordered" id="ergebnis"></table>
-    </div>
-
-    <!-- <div class="row">
-        <svg id="grafik"></svg>
-    </div> -->
-
-</div>
+<%- include('../../../../../layouts/partials/ergebnis.ejs') %>
 
 <script type="module">
     import {tabulate} from '/modules/tabulate.mjs'
-    // import {canvas} from '/modules/canvas.mjs'
+    import {canvas} from '/modules/canvas.mjs'
+    import {populate} from '/modules/populate.mjs'
+    import {vb1} from '/d3/lib/Bauelemente/vb1.mjs'
 
-    // import {vb1} from '/d3/lib/Bauelemente/vb1.mjs'
+    const data=await d3.json( "http://localhost:8000/json/example/beispiel13.json" )
 
-    const j=await d3.json( "http://localhost:8000/json/example/beispiel13.json" )
+    // tabelle ergebnis
+    tabulate( data,"single","#ergebnis" )
 
-    // const g=canvas( 800,100,'#grafik' ) // Gesamtgröße
-
-    // const datakennzeichnung=[ {
-    //     // "l": j.Parameter.l,
-    //     // "d": j.Parameter.d,
-    //     // "R": j.Parameter.R,
-    //     // 'ρ': j.Ergebnis.ρ.value+j.Ergebnis.ρ.unit
-    // } ]
-    // tabelle füllen
-    // tabulate( datatablekennzeichnung,[ 'l','d','R','ρ' ],"#kennzeichnung" )
-
-    const dataergebnis=[ {
-        "Material": j.Betriebsmittel.Parameter.Material,
-        "G": j.Betriebsmittel.Parameter.G,
-        "d": j.Betriebsmittel.Parameter.d,
-        "D": j.Betriebsmittel.Parameter.D,
-        'l': j.Ergebnis.l
-    } ]
-
-    // tabelle füllen
-    tabulate( dataergebnis,[ 'Material','G','d','D','l' ],"#ergebnis" )
-
-    // // canvas füllen
-    // const dataRohr=[ {
-    //     'opacity': j.Betriebsmittel.Visual.opacity,
-    //     'x': j.Betriebsmittel.Visual.x,
-    //     'y': j.Betriebsmittel.Visual.y,
-    //     'height': j.Betriebsmittel.Visual.height,
-    //     'width': j.Betriebsmittel.Visual.width,
-    //     'text': [
-    //         "",
-    //     ]
-    // }
-    // ]
-
-    // g.append( () => vb1( dataRohr ) )
-
-
-    // Schleife für das Einfügen von geänderten Werten im Formular
+    // Rückkopplung
     const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
+
     Material.value=tab[ 0 ]
     G.value=tab[ 1 ]
     d.value=tab[ 2 ]
     D.value=tab[ 3 ]
+
+    // svg grafik
+    const g=canvas( 800,300,'#grafik' )
+
+    let dataRo=[ {} ]
+
+    g.append( () => vb1( dataRo,[ 50,50 ] ) )
 
 </script>

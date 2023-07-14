@@ -8,9 +8,12 @@
     import {populate} from '/modules/populate.mjs'
     import {vR} from '/d3/lib/Betriebsmittel/vR.mjs'
 
+    // tabelle ergebnis
     const data=await populate( "http://localhost:8000/json/example/beispiel11.json" )
-    tabulate( data,"#ergebnis" )
 
+    tabulate( data,"group","#ergebnis" )
+
+    // Rückkopplung
     // const sel=d3.select( 'tbody' ).selectAll( 'tr' )._groups[ 0 ];
 
     // R1.value=sel[ 0 ].innerText.split( '\t' )[ 0 ];

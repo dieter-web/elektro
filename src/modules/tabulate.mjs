@@ -4,7 +4,9 @@ function tabulate (data, id) {
   let tbody = table.append('tbody')
 
   // Hier gibt es nur einen Objecttyp deswegen [0] möglich !
+  
   let theadParameter = Object.keys(data.Object[0].Parameter)
+
   let theadErgebnis = Object.keys(data.Ergebnis)
   let theadData = theadParameter.concat(theadErgebnis)
   let tbodyErgebnis = Object.values(data.Ergebnis)

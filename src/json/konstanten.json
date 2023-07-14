@@ -1,13 +1,16 @@
 {
   "Vergleichstemperatur": {
     "name": "δ20",
-    "wert": "20 celsius"
+    "wert": "20celsius"
   },
 
   "Normalelement": {
-    "t": "20°C",
-    "U": "1.0183 V",
-    "Imax": "50 µA"
+    "name": "NE",
+    "wert": {
+      "t": "20celsius",
+      "U": "1.0183 V",
+      "Imax": "50 µA"
+    }
   },
   "Protonenmasse": {
     "name": "m_p",
@@ -15,7 +18,7 @@
   },
   "Faraday_Konstante": {
     "name": "F",
-    "wert": "96485.309 C / mol"
+    "wert": "96485.309 C/mol"
   },
   "Bohr_Radius": {
     "name": "a_0",
@@ -23,15 +26,15 @@
   },
   "Lichtgeschwindigkeit": {
     "name": "c",
-    "wert": "299792458 m / s"
+    "wert": "299792458 m/s"
   },
   "PlanckscheKonstante": {
     "name": "h",
-    "wert": "6.6260755E-34 J * s"
+    "wert": "6.6260755E-34 Js"
   },
   "GravitationsKonstante": {
     "name": "G",
-    "wert": "6.6725E-11 N * m ^ 2 / kg ^ 2"
+    "wert": "6.6725E-11 Nm^2/kg^2"
   },
   "Elementarladung": {
     "name": "e",
@@ -47,43 +50,43 @@
   },
   "AvogadrischeZahl": {
     "name": "N_A",
-    "wert": "6.0221367E23 mol ^ -1"
+    "wert": "6.0221367E23 mol^-1"
   },
   "Molvolumen": {
     "name": "V_m",
-    "wert": "0.0224141 m ^ 3 / mol"
+    "wert": "0.0224141 m^3/mol"
   },
   "Erdbeschleunigung": {
     "name": "g",
-    "wert": "9.80665 m / s ^ 2"
+    "wert": "9.80665 m/s^2"
   },
   "MolgasKonstante": {
     "name": "R",
-    "wert": "8.31451 J / /(mol * K)"
+    "wert": "8.31451 J/(mol*K)"
   },
   "ElektrischeFeldkonstante": {
     "name": "ε_0",
-    "wert": "8.85418781762E-12 F / m"
+    "wert": "8.85418781762E-12 F/m"
   },
   "LeerInduktion": {
     "name": "µ_0",
-    "wert": "1.25563706144 H / m"
+    "wert": "1.25563706144 H/m"
   },
   "mProtonenMoment": {
     "name": "µ_p",
-    "wert": "1.41060761 A * m ^ 2"
+    "wert": "1.41060761 Am^2"
   },
   "mElektronenmoment": {
     "name": "µ_e",
-    "wert": "9.2847701E-24 A * m ^ 2"
+    "wert": "9.2847701E-24 Am^2"
   },
   "NuklearMagneton": {
     "name": "µ_N",
-    "wert": "5.0507866E-27 A * m ^ 2"
+    "wert": "5.0507866E-27 Am^2"
   },
   "BohrMagneton": {
     "name": "µ_B",
-    "wert": "9.2740154E-24 A * m ^ 2"
+    "wert": "9.2740154E-24 Am^2"
   },
   "FeinstrukturKonstante": {
     "name": "α",
@@ -99,7 +102,7 @@
   },
   "GyromagnetischerKoeffizient": {
     "name": "γ_p",
-    "wert": "267522128 A * m ^ 2 / ( J * s )"
+    "wert": "267522128 Am^2/(Js)"
   },
   "ComptonWellenlänge_p": {
     "name": "λ_cp",
@@ -111,23 +114,23 @@
   },
   "RydbergKonstante": {
     "name": "R",
-    "wert": "10973731.534 m ^ -1"
+    "wert": "10973731.534 m^-1"
   },
   "ErsteStrahlungsKonstante": {
     "name": "cl",
-    "wert": "3.7417749E-16 W * m ^ 2"
+    "wert": "3.7417749E-16 Wm^2"
   },
   "ZweiteStrahlungsKonstante": {
     "name": "c2",
-    "wert": "0.01438769 m * K"
+    "wert": "0.01438769 mK"
   },
   "StefanBoltzmannKonstante": {
     "name": "σ",
-    "wert": "5.67051E-8 W * m ^ -2 / K ^ -4"
+    "wert": "5.67051E-8 Wm^-2/K^-4"
   },
   "BoltzmannKonstante": {
     "name": "k",
-    "wert": "1.380649E-23 J / K"
+    "wert": "1.380649E-23 J/K"
   },
   "Flußquantum": {
     "name": "φ_0",
