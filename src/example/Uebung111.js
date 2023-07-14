@@ -1,13 +1,13 @@
 require('use-strict')
 const path = require('path')
+const dbJson = require(path.resolve('controllers/dbJson.js'))
+
 const {
   ElektroKernel,
   ArithmetikKernel,
   Reihenschaltung,
   Widerstand
 } = require(path.resolve('include/system.js'))
-
-const dbJson = require(path.resolve('controllers/dbJson.js'))
 
 function Uebung111 (input) {
   const jsonfile = path.resolve('src/json/example/uebung111.json')
@@ -28,13 +28,19 @@ function Uebung111 (input) {
     {}
   )
 
+  // Reihenschaltung
+
+  const Kennzeichnung = dbJson.readJSONFile(
+    path.resolve('src/json/kennzeichnung.json')
+  )
+
   let Parameter = {
     Objecte: [R1, R2, R3],
     Φc: '0 V',
     I: '2 A'
   }
 
-  const RS1 = new Reihenschaltung({}, Parameter, {})
+  const RS1 = new Reihenschaltung(Kennzeichnung, Parameter, {})
 
   const EK = new ElektroKernel()
   const AK = new ArithmetikKernel()

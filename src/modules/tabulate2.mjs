@@ -67,7 +67,7 @@ function tabulate (data, type, id) {
       return d
     })
 
-  // data.Object.Parameter.Widerstaende.map((d, i) => {
+  // data.Object.Parameter.Widerstand.map((d, i) => {
   //   tbody
   //     .append('tr')
   //     .selectAll('td')

@@ -1,1 +1,58 @@
-{"Object":{"Kennzeichnung":{},"Parameter":{"G":"3E-2S","I":"600mA"},"Vis":{"Visual":{},"width":60,"height":20}},"Ergebnis":{"U":"20 V"}}
+{
+  "Object": {
+    "Kennzeichnung": {
+      "=": {
+        "Anlage": {
+          "1": "",
+          "2": "",
+          "3": "",
+          "4": "",
+          "5": "",
+          "Trennzeichen": "-"
+        }
+      },
+      "+": {
+        "Ort": {
+          "Aufstellungsort": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": ""
+          },
+          "Trennzeichen": "-",
+          "Einbauort": {
+            "6": "",
+            "7": "",
+            "8": "",
+            "9": ""
+          }
+        }
+      },
+      "Art": "",
+      "Zählnummer": 0,
+      "Funktion": "",
+      ":": [
+        {
+          "1": ""
+        },
+        {
+          "2": ""
+        }
+      ]
+    },
+    "Parameter": {
+      "G": "3E-2 S",
+      "I": "600 mA"
+    },
+    "Visual": {
+      "extvis": {},
+      "width": 50,
+      "height": 20
+    },
+    "Type": "single"
+  },
+  "Ergebnis": {
+    "U": "20 V"
+  }
+}

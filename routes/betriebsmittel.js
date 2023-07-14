@@ -48,36 +48,33 @@ erouter(router, R2.p2, R2.l2, R2.e, R2.r2_2_1_1_4, R2.u111)
 
 /** !SECTION Betriebsmittel Baugruppen */
 
-/** SECTION  Betriebsmittel Widerstände */
+/** SECTION  Betriebsmittel Widerstand */
 routerGet(router, R2.r2_27, R2.p2, R2.l2)
 
-/** SECTION Betriebsmittel Widerstände allgemein */
-// routerGet(
-//   router,
-//   '/Widerstaende/Allgemein',
-//   R2.p2,
-//   R2.l2
-//   // 'Widerstaende/Allgemein'
-// )
+/** SECTION Betriebsmittel Widerstand Allgemein */
 routerGet(router, R2.r2_27_1, R2.p2, R2.l2)
-// routerGet(router, '/Widerstaende/Allgemein', R2.p2, R2.l2)
 
 /** NOTE Beispiel 1.1 */
 erouter(router, R2.p2, R2.l2, R2.e, R2.r2_27_1, R2.b11)
+/** !SECTION Betriebsmittel Widerstand Allgemein */
 
-/** SECTION Betriebsmittel Widerstände feldplatten */
+/** SECTION Betriebsmittel Widerstand feldplatten */
 routerGet(router, R2.r2_27_2, R2.p2, R2.l2)
+/** !SECTION Betriebsmittel Widerstand feldplatten */
 
-/** SECTION Betriebsmittel Widerstände fotowiderstand */
+/** SECTION Betriebsmittel Widerstand fotowiderstand */
 routerGet(router, R2.r2_27_3, R2.p2, R2.l2)
+/** !SECTION Betriebsmittel Widerstand fotowiderstand */
 
-/** SECTION Betriebsmittel Widerstände thermistor */
+/** SECTION Betriebsmittel Widerstand thermistor */
 routerGet(router, R2.r2_27_4, R2.p2, R2.l2)
+/** !SECTION Betriebsmittel Widerstand thermistor */
 
-/** SECTION Betriebsmittel Widerstände varistor */
+/** SECTION Betriebsmittel Widerstand varistor */
 routerGet(router, R2.r2_27_5, R2.p2, R2.l2)
+/** !SECTION Betriebsmittel Widerstand varistor */
 
-/** !SECTION Widerstände */
+/** !SECTION Widerstand */
 
 /** SECTION Betriebsmittel Übertragungswege */
 routerGet(router, R2.r2_21, R2.p2, R2.l2)

@@ -1,18 +1,5 @@
 <%- include('aufgabe.ejs',{}) %>
-
-<div class="container text-left">
-    <div class="row">
-        <table class="table table-bordered" id="kennzeichnung"></table>
-    </div>
-
-    <div class="row ">
-        <svg id="grafik"></svg>
-    </div>
-
-    <div class="row ">
-        <table class="table table-bordered" id="ergebnis"></table>
-    </div>
-</div>
+<%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
 
 <script type="module">
 
@@ -32,6 +19,7 @@
 
     tabulate( data,"group","#ergebnis" )
 
+    // Rückkopplung
     let sel=d3.select( 'tbody' ).selectAll( 'td' )._groups[ 0 ];
 
     R1.value=sel[ 0 ].innerText;
@@ -45,22 +33,23 @@
 
     let dataR1=[
         {
+            // vis: data.Object.Parameter.Objecte[0].Visual,
             width: 50,
-            height: 25,
+            height: 20,
             id: "R1"
         }
     ]
     let dataR2=[
         {
             width: 50,
-            height: 25,
+            height: 20,
             id: "R2"
         }
     ]
     let dataR3=[
         {
             width: 50,
-            height: 25,
+            height: 20,
             id: "R3"
         }
     ]

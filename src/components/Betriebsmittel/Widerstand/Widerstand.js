@@ -11,7 +11,11 @@ class Widerstand extends Betriebsmittel {
   constructor (Kennzeichnung, Parameter, Visual) {
     super(Kennzeichnung)
     this.Parameter = Parameter
-    this.Visual = Visual
+    this.Visual = {
+      extvis : Visual,
+      width: 50,
+      height: 20
+    }
     this.Type = 'single'
   }
 }

@@ -1,8 +1,8 @@
 require('use-strict')
 const path = require('path')
+const dbJson = require(path.resolve('controllers/dbJson.js'))
 
 const { ElektroKernel, Widerstand } = require(path.resolve('include/system'))
-const dbJson = require(path.resolve('controllers/dbJson.js'))
 
 /**
  * @description
@@ -13,16 +13,16 @@ const dbJson = require(path.resolve('controllers/dbJson.js'))
  * @param {*} input
  */
 function Aufgabe11 (input) {
+  const jsonfile = path.resolve('src/json/example/aufgabe11.json')
+
+  // Widerstand
   const Kennzeichnung = dbJson.readJSONFile(
     path.resolve('src/json/kennzeichnung.json')
   )
+
   const Parameter = input
-  const Visual = {}
 
-  // Speicherort für data
-  const jsonfile = path.resolve('src/json/example/aufgabe11.json')
-
-  const R1 = new Widerstand(Kennzeichnung, Parameter, Visual)
+  const R1 = new Widerstand(Kennzeichnung, Parameter, {})
 
   const EK = new ElektroKernel()
 
@@ -37,9 +37,9 @@ function Aufgabe11 (input) {
   }
   dbJson.writeJSONItem(jsonfile, erg)
 }
-let input = {
-  G: '3E-2 S',
-  I: '600 mA'
-}
-Aufgabe11(input)
-// exports.func = Aufgabe11
+// let input = {
+//   G: '3E-2 S',
+//   I: '600 mA'
+// }
+// Aufgabe11(input)
+exports.func = Aufgabe11
