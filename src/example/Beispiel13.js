@@ -26,16 +26,6 @@ function Beispiel13 (input) {
     'src/js/readMaterialParameter.js'
   ))
 
-  const ρbl = readMaterialParameter(input.Material, 'ρ')
-
-  // const ρbl = dbJson.readJSONFile(path.resolve('src/json/Tafel11.json'))[
-  //   'Blei' // input.Material
-  // ].ρ[0]
-
-  // const ρbl = dbJson.readJSONFile(path.resolve('src/json/Tafel11.json'))[
-  //   'Blei' // input.Material
-  // ]['ρ'][0]
-
   const RK = new RohrleitungstechnikKernel()
   const PK = new PlanemetrieKernel()
 
@@ -44,26 +34,26 @@ function Beispiel13 (input) {
   )
 
   const Parameter = input
-
   let PtRohr = new Bleirohr(Kennzeichnung, Parameter, {})
+  PtRohr.Parameter.ρ = readMaterialParameter(input.Material, 'ρ')
 
   PK.parameter({ d: PtRohr.Parameter.d, D: PtRohr.Parameter.D })
-  let Ar = PK.KRADd()
+  PtRohr.Parameter.Ar = PK.KRADd()
 
-  RK.parameter({ ρ: ρbl, A: Ar, G: PtRohr.Parameter.G })
-  let l = RK.lAρG()
+  RK.parameter({
+    ρ: PtRohr.Parameter.ρ,
+    A: PtRohr.Parameter.Ar,
+    G: PtRohr.Parameter.G
+  })
+  PtRhor.Parameter.l = RK.lAρG()
 
-  let erg = {
-    Object: PtRohr,
-    Parameter: {
-      ρ: ρbl,
-      Ar: Ar
-    },
-    Ergebnis: {
-      l: l
-    }
-  }
-  dbJson.writeJSONItem(jsonfile, erg)
+  // let erg = {
+  //   Object: PtRohr,
+  //   Ergebnis: {
+  //     l: l
+  //   }
+  // }
+  dbJson.writeJSONItem(jsonfile, PtRohr)
 }
 
 // let input = {

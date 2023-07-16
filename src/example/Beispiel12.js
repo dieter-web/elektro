@@ -43,19 +43,19 @@ function Beispiel12 (input) {
   const PK = new PlanemetrieKernel()
   const EK = new ElektroKernel()
 
-  PK.parameter({ d: input.d })
-  let A = PK.KAd()
+  PK.parameter({ d: W1.Parameter.d })
+  W1.Parameter.A = PK.KAd()
 
-  EK.parameter({ l: input.l, R: input.R, A: A })
-  let ρ = EK.ρRAl()
+  EK.parameter({ l: W1.Parameter.l, R: W1.Parameter.R, A: W1.Parameter.A })
+  W1.Parameter.ρ = EK.ρRAl()
 
-  let erg = {
-    Object: W1,
-    Ergebnis: {
-      ρ: ρ //unit( ρ ).to( 'ohm (mm^2 / m)' )
-    }
-  }
-  dbJson.writeJSONItem(jsonfile, erg)
+  // let erg = {
+  //   Object: W1,
+  //   Ergebnis: {
+  //     ρ: ρ //unit( ρ ).to( 'ohm (mm^2 / m)' )
+  //   }
+  // }
+  dbJson.writeJSONItem(jsonfile, W1)
 }
 // let input = {
 //   l: '3 km',

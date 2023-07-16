@@ -31,15 +31,16 @@ function Aufgabe16 (input) {
     α20: GoCh.fα20(),
     δ20: GoCh.Parameter.δ20
   })
-  let theta0 = Ek.δM().toString()
 
-  let erg = {
-    Object: GoCh, // Material
-    Ergebnis: {
-      Temperaturkonstante: theta0
-    }
-  }
-  dbJson.writeJSONItem(jsonfile, erg)
+  GoCh.Parameter.theta0 = Ek.δM()
+
+  // let erg = {
+  //   Object: GoCh, // Material
+  //   Ergebnis: {
+  //     Temperaturkonstante: theta0
+  //   }
+  // }
+  dbJson.writeJSONItem(jsonfile, GoCh)
 }
 // let input = {
 //   Material: 'GoldChrom'

@@ -1,9 +1,9 @@
 require('use-strict')
 const path = require('path')
 
-const { ElektroKernel } = require(path.resolve('include/system'))
+const { ElektroKernel, Kaltleiter } = require(path.resolve('include/system'))
 const dbJson = require(path.resolve('controllers/dbJson.js'))
-
+const { readKonstante } = require(path.resolve('src/js/readKonstante.js'))
 /**
  * @function Uebung19
  *
@@ -14,28 +14,40 @@ const dbJson = require(path.resolve('controllers/dbJson.js'))
 function Uebung19 (input) {
   const jsonfile = path.resolve('src/json/example/uebung19.json')
 
-  const δ20 = dbJson.readJSONFile(path.resolve('src/json/konstanten.json'))
-    .konstanten.Vergleichstemperatur.wert
+  // const δ20 = dbJson.readJSONFile(path.resolve('src/json/konstanten.json'))
+  //   .konstanten.Vergleichstemperatur.wert
+  const Kennzeichnung = dbJson.readJSONFile(
+    path.resolve('src/json/kennzeichnung.json')
+  )
+
+  const Parameter = input
+  let R1 = new Kaltleiter(Kennzeichnung, Parameter, {})
+  R1.Parameter.δ20 = readKonstante('Vergleichstemperatur')
 
   const EK = new ElektroKernel()
-  EK.parameter({ R20: input.R20, Rδ2: input.Rδ2, δ2: input.δ2, δ20: δ20 })
-  let Rα20 = EK.α20()
+  EK.parameter({
+    R20: R1.Parameter.R20,
+    Rδ2: R1.Parameter.Rδ2,
+    δ2: R1.Parameter.δ2,
+    δ20: R1.Parameter.δ20
+  })
+  R1.Parameter.Rα20 = EK.α20()
 
-  let erg = {
-    Object: {
-      Thermistor: input.R20
-    },
-    Parameter: {
-      R20: input.R20,
-      Rδ2: input.Rδ2,
-      δ2: input.δ2
-      // δ20: input.δ20
-    },
-    Ergebnis: {
-      α20: Rα20
-    }
-  }
-  dbJson.writeJSONItem(jsonfile, erg)
+  // let erg = {
+  //   Object: {
+  //     Thermistor: input.R20
+  //   },
+  //   Parameter: {
+  //     R20: input.R20,
+  //     Rδ2: input.Rδ2,
+  //     δ2: input.δ2
+  //     // δ20: input.δ20
+  //   },
+  //   Ergebnis: {
+  //     α20: Rα20
+  //   }
+  // }
+  dbJson.writeJSONItem(jsonfile, R1)
 }
 // const input = {
 //   R20: '40 kohm',

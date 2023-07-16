@@ -5,7 +5,7 @@ const { Platten } = require(path.resolve(
   'src/components/Bauelemente/Platten/Platten.js'
 ))
 
-class BEGlasplatte extends Platten {
+class Glasplatte extends Platten {
   constructor (kennzeichnung, parameter, views) {
     super(kennzeichnung)
     this.Parameter = parameter
@@ -14,4 +14,4 @@ class BEGlasplatte extends Platten {
   }
 }
 
-exports.BEGlasplatte = BEGlasplatte
+exports.Glasplatte = Glasplatte

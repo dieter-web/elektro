@@ -149,7 +149,7 @@ class ElektroKernel {
     return run('1 /α20 * (( κ/ κ1) - 1) ', this.param)
   }
   RρlA () {
-    return run('( ρ * l / A)', this.param)
+    return run('( ρ * (l / A))', this.param)
   }
   RUI () {
     return run('U / J', this.param)

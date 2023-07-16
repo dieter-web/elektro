@@ -62,15 +62,15 @@ function Uebung111 (input) {
   AK.parameter({ a: input.Φc, b: RS1.Stack.items[2] })
   RS1.Stack.push(AK.sub())
 
-  let erg = {
-    Object: RS1,
-    Ergebnis: {
-      Φa: RS1.Stack.items[3],
-      Φb: RS1.Stack.items[1],
-      Φd: RS1.Stack.items[5]
-    }
-  }
-  dbJson.writeJSONItem(jsonfile, erg)
+  // let erg = {
+  //   Object: RS1,
+  //   Ergebnis: {
+  //     Φa: RS1.Stack.items[3],
+  //     Φb: RS1.Stack.items[1],
+  //     Φd: RS1.Stack.items[5]
+  //   }
+  // }
+  dbJson.writeJSONItem(jsonfile, RS1)
 }
 // let input = {
 //   R1: '5.2 ohm',
@@ -81,3 +81,4 @@ function Uebung111 (input) {
 // }
 // Uebung111(input)
 exports.func = Uebung111
+ 

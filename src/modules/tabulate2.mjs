@@ -2,14 +2,17 @@ function tabulate (data, type, id) {
   let table = d3.select(id)
   let thead = table.append('thead')
   let tbody = table.append('tbody')
+  let d0 = data.Object.Parameter
+  let d1 = data.Ergebnis
 
   // Head
   let head = []
   let body = []
 
+  // mehrere Objecte
   if (type === 'group') {
-    let d0 = data.Object.Parameter
-    let d1 = data.Ergebnis
+    // let d0 = data.Object.Parameter
+    // let d1 = data.Ergebnis
     let h1 = Object.keys(d0)
     let h2 = Object.keys(d1)
 
@@ -44,7 +47,15 @@ function tabulate (data, type, id) {
     body = body1.concat(b21)
   }
 
+  // nur ein Object
   if (type === 'single') {
+    let h1 = Object.keys(d0)
+    let h2 = Object.keys(d1)
+    head = h1.concat(h2)
+
+    let b1 = Object.values(d0)
+    let b2 = Object.values(d1)
+    body = b1.concat(b2[0].value + b2[0].unit)
   }
 
   thead

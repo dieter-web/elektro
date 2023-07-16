@@ -21,21 +21,20 @@ function Aufgabe11 (input) {
   )
 
   const Parameter = input
-
   const R1 = new Widerstand(Kennzeichnung, Parameter, {})
 
   const EK = new ElektroKernel()
 
   EK.parameter({ G: R1.Parameter.G, I: R1.Parameter.I })
-  let U12 = EK.UIG().toString()
+  R1.Parameter.U12 = EK.UIG()
 
-  let erg = {
-    Object: R1,
-    Ergebnis: {
-      U: U12
-    }
-  }
-  dbJson.writeJSONItem(jsonfile, erg)
+  // let erg = {
+  //   Object: R1,
+  //   Ergebnis: {
+  //     U: U12
+  //   }
+  // }
+  dbJson.writeJSONItem(jsonfile, R1)
 }
 // let input = {
 //   G: '3E-2 S',

@@ -56,7 +56,11 @@ module.exports = {
   r2_27_1: '/Widerstand/Allgemein',
   r2_27_2: '/Widerstand/Feldplatten',
   r2_27_3: '/Widerstand/Fotowiderstand',
+
   r2_27_4: '/Widerstand/Thermistor',
+  r2_27_4_1: '/Widerstand/Thermistor/Heissleiter',
+  r2_27_4_2: '/Widerstand/Thermistor/Kaltleiter',
+
   r2_27_5: '/Widerstand/Varistor',
 
   b11: '/Beispiel11',

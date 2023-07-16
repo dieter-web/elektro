@@ -30,12 +30,6 @@ const dbJson = require(path.resolve('controllers/dbJson.js'))
 function Beispiel14 (input) {
   const jsonfile = path.resolve('src/json/example/beispiel14.json')
 
-  const ρal = readMaterialParameter(input.Material, 'ρ')
-
-  // const ρal = dbJson.readJSONFile(path.resolve('src/json/Tafel11.json'))[
-  //   input.Material
-  // ].ρ[0]
-
   const Kennzeichnung = dbJson.readJSONFile(
     path.resolve('src/json/kennzeichnung.json')
   )
@@ -43,25 +37,33 @@ function Beispiel14 (input) {
   const Parameter = input
 
   const W1 = new Leitung(Kennzeichnung, Parameter, {})
+  W1.Parameter.ρal = readMaterialParameter(input.Material, 'ρ')
 
   const AK = new ArithmetikKernel()
   const EK = new ElektroKernel()
 
   AK.parameter({ G: input.U, p: input.p })
-  let prozentwert = AK.Prozentwert()
+  // let prozentwert = AK.Prozentwert()
+  W1.Parameter.prozentwert = AK.Prozentwert()
 
   AK.parameter({ a: W1.Parameter.a, b: W1.Parameter.l })
-  let lg = AK.mul()
+  // let lg = AK.mul()
+  W1.Parameter.lg = AK.mul()
 
-  EK.parameter({ ρ: ρal, l: lg, U: prozentwert, I: input.I })
-  let A = EK.AρlUI()
+  EK.parameter({
+    ρ: W1.Parameter.ρal,
+    l: W1.Parameter.lg,
+    U: W1.Parameter.prozentwert,
+    I: W1.Parameter.I
+  })
+  W1.Parameter.A = EK.AρlUI()
 
-  let erg = {
-    Object: W1,
-    Ergebnis: A
-  }
+  // let erg = {
+  //   Object: W1,
+  //   Ergebnis: A
+  // }
 
-  dbJson.writeJSONItem(jsonfile, erg)
+  dbJson.writeJSONItem(jsonfile, W1)
 }
 // let input = {
 //   p: '5', //  ArithmetikKernel
