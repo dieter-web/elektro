@@ -1,11 +1,8 @@
-<div class="container text-left row">
-    <div class="col bg-secondary" id="text">
-    </div>
-    <div class="col">
-        <form id="beispiel14" action="/betriebsmittel/uebertragungswege/leitung/beispiel14/aufgabe" method="POST">
-        </form>
-    </div>
-</div>
+<%- include('../../../../../layouts/partials/aufgabe.ejs', {
+    id : "beispiel14",
+    action: "/betriebsmittel/uebertragungswege/leitung/beispiel14/aufgabe"
+}) %>
+
 <script type="module">
     import {finput} from '/modules/finput.mjs'
     import {fsubmit} from '/modules/fsubmit.mjs'

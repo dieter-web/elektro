@@ -34,42 +34,31 @@ function Uebung111 (input) {
     path.resolve('src/json/kennzeichnung.json')
   )
 
-  let Parameter = {
-    Objecte: [R1, R2, R3],
-    Φc: '0 V',
-    I: '2 A'
-  }
+  let Parameter = input
 
   const RS1 = new Reihenschaltung(Kennzeichnung, Parameter, {})
+  RS1.Parameter.Objecte = [R1, R2, R3]
 
   const EK = new ElektroKernel()
   const AK = new ArithmetikKernel()
 
   RS1.Parameter.Objecte.map(R => {
-    EK.parameter({ R: R.Parameter.value, I: input.I })
-    RS1.Stack.push(EK.ΦRI())
+    EK.parameter({ R: R.Parameter.value, I: RS1.Parameter.I })
+    RS1.Stack.push(EK.ΦRI().toString())
   })
 
   AK.parameter({ a: RS1.Stack.items[0], b: RS1.Stack.items[1] })
   let tmp = AK.add()
 
   AK.parameter({ a: tmp, b: input.Φc })
-  RS1.Stack.push(AK.sub())
+  RS1.Stack.push(AK.sub().toString())
 
   AK.parameter({ a: RS1.Stack.items[0], b: input.Φc })
-  RS1.Stack.push(AK.sub())
+  RS1.Stack.push(AK.sub().toString())
 
   AK.parameter({ a: input.Φc, b: RS1.Stack.items[2] })
-  RS1.Stack.push(AK.sub())
+  RS1.Stack.push(AK.sub().toString())
 
-  // let erg = {
-  //   Object: RS1,
-  //   Ergebnis: {
-  //     Φa: RS1.Stack.items[3],
-  //     Φb: RS1.Stack.items[1],
-  //     Φd: RS1.Stack.items[5]
-  //   }
-  // }
   dbJson.writeJSONItem(jsonfile, RS1)
 }
 // let input = {
@@ -81,4 +70,3 @@ function Uebung111 (input) {
 // }
 // Uebung111(input)
 exports.func = Uebung111
- 

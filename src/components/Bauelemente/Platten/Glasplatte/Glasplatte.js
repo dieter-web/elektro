@@ -7,7 +7,7 @@ const { Platten } = require(path.resolve(
 
 class Glasplatte extends Platten {
   constructor (kennzeichnung, parameter, views) {
-    super(kennzeichnung)
+    super(kennzeichnung, parameter)
     this.Parameter = parameter
     this.Views = views
     this.Name = 'Glasplatte'

@@ -10,15 +10,15 @@
     const data=await d3.json( "http://localhost:8000/json/example/beispiel13.json" )
 
     // tabelle ergebnis
-    tabulate( data,"single","#ergebnis" )
+    tabulate( data,"#ergebnis" )
 
     // Rückkopplung
-    const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
+    // const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
 
-    Material.value=tab[ 0 ]
-    G.value=tab[ 1 ]
-    d.value=tab[ 2 ]
-    D.value=tab[ 3 ]
+    // Material.value=tab[ 0 ]
+    // G.value=tab[ 1 ]
+    // d.value=tab[ 2 ]
+    // D.value=tab[ 3 ]
 
     // svg grafik
     const g=canvas( 800,300,'#grafik' )

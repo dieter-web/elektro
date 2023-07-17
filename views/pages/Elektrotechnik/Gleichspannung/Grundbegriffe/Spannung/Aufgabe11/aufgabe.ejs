@@ -1,15 +1,8 @@
-<div class="container text-left row">
+<%- include('../../../../../../layouts/partials/aufgabe.ejs', {
+    id : "aufgabe11",
+    action: "/elektrotechnik/gleichspannung/grundbegriffe/spannung/aufgabe11/aufgabe"
+}) %>
 
-    <div class="col" id="text"></div>
-
-    <div class="col">
-        <form id="aufgabe11" action="/elektrotechnik/gleichspannung/grundbegriffe/spannung/aufgabe11/aufgabe"
-            method="POST"></form>
-    </div>
-    <div class="row" id="ke">
-
-    </div>
-</div>
 <script type="module">
     import {finput} from '/modules/finput.mjs'
     import {fsubmit} from '/modules/fsubmit.mjs'

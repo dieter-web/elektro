@@ -1,9 +1,9 @@
-<%- include('aufgabe.ejs', { }) %>
+<%- include('./aufgabe.ejs', { }) %>
 <%- include('../../../../../layouts/partials/ergebnis.ejs') %>
 
 <script type="module">
 
-    import {tabulate} from '/modules/tabulate_uebung14.mjs'
+    import {tabulate} from '/modules/tabulate.mjs'
     import {canvas} from '/modules/canvas.mjs'
     import {populate} from '/modules/populate.mjs'
     // import {vR} from '/d3/lib/Betriebsmittel/vR.mjs' Glasplatte !
@@ -11,7 +11,7 @@
     //tabelle ergebnis
     const data=await populate( "http://localhost:8000/json/example/uebung14.json" )
 
-    tabulate( data,"single","#ergebnis" )
+    tabulate( data,"#ergebnis" )
 
     // Rückkopplung
     // const sel=d3.select( 'table#ergebnis' ).selectAll( 'tr' ).selectAll( 'td' )._parents[ 2 ].innerText.split( '\t' )

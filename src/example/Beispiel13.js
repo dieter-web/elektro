@@ -45,14 +45,8 @@ function Beispiel13 (input) {
     A: PtRohr.Parameter.Ar,
     G: PtRohr.Parameter.G
   })
-  PtRhor.Parameter.l = RK.lAρG()
+  PtRohr.Parameter.l = RK.lAρG().toString()
 
-  // let erg = {
-  //   Object: PtRohr,
-  //   Ergebnis: {
-  //     l: l
-  //   }
-  // }
   dbJson.writeJSONItem(jsonfile, PtRohr)
 }
 

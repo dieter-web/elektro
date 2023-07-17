@@ -1,15 +1,7 @@
-<div class="container row">
-
-  <div class="col" id="text">
-  </div>
-
-  <div class="col">
-    <form id="beispiel12"
-      action="/elektrotechnik/gleichspannung/grundbegriffe/spezifischerwiderstand/beispiel12/aufgabe" method="POST">
-    </form>
-  </div>
-
-</div>
+<%- include('../../../../../../layouts/partials/aufgabe.ejs', {
+    id : "beispiel12",
+    action: "/elektrotechnik/gleichspannung/grundbegriffe/spezifischerwiderstand/beispiel12/aufgabe"
+}) %>
 
 <script type="module">
   import {finput} from '/modules/finput.mjs'

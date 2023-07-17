@@ -26,14 +26,8 @@ function Aufgabe11 (input) {
   const EK = new ElektroKernel()
 
   EK.parameter({ G: R1.Parameter.G, I: R1.Parameter.I })
-  R1.Parameter.U12 = EK.UIG()
+  R1.Parameter.U12 = EK.UIG().toString()
 
-  // let erg = {
-  //   Object: R1,
-  //   Ergebnis: {
-  //     U: U12
-  //   }
-  // }
   dbJson.writeJSONItem(jsonfile, R1)
 }
 // let input = {

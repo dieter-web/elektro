@@ -3,48 +3,33 @@ function tabulate (data, id) {
   let thead = table.append('thead')
   let tbody = table.append('tbody')
 
-  // Hier gibt es nur einen Objecttyp deswegen [0] möglich !
-  
-  let theadParameter = Object.keys(data.Object[0].Parameter)
+  let th = Object.keys(data.Parameter)
 
-  let theadErgebnis = Object.keys(data.Ergebnis)
-  let theadData = theadParameter.concat(theadErgebnis)
-  let tbodyErgebnis = Object.values(data.Ergebnis)
+  let tb1 = Object.values(data.Kennzeichnung)
+  let tb2 = Object.values(data.Parameter)
 
-  let tbodyValues = []
-
-  data.Object.map((d, i) => {
-    let t = d.Parameter
-    let tv = Object.values(t)
-    let tvg = []
-
-    for (let x = 0; x < tbodyErgebnis.length; x++) {
-      tvg = tvg.concat(tbodyErgebnis[x][i])
-    }
-    let tvgg = tv.concat(tvg)
-    tbodyValues.push(tvgg)
-  })
+  let tb = tb1.concat(tb2)
 
   thead
     .append('tr')
-    .selectAll('th')
-    .data(theadData)
+    .selectAll('td')
+    .data(th)
     .enter()
     .append('th')
     .text(d => {
       return d
     })
-
-  data.Object.map((d, i) => {
-    tbody
-      .append('tr')
-      .selectAll('td')
-      .data(tbodyValues[i])
-      .enter()
-      .append('td')
-      .text(d => {
-        return d
-      })
-  })
+  tbody
+    .append('tr')
+    .selectAll('td')
+    .data(tb2)
+    .enter()
+    .append('td')
+    .text(d => {
+      if (d.mathjs) {
+        // return unit(d).toString()
+        return d.value + d.unit
+      } else return d
+    })
 }
 export { tabulate }

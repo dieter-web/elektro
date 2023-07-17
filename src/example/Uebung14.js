@@ -22,16 +22,20 @@ function Uebung14 (input) {
   const Visual = {}
 
   const P1 = new Glasplatte(Kennzeichnung, Parameter, Visual)
-  P1.Parameter.ρgl = readMaterialParameter(input.Material, 'ρ')
+
+  P1.Parameter.ρgl = readMaterialParameter(
+    P1.Parameter.Material,
+    'ρ'
+  ).toString()
 
   const PK = new PlanemetrieKernel()
   const EK = new ElektroKernel()
 
   PK.parameter({ g: P1.Parameter.l, h: P1.Parameter.b })
-  P1.Parameter.Ap = PK.RAgh()
+  P1.Parameter.Ap = PK.RAgh().toString()
 
   EK.parameter({ ρ: P1.Parameter.ρgl, l: P1.Parameter.d, A: P1.Parameter.Ap })
-  P1.Parameter.R = EK.RρlA()
+  P1.Parameter.R = EK.RρlA().toString()
 
   dbJson.writeJSONItem(jsonfile, P1)
 }

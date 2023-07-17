@@ -1,12 +1,7 @@
-<div class="container text-left row">
-    <div class="col" id="text"></div>
-    <div class="col">
-        <form id="beispiel11" action="/betriebsmittel/widerstand/allgemein/beispiel11/aufgabe" method="POST"></form>
-    </div>
-</div>
-<div class="container text-left row">
-    <!-- TODO: Abstandhalter  -->
-</div>
+<%- include('../../../../../layouts/partials/aufgabe.ejs', {
+    id : "beispiel11",
+    action: "/betriebsmittel/widerstand/allgemein/beispiel11/aufgabe"
+}) %>
 
 <script type="module">
     import {finput} from '/modules/finput.mjs'
@@ -15,7 +10,6 @@
 
     const idBeispiel="#beispiel11"
     const idText="#text"
-
 
     const dataSubmit=[ "Rechnen" ] // 1 Button 
 
