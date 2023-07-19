@@ -35,20 +35,22 @@ function Beispiel14 (input) {
   )
 
   const Parameter = input
+  const Visual = {}
 
-  const W1 = new Leitung(Kennzeichnung, Parameter, {})
-  W1.Parameter.ρal = readMaterialParameter(input.Material, 'ρ')
+  const W1 = new Leitung(Kennzeichnung, Parameter, Visual)
+  W1.Parameter.ρal = readMaterialParameter(
+    W1.Parameter.Material,
+    'ρ'
+  ).toString()
 
   const AK = new ArithmetikKernel()
   const EK = new ElektroKernel()
 
-  AK.parameter({ G: input.U, p: input.p })
-  // let prozentwert = AK.Prozentwert()
-  W1.Parameter.prozentwert = AK.Prozentwert()
+  AK.parameter({ G: W1.Parameter.U, p: W1.Parameter.p })
+  W1.Parameter.prozentwert = AK.Prozentwert().toString()
 
   AK.parameter({ a: W1.Parameter.a, b: W1.Parameter.l })
-  // let lg = AK.mul()
-  W1.Parameter.lg = AK.mul()
+  W1.Parameter.lg = AK.mul().toString()
 
   EK.parameter({
     ρ: W1.Parameter.ρal,
@@ -56,12 +58,7 @@ function Beispiel14 (input) {
     U: W1.Parameter.prozentwert,
     I: W1.Parameter.I
   })
-  W1.Parameter.A = EK.AρlUI()
-
-  // let erg = {
-  //   Object: W1,
-  //   Ergebnis: A
-  // }
+  W1.Parameter.A = EK.AρlUI().toString()
 
   dbJson.writeJSONItem(jsonfile, W1)
 }

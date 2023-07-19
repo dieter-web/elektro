@@ -22,7 +22,7 @@ function Uebung19 (input) {
 
   const Parameter = input
   let R1 = new Kaltleiter(Kennzeichnung, Parameter, {})
-  R1.Parameter.δ20 = readKonstante('Vergleichstemperatur')
+  R1.Parameter.δ20 = readKonstante('Vergleichstemperatur').toString()
 
   const EK = new ElektroKernel()
   EK.parameter({
@@ -31,28 +31,14 @@ function Uebung19 (input) {
     δ2: R1.Parameter.δ2,
     δ20: R1.Parameter.δ20
   })
-  R1.Parameter.Rα20 = EK.α20()
+  R1.Parameter.Rα20 = EK.α20().toString()
 
-  // let erg = {
-  //   Object: {
-  //     Thermistor: input.R20
-  //   },
-  //   Parameter: {
-  //     R20: input.R20,
-  //     Rδ2: input.Rδ2,
-  //     δ2: input.δ2
-  //     // δ20: input.δ20
-  //   },
-  //   Ergebnis: {
-  //     α20: Rα20
-  //   }
-  // }
   dbJson.writeJSONItem(jsonfile, R1)
 }
-// const input = {
-//   R20: '40 kohm',
-//   Rδ2: '41 kohm',
-//   δ2: '25.5 celsius'
-// }
-// Uebung19(input)
-exports.func = Uebung19
+const input = {
+  R20: '40 kohm',
+  Rδ2: '41 kohm',
+  δ2: '25.5 celsius'
+}
+Uebung19(input)
+// exports.func = Uebung19

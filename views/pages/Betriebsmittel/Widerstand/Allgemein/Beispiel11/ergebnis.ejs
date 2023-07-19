@@ -11,7 +11,7 @@
     // tabelle ergebnis
     const data=await populate( "http://localhost:8000/json/example/beispiel11.json" )
 
-    tabulate( data,"group","#ergebnis" )
+    tabulate( data,"#ergebnis" )
 
     // Rückkopplung
     // const sel=d3.select( 'tbody' ).selectAll( 'tr' )._groups[ 0 ];
@@ -24,7 +24,7 @@
 
 
     // svg grafik
-    const g=canvas( 800,300,'#grafik' )
+    const g=canvas( '#grafik',800,300,"0 0 200 100" )
 
     let dataR1=[
         {

@@ -7,10 +7,6 @@ const { ElektroKernel, PlanemetrieKernel, Draht } = require(path.resolve(
 
 const dbJson = require(path.resolve('controllers/dbJson.js'))
 
-const { Draht } = require(path.resolve(
-  'src/components/Betriebsmittel/Uebertragungswege/Draht/Draht.js'
-))
-
 /**
  * @description
  * Wie groß ist der spezifische Widerstand eines 3 km langen Drahtes
@@ -57,10 +53,10 @@ function Beispiel12 (input) {
   // }
   dbJson.writeJSONItem(jsonfile, W1)
 }
-// let input = {
-//   l: '3 km',
-//   d: '0.9 mm',
-//   R: '84.5 ohm'
-// }
-// Beispiel12(input)
-exports.func = Beispiel12
+let input = {
+  l: '3 km',
+  d: '0.9 mm',
+  R: '84.5 ohm'
+}
+Beispiel12(input)
+// exports.func = Beispiel12

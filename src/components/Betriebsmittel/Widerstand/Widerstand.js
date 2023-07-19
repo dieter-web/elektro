@@ -16,7 +16,6 @@ class Widerstand extends Betriebsmittel {
       width: 50,
       height: 20
     }
-    this.Type = 'single'
   }
 }
 

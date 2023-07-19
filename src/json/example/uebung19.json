@@ -1,1 +1,34 @@
-{"Bauelement":{"Thermistor":"40kohm"},"Parameter":{"R20":"40kohm","Rδ2":"41kohm","δ2":"25.5celsius","δ20":"20celsius"},"Ergebnis":{"α20":{"mathjs":"Unit","value":0.00454545454545453,"unit":"celsius^-1","fixPrefix":false}}}
+{
+  "Kennzeichnung": {
+    "=": {
+      "Anlage": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "Trennzeichen": "-"
+      }
+    },
+    "+": {
+      "Ort": {
+        "Aufstellungsort": { "1": "", "2": "", "3": "", "4": "", "5": "" },
+        "Trennzeichen": "-",
+        "Einbauort": { "6": "", "7": "", "8": "", "9": "" }
+      }
+    },
+    "Art": "",
+    "Zählnummer": 0,
+    "Funktion": "",
+    ":": [{ "1": "" }, { "2": "" }]
+  },
+  "Parameter": {
+    "R20": "40 kohm",
+    "Rδ2": "41 kohm",
+    "δ2": "25.5 celsius",
+    "δ20": "20 celsius",
+    "Rα20": "4.54545454545453 kilocelsius^-1"
+  },
+  "Visual": {},
+  "name": "Kaltleiter"
+}

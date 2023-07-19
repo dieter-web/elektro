@@ -20,50 +20,62 @@ const dbJson = require(path.resolve('controllers/dbJson.js'))
 function Beispiel11 (input) {
   const jsonfile = path.resolve('src/json/example/beispiel11.json')
 
-  const IStack = new Stack()
-  const GStack = new Stack()
+  // const IStack = new Stack()
+  // const GStack = new Stack()
 
-  let R1 = new Widerstand({}, { R: input.R1, U: input.U }, {})
-  let R2 = new Widerstand({}, { R: input.R2, U: input.U }, {})
-  let R3 = new Widerstand({}, { R: input.R3, U: input.U }, {})
-  let R4 = new Widerstand({}, { R: input.R4, U: input.U }, {})
+  let R1 = new Widerstand(
+    {
+      Funktion: 'R',
+      Zaehlnummer: 1
+    },
+    { R: input.R1, U: input.U },
+    {}
+  )
+  let R2 = new Widerstand(
+    {
+      Funktion: 'R',
+      Zaehlnummer: 2
+    },
+    { R: input.R2, U: input.U },
+    {}
+  )
+  let R3 = new Widerstand(
+    {
+      Funktion: 'R',
+      Zaehlnummer: 3
+    },
+    { R: input.R3, U: input.U },
+    {}
+  )
+  let R4 = new Widerstand(
+    {
+      Funktion: 'R',
+      Zaehlnummer: 4
+    },
+    { R: input.R4, U: input.U },
+    {}
+  )
 
-  // TODO: Mehr als ein Widerstand (Ein Object besteht aus mehreren Objecten)
+  // Widerstandsarray !
   let RBEA = [R1, R2, R3, R4]
 
   const EK = new ElektroKernel()
   RBEA.map((R, i) => {
     EK.parameter({ U: R.Parameter.U, R: RBEA[i].Parameter.R })
-    IStack.push(EK.IUR())
-    let I = IStack.items[i]
-    EK.parameter({ I: I, U: R.Parameter.U })
-    GStack.push(EK.GIU())
+    RBEA[i].Parameter.I = EK.IUR().toString()
+    EK.parameter({ I: RBEA[i].Parameter.I, U: R.Parameter.U })
+    RBEA[i].Parameter.G = EK.GIU().toString()
   })
 
-  // mathobject umwandeln in stringobject
-  let IStackString = IStack.items.map(d => {
-    return d.toString()
-  })
-  let GStackString = GStack.items.map(d => {
-    return d.toString()
-  })
-
-  let erg = {
-    Object: RBEA, // Array von Objekten
-    Ergebnis: {
-      I: IStackString,
-      G: GStackString
-    }
-  }
-  dbJson.writeJSONItem(jsonfile, erg)
+  dbJson.writeJSONItem(jsonfile, RBEA)
 }
 
-// let input = {
-//   R1: '2.5 Mohm',
-//   R2: '80 kohm',
-//   R3: '500 ohm',
-//   R4: '75 ohm',
-//   U: '60 V'
-// }
-// Beispiel11(input)
-exports.func = Beispiel11
+let input = {
+  R1: '2.5 Mohm',
+  R2: '80 kohm',
+  R3: '500 ohm',
+  R4: '75 ohm',
+  U: '60 V'
+}
+Beispiel11(input)
+// exports.func = Beispiel11
