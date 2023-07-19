@@ -1,4 +1,4 @@
-function vb1 (data, pos) {
+function vrl1 (data, pos) {
   const B1 = d3.create('svg:g')
   B1.selectAll('g')
     .data(data)
@@ -22,4 +22,4 @@ function vb1 (data, pos) {
     })
   return B1.node()
 }
-export { vb1 }
+export { vrl1 }

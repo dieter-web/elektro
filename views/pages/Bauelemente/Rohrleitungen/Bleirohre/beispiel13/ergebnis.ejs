@@ -5,7 +5,7 @@
     import {tabulate} from '/modules/tabulate.mjs'
     import {canvas} from '/modules/canvas.mjs'
     import {populate} from '/modules/populate.mjs'
-    import {vb1} from '/d3/lib/Bauelemente/vb1.mjs'
+    import {vrl1} from '/d3/lib/Bauelemente/Rohrleitungen/vrl1.mjs'
 
     const data=await d3.json( "http://localhost:8000/json/example/beispiel13.json" )
 
@@ -13,18 +13,24 @@
     tabulate( data,"#ergebnis" )
 
     // Rückkopplung
-    // const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
+    const sel=d3.select( 'table#ergebnis' ).selectAll( 'tr' ).selectAll( 'td' )._groups[ 1 ]
 
-    // Material.value=tab[ 0 ]
-    // G.value=tab[ 1 ]
-    // d.value=tab[ 2 ]
-    // D.value=tab[ 3 ]
+    Material.value=sel[ 0 ].innerHTML
+    G.value=sel[ 1 ].innerHTML
+    d.value=sel[ 2 ].innerHTML
+    D.value=sel[ 3 ].innerHTML
+
 
     // svg grafik
-    const g=canvas( 800,300,'#grafik' )
+    const g=canvas( '#grafik',800,300,"0,0, 20,100" )
 
-    let dataRo=[ {} ]
+    let dataRo=[ {
+        opacity: 1,
+        height: 3,
+        width: 80,
+        text: data.Parameter.Material+"rohr"
+    } ]
 
-    g.append( () => vb1( dataRo,[ 50,50 ] ) )
+    g.append( () => vrl1( dataRo,[ 0,50 ] ) )
 
 </script>

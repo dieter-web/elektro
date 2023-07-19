@@ -6,7 +6,7 @@
     import {tabulate} from '/modules/tabulate.mjs'
     import {canvas} from '/modules/canvas.mjs'
     import {populate} from '/modules/populate.mjs'
-    // import {vR} from '/d3/lib/Betriebsmittel/vR.mjs' Glasplatte !
+    import {vb1} from '/d3/lib/Bauelemente/vb1.mjs'
 
     //tabelle ergebnis
     const data=await populate( "http://localhost:8000/json/example/uebung14.json" )
@@ -14,18 +14,24 @@
     tabulate( data,"#ergebnis" )
 
     // Rückkopplung
-    // const sel=d3.select( 'table#ergebnis' ).selectAll( 'tr' ).selectAll( 'td' )._parents[ 2 ].innerText.split( '\t' )
-
-    // Material.value=sel[ 0 ];
-    // l.value=sel[ 1 ];
-    // b.value=sel[ 2 ];
-    // d.value=sel[ 3 ];
+    const sel=d3.select( 'table#ergebnis' ).selectAll( 'tr' ).selectAll( 'td' )._groups[ 1 ]
+    Material.value=sel[ 0 ].innerHTML
+    l.value=sel[ 1 ].innerHTML
+    b.value=sel[ 2 ].innerHTML
+    d.value=sel[ 3 ].innerHTML
 
     // svg grafik 
-    const g=canvas( 800,300,'#grafik' )
+    const g=canvas( '#grafik',800,300,"10,10,200,200" )
 
-    let dataGP=[ {} ]
+    let dataGP=[
+        {
+            opacity: 0.4,
+            height: 125,
+            width: 80,
+            text: "Glasplatte"
+        }
+    ]
 
-    // g.append( () => vR( dataR1,[ 50,50 ] ) )
+    g.append( () => vb1( dataGP,[ 50,50 ] ) )
 
 </script>
