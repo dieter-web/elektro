@@ -1,0 +1,21 @@
+<%- include('../../../../../../partials/head',{}) %>
+
+<body>
+    <%- include('../../../../../../partials/navbarTemplate', {}) %>
+    <script type="module">
+        import {mainNavbar} from "/modules/mainNavbar.js"
+        let menu=[
+            {"name": "elektro","link": "/","class": "nav-link"},
+            {"name": "Betriebsmittel","link": "/betriebsmittel","class": "nav-link"},
+            {"name": "Induktivitaet","link": "/betriebsmittel/induktivitaet","class": "nav-link"},
+            {"name": "Spule","link": "/betriebsmittel/induktivitaet/spule","class": "nav-link"},
+            {"name": "Spule ohne Kern","link": "/betriebsmittel/induktivitaet/spule/spuleohnekern","class": "nav-link"},
+            {"name": "Zylinderspule","link": "/betriebsmittel/induktivitaet/spule/spuleohnekern/zylinderspule","class": "nav-link"},
+        ]
+        mainNavbar( menu );
+    </script>
+    <main>
+        <%- body %>
+    </main>
+    <%#- include('../../partials/footer',{}) %>
+</body>

@@ -47,6 +47,7 @@ erouter(router, R2.p2, R2.l2, R2.e, R2.r2_2_1_1_4, R2.u111)
 /** !SECTION Baugruppen Zweipole passiver Zweipol */
 
 /** !SECTION Betriebsmittel Baugruppen */
+/** !SECTION Betriebsmittel Baugruppen */
 
 /** SECTION  Betriebsmittel Widerstand */
 routerGet(router, R2.r2_27, R2.p2, R2.l2)
@@ -90,8 +91,56 @@ erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_4, R2.b14)
 /** SECTION Betriebsmittel Induktivitaet */
 routerGet(router, R2.r2_7, R2.p2, R2.l2)
 
-/** NOTE Betriebsmittel Induktivitaet Aufgabe13 */
-erouter(router, R2.p2, R2.l2, R2.e, R2.r2_7, R2.a13)
+/** SECTION Betriebsmittel Induktivitaet Magnetische Bauelemente digitaler Einrichtungen */
+routerGet(router, R2.r2_7_1, R2.p2, R2.l2)
+/** !SECTION Betriebsmittel Induktivitaet Magnetische Bauelemente digitaler Einrichtungen */
+
+/** SECTION Betriebsmittel Induktivitaet Spule */
+routerGet(router, R2.r2_7_2, R2.p2, R2.l2)
+
+/** SECTION Betriebsmittel Induktivitaet Spule SpulenmitKern */
+routerGet(router, R2.r2_7_2_1, R2.p2, R2.l2)
+
+/** SECTION Betriebsmittel Induktivitaet Spule SpulenmitKern Magnetspule */
+routerGet(router, R2.r2_7_2_1_1, R2.p2, R2.l2)
+/** !SECTION Betriebsmittel Induktivitaet Spule SpulenmitKern Magnetspule */
+
+/** !SECTION Betriebsmittel Induktivitaet Spule SpulenmitKern */
+
+/** SECTION Betriebsmittel Induktivitaet Spule SpulenohneKern */
+routerGet(router, R2.r2_7_2_2, R2.p2, R2.l2)
+
+/** SECTION Betriebsmittel Induktivitaet Spule SpulenohneKern Abgeschirmte Spule */
+routerGet(router, R2.r2_7_2_2_1, R2.p2, R2.l2)
+/** !SECTION Betriebsmittel Induktivitaet Spule SpulenohneKern Abgeschirmte Spule */
+
+/** SECTION Betriebsmittel Induktivitaet Spule SpulenohneKern EinlagigeSpule  */
+routerGet(router, R2.r2_7_2_2_2, R2.p2, R2.l2)
+/** !SECTION Betriebsmittel Induktivitaet Spule SpulenohneKern EinlagigeSpule  */
+
+/** SECTION Betriebsmittel Induktivitaet Spule SpulenohneKern MehrlagigeSpule  */
+routerGet(router, R2.r2_7_2_2_3, R2.p2, R2.l2)
+
+/** NOTE Betriebsmittel Induktivitaet SpuleohneKern MehrlagigeSpule Aufgabe13 */
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_7_2_2_3, R2.a13)
+
+/** !SECTION Betriebsmittel Induktivitaet Spule SpulenohneKern MehrlagigeSpule  */
+
+/** SECTION Betriebsmittel Induktivitaet Spule SpulenohneKern Ringspule  */
+routerGet(router, R2.r2_7_2_2_4, R2.p2, R2.l2)
+/** !SECTION Betriebsmittel Induktivitaet Spule SpulenohneKern Ringspule  */
+
+/** SECTION Betriebsmittel Induktivitaet Spule SpulenohneKern Zylinderspule */
+routerGet(router, R2.r2_7_2_2_5, R2.p2, R2.l2)
+/** !SECTION Betriebsmittel Induktivitaet Spule SpulenohneKern Zylinderspule */
+
+/** !SECTION Betriebsmittel Induktivitaet Spule Spulen ohne Kern */
+
+/** SECTION Betriebsmittel Induktivitaeten Variometer */
+routerGet(router, R2.r2_7_3, R2.p2, R2.l2)
+/** !SECTION Betriebsmittel Induktivitaeten Variometer */
+
+/** !SECTION Betriebsmittel Induktivitaet Spule */
 
 /** !SECTION Betriebsmittel Induktivitaet */
 

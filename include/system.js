@@ -11,25 +11,151 @@ const PBauelemente = 'src/components/Bauelemente'
 const PBetriebsmittel = 'src/components/Betriebsmittel'
 const PDatenverarbeitung = 'src/components/Datenverarbeitung'
 
+/** SECTION Material */
 const Material = require(path.resolve('src/components/Material/Material.js'))
+/** !SECTION Material */
 
+/** SECTION Bauelemente */
 const { Bauelemente } = require(path.resolve(`${PBauelemente}/Bauelemente.js`))
+
+/** SECTION Platten */
+const { Platten } = require(path.resolve(`${Bauelemente}/Platten/Platten.js`))
+
+/** SECTION Platten Glasplatten */
+const { Glasplatte } = require(path.resolve(
+  `${PBauelemente}/Platten/Glasplatte/Glasplatte.js`
+))
+/** !SECTION Platten Glasplatten */
+/** !SECTION Platten */
+
+/** SECTION Rohrleitungen */
+
+const { Rohrleitungen } = require(path.resolve(
+  `${PBauelemente}/Rohrleitungen/Rohrleitungen.js`
+))
+
+/** SECTION Rohrleitungen Bleirohre */
+const { Bleirohre } = require(path.resolve(
+  `${PBauelemente}/Rohrleitungen/Bleirohre/Bleirohre.js`
+))
+/** !SECTION Rohrleitungen Bleirohre */
+/** !SECTION Rohrleitungen */
+
+/** !SECTION Bauelemente */
+
+/** SECTION  Betriebsmittel*/
 
 const { Betriebsmittel } = require(path.resolve(
   `${PBetriebsmittel}/Betriebsmittel.js`
 ))
 
+/** SECTION Betriebsmittel Baugruppen */
 const { Baugruppen } = require(path.resolve(
   `${PBetriebsmittel}/Baugruppen/Baugruppen.js`
 ))
 
+/** SECTION Betriebsmittel Baugruppen Zweipole */
 const { Zweipole } = require(path.resolve(
   `${PBetriebsmittel}/Baugruppen/Zweipole/Zweipole.js`
 ))
 
+/** SECTION Betriebsmittel Baugruppen Zweipole PassiverZweipol */
 const { PassiverZweipol } = require(path.resolve(
   `${PBetriebsmittel}/Baugruppen/Zweipole/PassiverZweipol/PassiverZweipol.js`
 ))
+
+/** SECTION Betriebsmittel Baugruppen Zweipole Reihenschaltung */
+const { Reihenschaltung } = require(path.resolve(
+  `${PBetriebsmittel}/Baugruppen/Zweipole/PassiverZweipol/Reihenschaltung.js`
+))
+/** !SECTION Betriebsmittel Baugruppen Zweipole Reihenschaltung */
+
+/** !SECTION Betriebsmittel Baugruppen Zweipole PassiverZweipol */
+
+/** !SECTION Betriebsmittel Baugruppen Zweipole */
+
+/** !SECTION Betriebsmittel Baugruppen */
+
+/** SECTION  Betriebsmittel Widerstand*/
+const { Widerstand } = require(path.resolve(
+  `${PBetriebsmittel}/Widerstand/Widerstand.js`
+))
+
+/** SECTION Betriebsmittel Widerstand Feldplatte */
+const { Feldplatte } = require(path.resolve(
+  `${PBetriebsmittel}/Widerstand/Feldplatten/Feldplatte.js`
+))
+/** !SECTION Betriebsmittel Widerstand Feldplatte */
+
+/** SECTION Betriebsmittel Widerstand Fotowiderstand */
+const { Fotowiderstand } = require(path.resolve(
+  `${PBetriebsmittel}/Widerstand/Fotowiderstand/Fotowiderstand.js`
+))
+/** !SECTION Betriebsmittel Widerstand Fotowiderstand */
+
+/** SECTION Betriebsmittel Widerstand Heissleiter */
+const { Heissleiter } = require(path.resolve(
+  `${PBetriebsmittel}/Widerstand/Thermistor/Heissleiter/Heissleiter.js`
+))
+/** !SECTION Betriebsmittel Widerstand Heissleiter */
+
+/** SECTION Betriebsmittel Widerstand Kaltleiter */
+const { Kaltleiter } = require(path.resolve(
+  `${PBetriebsmittel}/Widerstand/Thermistor/Kaltleiter/Kaltleiter.js`
+))
+/** !SECTION Betriebsmittel Widerstand Kaltleiter */
+
+/** SECTION Betriebsmittel Widerstand Varistor */
+const { Varistor } = require(path.resolve(
+  `${PBetriebsmittel}/Widerstand/Varistoren/Varistor.js`
+))
+/** !SECTION Betriebsmittel Widerstand Varistor */
+
+/** !SECTION Betriebsmittel Widerstand*/
+
+/** SECTION  Betriebsmittel Uebertragungswege */
+
+/** SECTION Betriebsmittel Uebertragungswege Leitung */
+const { Leitung } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Leitung/Leitung.js`
+))
+/** !SECTION Betriebsmittel Uebertragungswege Leitung */
+
+/** SECTION Betriebsmittel Uebertragungswege Draht */
+const { Draht } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Draht/Draht.js`
+))
+/** !SECTION Betriebsmittel Uebertragungswege Draht */
+
+/** !SECTION Betriebsmittel Uebertragungswege */
+
+/** SECTION Betriebsmittel Induktivitaet */
+
+const { Induktivitaet } = require(path.resolve(
+  `${PBetriebsmittel}/Induktivitaet/Induktivitaet.js`
+))
+
+/** SECTION Betriebsmittel Spule */
+const { Spule } = require(path.resolve(
+  `${PBetriebsmittel}/Induktivitaet/Spule/Spule.js`
+))
+
+/** SECTION Betriebsmittel Spule  SpuleOhneKern */
+const { SpuleOhneKern } = require(path.resolve(
+  `${PBetriebsmittel}/Induktivitaet/Spule/SpuleOhneKern/SpuleOhneKern.js`
+))
+
+/** SECTION Betriebsmittel Spule MehrlagigeSpule */
+const { MehrlagigeSpule } = require(path.resolve(
+  `${PBetriebsmittel}/Induktivitaet/Spule/SpuleOhneKern/MehrlagigeSpule/MehrlagigeSpule.js`
+))
+/** SECTION Betriebsmittel Spule MehrlagigeSpule */
+
+/** !SECTION Betriebsmittel Spule  SpuleOhneKern */
+
+/** !SECTION Betriebsmittel Spule */
+
+/** !SECTION Betriebsmittel Induktivitaet */
 
 const { ElektroKernel } = require(path.resolve(
   `${PElektrotechnik}/gleichspannung/grundbegriffe/kernel.js`
@@ -39,13 +165,13 @@ const { RohrleitungstechnikKernel } = require(path.resolve(
   `${PRohrleitungstechnik}/kernel.js`
 ))
 
-const { Rohrleitungen } = require(path.resolve(
-  `${PBauelemente}/Rohrleitungen/Rohrleitungen.js`
-))
+// const { Rohrleitungen } = require(path.resolve(
+//   `${PBauelemente}/Rohrleitungen/Rohrleitungen.js`
+// ))
 
-const { Bleirohr } = require(path.resolve(
-  `${PBauelemente}/Rohrleitungen/Bleirohre/Bleirohr.js`
-))
+// const { Bleirohr } = require(path.resolve(
+//   `${PBauelemente}/Rohrleitungen/Bleirohre/Bleirohr.js`
+// ))
 
 const { ArithmetikKernel } = require(path.resolve(
   `${PMathematik}/Arithmetik/kernel.js`
@@ -53,62 +179,6 @@ const { ArithmetikKernel } = require(path.resolve(
 
 const { PlanemetrieKernel } = require(path.resolve(
   `${PMathematik}/Planemetrie/kernel.js`
-))
-
-const { Glasplatte } = require(path.resolve(
-  `${PBauelemente}/Platten/Glasplatte/Glasplatte.js`
-))
-
-const { Reihenschaltung } = require(path.resolve(
-  `${PBetriebsmittel}/Baugruppen/Zweipole/PassiverZweipol/Reihenschaltung.js`
-))
-
-const { Widerstand } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstand/Widerstand.js`
-))
-
-const { Feldplatte } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstand/Feldplatten/Feldplatte.js`
-))
-
-const { Fotowiderstand } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstand/Fotowiderstand/Fotowiderstand.js`
-))
-
-const { Heissleiter } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstand/Thermistor/Heissleiter/Heissleiter.js`
-))
-
-const { Kaltleiter } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstand/Thermistor/Kaltleiter/Kaltleiter.js`
-))
-
-const { Varistor } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstand/Varistoren/Varistor.js`
-))
-
-const { Leitung } = require(path.resolve(
-  `${PBetriebsmittel}/Uebertragungswege/Leitung/Leitung.js`
-))
-
-const { Draht } = require(path.resolve(
-  `${PBetriebsmittel}/Uebertragungswege/Draht/Draht.js`
-))
-
-const { Induktivitaet } = require(path.resolve(
-  `${PBetriebsmittel}/Induktivitaet/Induktivitaet.js`
-))
-
-const { Spule } = require(path.resolve(
-  `${PBetriebsmittel}/Induktivitaet/Spule/Spule.js`
-))
-
-const { SpuleOhneKern } = require(path.resolve(
-  `${PBetriebsmittel}/Induktivitaet/Spule/SpuleOhneKern/SpuleOhneKern.js`
-))
-
-const { MehrlagigeSpule } = require(path.resolve(
-  `${PBetriebsmittel}/Induktivitaet/Spule/SpuleOhneKern/MehrlagigeSpule/MehrlagigeSpule.js`
 ))
 
 const { Stack } = require(path.resolve(
