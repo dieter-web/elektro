@@ -43,7 +43,7 @@ function formularKennzeichnung (route) {
             <option value="V">Halbleiter</option>
             <option value="R">Widerstand</option>
             <option value="Y">Geräte mit Elektrischen Antrieb</option>
-            <option value="A">Baugruppe</option>
+            <option value="A">Baugruppen</option>
             <option value="X">Steckvorrichtung</option>
             <option value="E">Verschiedenes</option>
             <option value="B">Umsetzer</option>

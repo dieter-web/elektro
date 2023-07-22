@@ -6,9 +6,9 @@ const { Betriebsmittel } = require(path.resolve(
   'src/components/Betriebsmittel/Betriebsmittel.js'
 ))
 
-class Baugruppe extends Betriebsmittel {
+class Baugruppen extends Betriebsmittel {
   constructor (Kennzeichnung) {
     super(Kennzeichnung)
   }
 }
-exports.Baugruppe = Baugruppe
+exports.Baugruppen = Baugruppen

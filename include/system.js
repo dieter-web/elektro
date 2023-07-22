@@ -19,6 +19,18 @@ const { Betriebsmittel } = require(path.resolve(
   `${PBetriebsmittel}/Betriebsmittel.js`
 ))
 
+const { Baugruppen } = require(path.resolve(
+  `${PBetriebsmittel}/Baugruppen/Baugruppen.js`
+))
+
+const { Zweipole } = require(path.resolve(
+  `${PBetriebsmittel}/Baugruppen/Zweipole/Zweipole.js`
+))
+
+const { PassiverZweipol } = require(path.resolve(
+  `${PBetriebsmittel}/Baugruppen/Zweipole/PassiverZweipol/PassiverZweipol.js`
+))
+
 const { ElektroKernel } = require(path.resolve(
   `${PElektrotechnik}/gleichspannung/grundbegriffe/kernel.js`
 ))
@@ -83,6 +95,22 @@ const { Draht } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Draht/Draht.js`
 ))
 
+const { Induktivitaet } = require(path.resolve(
+  `${PBetriebsmittel}/Induktivitaet/Induktivitaet.js`
+))
+
+const { Spule } = require(path.resolve(
+  `${PBetriebsmittel}/Induktivitaet/Spule/Spule.js`
+))
+
+const { SpuleOhneKern } = require(path.resolve(
+  `${PBetriebsmittel}/Induktivitaet/Spule/SpuleOhneKern/SpuleOhneKern.js`
+))
+
+const { MehrlagigeSpule } = require(path.resolve(
+  `${PBetriebsmittel}/Induktivitaet/Spule/SpuleOhneKern/MehrlagigeSpule/MehrlagigeSpule.js`
+))
+
 const { Stack } = require(path.resolve(
   `${PDatenverarbeitung}/dynamischeDatenstrukturen/listen/stapel/stack.js`
 ))
@@ -90,6 +118,9 @@ const { Stack } = require(path.resolve(
 exports.Material = Material
 exports.Bauelemente = Bauelemente
 exports.Betriebsmittel = Betriebsmittel
+exports.Baugruppen = Baugruppen
+exports.Zweipole = Zweipole
+exports.PassiverZweipol = PassiverZweipol
 exports.Rohrleitungen = Rohrleitungen
 exports.Bleirohr = Bleirohr
 exports.ElektroKernel = ElektroKernel
@@ -106,4 +137,8 @@ exports.Varistor = Varistor
 exports.Glasplatte = Glasplatte
 exports.Leitung = Leitung
 exports.Draht = Draht
+exports.Induktivitaet = Induktivitaet
+exports.Spule = Spule
+exports.SpuleOhneKern = SpuleOhneKern
+exports.MehrlagigeSpule = MehrlagigeSpule
 exports.Stack = Stack

@@ -87,4 +87,12 @@ erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_4, R2.b14)
 /** !SECTION Betriebsmittel Übertragungswege Leitungen */
 /** !SECTION Betriebsmittel Übertragungswege */
 
+/** SECTION Betriebsmittel Induktivitaet */
+routerGet(router, R2.r2_7, R2.p2, R2.l2)
+
+/** NOTE Betriebsmittel Induktivitaet Aufgabe13 */
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_7, R2.a13)
+
+/** !SECTION Betriebsmittel Induktivitaet */
+
 module.exports = router

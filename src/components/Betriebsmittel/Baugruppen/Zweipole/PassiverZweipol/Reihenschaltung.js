@@ -1,13 +1,9 @@
 require('use-strict')
 const path = require('path')
-const math = require('mathjs')
+// const math = require('mathjs')
 
 const { PassiverZweipol } = require(path.resolve(
   'src/components/Betriebsmittel/Baugruppen/Zweipole/PassiverZweipol/PassiverZweipol.js'
-))
-
-const { Stack } = require(path.resolve(
-  'src/components/Datenverarbeitung/dynamischeDatenstrukturen/listen/stapel/stack.js'
 ))
 
 class Reihenschaltung extends PassiverZweipol {
@@ -16,9 +12,6 @@ class Reihenschaltung extends PassiverZweipol {
     super(Kennzeichnung)
     this.Parameter = Parameter
     this.Visual = Visual
-    this.Stack = new Stack()
-
-    this.Type = 'group'
   }
 }
 
@@ -28,8 +21,6 @@ class Spannungsteiler extends Reihenschaltung {
     super(Kennzeichnung)
     this.Parameter = Parameter
     this.Visual = Visual
-
-    this.Parameter.Type = 'group'
   }
 }
 

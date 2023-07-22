@@ -26,10 +26,7 @@ function tabulate (data, id) {
     .enter()
     .append('td')
     .text(d => {
-      if (d.mathjs) {
-        // return unit(d).toString()
-        return d.value + d.unit
-      } else return d
+      return d
     })
 }
 export { tabulate }

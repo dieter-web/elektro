@@ -2,11 +2,11 @@ require('use-strict')
 const math = require('mathjs')
 const path = require('path')
 
-const { Zweipol } = require(path.resolve(
-  'src/components/Betriebsmittel/Baugruppen/Zweipole/Zweipol.js'
+const { Zweipole } = require(path.resolve(
+  'src/components/Betriebsmittel/Baugruppen/Zweipole/Zweipole.js'
 ))
 
-class PassiverZweipol extends Zweipol {
+class PassiverZweipol extends Zweipole {
   constructor (Kennzeichnung) {
     super(Kennzeichnung)
   }
