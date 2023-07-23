@@ -7,6 +7,7 @@ module.exports = {
   p3: 'pages/Bauelemente',
   l3: 'layouts/Bauelemente',
   r3: '/Bauelemente',
+  
   r3_1: '/Absperrschieber',
   r3_2: '/Achsen',
   r3_3: '/Ausleger',

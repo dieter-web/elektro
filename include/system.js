@@ -19,7 +19,7 @@ const Material = require(path.resolve('src/components/Material/Material.js'))
 const { Bauelemente } = require(path.resolve(`${PBauelemente}/Bauelemente.js`))
 
 /** SECTION Platten */
-const { Platten } = require(path.resolve(`${Bauelemente}/Platten/Platten.js`))
+const { Platten } = require(path.resolve(`${PBauelemente}/Platten/Platten.js`))
 
 /** SECTION Platten Glasplatten */
 const { Glasplatte } = require(path.resolve(
@@ -140,6 +140,10 @@ const { Spule } = require(path.resolve(
   `${PBetriebsmittel}/Induktivitaet/Spule/Spule.js`
 ))
 
+const { Spulenkoerper } = require(path.resolve(
+  `${PBetriebsmittel}/Induktivitaet/Spule/Spule.js`
+))
+
 /** SECTION Betriebsmittel Spule  SpuleOhneKern */
 const { SpuleOhneKern } = require(path.resolve(
   `${PBetriebsmittel}/Induktivitaet/Spule/SpuleOhneKern/SpuleOhneKern.js`
@@ -192,7 +196,7 @@ exports.Baugruppen = Baugruppen
 exports.Zweipole = Zweipole
 exports.PassiverZweipol = PassiverZweipol
 exports.Rohrleitungen = Rohrleitungen
-exports.Bleirohr = Bleirohr
+exports.Bleirohre = Bleirohre
 exports.ElektroKernel = ElektroKernel
 exports.ArithmetikKernel = ArithmetikKernel
 exports.PlanemetrieKernel = PlanemetrieKernel
@@ -209,6 +213,7 @@ exports.Leitung = Leitung
 exports.Draht = Draht
 exports.Induktivitaet = Induktivitaet
 exports.Spule = Spule
+exports.Spulenkoerper = Spulenkoerper
 exports.SpuleOhneKern = SpuleOhneKern
 exports.MehrlagigeSpule = MehrlagigeSpule
 exports.Stack = Stack

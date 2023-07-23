@@ -5,9 +5,22 @@ const { Induktivitaet } = require(path.resolve(
 ))
 
 class Spule extends Induktivitaet {
-  constructor (Visual) {
+  constructor (Kennzeichnung, Parameter, Visual) {
     super(Visual)
+    this.Kennzeichnung = Kennzeichnung
+    this.Parameter = Parameter
     this.Visual = Visual
   }
 }
+
+class Spulenkoerper extends Spule {
+  constructor (Kennzeichnung, Parameter, Visual) {
+    super(Visual)
+    this.Kennzeichnung = Kennzeichnung
+    this.Parameter = Parameter
+    this.Visual = Visual
+  }
+}
+
 exports.Spule = Spule
+exports.Spulenkoerper = Spulenkoerper
