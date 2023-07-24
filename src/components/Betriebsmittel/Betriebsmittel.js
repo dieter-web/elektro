@@ -1,8 +1,8 @@
 // require('use-strict')
 
 class Betriebsmittel {
-  constructor (Kennzeichnung) {
-    this.Kennzeichnung = Kennzeichnung
+  constructor (Visual) {
+    this.Visual = Visual
   }
 }
 exports.Betriebsmittel = Betriebsmittel

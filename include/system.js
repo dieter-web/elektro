@@ -10,6 +10,7 @@ const PMathematik = 'src/components/Mathematik'
 const PBauelemente = 'src/components/Bauelemente'
 const PBetriebsmittel = 'src/components/Betriebsmittel'
 const PDatenverarbeitung = 'src/components/Datenverarbeitung'
+const PPhysikalischeChemie = 'src/components/PhysikalischeChemie'
 
 /** SECTION Material */
 const Material = require(path.resolve('src/components/Material/Material.js'))
@@ -153,13 +154,49 @@ const { SpuleOhneKern } = require(path.resolve(
 const { MehrlagigeSpule } = require(path.resolve(
   `${PBetriebsmittel}/Induktivitaet/Spule/SpuleOhneKern/MehrlagigeSpule/MehrlagigeSpule.js`
 ))
-/** SECTION Betriebsmittel Spule MehrlagigeSpule */
+/** !SECTION Betriebsmittel Induktivitaet Spule MehrlagigeSpule */
 
-/** !SECTION Betriebsmittel Spule  SpuleOhneKern */
+/** !SECTION Betriebsmittel Induktivitaet Spule SpuleOhneKern */
 
-/** !SECTION Betriebsmittel Spule */
+/** !SECTION Betriebsmittel Induktivitaet Spule */
 
 /** !SECTION Betriebsmittel Induktivitaet */
+
+/** SECTION Verschiedens */
+const { Verschiedenes } = require(path.resolve(
+  `${PBetriebsmittel}/Verschiedenes/Verschiedenes.js`
+))
+/** SECTION Verschiedenes Elektrode */
+const { Elektrode } = require(path.resolve(
+  `${PBetriebsmittel}/Verschiedenes/Elektrode/Elektrode.js`
+))
+
+/** !SECTION Verschiedenes Elektrode */
+
+/** !SECTION Verschiedens */
+
+/** !SECTION Betriebsmittel */
+
+/** SECTION PhysikalischeChemie */
+const { PhysikalischeChemie } = require(path.resolve(
+  `${PPhysikalischeChemie}/PhysikalischeChemie.js`
+))
+
+/** SECTION PhysikalischeChemie Elektrochemie */
+const { Elektrochemie } = require(path.resolve(
+  `${PPhysikalischeChemie}/Elektrochemie/Elektrochemie.js`
+))
+
+/** SECTION PhysikalischeChemie Elektrochemie Elektrolyt */
+const { Elektrolyt } = require(path.resolve(
+  `${PPhysikalischeChemie}/Elektrochemie/Elektrolyt/Elektrolyt.js`
+))
+
+/** !SECTION PhysikalischeChemie Elektrochemie Elektrolyt */
+
+/** !SECTION PhysikalischeChemie Elektrochemie */
+
+/** !SECTION Physikalische Chemie */
 
 const { ElektroKernel } = require(path.resolve(
   `${PElektrotechnik}/gleichspannung/grundbegriffe/kernel.js`
@@ -216,4 +253,9 @@ exports.Spule = Spule
 exports.Spulenkoerper = Spulenkoerper
 exports.SpuleOhneKern = SpuleOhneKern
 exports.MehrlagigeSpule = MehrlagigeSpule
+exports.PhysikallischeChemie = PhysikalischeChemie
+exports.Elektrochemie = Elektrochemie
+exports.Elektrolyt = Elektrolyt
+exports.Verschiedenes = Verschiedenes
+exports.Elektrode = Elektrode
 exports.Stack = Stack
