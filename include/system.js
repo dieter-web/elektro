@@ -162,18 +162,38 @@ const { MehrlagigeSpule } = require(path.resolve(
 
 /** !SECTION Betriebsmittel Induktivitaet */
 
-/** SECTION Verschiedens */
+/** SECTION Betriebsmittel Verschiedens */
 const { Verschiedenes } = require(path.resolve(
   `${PBetriebsmittel}/Verschiedenes/Verschiedenes.js`
 ))
-/** SECTION Verschiedenes Elektrode */
+/** SECTION Betriebsmittel Verschiedenes Elektrode */
 const { Elektrode } = require(path.resolve(
   `${PBetriebsmittel}/Verschiedenes/Elektrode/Elektrode.js`
 ))
+/** !SECTION Betriebsmittel Verschiedenes Elektrode */
 
-/** !SECTION Verschiedenes Elektrode */
+/** SECTION Betriebsmittel Verschiedenes Beleuchtung */
+const { Beleuchtung } = require(path.resolve(
+  `${PBetriebsmittel}/Verschiedenes/Beleuchtung/Beleuchtung.js`
+))
 
-/** !SECTION Verschiedens */
+/** SECTION Betriebsmittel Verschiedenes Beleuchtung Lampe */
+const { Lampe } = require(path.resolve(
+  `${PBetriebsmittel}/Verschiedenes/Beleuchtung/Lampe/Lampe.js`
+))
+
+/** SECTION Betriebsmittel Verschiedenes Beleuchtung Lampe Gluehlampe */
+const { Gluehlampe } = require(path.resolve(
+  `${PBetriebsmittel}/Verschiedenes/Beleuchtung/Lampe/Gluehlampe/Gluehlampe.js`
+))
+
+/** !SECTION Betriebsmittel Verschiedenes Beleuchtung Lampe Gluehlampe */
+
+/** !SECTION Betriebsmittel Verschiedenes Beleuchtung Lampe */
+
+/** !SECTION Beriebsmittel Verschiedenes Beleuchtung */
+
+/** !SECTION Betriebsmittel Verschiedens */
 
 /** !SECTION Betriebsmittel */
 
@@ -258,4 +278,7 @@ exports.Elektrochemie = Elektrochemie
 exports.Elektrolyt = Elektrolyt
 exports.Verschiedenes = Verschiedenes
 exports.Elektrode = Elektrode
+exports.Beleuchtung = Beleuchtung
+exports.Lampe = Lampe
+exports.Gluehlampe = Gluehlampe
 exports.Stack = Stack
