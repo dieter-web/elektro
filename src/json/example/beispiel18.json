@@ -1,0 +1,37 @@
+{
+  "Visual": {},
+  "Kennzeichnung": {
+    "=": {
+      "Anlage": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "Trennzeichen": "-"
+      }
+    },
+    "+": {
+      "Ort": {
+        "Aufstellungsort": { "1": "", "2": "", "3": "", "4": "", "5": "" },
+        "Trennzeichen": "-",
+        "Einbauort": { "6": "", "7": "", "8": "", "9": "" }
+      }
+    },
+    "Art": "",
+    "Zählnummer": 0,
+    "Funktion": "",
+    ":": [{ "1": "" }, { "2": "" }]
+  },
+  "Parameter": {
+    "Material": "Kupfer",
+    "δ": "12 celsius",
+    "R": "45 ohm",
+    "p": 28,
+    "ρM": "0.01786 (ohm mm^2) / m",
+    "δ0M": "237 K",
+    "Prozentwert": "12.6 ohm",
+    "R2": "57.6 ohm",
+    "δ2": "81.72000000000001 K"
+  }
+}

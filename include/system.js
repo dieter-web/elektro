@@ -120,6 +120,13 @@ const { Varistor } = require(path.resolve(
 const { Leitung } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Leitung/Leitung.js`
 ))
+
+/** SECTION Betriebsmittel Uebertragungswege Leitung Freileitung */
+const { Freileitung } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Leitung/Freileitung/Freileitung.js`
+))
+/** !SECTION Betriebsmittel Uebertragungswege Leitung Freileitung */
+
 /** !SECTION Betriebsmittel Uebertragungswege Leitung */
 
 /** SECTION Betriebsmittel Uebertragungswege Draht */
@@ -195,6 +202,67 @@ const { Gluehlampe } = require(path.resolve(
 
 /** !SECTION Betriebsmittel Verschiedens */
 
+/** SECTION Betriebsmittel Messgeraet */
+const { Messgeraet } = require(path.resolve(
+  `${Betriebsmittel}/Messgeraet/Messgeraet.js`
+))
+
+/** SECTION Betriebsmittel Messgeraet Energie */
+const { Energie } = require(path.resolve(
+  `${Betriebsmittel}/Messgeraet/Energie/Energie.js`
+))
+/** !SECTION Betriebsmittel Messgeraet Energie */
+
+/** SECTION Betriebsmittel Messgeraet Frequenz */
+const { Frequenz } = require(path.resolve(
+  `${Betriebsmittel}/Messgeraet/Frequenz/Frequenz.js`
+))
+/** !SECTION Betriebsmittel Messgeraet Frequenz */
+
+/** SECTION Betriebsmittel Messgeraet Impedanz */
+const { Impedanz } = require(path.resolve(
+  `${Betriebsmittel}/Messgeraet/Impedanz/Impedanz.js`
+))
+/** !SECTION Betriebsmittel Messgeraet Impedanz */
+
+/** SECTION Betriebsmittel Messgeraet Leistung */
+const { Leistung } = require(path.resolve(
+  `${Betriebsmittel}/Messgeraet/Leistung/Leistung.js`
+))
+/** !SECTION Betriebsmittel Messgeraet Leistung */
+
+/** SECTION Betriebsmittel Messgeraet MagnetischeGroesse */
+const { MagnetischeGroesse } = require(path.resolve(
+  `${Betriebsmittel}/Messgeraet/MagnetischeGroesse/MagnetischeGroesse.js`
+))
+/** !SECTION Betriebsmittel Messgeraet MagnetischeGroesse */
+
+/** SECTION Betriebsmittel Messgeraet Phasenwinkel */
+const { Phasenwinkel } = require(path.resolve(
+  `${Betriebsmittel}/Messgeraet/Phasenwinkel/Phasenwinkel.js`
+))
+/** !SECTION Betriebsmittel Messgeraet Phasenwinkel */
+
+/** SECTION Betriebsmittel Messgeraet Spannung */
+const { Spannung } = require(path.resolve(
+  `${Betriebsmittel}/Messgeraet/Spannung/Spannung.js`
+))
+/** !SECTION Betriebsmittel Messgeraet Spannung */
+
+/** SECTION Betriebsmittel Messgeraet Strom */
+const { Strom } = require(path.resolve(
+  `${Betriebsmittel}/Messgeraet/Strom/Strom.js`
+))
+/** !SECTION Betriebsmittel Messgeraet Strom */
+
+/** SECTION Betriebsmittel Messgeraet Zeit */
+const { Zeit } = require(path.resolve(
+  `${Betriebsmittel}/Messgeraet/Zeit/Zeit.js`
+))
+/** !SECTION Betriebsmittel Messgeraet Zeit */
+
+/** !SECTION Betriebsmittel Messgeraet */
+
 /** !SECTION Betriebsmittel */
 
 /** SECTION PhysikalischeChemie */
@@ -267,6 +335,7 @@ exports.Kaltleiter = Kaltleiter
 exports.Varistor = Varistor
 exports.Glasplatte = Glasplatte
 exports.Leitung = Leitung
+exports.Freileitung = Freileitung
 exports.Draht = Draht
 exports.Induktivitaet = Induktivitaet
 exports.Spule = Spule
@@ -281,4 +350,14 @@ exports.Elektrode = Elektrode
 exports.Beleuchtung = Beleuchtung
 exports.Lampe = Lampe
 exports.Gluehlampe = Gluehlampe
+exports.Messgeraet = Messgeraet
+exports.Energie = Energie
+exports.Frequenz = Frequenz
+exports.Impedanz = Impedanz
+exports.Leistung = Leistung
+exports.MagnetischeGroesse = MagnetischeGroesse
+exports.Phasenwinkel = Phasenwinkel
+exports.Spannung = Spannung
+exports.Strom = Strom
+exports.Zeit = Zeit
 exports.Stack = Stack
