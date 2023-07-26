@@ -142,6 +142,14 @@ class ElektroKernel {
   Rδ () {
     return run('R20 + R20 *α20 *( δ2 - δ20 )', this.param)
   }
+
+  Rpδ1δ2 () {
+    return run(
+      '(1 - ( (1 + α20 * (δ1 - δ20)) / (1 + α20 * (δ2 - δ20)) )) * 100',
+      this.param
+    )
+  }
+
   Δδρ () {
     return run('1 /α20 * ((ρ / ρ1) - 1)', this.param)
   }

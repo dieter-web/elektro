@@ -11,6 +11,12 @@ const { readMaterialParameter } = require(path.resolve(
 const dbJson = require(path.resolve('controllers/dbJson.js'))
 
 /** TODO: Das Ergebnis stimmt mit der Vorlage nicht überein ? */
+/**
+ * @description
+ * @author Dieter Krause
+ * @date 26/07/2023
+ * @param {*} input
+ */
 function Uebung14 (input) {
   const jsonfile = path.resolve('src/json/example/uebung14.json')
 

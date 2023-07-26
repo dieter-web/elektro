@@ -115,6 +115,34 @@ const { Varistor } = require(path.resolve(
 /** !SECTION Betriebsmittel Widerstand*/
 
 /** SECTION  Betriebsmittel Uebertragungswege */
+const { Uebertragungswege } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Uebertragungswege.js`
+))
+
+/** SECTION Betriebsmittel Uebertragungswege Kabel */
+const { Kabel } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Kabel/Kabel.js`
+))
+
+/** SECTION Betriebsmittel Uebertragungswege Kabel Fernmeldekabel */
+const { Fernmeldekabel } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Kabel/Fernmeldekabel/Fernmeldekabel.js`
+))
+/** !SECTION Betriebsmittel Uebertragungswege Kabel Fernmeldekabel */
+
+/** SECTION Betriebsmittel Uebertragungswege Kabel Hochfrequenzkabel */
+const { Hochfrequenzkabel } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Kabel/Hochfrequenzkabel/Hochfrequenzkabel.js`
+))
+/** !SECTION Betriebsmittel Uebertragungswege Kabel Hochfrequenzkabel */
+
+/** SECTION Betriebsmittel Uebertragungswege Kabel Starkstromkabel */
+const { Starkstromkabel } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Kabel/Starkstromkabel/Starkstromkabel.js`
+))
+/** !SECTION Betriebsmittel Uebertragungswege Kabel Starkstromkabel */
+
+/** !SECTION Betriebsmittel Uebertragungswege Kabel */
 
 /** SECTION Betriebsmittel Uebertragungswege Leitung */
 const { Leitung } = require(path.resolve(
@@ -143,27 +171,65 @@ const { Induktivitaet } = require(path.resolve(
   `${PBetriebsmittel}/Induktivitaet/Induktivitaet.js`
 ))
 
-/** SECTION Betriebsmittel Spule */
+/** SECTION Betriebsmittel Induktivitaet Spule */
 const { Spule } = require(path.resolve(
   `${PBetriebsmittel}/Induktivitaet/Spule/Spule.js`
 ))
 
-const { Spulenkoerper } = require(path.resolve(
-  `${PBetriebsmittel}/Induktivitaet/Spule/Spule.js`
+/** SECTION Betriebsmittel Induktivitaet Spule SpuleMitKern */
+const { SpuleMitKern } = require(path.resolve(
+  `${PBetriebsmittel}/Induktivitaet/Spule/SpuleMitKern/SpuleMitKern.js`
 ))
 
-/** SECTION Betriebsmittel Spule  SpuleOhneKern */
+/** SECTION Betriebsmittel Induktivitaet Spule SpuleMitKern Magnetspule */
+const { Magnetspule } = require(path.resolve(
+  `${PBetriebsmittel}/Induktivitaet/Spule/SpuleMitKern/Magnetspule/Magnetspule.js`
+))
+/** !SECTION Betriebsmittel Induktivitaet Spule SpuleMitKern Magnetspule */
+
+/** !SECTION Betriebsmittel Induktivitaet Spule SpuleMitKern */
+
+/** SECTION Betriebsmittel Induktivitaet Spule SpuleOhneKern */
 const { SpuleOhneKern } = require(path.resolve(
   `${PBetriebsmittel}/Induktivitaet/Spule/SpuleOhneKern/SpuleOhneKern.js`
 ))
 
-/** SECTION Betriebsmittel Spule MehrlagigeSpule */
+/** SECTION Betriebsmittel Induktivitaet Spule SpuleOhneKern AbgeschirmteSpule */
+const { AbgeschirmteSpule } = require(path.resolve(
+  `${PBetriebsmittel}/Induktivitaet/Spule/SpuleOhneKern/AbgeschirmteSpule/AbgeschirmteSpule.js`
+))
+/** !SECTION Betriebsmittel Induktivitaet Spule SpuleOhneKern AbgeschirmteSpule */
+
+/** SECTION Betriebsmittel Induktivitaet Spule SpuleOhneKern EinlagigeSpule */
+const { EinlagigeSpule } = require(path.resolve(
+  `${PBetriebsmittel}/Induktivitaet/Spule/SpuleOhneKern/EinlagigeSpule/EinlagigeSpule.js`
+))
+/** !SECTION Betriebsmittel Induktivitaet Spule SpuleOhneKern EinlagigeSpule */
+
+/** SECTION Betriebsmittel Induktivitaet Spule SpuleOhneKern MehrlagigeSpule */
 const { MehrlagigeSpule } = require(path.resolve(
   `${PBetriebsmittel}/Induktivitaet/Spule/SpuleOhneKern/MehrlagigeSpule/MehrlagigeSpule.js`
 ))
-/** !SECTION Betriebsmittel Induktivitaet Spule MehrlagigeSpule */
+/** !SECTION Betriebsmittel Induktivitaet Spule SpuleOhneKern MehrlagigeSpule */
 
+/** SECTION Betriebsmittel Induktivitaet Spule SpuleOhneKern Ringspule */
+const { Ringspule } = require(path.resolve(
+  `${PBetriebsmittel}/Induktivitaet/Spule/SpuleOhneKern/Ringspule/Ringspule.js`
+))
+/** !SECTION Betriebsmittel Induktivitaet Spule SpuleOhneKern Ringspule */
+
+/** SECTION Betriebsmittel Induktivitaet Spule SpuleOhneKern Zylinderspule */
+const { Zylinderspule } = require(path.resolve(
+  `${PBetriebsmittel}/Induktivitaet/Spule/SpuleOhneKern/Zylinderspule/Zylinderspule.js`
+))
+/** !SECTION Betriebsmittel Induktivitaet Spule SpuleOhneKern Zylinderspule */
 /** !SECTION Betriebsmittel Induktivitaet Spule SpuleOhneKern */
+
+/** SECTION Betriebsmittel Induktivitaet Spule Variometer */
+const { Variometer } = require(path.resolve(
+  `${PBetriebsmittel}/Induktivitaet/Spule/Variometer/Variometer.js`
+))
+/** !SECTION Betriebsmittel Induktivitaet Spule Variometer */
 
 /** !SECTION Betriebsmittel Induktivitaet Spule */
 
@@ -204,64 +270,132 @@ const { Gluehlampe } = require(path.resolve(
 
 /** SECTION Betriebsmittel Messgeraet */
 const { Messgeraet } = require(path.resolve(
-  `${Betriebsmittel}/Messgeraet/Messgeraet.js`
+  `${PBetriebsmittel}/Messgeraet/Messgeraet.js`
 ))
 
-/** SECTION Betriebsmittel Messgeraet Energie */
-const { Energie } = require(path.resolve(
-  `${Betriebsmittel}/Messgeraet/Energie/Energie.js`
+/** SECTION Betriebsmittel Messgeraet Energiemesser */
+const { Energiemesser } = require(path.resolve(
+  `${PBetriebsmittel}/Messgeraet/Energiemesser/Energiemesser.js`
 ))
-/** !SECTION Betriebsmittel Messgeraet Energie */
+/** !SECTION Betriebsmittel Messgeraet Energiemesser */
 
-/** SECTION Betriebsmittel Messgeraet Frequenz */
-const { Frequenz } = require(path.resolve(
-  `${Betriebsmittel}/Messgeraet/Frequenz/Frequenz.js`
+/** SECTION Betriebsmittel Messgeraet Frequenzmesser */
+const { Frequenzmesser } = require(path.resolve(
+  `${PBetriebsmittel}/Messgeraet/Frequenzmesser/Frequenzmesser.js`
 ))
 /** !SECTION Betriebsmittel Messgeraet Frequenz */
 
-/** SECTION Betriebsmittel Messgeraet Impedanz */
-const { Impedanz } = require(path.resolve(
-  `${Betriebsmittel}/Messgeraet/Impedanz/Impedanz.js`
+/** SECTION Betriebsmittel Messgeraet Impedanzmesser */
+const { Impedanzmesser } = require(path.resolve(
+  `${PBetriebsmittel}/Messgeraet/Impedanzmesser/Impedanzmesser.js`
 ))
-/** !SECTION Betriebsmittel Messgeraet Impedanz */
+/** !SECTION Betriebsmittel Messgeraet Impedanzmesser */
 
-/** SECTION Betriebsmittel Messgeraet Leistung */
-const { Leistung } = require(path.resolve(
-  `${Betriebsmittel}/Messgeraet/Leistung/Leistung.js`
+/** SECTION Betriebsmittel Messgeraet Leistungsmesser */
+const { Leistungsmesser } = require(path.resolve(
+  `${PBetriebsmittel}/Messgeraet/Leistungsmesser/Leistungsmesser.js`
 ))
-/** !SECTION Betriebsmittel Messgeraet Leistung */
+/** !SECTION Betriebsmittel Messgeraet Leistungsmesser */
 
-/** SECTION Betriebsmittel Messgeraet MagnetischeGroesse */
-const { MagnetischeGroesse } = require(path.resolve(
-  `${Betriebsmittel}/Messgeraet/MagnetischeGroesse/MagnetischeGroesse.js`
+/** SECTION Betriebsmittel Messgeraet MagnetischeGroessemesser */
+const { MagnetischeGroessemesser } = require(path.resolve(
+  `${PBetriebsmittel}/Messgeraet/MagnetischeGroessemesser/MagnetischeGroessemesser.js`
 ))
-/** !SECTION Betriebsmittel Messgeraet MagnetischeGroesse */
+/** !SECTION Betriebsmittel Messgeraet MagnetischeGroessemesser */
 
-/** SECTION Betriebsmittel Messgeraet Phasenwinkel */
-const { Phasenwinkel } = require(path.resolve(
-  `${Betriebsmittel}/Messgeraet/Phasenwinkel/Phasenwinkel.js`
+/** SECTION Betriebsmittel Messgeraet Phasenwinkelmesser */
+const { Phasenwinkelmesser } = require(path.resolve(
+  `${PBetriebsmittel}/Messgeraet/Phasenwinkelmesser/Phasenwinkelmesser.js`
 ))
-/** !SECTION Betriebsmittel Messgeraet Phasenwinkel */
+/** !SECTION Betriebsmittel Messgeraet Phasenwinkelmesser */
 
-/** SECTION Betriebsmittel Messgeraet Spannung */
-const { Spannung } = require(path.resolve(
-  `${Betriebsmittel}/Messgeraet/Spannung/Spannung.js`
+/** SECTION Betriebsmittel Messgeraet Spannungsmesser */
+const { Spannungsmesser } = require(path.resolve(
+  `${PBetriebsmittel}/Messgeraet/Spannungsmesser/Spannungsmesser.js`
 ))
-/** !SECTION Betriebsmittel Messgeraet Spannung */
+/** !SECTION Betriebsmittel Messgeraet Spannungsmesser */
 
-/** SECTION Betriebsmittel Messgeraet Strom */
-const { Strom } = require(path.resolve(
-  `${Betriebsmittel}/Messgeraet/Strom/Strom.js`
+/** SECTION Betriebsmittel Messgeraet Strommesser */
+const { Strommesser } = require(path.resolve(
+  `${PBetriebsmittel}/Messgeraet/Strommesser/Strommesser.js`
 ))
-/** !SECTION Betriebsmittel Messgeraet Strom */
+/** !SECTION Betriebsmittel Messgeraet Strommesser */
 
-/** SECTION Betriebsmittel Messgeraet Zeit */
-const { Zeit } = require(path.resolve(
-  `${Betriebsmittel}/Messgeraet/Zeit/Zeit.js`
+/** SECTION Betriebsmittel Messgeraet Zeitmesser */
+const { Zeitmesser } = require(path.resolve(
+  `${PBetriebsmittel}/Messgeraet/Zeitmesser/Zeitmesser.js`
 ))
-/** !SECTION Betriebsmittel Messgeraet Zeit */
+/** !SECTION Betriebsmittel Messgeraet Zeitmesser */
 
 /** !SECTION Betriebsmittel Messgeraet */
+
+/** SECTION Betriebsmittel Transformator */
+const { Transformator } = require(path.resolve(
+  `${PBetriebsmittel}/Transformator/Transformator.js`
+))
+
+/** SECTION Betriebsmittel Transformator AudioTransformator */
+const { Audiotransformator } = require(path.resolve(
+  `${PBetriebsmittel}/Transformator/Audiotransformator/Audiotransformator.js`
+))
+/** !SECTION Betriebsmittel Transformator AudioTransformator */
+
+/** SECTION Betriebsmittel Transformator Dreiphasentransformator */
+const { Dreiphasentransformator } = require(path.resolve(
+  `${PBetriebsmittel}/Transformator/Dreiphasentransformator/Dreiphasentransformator.js`
+))
+/** !SECTION Betriebsmittel Transformator Dreiphasentransformator */
+
+/** SECTION Betriebsmittel Transformator Einphasentransformator */
+const { Einphasentransformator } = require(path.resolve(
+  `${PBetriebsmittel}/Transformator/Einphasentransformator/Einphasentransformator.js`
+))
+/** !SECTION Betriebsmittel Transformator Einphasentransformator */
+
+/** SECTION Betriebsmittel Transformator HFTransformator */
+const { HFTransformator } = require(path.resolve(
+  `${PBetriebsmittel}/Transformator/HFTransformator/HFTransformator.js`
+))
+/** !SECTION Betriebsmittel Transformator HFTransformator */
+
+/** SECTION Betriebsmittel Transformator Impulstransformator */
+const { Impulstransformator } = require(path.resolve(
+  `${PBetriebsmittel}/Transformator/Impulstransformator/Impulstransformator.js`
+))
+/** !SECTION Betriebsmittel Transformator Impulstransformator */
+
+/** SECTION Betriebsmittel Transformator Messwandler */
+const { Messwandler } = require(path.resolve(
+  `${PBetriebsmittel}/Transformator/Messwandler/Messwandler.js`
+))
+
+/** SECTION Betriebsmittel Transformator Messwandler Stromwandler */
+const { Stromwandler } = require(path.resolve(
+  `${PBetriebsmittel}/Transformator/Messwandler/Stromwandler/Stromwandler.js`
+))
+/** !SECTION Betriebsmittel Transformator Messwandler Stromwandler */
+
+/** SECTION Betriebsmittel Transformator Messwandler Spannungswandler */
+const { Spannungswandler } = require(path.resolve(
+  `${PBetriebsmittel}/Transformator/Messwandler/Spannungswandler/Spannungswandler.js`
+))
+/** !SECTION Betriebsmittel Transformator Messwandler Spannungswandler */
+
+/** !SECTION Betriebsmittel Transformator Messwandler */
+
+/** SECTION Betriebsmittel Transformator Transaktor */
+const { Transaktor } = require(path.resolve(
+  `${PBetriebsmittel}/Transformator/Transaktor/Transaktor.js`
+))
+/** !SECTION Betriebsmittel Transformator Transaktor */
+
+/** SECTION Betriebsmittel Transformator TransformatorMitMittenabgriff */
+const { TransformatorMitMittenabgriff } = require(path.resolve(
+  `${PBetriebsmittel}/Transformator/TransformatorMitMittenabgriff/TransformatorMitMittenabgriff.js`
+))
+/** !SECTION Betriebsmittel Transformator TransformatorMitMittenabgriff */
+
+/** !SECTION Betriebsmittel Transformator */
 
 /** !SECTION Betriebsmittel */
 
@@ -314,50 +448,73 @@ const { Stack } = require(path.resolve(
   `${PDatenverarbeitung}/dynamischeDatenstrukturen/listen/stapel/stack.js`
 ))
 
-exports.Material = Material
-exports.Bauelemente = Bauelemente
-exports.Betriebsmittel = Betriebsmittel
-exports.Baugruppen = Baugruppen
-exports.Zweipole = Zweipole
-exports.PassiverZweipol = PassiverZweipol
-exports.Rohrleitungen = Rohrleitungen
-exports.Bleirohre = Bleirohre
-exports.ElektroKernel = ElektroKernel
-exports.ArithmetikKernel = ArithmetikKernel
-exports.PlanemetrieKernel = PlanemetrieKernel
-exports.RohrleitungstechnikKernel = RohrleitungstechnikKernel
-exports.Reihenschaltung = Reihenschaltung
-exports.Widerstand = Widerstand
-exports.Feldplatte = Feldplatte
-exports.Fotowiderstand = Fotowiderstand
-exports.Heissleiter = Heissleiter
-exports.Kaltleiter = Kaltleiter
-exports.Varistor = Varistor
-exports.Glasplatte = Glasplatte
-exports.Leitung = Leitung
-exports.Freileitung = Freileitung
-exports.Draht = Draht
-exports.Induktivitaet = Induktivitaet
-exports.Spule = Spule
-exports.Spulenkoerper = Spulenkoerper
-exports.SpuleOhneKern = SpuleOhneKern
-exports.MehrlagigeSpule = MehrlagigeSpule
-exports.PhysikallischeChemie = PhysikalischeChemie
-exports.Elektrochemie = Elektrochemie
-exports.Elektrolyt = Elektrolyt
-exports.Verschiedenes = Verschiedenes
-exports.Elektrode = Elektrode
-exports.Beleuchtung = Beleuchtung
-exports.Lampe = Lampe
-exports.Gluehlampe = Gluehlampe
-exports.Messgeraet = Messgeraet
-exports.Energie = Energie
-exports.Frequenz = Frequenz
-exports.Impedanz = Impedanz
-exports.Leistung = Leistung
-exports.MagnetischeGroesse = MagnetischeGroesse
-exports.Phasenwinkel = Phasenwinkel
-exports.Spannung = Spannung
-exports.Strom = Strom
-exports.Zeit = Zeit
-exports.Stack = Stack
+module.exports = {
+  Material,
+  Bauelemente,
+  Betriebsmittel,
+  Baugruppen,
+  Zweipole,
+  PassiverZweipol,
+  Rohrleitungen,
+  Bleirohre,
+  ElektroKernel,
+  ArithmetikKernel,
+  PlanemetrieKernel,
+  RohrleitungstechnikKernel,
+  Reihenschaltung,
+  Widerstand,
+  Feldplatte,
+  Fotowiderstand,
+  Heissleiter,
+  Kaltleiter,
+  Varistor,
+  Glasplatte,
+  Leitung,
+  Freileitung,
+  Draht,
+  Induktivitaet,
+  Spule,
+  SpuleMitKern,
+  Magnetspule,
+  SpuleOhneKern,
+  AbgeschirmteSpule,
+  EinlagigeSpule,
+  MehrlagigeSpule,
+  Ringspule,
+  Zylinderspule,
+  Variometer,
+  PhysikalischeChemie,
+  Elektrochemie,
+  Elektrolyt,
+  Verschiedenes,
+  Elektrode,
+  Beleuchtung,
+  Lampe,
+  Gluehlampe,
+  Messgeraet,
+  Energiemesser,
+  Frequenzmesser,
+  Impedanzmesser,
+  Leistungsmesser,
+  MagnetischeGroessemesser,
+  Phasenwinkelmesser,
+  Spannungsmesser,
+  Strommesser,
+  Zeitmesser,
+  Uebertragungswege,
+  Kabel,
+  Fernmeldekabel,
+  Hochfrequenzkabel,
+  Starkstromkabel,
+  Transformator,
+  Audiotransformator,
+  Dreiphasentransformator,
+  Einphasentransformator,
+  HFTransformator,
+  Impulstransformator,
+  Messwandler,
+  Stromwandler,
+  Spannungswandler,
+  Transaktor,
+  Stack
+}

@@ -2,9 +2,7 @@ require('use-strict')
 const path = require('path')
 const dbJson = require(path.resolve('controllers/dbJson'))
 
-const { ElektroKernel, Gleichstrommesser } = require(path.resolve(
-  'include/system'
-))
+const { ElektroKernel, Strommesser } = require(path.resolve('include/system'))
 
 /**
  * @description
@@ -24,10 +22,18 @@ function Uebung13 (input) {
   )
 
   const Parameter = input
+
+  const P1 = new Strommesser(Kennzeichnung, Parameter, {})
+
+  const EK = new ElektroKernel()
+  EK.parameter({ R: P1.Parameter.R, U: P1.Parameter.U })
+  P1.Parameter.Ism = EK.IUR().toString()
+
+  dbJson.writeJSONItem(jsonfile, P1)
 }
-let input = {
-  R: '2.5 ohm',
-  U: '0.625 V'
-}
-Uebung13(input)
-// exports.func = Uebung13
+// let input = {
+//   R: '2.5 ohm',
+//   U: '0.625 V'
+// }
+// Uebung13(input)
+exports.func = Uebung13

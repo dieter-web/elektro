@@ -1,8 +1,8 @@
 require('use-strict')
 const path = require('path')
-
-const { ElektroKernel, Kaltleiter } = require(path.resolve('include/system'))
 const dbJson = require(path.resolve('controllers/dbJson.js'))
+const { ElektroKernel, Kaltleiter } = require(path.resolve('include/system'))
+
 const { readKonstante } = require(path.resolve('src/js/readKonstante.js'))
 /**
  * @function Uebung19

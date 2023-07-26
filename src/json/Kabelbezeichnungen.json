@@ -1,0 +1,34 @@
+{
+    "N": "Genormte Ausführung",
+    "Leiterart": {
+        "A": "Aluminium",
+        "-": "kein Zeichen für Kupfer"
+    },
+    "Isolierwerkstoff": {
+        "Y": "PVC",
+        "2X": "vernetztes PE (VPE)"
+    },
+    "Konzentrischer Leiter, Schirm": {
+        "C": "konzentrischer Leiter aus Cu",
+        "CW": "konzentrischer Leiter aus Cu, wellenförmig",
+        "S": "Kupferschirm",
+        "(F)": "längswasserdichter Schirm"
+    },
+    "Bewehrung": {
+        "B": "Bewehrung aus Stahlband",
+        "F": "Flachdraht verzinkt",
+        "G": "Gegenwendel aus verzinktem Stahlband",
+        "R": "Runddraht verzinkt"
+    },
+    "Mantel": {
+        "A": "Schutzhülle aus Faserstoffen",
+        "K": "Bleimantel",
+        "KL": "Aluminiummantel",
+        "Y": "PVC-Isolierung",
+        "2Y": "PE-Isolierung"
+    },
+    "Schutzleiter": {
+        "-J": "mit Schutzleiter",
+        "-O": "ohne Schutzleiter"
+    }
+}

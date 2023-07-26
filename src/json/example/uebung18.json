@@ -1,0 +1,13 @@
+{
+  "Visual": {},
+  "Parameter": {
+    "Material": "Kupfer",
+    "δ1": "12 celsius",
+    "δ2": "60 celsius",
+    "ρM": "0.01786 (ohm mm^2) / m",
+    "α20": "3.93 kK^-1",
+    "δ20": "20 celsius",
+    "pI": "16.30141721396474"
+  },
+  "Name": "Magnetspule"
+}

@@ -1,27 +1,4 @@
 {
-  "Kennzeichnung": {
-    "=": {
-      "Anlage": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "Trennzeichen": "-"
-      }
-    },
-    "+": {
-      "Ort": {
-        "Aufstellungsort": { "1": "", "2": "", "3": "", "4": "", "5": "" },
-        "Trennzeichen": "-",
-        "Einbauort": { "6": "", "7": "", "8": "", "9": "" }
-      }
-    },
-    "Art": "",
-    "Zählnummer": 0,
-    "Funktion": "",
-    ":": [{ "1": "" }, { "2": "" }]
-  },
-  "Parameter": { "G": "3E-2 S", "I": "600 mA", "U12": "20 V" },
-  "Visual": { "extvis": {}, "width": 50, "height": 20 }
+  "Visual": { "extvis": {}, "width": 50, "height": 20 },
+  "Parameter": { "G": "3E-2 S", "I": "600 mA", "U12": "20 V" }
 }

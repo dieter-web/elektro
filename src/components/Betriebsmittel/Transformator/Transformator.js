@@ -5,12 +5,13 @@ const { Betriebsmittel } = require(path.resolve(
   'src/components/Betriebsmittel/Betriebsmittel.js'
 ))
 
-class Draht extends Betriebsmittel {
+class Transformator extends Betriebsmittel {
   constructor (Kennzeichnung, Parameter, Visual) {
-    super(Kennzeichnung)
+    super(Visual)
+    this.Kennzeichnung = Kennzeichnung
     this.Parameter = Parameter
     this.Visual = Visual
-    this.id = 'Draht'
   }
 }
-exports.Draht = Draht
+
+exports.Transformator = Transformator
