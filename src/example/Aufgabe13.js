@@ -6,9 +6,7 @@ const {
   ElektroKernel,
   ArithmetikKernel,
   PlanemetrieKernel,
-  Spulenkoerper,
-  Draht,
-  Spule
+  EinlagigeSpule
 } = require(path.resolve('include/system'))
 
 /**
@@ -30,45 +28,28 @@ function Aufgabe13 (input) {
     'src/js/readMaterialParameter.js'
   ))
 
-  const ρal = readMaterialParameter(input.Material, 'ρ')
-
   const AK = new ArithmetikKernel()
   const PK = new PlanemetrieKernel()
   const EK = new ElektroKernel()
 
-  let Parameter = {
-    lm: input.lm
-  }
-  let Visual = {}
-  const SK1 = new Spulenkoerper(Kennzeichnung, Parameter, Visual)
+  let Parameter = input
 
-  Parameter = {
-    Material: input.Material,
-    d: input.d
-  }
-  Visual = {}
-  const W1 = new Draht(Kennzeichnung, Parameter, Visual)
+  const L1 = new EinlagigeSpule(Kennzeichnung, Parameter, {})
+  L1.Parameter.ρM = readMaterialParameter(L1.Parameter.Material, 'ρ').toString()
 
-  Parameter = {
-    N: input.N
-  }
-  Visual = {}
-  const SP1 = new Spule(Kennzeichnung, Parameter, Visual)
-  SP1.Parameter.SK1 = SK1
-  SP1.Parameter.W1 = W1
+  AK.parameter({ a: L1.Parameter.lm, b: L1.Parameter.N })
+  L1.Parameter.lg = AK.mul().toString()
 
-  AK.parameter({ a: SP1.Parameter.SK1.Parameter.lm, b: SP1.Parameter.N })
-  W1.Parameter.lg = AK.mul().toString()
-
-  PK.parameter({ d: SP1.Parameter.W1.Parameter.d })
-  W1.Parameter.Al = PK.KAd().toString()
+  PK.parameter({ d: L1.Parameter.d })
+  L1.Parameter.Al = PK.KAd().toString()
 
   EK.parameter({
-    l: SP1.Parameter.W1.Parameter.lg,
-    A: SP1.Parameter.W1.Parameter.Al,
-    ρ: ρal
+    l: L1.Parameter.lg,
+    A: L1.Parameter.Al,
+    ρ: L1.Parameter.ρM
   })
-  SP1.Parameter.G = EK.GAρl().toString()
+
+  L1.Parameter.G = EK.GAρl().toString()
 
   dbJson.writeJSONItem(jsonfile, SP1)
 }

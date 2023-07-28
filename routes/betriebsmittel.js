@@ -85,7 +85,31 @@ routerGet(router, R2.r2_21_4, R2.p2, R2.l2)
 
 /** NOTE Betriebsmittel Übertragungswege Leitung Beispiel14  */
 erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_4, R2.b14)
+
+/** NOTE Betriebsmittel Übertragungswege Leitung Beispiel15 */
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_4, R2.a15)
 /** !SECTION Betriebsmittel Übertragungswege Leitungen */
+
+/** SECTION Betriebsmittel Übertragungswege Antenne */
+routerGet(router, R2.r2_21_1, R2.p2, R2.l2)
+/** !SECTION Betriebsmittel Übertragungswege Antenne */
+
+/** SECTION Betriebsmittel Übertragungswege Kabel */
+routerGet(router, R2.r2_21_3, R2.p2, R2.l2)
+/** !SECTION Betriebsmittel Übertragungswege Kabel */
+
+/** SECTION Betriebsmittel Übertragungswege Draht */
+routerGet(router, R2.r2_21_2, R2.p2, R2.l2)
+
+/** NOTE Betriebsmittel Übertragungswege Draht Beispiel16 */
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_2, R2.b16)
+
+/** !SECTION Betriebsmittel Übertragungswege Draht */
+
+/** SECTION Betriebsmittel Übertragungswege Sammelschiene */
+routerGet(router, R2.r2_21_5, R2.p2, R2.l2)
+/** !SECTION Betriebsmittel Übertragungswege Sammelschiene */
+
 /** !SECTION Betriebsmittel Übertragungswege */
 
 /** SECTION Betriebsmittel Induktivitaet */
@@ -124,6 +148,9 @@ routerGet(router, R2.r2_7_2_2_3, R2.p2, R2.l2)
 /** NOTE Betriebsmittel Induktivitaet SpuleohneKern MehrlagigeSpule Aufgabe13 */
 erouter(router, R2.p2, R2.l2, R2.e, R2.r2_7_2_2_3, R2.a13)
 
+/** NOTE Betriebsmittel Induktivitaet SpuleohneKern MehrlagigeSpule Aufgabe 14 */
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_7_2_2_3, R2.a14)
+
 /** !SECTION Betriebsmittel Induktivitaet Spule SpulenohneKern MehrlagigeSpule  */
 
 /** SECTION Betriebsmittel Induktivitaet Spule SpulenohneKern Ringspule  */
@@ -143,5 +170,31 @@ routerGet(router, R2.r2_7_3, R2.p2, R2.l2)
 /** !SECTION Betriebsmittel Induktivitaet Spule */
 
 /** !SECTION Betriebsmittel Induktivitaet */
+
+/** SECTION Betriebsmittel Verschiedenes */
+routerGet(router, R2.r2_24, R2.p2, R2.l2)
+
+/**SECTION Betriebsmittel Verschiedenes Beleuchtung */
+routerGet(router, R2.r2_24_1, R2.p2, R2.l2)
+
+/** SECTION Betriebsmittel Verschiedenes Beleuchtung Lampe */
+routerGet(router, R2.r2_24_1_1, R2.p2, R2.l2)
+
+/** SECTION Betriebsmittel Verschiedenes Beleuchtung Lampe Gluehlampe */
+routerGet(router, R2.r2_24_1_1_1, R2.p2, R2.l2)
+
+/** NOTE Betriebsmittel Verschiedenes Beleuchtung Lampe Gluehlampe Beispiel17 */
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_24_1_1_1, R2.b17)
+
+/** !SECTION Betriebsmittel Verschiedenes Beleuchtung Lampe Gluehlampe */
+
+/** !SECTION Betriebsmittel Verschiedenes Beleuchtung Lampe */
+
+/**!SECTION Betriebsmittel Verschiedenes Beleuchtung */
+
+/** SECTION Betriebsmittel Verschiedenes Elektrode */
+/** !SECTION Betriebsmittel Verschiedenes Elektrode */
+
+/** !SECTION Betriebsmittel Verschiedenes */
 
 module.exports = router

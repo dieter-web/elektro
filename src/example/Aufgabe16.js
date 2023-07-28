@@ -42,8 +42,8 @@ function Aufgabe16 (input) {
   // }
   dbJson.writeJSONItem(jsonfile, GoCh)
 }
-let input = {
-  Material: 'GoldChrom'
-}
-Aufgabe16(input)
-// exports.func = Aufgabe16
+// let input = {
+//   Material: 'GoldChrom'
+// }
+// Aufgabe16(input)
+exports.func = Aufgabe16

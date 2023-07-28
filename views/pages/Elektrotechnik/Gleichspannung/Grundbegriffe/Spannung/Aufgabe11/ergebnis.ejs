@@ -4,14 +4,14 @@
 
 <script type="module">
     import {populate} from '/modules/populate.mjs'
-    import {tabulate1} from '/modules/tabulate1.mjs'
+    import {tabulate} from '/modules/tabulate.mjs'
     import {canvas} from '/modules/canvas.mjs'
     import {vR} from '/d3/lib/Betriebsmittel/vR.mjs'
 
     // tabelle ergebnis
     const data=await populate( "http://localhost:8000/json/example/aufgabe11.json" )
 
-    tabulate1( data,"#ergebnis" )
+    tabulate( data,"#ergebnis" )
 
     // Rückkopplung
     const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
@@ -19,7 +19,7 @@
     I.value=tab[ 1 ]
 
     // svg grafik
-    const g=canvas( width,height,'#grafik' )
+    const g=canvas( data.Visual.width,data.Visual.height,'#grafik' )
 
     let dataU=[ {} ]
 

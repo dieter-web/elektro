@@ -108,7 +108,12 @@ app.get('/', (req, res) => {
         { name: 'elektro', link: '/', class: 'nav-link' },
         { name: 'Elektrotechnik', link: '/elektrotechnik', class: 'nav-link' },
         { name: 'Bauelemente', link: '/bauelemente', class: 'nav-link' },
-        { name: 'Betriebsmittel', link: '/betriebsmittel', class: 'nav-link' }
+        { name: 'Betriebsmittel', link: '/betriebsmittel', class: 'nav-link' },
+        {
+          name: 'PhysikalischeChemie',
+          link: '/physikalischechemie',
+          class: 'nav-link'
+        }
       ]
     },
     (err, html) => {
@@ -120,6 +125,10 @@ app.get('/', (req, res) => {
 app.use('/bauelemente', require(path.resolve('routes/bauelemente')))
 app.use('/betriebsmittel', require(path.resolve('routes/betriebsmittel')))
 app.use('/elektrotechnik', require(path.resolve('routes/elektrotechnik')))
+app.use(
+  '/physikalischechemie',
+  require(path.resolve('routes/physikalischechemie'))
+)
 app.use('/formulare', require(path.resolve('routes/formulare')))
 
 app.locals.title = 'Elektro'

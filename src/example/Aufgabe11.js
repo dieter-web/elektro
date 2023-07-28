@@ -30,9 +30,9 @@ function Aufgabe11 (input) {
 
   dbJson.writeJSONItem(jsonfile, R1)
 }
-let input = {
-  G: '3E-2 S',
-  I: '600 mA'
-}
-Aufgabe11(input)
-// exports.func = Aufgabe11
+// let input = {
+//   G: '3E-2 S',
+//   I: '600 mA'
+// }
+// Aufgabe11(input)
+exports.func = Aufgabe11

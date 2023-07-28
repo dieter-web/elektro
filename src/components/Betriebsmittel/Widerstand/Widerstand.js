@@ -10,9 +10,10 @@ const { Betriebsmittel } = require(path.resolve(
 class Widerstand extends Betriebsmittel {
   constructor (Kennzeichnung, Parameter, Visual) {
     super(Kennzeichnung)
+    this.Kennzeichnung = Kennzeichnung
     this.Parameter = Parameter
     this.Visual = {
-      extvis : Visual,
+      extvis: Visual,
       width: 50,
       height: 20
     }

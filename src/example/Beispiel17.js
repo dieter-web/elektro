@@ -17,8 +17,17 @@ const { readMaterialParameter } = require(path.resolve(
 const { readKonstante } = require(path.resolve('src/js/readKonstante.js'))
 
 /**TODO: Das Ergebnis stimmt nicht überein ? */
+/**
+ * @description
+ *  Es ist der Widerstand des Wolframdrahts einer Glühlampe bei 20°C und bei 2250°C
+ * (Betriebstemperatur der Lampe) zu bestimmen. Der Draht hat einen Durchmesser von
+ * 0.0245 mm und ist 36.5 cm lang.
+ * @author Dieter Krause
+ * @date 28/07/2023
+ * @param {*} input
+ */
 function Beispiel17 (input) {
-  const jsonfile = path.resolve('src/json/example/beispiel16.json')
+  const jsonfile = path.resolve('src/json/example/beispiel17.json')
 
   const Kennzeichnung = dbJson.readJSONFile(
     path.resolve('src/json/kennzeichnung.json')

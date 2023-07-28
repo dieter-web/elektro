@@ -6,6 +6,14 @@ const { ElektroKernel, PlanemetrieKernel, Leitung } = require(path.resolve(
   'include/system'
 ))
 
+/**
+ * @description
+ * Welchen Widerstand hat eine 0.9mm dicke und 3km lange Kupferleitung von rundem Querschnitt,
+ * die im Erdreich verlegt ist ? Die Umgebungstemperatur beträgt -2°C .
+ * @author Dieter Krause
+ * @date 27/07/2023
+ * @param {*} input
+ */
 function Aufgabe15 (input) {
   const jsonfile = path.resolve('src/json/example/aufgabe15.json')
   const Kennzeichnung = dbJson.readJSONFile(

@@ -53,10 +53,10 @@ function Beispiel12 (input) {
   // }
   dbJson.writeJSONItem(jsonfile, W1)
 }
-let input = {
-  l: '3 km',
-  d: '0.9 mm',
-  R: '84.5 ohm'
-}
-Beispiel12(input)
-// exports.func = Beispiel12
+// let input = {
+//   l: '3 km',
+//   d: '0.9 mm',
+//   R: '84.5 ohm'
+// }
+// Beispiel12(input)
+exports.func = Beispiel12

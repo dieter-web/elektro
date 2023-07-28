@@ -69,6 +69,10 @@ module.exports = {
   r2_23: '/Umsetzer',
 
   r2_24: '/Verschiedenes',
+  r2_24_1: '/Verschiedenes/Beleuchtung',
+  r2_24_1_1: '/Verschiedenes/Beleuchtung/Lampe',
+  r2_24_1_1_1: '/Verschiedenes/Beleuchtung/Lampe/Gluehlampe',
+  r2_24_2: 'Elektrode',
 
   r2_25: '/Verstaerker',
 
