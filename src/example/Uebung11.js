@@ -10,6 +10,15 @@ const { readMaterialParameter } = require(path.resolve(
   'src/js/readMaterialParameter.js'
 ))
 
+/**
+ * @description
+ * Eine zweidrähtige Aluminiumfreileitung von 17 km Länge hat einen Querschnitt von 25 mm².
+ * Wie groß ist der Widerstand?
+ *
+ * @author Dieter Krause
+ * @date 29/07/2023
+ * @param {*} input
+ */
 function Uebung11 (input) {
   const jsonfile = path.resolve('src/json/example/uebung11.json')
 

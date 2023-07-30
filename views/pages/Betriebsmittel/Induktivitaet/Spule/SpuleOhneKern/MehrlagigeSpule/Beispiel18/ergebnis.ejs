@@ -1,5 +1,14 @@
 <%- include('aufgabe.ejs',{}) %>
-<%- include('../../../../../layouts/partials/ergebnis.ejs') %>
+<%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
+
+<div class="container text-left">
+    <div class="row ">
+        <table class="table table-bordered" id="ergebnis1">SK1</table>
+    </div>
+    <div class="row ">
+        <table class="table table-bordered" id="ergebnis2">W1</table>
+    </div>
+</div>
 
 <script type="module">
 
@@ -9,8 +18,13 @@
     import {vR} from '/d3/lib/Betriebsmittel/vR.mjs'
 
     // tabelle ergebnis
-    const data=await populate( "http://localhost:8000/json/example/beispiel16.json" )
+    const data=await populate( "http://localhost:8000/json/example/beispiel18.json" )
 
+    let dataSK1=data.Parameter.SK1
+    let dataW1=data.Parameter.W1
+
+    // tabulate( dataSK1,"#ergebnis1" )
+    // tabulate( dataW1,"#ergebnis2" )
     tabulate( data,"#ergebnis" )
 
     // Rückkopplung

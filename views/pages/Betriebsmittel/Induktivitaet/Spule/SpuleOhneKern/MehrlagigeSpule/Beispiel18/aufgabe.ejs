@@ -1,0 +1,38 @@
+<%- include('../../../../../../../layouts/partials/aufgabe.ejs', {
+    id : "beispiel18",
+    action: "/betriebsmittel/induktivitaet/spule/spuleohnekern/mehrlagigespule/beispiel18/aufgabe"
+}) %>
+
+<script type="module">
+    import {finput} from '/modules/finput.mjs'
+    import {fsubmit} from '/modules/fsubmit.mjs'
+    import {ftext} from '/modules/ftext.mjs'
+
+    const idBeispiel="#beispiel18"
+    const idText="#text"
+
+    const dataSubmit=[ "Rechnen" ] // 1 Button 
+
+    const dataText=[
+        {
+            title: "Beispiel 18",
+            subtitle: "Spule",
+            text: `Der ohmische Widerstand einer Spule,die aus Kupferdraht gewickelt ist,beträgt bei  12°C 45 Ohm.
+            Nach einer längeren Betriebsdauer ist der Spulenwiderstand um 28%
+            seines  Anfangswerts gestiegen.Wie groß ist die Betriebstemperatur?`
+        }
+
+    ]
+
+    const dataForm=[
+        {id: 'Material',text: "Material",name: "Material",value: "Kupfer"},
+        {id: 'δ',text: "Ausgangstemperatur",name: "δ",value: "12 celsius"},
+        {id: 'R',text: "Ausgangswiderstand",name: "R",value: "45 ohm"},
+        {id: 'p',text: "Änderung",name: "p",value: "28"},
+    ]
+
+    ftext( dataText,idText )
+    finput( dataForm,idBeispiel )
+    fsubmit( dataSubmit,idBeispiel )
+
+</script>

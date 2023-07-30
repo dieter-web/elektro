@@ -1,0 +1,32 @@
+<%- include('../../../../../layouts/partials/aufgabe.ejs', {
+    id : "aufgabe15",
+    action: "/betriebsmittel/uebertragungswege/leitung/aufgabe15/aufgabe"
+}) %>
+
+<script type="module">
+    import {finput} from '/modules/finput.mjs'
+    import {fsubmit} from '/modules/fsubmit.mjs'
+    import {ftext} from '/modules/ftext.mjs'
+
+    const idBeispiel="#aufgabe15"
+    const idText="#text"
+    const dataSubmit=[ "Rechnen" ]
+    const dataText=[
+        {
+            title: "Aufgabe 15",
+            subtitle: "Leitung",
+            text: `Welchen Widerstand hat eine 0.9mm dicke und 3km lange Kupferleitung von rundem Querschnitt, die im Erdreich verlegt ist? Die Umgebungstemperatur beträgt -2°C.`
+        }
+    ]
+    const dataForm=[
+        {id: 'Material',text: "Material",name: "Material",value: "Kupfer"},
+        {id: 'd',text: "Durchmesser",name: "d",value: "0.9mm"},
+        {id: 'l',text: "Länge", name: "l",value: "3 km"},
+        {id: 'δ2',text: "Umgebungstemperatur",name: "δ2",value: "-2 celsius"},
+    ]
+
+    ftext( dataText,idText )
+    finput( dataForm,idBeispiel )
+    fsubmit( dataSubmit,idBeispiel )
+
+</script>

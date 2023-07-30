@@ -1,0 +1,34 @@
+<%- include('../../../../../layouts/partials/aufgabe.ejs', {
+    id : "uebung11",
+    action: "/betriebsmittel/uebertragungswege/leitung/uebung11/aufgabe"
+}) %>
+
+<script type="module">
+    import {finput} from '/modules/finput.mjs'
+    import {fsubmit} from '/modules/fsubmit.mjs'
+    import {ftext} from '/modules/ftext.mjs'
+
+    const idBeispiel="#uebung11"
+    const idText="#text"
+    const dataSubmit=[ "Rechnen" ]
+    const dataText=[
+        {
+            title: "Übung 11",
+            subtitle: "Leitung",
+            text: `Eine zweidrähtige Aluminiumfreileitung von 17 km Länge hat einen Querschnitt von 25 mm².
+            Wie groß ist der Widerstand?`
+
+        }
+    ]
+    const dataForm=[
+        {id: 'Material',text: "Material",name: "Material",value: "Aluminium"},
+        {id: 'A',text: "Querschnitt",name: "A",value: "25 mm^2"},
+        {id: 'l',text: "Länge",name: "l",value: "17 km"},
+        {id: 'n',text: "Anzahl der Drähte",name: "n",value: "2"},
+    ]
+
+    ftext( dataText,idText )
+    finput( dataForm,idBeispiel )
+    fsubmit( dataSubmit,idBeispiel )
+
+</script>

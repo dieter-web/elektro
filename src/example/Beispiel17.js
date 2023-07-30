@@ -63,11 +63,11 @@ function Beispiel17 (input) {
 
   dbJson.writeJSONItem(jsonfile, E1)
 }
-let input = {
-  Material: 'Wolfram',
-  l: '36.5 cm',
-  d: '0.0245 mm',
-  δ2: '2250 celsius'
-}
-Beispiel17(input)
-// exports.func = Beispiel17
+// let input = {
+//   Material: 'Wolfram',
+//   l: '36.5 cm',
+//   d: '0.0245 mm',
+//   δ2: '2250 celsius'
+// }
+// Beispiel17(input)
+exports.func = Beispiel17

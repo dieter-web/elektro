@@ -69,6 +69,19 @@ routerGet(router, R2.r2_27_3, R2.p2, R2.l2)
 
 /** SECTION Betriebsmittel Widerstand thermistor */
 routerGet(router, R2.r2_27_4, R2.p2, R2.l2)
+
+/** SECTION Betriebsmittel Widerstand thermistor heissleiter */
+routerGet(router, R2.r2_27_4_1, R2.p2, R2.l2)
+/** !SECTION Betriebsmittel Widerstand thermistor heissleiter */
+
+/** SECTION Betriebsmittel Widerstand thermistor kaltleiter */
+routerGet(router, R2.r2_27_4_2, R2.p2, R2.l2)
+
+/** NOTE Uebung 19 */
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_27_4_2, R2.u19)
+
+/** !SECTION Betriebsmittel Widerstand thermistor kaltleiter */
+
 /** !SECTION Betriebsmittel Widerstand thermistor */
 
 /** SECTION Betriebsmittel Widerstand varistor */
@@ -88,6 +101,13 @@ erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_4, R2.b14)
 
 /** NOTE Betriebsmittel Übertragungswege Leitung Beispiel15 */
 erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_4, R2.a15)
+
+/** NOTE Betriebsmittel Übertragungswege Leitung Aufgabe15 */
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_4, R2.a15)
+
+/** NOTE Betriebsmittel Übertragungswege Leitung Übung11 */
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_4, R2.u11)
+
 /** !SECTION Betriebsmittel Übertragungswege Leitungen */
 
 /** SECTION Betriebsmittel Übertragungswege Antenne */
@@ -127,6 +147,10 @@ routerGet(router, R2.r2_7_2_1, R2.p2, R2.l2)
 
 /** SECTION Betriebsmittel Induktivitaet Spule SpulenmitKern Magnetspule */
 routerGet(router, R2.r2_7_2_1_1, R2.p2, R2.l2)
+
+/** NOTE Betriebsmittel Induktivitaet Spule SpulemitKern Magnetspuel Uebung18 */
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_7_2_1_1, R2.u18)
+
 /** !SECTION Betriebsmittel Induktivitaet Spule SpulenmitKern Magnetspule */
 
 /** !SECTION Betriebsmittel Induktivitaet Spule SpulenmitKern */
@@ -150,6 +174,9 @@ erouter(router, R2.p2, R2.l2, R2.e, R2.r2_7_2_2_3, R2.a13)
 
 /** NOTE Betriebsmittel Induktivitaet SpuleohneKern MehrlagigeSpule Aufgabe 14 */
 erouter(router, R2.p2, R2.l2, R2.e, R2.r2_7_2_2_3, R2.a14)
+
+/** NOTE Betriebsmittel Induktivitaet SpuleohneKern MehrlagigeSpule Beispiel 18 */
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_7_2_2_3, R2.b18)
 
 /** !SECTION Betriebsmittel Induktivitaet Spule SpulenohneKern MehrlagigeSpule  */
 

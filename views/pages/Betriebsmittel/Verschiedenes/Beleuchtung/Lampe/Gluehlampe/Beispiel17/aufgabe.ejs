@@ -1,0 +1,39 @@
+<%- include('../../../../../../../layouts/partials/aufgabe.ejs', {
+    id : "beispiel17",
+    action: "/betriebsmittel/verschiedenes/beleuchtung/lampe/gluehlampe/beispiel17/aufgabe"
+}) %>
+
+<script type="module">
+    import {finput} from '/modules/finput.mjs'
+    import {fsubmit} from '/modules/fsubmit.mjs'
+    import {ftext} from '/modules/ftext.mjs'
+
+    const idBeispiel="#beispiel17"
+    const idText="#text"
+
+    const dataSubmit=[ "Rechnen" ] // 1 Button 
+
+    const dataText=[
+        {
+            title: "Beispiel 1.7",
+            subtitle: "Glühlampe",
+            text: `Es ist der Widerstand des Wolframdrahts einer Glühlampe bei 20°C und bei 2250°C
+            ( Betriebstemperatur der Lampe ) zu bestimmen. 
+            Der Draht hat einen Durchmesser von 0.0245 mm und ist 36.5 cm lang.`
+        }
+
+    ]
+
+    const dataForm=[
+        {id: 'Material',text: "Material",name: "Material",value: "Wolfram"},
+        {id: 'l',text: "Länge",name: "l",value: "36.5 cm"},
+        {id: 'd',text: "Durchmesser",name: "d",value: "0.0245 mm"},
+        {id: 'δ2',text: "Betriebstemperatur",name: "δ2",value: "2250 celsius"},
+    ]
+
+    ftext( dataText,idText )
+    finput( dataForm,idBeispiel )
+    fsubmit( dataSubmit,idBeispiel )
+
+
+</script>

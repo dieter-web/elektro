@@ -1,0 +1,52 @@
+<%- include('../../../../../layouts/partials/aufgabe.ejs', {
+    id : "beispiel15",
+    action: "/physikalischechemie/elektrochemie/elektroly/beispiel15/aufgabe"
+}) %>
+
+<script type="module">
+    import {finput} from '/modules/finput.mjs'
+    import {fsubmit} from '/modules/fsubmit.mjs'
+    import {ftext} from '/modules/ftext.mjs'
+
+    const idBeispiel="#beispiel15"
+    const idText="#text"
+    const dataSubmit=[ "Rechnen" ]
+    const dataText=[
+        {
+            title: "Beispiel 1.5",
+            subtitle: "Elektrochemie",
+            text: `Wie groß ist die spezifische Leitfähigkeit einer Elektrolytflüssigkeit in S/cm, in der sich zwei Elektroden von 12.5cm x 20cm in einem Oberflächenabstand von 4 mm befinden? Der Widerstand zwischen den Elektroden beträgt 0.05 Ohm.`
+        }
+
+    ]
+    const dataForm=[
+        {
+            id: 'l',
+            text: 'Plattenlänge',
+            name: 'l',
+            value: '20 cm'
+        },
+        {
+            id: 'b',
+            text: 'Plattenbreite',
+            name: 'b',
+            value: '12.5 cm'
+        },
+        {
+            id: 'd',
+            text: 'Plattenabstand',
+            name: 'd',
+            value: '4 mm'
+        },
+        {
+            id: 'R',
+            text: 'Widerstand zwischen den Platten',
+            name: 'R',
+            value: '0.05 ohm'
+        },
+    ]
+
+    ftext( dataText,idText )
+    finput( dataForm,idBeispiel )
+    fsubmit( dataSubmit,idBeispiel )
+</script>
