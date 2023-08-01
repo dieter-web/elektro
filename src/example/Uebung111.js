@@ -9,6 +9,16 @@ const {
   Widerstand
 } = require(path.resolve('include/system.js'))
 
+/**
+ * @description
+ * Die Widerstände der Schaltung nach Bild 1.27--> doc/drawio haben folgende Werte: R1 = 5,2 ohm, R2 = 6,9
+ * ohm, R3 = 3,4 ohm. Der Strom
+ * I ist 2A groß Das Potential Φc des Punktes C ist gleich Null, Wie groß sind die Potentiale an den Punkten
+ * A, B, D ?
+ * @author Dieter Krause
+ * @date 01/08/2023
+ * @param {*} input
+ */
 function Uebung111 (input) {
   const jsonfile = path.resolve('src/json/example/uebung111.json')
 

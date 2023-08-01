@@ -116,6 +116,10 @@ routerGet(router, R2.r2_21_1, R2.p2, R2.l2)
 
 /** SECTION Betriebsmittel Übertragungswege Kabel */
 routerGet(router, R2.r2_21_3, R2.p2, R2.l2)
+
+/** NOTE Betriebsmittel Übertragungswege Kabel Aufgabe 110 */
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_3, R2.u110)
+
 /** !SECTION Betriebsmittel Übertragungswege Kabel */
 
 /** SECTION Betriebsmittel Übertragungswege Draht */

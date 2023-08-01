@@ -1,0 +1,37 @@
+<%- include('../../../../../../../layouts/partials/aufgabe.ejs', {
+    id : "uebung18",
+    action: "/betriebsmittel/induktivitaet/spule/spulemitkern/magnetspule/uebung18/aufgabe"
+}) %>
+
+<script type="module">
+    import {finput} from '/modules/finput.mjs'
+    import {fsubmit} from '/modules/fsubmit.mjs'
+    import {ftext} from '/modules/ftext.mjs'
+
+    const idBeispiel="#uebung18"
+    const idText="#text"
+
+    const dataSubmit=[ "Rechnen" ] // 1 Button 
+
+    const dataText=[
+        {
+            title: "Übung 18",
+            subtitle: "Magnetspule",
+            text: `An einer Magnetspule aus Kupferdraht liegt eine konstante Spannung.
+            Nach mehrstündigem Betrieb  hat sich die Temperatur der Spule
+            von 12°C auf 60°C erhöht. Um wieviel Prozent ändert sich durch die Erwärmung der Strom der
+            Spule ?`
+        }
+    ]
+
+    const dataForm=[
+        {id: 'Material',text: "Material",name: "Material",value: "Kupfer"},
+        {id: 'δ1',text: "Ausgangstemperatur",name: "δ1",value: "12 celsius"},
+        {id: 'δ2',text: "Endtemperatur",name: "δ1",value: "60 celsius"},
+    ]
+
+    ftext( dataText,idText )
+    finput( dataForm,idBeispiel )
+    fsubmit( dataSubmit,idBeispiel )
+
+</script>

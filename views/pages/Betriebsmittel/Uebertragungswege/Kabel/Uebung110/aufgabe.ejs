@@ -1,0 +1,40 @@
+<%- include('../../../../../layouts/partials/aufgabe.ejs', {
+    id : "uebung110",
+    action: "/betriebsmittel/uebertragungswege/kabel/uebung110/aufgabe"
+}) %>
+
+<script type="module">
+    import {finput} from '/modules/finput.mjs'
+    import {fsubmit} from '/modules/fsubmit.mjs'
+    import {ftext} from '/modules/ftext.mjs'
+
+    const idBeispiel="#uebung110"
+    const idText="#text"
+
+    const dataSubmit=[ "Rechnen" ] // 1 Button 
+
+    const dataText=[
+        {
+            title: "Übung 110",
+            subtitle: "Kabel",
+            text: `An die Kupferadern eines zweiadrigen,zwischen den Orten A und B im Erdreich verlegten Kabels wird in A eine Spannung von 24 V angelegt.Am Ort B werden die Adern kurzgeschlossen. Die Stromdichte ist bei einer Temperatur von 20°C 50 mA/mm² groß.Wie lang ist das Kabel?
+            Bei einer späteren Messung am gleichen Kabel ist infolge Temperaturänderung die Stromdichte um 10% gestiegen.
+            Welche Temperatur hat das Kabel bei dieser Messung?`
+        }
+
+    ]
+
+    const dataForm=[
+        {id: 'Material',text: "Material",name: "Material",value: "Kupfer"},
+        {id: 'n',text: "Anzahl der Adern",name: "n",value: "2"},
+        {id: 'U',text: "Spannung",name: "U",value: "24V"},
+        {id: 'S',text: "Stromdichte",name: "S",value: "50 mA/mm^2"},
+        {id: 'p',text: "Prozentsatz",name: "p",value: "10"},
+    ]
+
+    ftext( dataText,idText )
+    finput( dataForm,idBeispiel )
+    fsubmit( dataSubmit,idBeispiel )
+
+
+</script>
