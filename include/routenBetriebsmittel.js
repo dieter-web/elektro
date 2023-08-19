@@ -6,8 +6,11 @@ module.exports = {
   e: path.resolve('src/example'),
   p2: 'pages/Betriebsmittel',
   l2: 'layouts/Betriebsmittel',
+
   r2: '/Betriebsmittel',
+
   r2_1: '/Abschluesse',
+
   r2_2: '/Baugruppen',
   r2_2_1: '/Baugruppen/Zweipole',
   r2_2_1_1: '/Baugruppen/Zweipole/passiverZweipol',

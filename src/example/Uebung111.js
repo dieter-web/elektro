@@ -6,7 +6,8 @@ const {
   ElektroKernel,
   ArithmetikKernel,
   Reihenschaltung,
-  Widerstand
+  Widerstand,
+  Klemme
 } = require(path.resolve('include/system.js'))
 
 /**
@@ -22,19 +23,36 @@ const {
 function Uebung111 (input) {
   const jsonfile = path.resolve('src/json/example/uebung111.json')
 
+  const A = new Klemme({}, {}, {})
+  const B = new Klemme({}, {}, {})
+  const C = new Klemme(
+    {},
+    {
+      Φ: input.Φc
+    },
+    {}
+  )
+  const D = new Klemme({}, {}, {})
+
   const R1 = new Widerstand(
     { Art: 'R', Zaehlnummer: 1 },
-    { value: input.R1 },
+    {
+      value: input.R1
+    },
     {}
   )
   const R2 = new Widerstand(
     { Art: 'R', Zaehlnummer: 2 },
-    { value: input.R2 },
+    {
+      value: input.R2
+    },
     {}
   )
   const R3 = new Widerstand(
     { Art: 'R', Zaehlnummer: 3 },
-    { value: input.R3 },
+    {
+      value: input.R3
+    },
     {}
   )
 
@@ -46,40 +64,43 @@ function Uebung111 (input) {
     path.resolve('src/json/kennzeichnung.json')
   )
 
-  let Parameter = {}
+  const Parameter = input
+  // const Parameter =
+  //  {
+  //   Input: input,
+  //     Schaltung: {
+  //       klemme: [A, B, C, D],
+  //       bm: [R1, R2, R3]
+  //     },
+  //   },
 
   const RS1 = new Reihenschaltung(Kennzeichnung, Parameter, {})
 
-  RS1.Parameter.Objecte = [R1, R2, R3]
-  RS1.Parameter.Φc = input.Φc
-  RS1.Parameter.I = input.I
+  // RS1.Parameter.Objecte = [R1, R2, R3]
+  // RS1.Parameter.Φc = input.Φc
+  // RS1.Parameter.I = input.I
+
+  RS1.Parameter.Schaltung = {
+    Klemme: [A, B, C, D],
+    bm: [R1, R2, R3]
+  }
+
+  RS1.Parameter.Schaltung.Klemme.C = input.Φc
 
   const EK = new ElektroKernel()
   const AK = new ArithmetikKernel()
 
-  RS1.Parameter.Objecte.map((R, i) => {
-    EK.parameter({ R: R.Parameter.value, I: RS1.Parameter.I })
-    RS1.Parameter.Objecte[i].Parameter.Φ = EK.ΦRI().toString()
-    // RS1.Stack.push(EK.ΦRI().toString())
-  })
+  AK.parameter({ a: R1.Parameter.value, b: R2.Parameter.value })
+  let R1R2 = AK.add()
 
-  // AK.parameter({ a: RS1.Stack.items[0], b: RS1.Stack.items[1] })
-  // let tmp = AK.add()
+  EK.parameter({ R: R1R2, I: RS1.Parameter.I })
+  RS1.Parameter.Schaltung.Klemme.A = EK.ΦRI().toString()
 
-  AK.parameter({
-    a: RS1.Parameter.Objecte[0].Parameter.Φ,
-    b: RS1.Parameter.Objecte[1].Parameter.Φ
-  })
-  let tmp = AK.add().toString()
+  EK.parameter({ R: R2.Parameter.value, I: RS1.Parameter.I })
+  RS1.Parameter.Schaltung.Klemme.B = EK.ΦRI().toString()
 
-  AK.parameter({ a: tmp, b: RS1.Parameter.Φc })
-  RS1.Stack.push(AK.sub().toString())
-
-  AK.parameter({ a: RS1.Stack.items[0], b: input.Φc })
-  RS1.Stack.push(AK.sub().toString())
-
-  AK.parameter({ a: input.Φc, b: RS1.Stack.items[2] })
-  RS1.Stack.push(AK.sub().toString())
+  EK.parameter({ R: R3.Parameter.value, I: RS1.Parameter.I })
+  RS1.Parameter.Schaltung.Klemme.D = EK.ΦRI().toString()
 
   dbJson.writeJSONItem(jsonfile, RS1)
 }

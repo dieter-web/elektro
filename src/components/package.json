@@ -9,7 +9,8 @@
     "Elektrotechnik": "Elektrotechnik",
     "Mathematik": "Mathematik",
     "Kennzeichnung": "Kennzeichnung",
-    "Rohrleitungstechnik": "Rohrleitungstechnik"
+    "Rohrleitungstechnik": "Rohrleitungstechnik",
+    "Verbindungstechnik": "Verbindungstechnik"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

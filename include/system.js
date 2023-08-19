@@ -11,6 +11,7 @@ const PBauelemente = 'src/components/Bauelemente'
 const PBetriebsmittel = 'src/components/Betriebsmittel'
 const PDatenverarbeitung = 'src/components/Datenverarbeitung'
 const PPhysikalischeChemie = 'src/components/PhysikalischeChemie'
+const PVerbindungstechnik = 'src/components/Verbindungstechnik'
 
 /** SECTION Material */
 const Material = require(path.resolve('src/components/Material/Material.js'))
@@ -420,6 +421,105 @@ const { Elektrolyt } = require(path.resolve(
 
 /** !SECTION Physikalische Chemie */
 
+/** SECTION Verbindungstechnik */
+const { Verbindungstechnik } = require(path.resolve(
+  `${PVerbindungstechnik}/Verbindungstechnik.js`
+))
+
+/** SECTION Verbindungstechnik BedingtLoesbareVerbindung */
+const { BedingtLoesbareVerbindung } = require(path.resolve(
+  `${PVerbindungstechnik}/BedingtLoesbareVerbindung/BedingtLoesbareVerbindung.js`
+))
+
+/** SECTION Verbindungstechnik BedingtLoesbareVerbindung Drahtwickeltechnik */
+const { Drahtwickeltechnik } = require(path.resolve(
+  `${PVerbindungstechnik}/BedingtLoesbareVerbindung/Drahtwickeltechnik/Drahtwickeltechnik.js`
+))
+/** !SECTION Verbindungstechnik BedingtLoesbareVerbindung Drahtwickeltechnik */
+
+/** SECTION Verbindungstechnik BedingtLoesbareVerbindung Einpresstechnik */
+const { Einpresstechnik } = require(path.resolve(
+  `${PVerbindungstechnik}/BedingtLoesbareVerbindung/Einpresstechnik/Einpresstechnik.js`
+))
+
+/** !SECTION Verbindungstechnik BedingtLoesbareVerbindung Einpresstechnik */
+
+/** SECTION Verbindungstechnik BedingtLoesbareVerbindung Loeten */
+const { Loeten } = require(path.resolve(
+  `${PVerbindungstechnik}/BedingtLoesbareVerbindung/Loeten/Loeten.js`
+))
+/** !SECTION Verbindungstechnik BedingtLoesbareVerbindung Loeten */
+
+/** SECTION Verbindungstechnik BedingtLoesbareVerbindung Schneidklemmtechnik */
+const { Schneidklemmtechnik } = require(path.resolve(
+  `${PVerbindungstechnik}/BedingtLoesbareVerbindung/Schneidklemmtechnik/Schneidklemmtechnik.js`
+))
+/** !SECTION Verbindungstechnik BedingtLoesbareVerbindung Schneidklemmtechnik */
+
+/** !SECTION Verbindungstechnik BedingtLoesbareVerbindung */
+
+/** SECTION Verbindungstechnik LoesbareVerbindung */
+const { LoesbareVerbindung } = require(path.resolve(
+  `${PVerbindungstechnik}/LoesbareVerbindung/LoesbareVerbindung.js`
+))
+
+/** SECTION Verbindungstechnik LoesbareVerbindung Klemme */
+const { Klemme } = require(path.resolve(
+  `${PVerbindungstechnik}/LoesbareVerbindung/Klemme/Klemme.js`
+))
+/** !SECTION Verbindungstechnik LoesbareVerbindung Klemme */
+
+/** SECTION Verbindungstechnik LoesbareVerbindung Stecker */
+const { Stecker } = require(path.resolve(
+  `${PVerbindungstechnik}/LoesbareVerbindung/Stecker/Stecker.js`
+))
+/** !SECTION Verbindungstechnik LoesbareVerbindung Stecker */
+
+/** !SECTION Verbindungstechnik LoesbareVerbindung */
+
+/** SECTION Verbindungstechnik UnloesbareVerbindung */
+const { UnloesbareVerbindung } = require(path.resolve(
+  `${PVerbindungstechnik}/UnloesbareVerbindung/UnloesbareVerbindung.js`
+))
+
+/** SECTION Verbindungstechnik UnloesbareVerbindung Bonden */
+const { Bonden } = require(path.resolve(
+  `${PVerbindungstechnik}/UnloesbareVerbindung/Bonden/Bonden.js`
+))
+
+/** !SECTION Verbindungstechnik UnloesbareVerbindung Bonden */
+
+/** SECTION Verbindungstechnik UnloesbareVerbindung Klebeverbindung */
+const { Klebeverbindung } = require(path.resolve(
+  `${PVerbindungstechnik}/UnloesbareVerbindung/Klebeverbindung/Klebeverbindung.js`
+))
+
+/** !SECTION Verbindungstechnik UnloesbareVerbindung Klebeverbindung */
+
+/** SECTION Verbindungstechnik UnloesbareVerbindung Pressverbindung */
+const { Pressverbindung } = require(path.resolve(
+  `${PVerbindungstechnik}/UnloesbareVerbindung/Pressverbindung/Pressverbindung.js`
+))
+
+/** !SECTION Verbindungstechnik UnloesbareVerbindung Pressverbindung */
+
+/** SECTION Verbindungstechnik UnloesbareVerbindung Schweissen */
+const { Schweissen } = require(path.resolve(
+  `${PVerbindungstechnik}/UnloesbareVerbindung/Schweissen/Schweissen.js`
+))
+
+/** !SECTION Verbindungstechnik UnloesbareVerbindung Schweissen */
+
+/** SECTION Verbindungstechnik UnloesbareVerbindung Spleissen */
+const { Spleissen } = require(path.resolve(
+  `${PVerbindungstechnik}/UnloesbareVerbindung/Spleissen/Spleissen.js`
+))
+/** !SECTION Verbindungstechnik UnloesbareVerbindung Spleissen */
+
+/** !SECTION Verbindungstechnik UnloesbareVerbindung */
+
+/** !SECTION Verbindungstechnik */
+
 const { ElektroKernel } = require(path.resolve(
   `${PElektrotechnik}/gleichspannung/grundbegriffe/kernel.js`
 ))
@@ -516,5 +616,20 @@ module.exports = {
   Stromwandler,
   Spannungswandler,
   Transaktor,
-  Stack
+  Stack,
+  Verbindungstechnik,
+  BedingtLoesbareVerbindung,
+  Drahtwickeltechnik,
+  Einpresstechnik,
+  Loeten,
+  Schneidklemmtechnik,
+  LoesbareVerbindung,
+  Klemme,
+  Stecker,
+  UnloesbareVerbindung,
+  Bonden,
+  Klebeverbindung,
+  Pressverbindung,
+  Schweissen,
+  Spleissen
 }
