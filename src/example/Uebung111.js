@@ -23,39 +23,6 @@ const {
 function Uebung111 (input) {
   const jsonfile = path.resolve('src/json/example/uebung111.json')
 
-  const A = new Klemme({}, {}, {})
-  const B = new Klemme({}, {}, {})
-  const C = new Klemme(
-    {},
-    {
-      Φ: input.Φc
-    },
-    {}
-  )
-  const D = new Klemme({}, {}, {})
-
-  const R1 = new Widerstand(
-    { Art: 'R', Zaehlnummer: 1 },
-    {
-      value: input.R1
-    },
-    {}
-  )
-  const R2 = new Widerstand(
-    { Art: 'R', Zaehlnummer: 2 },
-    {
-      value: input.R2
-    },
-    {}
-  )
-  const R3 = new Widerstand(
-    { Art: 'R', Zaehlnummer: 3 },
-    {
-      value: input.R3
-    },
-    {}
-  )
-
   // Reihenschaltung
   // Hier müssen die Widerstände verbunden werden.
   // Es entstehen Verbindungspunkte !
@@ -65,42 +32,71 @@ function Uebung111 (input) {
   )
 
   const Parameter = input
-  // const Parameter =
-  //  {
-  //   Input: input,
-  //     Schaltung: {
-  //       klemme: [A, B, C, D],
-  //       bm: [R1, R2, R3]
-  //     },
-  //   },
 
   const RS1 = new Reihenschaltung(Kennzeichnung, Parameter, {})
 
-  // RS1.Parameter.Objecte = [R1, R2, R3]
-  // RS1.Parameter.Φc = input.Φc
-  // RS1.Parameter.I = input.I
-
-  RS1.Parameter.Schaltung = {
-    Klemme: [A, B, C, D],
-    bm: [R1, R2, R3]
+  RS1.Schaltung = {
+    Klemme: {
+      A: (A = new Klemme({}, {}, {})),
+      B: (B = new Klemme({}, {}, {})),
+      C: (C = new Klemme({}, {}, {})),
+      D: (D = new Klemme({}, {}, {}))
+    }, // Verbindungspunkte
+    bm: {
+      // Betriebsmittel
+      R1: (R1 = new Widerstand(
+        { Art: 'R', Zaehlnummer: 1 },
+        {
+          value: input.R1
+        },
+        {}
+      )),
+      R2: (R2 = new Widerstand(
+        { Art: 'R', Zaehlnummer: 2 },
+        {
+          value: input.R2
+        },
+        {}
+      )),
+      R3: (R3 = new Widerstand(
+        { Art: 'R', Zaehlnummer: 3 },
+        {
+          value: input.R3
+        },
+        {}
+      ))
+    }
   }
 
-  RS1.Parameter.Schaltung.Klemme.C = input.Φc
+  RS1.Schaltung.Klemme.C.Parameter.Φ = input.Φc
 
   const EK = new ElektroKernel()
   const AK = new ArithmetikKernel()
 
-  AK.parameter({ a: R1.Parameter.value, b: R2.Parameter.value })
+  AK.parameter({
+    a: RS1.Schaltung.bm.R1.Parameter.value,
+    b: RS1.Schaltung.bm.R2.Parameter.value
+  })
   let R1R2 = AK.add()
 
   EK.parameter({ R: R1R2, I: RS1.Parameter.I })
-  RS1.Parameter.Schaltung.Klemme.A = EK.ΦRI().toString()
 
-  EK.parameter({ R: R2.Parameter.value, I: RS1.Parameter.I })
-  RS1.Parameter.Schaltung.Klemme.B = EK.ΦRI().toString()
+  RS1.Schaltung.Klemme.A.Parameter.Φ = EK.ΦRI().toString()
 
-  EK.parameter({ R: R3.Parameter.value, I: RS1.Parameter.I })
-  RS1.Parameter.Schaltung.Klemme.D = EK.ΦRI().toString()
+  EK.parameter({
+    R: RS1.Schaltung.bm.R2.Parameter.value,
+    I: RS1.Parameter.I
+  })
+  RS1.Schaltung.Klemme.B.Parameter.Φ = EK.ΦRI().toString()
+
+  EK.parameter({
+    R: RS1.Schaltung.bm.R3.Parameter.value,
+    I: RS1.Parameter.I
+  })
+  RS1.Schaltung.Klemme.D.Parameter.Φ = EK.ΦRI()
+
+  AK.parameter({ a: RS1.Schaltung.Klemme.D.Parameter.Φ, b: -1 }) // liegt auf der anderen Seite vom Bezugspotential
+  RS1.Schaltung.Klemme.D.Parameter.Φ = AK.mul().toString()
 
   dbJson.writeJSONItem(jsonfile, RS1)
 }

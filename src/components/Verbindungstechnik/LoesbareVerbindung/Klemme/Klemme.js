@@ -6,10 +6,10 @@ const { LoesbareVerbindung } = require(path.resolve(
 ))
 
 class Klemme extends LoesbareVerbindung {
-  constructor (Kennzeichnung, extParameter, Visual) {
-    super(Kennzeichnung, extParameter, Visual)
+  constructor (Kennzeichnung, Parameter, Visual) {
+    super(Kennzeichnung, Parameter, Visual)
     this.Kennzeichnung = Kennzeichnung
-    this.extParameter = extParameter
+    this.Parameter = Parameter
     this.Visual = Visual
 
     this.Verbindung = {

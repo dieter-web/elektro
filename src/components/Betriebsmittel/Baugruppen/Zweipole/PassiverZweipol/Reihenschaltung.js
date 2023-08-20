@@ -11,6 +11,7 @@ class Reihenschaltung extends PassiverZweipol {
   constructor (Kennzeichnung, Parameter, Visual) {
     super(Kennzeichnung)
     this.Parameter = Parameter
+    this.Schaltung = {}
     this.Visual = Visual
   }
 }
