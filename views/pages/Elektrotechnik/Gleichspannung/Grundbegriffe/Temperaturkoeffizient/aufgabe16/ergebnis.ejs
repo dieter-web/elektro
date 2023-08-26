@@ -3,22 +3,27 @@
 
 <script type="module">
     import {populate} from '/modules/populate.mjs'
-    import {tabulate} from '/modules/tabulate_aufgabe16.mjs'
+    import {tabulate} from '/modules/tabulate.mjs'
     import {canvas} from '/modules/canvas.mjs'
+    import {vR} from '/d3/lib/Betriebsmittel/vR.mjs'
     // import {vMaterial1} from '/d3/lib/Material/vMaterial1.mjs'
 
     // tabelle ergebnis
     const data=await populate( "http://localhost:8000/json/example/aufgabe16.json" )
-    tabulate( data,"single","#ergebnis" )
+    tabulate( data,"#ergebnis" )
 
     // Rückkopplung
     // Material.value=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )[ 0 ];
 
     // svg grafik
-    const g=canvas( 800,100,'#grafik' )
+    const g=canvas( '#grafik',800,200 )
 
-    let dataT=[ {} ]
+    let dataT=[ {
+        width: 100,
+        height: 100,
+        text: "GoldChrom"
+    } ]
 
-    g.append( () => vR( dataR1,[ 50,50 ] ) )
+    g.append( () => vR( dataT,[ 30,30 ] ) )
 
 </script>

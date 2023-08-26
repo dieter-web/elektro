@@ -15,7 +15,7 @@ const { ElektroKernel, Material } = require(path.resolve('include/system'))
  */
 function Aufgabe16 (input) {
   const jsonfile = path.resolve('src/json/example/aufgabe16.json')
-  const δ20 = readKonstante('Vergleichstemperatur')
+  const δ20 = readKonstante('Vergleichstemperatur').toString()
   const Kennzeichnung = dbJson.readJSONFile(
     path.resolve('src/json/kennzeichnung.json')
   )
@@ -32,14 +32,8 @@ function Aufgabe16 (input) {
     δ20: GoCh.Parameter.δ20
   })
 
-  GoCh.Parameter.theta0 = Ek.δM()
+  GoCh.Parameter.theta0 = Ek.δM().toString()
 
-  // let erg = {
-  //   Object: GoCh, // Material
-  //   Ergebnis: {
-  //     Temperaturkonstante: theta0
-  //   }
-  // }
   dbJson.writeJSONItem(jsonfile, GoCh)
 }
 // let input = {

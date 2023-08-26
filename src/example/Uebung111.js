@@ -100,12 +100,12 @@ function Uebung111 (input) {
 
   dbJson.writeJSONItem(jsonfile, RS1)
 }
-let input = {
-  R1: '5.2 ohm',
-  R2: '6.9 ohm',
-  R3: '3.4 ohm',
-  Φc: '0 V',
-  I: '2 A'
-}
-Uebung111(input)
-// exports.func = Uebung111
+// let input = {
+//   R1: '5.2 ohm',
+//   R2: '6.9 ohm',
+//   R3: '3.4 ohm',
+//   Φc: '0 V',
+//   I: '2 A'
+// }
+// Uebung111(input)
+exports.func = Uebung111

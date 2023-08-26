@@ -4,8 +4,8 @@ function vR (data, pos) {
     .data(data)
     .enter()
     .append('rect')
-    .attr('fill', 'none')
-    .attr('fill-opacity', '0.3')
+    .attr('fill', 'yellow')
+    .attr('fill-opacity', '0.5')
     .attr('style', 'stroke:#fff;stroke-width:2.5;')
     .attr('x', pos[0])
     .attr('y', pos[1])
@@ -21,8 +21,8 @@ function vR (data, pos) {
     .append('text')
     .attr('x', pos[0])
     .attr('y', pos[1] - 5)
-    .text(R => {
-      return R.id
+    .text(data => {
+      return data.text
     })
 
   return R.node()

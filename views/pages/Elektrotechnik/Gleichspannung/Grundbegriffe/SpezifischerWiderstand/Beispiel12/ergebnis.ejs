@@ -1,5 +1,5 @@
 <%- include('aufgabe.ejs',{}) %>
-<%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
+<%- include('../../../../../../layouts/partials/ergebnis.ejs') %>
 
 
 <script type="module">
@@ -10,7 +10,7 @@
 
     // tabelle ergebnis
     const data=await populate( "http://localhost:8000/json/example/beispiel12.json" )
-    tabulate( data,"single","#ergebnis" )
+    tabulate( data,"#ergebnis" )
 
     // Rückkopplung
     const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
