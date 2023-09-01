@@ -18,12 +18,18 @@
     // svg grafik
     const g=canvas( '#grafik',800,200 )
 
-    let dataT=[ {
+    // Layers 
+    // const Layers=[ 'Nets','Buses','Pins','Symbols','Names','Values','Comments','Directives','Shapes' ]
+
+    let gdata=[ {
         width: 100,
         height: 100,
-        text: "GoldChrom"
+        text: "GoldChrom",
+        color: '#121212',
+        style: 'stroke:#0fff; stroke-width:1.0',
+        fillopacity: 0.1
     } ]
 
-    g.append( () => vR( dataT,[ 30,30 ] ) )
+    g.symbols.append( () => vR( gdata,[ 30,30 ] ) )
 
 </script>

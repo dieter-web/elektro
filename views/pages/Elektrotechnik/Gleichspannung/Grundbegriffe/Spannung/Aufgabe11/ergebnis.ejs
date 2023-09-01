@@ -19,13 +19,21 @@
     I.value=tab[ 1 ]
 
     // svg grafik
-    const g=canvas( data.Visual.width,data.Visual.height,'#grafik' )
+    const g=canvas( '#grafik',800,400 )
 
-    let dataU=[ {} ]
+    let gdata={
+        "width": `${ data.Visual.width }`, 
+        "height": `${ data.Visual.height }`,
+        "fill": "#121212",
+        "fillopacity": '0.5',
+        "stroke": "#000fff",
+        "strokewidth": "2.5",
+        "text": "R"
+    }
 
     // const datVis=data.Betriebsmittel.Vis;
     // const dataVis=[ datVis.height,datVis.width ]
 
-    g.append( () => vR( dataU,[ 100,50 ] ) )
+    g.append( () => vR( gdata,[ 100,50 ] ) )
 
 </script>
