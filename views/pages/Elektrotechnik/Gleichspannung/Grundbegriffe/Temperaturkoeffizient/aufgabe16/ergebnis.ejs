@@ -6,28 +6,26 @@
     import {tabulate} from '/modules/tabulate.mjs'
     import {canvas} from '/modules/canvas.mjs'
     import {vR} from '/d3/lib/Betriebsmittel/vR.mjs'
-    // import {vMaterial1} from '/d3/lib/Material/vMaterial1.mjs'
 
     // tabelle ergebnis
     const data=await populate( "http://localhost:8000/json/example/aufgabe16.json" )
+    const material=await populate( "http://localhost:8000/json/Tafel11.json" )
+
     tabulate( data,"#ergebnis" )
 
     // Rückkopplung
-    // Material.value=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )[ 0 ];
+    Material.value=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )[ 0 ];
 
     // svg grafik
     const g=canvas( '#grafik',800,200 )
 
-    // Layers 
-    // const Layers=[ 'Nets','Buses','Pins','Symbols','Names','Values','Comments','Directives','Shapes' ]
-
     let gdata=[ {
         width: 100,
         height: 100,
-        text: "GoldChrom",
-        color: '#121212',
+        text: Material.value,
+        color: material[ `${ Material.value }` ].color,
         style: 'stroke:#0fff; stroke-width:1.0',
-        fillopacity: 0.1
+        fillopacity: 0.5
     } ]
 
     g.symbols.append( () => vR( gdata,[ 30,30 ] ) )

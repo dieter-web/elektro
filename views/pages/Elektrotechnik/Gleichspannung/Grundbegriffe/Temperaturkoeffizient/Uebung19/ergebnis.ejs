@@ -1,5 +1,5 @@
 <%- include('aufgabe.ejs',{}) %>
-<%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
+<%- include('../../../../../../layouts/partials/ergebnis.ejs') %>
 
 
 <script type="module">
@@ -24,8 +24,8 @@
     // svg grafik
     const g=canvas( 800,300,'#grafik' )
 
-    let dataT=[ {} ]
+    let gdata=[ {} ]
 
-    g.append( () => vR( dataR1,[ 50,50 ] ) )
+    g.append( () => vR( gdata,[ 50,50 ] ) )
 
 </script>
