@@ -4,28 +4,81 @@
 
 <script type="module">
 
-    import {tabulate} from '/modules/tabulate2.mjs'
+    import {tabulate} from '/modules/tabulate.mjs'
     import {canvas} from '/modules/canvas.mjs'
     import {populate} from '/modules/populate.mjs'
-    // Anpassen  import {vR} from '/d3/lib/Betriebsmittel/vR.mjs'
+    import {vR} from '/d3/lib/Betriebsmittel/vR.mjs'
 
     // tabelle ergebnis
     const data=await populate( "http://localhost:8000/json/example/uebung19.json" )
 
-    tabulate( data,"single","#ergebnis" )
+    tabulate( data,"#ergebnis" )
 
     // Rückkopplung
     const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
-    R20.value=sel[ 1 ]
-    Rδ2.value=sel[ 2 ]
-    δ2.value=sel[ 3 ]
-    δ20.value=sel[ 4 ]
+    R20.value=sel[ 0 ]
+    Rδ2.value=sel[ 1 ]
+    δ2.value=sel[ 2 ]
+    δ20.value=sel[ 3 ]
 
     // svg grafik
-    const g=canvas( 800,300,'#grafik' )
+    let gdata={
+        svg: {
+            id: '#grafik',
+            width: 800,
+            height: 200,
+            backgroundcolor: "none",
+            viewbox: '0 0 800 200'
+        },
+        // g: {
+        //     width: '101px',
+        //     height: '21px',
+        //     style: 'background-color:none'
+        // },
+        box: {
+            x: 400,
+            y: 100,
+            width: 100,
+            height: 20,
+            fill: "none",
+            stroke: "none",
+            'pointer-events': 'all',
+        },
+        element:
+            [
+                {
+                    rect: {
+                        x: 18,
+                        y: 0,
+                        width: 64,
+                        height: 20,
+                        fill: "none",
+                        stroke: 'rgb(0,0,0)',
+                        'pointer-events': 'all',
+                        text: "R",
+                        color: "none",
+                        style: 'stroke:#0fff; stroke-width:1.0',
+                        fillopacity: 0.1,
+                        //anschlüsse
+                        path: 'M 0 10 L 18 10 M 82 10 L 100 10',
+                        fill: 'none',
+                        stroke: 'rgb(0,0,0)',
+                        'stroke-miterlimit': 10,
+                        'pointer-events': 'all'
+                    }
+                }
+            ]
+    }
 
-    let gdata=[ {} ]
+    // const g=canvas( '#grafik',800,300,"-0.5 -0.5 101 21" )
+    const g=canvas(
+        gdata.svg.id,
+        gdata.svg.width,
+        gdata.svg.height,
+        gdata.svg.backgroundcolor,
+        gdata.svg.viewbox )
 
-    g.append( () => vR( gdata,[ 50,50 ] ) )
+    g.append( () => vR( gdata.element,[ 50,50 ] ) )
+    // g.append( () => vR( gdata.box,[ 50,50 ] ) )
 
 </script>
