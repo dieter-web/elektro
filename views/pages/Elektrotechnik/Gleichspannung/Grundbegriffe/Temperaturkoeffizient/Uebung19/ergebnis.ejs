@@ -60,7 +60,7 @@
                         style: 'stroke:#0fff; stroke-width:1.0',
                         fillopacity: 0.1,
                         //anschlüsse
-                        path: 'M 0 10 L 18 10 M 82 10 L 100 10',
+                        path: 'M 50 50 m 0 10 l -20 0 m 84 0 l 20 0',
                         fill: 'none',
                         stroke: 'rgb(0,0,0)',
                         'stroke-miterlimit': 10,
@@ -69,8 +69,6 @@
                 }
             ]
     }
-
-    // const g=canvas( '#grafik',800,300,"-0.5 -0.5 101 21" )
     const g=canvas(
         gdata.svg.id,
         gdata.svg.width,
@@ -79,6 +77,4 @@
         gdata.svg.viewbox )
 
     g.append( () => vR( gdata.element,[ 50,50 ] ) )
-    // g.append( () => vR( gdata.box,[ 50,50 ] ) )
-
 </script>
