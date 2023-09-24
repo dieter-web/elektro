@@ -1,60 +1,91 @@
 function vR(data, pos) {
-  const R = d3.create("svg:g").attr("id", "symbol");
+  // Layer des shape
+  const Symbol = d3.create("svg:g").attr("id", "symbol");
+  const Name = d3.create("svg:g").attr("id", "name");
+  const Value = d3.create("svg:g").attr("id", "value");
 
-  R.selectAll("#symbol")
+  // Shape
+  const shape = [];
+
+  //
+  // Layer Symbol
+  //
+  Symbol.selectAll("#symbol")
     .data(data)
     .enter()
 
-    .append("rect") // Widerstand
+    // Widerstandsrechteck
+    .append("rect")
     .attr("fill", (d) => {
-      return d.rect.color;
+      return d.Widerstand.fill;
     })
     .attr("fill-opacity", (d) => {
-      return d.rect.fillopacity;
+      return d.Widerstand.fillopacity;
     })
     .attr("style", (d) => {
-      return d.rect.style;
+      return d.Widerstand.style;
     })
     .attr("x", pos[0])
     .attr("y", pos[1])
     .attr("height", (d) => {
-      return d.rect.height;
+      return d.Widerstand.height;
     })
     .attr("width", (d) => {
-      return d.rect.width;
+      return d.Widerstand.width;
     });
-    
-  R.selectAll("text")
+
+  // Anschlüsse
+  Symbol.selectAll("path")
+    .data(data)
+    .enter()
+    .append("path")
+    .attr("fill", (d) => {
+      return d.Widerstand.fill;
+    })
+    .attr("fill-opacity", (d) => {
+      return d.Widerstand.fillopacity;
+    })
+    .attr("style", (d) => {
+      return d.Widerstand.style;
+    })
+    .attr("d", (d) => {
+      return d.Widerstand.path;
+    });
+
+  shape.push(Symbol.node());
+
+  //
+  // Layer Name
+  //
+  Name.selectAll("#name")
     .data(data)
     .enter()
     .append("text")
     .attr("x", pos[0])
     .attr("y", pos[1] - 5)
     .text((d) => {
-      return d.rect.text;
+      return d.Widerstand.name;
     });
 
-  R.selectAll("path")
+  shape.push(Name.node());
+
+  //
+  // Layer Value
+  //
+  Value.selectAll("#value")
     .data(data)
     .enter()
-    .append("path")
-    .attr("fill", (d) => {
-      return d.rect.color;
-    })
-    .attr("fill-opacity", (d) => {
-      return d.rect.fillopacity;
-    })
-    .attr("style", (d) => {
-      return d.rect.style;
-    })
-    .attr("d", (d) => {
-      return d.rect.path;
+    .append("text")
+    .attr("x", pos[0] + 50)
+    .attr("y", pos[1] - 5)
+    .text((d) => {
+      return d.Widerstand.value;
     });
 
-  // TODO: Box hinzufügen
-  // d3.create("svg:g").attr("id", "box");
+  shape.push(Value.node());
 
-  return R.node();
+  // return [Symbol.node(), Value.node(), Name.node()];
+  return shape;
 }
 
 export { vR };

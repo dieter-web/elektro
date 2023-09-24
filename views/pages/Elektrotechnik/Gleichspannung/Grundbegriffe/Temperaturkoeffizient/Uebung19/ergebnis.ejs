@@ -5,7 +5,7 @@
 <script type="module">
 
     import {tabulate} from '/modules/tabulate.mjs'
-    import {canvas} from '/modules/canvas.mjs'
+    import {drawboard} from '/modules/drawboard.mjs'
     import {populate} from '/modules/populate.mjs'
     import {vR} from '/d3/lib/Betriebsmittel/vR.mjs'
 
@@ -28,53 +28,93 @@
             width: 800,
             height: 200,
             backgroundcolor: "none",
-            viewbox: '0 0 800 200'
-        },
-        // g: {
-        //     width: '101px',
-        //     height: '21px',
-        //     style: 'background-color:none'
-        // },
-        box: {
-            x: 400,
-            y: 100,
-            width: 100,
-            height: 20,
-            fill: "none",
-            stroke: "none",
-            'pointer-events': 'all',
+            viewbox: '0 0 200 100'
         },
         element:
             [
                 {
-                    rect: {
+                    // TODO: Hier sollte class Widerstand eingetragen sein. Wie ??
+                    Widerstand: {
                         x: 18,
                         y: 0,
                         width: 64,
                         height: 20,
                         fill: "none",
-                        stroke: 'rgb(0,0,0)',
+                        fillopacity: 1,
+                        style: 'stroke:#FFFF; stroke-width:1.0',
                         'pointer-events': 'all',
-                        text: "R",
-                        color: "none",
-                        style: 'stroke:#0fff; stroke-width:1.0',
-                        fillopacity: 0.1,
+
+                        name: "R20",
+                        value: R20.value,
+
                         //anschlüsse
                         path: 'M 50 50 m 0 10 l -20 0 m 84 0 l 20 0',
-                        fill: 'none',
-                        stroke: 'rgb(0,0,0)',
-                        'stroke-miterlimit': 10,
-                        'pointer-events': 'all'
+                        // 'pointer-events': 'all'
                     }
                 }
             ]
     }
-    const g=canvas(
-        gdata.svg.id,
-        gdata.svg.width,
-        gdata.svg.height,
-        gdata.svg.backgroundcolor,
-        gdata.svg.viewbox )
 
-    g.append( () => vR( gdata.element,[ 50,50 ] ) )
+    const g=drawboard( gdata.svg )
+
+    // funktioniert !
+    // d3 benötigt ein [] pro Element 
+    // also ist gdata.element ==> [] ==> ein Widerstand als Object
+    //     {Widerstand: {…} }
+    //         Widerstand
+    //         :
+    //         {x: 18,y: 0,width: 64,height: 20,fill: 'none', …}
+    //         [ [ Prototype ] ]
+    // :
+    //         Object
+    //         constructor
+    //         : 
+    // ƒ Object()
+    //         hasOwnProperty
+    //         : 
+    // ƒ hasOwnProperty()
+    //         isPrototypeOf
+    //         : 
+    // ƒ isPrototypeOf()
+    //         propertyIsEnumerable
+    //         : 
+    // ƒ propertyIsEnumerable()
+    //         toLocaleString
+    //         : 
+    // ƒ toLocaleString()
+    //         toString
+    //         : 
+    // ƒ toString()
+    //         valueOf
+    //         : 
+    // ƒ valueOf()
+    //         __defineGetter__
+    //         : 
+    // ƒ __defineGetter__()
+    //         __defineSetter__
+    //         : 
+    // ƒ __defineSetter__()
+    //         __lookupGetter__
+    //         : 
+    // ƒ __lookupGetter__()
+    //         __lookupSetter__
+    //         : 
+    // ƒ __lookupSetter__()
+    //         __proto__
+    //         :
+    //         ( ...)
+    // get __proto__
+    //         : 
+    // ƒ __proto__()
+    // set __proto__
+    //         : 
+    // ƒ __proto__()
+
+    vR( gdata.element,[ 50,50 ] ).map( ( e ) =>
+    {
+        // console.log( e )
+        g.append( () => e )
+    } )
+
+    // g.append( () => vR( gdata.element,[ 50,50 ] ) )
 </script>

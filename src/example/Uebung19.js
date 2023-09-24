@@ -22,6 +22,8 @@ function Uebung19(input) {
 
   const Parameter = input;
   let R1 = new Kaltleiter(Kennzeichnung, Parameter, {});
+
+
   R1.Parameter.δ20 = readKonstante("Vergleichstemperatur").toString();
 
   const EK = new ElektroKernel();
