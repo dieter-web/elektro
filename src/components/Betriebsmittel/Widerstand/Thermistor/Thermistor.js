@@ -1,15 +1,19 @@
-require('use-strict')
-const path = require('path')
+require("use-strict");
+const path = require("path");
 const { Widerstand } = require(path.resolve(
-  'src/components/Betriebsmittel/Widerstand/Widerstand.js'
-))
+  "src/components/Betriebsmittel/Widerstand/Widerstand.js"
+));
 
 class Thermistor extends Widerstand {
-  constructor (Kennzeichnung, Parameter, Visual) {
-    super(Kennzeichnung)
-    this.Parameter = Parameter
-    this.Visual = Visual
+  // constructor (Kennzeichnung, Parameter, Visual) {
+  constructor(Kennzeichnung, Parameter) {
+    super(Kennzeichnung);
+    this.Parameter = Parameter;
+    this.visThermistor = {
+      path: "",
+    };
+    // this.Visual = Visual
   }
 }
 
-exports.Thermistor = Thermistor
+exports.Thermistor = Thermistor;

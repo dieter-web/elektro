@@ -34,23 +34,25 @@
             [
                 {
                     // TODO: Hier sollte class Widerstand eingetragen sein. Wie ??
-                    Widerstand: {
-                        x: 18,
-                        y: 0,
-                        width: 64,
-                        height: 20,
-                        fill: "none",
-                        fillopacity: 1,
-                        style: 'stroke:#FFFF; stroke-width:1.0',
-                        'pointer-events': 'all',
+                    Betriebsmittel: data.visBetriebsmittel,
+                    Widerstand: data.visWiderstand,
+                    Thermistor: data.visThermistor
+                    // {
+                    // x: 18,
+                    // y: 0,
+                    // width: 64,
+                    // height: 20,
+                    // fill: "none",
+                    // fillopacity: 1,
+                    // style: 'stroke:#FFFF; stroke-width:1.0',
+                    // 'pointer-events': 'all',
 
-                        name: "R20",
-                        value: R20.value,
+                    // name: "R20",
+                    // value: R20.value,
 
-                        //anschlüsse
-                        path: 'M 50 50 m 0 10 l -20 0 m 84 0 l 20 0',
-                        // 'pointer-events': 'all'
-                    }
+                    //anschlüsse
+                    // path: 'M 50 50 m 0 10 l -20 0 m 84 0 l 20 0',
+                    // 'pointer-events': 'all'
                 }
             ]
     }

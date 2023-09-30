@@ -8,24 +8,28 @@ const { Betriebsmittel } = require(path.resolve(
 // const  {Betriebsmittel}  = require(path.resolve('include/system'))
 
 class Widerstand extends Betriebsmittel {
-  constructor(Kennzeichnung, Parameter, Visual) {
+  // constructor(Kennzeichnung, Parameter, extVisual) {
+  constructor(Kennzeichnung, Parameter) {
     super(Kennzeichnung);
-    this.Kennzeichnung = Kennzeichnung;
+    // this.Kennzeichnung = Kennzeichnung;
     this.Parameter = Parameter;
 
-    this.Visual = {
+    this.visWiderstand = {
+
       // eigenschaften
-      extvis: Visual, // Widerstandsspezifikationen
+      // extvis: extVisual, // Widerstandsspezifikationen
       fill: "none",
       fillopacity: 1,
       style: "stroke:#ffff; stroke-width: 1.0",
 
       // Widerstandsrechteck
-      width: 50,
+      width: 64,
       height: 20,
 
       // Anschlüsse
       path: "M 50 50 m 0 10 l -20 0 m 84 0 l 20 0",
+      name: "name",
+      value: "value",
 
       // Events
       "pointer-events": "all",

@@ -20,9 +20,18 @@ function Uebung19(input) {
     path.resolve("src/json/kennzeichnung.json")
   );
 
-  const Parameter = input;
-  let R1 = new Kaltleiter(Kennzeichnung, Parameter, {});
+  // Konkrete Kennzeichnung
+  Kennzeichnung.Art = "R";
+  Kennzeichnung.Zählnummer = "20";
+  Kennzeichnung.Funktion = "R";
 
+  const Parameter = input;
+  // let R1 = new Kaltleiter(Kennzeichnung, Parameter, {});
+  let R1 = new Kaltleiter(Kennzeichnung, Parameter);
+
+  // Konkrete Visualisierungswerte
+  R1.visWiderstand.name = "R20"; //TODO: Key Wert eintragen ?
+  R1.visWiderstand.value = input.R20;
 
   R1.Parameter.δ20 = readKonstante("Vergleichstemperatur").toString();
 
@@ -38,9 +47,9 @@ function Uebung19(input) {
   dbJson.writeJSONItem(jsonfile, R1);
 }
 // const input = {
-//   R20: '40 kohm',
-//   Rδ2: '41 kohm',
-//   δ2: '25.5 celsius'
-// }
-// Uebung19(input)
+//   R20: "40 kohm",
+//   Rδ2: "41 kohm",
+//   δ2: "25.5 celsius",
+// };
+// Uebung19(input);
 exports.func = Uebung19;

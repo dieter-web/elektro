@@ -1,66 +1,66 @@
 {
-    "chemisch reines Wasser": {
-        "t": "18 celsius",
-        "κ": "3.81E-8 1/(ohm cm)"
-    },
-    "Leitfaehigkeitswasser": {
-        "t": "18 celsius",
-        "κ": "1E-6 1/(ohm cm)"
-    },
-    "destilliertes Wasser": {
-        "t": "18 celsius",
-        "κ": "1E-5 1/(ohm cm)"
-    },
-    "NaNO_3 (fest)": {
-        "t": "260 celsius",
-        "κ": "1.65E-6 1/(ohm cm)"
-    },
-    "NaCl (fest)": {
-        "t": "700 celsius",
-        "κ": "8.72E-5 1/(ohm cm)"
-    },
-    "5%ige NaCH3COO": {
-        "t": "18 celsius",
-        "κ": "0.0295 1/(ohm cm)"
-    },
-    "5%ige NaCl": {
-        "t": "18 celsius",
-        "κ": "0.0672 1/(ohm cm)"
-    },
-    "5%igeNaOH": {
-        "t": "18 celsius",
-        "κ": "0.1969 1/(ohm cm)"
-    },
-    "5%igeH2SO4": {
-        "t": "18 celsius",
-        "κ": "0.2085 1/(ohm cm)"
-    },
-    "5%ige HCl": {
-        "t": "18 celsius",
-        "κ": "0.3948 1/(ohm cm)"
-    },
-    "AgNO3 (geschmolzen)": {
-        "t": "300 celsius",
-        "κ": "1.05 1/(ohm cm)"
-    },
-    "KNO3 (geschmolzen)": {
-        "t": "500 celsius",
-        "κ": "1.11 1/(ohm cm)"
-    },
-    "NaCl (geschmolzen)": {
-        "t": "900 celsius",
-        "κ": "3.77 1/(ohm cm)"
-    },
-    "Fe": {
-        "t": "0 celsius",
-        "κ": "1.15E5 1/(ohm cm)"
-    },
-    "Cu": {
-        "t": "0 celsius",
-        "κ": "6.45E5 1/(ohm cm)"
-    },
-    "Ag": {
-        "t": "0 celsius",
-        "κ": "6.71E5 1/(ohm cm)"
-    },
+  "chemisch reines Wasser": {
+    "t": "18 celsius",
+    "κ": "3.81E-8 1/(ohm cm)"
+  },
+  "Leitfaehigkeitswasser": {
+    "t": "18 celsius",
+    "κ": "1E-6 1/(ohm cm)"
+  },
+  "destilliertes Wasser": {
+    "t": "18 celsius",
+    "κ": "1E-5 1/(ohm cm)"
+  },
+  "NaNO_3 (fest)": {
+    "t": "260 celsius",
+    "κ": "1.65E-6 1/(ohm cm)"
+  },
+  "NaCl (fest)": {
+    "t": "700 celsius",
+    "κ": "8.72E-5 1/(ohm cm)"
+  },
+  "5%ige NaCH3COO": {
+    "t": "18 celsius",
+    "κ": "0.0295 1/(ohm cm)"
+  },
+  "5%ige NaCl": {
+    "t": "18 celsius",
+    "κ": "0.0672 1/(ohm cm)"
+  },
+  "5%igeNaOH": {
+    "t": "18 celsius",
+    "κ": "0.1969 1/(ohm cm)"
+  },
+  "5%igeH2SO4": {
+    "t": "18 celsius",
+    "κ": "0.2085 1/(ohm cm)"
+  },
+  "5%ige HCl": {
+    "t": "18 celsius",
+    "κ": "0.3948 1/(ohm cm)"
+  },
+  "AgNO3 (geschmolzen)": {
+    "t": "300 celsius",
+    "κ": "1.05 1/(ohm cm)"
+  },
+  "KNO3 (geschmolzen)": {
+    "t": "500 celsius",
+    "κ": "1.11 1/(ohm cm)"
+  },
+  "NaCl (geschmolzen)": {
+    "t": "900 celsius",
+    "κ": "3.77 1/(ohm cm)"
+  },
+  "Fe": {
+    "t": "0 celsius",
+    "κ": "1.15E5 1/(ohm cm)"
+  },
+  "Cu": {
+    "t": "0 celsius",
+    "κ": "6.45E5 1/(ohm cm)"
+  },
+  "Ag": {
+    "t": "0 celsius",
+    "κ": "6.71E5 1/(ohm cm)"
+  }
 }

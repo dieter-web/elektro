@@ -1,17 +1,23 @@
-require('use-strict')
-const path = require('path')
+require("use-strict");
+const path = require("path");
 
 const { Thermistor } = require(path.resolve(
-  'src/components/Betriebsmittel/Widerstand/Thermistor/Thermistor.js'
-))
+  "src/components/Betriebsmittel/Widerstand/Thermistor/Thermistor.js"
+));
 
 class Kaltleiter extends Thermistor {
-  constructor (Kennzeichnung, Parameter, Visual) {
-    super(Kennzeichnung)
-    this.Parameter = Parameter
-    this.Visual = Visual
-    this.name = 'Kaltleiter'
+  // constructor (Kennzeichnung, Parameter, Visual) {
+  constructor(Kennzeichnung, Parameter) {
+    super(Kennzeichnung);
+    this.Parameter = Parameter;
+    this.name = "Kaltleiter";
+    this.visKaltleiter = {
+      path: "M 50 50 l -20 0",
+    };
+    // visThermistor,
+    // visWiderstand,
+    // visBetriebsmittel,
   }
 }
 
-exports.Kaltleiter = Kaltleiter
+exports.Kaltleiter = Kaltleiter;
