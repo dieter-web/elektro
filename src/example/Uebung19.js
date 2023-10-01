@@ -13,9 +13,6 @@ const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
  */
 function Uebung19(input) {
   const jsonfile = path.resolve("src/json/example/uebung19.json");
-
-  // const δ20 = dbJson.readJSONFile(path.resolve('src/json/konstanten.json'))
-  //   .konstanten.Vergleichstemperatur.wert
   const Kennzeichnung = dbJson.readJSONFile(
     path.resolve("src/json/kennzeichnung.json")
   );
@@ -26,7 +23,7 @@ function Uebung19(input) {
   Kennzeichnung.Funktion = "R";
 
   const Parameter = input;
-  // let R1 = new Kaltleiter(Kennzeichnung, Parameter, {});
+  
   let R1 = new Kaltleiter(Kennzeichnung, Parameter);
 
   // Konkrete Visualisierungswerte

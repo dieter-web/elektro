@@ -21,102 +21,18 @@
     δ2.value=sel[ 2 ]
     δ20.value=sel[ 3 ]
 
-    // svg grafik
-    let gdata={
-        svg: {
-            id: '#grafik',
-            width: 800,
-            height: 200,
-            backgroundcolor: "none",
-            viewbox: '0 0 200 100'
-        },
-        element:
-            [
-                {
-                    // TODO: Hier sollte class Widerstand eingetragen sein. Wie ??
-                    Betriebsmittel: data.visBetriebsmittel,
-                    Widerstand: data.visWiderstand,
-                    Thermistor: data.visThermistor
-                    // {
-                    // x: 18,
-                    // y: 0,
-                    // width: 64,
-                    // height: 20,
-                    // fill: "none",
-                    // fillopacity: 1,
-                    // style: 'stroke:#FFFF; stroke-width:1.0',
-                    // 'pointer-events': 'all',
-
-                    // name: "R20",
-                    // value: R20.value,
-
-                    //anschlüsse
-                    // path: 'M 50 50 m 0 10 l -20 0 m 84 0 l 20 0',
-                    // 'pointer-events': 'all'
-                }
-            ]
-    }
-
-    const g=drawboard( gdata.svg )
-
-    // funktioniert !
-    // d3 benötigt ein [] pro Element 
-    // also ist gdata.element ==> [] ==> ein Widerstand als Object
-    //     {Widerstand: {…} }
-    //         Widerstand
-    //         :
-    //         {x: 18,y: 0,width: 64,height: 20,fill: 'none', …}
-    //         [ [ Prototype ] ]
-    // :
-    //         Object
-    //         constructor
-    //         : 
-    // ƒ Object()
-    //         hasOwnProperty
-    //         : 
-    // ƒ hasOwnProperty()
-    //         isPrototypeOf
-    //         : 
-    // ƒ isPrototypeOf()
-    //         propertyIsEnumerable
-    //         : 
-    // ƒ propertyIsEnumerable()
-    //         toLocaleString
-    //         : 
-    // ƒ toLocaleString()
-    //         toString
-    //         : 
-    // ƒ toString()
-    //         valueOf
-    //         : 
-    // ƒ valueOf()
-    //         __defineGetter__
-    //         : 
-    // ƒ __defineGetter__()
-    //         __defineSetter__
-    //         : 
-    // ƒ __defineSetter__()
-    //         __lookupGetter__
-    //         : 
-    // ƒ __lookupGetter__()
-    //         __lookupSetter__
-    //         : 
-    // ƒ __lookupSetter__()
-    //         __proto__
-    //         :
-    //         ( ...)
-    // get __proto__
-    //         : 
-    // ƒ __proto__()
-    // set __proto__
-    //         : 
-    // ƒ __proto__()
-
-    vR( gdata.element,[ 50,50 ] ).map( ( e ) =>
-    {
-        // console.log( e )
-        g.append( () => e )
+    // Visualisierung
+    const g=drawboard( {
+        id: '#grafik',
+        width: 800,
+        height: 200,
+        backgroundcolor: "none",
+        viewbox: '0 0 200 100'
     } )
 
-    // g.append( () => vR( gdata.element,[ 50,50 ] ) )
+    // data, das Element, Position im svg:g
+    vR( data,[ 'R20' ],[ 50,50 ] ).map( ( e ) =>
+    {
+        g.append( () => e )
+    } )
 </script>
