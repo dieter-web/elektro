@@ -1,4 +1,4 @@
-// require('use-strict')
+require('use-strict')
 
 class Betriebsmittel {
   constructor(Kennzeichnung) {
