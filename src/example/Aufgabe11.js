@@ -15,18 +15,22 @@ const { ElektroKernel, Widerstand } = require(path.resolve("include/system"));
 function Aufgabe11(input) {
   const jsonfile = path.resolve("src/json/example/aufgabe11.json");
 
-  // Widerstand
-  const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve("src/json/kennzeichnung.json")
-  );
+  // const Parameter = input;
+  const R1 = new Widerstand(input);
 
-  const Parameter = input;
-  const R1 = new Widerstand(Kennzeichnung, Parameter);
+  // Kennzeichnung anpassen
+  R1.Kennzeichnung.Art = "G";
+  R1.Kennzeichnung.Zählnummer = "1";
+  R1.Kennzeichnung.Funktion = "";
 
   const EK = new ElektroKernel();
 
   EK.parameter({ G: R1.Parameter.G, I: R1.Parameter.I });
   R1.Parameter.U12 = EK.UIG().toString();
+
+  // Werte für Visualisierung
+  R1.visWiderstand.name = "G1";
+  R1.visWiderstand.value = input.G;
 
   dbJson.writeJSONItem(jsonfile, R1);
 }

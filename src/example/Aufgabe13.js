@@ -1,13 +1,13 @@
-require('use-strict')
-const path = require('path')
-const dbJson = require(path.resolve('controllers/dbJson.js'))
+require("use-strict");
+const path = require("path");
+const dbJson = require(path.resolve("controllers/dbJson.js"));
 
 const {
   ElektroKernel,
   ArithmetikKernel,
   PlanemetrieKernel,
-  EinlagigeSpule
-} = require(path.resolve('include/system'))
+  MehrlagigeSpule,
+} = require(path.resolve("include/system"));
 
 /**
  * @description
@@ -19,45 +19,55 @@ const {
  * @date 20/07/2023
  * @param {*} input
  */
-function Aufgabe13 (input) {
-  const jsonfile = path.resolve('src/json/example/aufgabe13.json')
-  const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve('src/json/kennzeichnung.json')
-  )
+function Aufgabe13(input) {
+  const jsonfile = path.resolve("src/json/example/aufgabe13.json");
+
   const { readMaterialParameter } = require(path.resolve(
-    'src/js/readMaterialParameter.js'
-  ))
+    "src/js/readMaterialParameter.js"
+  ));
 
-  const AK = new ArithmetikKernel()
-  const PK = new PlanemetrieKernel()
-  const EK = new ElektroKernel()
+  const L1 = new MehrlagigeSpule(input);
 
-  let Parameter = input
+  // Ergänzung Kennzeichnung
+  L1.Kennzeichnung.Art = "L";
+  L1.Kennzeichnung.Zählnummer = "1";
 
-  const L1 = new EinlagigeSpule(Kennzeichnung, Parameter, {})
-  L1.Parameter.ρM = readMaterialParameter(L1.Parameter.Material, 'ρ').toString()
+  // Ergänzung Visualisierung
+  //TODO: falsche Element gewählt, sollte Spule sein und nicht MehrlagigeSpule !!
+  L1.visMehrlagigeSpule.name = `${L1.Kennzeichnung.Art}${L1.Kennzeichnung.Zählnummer}`;
 
-  AK.parameter({ a: L1.Parameter.lm, b: L1.Parameter.N })
-  L1.Parameter.lg = AK.mul().toString()
+  // Parameter von L1 ergänzen
 
-  PK.parameter({ d: L1.Parameter.d })
-  L1.Parameter.Al = PK.KAd().toString()
+  L1.Parameter.ρM = readMaterialParameter(
+    L1.Parameter.Material,
+    "ρ"
+  ).toString();
+
+  const AK = new ArithmetikKernel();
+  const PK = new PlanemetrieKernel();
+  const EK = new ElektroKernel();
+
+  AK.parameter({ a: L1.Parameter.lm, b: L1.Parameter.N });
+  L1.Parameter.lg = AK.mul().toString();
+
+  PK.parameter({ d: L1.Parameter.d });
+  L1.Parameter.Al = PK.KAd().toString();
 
   EK.parameter({
     l: L1.Parameter.lg,
     A: L1.Parameter.Al,
-    ρ: L1.Parameter.ρM
-  })
+    ρ: L1.Parameter.ρM,
+  });
 
-  L1.Parameter.G = EK.GAρl().toString()
+  L1.Parameter.G = EK.GAρl().toString();
 
-  dbJson.writeJSONItem(jsonfile, SP1)
+  dbJson.writeJSONItem(jsonfile, L1);
 }
 // let input = {
-//   Material: 'Aluminium',
-//   lm: '4.35 cm',
+//   Material: "Aluminium",
+//   lm: "4.35 cm",
 //   N: 680,
-//   d: '0.4 mm'
-// }
-// Aufgabe13(input)
-exports.func = Aufgabe13
+//   d: "0.4 mm",
+// };
+// Aufgabe13(input);
+exports.func = Aufgabe13;

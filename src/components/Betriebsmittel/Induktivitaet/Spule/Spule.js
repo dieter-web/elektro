@@ -1,26 +1,26 @@
-require('use-strict')
-const path = require('path')
+require("use-strict");
+const path = require("path");
 const { Induktivitaet } = require(path.resolve(
-  'src/components/Betriebsmittel/Induktivitaet/Induktivitaet.js'
-))
+  "src/components/Betriebsmittel/Induktivitaet/Induktivitaet.js"
+));
 
 class Spule extends Induktivitaet {
-  constructor (Kennzeichnung, Parameter, Visual) {
-    super(Visual)
-    this.Kennzeichnung = Kennzeichnung
-    this.Parameter = Parameter
-    this.Visual = Visual
+  constructor() {
+    super();
+    // this.Kennzeichnung = Kennzeichnung
+    this.Parameter = {};
+    this.visSpule = {};
   }
 }
 
 class Spulenkoerper extends Spule {
-  constructor (Kennzeichnung, Parameter, Visual) {
-    super(Visual)
-    this.Kennzeichnung = Kennzeichnung
-    this.Parameter = Parameter
-    this.Visual = Visual
+  constructor() {
+    super();
+    // this.Kennzeichnung = Kennzeichnung
+    this.Parameter = {};
+    this.visSpulenkoerper = {};
   }
 }
 
-exports.Spule = Spule
-exports.Spulenkoerper = Spulenkoerper
+exports.Spule = Spule;
+exports.Spulenkoerper = Spulenkoerper;

@@ -3,9 +3,9 @@
 
 
 <script type="module">
-    import {populate} from '/modules/populate.mjs'
     import {tabulate} from '/modules/tabulate.mjs'
-    import {canvas} from '/modules/canvas.mjs'
+    import {drawboard} from '/modules/drawboard.mjs'
+    import {populate} from '/modules/populate.mjs'
     import {vR} from '/d3/lib/Betriebsmittel/vR.mjs'
 
     // tabelle ergebnis
@@ -18,22 +18,12 @@
     G.value=tab[ 0 ]
     I.value=tab[ 1 ]
 
-    // svg grafik
-    const g=canvas( '#grafik',800,400 )
+    // Visualisierung
+    const g=drawboard()
 
-    let gdata={
-        "width": `${ data.Visual.width }`, 
-        "height": `${ data.Visual.height }`,
-        "fill": "#121212",
-        "fillopacity": '0.5',
-        "stroke": "#000fff",
-        "strokewidth": "2.5",
-        "text": "R"
-    }
 
-    // const datVis=data.Betriebsmittel.Vis;
-    // const dataVis=[ datVis.height,datVis.width ]
-
-    g.append( () => vR( gdata,[ 100,50 ] ) )
-
+    vR(data,['R1'],[50,50]).map((e) => {
+        g.append(() => e)
+    })
+    
 </script>

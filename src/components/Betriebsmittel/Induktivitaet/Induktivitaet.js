@@ -1,16 +1,17 @@
-require('use-strict')
-const math = require('mathjs')
-const path = require('path')
+require("use-strict");
+const math = require("mathjs");
+const path = require("path");
 
 const { Betriebsmittel } = require(path.resolve(
-  'src/components/Betriebsmittel/Betriebsmittel.js'
-))
+  "src/components/Betriebsmittel/Betriebsmittel.js"
+));
 
 class Induktivitaet extends Betriebsmittel {
-  constructor (visual) {
-    super(visual)
-    this.Visual = visual
+  constructor() {
+    super();
+    this.Parameter = {};
+    this.visInduktivitaet = {};
   }
 }
 
-exports.Induktivitaet = Induktivitaet
+exports.Induktivitaet = Induktivitaet;

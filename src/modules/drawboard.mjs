@@ -1,14 +1,22 @@
 // function drawboard(id, width, height, backgroundcolor, viewBox)
-function drawboard(svg) {
+function drawboard() {
+  const parameter = {
+    id: "#grafik",
+    width: 800,
+    height: 200,
+    backgroundcolor: "none",
+    viewbox: "0 0 200 100",
+  };
+  
   const can = d3
-    .select(svg.id)
-    .attr("width", svg.width)
-    .attr("height", svg.height)
+    .select(parameter.id)
+    .attr("width", parameter.width)
+    .attr("height", parameter.height)
     .attr("xmlns", "http://www.w3.org/2000/svg")
     .attr("xmlns:link", "http://www.w3.org/1999/link")
     .attr("version", "1.1")
-    .style("background-color", svg.backgroundcolor)
-    .attr("viewBox", svg.viewBox);
+    .style("background-color", parameter.backgroundcolor)
+    .attr("viewBox", parameter.viewBox);
 
   return can;
 }

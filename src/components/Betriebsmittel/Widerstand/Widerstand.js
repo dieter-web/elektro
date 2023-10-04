@@ -8,16 +8,11 @@ const { Betriebsmittel } = require(path.resolve(
 // const  {Betriebsmittel}  = require(path.resolve('include/system'))
 
 class Widerstand extends Betriebsmittel {
-  // constructor(Kennzeichnung, Parameter, extVisual) {
-  constructor(Kennzeichnung, Parameter) {
-    super(Kennzeichnung);
-    // this.Kennzeichnung = Kennzeichnung;
+  constructor(Parameter) {
+    super();
     this.Parameter = Parameter;
 
     this.visWiderstand = {
-
-      // eigenschaften
-      // extvis: extVisual, // Widerstandsspezifikationen
       fill: "none",
       fillopacity: 1,
       style: "stroke:#ffff; stroke-width: 1.0",
@@ -37,8 +32,8 @@ class Widerstand extends Betriebsmittel {
   }
 }
 
-// BEWiderstand.prototype.pos = function (x, y) {
-//   return [x, y]
-// }
+Widerstand.prototype.pos = function (x, y) {
+  return [x, y];
+};
 
 exports.Widerstand = Widerstand;
