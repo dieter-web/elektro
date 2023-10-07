@@ -1,10 +1,10 @@
-require('use-strict')
-const path = require('path')
-const dbJson = require(path.resolve('controllers/dbJson.js'))
+require("use-strict");
+const path = require("path");
+const dbJson = require(path.resolve("controllers/dbJson.js"));
 
 const { ElektroKernel, PlanemetrieKernel, Leitung } = require(path.resolve(
-  'include/system'
-))
+  "include/system"
+));
 
 /**
  * @description
@@ -14,43 +14,50 @@ const { ElektroKernel, PlanemetrieKernel, Leitung } = require(path.resolve(
  * @date 27/07/2023
  * @param {*} input
  */
-function Aufgabe15 (input) {
-  const jsonfile = path.resolve('src/json/example/aufgabe15.json')
+function Aufgabe15(input) {
+  const jsonfile = path.resolve("src/json/example/aufgabe15.json");
   const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve('src/json/kennzeichnung.json')
-  )
+    path.resolve("src/json/kennzeichnung.json")
+  );
 
   const { readMaterialParameter } = require(path.resolve(
-    'src/js/readMaterialParameter.js'
-  ))
-  const { readKonstante } = require(path.resolve('src/js/readKonstante.js'))
+    "src/js/readMaterialParameter.js"
+  ));
+  const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
 
-  const Parameter = input
-  const Visual = {}
-  let W1 = new Leitung(Kennzeichnung, Parameter, Visual)
+  const Parameter = input;
 
-  W1.Parameter.ρm = readMaterialParameter(input.Material, 'ρ').toString()
-  W1.Parameter.α20 = readMaterialParameter(input.Material, 'α20').toString()
-  W1.Parameter.δ20 = readKonstante('Vergleichstemperatur').toString()
+  let W1 = new Leitung(Parameter);
 
-  const PK = new PlanemetrieKernel()
-  const EK = new ElektroKernel()
+  // Zusätzliche notwendige Parameter
+  W1.Parameter.ρm = readMaterialParameter(input.Material, "ρ").toString();
+  W1.Parameter.α20 = readMaterialParameter(input.Material, "α20").toString();
+  W1.Parameter.δ20 = readKonstante("Vergleichstemperatur").toString();
+  W1.Parameter.Leitungsfarbe = "red";
 
-  PK.parameter({ d: W1.Parameter.d })
-  W1.Parameter.A = PK.KAd().toString()
+  // Aktualisierung der Kennzeichnung
 
-  EK.parameter({ l: W1.Parameter.l, A: W1.Parameter.A, ρ: W1.Parameter.ρm })
-  W1.Parameter.R20 = EK.RρlA().toString()
+  W1.Kennzeichnung.Art = "W";
+  W1.Kennzeichnung.Zählnummer = "1";
+
+  const PK = new PlanemetrieKernel();
+  const EK = new ElektroKernel();
+
+  PK.parameter({ d: W1.Parameter.d });
+  W1.Parameter.A = PK.KAd().toString();
+
+  EK.parameter({ l: W1.Parameter.l, A: W1.Parameter.A, ρ: W1.Parameter.ρm });
+  W1.Parameter.R20 = EK.RρlA().toString();
 
   EK.parameter({
     R20: W1.Parameter.R20,
     α20: W1.Parameter.α20,
     δ2: W1.Parameter.δ2,
-    δ20: W1.Parameter.δ20
-  })
-  EK.parameter.R2 = EK.Rδ().toString()
+    δ20: W1.Parameter.δ20,
+  });
+  EK.parameter.R2 = EK.Rδ().toString();
 
-  dbJson.writeJSONItem(jsonfile, W1)
+  dbJson.writeJSONItem(jsonfile, W1);
 }
 // let input = {
 //   Material: 'Kupfer',
@@ -59,4 +66,4 @@ function Aufgabe15 (input) {
 //   δ2: '-2 celsius'
 // }
 // Aufgabe15(input)
-exports.func = Aufgabe15
+exports.func = Aufgabe15;

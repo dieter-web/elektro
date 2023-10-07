@@ -1,0 +1,46 @@
+{
+    "Ausgangsmaterial": {
+        "A": "Germanium",
+        "B": "Silizium",
+        "C": [
+            "Gallium-Arsenid"
+        ],
+        "D": [
+            "Indium-Antimonid"
+        ],
+        "R": [
+            "Fotohalbleiter",
+            "Hallgeneratoren"
+        ]
+    },
+    "Bedeutung": {
+        "A": "Diode, allgemein",
+        "B": "Kapazitätsdiode",
+        "C": "NF-Transistor",
+        "D": "NF-Leistungstransistor",
+        "E": "Tunneldiode",
+        "F": "HF-Transistor",
+        "G": "Oszillatordiode",
+        "H": "Hall-Feldsonde",
+        "K": "Hallgenerator",
+        "M": "Hallgenerator",
+        "L": "HF-Leistungstransistor",
+        "N": "Optokoppler",
+        "P": [
+            "Fotodiode",
+            "Fotoelement"
+        ],
+        "Q": [
+            "Leuchtdiode"
+        ],
+        "R": "Thyristor",
+        "S": "Schalttransistor",
+        "T": [
+            "steuerbare Gleichrichter"
+        ],
+        "U": "Leistungsschalttransistor",
+        "X": "Vervielfacher-Diode",
+        "Y": "Leistungsdiode",
+        "Z": "Z-Diode"
+    }
+}

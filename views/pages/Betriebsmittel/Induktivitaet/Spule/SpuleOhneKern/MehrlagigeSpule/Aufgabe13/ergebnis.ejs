@@ -1,15 +1,6 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
 
-<!-- <div class="container text-left">
-    <div class="row ">
-        <table class="table table-bordered" id="ergebnis1">SK1</table>
-    </div>
-    <div class="row ">
-        <table class="table table-bordered" id="ergebnis2">W1</table>
-    </div>
-</div> -->
-
 <script type="module">
 
     import {tabulate} from '/modules/tabulate.mjs'
@@ -26,14 +17,11 @@
     tabulate( data,"#ergebnis" )
 
     // Rückkopplung
-    // const sel=d3.select( 'tbody' ).selectAll( 'tr' )._groups[ 0 ];
-
-    // R1.value=sel[ 0 ].innerText.split( '\t' )[ 0 ];
-    // R2.value=sel[ 1 ].innerText.split( '\t' )[ 0 ];
-    // R3.value=sel[ 2 ].innerText.split( '\t' )[ 0 ];
-    // R4.value=sel[ 3 ].innerText.split( '\t' )[ 0 ];
-    // U.value=sel[ 0 ].innerText.split( '\t' )[ 1 ];
-
+    const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
+    Material.value=sel[ 0 ]
+    lm.value=sel[ 1 ]
+    N.value=sel[ 2 ]
+    d.value=sel[ 3 ]
 
     // Visualisierung
     const g=drawboard()

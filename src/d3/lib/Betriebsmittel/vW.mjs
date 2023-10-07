@@ -1,32 +1,21 @@
-/*
- * @description Visualisirung einer Leitung (W)
- * @author Dieter Krause
- * @date 21/06/2023
- * @param {*} data
- * @returns {*}
- */
-function vW (data, pos) {
-  const W = d3.create('svg:g')
-  W.selectAll('g')
-    .data(data)
+function vW(data, element, pos) {
+  const Symbol = d3.create("svg:g").attr("id", "symbol");
+  const Name = d3.create("svg:g").attr("id", "name");
+  const Value = d3.create("svg:g").attr("id", "value");
+
+  const shape = [];
+
+  // Layer Symbol
+  Symbol.selectAll("#symbol")
+    .data(element)
     .enter()
-    .append('rect')
-    .attr('fill', 'brown')
-    .attr('fill-opacity', d => d.opacity)
-    .attr('style', 'stroke:#999;stroke-width:1.5;')
-    .attr('x', pos[0])
-    .attr('y', pos[1])
-    .attr('height', d => d.height)
-    .attr('width', d => d.width)
-  W.selectAll('text')
-    .data(data)
-    .enter()
-    .append('text')
-    .attr('y', pos[1] - 10)
-    .attr('x', pos[0])
-    .text(d => {
-      return d.text
+
+    // Symbol
+    .append("rect")
+    .attr("fill", (d) => {
+      return data.visLeitung.fill;
     })
-  return W.node()
+    .attr("fill-opacity", (d) => {
+      return data.visLeitung.fillopacity;
+    });
 }
-export { vW }

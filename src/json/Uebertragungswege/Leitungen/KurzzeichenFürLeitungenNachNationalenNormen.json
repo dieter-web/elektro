@@ -1,0 +1,46 @@
+{
+    "A": "Aderleitung",
+    "M": [
+        "Mantelleitung",
+        "mittlere Leitung"
+    ],
+    "Al": "Leiter aus Aluminium",
+    "B": "Bleimantel",
+    "C": "Abschirmung",
+    "F": "Flachleitung",
+    "G": "Gummiisolierung",
+    "2G": "Silikon-Kautschuk",
+    "3G": "Butyl-Kautschuk",
+    "4G": "Ethylen-Vinylacetat-Kautschuk",
+    "I": "Imputz-Leitung",
+    "H": "Handgeräteleitung",
+    "L": "leichte Leitung",
+    "P": "Pendelschnüre",
+    "R": "Rohrdraht",
+    "S": "schwere Leitung",
+    "T": "Leitungstrosse",
+    "W": [
+        "wetterfest",
+        "wärmebeständig"
+    ],
+    "Y": "Kunststoff PVC",
+    "2X": "Kunststoff VPE",
+    "7Y": "Kunststoff-Ethylen-Tetrafluorethylen",
+    "Z": "Ziffernaufdruck",
+    "e": "eindrähtige Leitung",
+    "fl": "flache Leitung",
+    "FL": "flache Leitung",
+    "k": "kältebeständig",
+    "m": "mehrdrähtige Leiter",
+    "ö": "ölbeständig",
+    "Ö": "ölbeständig",
+    "rd": "runder Leiter",
+    "u": "unbrennbar",
+    "U": "unbrennbar",
+    "vers": "verseilte Leitung",
+    "w": "wärmebeständig",
+    "Leitungen für Niederspannung Uo/U = 0.6 kV werden zusätzlich gekennzeichnet mit": {
+        "-J": "Kabel mit grün-gelb gekennzeichneter Ader",
+        "-O": "Kabel ohne grün-gelb gekennzeichnete Ader"
+    }
+}

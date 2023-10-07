@@ -1,0 +1,52 @@
+{
+    "Metallische Werkstoffe": {
+        "Eisenwerkstoffe": {
+            "Stahl": [
+                "unlegiert",
+                "niedriglegiert",
+                {
+                    "hochlegiert": [
+                        "Walzstahl",
+                        "Gußstahl"
+                    ]
+                }
+            ],
+            "Gußeisen": [
+                "Grauguß",
+                "Temperguß",
+                "Weißguß",
+                "Kugelguß"
+            ]
+        },
+        "Nichteisenwerkstoffe": [
+            "Kupfer",
+            "Aluminium",
+            "Blei"
+        ]
+    },
+    "Nichtmetallische Werkstoffe": {
+        "Kunststoffe": {
+            "Thermoplaste": [
+                "PVC-h",
+                "PE-HD",
+                "PE-ND",
+                "PE",
+                "PP",
+                "PVDF",
+                "PIFE",
+                "ABS/ASA-R"
+            ],
+            "Duroplaste": [
+                "Phenolharz",
+                "Epoxidharz",
+                "Polyesterharz"
+            ]
+        },
+        "Nichtkunststoffe": [
+            "Beton",
+            "Faserzement",
+            "Keramik",
+            "Glas"
+        ]
+    }
+}

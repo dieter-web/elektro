@@ -1,0 +1,45 @@
+{
+    "Salzschmelzen": [
+        {
+            "Material": "Lithiumchlorid",
+            "Summenformel": "LiCL",
+            "Tm": "610 celsius"
+        },
+        {
+            "Material": "Natriumchlorid",
+            "Summenformel": "NaCL",
+            "Tm": "801 celsius"
+        },
+        {
+            "Material": "Kaliumchlorid",
+            "Summenformel": "NaCl",
+            "Tm": "801 celsius"
+        },
+        {
+            "Material": "Natriumcarbonat",
+            "Summenformel": "Na_2CO_3",
+            "Tm": "851 celsius"
+        },
+        {
+            "Material": "Kaliumcarbonat",
+            "Summenformel": "K_2CO_3",
+            "Tm": "901 celsius"
+        },
+        {
+            "Material": "Nitratgemisch",
+            "Summenformel": {
+                "7%": "NaNO_3",
+                "40%": "NaNO_2",
+                "53%": "KNO_3"
+            },
+            "Tm": "142 celsius"
+        },
+        {
+            "Material": [ "Natriumthiosulfat", "pentahydrat" ],
+            "Summenformel": [ "Na_2S_2O_3", "5H_2O" ],
+            "Tm": [ "45 celsius", "50 celsius" ]
+        }
+    ],
+    "ionischenFluessigkeiten": [
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "A": [
+        "Leiter aus Aluminium",
+        "Schutzhülle aus Faserstoff"
+    ],
+    "-": "Kein Zeichen für Kupfer",
+    "N": "Genormte Ausführung",
+    "H": "Schirm bei Höchstädter-Kabel",
+    "K": "Bleimantel",
+    "KL": "glatter Aluminiummantel",
+    "G": "Isolierung bzw. Mantel aus Gummi",
+    "Y": "Isolierung bzw. Mantel aus Kunststoff PVC",
+    "2Y": "Isolierung bzw. Mantel aus Kunststoff PE",
+    "2X": "Isolierung bzw. Mantel aus Kunststoff VPE",
+    "C": "konzentrischer Leiter aus Cu",
+    "CW": "konzentrischer Leiter aus Cu, wellenförmig",
+    "B": "Stahldrahtbewehrung",
+    "F": "Stahlflachdrahtbewehrung",
+    "R": "Stahlrunddrahtbewehrung",
+    "S": "Kupferschirm",
+    "(F)": "längswasserdichter Schirm",
+    "Nach der Querschnittsangabe folgen Kurzzeichen für den Leiteraufbau": {
+        "RE": "eindrähtiger Rundleiter",
+        "RM": "mehrdrähtiger Rundleiter",
+        "SE": "eindrähtiger Sektorleiter",
+        "SM": "mehrdrähtiger Sektorleiter",
+        "RF": "feindrähtiger Rundleiter"
+    },
+    "Kabel für Niederspannung Uo/U in kV werden zusätzlich gekennzeichnet mit": {
+        "-J": "Kabel mit grün-gelb gekennzeichneter Ader",
+        "-O": "Kabel ohne grün-gelb gekennzeichete Ader"
+    }
+}

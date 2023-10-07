@@ -1,0 +1,12 @@
+{
+  "KonstanteLeitungsschutz":
+  {
+    "PVC-isolierte Kupferleitungen": 115,
+    "PVC-isolierte Aluminiumleitungen": 74,
+    "gummiisolierte Kupferleitung": 135,
+    "gummiisolierte Aluminiumleitungen": 87,
+    "Weichlotverbindungen in Kupferleitungen": 115
+  }
+}
+
+

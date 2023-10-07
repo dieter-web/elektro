@@ -1,17 +1,17 @@
-require('use-strict')
-const path = require('path')
+require("use-strict");
+const path = require("path");
 
 const { Betriebsmittel } = require(path.resolve(
-  'src/components/Betriebsmittel/Betriebsmittel.js'
-))
+  "src/components/Betriebsmittel/Betriebsmittel.js"
+));
 
 class Uebertragungswege extends Betriebsmittel {
-  constructor (Kennzeichnung, Parameter, Visual) {
-    super(Visual)
-    this.Kennzeichnung = Kennzeichnung
-    this.Parameter = Parameter
-    this.Visual = Visual
+  constructor() {
+    super();
+    this.visUebertragungswege= {
+      // path: ""
+    };
   }
 }
 
-exports.Uebertragungswege = Uebertragungswege
+exports.Uebertragungswege = Uebertragungswege;

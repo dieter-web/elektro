@@ -1,16 +1,16 @@
-require('use-strict')
-const path = require('path')
+require("use-strict");
+const path = require("path");
 
 const { Kabel } = require(path.resolve(
-  'src/components/Betriebsmittel/Uebertragungswege/Kabel/Kabel.js'
-))
+  "src/components/Betriebsmittel/Uebertragungswege/Kabel/Kabel.js"
+));
 
 class Fernmeldekabel extends Kabel {
-  constructor (Kennzeichnung, Parameter, Visual) {
-    super(Kennzeichnung)
-    this.Kennzeichnung = Kennzeichnung
-    this.Parameter = Parameter
-    this.Visual = Visual
+  constructor(Parameter) {
+    super(Parameter);
+    this.visFernmeldekabel = {
+      //
+    };
   }
 }
-exports.Fernmeldekabel = Fernmeldekabel
+exports.Fernmeldekabel = Fernmeldekabel;

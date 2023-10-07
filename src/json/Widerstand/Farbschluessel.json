@@ -1,0 +1,119 @@
+{
+    "silber": {
+        "Kennfarbe": "#c0c0c0",
+        "Widerstandswert": {
+            "zählende Ziffern": null,
+            "Multiplikator": 10E-2
+        },
+        "Zulässige Abweichung des Widerstandswertes": [ "10 %", "-10 %" ],
+        "Temperatur-Koeffizent": null
+    },
+    "gold": {
+        "Kennfarbe": "#ffd700",
+        "Widerstandswert": {
+            "zählende Ziffern": null,
+            "Multiplikator": 10E-1
+        },
+        "Zulässige Abweichung des Widerstandswertes": [ "5 %", "-5 %" ],
+        "Temperatur-Koeffizent": null
+    },
+    "schwarz": {
+        "Kennfarbe": "#000000",
+        "Widerstandswert": {
+            "zählende Ziffern": 0,
+            "Multiplikator": 10E+0
+        },
+        "Zulässige Abweichung des Widerstandswertes": null,
+        "Temperatur-Koeffizent": [ "250E-6 K", "-250E-6 K" ]
+    },
+    "braun": {
+        "Kennfarbe": "#800000",
+        "Widerstandswert": {
+            "zählende Ziffern": 1,
+            "Multiplikator": 10E+1
+        },
+        "Zulässige Abweichung des Widerstandswertes": [ "1 %", "-1 %" ],
+        "Temperatur-Koeffizent": [ "100E-6 K", "-100E-6 K" ]
+    },
+    "rot": {
+        "Kennfarbe": "#ff0000",
+        "Widerstandswert": {
+            "zählende Ziffern": 2,
+            "Multiplikator": 10E2
+        },
+        "Zulässige Abweichung des Widerstandswertes": [ "2 %", "-2 %" ],
+        "Temperatur-Koeffizent": [ "50E-6 K", "-50E-6 K" ]
+    },
+    "orange": {
+        "Kennfarbe": "#ffa500",
+        "Widerstandswert": {
+            "zählende Ziffern": 3,
+            "Multiplikator": 10E3
+        },
+        "Zulässige Abweichung des Widerstandswertes": null,
+        "Temperatur-Koeffizent": [ "15E-6 K", "-15E-6 K" ]
+    },
+    "gelb": {
+        "Kennfarbe": "#ffff00",
+        "Widerstandswert": {
+            "zählende Ziffern": 4,
+            "Multiplikator": 10E+4
+        },
+        "Zulässige Abweichung des Widerstandswertes": null,
+        "Temperatur-Koeffizent": [ "25E-6 K", "-25E-6 K" ]
+    },
+    "grün": {
+        "Kennfarbe": "#00e500",
+        "Widerstandswert": {
+            "zählende Ziffern": 5,
+            "Multiplikator": 10E+5
+        },
+        "Zulässige Abweichung des Widerstandswertes": [ "0.5 %", "-0.5 %" ],
+        "Temperatur-Koeffizent": [ "20E-6 K", "-20E-6 K" ]
+    },
+    "blau": {
+        "Kennfarbe": "#0000ff",
+        "Widerstandswert": {
+            "zählende Ziffern": 6,
+            "Multiplikator": 10E+6
+        },
+        "Zulässige Abweichung des Widerstandswertes": [ "0.25 %", "-0.25 %" ],
+        "Temperatur-Koeffizent": [ "10E-6 K", "-10E-6 K" ]
+    },
+    "violett": {
+        "Kennfarbe": "#8800ff",
+        "Widerstandswert": {
+            "zählende Ziffern": 7,
+            "Multiplikator": 10E+7
+        },
+        "Zulässige Abweichung des Widerstandswertes": [ "0.1 %", "-0.1 %" ],
+        "Temperatur-Koeffizent": [ "5E-6 K", "-5E-6 K" ]
+    },
+    "grau": {
+        "Kennfarbe": "#888888",
+        "Widerstandswert": {
+            "zählende Ziffern": 8,
+            "Multiplikator": 10E+8
+        },
+        "Zulässige Abweichung des Widerstandswertes": null,
+        "Temperatur-Koeffizent": [ "1E-6 K", "-1E-6 K" ]
+    },
+    "weiß": {
+        "Kennfarbe": "#ffffff",
+        "Widerstandswert": {
+            "zählende Ziffern": 9,
+            "Multiplikator": 10E+9
+        },
+        "Zulässige Abweichung des Widerstandswertes": null,
+        "Temperatur-Koeffizent": null
+    },
+    "keine": {
+        "Kennfarbe": null,
+        "Widerstandswert": {
+            "zählende Ziffern": null,
+            "Multiplikator": null
+        },
+        "Zulässige Abweichung des Widerstandswertes": [ "20 %", "-20 %" ],
+        "Temperatur-Koeffizent": null
+    }
+}

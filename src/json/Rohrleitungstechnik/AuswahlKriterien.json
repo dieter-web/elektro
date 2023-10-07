@@ -1,0 +1,23 @@
+{
+    "01": "Medienbeständigkeit",
+    "02": "Temperatur",
+    "03": "Druck",
+    "04": "DN (Abmessung)",
+    "05": "Rauhigkeit",
+    "06": "Festigkeit",
+    "07": "Dichte",
+    "08": "linearer Ausdehnungskoeffizient",
+    "09": "Wärmeleitkoeffizient",
+    "10": "Elastizitätsmodul",
+    "11": "elektrische Leitfähigkeit",
+    "12": "Korrosionsbeständigkeit (außen)",
+    "13": "Inkrustation",
+    "14": "Brennbarkeit",
+    "15": "hygienische Bedenklichkeit",
+    "16": "Verlegearbeit",
+    "17": "Stützweite",
+    "18": "Verbindungstechnik",
+    "19": "Brennbarkeit (Entflammbarkeit)",
+    "20": "Lieferbarkeit",
+    "21": "Preis"
+}

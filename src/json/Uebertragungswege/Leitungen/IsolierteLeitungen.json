@@ -1,0 +1,161 @@
+{
+    "Niederspannungskable bis Uo/U = 0.6/1kV": {
+        "NYCY": {},
+        "NYY-J": {
+            "Bezeichnung": "03x1.5 RE",
+            "RI": "12.1 Ohm/km",
+            "Wi": "0.8 mm",
+            "lbl": "19 A",
+            "lbe": "27 A",
+            "Ik": "0.17 kA",
+            "Lb": "0.343 mH/km",
+            "Wm": "2 mm",
+            "Rbv": "134.4 mm",
+            "d": "11.2 mm",
+            "Fzv": "225 N",
+            "Cu": "43",
+            "G": "190 kg"
+        },
+        "NA2XY": {},
+        "NYCWY": {},
+        "NAYCWY": {}
+    },
+    "Mittelspannungskable Uo/U = 6/10kV 12/20kV 18/30kV": {
+        "NA2XS2Y": {},
+        "N2XSY": {}
+    },
+    "Isolierte Leitungen für feste Verlegung": {
+        "PVC-Verdrahtungsleitung": {
+            "H05V-U 300/500V": {
+                "Aderzahl": 1
+            },
+            "H05V-K 300/500V": {
+                "Aderzahl": 1
+            }
+        },
+        "PVC-Wärmebeständige Einzelader": {
+            "H05V2-K": {
+                "Aderzahl": 1
+            }
+        },
+        "PVC-Adernleitung": {
+            "H07V-U 450/750V": {
+                "Lieferant": ""
+            }
+        },
+        "Stegleitung": {
+            "NYIF 230/400V": {
+                "Aderzahl": [
+                    3,
+                    4,
+                    5
+                ]
+            }
+        },
+        "Mantelleitung": {
+            "NYM 300/500V": {
+                "Aderzahl": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                ]
+            }
+        },
+        "Halogenfreie Mantelleitung": {
+            "NHXMH": {
+                "Aderzahl": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                ]
+            }
+        },
+        "umhüllte Rohrdrähte": {
+            "NYRUZY 300/500V": {
+                "Lieferant": ""
+            }
+        },
+        "Gummi-Adernschnüre": {
+            "H03RT-F 300/300V": {
+                "Lieferant": ""
+            }
+        }
+    },
+    "Isolierte, flexible Leitungen": {
+        "Spiralleitung": {
+            "H05BQ-F": {
+                "Aderzahl": [
+                    2,
+                    3
+                ]
+            }
+        },
+        "PVC-Schlauchleitung": {
+            "H03VV-F 300/300V": {
+                "Lieferant": ""
+            },
+            "H05VV-F": {
+                "Aderzahl": [
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                ]
+            }
+        },
+        "Gummi-Schlauchleitung": {
+            "H07RN-F 450/750V": {
+                "Aderzahl": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                ]
+            },
+            "NSSHöU": {
+                "Aderzahl": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                ]
+            }
+        }
+    },
+    "Leitungen und Kabel für Klingel-, Signal-, und Fernmeldeanlagen": {
+        "Schaltdraht": {
+            "YU": {}
+        },
+        "PVC-Schaltlitze (verzinnt)": {
+            "LiY": {}
+        },
+        "PVC-Datenleitung": {
+            "LiY-CY": {}
+        },
+        "Computerkable": {
+            "J-2Y(ST)Y": {}
+        },
+        "FernmeldInnenekabel": {
+            "J-YY": {}
+        },
+        "FernmeldeAußenkabel": {
+            "A-2Y(L)2Y": {}
+        }
+    }
+}

@@ -1,10 +1,10 @@
-require('use-strict')
-const path = require('path')
-const dbJson = require(path.resolve('controllers/dbJson.js'))
+require("use-strict");
+const path = require("path");
+const dbJson = require(path.resolve("controllers/dbJson.js"));
 
 const { ElektroKernel, MehrlagigeSpule } = require(path.resolve(
-  'include/system'
-))
+  "include/system"
+));
 
 /**
  * @description
@@ -15,32 +15,37 @@ const { ElektroKernel, MehrlagigeSpule } = require(path.resolve(
  * @date 21/07/2023
  * @param {*} input
  */
-function Aufgabe14 (input) {
-  const jsonfile = path.resolve('src/json/example/aufgabe14.json')
+function Aufgabe14(input) {
+  const jsonfile = path.resolve("src/json/example/aufgabe14.json");
   const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve('src/json/kennzeichnung.json')
-  )
+    path.resolve("src/json/kennzeichnung.json")
+  );
 
   const { readMaterialParameter } = require(path.resolve(
-    'src/js/readMaterialParameter.js'
-  ))
+    "src/js/readMaterialParameter.js"
+  ));
 
-  const Parameter = input
-  const Visual = {}
+  const Parameter = input;
 
-  let L1 = new MehrlagigeSpule(Kennzeichnung, Parameter, Visual)
-  L1.Parameter.ρcu = readMaterialParameter(input.Material, 'ρ')
+  let L1 = new MehrlagigeSpule(Parameter);
+  // notwendige Externe Parameter
+  L1.Parameter.ρcu = readMaterialParameter(input.Material, "ρ").toString();
 
-  const EK = new ElektroKernel()
-  EK.parameter({ ρ: L1.Parameter.ρcu, l: L1.Parameter.l, U: L1.Parameter.U })
-  L1.Parameter.S = EK.SUρl().toString()
+  // Aktualisierung Kennzeichnung
+  L1.Kennzeichnung.Art = "L";
+  L1.Kennzeichnung.Zählnummer = "1";
+  L1.visMehrlagigeSpule.name = `${L1.Kennzeichnung.Art}${L1.Kennzeichnung.Zählnummer}`;
 
-  dbJson.writeJSONItem(jsonfile, L1)
+  const EK = new ElektroKernel();
+  EK.parameter({ ρ: L1.Parameter.ρcu, l: L1.Parameter.l, U: L1.Parameter.U });
+  L1.Parameter.S = EK.SUρl().toString();
+
+  dbJson.writeJSONItem(jsonfile, L1);
 }
 // let input = {
-//   Material: 'Kupfer',
-//   l: '870 m',
-//   U: '24 V'
-// }
-// Aufgabe14(input)
-exports.func = Aufgabe14
+//   Material: "Kupfer",
+//   l: "870 m",
+//   U: "24 V",
+// };
+// Aufgabe14(input);
+exports.func = Aufgabe14;

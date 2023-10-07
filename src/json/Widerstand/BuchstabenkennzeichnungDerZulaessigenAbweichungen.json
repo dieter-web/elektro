@@ -1,0 +1,88 @@
+{
+    "Symmetrische Abweichungen": {
+        "B": {
+            "Kennzeichen": "B",
+            "zul. Abweichung": "+- 0.1 %"
+        },
+        "C": {
+            "Kennzeichen": "C",
+            "zul. Abweichung": "+- 0.25 %"
+        },
+        "D": {
+            "Kennzeichen": "D",
+            "zul. Abweichung": "+- 0.5 %"
+        },
+        "F": {
+            "Kennzeichen": "F",
+            "zul. Abweichung": "+- 1 %"
+        },
+        "G": {
+            "Kennzeichen": "G",
+            "zul. Abweichung": "+- 2 %"
+        },
+        "J": {
+            "Kennzeichen": "J",
+            "zul. Abweichung": "+- 5 %"
+        },
+        "K": {
+            "Kennzeichen": "K",
+            "zul. Abweichung": "+- 10 %"
+        },
+        "M": {
+            "Kennzeichen": "M",
+            "zul. Abweichung": "+- 20 %"
+        },
+        "N": {
+            "Kennzeichen": "N",
+            "zul. Abweichung": "+- 30 %"
+        }
+    },
+    "Unsymetrische Abweichungen": {
+        "Q": {
+            "Kennzeichen": "Q",
+            "zul. Abweichung": [
+                "+ 30 %",
+                "-10 %"
+            ]
+        },
+        "T": {
+            "Kennzeichen": "T",
+            "zul. Abweichung": [
+                "+ 50 %",
+                "-10 %"
+            ]
+        },
+        "S": {
+            "Kennzeichen": "S",
+            "zul. Abweichung": [
+                "+ 50 %",
+                "-20 %"
+            ]
+        },
+        "Z": {
+            "Kennzeichen": "Z",
+            "zul. Abweichung": [
+                "+ 80 %",
+                "-20 %"
+            ]
+        }
+    },
+    "Symmetrische Abweichungen in absoluten Werten (Kapazitätswerte unter 10 pf)": {
+        "B": {
+            "Kennzeichen": "B",
+            "zul. Abweichung": "+- 0.1 %"
+        },
+        "C": {
+            "Kennzeichen": "C",
+            "zul. Abweichung": "+- 0.25 %"
+        },
+        "D": {
+            "Kennzeichen": "D",
+            "zul. Abweichung": "+- 0.5 %"
+        },
+        "F": {
+            "Kennzeichen": "F",
+            "zul. Abweichung": "+- 1 %"
+        }
+    }
+}

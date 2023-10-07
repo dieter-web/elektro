@@ -1,1 +1,154 @@
-[{"Visual":{"extvis":{},"width":50,"height":20},"Kennzeichnung":{"Funktion":"R","Zaehlnummer":1},"Parameter":{"R":"2.5Mohm","U":"60V","I":"24 uA","G":"400 nS"}},{"Visual":{"extvis":{},"width":50,"height":20},"Kennzeichnung":{"Funktion":"R","Zaehlnummer":2},"Parameter":{"R":"80kohm","U":"60V","I":"750 uA","G":"12.500000000000002 uS"}},{"Visual":{"extvis":{},"width":50,"height":20},"Kennzeichnung":{"Funktion":"R","Zaehlnummer":3},"Parameter":{"R":"500ohm","U":"60V","I":"120 mA","G":"2 mS"}},{"Visual":{"extvis":{},"width":50,"height":20},"Kennzeichnung":{"Funktion":"R","Zaehlnummer":4},"Parameter":{"R":"75ohm","U":"60V","I":"800 mA","G":"13.333333333333334 mS"}}]
+[
+  {
+    "Kennzeichnung": {
+      "=": {
+        "Anlage": {
+          "1": "",
+          "2": "",
+          "3": "",
+          "4": "",
+          "5": "",
+          "Trennzeichen": "-"
+        }
+      },
+      "+": {
+        "Ort": {
+          "Aufstellungsort": { "1": "", "2": "", "3": "", "4": "", "5": "" },
+          "Trennzeichen": "-",
+          "Einbauort": { "6": "", "7": "", "8": "", "9": "" }
+        }
+      },
+      "Art": "",
+      "Zählnummer": 0,
+      "Funktion": "",
+      ":": [{ "1": "" }, { "2": "" }]
+    },
+    "visBetriebsmittel": {},
+    "Parameter": { "Funktion": "R", "Zaehlnummer": 1 },
+    "visWiderstand": {
+      "fill": "none",
+      "fillopacity": 1,
+      "style": "stroke:#ffff; stroke-width: 1.0",
+      "width": 64,
+      "height": 20,
+      "path": "M 50 50 m 0 10 l -20 0 m 84 0 l 20 0",
+      "name": "name",
+      "value": "value",
+      "pointer-events": "all"
+    }
+  },
+  {
+    "Kennzeichnung": {
+      "=": {
+        "Anlage": {
+          "1": "",
+          "2": "",
+          "3": "",
+          "4": "",
+          "5": "",
+          "Trennzeichen": "-"
+        }
+      },
+      "+": {
+        "Ort": {
+          "Aufstellungsort": { "1": "", "2": "", "3": "", "4": "", "5": "" },
+          "Trennzeichen": "-",
+          "Einbauort": { "6": "", "7": "", "8": "", "9": "" }
+        }
+      },
+      "Art": "",
+      "Zählnummer": 0,
+      "Funktion": "",
+      ":": [{ "1": "" }, { "2": "" }]
+    },
+    "visBetriebsmittel": {},
+    "Parameter": { "Funktion": "R", "Zaehlnummer": 2 },
+    "visWiderstand": {
+      "fill": "none",
+      "fillopacity": 1,
+      "style": "stroke:#ffff; stroke-width: 1.0",
+      "width": 64,
+      "height": 20,
+      "path": "M 50 50 m 0 10 l -20 0 m 84 0 l 20 0",
+      "name": "name",
+      "value": "value",
+      "pointer-events": "all"
+    }
+  },
+  {
+    "Kennzeichnung": {
+      "=": {
+        "Anlage": {
+          "1": "",
+          "2": "",
+          "3": "",
+          "4": "",
+          "5": "",
+          "Trennzeichen": "-"
+        }
+      },
+      "+": {
+        "Ort": {
+          "Aufstellungsort": { "1": "", "2": "", "3": "", "4": "", "5": "" },
+          "Trennzeichen": "-",
+          "Einbauort": { "6": "", "7": "", "8": "", "9": "" }
+        }
+      },
+      "Art": "",
+      "Zählnummer": 0,
+      "Funktion": "",
+      ":": [{ "1": "" }, { "2": "" }]
+    },
+    "visBetriebsmittel": {},
+    "Parameter": { "Funktion": "R", "Zaehlnummer": 3 },
+    "visWiderstand": {
+      "fill": "none",
+      "fillopacity": 1,
+      "style": "stroke:#ffff; stroke-width: 1.0",
+      "width": 64,
+      "height": 20,
+      "path": "M 50 50 m 0 10 l -20 0 m 84 0 l 20 0",
+      "name": "name",
+      "value": "value",
+      "pointer-events": "all"
+    }
+  },
+  {
+    "Kennzeichnung": {
+      "=": {
+        "Anlage": {
+          "1": "",
+          "2": "",
+          "3": "",
+          "4": "",
+          "5": "",
+          "Trennzeichen": "-"
+        }
+      },
+      "+": {
+        "Ort": {
+          "Aufstellungsort": { "1": "", "2": "", "3": "", "4": "", "5": "" },
+          "Trennzeichen": "-",
+          "Einbauort": { "6": "", "7": "", "8": "", "9": "" }
+        }
+      },
+      "Art": "",
+      "Zählnummer": 0,
+      "Funktion": "",
+      ":": [{ "1": "" }, { "2": "" }]
+    },
+    "visBetriebsmittel": {},
+    "Parameter": { "Funktion": "R", "Zaehlnummer": 4 },
+    "visWiderstand": {
+      "fill": "none",
+      "fillopacity": 1,
+      "style": "stroke:#ffff; stroke-width: 1.0",
+      "width": 64,
+      "height": 20,
+      "path": "M 50 50 m 0 10 l -20 0 m 84 0 l 20 0",
+      "name": "name",
+      "value": "value",
+      "pointer-events": "all"
+    }
+  }
+]

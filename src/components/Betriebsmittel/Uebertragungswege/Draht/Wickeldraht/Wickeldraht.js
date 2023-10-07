@@ -1,16 +1,16 @@
 require("use-strict");
 const path = require("path");
 const { Uebertragungswege } = require(path.resolve(
-  "src/components/Betriebsmittel/Uebertragungswege/Uebertragungswege.js"
+  "src/components/Betriebsmittel/Uebertragungswege/Draht/Draht.js"
 ));
 
-class Draht extends Uebertragungswege {
+class Wickeldraht extends Draht {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
-    this.visDraht = {
+    this.visWickeldraht = {
       // path: ""
     };
   }
 }
-exports.Draht = Draht;
+exports.Wickeldraht = Wickeldraht;

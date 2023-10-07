@@ -1,0 +1,23 @@
+{
+    "Dichte": {
+        "KalkNatronGlas": "2500 kg/m^3",
+        "Schweflintglas": "6260 kg/m^3"
+    },
+    "Waermeleitfaehigkeit": {
+        "KalkNatronGlas": "0.80 W/(K*m)",
+        "Quarzglas": "1.38 W/(K*m)",
+        "Zerodur": "1.46 W/(K*m)"
+    },
+    "Waermeausdehnung": {
+        "KalkNatronGlas": "9.0E-6 1/K",
+        "Borosilikatglas": "3.3E-6 1/K",
+        "Quarzglas": "0.57E-6 1/K",
+        "Zerodur": "0.1E-6 1/K"
+    },
+    "Zugfestigkeit": "30 MPa",
+    "Druckfestigkeit": "900 MPa",
+    "Elastizitaetsmodul": "70000 MPa",
+    "Waermekapazitaet": "0.8 kJ/(kg K)",
+    "Transmission": [ "0 %", "100 %" ],
+    "Brechungsindex": [ 1.47, 1.95 ]
+}

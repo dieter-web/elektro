@@ -1,0 +1,132 @@
+{
+    "Farbkennzeichnung von mehradrigen Leitungen für ortsveränderliche Stromverbraucher": {
+        "2": {
+            "Anzahl der Adern": 2,
+            "mit Schutzleiter": "-",
+            "ohne Schutzleiter": [
+                "schwarz",
+                "blau"
+            ]
+        },
+        "3": {
+            "Anzahl der Adern": 3,
+            "mit Schutzleiter": [
+                "grün-gelb",
+                "braun",
+                "hellblau"
+            ],
+            "ohne Schutzleiter": [
+                "schwarz",
+                "hellblau",
+                "braun"
+            ]
+        },
+        "4": {
+            "Anzahl der Adern": 4,
+            "mit Schutzleiter": [
+                "grün-gelb",
+                "schwarz",
+                "hellblau",
+                "braun"
+            ],
+            "ohne Schutzleiter": [
+                "schwarz",
+                "hellblau",
+                "braun",
+                "schwarz"
+            ]
+        },
+        "5": {
+            "Anzahl der Adern": 5,
+            "mit Schutzleiter": [
+                "grün-gelb",
+                "schwarz",
+                "hellblau",
+                "braun",
+                "schwarz"
+            ],
+            "ohne Schutzleiter": [
+                "schwarz",
+                "hellblau",
+                "braun",
+                "schwarz",
+                "schwarz"
+            ]
+        }
+    },
+    "Farbkennzeichnung von mehradrigen Leitung für feste Verlegung und mehradrige Kabel": {
+        "2": {
+            "Anzahl der Adern": 2,
+            "mit Schutzleiter": [
+                "grün-gelb",
+                "schwarz"
+            ],
+            "ohne Schutzleiter": [
+                "schwarz",
+                "hellblau"
+            ]
+        },
+        "3": {
+            "Anzahl der Adern": 3,
+            "mit Schutzleiter": [
+                "grün-gelb",
+                "braun",
+                "hellblau"
+            ],
+            "ohne Schutzleiter": [
+                "schwarz",
+                "hellblau",
+                "braun"
+            ]
+        },
+        "4": {
+            "Anzahl der Adern": 4,
+            "mit Schutzleiter": [
+                "grün-gelb",
+                "schwarz",
+                "hellblau",
+                "braun"
+            ],
+            "ohne Schutzleiter": [
+                "schwarz",
+                "hellblau",
+                "braun",
+                "schwarz"
+            ]
+        },
+        "5": {
+            "Anzahl der Adern": 5,
+            "mit Schutzleiter": [
+                "grün-gelb",
+                "schwarz",
+                "hellblau",
+                "braun",
+                "schwarz"
+            ],
+            "ohne Schutzleiter": [
+                "schwarz",
+                "hellblau",
+                "braun",
+                "schwarz",
+                "schwarz"
+            ]
+        }
+    },
+    "Kabel mit konzentrischem Leiter": {
+        "2": [
+            "schwarz",
+            "hellblau"
+        ],
+        "3": [
+            "schwarz",
+            "hellblau",
+            "braun"
+        ],
+        "4": [
+            "schwarz",
+            "hellblau",
+            "braun",
+            "schwarz"
+        ]
+    }
+}

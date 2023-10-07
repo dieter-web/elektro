@@ -1,0 +1,47 @@
+{
+    "Pico":
+    {
+        "Kennbuchstabe": "p",
+        "Multiplikator": 10E-12
+    },
+    "Nano":
+    {
+        "Kennbuchstabe": "n",
+        "Multiplikator": 10E-9
+    },
+    "Mikro":
+    {
+        "Kennbuchstabe": "µ",
+        "Multiplikator": 10E-6
+    },
+    "Milli":
+    {
+        "Kennbuchstabe": "m",
+        "Multiplikator": 10E-3
+    },
+    " ":
+    {
+        "Kennbuchstabe": [ "R", "F" ],
+        "Multiplikator": 10E+0
+    },
+    "Kilo":
+    {
+        "Kennbuchstabe": "K",
+        "Multiplikator": 10E+3
+    },
+    "Mega":
+    {
+        "Kennbuchstabe": "M",
+        "Multiplikator": 10E+6
+    },
+    "Giga":
+    {
+        "Kennbuchstabe": "G",
+        "Multiplikator": 10E+9
+    },
+    "Tera":
+    {
+        "Kennbuchstabe": "T",
+        "Multiplikator": 10E+12
+    }
+}

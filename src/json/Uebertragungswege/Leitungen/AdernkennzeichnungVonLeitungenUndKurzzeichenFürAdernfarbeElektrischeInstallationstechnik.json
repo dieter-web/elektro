@@ -1,0 +1,62 @@
+{
+    "Schwarz": {
+        "DIN 47002": "sw",
+        "VDE 0293": "BK",
+        "IEC 757": "BK"
+    },
+    "Braun": {
+        "DIN 47002": "br",
+        "VDE 0293": "BN",
+        "IEC 757": "BN"
+    },
+    "Rot": {
+        "DIN 47002": "rt",
+        "VDE 0293": "RD",
+        "IEC 757": "RD"
+    },
+    "Orange": {
+        "DIN 47002": "or",
+        "VDE 0293": "OG",
+        "IEC 757": "OG"
+    },
+    "Gelb": {
+        "DIN 47002": "ge",
+        "VDE 0293": "YE",
+        "IEC 757": "YE"
+    },
+    "Grün": {
+        "DIN 47002": "gn",
+        "VDE 0293": "GN",
+        "IEC 757": "GN"
+    },
+    "Blau": {
+        "DIN 47002": "bl",
+        "VDE 0293": "BU",
+        "IEC 757": "BU"
+    },
+    "Violett": {
+        "DIN 47002": "vi",
+        "VDE 0293": "VT",
+        "IEC 757": "VT"
+    },
+    "Grau": {
+        "DIN 47002": "gr",
+        "VDE 0293": "GY",
+        "IEC 757": "GY"
+    },
+    "Weiß": {
+        "DIN 47002": "ws",
+        "VDE 0293": "WH",
+        "IEC 757": "WH"
+    },
+    "Rosa": {
+        "DIN 47002": "rs",
+        "VDE 0293": "PK",
+        "IEC 757": "PK"
+    },
+    "Türkis": {
+        "DIN 47002": "tk",
+        "VDE 0293": "TQ",
+        "IEC 757": "TQ"
+    }
+}

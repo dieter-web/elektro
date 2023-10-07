@@ -1,0 +1,30 @@
+{
+    "01": {
+        "Bestimme die Eingangsgrößen": [
+            "Medienart/Aggressivität",
+            "Berechnungstemperatur",
+            "Berechnungsdruck",
+            "Nennweite (DN)",
+            "Betriebsstunden/Verschleiß",
+        ],
+        "Verlegebedingungen": [
+            "Außenkorrektur",
+            "Verbindungstechnik"
+        ]
+    },
+    "02": "Stelle geeignete Werkstoffe zusammen",
+    "03": "Streiche Werkstoffe mit niedriger Einsatztemperatur als Berechnungstemperatur",
+    "04": "Streiche Werkstoffe, die für den Berechnungsdruck ungeeignet sind",
+    "05": "Berechne bei Stahlrohren die Wanddicke",
+    "06": "Streiche die Rohrwerkstoffe, die für die Rohrabmessung nicht geeignet sind",
+    "07": "Prüfe, ob durch Korrosion und Verschleiß eine Verminderung der Betriebsstundenzeit auftritt. Wenn ja, streiche den Werkstoff",
+    "08": "Streiche den Rohrwerkstoff, der für die Verlegeart nicht geeignet ist",
+    "09": "Prüfe die vorhandenen Werkstoffangebote",
+    "10": {
+        "Führe zu den noch verbleibenden Rohrwerkstoffen eine": [
+            "Wirtschaftlichkeitsbetrachtung",
+            "Variantenvergleich mit den aufgeführten spezifischen Kriterien durch"
+        ]
+    },
+    "11": "Wende den ermittelten günstigen Rohrwerkstoff an"
+}

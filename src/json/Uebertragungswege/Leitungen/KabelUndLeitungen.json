@@ -1,0 +1,115 @@
+{
+    "Mantelleitung": {
+        "NYY-O": {
+            "CPR-Leistungsklasse gemäß EN 50575": "Eca",
+            "Norm": "VDE 0276-603",
+            "Leitermaterial": [
+                "Cu",
+                "blank"
+            ],
+            "Leiterklasse": [
+                "Klasse 1",
+                "ab 25qm Klasse 2"
+            ],
+            "Aderisolation": "PVC DIV 4",
+            "Mantelmaterial": "PVC DMV5",
+            "Mantelfarbe": "schwarz",
+            "Flammenwidrigkeit": [
+                "VDE 0482-332-1-2",
+                "ICE 60332-1-2"
+            ],
+            "UV-beständigkeit": "ja",
+            "Als Außenkabel zulässig": "ja",
+            "Max. zulässige Leitertemperatur,°C": "70 celsius",
+            "Zul. Kabelaußentemperatur, fest verlegt, °C": "70 celsius",
+            "Zul. Kabelaußentemperatur, in Bewegung, °C": [
+                "-5 celsius",
+                "70 celsius"
+            ],
+            "Metermarkierung": "ja"
+        },
+        "NYM-J": {
+            "Nennspannung Uo": "0.6 kV",
+            "Nennspannung U": "1 kV",
+            "Maximale Spannung in Drehstromsystemen": "1.2 kV",
+            "Nennspannung DC (Ader-Erde/Ader-Ader)": [
+                "1.8",
+                "1.8 kV"
+            ],
+            "Prüfspannung": "4 kV",
+            "Schutzleiter": "ja"
+        }
+    },
+    "Geschirmte Leitung": [
+        "(N)YM(ST)-J"
+    ],
+    "Halogenfreie Leitung": [
+        "NHXMH-J"
+    ],
+    "Erdkabel": [
+        "NYY-J",
+        "NYY-O"
+    ],
+    "Betonkabel": [
+        "NI2XY-J"
+    ],
+    "Stegleitung": [
+        "NYIF-J"
+    ],
+    "Fernmeldeleitung": [],
+    "Koaxialkable": [],
+    "Lautsprecherleitung": [],
+    "BUS-Leitung": [],
+    "Gummischlauchleitung": [
+        "H07RN-F"
+    ],
+    "PVC-Schlauchleitung": [
+        "H05VV-F"
+    ],
+    "PUR-Leitung": [
+        "H05BQ-F",
+        "H07BQ-F"
+    ],
+    "Aderleitung": [
+        "H07V-U",
+        "H07V-K"
+    ],
+    "Schiffskabel": [],
+    "Fahrzeugleitung": [
+        "FLRY-B"
+    ],
+    "Klingelleitung": [],
+    "Datenkabel": [],
+    "Lichtwellenleiter": [],
+    "Steuerleitung": [
+        "LIYY",
+        "LIYCY",
+        "YSLY-JZ"
+    ],
+    "LAPP ÖPLFLEX CLASSIC": [],
+    "NV-Halogen-Leitung": [
+        "SIF-PV",
+        "SIF-PP"
+    ],
+    "Silikon-Schlauchleitung": [
+        "SIHF"
+    ],
+    "Gummiaderleitung": [
+        "NSGAFÖU"
+    ],
+    "Schweißleitung": [
+        "H01N2-D"
+    ],
+    "Solarleitung": [],
+    "Brandmeldekabel": [],
+    "Videokabel": [],
+    "homeway Multimedia Kabel": [],
+    "Textilkabel": [],
+    "Patchkabel": [],
+    "Herdanschlußleitung": [],
+    "Anschlussleitungen": [],
+    "Verlängerungen": [],
+    "Telefonkabel": [],
+    "KNX Kabel": [],
+    "USB-Kabel": []
+}
