@@ -1,10 +1,10 @@
-require('use-strict')
-const path = require('path')
-const dbJson = require(path.resolve('controllers/dbJson'))
+require("use-strict");
+const path = require("path");
+const dbJson = require(path.resolve("controllers/dbJson"));
 
 const { ElektroKernel, PlanemetrieKernel, Elektrolyt } = require(path.resolve(
-  'include/system'
-))
+  "include/system"
+));
 
 /**
  * @description
@@ -16,30 +16,30 @@ const { ElektroKernel, PlanemetrieKernel, Elektrolyt } = require(path.resolve(
  * @date 24/07/2023
  * @param {*} input
  */
-function Beispiel15 (input) {
-  const jsonfile = path.resolve('src/json/example/beispiel15.json')
+function Beispiel15(input) {
+  const jsonfile = path.resolve("src/json/example/beispiel15.json");
   const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve('src/json/kennzeichnung.json')
-  )
+    path.resolve("src/json/Sonstiges/kennzeichnung.json")
+  );
 
-  const Parameter = input
+  const Parameter = input;
 
-  const Elyt = new Elektrolyt(Kennzeichnung, Parameter, {})
+  const Elyt = new Elektrolyt(Kennzeichnung, Parameter, {});
 
-  const EK = new ElektroKernel()
-  const PK = new PlanemetrieKernel()
+  const EK = new ElektroKernel();
+  const PK = new PlanemetrieKernel();
 
-  PK.parameter({ g: Elyt.Parameter.l, h: Elyt.Parameter.b })
-  Elyt.Parameter.Ar = PK.RAgh().toString()
+  PK.parameter({ g: Elyt.Parameter.l, h: Elyt.Parameter.b });
+  Elyt.Parameter.Ar = PK.RAgh().toString();
 
   EK.parameter({
     l: Elyt.Parameter.d,
     R: Elyt.Parameter.R,
-    A: Elyt.Parameter.Ar
-  })
-  Elyt.Parameter.κ = EK.κlra().toString()
+    A: Elyt.Parameter.Ar,
+  });
+  Elyt.Parameter.κ = EK.κlra().toString();
 
-  dbJson.writeJSONItem(jsonfile, Elyt) // ?
+  dbJson.writeJSONItem(jsonfile, Elyt); // ?
 }
 
 // let input = {
@@ -49,4 +49,4 @@ function Beispiel15 (input) {
 //   R: '0.05 ohm'
 // }
 // Beispiel15(input)
-exports.func = Beispiel15
+exports.func = Beispiel15;

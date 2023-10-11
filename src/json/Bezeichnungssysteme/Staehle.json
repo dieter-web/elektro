@@ -1,0 +1,26 @@
+{
+  "Hauptsymbol": {
+    "Version 1": {
+      "Buchstabe fuer Stahlgruppe": "",
+      "Eigenschaften": ""
+    },
+    "Version 2": {
+      "Buchstabe C": "C",
+      "Kohlenstoffgehalt": ""
+    },
+    "Version 3": {
+      "Kohlenstoffgehalt": "",
+      "Legierungselemente": ""
+    },
+    "Version 4": {
+      "sonstige Merkmale": ""
+    }
+  },
+  "Zusatzsymbole": {
+    "Zusatzsymbole fuer Staehle": {
+      "Gruppe 1": "",
+      "Gruppe 2": ""
+    },
+    "Zusatzsymbole fuer Stahlerzeugnisse": ""
+  }
+}

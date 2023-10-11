@@ -17,7 +17,8 @@ function vR(data, element, pos) {
     .data(element)
     .enter()
 
-    // Widerstandsrechteck
+    // Widerstand
+    
     .append("rect")
     .attr("fill", (d) => {
       return data.visWiderstand.fill;

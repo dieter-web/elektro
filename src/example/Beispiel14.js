@@ -1,15 +1,15 @@
-require('use-strict')
-const path = require('path')
+require("use-strict");
+const path = require("path");
 
 const { ElektroKernel, ArithmetikKernel, Leitung } = require(path.resolve(
-  'include/system'
-))
+  "include/system"
+));
 
 const { readMaterialParameter } = require(path.resolve(
-  'src/js/readMaterialParameter.js'
-))
+  "src/js/readMaterialParameter.js"
+));
 
-const dbJson = require(path.resolve('controllers/dbJson.js'))
+const dbJson = require(path.resolve("controllers/dbJson.js"));
 
 /**
  * @function Beispiel14
@@ -27,40 +27,40 @@ const dbJson = require(path.resolve('controllers/dbJson.js'))
  * @param {math.Unit} I - Stromstärke
  * @returns {string} A - Querschnitt der Leitung
  */
-function Beispiel14 (input) {
-  const jsonfile = path.resolve('src/json/example/beispiel14.json')
+function Beispiel14(input) {
+  const jsonfile = path.resolve("src/json/example/beispiel14.json");
 
   const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve('src/json/kennzeichnung.json')
-  )
+    path.resolve("src/json/Sonstiges/kennzeichnung.json")
+  );
 
-  const Parameter = input
-  const Visual = {}
+  const Parameter = input;
+  const Visual = {};
 
-  const W1 = new Leitung(Kennzeichnung, Parameter, Visual)
+  const W1 = new Leitung(Kennzeichnung, Parameter, Visual);
   W1.Parameter.ρal = readMaterialParameter(
     W1.Parameter.Material,
-    'ρ'
-  ).toString()
+    "ρ"
+  ).toString();
 
-  const AK = new ArithmetikKernel()
-  const EK = new ElektroKernel()
+  const AK = new ArithmetikKernel();
+  const EK = new ElektroKernel();
 
-  AK.parameter({ G: W1.Parameter.U, p: W1.Parameter.p })
-  W1.Parameter.prozentwert = AK.Prozentwert().toString()
+  AK.parameter({ G: W1.Parameter.U, p: W1.Parameter.p });
+  W1.Parameter.prozentwert = AK.Prozentwert().toString();
 
-  AK.parameter({ a: W1.Parameter.a, b: W1.Parameter.l })
-  W1.Parameter.lg = AK.mul().toString()
+  AK.parameter({ a: W1.Parameter.a, b: W1.Parameter.l });
+  W1.Parameter.lg = AK.mul().toString();
 
   EK.parameter({
     ρ: W1.Parameter.ρal,
     l: W1.Parameter.lg,
     U: W1.Parameter.prozentwert,
-    I: W1.Parameter.I
-  })
-  W1.Parameter.A = EK.AρlUI().toString()
+    I: W1.Parameter.I,
+  });
+  W1.Parameter.A = EK.AρlUI().toString();
 
-  dbJson.writeJSONItem(jsonfile, W1)
+  dbJson.writeJSONItem(jsonfile, W1);
 }
 // let input = {
 //   p: '5', //  ArithmetikKernel
@@ -71,4 +71,4 @@ function Beispiel14 (input) {
 //   I: '11 A'
 // }
 // Beispiel14(input)
-exports.func = Beispiel14
+exports.func = Beispiel14;

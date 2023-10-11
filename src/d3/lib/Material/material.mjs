@@ -1,11 +1,19 @@
-function material(data, pos) {
-  const M = d3.create("svg:g");
-  M.selectAll("g")
-    .data(data)
+function material(data, element, pos) {
+   // Layer des shape
+  const Symbol = d3.create("svg:g").attr("id", "symbol");
+  const Name = d3.create("svg:g").attr("id", "name");
+  const Value = d3.create("svg:g").attr("id", "value");
+
+  // Shape
+  const shape = [];
+
+  Symbol.selectAll("#symbol")
+    .data(element)
     .enter()
+
     .append("rect")
     .attr("fill", (d) => {
-      return d.color;
+      return data.visMaterial.fill;
     })
     .attr("fill-opacity", (d) => {
       return d.fillopacity;

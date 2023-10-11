@@ -1,6 +1,6 @@
 require("use-strict");
 const path = require("path");
-const { Uebertragungswege } = require(path.resolve(
+const { Draht } = require(path.resolve(
   "src/components/Betriebsmittel/Uebertragungswege/Draht/Draht.js"
 ));
 

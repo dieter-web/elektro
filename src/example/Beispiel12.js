@@ -1,11 +1,11 @@
-require('use-strict')
-const path = require('path')
+require("use-strict");
+const path = require("path");
 
 const { ElektroKernel, PlanemetrieKernel, Draht } = require(path.resolve(
-  'include/system'
-))
+  "include/system"
+));
 
-const dbJson = require(path.resolve('controllers/dbJson.js'))
+const dbJson = require(path.resolve("controllers/dbJson.js"));
 
 /**
  * @description
@@ -17,33 +17,33 @@ const dbJson = require(path.resolve('controllers/dbJson.js'))
  * @param {*} input
  * @returns {*}
  */
-function Beispiel12 (input) {
+function Beispiel12(input) {
   // Speicherort für Daten
-  const jsonfile = path.resolve('src/json/example/beispiel12.json')
+  const jsonfile = path.resolve("src/json/example/beispiel12.json");
 
   // JSON Vorlage Kennzeichnung
   const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve('src/json/kennzeichnung.json')
-  )
+    path.resolve("src/json/Sonstiges/kennzeichnung.json")
+  );
 
-  const Parameter = input
+  const Parameter = input;
   const Visual = {
     opacity: 0.25,
     x: 50,
     y: 50,
     height: 5,
-    width: 600
-  }
-  const W1 = new Draht(Kennzeichnung, Parameter, Visual)
+    width: 600,
+  };
+  const W1 = new Draht(Kennzeichnung, Parameter, Visual);
 
-  const PK = new PlanemetrieKernel()
-  const EK = new ElektroKernel()
+  const PK = new PlanemetrieKernel();
+  const EK = new ElektroKernel();
 
-  PK.parameter({ d: W1.Parameter.d })
-  W1.Parameter.A = PK.KAd()
+  PK.parameter({ d: W1.Parameter.d });
+  W1.Parameter.A = PK.KAd();
 
-  EK.parameter({ l: W1.Parameter.l, R: W1.Parameter.R, A: W1.Parameter.A })
-  W1.Parameter.ρ = EK.ρRAl()
+  EK.parameter({ l: W1.Parameter.l, R: W1.Parameter.R, A: W1.Parameter.A });
+  W1.Parameter.ρ = EK.ρRAl();
 
   // let erg = {
   //   Object: W1,
@@ -51,7 +51,7 @@ function Beispiel12 (input) {
   //     ρ: ρ //unit( ρ ).to( 'ohm (mm^2 / m)' )
   //   }
   // }
-  dbJson.writeJSONItem(jsonfile, W1)
+  dbJson.writeJSONItem(jsonfile, W1);
 }
 // let input = {
 //   l: '3 km',
@@ -59,4 +59,4 @@ function Beispiel12 (input) {
 //   R: '84.5 ohm'
 // }
 // Beispiel12(input)
-exports.func = Beispiel12
+exports.func = Beispiel12;

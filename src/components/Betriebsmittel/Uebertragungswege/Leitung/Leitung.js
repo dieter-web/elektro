@@ -12,8 +12,8 @@ class Leitung extends Uebertragungswege {
       fill: "#B8733",
       fillopacity: 1,
       style: "stroke:#ffff; strocke-width: 1.0",
-      width: this.Parameter.l, // 3 km
-      height: this.Parameter.h, // 0.9 mm
+      // width: this.Parameter.l, // 3 km
+      // height: this.Parameter.h, // 0.9 mm
 
       // Anschlüsse
       path: "",

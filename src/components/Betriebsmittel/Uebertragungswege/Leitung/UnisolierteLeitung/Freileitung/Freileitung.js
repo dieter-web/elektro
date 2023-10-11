@@ -1,6 +1,6 @@
 require("use-strict");
 const path = require("path");
-const { Leitung } = require(path.resolve(
+const { UnisolierteLeitung } = require(path.resolve(
   "src/components/Betriebsmittel/Uebertragungswege/Leitung/UnisolierteLeitung/UnisolierteLeitung.js"
 ));
 

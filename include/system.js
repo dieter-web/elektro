@@ -156,10 +156,10 @@ const { IsolierteLeitung } = require(path.resolve(
 ));
 
 /** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Fernmeldeleitung */
+//
 /** !SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Fernmeldeleitung */
 
 /** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung */
-
 /** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung besondererZweck */
 /** !SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung besondererZweck */
 
@@ -180,7 +180,7 @@ const { IsolierteLeitung } = require(path.resolve(
 
 /** SECTION Betriebsmittel Uebertragungswege Leitung UnisolierteLeitung Freileitung */
 const { Freileitung } = require(path.resolve(
-  `${PBetriebsmittel}/Uebertragungswege/Leitung/Freileitung/Freileitung.js`
+  `${PBetriebsmittel}/Uebertragungswege/Leitung/UnisolierteLeitung/Freileitung/Freileitung.js`
 ));
 /** !SECTION Betriebsmittel Uebertragungswege Leitung UnisolierteLeitung Freileitung */
 
@@ -195,6 +195,13 @@ const { Freileitung } = require(path.resolve(
 const { Draht } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Draht/Draht.js`
 ));
+
+/** SECTION Betriebsmittel Uebertragungswege Draht Wickeldraht */
+const { Wickeldraht } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Draht/Wickeldraht/Wickeldraht.js`
+));
+/** !SECTION Betriebsmittel Uebertragungswege Draht Wickeldraht */
+
 /** !SECTION Betriebsmittel Uebertragungswege Draht */
 
 /** !SECTION Betriebsmittel Uebertragungswege */

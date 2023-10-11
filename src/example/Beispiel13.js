@@ -1,12 +1,12 @@
-require('use-strict')
-const path = require('path')
+require("use-strict");
+const path = require("path");
 const {
   RohrleitungstechnikKernel,
   Bleirohr,
-  PlanemetrieKernel
-} = require(path.resolve('include/system'))
+  PlanemetrieKernel,
+} = require(path.resolve("include/system"));
 
-const dbJson = require(path.resolve('controllers/dbJson.js'))
+const dbJson = require(path.resolve("controllers/dbJson.js"));
 
 /**
  * @function Beispiel13
@@ -19,36 +19,36 @@ const dbJson = require(path.resolve('controllers/dbJson.js'))
  * @param {math.Unit} da - Rohraußendurchmesser
  *  Material = 'Blei', G = "1285 S", d = "2.5 cm", D = "3.0 cm"
  */
-function Beispiel13 (input) {
-  const jsonfile = path.resolve('src/json/example/beispiel13.json')
+function Beispiel13(input) {
+  const jsonfile = path.resolve("src/json/example/beispiel13.json");
 
   const { readMaterialParameter } = require(path.resolve(
-    'src/js/readMaterialParameter.js'
-  ))
+    "src/js/readMaterialParameter.js"
+  ));
 
-  const RK = new RohrleitungstechnikKernel()
-  const PK = new PlanemetrieKernel()
+  const RK = new RohrleitungstechnikKernel();
+  const PK = new PlanemetrieKernel();
 
   const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve('src/json/kennzeichnung.json')
-  )
+    path.resolve("src/json/Sonstiges/kennzeichnung.json")
+  );
 
-  const Parameter = input
-  
-  let PtRohr = new Bleirohr(Kennzeichnung, Parameter, {})
-  PtRohr.Parameter.ρ = readMaterialParameter(input.Material, 'ρ')
+  const Parameter = input;
 
-  PK.parameter({ d: PtRohr.Parameter.d, D: PtRohr.Parameter.D })
-  PtRohr.Parameter.Ar = PK.KRADd()
+  let PtRohr = new Bleirohr(Kennzeichnung, Parameter, {});
+  PtRohr.Parameter.ρ = readMaterialParameter(input.Material, "ρ");
+
+  PK.parameter({ d: PtRohr.Parameter.d, D: PtRohr.Parameter.D });
+  PtRohr.Parameter.Ar = PK.KRADd();
 
   RK.parameter({
     ρ: PtRohr.Parameter.ρ,
     A: PtRohr.Parameter.Ar,
-    G: PtRohr.Parameter.G
-  })
-  PtRohr.Parameter.l = RK.lAρG().toString()
+    G: PtRohr.Parameter.G,
+  });
+  PtRohr.Parameter.l = RK.lAρG().toString();
 
-  dbJson.writeJSONItem(jsonfile, PtRohr)
+  dbJson.writeJSONItem(jsonfile, PtRohr);
 }
 
 // let input = {
@@ -58,4 +58,4 @@ function Beispiel13 (input) {
 //   D: '3.0 cm'
 // }
 // Beispiel13(input)
-exports.func = Beispiel13
+exports.func = Beispiel13;

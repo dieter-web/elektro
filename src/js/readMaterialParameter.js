@@ -1,7 +1,7 @@
-const path = require('path')
-const math = require('mathjs')
+const path = require("path");
+const math = require("mathjs");
 
-const dbJson = require(path.resolve('controllers/dbJson.js'))
+const dbJson = require(path.resolve("controllers/dbJson.js"));
 
 /**
  * @description
@@ -11,11 +11,11 @@ const dbJson = require(path.resolve('controllers/dbJson.js'))
  * @param {*} parameter ρ | κ |δ0 | α20 | β20
  * @returns {*} [Unit, Unit] min und max
  */
-function readMaterialParameter (Material, parameter) {
+function readMaterialParameter(Material, parameter) {
   return math.unit(
-    dbJson.readJSONFile(path.resolve('src/json/Tafel11.json'))[Material][
-      parameter
-    ][0]
-  )
+    dbJson.readJSONFile(
+      path.resolve("src/json/Sonstiges/EigenschaftenVonMetallen.json")
+    )[Material][parameter][0]
+  );
 }
-exports.readMaterialParameter = readMaterialParameter
+exports.readMaterialParameter = readMaterialParameter;

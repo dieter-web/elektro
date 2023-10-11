@@ -17,7 +17,7 @@ const { ElektroKernel, PlanemetrieKernel, Leitung } = require(path.resolve(
 function Aufgabe15(input) {
   const jsonfile = path.resolve("src/json/example/aufgabe15.json");
   const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve("src/json/kennzeichnung.json")
+    path.resolve("src/json/Sonstiges/Sonstiges/kennzeichnung.json")
   );
 
   const { readMaterialParameter } = require(path.resolve(
@@ -39,6 +39,9 @@ function Aufgabe15(input) {
 
   W1.Kennzeichnung.Art = "W";
   W1.Kennzeichnung.Zählnummer = "1";
+
+  W1.visLeitung.width = "300";
+  W1.visLeitung.height = "5";
 
   const PK = new PlanemetrieKernel();
   const EK = new ElektroKernel();

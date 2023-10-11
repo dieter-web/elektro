@@ -13,7 +13,7 @@ const dbJson = require(path.resolve("controllers/dbJson.js"));
 class Betriebsmittel {
   constructor() {
     this.Kennzeichnung = dbJson.readJSONFile(
-      path.resolve("src/json/kennzeichnung.json")
+      path.resolve("src/json/Sonstiges/kennzeichnung.json")
     );
     this.visBetriebsmittel = {};
   }

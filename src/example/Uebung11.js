@@ -1,14 +1,14 @@
-require('use-strict')
-const path = require('path')
-const dbJson = require(path.resolve('controllers/dbJson'))
+require("use-strict");
+const path = require("path");
+const dbJson = require(path.resolve("controllers/dbJson"));
 
 const { ElektroKernel, ArithmetikKernel, Freileitung } = require(path.resolve(
-  'include/system'
-))
+  "include/system"
+));
 
 const { readMaterialParameter } = require(path.resolve(
-  'src/js/readMaterialParameter.js'
-))
+  "src/js/readMaterialParameter.js"
+));
 
 /**
  * @description
@@ -19,29 +19,32 @@ const { readMaterialParameter } = require(path.resolve(
  * @date 29/07/2023
  * @param {*} input
  */
-function Uebung11 (input) {
-  const jsonfile = path.resolve('src/json/example/uebung11.json')
+function Uebung11(input) {
+  const jsonfile = path.resolve("src/json/example/uebung11.json");
 
   const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve('src/json/kennzeichnung.json')
-  )
+    path.resolve("src/json/Sonstiges/kennzeichnung.json")
+  );
 
-  const Parameter = input
+  const Parameter = input;
 
-  let W1 = new Freileitung(Kennzeichnung, Parameter, {})
-  W1.Parameter.ρM = readMaterialParameter(W1.Parameter.Material, 'ρ').toString()
+  let W1 = new Freileitung(Kennzeichnung, Parameter, {});
+  W1.Parameter.ρM = readMaterialParameter(
+    W1.Parameter.Material,
+    "ρ"
+  ).toString();
 
-  const AK = new ArithmetikKernel()
-  const EK = new ElektroKernel()
+  const AK = new ArithmetikKernel();
+  const EK = new ElektroKernel();
 
-  AK.parameter({ a: W1.Parameter.l, b: W1.Parameter.n })
-  W1.Parameter.lges = AK.mul().toString()
+  AK.parameter({ a: W1.Parameter.l, b: W1.Parameter.n });
+  W1.Parameter.lges = AK.mul().toString();
 
-  EK.parameter({ ρ: W1.Parameter.ρM, A: W1.Parameter.A, l: W1.Parameter.lges })
+  EK.parameter({ ρ: W1.Parameter.ρM, A: W1.Parameter.A, l: W1.Parameter.lges });
 
-  W1.Parameter.Rfl = EK.RρlA().toString()
+  W1.Parameter.Rfl = EK.RρlA().toString();
 
-  dbJson.writeJSONItem(jsonfile, W1)
+  dbJson.writeJSONItem(jsonfile, W1);
 }
 // let input = {
 //   Material: 'Aluminium',
@@ -50,4 +53,4 @@ function Uebung11 (input) {
 //   n: '2'
 // }
 // Uebung11(input)
-exports.func = Uebung11
+exports.func = Uebung11;

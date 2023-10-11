@@ -1,17 +1,17 @@
-require('use-strict')
-const path = require('path')
-const dbJson = require(path.resolve('controllers/dbJson'))
+require("use-strict");
+const path = require("path");
+const dbJson = require(path.resolve("controllers/dbJson"));
 
 const {
   ElektroKernel,
   ArithmetikKernel,
   PlanemetrieKernel,
-  Leitung
-} = require(path.resolve('include/system'))
+  Leitung,
+} = require(path.resolve("include/system"));
 
 const { readMaterialParameter } = require(path.resolve(
-  'src/js/readMaterialParameter.js'
-))
+  "src/js/readMaterialParameter.js"
+));
 
 /**
  * @description
@@ -24,33 +24,36 @@ const { readMaterialParameter } = require(path.resolve(
  * @date 25/07/2023
  * @param {*} input
  */
-function Uebung12 (input) {
-  const jsonfile = path.resolve('src/json/example/uebung12.json')
+function Uebung12(input) {
+  const jsonfile = path.resolve("src/json/example/uebung12.json");
 
   const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve('src/json/kennzeichnung.json')
-  )
+    path.resolve("src/json/Sonstiges/kennzeichnung.json")
+  );
 
-  const Parameter = input
+  const Parameter = input;
 
-  const W1 = new Leitung(Kennzeichnung, Parameter, {})
-  W1.Parameter.ρM = readMaterialParameter(W1.Parameter.Material, 'ρ').toString()
+  const W1 = new Leitung(Kennzeichnung, Parameter, {});
+  W1.Parameter.ρM = readMaterialParameter(
+    W1.Parameter.Material,
+    "ρ"
+  ).toString();
 
-  const AK = new ArithmetikKernel()
-  const PK = new PlanemetrieKernel()
-  const EK = new ElektroKernel()
+  const AK = new ArithmetikKernel();
+  const PK = new PlanemetrieKernel();
+  const EK = new ElektroKernel();
 
-  PK.parameter({ d: W1.Parameter.d })
-  W1.Parameter.Al = PK.KAd().toString() // Litze
+  PK.parameter({ d: W1.Parameter.d });
+  W1.Parameter.Al = PK.KAd().toString(); // Litze
 
-  EK.parameter({ l: W1.Parameter.l, ρ: W1.Parameter.ρM, R: W1.Parameter.R })
+  EK.parameter({ l: W1.Parameter.l, ρ: W1.Parameter.ρM, R: W1.Parameter.R });
 
-  W1.Parameter.Ag = EK.AρlR().toString()
+  W1.Parameter.Ag = EK.AρlR().toString();
 
-  AK.parameter({ a: W1.Parameter.Ag, b: W1.Parameter.Al })
-  W1.Parameter.ng = AK.div().toString()
+  AK.parameter({ a: W1.Parameter.Ag, b: W1.Parameter.Al });
+  W1.Parameter.ng = AK.div().toString();
 
-  dbJson.writeJSONItem(jsonfile, W1)
+  dbJson.writeJSONItem(jsonfile, W1);
 }
 // let input = {
 //   Material: 'Kupfer',
@@ -59,4 +62,4 @@ function Uebung12 (input) {
 //   d: '0.08 mm'
 // }
 // Uebung12(input)
-exports.func = Uebung12
+exports.func = Uebung12;

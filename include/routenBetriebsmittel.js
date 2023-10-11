@@ -72,9 +72,11 @@ module.exports = {
   r2_21_3_3: "/Uebertragungswege/Kabel/Starkstromkabel",
 
   r2_21_4: "/Uebertragungswege/Leitung",
+
   r2_21_4_1: "/Uebertragungswege/Leitung/IsolierteLeitung",
   r2_21_4_1_1: "/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung",
   r2_21_4_1_2: "/Uebertragungswege/Leitung/IsolierteLeitung/Starkstromleitung",
+
   r2_21_4_2: "/Uebertragungswege/Leitung/UnisolierteLeitung",
   r2_21_4_2_1: "/Uebertragungswege/Leitung/UnisolierteLeitung/Freileitung",
   r2_21_4_2_2:

@@ -15,26 +15,20 @@
 
 
     // Rückkopplung
-    // const sel=d3.select( 'table#ergebnis' ).selectAll( 'tr' ).selectAll( 'td' )._groups[ 1 ]
-
-    // Material.value=sel[ 0 ].innerHTML
-    // U.value=sel[ 1 ].innerHTML
-    // p.value=sel[ 2 ].innerHTML
-    // l.value=sel[ 3 ].innerHTML
-    // a.value=sel[ 4 ].innerHTML
-    // I.value=sel[ 5 ].innerHTML
+    const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
 
 
-    // // svg grafik
-    // const g=canvas( '#grafik',800,300,"0 0 900 100" )
+    Material.value=sel[ 0 ]
+    d.value=sel[ 1 ]
+    l.value=sel[ 2 ]
+    δ2.value=sel[ 3 ]
 
-    // let dataW1=[ {
-    //     opacity: 1,
-    //     height: 1,
-    //     width: 800,
-    //     text: "W1"
-    // } ]
+    // // svg grafik standard viewbox = "0 0 200 100"
+    const g=drawboard()
 
-    // g.append( () => vW( dataW1,[ 10,50 ] ) )
+    vW( data,[ 'L1' ],[ 50,50 ] ).map( ( e ) =>
+    {
+        g.append( () => e )
+    } )
 
 </script>

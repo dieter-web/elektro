@@ -1,14 +1,14 @@
-require('use-strict')
-const path = require('path')
+require("use-strict");
+const path = require("path");
 const { ElektroKernel, PlanemetrieKernel, Glasplatte } = require(path.resolve(
-  'include/system'
-))
+  "include/system"
+));
 
 const { readMaterialParameter } = require(path.resolve(
-  'src/js/readMaterialParameter.js'
-))
+  "src/js/readMaterialParameter.js"
+));
 
-const dbJson = require(path.resolve('controllers/dbJson.js'))
+const dbJson = require(path.resolve("controllers/dbJson.js"));
 
 /** TODO: Das Ergebnis stimmt mit der Vorlage nicht überein ? */
 /**
@@ -17,33 +17,33 @@ const dbJson = require(path.resolve('controllers/dbJson.js'))
  * @date 26/07/2023
  * @param {*} input
  */
-function Uebung14 (input) {
-  const jsonfile = path.resolve('src/json/example/uebung14.json')
+function Uebung14(input) {
+  const jsonfile = path.resolve("src/json/example/uebung14.json");
 
   const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve('src/json/kennzeichnung.json')
-  )
+    path.resolve("src/json/Sonstiges/kennzeichnung.json")
+  );
 
-  const Parameter = input
-  const Visual = {}
+  const Parameter = input;
+  const Visual = {};
 
-  const P1 = new Glasplatte(Kennzeichnung, Parameter, Visual)
+  const P1 = new Glasplatte(Kennzeichnung, Parameter, Visual);
 
   P1.Parameter.ρgl = readMaterialParameter(
     P1.Parameter.Material,
-    'ρ'
-  ).toString()
+    "ρ"
+  ).toString();
 
-  const PK = new PlanemetrieKernel()
-  const EK = new ElektroKernel()
+  const PK = new PlanemetrieKernel();
+  const EK = new ElektroKernel();
 
-  PK.parameter({ g: P1.Parameter.l, h: P1.Parameter.b })
-  P1.Parameter.Ap = PK.RAgh().toString()
+  PK.parameter({ g: P1.Parameter.l, h: P1.Parameter.b });
+  P1.Parameter.Ap = PK.RAgh().toString();
 
-  EK.parameter({ ρ: P1.Parameter.ρgl, l: P1.Parameter.d, A: P1.Parameter.Ap })
-  P1.Parameter.R = EK.RρlA().toString()
+  EK.parameter({ ρ: P1.Parameter.ρgl, l: P1.Parameter.d, A: P1.Parameter.Ap });
+  P1.Parameter.R = EK.RρlA().toString();
 
-  dbJson.writeJSONItem(jsonfile, P1)
+  dbJson.writeJSONItem(jsonfile, P1);
 }
 
 // let input = {
@@ -54,4 +54,4 @@ function Uebung14 (input) {
 // }
 // Uebung14(input)
 
-exports.func = Uebung14
+exports.func = Uebung14;

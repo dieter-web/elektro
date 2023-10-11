@@ -9,7 +9,8 @@
 
     // tabelle ergebnis
     const data=await populate( "http://localhost:8000/json/example/aufgabe16.json" )
-    const mat=await populate( "http://localhost:8000/json/Tafel11.json" )
+
+    const mat=await populate( "http://localhost:8000/json/Sonstiges/EigenschaftenVonMetallen.json" )
 
     tabulate( data,"#ergebnis" )
 
@@ -17,7 +18,7 @@
     Material.value=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )[ 0 ];
 
     // svg grafik
-    const g=canvas( '#grafik',800,200 )
+    const g=drawboard();
 
     let gdata=[ {
         width: 100, //svg
@@ -27,7 +28,8 @@
         style: 'stroke:#0fff; stroke-width:1.0',
         fillopacity: 0.5
     } ]
-
     g.symbols.append( () => material( gdata,[ 30,30 ] ) )
+
+
 
 </script>

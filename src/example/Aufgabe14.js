@@ -18,7 +18,7 @@ const { ElektroKernel, MehrlagigeSpule } = require(path.resolve(
 function Aufgabe14(input) {
   const jsonfile = path.resolve("src/json/example/aufgabe14.json");
   const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve("src/json/kennzeichnung.json")
+    path.resolve("src/json/Sonstiges/kennzeichnung.json")
   );
 
   const { readMaterialParameter } = require(path.resolve(
