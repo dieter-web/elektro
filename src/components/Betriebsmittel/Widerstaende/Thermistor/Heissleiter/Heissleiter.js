@@ -5,11 +5,10 @@ const { Thermistor } = require(path.resolve(
 ));
 
 class Heissleiter extends Thermistor {
-  // constructor (Kennzeichnung, Parameter, Visual) {
-  constructor(Kennzeichnung, Parameter) {
-    super(Kennzeichnung);
-    this.Parameter = Parameter;
-    this.HeissleiterVisual = {
+  constructor(parameter) {
+    super();
+    this.Parameter = parameter;
+    this.visHeissleiter = {
       // path: "M 50 50 ..."
     };
   }

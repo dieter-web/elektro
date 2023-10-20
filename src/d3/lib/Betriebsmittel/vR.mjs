@@ -18,7 +18,7 @@ function vR(data, element, pos) {
     .enter()
 
     // Widerstand
-    
+
     .append("rect")
     .attr("fill", (d) => {
       return data.visWiderstand.fill;

@@ -95,17 +95,21 @@ const { Fotowiderstand } = require(path.resolve(
 ));
 /** !SECTION Betriebsmittel Widerstand Fotowiderstand */
 
-/** SECTION Betriebsmittel Widerstand Heissleiter */
+/** SECTION Betriebsmittel Widerstand Thermistor */
+
+/** SECTION Betriebsmittel Widerstand Thermistor Heissleiter */
 const { Heissleiter } = require(path.resolve(
   `${PBetriebsmittel}/Widerstand/Thermistor/Heissleiter/Heissleiter.js`
 ));
-/** !SECTION Betriebsmittel Widerstand Heissleiter */
+/** !SECTION Betriebsmittel Widerstand Thermistor Heissleiter */
 
-/** SECTION Betriebsmittel Widerstand Kaltleiter */
+/** SECTION Betriebsmittel Widerstand Thermistor Kaltleiter */
 const { Kaltleiter } = require(path.resolve(
   `${PBetriebsmittel}/Widerstand/Thermistor/Kaltleiter/Kaltleiter.js`
 ));
-/** !SECTION Betriebsmittel Widerstand Kaltleiter */
+/** !SECTION Betriebsmittel Widerstand Thermistor Kaltleiter */
+
+/** !SECTION Betriebsmittel Widerstand Thermistor */
 
 /** SECTION Betriebsmittel Widerstand Varistor */
 const { Varistor } = require(path.resolve(

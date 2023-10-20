@@ -1,9 +1,7 @@
 require("use-strict");
 const path = require("path");
 
-const { ElektroKernel, Widerstand, Stack } = require(path.resolve(
-  "include/system"
-));
+const { ElektroKernel, Widerstand, Stack } = require(path.resolve("include/system"));
 const dbJson = require(path.resolve("controllers/dbJson.js"));
 
 /**
@@ -20,62 +18,72 @@ const dbJson = require(path.resolve("controllers/dbJson.js"));
 function Beispiel11(input) {
   const jsonfile = path.resolve("src/json/example/beispiel11.json");
 
-  // const IStack = new Stack()
-  // const GStack = new Stack()
+  let R1 = new Widerstand({
+    Name: "R1",
+    R: input.R1, // Gegeben
+    U: input.U,
+    G: "", // Gesucht
+    I: "",
+  });
 
-  let R1 = new Widerstand(
-    {
-      Funktion: "R",
-      Zaehlnummer: 1,
-    },
-    { R: input.R1, U: input.U },
-    {}
-  );
-  let R2 = new Widerstand(
-    {
-      Funktion: "R",
-      Zaehlnummer: 2,
-    },
-    { R: input.R2, U: input.U },
-    {}
-  );
-  let R3 = new Widerstand(
-    {
-      Funktion: "R",
-      Zaehlnummer: 3,
-    },
-    { R: input.R3, U: input.U },
-    {}
-  );
-  let R4 = new Widerstand(
-    {
-      Funktion: "R",
-      Zaehlnummer: 4,
-    },
-    { R: input.R4, U: input.U },
-    {}
-  );
+  R1.Kennzeichnung.Art = "R";
+  R1.Kennzeichnung.Zählnummer = "1";
+
+  let R2 = new Widerstand({
+    Name: "R2",
+    R: "80kohm", // Gegeben
+    U: "60V",
+    G: "", // Gesucht
+    I: "",
+  });
+
+  R2.Kennzeichnung.Art = "R";
+  R2.Kennzeichnung.Zählnummer = "2";
+
+  let R3 = new Widerstand({
+    Name: "R3",
+    R: "500ohm", // Gegeben
+    U: "60V",
+    G: "", // Gesucht
+    I: "",
+  });
+
+  R3.Kennzeichnung.Art = "R";
+  R3.Kennzeichnung.Zählnummer = "3";
+
+  let R4 = new Widerstand({
+    Name: "R4",
+    R: "75ohm", // Gegeben
+    U: "60V",
+    G: "", // Gesucht
+    I: "",
+  });
+
+  R4.Kennzeichnung.Art = "R";
+  R4.Kennzeichnung.Zählnummer = "4";
 
   // Widerstandsarray !
   let RBEA = [R1, R2, R3, R4];
 
   const EK = new ElektroKernel();
+
   RBEA.map((R, i) => {
     EK.parameter({ U: R.Parameter.U, R: RBEA[i].Parameter.R });
-    RBEA[i].Parameter.I = EK.IUR(); //.toString()
+    RBEA[i].Parameter.I = EK.IUR().toString();
+
     EK.parameter({ I: RBEA[i].Parameter.I, U: R.Parameter.U });
-    RBEA[i].Parameter.G = EK.GIU(); //.toString()
+    RBEA[i].Parameter.G = EK.GIU().toString();
   });
 
   dbJson.writeJSONItem(jsonfile, RBEA);
 }
 
 // let input = {
-//   R1: '2.5 Mohm',
-//   R2: '80 kohm',
-//   R3: '500 ohm',
-//   R4: '75 ohm',
-//   U: '60 V'
-// }
-// Beispiel11(input)
+//   R1: "2.5 Mohm",
+//   R2: "80 kohm",
+//   R3: "500 ohm",
+//   R4: "75 ohm",
+//   U: "60 V",
+// };
+// Beispiel11(input);
 exports.func = Beispiel11;

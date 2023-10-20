@@ -16,15 +16,12 @@ const { ElektroKernel, Material } = require(path.resolve("include/system"));
 function Aufgabe16(input) {
   const jsonfile = path.resolve("src/json/example/aufgabe16.json");
   const δ20 = readKonstante("Vergleichstemperatur").toString();
-  const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve("src/json/Sonstiges/kennzeichnung.json")
-  );
-  const Parameter = input;
-  const Visual = {};
+  const GoCh = new Material.Material(input);
 
-  const GoCh = new Material.Material(Kennzeichnung, Parameter, Visual);
   // Es wird noch die Vergleichstemperatur benötigt δ20
   GoCh.Parameter.δ20 = δ20;
+  // und Kennzeichnung
+  GoCh.Kennzeichnung.Name = "Material Gold-Chrom";
 
   const Ek = new ElektroKernel();
   Ek.parameter({
@@ -37,7 +34,7 @@ function Aufgabe16(input) {
   dbJson.writeJSONItem(jsonfile, GoCh);
 }
 // let input = {
-//   Material: 'GoldChrom'
-// }
-// Aufgabe16(input)
+//   Material: "GoldChrom",
+// };
+// Aufgabe16(input);
 exports.func = Aufgabe16;

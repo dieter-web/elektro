@@ -11,7 +11,11 @@
     // tabelle ergebnis
     const data=await populate( "http://localhost:8000/json/example/beispiel11.json" )
 
-    tabulate( data,"#ergebnis" )
+    data.map( ( R ) =>
+    {
+        tabulate( R,"#ergebnis" )
+    } )
+
 
     // Rückkopplung
     // const sel=d3.select( 'tbody' ).selectAll( 'tr' )._groups[ 0 ];
@@ -24,40 +28,5 @@
 
 
     // svg grafik
-    const g=drawboard()
-
-    let dataR1=[
-        {
-            width: 50,
-            height: 20,
-            id: "R1"
-        }
-    ]
-    let dataR2=[
-        {
-            width: 50,
-            height: 20,
-            id: "R2"
-        }
-    ]
-    let dataR3=[
-        {
-            width: 50,
-            height: 20,
-            id: "R3"
-        }
-    ]
-    let dataR4=[
-        {
-            width: 50,
-            height: 20,
-            id: "R4"
-        }
-    ]
-
-    g.append( () => vR( dataR1,[ 50,50 ] ) )
-    g.append( () => vR( dataR2,[ 50,100 ] ) )
-    g.append( () => vR( dataR3,[ 50,150 ] ) )
-    g.append( () => vR( dataR4,[ 50,200 ] ) )
-
+    // const g=drawboard()
 </script>

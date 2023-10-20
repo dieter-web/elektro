@@ -6,17 +6,12 @@ const { Thermistor } = require(path.resolve(
 ));
 
 class Kaltleiter extends Thermistor {
-  // constructor (Kennzeichnung, Parameter, Visual) {
-  constructor(Kennzeichnung, Parameter) {
-    super(Kennzeichnung);
-    this.Parameter = Parameter;
-    this.name = "Kaltleiter";
+  constructor(Parameter) {
+    super();
+    this.Parameter = {};
     this.visKaltleiter = {
-      path: "M 50 50 l -20 0",
+      path: "",
     };
-    // visThermistor,
-    // visWiderstand,
-    // visBetriebsmittel,
   }
 }
 

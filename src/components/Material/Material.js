@@ -3,15 +3,27 @@ const path = require("path");
 const dbJson = require(path.resolve("controllers/dbJson.js"));
 
 class Material {
-  constructor() {
-    // this.Kennzeichnung =  Materialkennzeichnung
-    // this.Parameter = Parameter;
-    this.visMaterial = {};
+  constructor(Parameter) {
+    this.Parameter = Parameter;
+    
+    this.Kennzeichnung = dbJson.readJSONFile(
+      path.resolve("src/json/Bezeichnungssysteme/Material.json")
+    );
+    
+    this.visMaterial = {
+      fill: "yellow",
+      fillopacity: 1,
+      style: "stroke:#ffff; stroke-width: 1.0",
+      width: 64,
+      height: 64,
+      "pointer-events": "all",
+    };
+    
     this.data = dbJson.readJSONFile(
       path.resolve("src/json/Sonstiges/EigenschaftenVonMetallen.json")
     )[Parameter.Material];
   }
-
+  
   fρ(name) {
     return this.data.ρ[0];
   }

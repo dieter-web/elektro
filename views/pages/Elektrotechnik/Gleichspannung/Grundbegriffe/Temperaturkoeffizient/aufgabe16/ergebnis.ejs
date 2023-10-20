@@ -20,16 +20,20 @@
     // svg grafik
     const g=drawboard();
 
-    let gdata=[ {
-        width: 100, //svg
-        height: 100, //svg
-        text: Material.value,
-        color: mat[ `${ Material.value }` ].color,
-        style: 'stroke:#0fff; stroke-width:1.0',
-        fillopacity: 0.5
-    } ]
-    g.symbols.append( () => material( gdata,[ 30,30 ] ) )
+    // let gdata=[ {
+    //     width: 100, //svg
+    //     height: 100, //svg
+    //     text: Material.value,
+    //     color: mat[ `${ Material.value }` ].color,
+    //     style: 'stroke:#0fff; stroke-width:1.0',
+    //     fillopacity: 0.5
+    // } ]
 
+    // g.symbols.append( () => material( Material.visMaterial,[ "GC" ],[ 30,30 ] ) )
 
+    material( data,[ 'M1' ],[ 50,50 ] ).map( ( e ) =>
+    {
+        g.append( () => e )
+    } )
 
 </script>

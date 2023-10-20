@@ -1,13 +1,11 @@
 require("use-strict");
 const path = require("path");
 
-const { Betriebsmittel } = require(path.resolve(
-  "src/components/Betriebsmittel/Betriebsmittel.js"
+const { Widerstaende } = require(path.resolve(
+  "src/components/Betriebsmittel/Widerstaende/Widerstaende.js"
 ));
 
-// const  {Betriebsmittel}  = require(path.resolve('include/system'))
-
-class Widerstand extends Betriebsmittel {
+class Widerstand extends Widerstaende {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;

@@ -1,7 +1,8 @@
 function material(data, element, pos) {
-   // Layer des shape
+  // Layer des shape
   const Symbol = d3.create("svg:g").attr("id", "symbol");
   const Name = d3.create("svg:g").attr("id", "name");
+
   const Value = d3.create("svg:g").attr("id", "value");
 
   // Shape
@@ -16,30 +17,48 @@ function material(data, element, pos) {
       return data.visMaterial.fill;
     })
     .attr("fill-opacity", (d) => {
-      return d.fillopacity;
+      return data.visMaterial.fillopacity;
     })
     .attr("style", (d) => {
-      return d.style;
+      return data.visMaterial.style;
     })
     .attr("x", pos[0])
     .attr("y", pos[1])
     .attr("height", (d) => {
-      return d.height;
+      return data.visMaterial.height;
     })
     .attr("width", (d) => {
-      return d.width;
+      return data.visMaterial.width;
     });
-  M.selectAll("text")
+
+  shape.push(Symbol.node());
+
+  Name.selectAll("#name")
     .data(data)
     .enter()
     .append("text")
     .attr("x", pos[0])
     .attr("y", pos[1] - 5)
     .text((d) => {
-      return d.text;
+      return "GoldChrom";
     });
 
-  return M.node();
+  shape.push(Name.node());
+
+  Value.selectAll("#value")
+    .data(element)
+    .enter()
+    .append("text")
+    .attr("x", pos[0] + 50)
+    .attr("y", pos[1] - 5)
+    .text((d) => {
+      return "Value";
+    });
+  shape.push(Value.node());
+
+  return shape;
+
+  // return M.node();
 }
 
 export { material };
