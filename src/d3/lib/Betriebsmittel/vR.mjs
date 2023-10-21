@@ -68,7 +68,7 @@ function vR(data, element, pos) {
     .attr("x", pos[0])
     .attr("y", pos[1] - 5)
     .text((d) => {
-      return data.visWiderstand.name;
+      return data.Parameter.Name;
     });
 
   shape.push(Name.node());
@@ -83,12 +83,10 @@ function vR(data, element, pos) {
     .attr("x", pos[0] + 50)
     .attr("y", pos[1] - 5)
     .text((d) => {
-      return data.visWiderstand.value;
+      return data.Parameter.R;
     });
 
   shape.push(Value.node());
-
-  // return [Symbol.node(), Value.node(), Name.node()];
   return shape;
 }
 

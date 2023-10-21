@@ -1,7 +1,9 @@
 require("use-strict");
 const path = require("path");
 
-const { ElektroKernel, Widerstand, Stack } = require(path.resolve("include/system"));
+const { ElektroKernel, Widerstand, Stack } = require(path.resolve(
+  "include/system"
+));
 const dbJson = require(path.resolve("controllers/dbJson.js"));
 
 /**
@@ -24,6 +26,9 @@ function Beispiel11(input) {
     U: input.U,
     G: "", // Gesucht
     I: "",
+    // Position
+    x: 50,
+    y: 50,
   });
 
   R1.Kennzeichnung.Art = "R";
@@ -35,6 +40,8 @@ function Beispiel11(input) {
     U: "60V",
     G: "", // Gesucht
     I: "",
+    x: 250,
+    y: 50,
   });
 
   R2.Kennzeichnung.Art = "R";
@@ -46,6 +53,8 @@ function Beispiel11(input) {
     U: "60V",
     G: "", // Gesucht
     I: "",
+    x: 500,
+    y: 50,
   });
 
   R3.Kennzeichnung.Art = "R";
@@ -57,6 +66,8 @@ function Beispiel11(input) {
     U: "60V",
     G: "", // Gesucht
     I: "",
+    x: 750,
+    y: 50,
   });
 
   R4.Kennzeichnung.Art = "R";

@@ -20,9 +20,9 @@ class Widerstand extends Widerstaende {
       height: 20,
 
       // Anschlüsse
-      path: "M 50 50 m 0 10 l -20 0 m 84 0 l 20 0",
-      name: "name",
-      value: "value",
+      path: `M ${this.Parameter.x} ${this.Parameter.y} m 0 10 l -20 0 m 84 0 l 20 0`,
+      name: this.Parameter.Name,
+      value: this.Parameter.R,
 
       // Events
       "pointer-events": "all",
