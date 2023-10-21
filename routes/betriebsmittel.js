@@ -49,10 +49,16 @@ erouter(router, R2.p2, R2.l2, R2.e, R2.r2_2_1_1_4, R2.u111);
 /** !SECTION Betriebsmittel Baugruppen */
 /** !SECTION Betriebsmittel Baugruppen */
 
-/** SECTION  Betriebsmittel Widerstand */
+/** SECTION  Betriebsmittel Widerstaende */
 routerGet(router, R2.r2_27, R2.p2, R2.l2);
+
+/** SECTION Betriebsmittel Widerstaende widerstand */
+routerGet(router, R2.r2_27_1, R2.p2, R2.l2);
+
 /** NOTE Beispiel 1.1 */
-erouter(router, R2.p2, R2.l2, R2.e, R2.r2_27, R2.b11);
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_27_1, R2.b11);
+
+/** !SECTION Betriebsmittel Widerstand widerstand */
 
 /** SECTION Betriebsmittel Widerstand feldplatten */
 routerGet(router, R2.r2_27_2, R2.p2, R2.l2);

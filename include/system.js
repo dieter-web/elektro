@@ -78,46 +78,52 @@ const { Reihenschaltung } = require(path.resolve(
 
 /** !SECTION Betriebsmittel Baugruppen */
 
-/** SECTION  Betriebsmittel Widerstand*/
+/** SECTION  Betriebsmittel Widerstaende*/
+const { Widerstaende } = require(path.resolve(
+  `${PBetriebsmittel}/Widerstaende/Widerstaende.js`
+));
+
+/** SECTION Betriebsmittel Widerstaende Widerstand */
 const { Widerstand } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstand/Widerstand.js`
+  `${PBetriebsmittel}/Widerstaende/Widerstand/Widerstand.js`
 ));
+/** !SECTION Betriebsmittel Widerstaende Widerstand */
 
-/** SECTION Betriebsmittel Widerstand Feldplatte */
+/** SECTION Betriebsmittel Widerstaende Feldplatte */
 const { Feldplatte } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstand/Feldplatten/Feldplatte.js`
+  `${PBetriebsmittel}/Widerstaende/Feldplatte/Feldplatte.js`
 ));
-/** !SECTION Betriebsmittel Widerstand Feldplatte */
+/** !SECTION Betriebsmittel Widerstaende Feldplatte */
 
-/** SECTION Betriebsmittel Widerstand Fotowiderstand */
+/** SECTION Betriebsmittel Widerstaende  Fotowiderstand */
 const { Fotowiderstand } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstand/Fotowiderstand/Fotowiderstand.js`
+  `${PBetriebsmittel}/Widerstaende/Fotowiderstand/Fotowiderstand.js`
 ));
-/** !SECTION Betriebsmittel Widerstand Fotowiderstand */
+/** !SECTION Betriebsmittel Widerstaende Fotowiderstand */
 
-/** SECTION Betriebsmittel Widerstand Thermistor */
+/** SECTION Betriebsmittel Widerstaende Thermistor */
 
-/** SECTION Betriebsmittel Widerstand Thermistor Heissleiter */
+/** SECTION Betriebsmittel Widerstaende Thermistor Heissleiter */
 const { Heissleiter } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstand/Thermistor/Heissleiter/Heissleiter.js`
+  `${PBetriebsmittel}/Widerstaende/Thermistor/Heissleiter/Heissleiter.js`
 ));
-/** !SECTION Betriebsmittel Widerstand Thermistor Heissleiter */
+/** !SECTION Betriebsmittel Widerstaende Thermistor Heissleiter */
 
-/** SECTION Betriebsmittel Widerstand Thermistor Kaltleiter */
+/** SECTION Betriebsmittel Widerstaende Thermistor Kaltleiter */
 const { Kaltleiter } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstand/Thermistor/Kaltleiter/Kaltleiter.js`
+  `${PBetriebsmittel}/Widerstaende/Thermistor/Kaltleiter/Kaltleiter.js`
 ));
-/** !SECTION Betriebsmittel Widerstand Thermistor Kaltleiter */
+/** !SECTION Betriebsmittel Widerstaende Thermistor Kaltleiter */
 
-/** !SECTION Betriebsmittel Widerstand Thermistor */
+/** !SECTION Betriebsmittel Widerstaende Thermistor */
 
-/** SECTION Betriebsmittel Widerstand Varistor */
+/** SECTION Betriebsmittel Widerstaende Varistor */
 const { Varistor } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstand/Varistoren/Varistor.js`
+  `${PBetriebsmittel}/Widerstaende/Varistoren/Varistor.js`
 ));
-/** !SECTION Betriebsmittel Widerstand Varistor */
+/** !SECTION Betriebsmittel Widerstaende Varistor */
 
-/** !SECTION Betriebsmittel Widerstand*/
+/** !SECTION Betriebsmittel Widerstaende*/
 
 /** SECTION  Betriebsmittel Uebertragungswege */
 const { Uebertragungswege } = require(path.resolve(

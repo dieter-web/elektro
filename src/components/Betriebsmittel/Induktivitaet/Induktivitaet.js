@@ -9,7 +9,6 @@ const { Betriebsmittel } = require(path.resolve(
 class Induktivitaet extends Betriebsmittel {
   constructor() {
     super();
-    this.Parameter = {};
     this.visInduktivitaet = {};
   }
 }

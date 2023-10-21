@@ -26,7 +26,7 @@
     "Verschiedenes": "Verschiedenes",
     "Verstärker": "Verstäerker",
     "Wähler": "Waehler",
-    "Widerstand": "Widerstand"
+    "Widerstaende": "Widerstaende"
   },
   "files": [
     "Betriebsmittel.js"
@@ -34,7 +34,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [ ],
+  "keywords": [],
   "author": "",
   "license": "ISC"
 }

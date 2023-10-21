@@ -8,5 +8,6 @@ module.exports = {
   l: 'layouts/PhysikalischeChemie',
   r4: '/Elektrochemie',
   r4_1: '/Elektrochemie/Elektrolyt',
+  
   b15: '/Beispiel15'
 }
