@@ -201,18 +201,24 @@ const { Freileitung } = require(path.resolve(
 
 /** !SECTION Betriebsmittel Uebertragungswege Leitung  */
 
-/** SECTION Betriebsmittel Uebertragungswege Draht */
+/** SECTION Betriebsmittel Uebertragungswege Draehte */
+const { Draehte } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Draehte/Draehte.js`
+));
+
+/** SECTION Betriebsmittel Uebertragungswege Draehte Draht */
 const { Draht } = require(path.resolve(
-  `${PBetriebsmittel}/Uebertragungswege/Draht/Draht.js`
+  `${PBetriebsmittel}/Uebertragungswege/Draehte/Draht/Draht.js`
 ));
+/** !SECTION Betriebsmittel Uebertragungswege Draehte Draht */
 
-/** SECTION Betriebsmittel Uebertragungswege Draht Wickeldraht */
+/** SECTION Betriebsmittel Uebertragungswege Draehte Wickeldraht */
 const { Wickeldraht } = require(path.resolve(
-  `${PBetriebsmittel}/Uebertragungswege/Draht/Wickeldraht/Wickeldraht.js`
+  `${PBetriebsmittel}/Uebertragungswege/Draehte/Wickeldraht/Wickeldraht.js`
 ));
-/** !SECTION Betriebsmittel Uebertragungswege Draht Wickeldraht */
+/** !SECTION Betriebsmittel Uebertragungswege Draehte Wickeldraht */
 
-/** !SECTION Betriebsmittel Uebertragungswege Draht */
+/** !SECTION Betriebsmittel Uebertragungswege Draehte */
 
 /** !SECTION Betriebsmittel Uebertragungswege */
 

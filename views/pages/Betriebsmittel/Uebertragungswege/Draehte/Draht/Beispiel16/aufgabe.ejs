@@ -1,0 +1,38 @@
+<%- include('../../../../../../layouts/partials/aufgabe.ejs', {
+    id : "beispiel16",
+    action: "/betriebsmittel/uebertragungswege/draehte/draht/beispiel16/aufgabe"
+}) %>
+
+<script type="module">
+    import {finput} from '/modules/finput.mjs'
+    import {fsubmit} from '/modules/fsubmit.mjs'
+    import {ftext} from '/modules/ftext.mjs'
+
+    const idBeispiel="#beispiel16"
+    const idText="#text"
+
+    const dataSubmit=[ "Rechnen" ] // 1 Button 
+
+    const dataText=[
+        {
+            title: "Beispiel 1.6",
+            subtitle: "Draht",
+            text: `Welche Widerstandswerte hat ein Aluminiumdraht von 300 m Länge und 0.2 mm Durchmesser bei 20°C,bei 75°C und bei -8°C?`
+        }
+
+    ]
+
+    const dataForm=[
+        {id: 'Material',text: "Material",name: "Material",value: "Aluminium"},
+        {id: 'l',text: "Länge",name: "l",value: "300 m"},
+        {id: 'd',text: "Durchmesser",name: "d",value: "0.2 mm"},
+        {id: 'δ1',text: "Temperatur 1",name: "δ1",value: "20 celsius"},
+        {id: 'δ2',text: "Temperatur 2",name: "δ2",value: "75 celsius"},
+        {id: 'δ3',text: "Temperatur 3",name: "δ3",value: "-8 celsius"},
+    ]
+
+    ftext( dataText,idText )
+    finput( dataForm,idBeispiel )
+    fsubmit( dataSubmit,idBeispiel )
+
+</script>

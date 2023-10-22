@@ -1,0 +1,31 @@
+<%- include('aufgabe.ejs',{}) %>
+<%- include('../../../../../../layouts/partials/ergebnis.ejs') %>
+
+<script type="module">
+
+    import {tabulate} from '/modules/tabulate.mjs'
+    import {drawboard} from '/modules/drawboard.mjs'
+    import {populate} from '/modules/populate.mjs'
+    // import {vR} from '/d3/lib/Betriebsmittel/vR.mjs'
+
+    // tabelle ergebnis
+    const data=await populate( "http://localhost:8000/json/example/beispiel16.json" )
+
+    tabulate( data,"#ergebnis" )
+
+    // Rückkopplung
+    const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
+
+    Material.value=sel[ 0 ]
+    l.value=sel[ 1 ]
+    d.value=sel[ 2 ]
+    δ1.value=sel[ 3 ]
+    δ2.value=sel[ 4 ]
+    δ3.value=sel[ 5 ]
+
+    // svg grafik
+    const g = drawboard()
+
+    
+
+</script>

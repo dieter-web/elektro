@@ -23,20 +23,19 @@ const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
  */
 function Beispiel16(input) {
   const jsonfile = path.resolve("src/json/example/beispiel16.json");
-  const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve("src/json/Sonstiges/kennzeichnung.json")
-  );
-  const Parameter = input;
 
-  let W1 = new Draht(Kennzeichnung, Parameter, {});
+  let W1 = new Draht(input);
+
   W1.Parameter.ρM = readMaterialParameter(
     W1.Parameter.Material,
     "ρ"
   ).toString();
+
   W1.Parameter.α20 = readMaterialParameter(
     W1.Parameter.Material,
     "α20"
   ).toString();
+
   W1.Parameter.δ20 = readKonstante("Vergleichstemperatur").toString();
 
   const PK = new PlanemetrieKernel();
@@ -73,12 +72,12 @@ function Beispiel16(input) {
   dbJson.writeJSONItem(jsonfile, W1);
 }
 // let input = {
-//   Material: 'Aluminium',
-//   l: '300 m',
-//   d: '0.2 mm',
-//   δ1: '20 celsius',
-//   δ2: '75 celsius',
-//   δ3: '-8 celsius'
-// }
-// Beispiel16(input)
+//   Material: "Aluminium",
+//   l: "300 m",
+//   d: "0.2 mm",
+//   δ1: "20 celsius",
+//   δ2: "75 celsius",
+//   δ3: "-8 celsius",
+// };
+// Beispiel16(input);
 exports.func = Beispiel16;

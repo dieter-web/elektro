@@ -20,21 +20,7 @@ const dbJson = require(path.resolve("controllers/dbJson.js"));
 function Beispiel12(input) {
   // Speicherort für Daten
   const jsonfile = path.resolve("src/json/example/beispiel12.json");
-
-  // JSON Vorlage Kennzeichnung
-  const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve("src/json/Sonstiges/kennzeichnung.json")
-  );
-
-  const Parameter = input;
-  const Visual = {
-    opacity: 0.25,
-    x: 50,
-    y: 50,
-    height: 5,
-    width: 600,
-  };
-  const W1 = new Draht(Kennzeichnung, Parameter, Visual);
+  const W1 = new Draht(input);
 
   const PK = new PlanemetrieKernel();
   const EK = new ElektroKernel();
@@ -44,13 +30,7 @@ function Beispiel12(input) {
 
   EK.parameter({ l: W1.Parameter.l, R: W1.Parameter.R, A: W1.Parameter.A });
   W1.Parameter.ρ = EK.ρRAl();
-
-  // let erg = {
-  //   Object: W1,
-  //   Ergebnis: {
-  //     ρ: ρ //unit( ρ ).to( 'ohm (mm^2 / m)' )
-  //   }
-  // }
+  
   dbJson.writeJSONItem(jsonfile, W1);
 }
 // let input = {

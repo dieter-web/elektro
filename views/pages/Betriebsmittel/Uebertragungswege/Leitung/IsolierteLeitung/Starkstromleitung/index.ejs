@@ -1,0 +1,30 @@
+<div id="e1"></div>
+
+<script type="module">
+    import {showCards} from '/modules/showCards.mjs';
+    const id="#e1"
+    const data=[
+        {
+            "id": 1,
+            "href": "/betriebsmittel/uebertragungswege/leitung/beispiel14/aufgabe",
+            "name": "Beispiel 1.4",
+            "text": "Eine zweiadrige Aluminiumleitung mit dem spezifischen Widerstand ρ = 0.02857 ohm*mm^2/m verbindet ein Gleichstromnetz von 230V Netzspannung mit einem 800 m entfernt liegenden Verbraucher. Die Leitung wird mit einem Strom von I = 11 A belastet. Wie groß muß der erforderliche Querschnitt sein, wenn der Spannungsverlust längs der Leitung maximal 5% der Netzspannung betragen darf?"
+        },
+        {
+            "id": 2,
+            "href": "/betriebsmittel/uebertragungswege/leitung/aufgabe15/aufgabe",
+            "name": "Aufgabe 1.5",
+            "text": `Welchen Widerstand hat eine 0.9mm dicke und 3km lange Kupferleitung von rundem Querschnitt, 
+            die im Erdreich verlegt ist? 
+            Die Umgebungstemperatur beträgt -2°C.`
+        },
+        {
+            "id": 3,
+            "href": "/betriebsmittel/uebertragungswege/leitung/uebung11/aufgabe",
+            "name": "Uebung 11",
+            "text": `Eine zweidrähtige Aluminiumfreileitung von 17 km Länge hat einen Querschnitt von 25 mm².
+            Wie groß ist der Widerstand?`
+        },
+    ]
+    showCards( data,id )
+</script>

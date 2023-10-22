@@ -116,24 +116,56 @@ routerGet(router, R2.r2_21_4_1, R2.p2, R2.l2);
 routerGet(router, R2.r2_21_4_1_1, R2.p2, R2.l2);
 /** !SECTION Betriebsmittel Übertragungswege Leitung IsolierteLeitung Fernmeldeleitung */
 
-/** SECTION Betriebsmittel Übertragungswege Leitung IsolierteLeitung Starkstromkabel */
-routerGet(router, R2.r2_21_4_1_1, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Übertragungswege Leitung IsolierteLeitung Starkstromkabel */
+/** SECTION Betriebsmittel Übertragungswege Leitung IsolierteLeitung Starkstromleitung */
+routerGet(router, R2.r2_21_4_1_2, R2.p2, R2.l2);
+/** !SECTION Betriebsmittel Übertragungswege Leitung IsolierteLeitung Starkstromleitung */
 
 /** !SECTION Betriebsmittel Übertragungswege Leitung IsolierteLeitung */
 
-/** SECTION Betriebsmittel Übertragungswege Leitung UnisolierteLeitung */
+/** SECTION Betriebsmittel Übertragungswege Leitung BlankeLeitung */
 routerGet(router, R2.r2_21_4_2, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Übertragungswege Leitung UnisolierteLeitung Freileitung */
+/** SECTION Betriebsmittel Übertragungswege Leitung BlankeLeitung Freileitung */
 routerGet(router, R2.r2_21_4_2_1, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Übertragungswege Leitung UnisolierteLeitung Freileitung */
+/** !SECTION Betriebsmittel Übertragungswege Leitung BlankeLeitung Freileitung */
 
-/** SECTION Betriebsmittel Übertragungswege Leitung UnisolierteLeitung Hochfrequenzleitung */
+/** SECTION Betriebsmittel Übertragungswege Leitung BlankeLeitung Hochfrequenzleitung */
 routerGet(router, R2.r2_21_4_2_2, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Übertragungswege Leitung UnisolierteLeitung Hochfrequenzleitung */
+/** !SECTION Betriebsmittel Übertragungswege Leitung BlankeLeitung Hochfrequenzleitung */
 
-/** !SECTION Betriebsmittel Übertragungswege Leitung UnisolierteLeitung */
+/** SECTION Betriebsmittel Übertragungswege Leitung BlankeLeitung Erder */
+routerGet(router, R2.r2_21_4_2_3, R2.p2, R2.l2);
+/** !SECTION Betriebsmittel Übertragungswege Leitung BlankeLeitung Erder */
+
+/** SECTION Betriebsmittel Übertragungswege Leitung BlankeLeitung Erdungssammelleitung */
+routerGet(router, R2.r2_21_4_2_4, R2.p2, R2.l2);
+/** !SECTION Betriebsmittel Übertragungswege Leitung BlankeLeitung Erdungssammelleitung */
+
+/** SECTION Betriebsmittel Übertragungswege Leitung BlankeLeitung Fahrleitung */
+routerGet(router, R2.r2_21_4_2_5, R2.p2, R2.l2);
+/** !SECTION Betriebsmittel Übertragungswege Leitung BlankeLeitung Fahrleitung */
+
+/** SECTION Betriebsmittel Übertragungswege Leitung BlankeLeitung Freileitung */
+routerGet(router, R2.r2_21_4_2_6, R2.p2, R2.l2);
+/** !SECTION Betriebsmittel Übertragungswege Leitung BlankeLeitung Freileitung */
+
+/** SECTION Betriebsmittel Übertragungswege Leitung BlankeLeitung OffenGelegteLeitung */
+routerGet(router, R2.r2_21_4_2_7, R2.p2, R2.l2);
+/** !SECTION Betriebsmittel Übertragungswege Leitung BlankeLeitung OffenGelegteLeitung */
+
+/** SECTION Betriebsmittel Übertragungswege Leitung BlankeLeitung Sammelschiene */
+routerGet(router, R2.r2_21_4_2_8, R2.p2, R2.l2);
+/** !SECTION Betriebsmittel Übertragungswege Leitung BlankeLeitung Sammelschiene */
+
+/** SECTION Betriebsmittel Übertragungswege Leitung BlankeLeitung Schiene */
+routerGet(router, R2.r2_21_4_2_9, R2.p2, R2.l2);
+/** !SECTION Betriebsmittel Übertragungswege Leitung BlankeLeitung Schiene */
+
+/** SECTION Betriebsmittel Übertragungswege Leitung BlankeLeitung Stromschiene */
+routerGet(router, R2.r2_21_4_2_10, R2.p2, R2.l2);
+/** !SECTION Betriebsmittel Übertragungswege Leitung BlankeLeitung Stromschiene */
+
+/** !SECTION Betriebsmittel Übertragungswege Leitung BlankeLeitung */
 
 /** !SECTION Betriebsmittel Übertragungswege Leitungen */
 
@@ -161,13 +193,20 @@ routerGet(router, R2.r2_21_3_3, R2.p2, R2.l2);
 
 /** !SECTION Betriebsmittel Übertragungswege Kabel */
 
-/** SECTION Betriebsmittel Übertragungswege Draht */
+/** SECTION Betriebsmittel Übertragungswege Drahete */
 routerGet(router, R2.r2_21_2, R2.p2, R2.l2);
 
-/** NOTE Betriebsmittel Übertragungswege Draht Beispiel16 */
-erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_2, R2.b16);
+/** SECTION Betriebsmittel Übertragungswege Drahete Draht */
+routerGet(router, R2.r2_21_2_1, R2.p2, R2.l2);
 
-/** !SECTION Betriebsmittel Übertragungswege Draht */
+/** NOTE Betriebsmittel Übertragungswege Draehte Draht Beispiel16 */
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_2_1, R2.b16);
+
+/** SECTION Betriebsmittel Übertragungswege Drahete Wickeldraht */
+routerGet(router, R2.r2_21_2_2, R2.p2, R2.l2);
+/** !SECTION Betriebsmittel Übertragungswege Drahete Wickeldraht */
+
+/** !SECTION Betriebsmittel Übertragungswege Draehte */
 
 /** SECTION Betriebsmittel Übertragungswege Sammelschiene */
 routerGet(router, R2.r2_21_5, R2.p2, R2.l2);

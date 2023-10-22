@@ -63,8 +63,10 @@ module.exports = {
 
   r2_21: "/Uebertragungswege",
   r2_21_1: "/Uebertragungswege/Antennen",
-  r2_21_2: "/Uebertragungswege/Draht",
-  r2_21_2_1: "/Uebertragungswege/Draht/Wickeldraht",
+
+  r2_21_2: "/Uebertragungswege/Draehte",
+  r2_21_2_1: "/Uebertragungswege/Draehte/Draht",
+  r2_21_2_2: "/Uebertragungswege/Draehte/Wickeldraht",
 
   r2_21_3: "/Uebertragungswege/Kabel",
   r2_21_3_1: "/Uebertragungswege/Kabel/Fernmeldekabel",
@@ -77,12 +79,17 @@ module.exports = {
   r2_21_4_1_1: "/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung",
   r2_21_4_1_2: "/Uebertragungswege/Leitung/IsolierteLeitung/Starkstromleitung",
 
-  r2_21_4_2: "/Uebertragungswege/Leitung/UnisolierteLeitung",
-  r2_21_4_2_1: "/Uebertragungswege/Leitung/UnisolierteLeitung/Freileitung",
-  r2_21_4_2_2:
-    "/Uebertragungswege/Leitung/UnisolierteLeitung/Hochfrequenzleitung",
-
-  r2_21_5: "/Uebertragungswege/Sammelschiene",
+  r2_21_4_2: "/Uebertragungswege/Leitung/BlankeLeitung",
+  r2_21_4_2_1: "/Uebertragungswege/Leitung/BlankeLeitung/Freileitung",
+  r2_21_4_2_2: "/Uebertragungswege/Leitung/BlankeLeitung/Hochfrequenzleitung",
+  r2_21_4_2_3: "/Uebertragungswege/Leitung/BlankeLeitung/Erder",
+  r2_21_4_2_4: "/Uebertragungswege/Leitung/BlankeLeitung/Erdungssammelleitung",
+  r2_21_4_2_5: "/Uebertragungswege/Leitung/BlankeLeitung/Fahrleitung",
+  r2_21_4_2_6: "/Uebertragungswege/Leitung/BlankeLeitung/Freileitung",
+  r2_21_4_2_7: "/Uebertragungswege/Leitung/BlankeLeitung/OffenGelegteLeitung",
+  r2_21_4_2_8: "/Uebertragungswege/Leitung/BlankeLeitung/Sammelschiene",
+  r2_21_4_2_9: "/Uebertragungswege/Leitung/BlankeLeitung/Schiene",
+  r2_21_4_2_10: "/Uebertragungswege/Leitung/BlankeLeitung/Stromschiene",
 
   r2_22: "/Umformer",
 
