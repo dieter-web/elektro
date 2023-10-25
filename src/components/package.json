@@ -7,15 +7,17 @@
     "Betriebsmittel": "Betriebsmittel",
     "Datenverarbeitung": "Datenverarbeitung",
     "Elektrotechnik": "Elektrotechnik",
-    "Mathematik": "Mathematik",
     "Kennzeichnung": "Kennzeichnung",
+    "Material": "Material",
+    "Mathematik": "Mathematik",
+    "Physikalische Chemie": "PhysikalischeChemie",
     "Rohrleitungstechnik": "Rohrleitungstechnik",
     "Verbindungstechnik": "Verbindungstechnik"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [ ],
+  "keywords": [],
   "author": "",
   "license": "ISC"
 }

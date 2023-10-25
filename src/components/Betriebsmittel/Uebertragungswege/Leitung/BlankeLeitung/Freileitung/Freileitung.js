@@ -1,10 +1,10 @@
 require("use-strict");
 const path = require("path");
-const { UnisolierteLeitung } = require(path.resolve(
-  "src/components/Betriebsmittel/Uebertragungswege/Leitung/UnisolierteLeitung/UnisolierteLeitung.js"
+const { BlankeLeitung } = require(path.resolve(
+  "src/components/Betriebsmittel/Uebertragungswege/Leitung/BlankeLeitung/BlankeLeitung.js"
 ));
 
-class Freileitung extends UnisolierteLeitung {
+class Freileitung extends BlankeLeitung {
   constructor(Parameter) {
     super(Parameter);
     this.visFreileitung = {

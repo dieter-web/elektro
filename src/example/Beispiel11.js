@@ -26,6 +26,7 @@ function Beispiel11(input) {
     U: input.U,
     G: "", // Gesucht
     I: "",
+    // Grafik
     // Position
     x: 50,
     y: 50,

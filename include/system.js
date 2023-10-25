@@ -166,10 +166,10 @@ const { IsolierteLeitung } = require(path.resolve(
 ));
 
 /** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Fernmeldeleitung */
-//
 /** !SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Fernmeldeleitung */
 
 /** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung */
+
 /** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung besondererZweck */
 /** !SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung besondererZweck */
 
@@ -186,18 +186,45 @@ const { IsolierteLeitung } = require(path.resolve(
 
 /** !SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung */
 
-/** SECTION Betriebsmittel Uebertragungswege Leitung UnisolierteLeitung */
-
-/** SECTION Betriebsmittel Uebertragungswege Leitung UnisolierteLeitung Freileitung */
-const { Freileitung } = require(path.resolve(
-  `${PBetriebsmittel}/Uebertragungswege/Leitung/UnisolierteLeitung/Freileitung/Freileitung.js`
+/** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung */
+const { BlankeLeitung } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Leitung/BlankeLeitung/BlankeLeitung.js`
 ));
-/** !SECTION Betriebsmittel Uebertragungswege Leitung UnisolierteLeitung Freileitung */
 
-/** SECTION Betriebsmittel Uebertragungswege Leitung UnisolierteLeitung Hochfrequenzleitung */
-/** !SECTION Betriebsmittel Uebertragungswege Leitung UnisolierteLeitung Hochfrequenzleitung */
+/** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Erder */
+/** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Erder  */
 
-/** !SECTION Betriebsmittel Uebertragungswege Leitung UnisolierteLeitung */
+/** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Erdungssammelleitung */
+/** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Erdungssammelleitung  */
+
+/** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Fahrleitung */
+/** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Fahrleitung  */
+
+/** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Freileitung */
+const { Freileitung } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Leitung/BlankeLeitung/Freileitung/Freileitung.js`
+));
+/** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Freileitung  */
+
+/** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Hochfrequenzleitung */
+/** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Hochfrequenzleitung  */
+
+/** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung OffenGelegteLeitung */
+/** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung OffenGelegteLeitung  */
+
+/** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Sammelschiene */
+/** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Sammelschiene  */
+
+/** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Schiene */
+/** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Schiene  */
+
+/** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Schleifenleitung */
+/** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Schleifenleitung */
+
+/** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Stromschiene */
+/** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Stromschiene  */
+
+/** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung */
 
 /** !SECTION Betriebsmittel Uebertragungswege Leitung  */
 

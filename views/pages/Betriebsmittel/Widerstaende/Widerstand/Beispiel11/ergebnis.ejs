@@ -1,58 +1,36 @@
-<%- include('aufgabe.ejs',{}) %>
-<%- include('../../../../../layouts/partials/ergebnis.ejs') %>
+<%- include('aufgabe.ejs',{}) %> <%-
+include('../../../../../layouts/partials/ergebnis.ejs') %>
 
 <script type="module">
-
-    import {tabulate} from '/modules/tabulate.mjs'
-    import {drawboard} from '/modules/drawboard.mjs'
-    import {populate} from '/modules/populate.mjs'
-    import {vR} from '/d3/lib/Betriebsmittel/vR.mjs'
+    import {tabulate} from "/modules/tabulate.mjs";
+    import {drawboard} from "/modules/drawboard.mjs";
+    import {populate} from "/modules/populate.mjs";
+    import {vR} from "/d3/lib/Betriebsmittel/vR.mjs";
 
     // tabelle ergebnis
-    const data=await populate( "http://localhost:8000/json/example/beispiel11.json" )
+    const data=await populate(
+        "http://localhost:8000/json/example/beispiel11.json"
+    );
 
     data.map( ( R ) =>
     {
-        tabulate( R,"#ergebnis" )
-    } )
-
+        tabulate( R,"#ergebnis" );
+    } );
 
     // Rückkopplung
     // const sel=d3.select( 'tbody' ).selectAll( 'tr' )._groups[ 0 ];
-    const sel=d3.selectAll( 'tbody' )._groups[ 0 ]
+    const sel=d3.selectAll( "tbody" )._groups[ 0 ];
 
-    R1.value=sel[ 0 ].innerText.split( '\t' )[ 1 ]
-    R2.value=sel[ 1 ].innerText.split( '\t' )[ 1 ]
-    R3.value=sel[ 0 ].innerText.split( '\t' )[ 1 ]
-    R4.value=sel[ 0 ].innerText.split( '\t' )[ 1 ]
-    U.value=sel[ 0 ].innerText.split( '\t' )[ 2 ]
-
+    R1.value=sel[ 0 ].innerText.split( "\t" )[ 1 ];
+    R2.value=sel[ 1 ].innerText.split( "\t" )[ 1 ];
+    R3.value=sel[ 0 ].innerText.split( "\t" )[ 1 ];
+    R4.value=sel[ 0 ].innerText.split( "\t" )[ 1 ];
+    U.value=sel[ 0 ].innerText.split( "\t" )[ 2 ];
 
     // svg grafik
     const g=drawboard();
-    vR( data[ 0 ],[ R1 ],[ data[ 0 ].Parameter.x,data[ 0 ].Parameter.y ] ).map(
-        ( e ) =>
-        {
-            g.append( () => e )
-        }
-    )
-    vR( data[ 1 ],[ R2 ],[ data[ 1 ].Parameter.x,data[ 1 ].Parameter.y ] ).map(
-        ( e ) =>
-        {
-            g.append( () => e )
-        }
-    )
-    vR( data[ 2 ],[ R3 ],[ data[ 2 ].Parameter.x,data[ 2 ].Parameter.y ] ).map(
-        ( e ) =>
-        {
-            g.append( () => e )
-        }
-    )
-    vR( data[ 3 ],[ R4 ],[ data[ 3 ].Parameter.x,data[ 3 ].Parameter.y ] ).map(
-        ( e ) =>
-        {
-            g.append( () => e )
-        }
-    )
-
+    g.append( () => vR( data[ 0 ] ) ); // R1
+    g.append( () => vR( data[ 1 ] ) ); // R2
+    g.append( () => vR( data[ 2 ] ) ); // R3
+    g.append( () => vR( data[ 3 ] ) ); // R4
 </script>

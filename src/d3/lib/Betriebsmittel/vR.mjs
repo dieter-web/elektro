@@ -1,24 +1,17 @@
-function vR(data, element, pos) {
-  // Layer des shape
-  const Symbol = d3.create("svg:g").attr("id", "symbol");
-  // const Symbol = d3
-  //   .create("svg:g")
-  //   .attr("id", `${data.Kennzeichnung.Art}${data.Kennzeichnung.Zählnummer}`);
-  const Name = d3.create("svg:g").attr("id", "name");
-  const Value = d3.create("svg:g").attr("id", "value");
+// function vR(data, element, pos) {
+function vR(data) {
+  const nr = `${data.Kennzeichnung.Art}${data.Kennzeichnung.Zählnummer}`;
 
-  // Shape
-  const shape = [];
+  const Symbol = d3.create("svg:g").attr("id", nr);
 
-  //
-  // Layer Symbol
-  //
-  Symbol.selectAll("#symbol")
-    .data(element)
-    .enter()
+  // Layer des Symbols
+  Symbol.append("g").attr("id", "hülle");
+  Symbol.append("g").attr("id", "shape");
+  Symbol.append("g").attr("id", "pins");
+  Symbol.append("g").attr("id", "name");
+  Symbol.append("g").attr("id", "value");
 
-    // Widerstand
-
+  Symbol.select("#hülle")
     .append("rect")
     .attr("fill", (d) => {
       return data.visWiderstand.fill;
@@ -29,8 +22,29 @@ function vR(data, element, pos) {
     .attr("style", (d) => {
       return data.visWiderstand.style;
     })
-    .attr("x", pos[0])
-    .attr("y", pos[1])
+    .attr("x", data.Parameter.x - 20)
+    .attr("y", data.Parameter.y)
+    .attr("height", (d) => {
+      return data.visWiderstand.height;
+    })
+    .attr("width", (d) => {
+      return data.visWiderstand.width + 40;
+    })
+    .attr("hidden", "true");
+
+  Symbol.select("#shape")
+    .attr("fill", (d) => {
+      return data.visWiderstand.fill;
+    })
+    .attr("fill-opacity", (d) => {
+      return data.visWiderstand.fillopacity;
+    })
+    .attr("style", (d) => {
+      return data.visWiderstand.style;
+    })
+    .append("rect")
+    .attr("x", data.Parameter.x)
+    .attr("y", data.Parameter.y)
     .attr("height", (d) => {
       return data.visWiderstand.height;
     })
@@ -39,9 +53,7 @@ function vR(data, element, pos) {
     });
 
   // Anschlüsse
-  Symbol.selectAll("path")
-    .data(element)
-    .enter()
+  Symbol.select("#shape")
     .append("path")
     .attr("fill", (d) => {
       return data.visWiderstand.fill;
@@ -56,38 +68,36 @@ function vR(data, element, pos) {
       return data.visWiderstand.path;
     });
 
-  shape.push(Symbol.node());
-
-  //
-  // Layer Name
-  //
-  Name.selectAll("#name")
-    .data(element)
-    .enter()
+  Symbol.select("#name")
     .append("text")
-    .attr("x", pos[0])
-    .attr("y", pos[1] - 5)
+    .attr("x", data.Parameter.x)
+    .attr("y", data.Parameter.y - 5)
     .text((d) => {
       return data.Parameter.Name;
     });
 
-  shape.push(Name.node());
-
-  //
-  // Layer Value
-  //
-  Value.selectAll("#value")
-    .data(element)
-    .enter()
+  Symbol.select("#value")
     .append("text")
-    .attr("x", pos[0] + 50)
-    .attr("y", pos[1] - 5)
+    .attr("x", data.Parameter.x + 50)
+    .attr("y", data.Parameter.y - 5)
     .text((d) => {
       return data.Parameter.R;
     });
 
-  shape.push(Value.node());
-  return shape;
+  // Symbol.select("#pins")
+  //   .selectAll("circle")
+  //   .data(data.visWiderstand.pins)
+  //   .enter()
+  //   .append("circle")
+  //   .attr("cx", (d) => {
+  //     return d[0];
+  //   })
+  //   .attr("cy", (d) => {
+  //     return d[1];
+  //   })
+  //   .attr("r", "10");
+
+  return Symbol.node();
 }
 
 export { vR };
