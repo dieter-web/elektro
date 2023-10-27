@@ -14,29 +14,12 @@
 
     // Rückkopplung
     const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
-    l.value=tab[ 0 ]
-    d.value=tab[ 1 ]
-    R.value=tab[ 2 ]
+    l.value=tab[ 1 ]
+    d.value=tab[ 2 ]
+    R.value=tab[ 3 ]
 
     // svg grafik
-    const g=canvas( 800,100,'#grafik' )
-
-    const dataW=[ {
-        'opacity': j.Betriebsmittel.Visual.opacity,
-        'x': j.Betriebsmittel.Visual.x,
-        'y': j.Betriebsmittel.Visual.y,
-        'height': j.Betriebsmittel.Visual.height,
-        'width': j.Betriebsmittel.Visual.width,
-        'text': [
-            "W1",
-            `l = ${ j.Parameter.l }`,
-            `d = ${ j.Parameter.d }`,
-            `R = ${ j.Parameter.R }`,
-            `ρ= ${ j.Ergebnis.ρ.value } ${ j.Ergebnis.ρ.unit }`
-        ]
-    }
-    ]
-
-    g.append( () => vW( dataW ) )
+    const g=drawboard();
+    g.append( () => vW( data ) )
 
 </script>

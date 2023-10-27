@@ -6,12 +6,12 @@
  * @param {*} requestURL - JSON Datei
  * @returns {*}
  */
-async function populate (requestURL) {
-  const request = new Request(requestURL)
-  const response = await fetch(request)
-  const text = await response.text()
-  const data = JSON.parse(text)
-  return data
+async function populate(requestURL) {
+  const request = new Request(requestURL);
+  const response = await fetch(request);
+  const text = await response.text();
+  const data = JSON.parse(text);
+  return data;
 }
 
-export { populate }
+export { populate };

@@ -1,64 +1,48 @@
-function vW(data, element, pos) {
-  const Symbol = d3.create("svg:g").attr("id", "symbol");
-  const Name = d3.create("svg:g").attr("id", "name");
-  const Value = d3.create("svg:g").attr("id", "value");
+function vW(data) {
+  const nr = `g${data.Kennzeichnung.Art}${data.Kennzeichnung.Zählnummer}`
+  const Symbol = d3.create("svg:g").attr("id",nr);
 
-  const shape = [];
+  Symbol.append("g").attr("id","huelle")
+  Symbol.append( "g" ).attr( "id", "shape" );
+  // Symbol.append( "g" ).attr( "id", "pins" );
+  Symbol.append( "g" ).attr( "id", "name" );
+  Symbol.append( "g" ).attr( "id", "parameter" );
 
-  // Layer Symbol
-  Symbol.selectAll("#symbol")
-    .data(element)
-    .enter()
+  Symbol.select("#huelle")
+  .append("rect")
+  .attr("fill", "none")
+  .attr("style","stroke:#ffffff; stroke-width: 1.0")
+  .attr("x",data.Parameter.x)
+  .attr("y",data.Parameter.y)
+  .attr("height",data.visDraht.height + 4)
+  .attr("width", data.visDraht.width)
+  .attr("hidden","true")
 
-    // Leitung
-    .append("rect")
-    .attr("fill", (d) => {
-      return data.visLeitung.fill;
-    })
-    .attr("fill-opacity", (d) => {
-      return data.visLeitung.fillopacity;
-    })
-    .attr("style", (d) => {
-      return data.visLeitung.style;
-    })
-    .attr("x", pos[0])
-    .attr("y", pos[1])
-    .attr("height", (d) => {
-      return data.visLeitung.height;
-    })
-    .attr("width", (d) => {
-      return data.visLeitung.width;
-    });
+Symbol.select("#shape")
+  .attr( "fill", data.visDraht.fill)
+  .attr( "fill-opacity", data.visDraht.fillopacity)
+  .attr( "style", data.visDraht.style)
+  .append( "rect" )
+  .attr( "x", data.Parameter.x )
+  .attr( "y", data.Parameter.y )
+  .attr( "height", data.visDraht.height)
+  .attr( "width",data.visDraht.width)
 
-  shape.push(Symbol.node());
+  Symbol.select("#name")
+    .append( "text" )
+    .attr( "x", data.Parameter.x )
+    .attr( "y", data.Parameter.y - 5 )
+    .text(data.Parameter.Name)
 
-  // Layer Name
-  Name.selectAll("#name")
-    .data(element)
-    .enter()
-    .append("text")
-    .attr("x", pos[0])
-    .attr("y", pos[1] - 5)
-    .text((d) => {
-      return data.visLeitung.name;
-    });
+  Symbol.select( "#parameter" )
+    .append( "text" )
+    .attr( "x", data.Parameter.x + 50 )
+    .attr( "y", data.Parameter.y - 5 )
+    .text(`${data.Parameter.R} ${data.Parameter.l} ${data.Parameter.d}`);
 
-  shape.push(Name.node());
-
-  // Layer Value
-  Value.selectAll("#value")
-    .data(element)
-    .enter()
-    .append("text")
-    .attr("x", pos[0] + 50)
-    .attr("y", pos[1] - 5)
-    .text((d) => {
-      return data.visLeitung.value;
-    });
-
-  shape.push(Value.node());
-
-  return shape;
+  return Symbol.node()
 }
+
+
 
 export { vW };

@@ -20,17 +20,27 @@ const dbJson = require(path.resolve("controllers/dbJson.js"));
 function Beispiel12(input) {
   // Speicherort für Daten
   const jsonfile = path.resolve("src/json/example/beispiel12.json");
-  const W1 = new Draht(input);
+  const W1 = new Draht({
+    Name: "W1",
+    // input
+    l: input.l,
+    d: input.d,
+    R: input.R,
+
+    //grafische Position
+    x: 50,
+    y: 50,
+  });
 
   const PK = new PlanemetrieKernel();
   const EK = new ElektroKernel();
 
   PK.parameter({ d: W1.Parameter.d });
-  W1.Parameter.A = PK.KAd();
+  W1.Parameter.A = PK.KAd().toString();
 
   EK.parameter({ l: W1.Parameter.l, R: W1.Parameter.R, A: W1.Parameter.A });
-  W1.Parameter.ρ = EK.ρRAl();
-  
+  W1.Parameter.ρ = EK.ρRAl().toString();
+
   dbJson.writeJSONItem(jsonfile, W1);
 }
 // let input = {

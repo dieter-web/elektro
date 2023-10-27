@@ -1,5 +1,5 @@
 <%- include('aufgabe.ejs',{}) %>
-<%- include('../../../../../layouts/partials/ergebnis.ejs') %>
+<%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
 
 <script type="module">
 
@@ -15,18 +15,17 @@
 
 
     // Rückkopplung
-    const sel=d3.select( 'table#ergebnis' ).selectAll( 'tr' ).selectAll( 'td' )._groups[ 1 ]
+    const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[0][0].innerText.split('\t')
 
-    Material.value=sel[ 0 ].innerHTML
-    U.value=sel[ 1 ].innerHTML
-    p.value=sel[ 2 ].innerHTML
-    l.value=sel[ 3 ].innerHTML
-    a.value=sel[ 4 ].innerHTML
-    I.value=sel[ 5 ].innerHTML
+    Material.value=sel[ 0 ]
+    p.value=sel[ 2 ]
+    l.value=sel[ 3 ]
+    a.value=sel[ 4 ]
+    I.value=sel[ 5 ]
 
 
     // svg grafik
-    const g=canvas( '#grafik',800,300,"0 0 900 100" )
+    const g=drawboard()
 
     let dataW1=[ {
         opacity: 1,

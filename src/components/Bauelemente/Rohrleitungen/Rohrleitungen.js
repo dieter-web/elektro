@@ -7,8 +7,9 @@ const { Bauelemente } = require(path.resolve(
 ))
 
 class Rohrleitungen extends Bauelemente {
-  constructor (Kennzeichnung) {
-    super(Kennzeichnung)
+  constructor () {
+    super()
+    this.viewRohrleitungen = {}
   }
 }
 

@@ -37,8 +37,8 @@ const { Rohrleitungen } = require(path.resolve(
 ));
 
 /** SECTION Rohrleitungen Bleirohre */
-const { Bleirohre } = require(path.resolve(
-  `${PBauelemente}/Rohrleitungen/Bleirohre/Bleirohre.js`
+const { Bleirohr } = require(path.resolve(
+  `${PBauelemente}/Rohrleitungen/Bleirohre/Bleirohr.js`
 ));
 /** !SECTION Rohrleitungen Bleirohre */
 /** !SECTION Rohrleitungen */
@@ -639,7 +639,7 @@ module.exports = {
   Zweipole,
   PassiverZweipol,
   Rohrleitungen,
-  Bleirohre,
+  Bleirohr,
   ElektroKernel,
   ArithmetikKernel,
   PlanemetrieKernel,

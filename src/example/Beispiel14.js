@@ -31,13 +31,23 @@ function Beispiel14(input) {
   const jsonfile = path.resolve("src/json/example/beispiel14.json");
 
   const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve("src/json/Sonstiges/kennzeichnung.json")
+    path.resolve("src/json/Uebertragungswege/Leitungen/Bezeichnung.json")
   );
 
-  const Parameter = input;
-  const Visual = {};
+  const W1 = new Leitung({
+    // Parameter
+    Material: input.Material,
+    U: input.U,
+    p: input.p,
+    l: input.l,
+    a: input.a,
+    I: input.I,
 
-  const W1 = new Leitung(Kennzeichnung, Parameter, Visual);
+    // grafische Position
+    x: 50,
+    y: 50,
+  });
+
   W1.Parameter.ρal = readMaterialParameter(
     W1.Parameter.Material,
     "ρ"
@@ -63,12 +73,12 @@ function Beispiel14(input) {
   dbJson.writeJSONItem(jsonfile, W1);
 }
 // let input = {
-//   p: '5', //  ArithmetikKernel
-//   a: '2',
-//   Material: 'Aluminium', // ElektroKernel
-//   U: '230 V',
-//   l: '800 m',
-//   I: '11 A'
-// }
-// Beispiel14(input)
+//   p: "5", //  ArithmetikKernel
+//   a: "2",
+//   Material: "Aluminium", // ElektroKernel
+//   U: "230 V",
+//   l: "800 m",
+//   I: "11 A",
+// };
+// Beispiel14(input);
 exports.func = Beispiel14;

@@ -24,10 +24,8 @@ function Beispiel11(input) {
     Name: "R1",
     R: input.R1, // Gegeben
     U: input.U,
-    G: "", // Gesucht
-    I: "",
-    // Grafik
-    // Position
+
+    // grafische Position
     x: 50,
     y: 50,
   });
@@ -39,8 +37,7 @@ function Beispiel11(input) {
     Name: "R2",
     R: "80kohm", // Gegeben
     U: "60V",
-    G: "", // Gesucht
-    I: "",
+
     x: 250,
     y: 50,
   });
@@ -52,8 +49,7 @@ function Beispiel11(input) {
     Name: "R3",
     R: "500ohm", // Gegeben
     U: "60V",
-    G: "", // Gesucht
-    I: "",
+
     x: 500,
     y: 50,
   });
@@ -65,8 +61,7 @@ function Beispiel11(input) {
     Name: "R4",
     R: "75ohm", // Gegeben
     U: "60V",
-    G: "", // Gesucht
-    I: "",
+
     x: 750,
     y: 50,
   });

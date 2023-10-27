@@ -1,53 +1,51 @@
 {
-    "Kennzeichnung der Bestmmung": {
-        "H": "harmonisierte Bestimmung",
-        "A": "anerkannter nationaler Typ"
-    },
-    "Nennspannung": {
-        "01": "100/100V",
-        "03": "300/300V",
-        "05": "300/500V",
-        "07": "450/750V"
-    },
-    "Isolierwerkstoff": {
-        "V": "PVC",
-        "V2": "PVC, wärmebeständig (90°C)",
-        "V3": "PVC, kältefest (-25°C)",
-        "R": "Natur und/oder Styrol-Butadienkautschuk",
-        "G": "Kautschuk, wärmebeständig (110°C) Silikon-Kautschuk"
-    },
-    "Mantelwerkstoff": {
-        "V": "PVC",
-        "R": "Natur und/oder Styrol-Butadienkautschuk",
-        "N": "Polychloroprenkautschuk",
-        "N2": "chlorierter Kautschuk",
-        "J": "Glasfasergeflecht",
-        "T": "Textilgeflecht",
-        "T2": "Textilgeflecht mit flammwidriger Masse",
-        "T6": "mit Textilgeflecht auf jeder Ader",
-        "Q4": "Polyamidumhüllung auf jeder Ader"
-    },
-    "Besonderheiten im Aufbau": {
-        "H": "flache, aufteilbare Leitung",
-        "H2": "flache, nicht aufteilbare Leitung",
-        "H6": "flache PVC-Leitung mit drei oder mehr Adern",
-        "D3": "mit Zugentlastungselement/Tragorgan",
-        "D5": "Kerneinlauf (kein Tragelement)"
-    },
-    "Leiterart": {
-        "-U": "eindrähtig",
-        "-R": "mehrdrähtig",
-        "-K": "feindrähtig bei Leitungen für feste Verlegung",
-        "-F": "feindrähtig bei flexiblen Leitungen",
-        "-H": "feinstdrähtig bei flexiblen Leitungen",
-        "-Y": "Lahnlitze",
-        "-D": "Kupferleitung für Schweißleitungen (normale Flexibilität",
-        "-E": "Kupferleitungen für Schweißleitungen (besonders hohe Flexibilität)"
-    },
-    "Aderzahl": {
-        "Schutzleiter": {
-            "X": "ohne Schutzleiter",
-            "G": "mit Schutzleiter"
-        }
-    }
+  "Kennzeichnung der Bestimmung": {
+    "H": "harmonisierte Bestimmung",
+    "A": "anerkannter nationaler Typ"
+  },
+  "Bemessungsspannung in kV": {
+    "01": "100/100V",
+    "03": "300/300V",
+    "05": "300/500V",
+    "07": "450/750V"
+  },
+  "Isolier und Mantelwerkstoff": {
+    "B": "Etylen-Propylen-Kautschuk",
+    "V": "PVC",
+    "V2": "PVC, wärmebeständig (90°C)",
+    "V3": "PVC, kältefest (-25°C)",
+    "R": "Natur oder Styrol-Butadienkautschuk",
+    "G": "Kautschuk, wärmebeständig (110°C) Silikon-Kautschuk",
+    "N": "Polychloroprenkautschuk",
+    "N2": "chlorierter Kautschuk",
+    "S": "Silikon-Kautschuk",
+    "J": "Glasfasergeflecht",
+    "T": "Textilgeflecht",
+    "T2": "Textilgeflecht mit flammwidriger Masse",
+    "T6": "mit Textilgeflecht auf jeder Ader",
+    "Q": "Polyurethan",
+    "Q4": "Polyamidumhüllung auf jeder Ader"
+  },
+  "Besonderheiten im Aufbau": {
+    "H": "flache, aufteilbare Leitung",
+    "H2": "flache, nicht aufteilbare Leitung",
+    "H6": "flache PVC-Leitung mit drei oder mehr Adern",
+    "D3": "mit Zugentlastungselement/Tragorgan",
+    "D5": "Kerneinlauf (kein Tragelement)"
+  },
+  "Leiterart": {
+    "-U": "eindrähtig",
+    "-R": "mehrdrähtig",
+    "-K": "feindrähtig bei Leitungen für feste Verlegung",
+    "-F": "feindrähtig bei flexiblen Leitungen",
+    "-H": "feinstdrähtig bei flexiblen Leitungen",
+    "-Y": "Lahnlitze",
+    "-D": "Kupferleitung für Schweißleitungen (normale Flexibilität",
+    "-E": "Kupferleitungen für Schweißleitungen (besonders hohe Flexibilität)",
+    "ö": "Ölbeständig"
+  },
+  "Schutzleiter": {
+    "X": "ohne Schutzleiter",
+    "G": "mit Schutzleiter"
+  }
 }
