@@ -6,10 +6,9 @@ const { Starkstromleitung } = require(path.resolve(
 
 class FesteLegung extends Starkstromleitung {
   constructor(Parameter) {
-    super(Parameter);
-    this.visFesteLegung = {
-      //
-    };
+    super();
+    this.Parameter = Parameter;
+    this.vis = {};
   }
 }
 exports.FesteLegung = FesteLegung;

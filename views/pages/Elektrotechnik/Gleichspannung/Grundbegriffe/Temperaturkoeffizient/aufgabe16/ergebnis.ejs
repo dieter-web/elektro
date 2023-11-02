@@ -2,38 +2,30 @@
 <%- include('../../../../../../layouts/partials/ergebnis.ejs') %>
 
 <script type="module">
+
+    import {drawkennzeichnung} from '/modules/drawkennzeichnung.mjs'
     import {populate} from '/modules/populate.mjs'
     import {tabulate} from '/modules/tabulate.mjs'
     import {drawboard} from '/modules/drawboard.mjs'
-    import {material} from '/d3/lib/Material/material.mjs'
+    import {Material} from '/d3/lib/Material/Material.mjs'
 
     // tabelle ergebnis
     const data=await populate( "http://localhost:8000/json/example/aufgabe16.json" )
 
     const mat=await populate( "http://localhost:8000/json/Sonstiges/EigenschaftenVonMetallen.json" )
 
+    // drawKennzeichnung( data,"#kennzeichnung" )
     tabulate( data,"#ergebnis" )
 
     // Rückkopplung
-    Material.value=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )[ 0 ];
+    const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
+    Material.value=tab[ 0 ]
 
-    // svg grafik
+    // Visualisierung
     const g=drawboard();
+    let M=new Material( data )
+    g.append( () => M.fdraw() )
 
-    // let gdata=[ {
-    //     width: 100, //svg
-    //     height: 100, //svg
-    //     text: Material.value,
-    //     color: mat[ `${ Material.value }` ].color,
-    //     style: 'stroke:#0fff; stroke-width:1.0',
-    //     fillopacity: 0.5
-    // } ]
 
-    // g.symbols.append( () => material( Material.visMaterial,[ "GC" ],[ 30,30 ] ) )
-
-    material( data,[ 'M1' ],[ 50,50 ] ).map( ( e ) =>
-    {
-        g.append( () => e )
-    } )
 
 </script>

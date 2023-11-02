@@ -3,14 +3,16 @@
 
 <script type="module">
 
+    import {drawkennzeichnung} from '/modules/drawkennzeichnung.mjs'
     import {tabulate} from '/modules/tabulate.mjs'
     import {drawboard} from '/modules/drawboard.mjs'
     import {populate} from '/modules/populate.mjs'
-    import {vL} from '/d3/lib/Betriebsmittel/vL.mjs'
+    import {vLClass} from '/d3/lib/Betriebsmittel/vLClass.mjs'
 
-    // tabelle ergebnis
+    // hash vom Server laden
     const data=await populate( "http://localhost:8000/json/example/aufgabe14.json" )
 
+    drawkennzeichnung( data,"#kennzeichnung" )
     tabulate( data,"#ergebnis" )
 
     // Rückkopplung
@@ -23,10 +25,7 @@
 
     // Visualisierung
     const g=drawboard()
-
-    vL( data,[ 'L1' ],[ 50,50 ] ).map( ( e ) =>
-    {
-        g.append( () => e )
-    } )
+    let L=new vLClass( data )
+    g.append( () => L.fdraw() )
 
 </script>

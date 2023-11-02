@@ -16,12 +16,16 @@ const { ElektroKernel, Material } = require(path.resolve("include/system"));
 function Aufgabe16(input) {
   const jsonfile = path.resolve("src/json/example/aufgabe16.json");
   const δ20 = readKonstante("Vergleichstemperatur").toString();
-  const GoCh = new Material.Material(input);
+
+  const GoCh = new Material.Material({
+    Material: input.Material,
+    x: 50,
+    y: 50,
+  });
 
   // Es wird noch die Vergleichstemperatur benötigt δ20
   GoCh.Parameter.δ20 = δ20;
-  // und Kennzeichnung
-  GoCh.Kennzeichnung.Name = "Material Gold-Chrom";
+  GoCh.vis.fill = "#c1b59b";
 
   const Ek = new ElektroKernel();
   Ek.parameter({

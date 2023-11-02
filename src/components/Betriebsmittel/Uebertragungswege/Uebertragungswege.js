@@ -8,9 +8,7 @@ const { Betriebsmittel } = require(path.resolve(
 class Uebertragungswege extends Betriebsmittel {
   constructor() {
     super();
-    this.visUebertragungswege= {
-      // path: ""
-    };
+    this.visUebertragungswege = {};
   }
 }
 

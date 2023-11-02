@@ -8,13 +8,14 @@ const { Widerstaende } = require(path.resolve(
 class Widerstand extends Widerstaende {
   constructor(Parameter) {
     super();
+    this.nr = `g${this.Kennzeichnung.Art}${this.Kennzeichnung.Zählnummer}`;
     this.al = 20; // Anschlusslänge
     this.width = 64;
     this.height = 20;
 
     this.Parameter = Parameter;
-
-    this.visWiderstand = {
+    
+    this.vis = {
       fill: "none",
       // fillopacity: 1,
       style: "stroke:#ffff; stroke-width: 1.0",
@@ -44,14 +45,9 @@ class Widerstand extends Widerstaende {
     };
   }
 
-//   //d3svg Grafik
-//   drawSymbol() {
-//     const Symbol = d3.create("svg:g").attr("id", "symbol");
-//   }
-// }
-
-// Widerstand.prototype.pos = function (x, y) {
-//   return [x, y];
-};
+  Symbol() {
+    return d3.create("svg:g").attr("id", this.nr);
+  }
+}
 
 exports.Widerstand = Widerstand;

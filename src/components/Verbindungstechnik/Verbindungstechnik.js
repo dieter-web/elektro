@@ -1,12 +1,11 @@
-require('use-strict')
-const path = require('path')
+require("use-strict");
+const path = require("path");
 
 class Verbindungstechnik {
-  constructor (Kennzeichnung, Parameter, Visual) {
-    this.Kennzeichnung = Kennzeichnung
-    this.Parameter = Parameter
-    this.Visual = Visual
+  constructor() {
+    this.Kennzeichnung = {};
+    this.Vis = {};
   }
 }
 
-exports.Verbindungstechnik = Verbindungstechnik
+exports.Verbindungstechnik = Verbindungstechnik;

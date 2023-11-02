@@ -6,10 +6,9 @@ const { Starkstromleitung } = require(path.resolve(
 
 class BesondererZweck extends Starkstromleitung {
   constructor(Parameter) {
-    super(Parameter);
-    this.visBesondererZweck = {
-      //
-    };
+    super();
+    this.Parameter = Parameter;
+    this.vis = {};
   }
 }
 exports.BesondererZweck = BesondererZweck;

@@ -5,10 +5,9 @@ const { Leitung } = require(path.resolve(
 ));
 
 class IsolierteLeitung extends Leitung {
-  constructor(Parameter) {
+  constructor() {
     super();
-    this.Parameter = Parameter;
-    this.visIsolierteLeitung = {};
+    this.vis = {};
   }
 }
 exports.IsolierteLeitung = IsolierteLeitung;

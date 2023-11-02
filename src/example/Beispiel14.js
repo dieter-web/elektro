@@ -15,7 +15,7 @@ const dbJson = require(path.resolve("controllers/dbJson.js"));
  * @function Beispiel14
  *
  * Eine zweiadrige Aluminiumleitung verbindet ein Gleichstromnetz von 230V Netzspannung mit einem
- * 800m entfernt liegenden Verbraucher. Die Leitung wird mit einem Strom I = 11A belastet.
+ * 800 m entfernt liegenden Verbraucher. Die Leitung wird mit einem Strom I = 11A belastet.
  * Wie groß muß der erforderliche Querschnitt sein, wenn der Spannungsverlust längs der Leitung
  * maximal 5% der Netzspannung betragen darf ?
  *
@@ -46,6 +46,7 @@ function Beispiel14(input) {
     // grafische Position
     x: 50,
     y: 50,
+    
   });
 
   W1.Parameter.ρal = readMaterialParameter(

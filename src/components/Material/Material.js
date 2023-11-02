@@ -5,25 +5,21 @@ const dbJson = require(path.resolve("controllers/dbJson.js"));
 class Material {
   constructor(Parameter) {
     this.Parameter = Parameter;
-    
-    this.Kennzeichnung = dbJson.readJSONFile(
-      path.resolve("src/json/Bezeichnungssysteme/Material.json")
-    );
-    
-    this.visMaterial = {
-      fill: "yellow",
+
+    this.vis = {
+      fill: "",
       fillopacity: 1,
       style: "stroke:#ffff; stroke-width: 1.0",
       width: 64,
       height: 64,
       "pointer-events": "all",
     };
-    
+
     this.data = dbJson.readJSONFile(
       path.resolve("src/json/Sonstiges/EigenschaftenVonMetallen.json")
     )[Parameter.Material];
   }
-  
+
   fρ(name) {
     return this.data.ρ[0];
   }
@@ -42,6 +38,10 @@ class Material {
 
   fβ20(name) {
     return this.data.β20[0];
+  }
+
+  color(name) {
+    return this.data.color;
   }
 }
 

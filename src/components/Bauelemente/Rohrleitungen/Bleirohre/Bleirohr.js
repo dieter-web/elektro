@@ -9,7 +9,7 @@ class Bleirohr extends Rohrleitungen {
   constructor (Parameter){
   super()
     this.Parameter = Parameter
-    this.visBleirohr = {
+    this.vis = {
       fill: "#aaaaaa",
       fillopacity: 0.5,
       style: "stroke:#ffffff; stroke-width: 1.0",

@@ -1,15 +1,13 @@
 require("use-strict");
 const path = require("path");
-const { Leitung } = require(path.resolve(
+const { BlankeLeitung } = require(path.resolve(
   "src/components/Betriebsmittel/Uebertragungswege/Leitung/BlankeLeitung/BlankeLeitung.js"
 ));
 
-class Hochfrequenzleitung extends UnisolierteLeitung {
+class Hochfrequenzleitung extends BlankeLeitung {
   constructor(Parameter) {
-    super(Parameter);
-    this.visHochfrequenzleitung = {
-      //
-    };
+    super();
+    this.vis = {};
   }
 }
 exports.Hochfrequenzleitung = Hochfrequenzleitung;

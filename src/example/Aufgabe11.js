@@ -16,7 +16,12 @@ function Aufgabe11(input) {
   const jsonfile = path.resolve("src/json/example/aufgabe11.json");
 
   // const Parameter = input;
-  const R1 = new Widerstand(input);
+  const R1 = new Widerstand({
+    G: input.G,
+    I: input.I,
+    x: 50,
+    y: 50,
+  });
 
   // Kennzeichnung anpassen
   R1.Kennzeichnung.Art = "G";
@@ -29,8 +34,8 @@ function Aufgabe11(input) {
   R1.Parameter.U12 = EK.UIG().toString();
 
   // Werte für Visualisierung
-  R1.visWiderstand.name = "G1";
-  R1.visWiderstand.value = input.G;
+  R1.vis.name = "G1";
+  R1.vis.value = input.G;
 
   dbJson.writeJSONItem(jsonfile, R1);
 }

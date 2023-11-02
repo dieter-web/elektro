@@ -1,4 +1,3 @@
-// function vR(data, element, pos) {
 function vR(data) {
   const nr = `g${data.Kennzeichnung.Art}${data.Kennzeichnung.Zählnummer}`;
 
@@ -14,30 +13,30 @@ function vR(data) {
   Symbol.select("#huelle")
     .append("rect")
     .attr("fill", "none")
-    .attr("style","stroke:#ffffff; stroke-width: 1.0")
+    .attr("style", "stroke:#ffffff; stroke-width: 1.0")
     .attr("x", data.Parameter.x - 20)
-    .attr("y", data.Parameter.y)
-    .attr("height",data.visWiderstand.height)
-    .attr("width",data.visWiderstand.width + 40)
-    .attr("hidden", "true");
+    .attr("y", data.Parameter.y - 10)
+    .attr("height", data.vis.height + 20)
+    .attr("width", data.vis.width + 40)
+    .attr("hidden", "true"); // soll es sichtbar sein --> Zeile ausdokumentieren
 
   Symbol.select("#shape")
-    .attr("fill", data.visWiderstand.fill)
-    .attr("fill-opacity",data.visWiderstand.fillopacity)
-    .attr("style", data.visWiderstand.style)
+    .attr("fill", data.vis.fill)
+    .attr("fill-opacity", data.vis.fillopacity)
+    .attr("style", data.vis.style)
     .append("rect")
     .attr("x", data.Parameter.x)
     .attr("y", data.Parameter.y)
-    .attr("height", data.visWiderstand.height)
-    .attr("width", data.visWiderstand.width);
+    .attr("height", data.vis.height)
+    .attr("width", data.vis.width);
 
   // Anschlüsse
   Symbol.select("#shape")
     .append("path")
-    .attr("fill", data.visWiderstand.fill)
-    .attr("fill-opacity", data.visWiderstand.fillopacity)
-    .attr("style", data.visWiderstand.style)
-    .attr("d", data.visWiderstand.path);
+    .attr("fill", data.vis.fill)
+    .attr("fill-opacity", data.vis.fillopacity)
+    .attr("style", data.vis.style)
+    .attr("d", data.vis.path);
 
   Symbol.select("#name")
     .append("text")
@@ -57,7 +56,7 @@ function vR(data) {
 
   // Symbol.select("#pins")
   //   .selectAll("circle")
-  //   .data(data.visWiderstand.pins)
+  //   .data(data.vis.pins)
   //   .enter()
   //   .append("circle")
   //   .attr("cx", (d) => {

@@ -6,7 +6,10 @@
     import {tabulate} from '/modules/tabulate.mjs'
     import {drawboard} from '/modules/drawboard.mjs'
     import {populate} from '/modules/populate.mjs'
-    import {vW} from '/d3/lib/Betriebsmittel/vW.mjs'
+
+    // notwendige grafische Elemente importieren
+    import {vWClass} from '/d3/lib/Betriebsmittel/vWClass.mjs' // Leitung
+    import {Verbinder} from '/d3/lib/Schaltzeichen/Verbinder/Verbinder.mjs'
 
     //tabelle ergebnis
     const data=await populate( "http://localhost:8000/json/example/beispiel14.json" )
@@ -15,7 +18,7 @@
 
 
     // Rückkopplung
-    const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[0][0].innerText.split('\t')
+    const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
 
     Material.value=sel[ 0 ]
     p.value=sel[ 2 ]
@@ -27,13 +30,8 @@
     // svg grafik
     const g=drawboard()
 
-    let dataW1=[ {
-        opacity: 1,
-        height: 1,
-        width: 800,
-        text: "W1"
-    } ]
+    let W1=new vWClass( data )
+    g.append( () => W1.fdraw() )
 
-    g.append( () => vW( dataW1,[ 10,50 ] ) )
 
 </script>

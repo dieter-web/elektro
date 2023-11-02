@@ -10,24 +10,20 @@ const Bezeichnung = require(path.resolve(
 ));
 
 class Leitung extends Uebertragungswege {
-  constructor(Parameter) {
+  constructor() {
     super();
     this.Kennzeichnung = Bezeichnung;
-    this.Parameter = Parameter;
-    this.visLeitung = {
-      fill: "#B8733",
-      fillopacity: 1,
-      style: "stroke:#ffff; strocke-width: 1.0",
-      // width: this.Parameter.l, // 3 km
-      // height: this.Parameter.h, // 0.9 mm
-
-      // Anschlüsse
-      path: "",
-      name: "",
-      value: "",
-
-      // Events
-      "pointer-events": "all",
+    this.vis = {
+      // fill: "#B8733",
+      // fillopacity: 1,
+      // style: "stroke:#ffff; strocke-width: 1.0",
+      // width: this.Parameter.l,
+      // height: this.Parameter.h,
+      // // path: "",
+      // // name: "",
+      // // value: "",
+      // // Events
+      // "pointer-events": "all",
     };
   }
 }

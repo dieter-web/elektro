@@ -6,10 +6,9 @@ const { BlankeLeitung } = require(path.resolve(
 
 class Freileitung extends BlankeLeitung {
   constructor(Parameter) {
-    super(Parameter);
-    this.visFreileitung = {
-      //
-    };
+    super();
+    this.Parameter = Parameter;
+    this.visFreileitung = {};
   }
 }
 exports.Freileitung = Freileitung;

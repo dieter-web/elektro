@@ -26,7 +26,14 @@ function Aufgabe13(input) {
     "src/js/readMaterialParameter.js"
   ));
 
-  const L1 = new MehrlagigeSpule(input);
+  const L1 = new MehrlagigeSpule({
+    Material: input.Material,
+    lm: input.lm,
+    N: input.N,
+    d: input.d,
+    x: 50,
+    y: 50,
+  });
 
   // Ergänzung Kennzeichnung
   L1.Kennzeichnung.Art = "L";
@@ -34,7 +41,7 @@ function Aufgabe13(input) {
 
   // Ergänzung Visualisierung
   //TODO: falsche Element gewählt, sollte Spule sein und nicht MehrlagigeSpule !!
-  L1.visMehrlagigeSpule.name = `${L1.Kennzeichnung.Art}${L1.Kennzeichnung.Zählnummer}`;
+  L1.vis.name = `${L1.Kennzeichnung.Art}${L1.Kennzeichnung.Zählnummer}`;
 
   // Parameter von L1 ergänzen
 

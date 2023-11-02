@@ -6,11 +6,10 @@ const { Verbindungstechnik } = require(path.resolve(
 ))
 
 class LoesbareVerbindung extends Verbindungstechnik {
-  constructor (Kennzeichnung, Parameter, Visual) {
-    super(Kennzeichnung, Parameter, Visual)
-    this.Kennzeichnung = Kennzeichnung
-    this.Parameter = Parameter
-    this.Visual = Visual
+  constructor () {
+    super()
+    this.Kennzeichnung = {}
+    this.Vis = {}
   }
 }
 

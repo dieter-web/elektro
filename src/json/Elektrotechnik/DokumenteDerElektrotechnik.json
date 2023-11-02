@@ -1,0 +1,63 @@
+{
+  "Elektrotechnische Dokumente": {
+    "Bilder": {},
+    "Technische Zeichnung": {},
+    "Schaltpläne": {},
+    "Diagramme": {},
+    "Tabellen": {},
+    "Listen": {},
+    "Texte": {}
+  },
+  "Darstellungsarten": {
+    "Zusammenhängend": {},
+    "Halbzusammenhängend": {},
+    "Aufgelöst": {},
+    "Wiederholt": {},
+    "Gruppiert": {},
+    "Verteilt": {},
+    "Mehrpolig": {},
+    "Einpolig": {}
+  },
+  "Funktionsbezogene Dokumente": {
+    "Schaltplan": {},
+    "Übersichtsschaltplan": {},
+    "Blockschaltplan": {},
+    "Ersatzschaltplan": {},
+    "Funktionsschaltplan": {},
+    "Logik-Funktionsschaltplan": {},
+    "Anschlussfunktionsplan": {},
+    "Funktionsplan": {},
+    "Ablaufdiagramm": {},
+    "Ablauftabelle": {},
+    "Zeitablaufdiagramm": {},
+    "Programmplan": {},
+    "Programmtabelle": {},
+    "Programmliste": {},
+    "Netzwerkkarte": {}
+  },
+  "Verbindungsbezogene Dokumente": {
+    "Pläne": {
+      "Klemmplan": {},
+      "Verbindungsplan": {},
+      "Anschlussplan": {}
+    },
+    "Tabellen": {},
+    "Listen": {}
+  },
+  "Gerätebezogene Dokumente": {
+    "Pläne": {
+      "Geräteverdrahtungsplan": {
+        "Anschlussplan": {},
+        "Kabelplan": {}
+      }
+    },
+    "Tabelle": {
+      "Geräteverdrahtungstabelle": {
+        "Kabeltabelle": {}
+      }
+    },
+    "Listen": {
+      "Kabellisten": {}
+    }
+  }
+}

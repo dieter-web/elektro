@@ -1,16 +1,17 @@
 <%- include('aufgabe.ejs',{}) %>
-<%- include('../../../../../layouts/partials/ergebnis.ejs') %>
+<%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
 
 <script type="module">
-
+    import {drawkennzeichnung} from '/modules/drawkennzeichnung.mjs'
     import {tabulate} from '/modules/tabulate.mjs'
     import {drawboard} from '/modules/drawboard.mjs'
     import {populate} from '/modules/populate.mjs'
-    import {vW} from '/d3/lib/Betriebsmittel/vW.mjs'
+    import {vWClass} from '/d3/lib/Betriebsmittel/vWClass.mjs'
 
     //tabelle ergebnis
     const data=await populate( "http://localhost:8000/json/example/aufgabe15.json" )
 
+    drawkennzeichnung( data,"#kennzeichnung" )
     tabulate( data,"#ergebnis" )
 
 
@@ -23,12 +24,9 @@
     l.value=sel[ 2 ]
     δ2.value=sel[ 3 ]
 
-    // // svg grafik standard viewbox = "0 0 200 100"
+    // Visualisierung
     const g=drawboard()
-
-    vW( data,[ 'L1' ],[ 50,50 ] ).map( ( e ) =>
-    {
-        g.append( () => e )
-    } )
+    let vW=new vWClass( data )
+    g.append( () => vW.fdraw() )
 
 </script>

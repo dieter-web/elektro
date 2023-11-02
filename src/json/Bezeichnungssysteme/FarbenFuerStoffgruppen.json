@@ -1,0 +1,52 @@
+{
+  "Wasser": {
+    "Gruppenfarbe": "grün",
+    "Zusatzfarbe": "-",
+    "Schriftfarbe": "weiss"
+  },
+  "Wasserdampf": {
+    "Gruppenfarbe": "rot",
+    "Zusatzfarbe": "-",
+    "Schriftfarbe": "weiss"
+  },
+  "Luft": {
+    "Gruppenfarbe": "grau",
+    "Zusatzfarbe": "-",
+    "Schriftfarbe": "schwarz"
+  },
+  "Sauerstoff": {
+    "Gruppenfarbe": "blau",
+    "Zusatzfarbe": "-",
+    "Schriftfarbe": "weiss"
+  },
+  "BrennbareGase": {
+    "Gruppenfarbe": "gelb",
+    "Zusatzfarbe": "rot",
+    "Schriftfarbe": "schwarz"
+  },
+  "NichtBrennbareGase": {
+    "Gruppenfarbe": "gelb",
+    "Zusatzfarbe": "schwarz",
+    "Schriftfarbe": "schwarz"
+  },
+  "Säuren": {
+    "Gruppenfarbe": "orange",
+    "Zusatzfarbe": "-",
+    "Schriftfarbe": "schwarz"
+  },
+  "Laugen": {
+    "Gruppenfarbe": "violett",
+    "Zusatzfarbe": "-",
+    "Schriftfarbe": "weiss"
+  },
+  "Brennbare Flüssigkeiten und Feststoffe": {
+    "Gruppenfarbe": "braun",
+    "Zusatzfarbe": "rot",
+    "Schriftfarbe": "weiss"
+  },
+  "Nicht brennbareFlüssigkeiten und Feststoffe": {
+    "Gruppenfarbe": "braun",
+    "Zusatzfarbe": "schwarz",
+    "Schriftfarbe": "weiss"
+  }
+}

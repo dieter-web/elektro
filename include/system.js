@@ -166,20 +166,44 @@ const { IsolierteLeitung } = require(path.resolve(
 ));
 
 /** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Fernmeldeleitung */
+const { Fernmeldeleitung } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/Fernmeldeleitung.js`
+));
+
 /** !SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Fernmeldeleitung */
 
 /** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung */
+const { Starkstromleitung } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Leitung/IsolierteLeitung/Starkstromleitung/Starkstromleitung.js`
+));
 
 /** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung besondererZweck */
+const { BesondererZweck } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Leitung/IsolierteLeitung/Starkstromleitung/BesondererZweck/BesondererZweck.js`
+));
+
 /** !SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung besondererZweck */
 
 /** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung festeVerlegung */
+
+const { FesteLegung } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Leitung/IsolierteLeitung/Starkstromleitung/FesteLegung/FesteLegung.js`
+));
+
 /** !SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung festeVerlegung */
 
 /** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung Konfektioniert */
+const { Konfektioniert } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Leitung/IsolierteLeitung/Starkstromleitung/Konfektioniert/Konfektioniert.js`
+));
+
 /** !SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung Konfektioniert */
 
 /** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung ortsveraenderlicheBetriebsmittel */
+const { OrtsveraenderlicheLegung } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Leitung/IsolierteLeitung/Starkstromleitung/OrtsveraenderlicheLegung/OrtsveraenderlicheLegung.js`
+));
+
 /** !SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung ortsveraenderlicheBetriebsmittel */
 
 /** !SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung */
@@ -192,12 +216,24 @@ const { BlankeLeitung } = require(path.resolve(
 ));
 
 /** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Erder */
+const { Erder } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Leitung/BlankeLeitung/Erder/Erder.js`
+));
+
 /** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Erder  */
 
 /** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Erdungssammelleitung */
+const { Erdungssammelleitung } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Leitung/BlankeLeitung/Erdungssammelleitung/Erdungssammelleitung.js`
+));
+
 /** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Erdungssammelleitung  */
 
 /** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Fahrleitung */
+const { Fahrleitung } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Leitung/BlankeLeitung/Fahrleitung/Fahrleitung.js`
+));
+
 /** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Fahrleitung  */
 
 /** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Freileitung */
@@ -207,21 +243,45 @@ const { Freileitung } = require(path.resolve(
 /** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Freileitung  */
 
 /** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Hochfrequenzleitung */
+const { Hochfrequenzleitung } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Leitung/BlankeLeitung/Hochfrequenzleitung/Hochfrequenzleitung.js`
+));
+
 /** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Hochfrequenzleitung  */
 
 /** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung OffenGelegteLeitung */
+const { OffenGelegteLeitung } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Leitung/BlankeLeitung/OffenGelegteLeitung/OffenGelegteLeitung.js`
+));
+
 /** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung OffenGelegteLeitung  */
 
 /** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Sammelschiene */
+const { Sammelschiene } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Leitung/BlankeLeitung/Sammelschiene/Sammelschiene.js`
+));
+
 /** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Sammelschiene  */
 
 /** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Schiene */
+const { Schiene } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Leitung/BlankeLeitung/Schiene/Schiene.js`
+));
+
 /** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Schiene  */
 
 /** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Schleifenleitung */
+const { Schleifenleitung } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Leitung/BlankeLeitung/Schleifenleitung/Schleifenleitung.js`
+));
+
 /** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Schleifenleitung */
 
 /** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Stromschiene */
+const { Stromschiene } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Leitung/BlankeLeitung/Stromschiene/Stromschiene.js`
+));
+
 /** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Stromschiene  */
 
 /** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung */
@@ -527,9 +587,9 @@ const { Einpresstechnik } = require(path.resolve(
 
 /** !SECTION Verbindungstechnik BedingtLoesbareVerbindung Einpresstechnik */
 
-/** SECTION Verbindungstechnik BedingtLoesbareVerbindung Loeten */
-const { Loeten } = require(path.resolve(
-  `${PVerbindungstechnik}/BedingtLoesbareVerbindung/Loeten/Loeten.js`
+/** SECTION Verbindungstechnik BedingtLoesbareVerbindung Loettechnik */
+const { Loettechnik } = require(path.resolve(
+  `${PVerbindungstechnik}/BedingtLoesbareVerbindung/Loettechnik/Loettechnik.js`
 ));
 /** !SECTION Verbindungstechnik BedingtLoesbareVerbindung Loeten */
 
@@ -546,17 +606,17 @@ const { LoesbareVerbindung } = require(path.resolve(
   `${PVerbindungstechnik}/LoesbareVerbindung/LoesbareVerbindung.js`
 ));
 
-/** SECTION Verbindungstechnik LoesbareVerbindung Klemme */
-const { Klemme } = require(path.resolve(
-  `${PVerbindungstechnik}/LoesbareVerbindung/Klemme/Klemme.js`
+/** SECTION Verbindungstechnik LoesbareVerbindung Klemmverbindung */
+const { Klemmverbindung } = require(path.resolve(
+  `${PVerbindungstechnik}/LoesbareVerbindung/Klemmverbindung/Klemmverbindung.js`
 ));
-/** !SECTION Verbindungstechnik LoesbareVerbindung Klemme */
+/** !SECTION Verbindungstechnik LoesbareVerbindung Klemmverbindung */
 
-/** SECTION Verbindungstechnik LoesbareVerbindung Stecker */
-const { Stecker } = require(path.resolve(
-  `${PVerbindungstechnik}/LoesbareVerbindung/Stecker/Stecker.js`
+/** SECTION Verbindungstechnik LoesbareVerbindung QuetschUndSteckverbindung */
+const { QuetschUndSteckverbindung } = require(path.resolve(
+  `${PVerbindungstechnik}/LoesbareVerbindung/QuetschUndSteckverbindung/QuetschUndSteckverbindung.js`
 ));
-/** !SECTION Verbindungstechnik LoesbareVerbindung Stecker */
+/** !SECTION Verbindungstechnik LoesbareVerbindung QuetschUndSteckverbindung */
 
 /** !SECTION Verbindungstechnik LoesbareVerbindung */
 
@@ -586,12 +646,12 @@ const { Pressverbindung } = require(path.resolve(
 
 /** !SECTION Verbindungstechnik UnloesbareVerbindung Pressverbindung */
 
-/** SECTION Verbindungstechnik UnloesbareVerbindung Schweissen */
-const { Schweissen } = require(path.resolve(
-  `${PVerbindungstechnik}/UnloesbareVerbindung/Schweissen/Schweissen.js`
+/** SECTION Verbindungstechnik UnloesbareVerbindung Schweisstechnik */
+const { Schweisstechnik } = require(path.resolve(
+  `${PVerbindungstechnik}/UnloesbareVerbindung/Schweisstechnik/Schweisstechnik.js`
 ));
 
-/** !SECTION Verbindungstechnik UnloesbareVerbindung Schweissen */
+/** !SECTION Verbindungstechnik UnloesbareVerbindung Schweisstechnik */
 
 /** SECTION Verbindungstechnik UnloesbareVerbindung Spleissen */
 const { Spleissen } = require(path.resolve(
@@ -652,8 +712,30 @@ module.exports = {
   Kaltleiter,
   Varistor,
   Glasplatte,
+
   Leitung,
+  BlankeLeitung,
+
+  Erder,
+  Erdungssammelleitung,
+  Fahrleitung,
   Freileitung,
+  Hochfrequenzleitung,
+  OffenGelegteLeitung,
+  Sammelschiene,
+  Schiene,
+  Schleifenleitung,
+  Stromschiene,
+
+  IsolierteLeitung,
+  Fernmeldeleitung,
+
+  Starkstromleitung,
+  BesondererZweck,
+  FesteLegung,
+  Konfektioniert,
+  OrtsveraenderlicheLegung,
+
   Draht,
   Induktivitaet,
   Spule,
@@ -704,15 +786,15 @@ module.exports = {
   BedingtLoesbareVerbindung,
   Drahtwickeltechnik,
   Einpresstechnik,
-  Loeten,
+  Loettechnik,
   Schneidklemmtechnik,
   LoesbareVerbindung,
-  Klemme,
-  Stecker,
+  Klemmverbindung,
+  QuetschUndSteckverbindung,
   UnloesbareVerbindung,
   Bonden,
   Klebeverbindung,
   Pressverbindung,
-  Schweissen,
+  Schweisstechnik,
   Spleissen,
 };

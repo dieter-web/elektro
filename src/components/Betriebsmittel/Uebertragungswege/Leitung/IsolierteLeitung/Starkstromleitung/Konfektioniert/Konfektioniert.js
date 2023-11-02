@@ -6,10 +6,9 @@ const { Starkstromleitung } = require(path.resolve(
 
 class Konfektioniert extends Starkstromleitung {
   constructor(Parameter) {
-    super(Parameter);
-    this.visKonfektioniert = {
-      //
-    };
+    super();
+    this.Parameter = Parameter;
+    this.vis = {};
   }
 }
 exports.Konfektioniert = Konfektioniert;

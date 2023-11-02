@@ -29,13 +29,23 @@ function Beispiel13(input) {
   const RK = new RohrleitungstechnikKernel();
   const PK = new PlanemetrieKernel();
 
-  const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve("src/json/Sonstiges/kennzeichnung.json")
-  );
+  // const Kennzeichnung = dbJson.readJSONFile(
+  //   path.resolve("src/json/Sonstiges/kennzeichnung.json")
+  // );
 
-  const Parameter = input;
+  // const Parameter = input;
 
-  let PtRohr = new Bleirohr(Parameter);
+  let PtRohr = new Bleirohr({
+    Name: "Bleirohr",
+    Material: input.Material,
+    G: input.G,
+    d: input.d,
+    D: input.D,
+
+    x: 50,
+    y: 50
+  });
+
   PtRohr.Parameter.ρ = readMaterialParameter(input.Material, "ρ").toString();
 
   PK.parameter({ d: PtRohr.Parameter.d, D: PtRohr.Parameter.D });

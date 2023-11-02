@@ -8,7 +8,7 @@ class MehrlagigeSpule extends SpuleOhneKern {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
-    this.visMehrlagigeSpule = {
+    this.vis = {
       fill: "black",
       fillopacity: 1,
       style: "stroke:#000000; stroke-width: 1.0",
