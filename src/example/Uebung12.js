@@ -27,13 +27,18 @@ const { readMaterialParameter } = require(path.resolve(
 function Uebung12(input) {
   const jsonfile = path.resolve("src/json/example/uebung12.json");
 
-  const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve("src/json/Sonstiges/kennzeichnung.json")
-  );
+  const W1 = new Leitung({
+    Material: "Kupfer",
+    l: "8 m",
+    R: "1.58 ohm",
+    d: "0.08 mm",
+    x: 50,
+    y: 50,
+  });
 
-  const Parameter = input;
+  W1.Kennzeichnung.Art = "W";
+  W1.Kennzeichnung.Zählnummer = "1";
 
-  const W1 = new Leitung(Kennzeichnung, Parameter, {});
   W1.Parameter.ρM = readMaterialParameter(
     W1.Parameter.Material,
     "ρ"

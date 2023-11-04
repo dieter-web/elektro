@@ -15,13 +15,16 @@ const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
 function Uebung17(input) {
   const jsonfile = path.resolve("src/json/example/uebung17.json");
 
-  const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve("src/json/Sonstiges/kennzeichnung.json")
-  );
+  const T1 = new Transformator({
+    Material: "Kupfer",
+    R1: "560 ohm",
+    R2: "604 ohm",
+    x: 50,
+    y: 50,
+  });
 
-  const Parameter = input;
-
-  const T1 = new Transformator(Kennzeichnung, Parameter, {});
+  T1.Kennzeichnung.Art = "T";
+  T1.Kennzeichnung.Zählnummer = "1";
 
   T1.Parameter.ρM = readMaterialParameter(
     T1.Parameter.Material,

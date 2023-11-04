@@ -3,9 +3,11 @@ const path = require("path");
 
 const dbJson = require(path.resolve("controllers/dbJson"));
 
-const { ElektroKernel, PlanemetrieKernel, Draht } = require(path.resolve(
-  "include/system"
-));
+const {
+  ElektroKernel,
+  PlanemetrieKernel,
+  Aluminiumdraht,
+} = require(path.resolve("include/system"));
 
 const { readMaterialParameter } = require(path.resolve(
   "src/js/readMaterialParameter.js"
@@ -24,7 +26,20 @@ const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
 function Beispiel16(input) {
   const jsonfile = path.resolve("src/json/example/beispiel16.json");
 
-  let W1 = new Draht(input);
+  let W1 = new Aluminiumdraht({
+    Material: input.Material,
+    l: input.l,
+    d: input.d,
+    δ1: "20 celsius",
+    δ2: "75 celsius",
+    δ3: "-8 celsius",
+
+    x: 50,
+    y: 50,
+  });
+
+  W1.Kennzeichnung.Art = "W";
+  W1.Kennzeichnung.Zählnummer = "1";
 
   W1.Parameter.ρM = readMaterialParameter(
     W1.Parameter.Material,

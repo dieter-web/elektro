@@ -27,13 +27,18 @@ function Uebung111(input) {
   // Hier müssen die Widerstände verbunden werden.
   // Es entstehen Verbindungspunkte !
 
-  const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve("src/json/Sonstiges/kennzeichnung.json")
-  );
+  const RS1 = new Reihenschaltung({
+    R1: "5.2 ohm",
+    R2: "6.9 ohm",
+    R3: "3.4 ohm",
+    Φc: "0 V",
+    I: "2 A",
+    x: 50,
+    y: 50,
+  });
 
-  const Parameter = input;
-
-  const RS1 = new Reihenschaltung(Kennzeichnung, Parameter, {});
+  RS1.Kennzeichnung.Art = "RS";
+  RS1.Kennzeichnung.Zählnummer = "1";
 
   RS1.Schaltung = {
     Klemme: {

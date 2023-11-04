@@ -17,15 +17,19 @@ function Aufgabe16(input) {
   const jsonfile = path.resolve("src/json/example/aufgabe16.json");
   const δ20 = readKonstante("Vergleichstemperatur").toString();
 
-  const GoCh = new Material.Material({
+  const GoCh = new Material({
     Material: input.Material,
     x: 50,
     y: 50,
   });
 
+  GoCh.Kennzeichnung.Art = "Konstante";
+  GoCh.Kennzeichnung.Zählnummer = "1";
+
   // Es wird noch die Vergleichstemperatur benötigt δ20
   GoCh.Parameter.δ20 = δ20;
-  GoCh.vis.fill = "#c1b59b";
+  GoCh.vis.fill = "#c1b59b"; // Materialfarbe
+  GoCh.vis.name = GoCh.Parameter.Material;
 
   const Ek = new ElektroKernel();
   Ek.parameter({

@@ -26,21 +26,26 @@ const { readMaterialParameter } = require(path.resolve(
 function Uebung16(input) {
   const jsonfile = path.resolve("src/json/example/uebung16.json");
 
-  const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve("src/json/Sonstiges/kennzeichnung.json")
-  );
+  const W1 = new Kabel({
+    Material: "Blei",
+    D: "42 mm",
+    d: "4 mm",
+    R: "80 mohm",
+    x: 50,
+    y: 50,
+  });
 
-  const AK = new ArithmetikKernel();
-  const PK = new PlanemetrieKernel();
-  const EK = new ElektroKernel();
+  W1.Kennzeichnung.Art = "W";
+  W1.Kennzeichnung.Zählnummer = "1";
 
-  const Parameter = input;
-
-  const W1 = new Kabel(Kennzeichnung, Parameter, {});
   W1.Parameter.ρM = readMaterialParameter(
     W1.Parameter.Material,
     "ρ"
   ).toString();
+
+  const AK = new ArithmetikKernel();
+  const PK = new PlanemetrieKernel();
+  const EK = new ElektroKernel();
 
   AK.parameter({ a: W1.Parameter.d, b: 2 });
   W1.Parameter.d2 = AK.mul().toString();

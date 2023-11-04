@@ -26,7 +26,6 @@ function Aufgabe11(input) {
   // Kennzeichnung anpassen
   R1.Kennzeichnung.Art = "G";
   R1.Kennzeichnung.Zählnummer = "1";
-  R1.Kennzeichnung.Funktion = "";
 
   const EK = new ElektroKernel();
 

@@ -7,7 +7,7 @@ class Material {
     this.Parameter = Parameter;
 
     this.vis = {
-      fill: "",
+      fill: "#c1b59b",
       fillopacity: 1,
       style: "stroke:#ffff; stroke-width: 1.0",
       width: 64,

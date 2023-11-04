@@ -7,7 +7,7 @@
     import {populate} from '/modules/populate.mjs'
     import {tabulate} from '/modules/tabulate.mjs'
     import {drawboard} from '/modules/drawboard.mjs'
-    import {Material} from '/d3/lib/Material/Material.mjs'
+    import {vMaterial} from '/d3/lib/Material/vMaterial.mjs'
 
     // tabelle ergebnis
     const data=await populate( "http://localhost:8000/json/example/aufgabe16.json" )
@@ -22,9 +22,11 @@
     Material.value=tab[ 0 ]
 
     // Visualisierung
-    const g=drawboard();
-    let M=new Material( data )
-    g.append( () => M.fdraw() )
+    const gM=drawboard();
+
+    let M=new vMaterial( data )
+
+    gM.append( () => M.fdraw() )
 
 
 

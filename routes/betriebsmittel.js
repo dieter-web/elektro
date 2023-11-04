@@ -197,8 +197,38 @@ routerGet(router, R2.r2_21_2, R2.p2, R2.l2);
 /** SECTION Betriebsmittel Übertragungswege Drahete Draht */
 routerGet(router, R2.r2_21_2_1, R2.p2, R2.l2);
 
-/** NOTE Betriebsmittel Übertragungswege Draehte Draht Beispiel16 */
-erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_2_1, R2.b16);
+/** SECTION Betriebsmittel Übertragungswege Drahete Draht Runddraht */
+routerGet(router, R2.r2_21_2_1_1, R2.p2, R2.l2);
+
+/** SECTION Betriebsmittel Übertragungswege Drahete Draht Runddraht Blank */
+routerGet(router, R2.r2_21_2_1_1_1, R2.p2, R2.l2);
+
+/** SECTION Betriebsmittel Übertragungswege Drahete Draht Runddraht Blank Kupferdraht */
+routerGet(router, R2.r2_21_2_1_1_1_1, R2.p2, R2.l2);
+/** !SECTION Betriebsmittel Übertragungswege Drahete Draht Runddraht Blank Kupferdraht */
+
+/** SECTION Betriebsmittel Übertragungswege Drahete Draht Runddraht Blank Legierungsdraht */
+routerGet(router, R2.r2_21_2_1_1_1_2, R2.p2, R2.l2);
+
+/** !SECTION Betriebsmittel Übertragungswege Drahete Draht Runddraht Blank Legierungsdraht */
+
+/** SECTION Betriebsmittel Übertragungswege Drahete Draht Runddraht Blank Aluminiumdraht */
+routerGet(router, R2.r2_21_2_1_1_1_3, R2.p2, R2.l2);
+
+/** NOTE Betriebsmittel Übertragungswege Draehte Draht Runddraht Blank Aluminiumdraht Beispiel16 */
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_2_1_1_1_3, R2.b16);
+
+/** !SECTION Betriebsmittel Übertragungswege Drahete Draht Runddraht Blank Aluminiumdraht */
+
+/** !SECTION Betriebsmittel Übertragungswege Drahete Draht Runddraht Blank */
+
+/** SECTION Betriebsmittel Übertragungswege Drahete Draht Runddraht Isoliert */
+routerGet(router, R2.r2_21_2_1_1_2, R2.p2, R2.l2);
+/** !SECTION Betriebsmittel Übertragungswege Drahete Draht Runddraht Isoliert */
+
+/** !SECTION Betriebsmittel Übertragungswege Drahete Draht Runddraht */
+
+/** !SECTION Betriebsmittel Übertragungswege Drahete Draht */
 
 /** SECTION Betriebsmittel Übertragungswege Drahete Wickeldraht */
 routerGet(router, R2.r2_21_2_2, R2.p2, R2.l2);

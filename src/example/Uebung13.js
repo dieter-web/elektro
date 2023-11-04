@@ -17,13 +17,15 @@ const { ElektroKernel, Strommesser } = require(path.resolve("include/system"));
 function Uebung13(input) {
   const jsonfile = path.resolve("src/json/example/uebung13.json");
 
-  const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve("src/json/Sonstiges/kennzeichnung.json")
-  );
+  const P1 = new Strommesser({
+    R: "2.5 ohm",
+    U: "0.625 V",
+    x: 50,
+    y: 50,
+  });
 
-  const Parameter = input;
-
-  const P1 = new Strommesser(Kennzeichnung, Parameter, {});
+  P1.Kennzeichnung.Art = "P";
+  P1.Kennzeichnung.Zählnummer = "1";
 
   const EK = new ElektroKernel();
   EK.parameter({ R: P1.Parameter.R, U: P1.Parameter.U });

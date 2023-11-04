@@ -29,12 +29,19 @@ const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
 function Beispiel17(input) {
   const jsonfile = path.resolve("src/json/example/beispiel17.json");
 
-  const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve("src/json/Sonstiges/kennzeichnung.json")
-  );
-  const Parameter = input;
+  const E1 = new Gluehlampe({
+    Material: input.Material,
+    l: input.l,
+    d: input.d,
+    δ2: "2250 celsius",
 
-  const E1 = new Gluehlampe(Kennzeichnung, Parameter, {});
+    x: 50,
+    y: 50,
+  });
+
+  E1.Kennzeichnung.Art = "E";
+  E1.Kennzeichnung.Zählnummer = "1";
+
   E1.Parameter.ρM = readMaterialParameter(
     E1.Parameter.Material,
     "ρ"

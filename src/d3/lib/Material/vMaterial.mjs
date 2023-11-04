@@ -1,9 +1,10 @@
 import { Betriebsmittel } from "/d3/lib/Betriebsmittel/Betriebsmittel.mjs";
 
-class Material extends Betriebsmittel {
+class vMaterial extends Betriebsmittel {
   constructor(data) {
-    super();
-    this.data = data;
+    super(data);
+    this.nr = data.nr;
+    this.Symbol = d3.create("svg:g").attr("id", this.nr);
   }
 
   fshape() {
@@ -19,4 +20,4 @@ class Material extends Betriebsmittel {
   }
 }
 
-export { Material };
+export { vMaterial };

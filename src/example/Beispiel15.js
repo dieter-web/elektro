@@ -18,9 +18,10 @@ const { ElektroKernel, PlanemetrieKernel, Elektrolyt } = require(path.resolve(
  */
 function Beispiel15(input) {
   const jsonfile = path.resolve("src/json/example/beispiel15.json");
-  const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve("src/json/Sonstiges/kennzeichnung.json")
-  );
+
+  // const Kennzeichnung = dbJson.readJSONFile(
+  //   path.resolve("src/json/Sonstiges/kennzeichnung.json")
+  // );
 
   const Parameter = input;
 

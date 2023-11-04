@@ -35,12 +35,12 @@ function Aufgabe14(input) {
     y: 50,
   });
 
+  L1.Kennzeichnung.Art = "L";
+  L1.Kennzeichnung.Zählnummer = "1";
+
   // notwendige Externe Parameter
   L1.Parameter.ρcu = readMaterialParameter(input.Material, "ρ").toString();
 
-  // Aktualisierung Kennzeichnung
-  L1.Kennzeichnung.Art = "L";
-  L1.Kennzeichnung.Zählnummer = "1";
   L1.vis.name = `${L1.Kennzeichnung.Art}${L1.Kennzeichnung.Zählnummer}`;
 
   const EK = new ElektroKernel();

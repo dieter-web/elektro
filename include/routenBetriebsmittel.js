@@ -66,6 +66,13 @@ module.exports = {
 
   r2_21_2: `/Uebertragungswege/Draehte`,
   r2_21_2_1: `/Uebertragungswege/Draehte/Draht`,
+  r2_21_2_1_1: `/Uebertragungswege/Draehte/Draht/Runddraht`,
+  r2_21_2_1_1_1: `/Uebertragungswege/Draehte/Draht/Runddraht/Blank`,
+  r2_21_2_1_1_1_1: `/Uebertragungswege/Draehte/Draht/Runddraht/Blank/Kupferdraht`,
+  r2_21_2_1_1_1_2: `/Uebertragungswege/Draehte/Draht/Runddraht/Blank/Legierungsdraht`,
+  r2_21_2_1_1_1_3: `/Uebertragungswege/Draehte/Draht/Runddraht/Blank/Aluminiumdraht`,
+
+  r2_21_2_1_1_2: `/Uebertragungswege/Draehte/Draht/Runddraht/Isoliert`,
   r2_21_2_2: `/Uebertragungswege/Draehte/Wickeldraht`,
 
   r2_21_3: `/Uebertragungswege/Kabel`,

@@ -24,13 +24,15 @@ const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
 function Uebung18(input) {
   const jsonfile = path.resolve("src/json/example/uebung18.json");
 
-  const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve("src/json/Sonstiges/kennzeichnung.json")
-  );
+  const L1 = new Magnetspule({
+    Material: "Kupfer",
+    δ1: "12 celsius",
+    δ2: "60 celsius",
+  });
 
-  const Parameter = input;
+  L1.Kennzeichnung.Art = "L";
+  L1.Kennzeichnung.Zählnummer = "1";
 
-  const L1 = new Magnetspule(Kennzeichnung, Parameter, {});
   L1.Parameter.ρM = readMaterialParameter(
     L1.Parameter.Material,
     "ρ"

@@ -12,9 +12,10 @@ const PBetriebsmittel = "src/components/Betriebsmittel";
 const PDatenverarbeitung = "src/components/Datenverarbeitung";
 const PPhysikalischeChemie = "src/components/PhysikalischeChemie";
 const PVerbindungstechnik = "src/components/Verbindungstechnik";
+const PMaterial = "src/components/Material";
 
 /** SECTION Material */
-const Material = require(path.resolve("src/components/Material/Material.js"));
+const { Material } = require(path.resolve(`${PMaterial}/Material.js`));
 /** !SECTION Material */
 
 /** SECTION Bauelemente */
@@ -297,6 +298,46 @@ const { Draehte } = require(path.resolve(
 const { Draht } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Draehte/Draht/Draht.js`
 ));
+
+/** SECTION Betriebsmittel Uebertragungswege Draehte Draht Runddraht */
+const { Runddraht } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Draehte/Draht/Runddraht/Runddraht.js`
+));
+
+/** SECTION Betriebsmittel Uebertragungswege Draehte Draht Runddraht Blank */
+const { Blank } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Draehte/Draht/Runddraht/Blank/Blank.js`
+));
+
+/** SECTION Betriebsmittel Uebertragungswege Draehte Draht Runddraht Blank Kupferdraht */
+const { Kupferdraht } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Draehte/Draht/Runddraht/Blank/Kupferdraht/Kupferdraht.js`
+));
+/** !SECTION Betriebsmittel Uebertragungswege Draehte Draht Runddraht Blank Kupferdraht */
+
+/** SECTION Betriebsmittel Uebertragungswege Draehte Draht Runddraht Blank Aluminiumdraht */
+const { Aluminiumdraht } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Draehte/Draht/Runddraht/Blank/Aluminiumdraht/Aluminiumdraht.js`
+));
+/** !SECTION Betriebsmittel Uebertragungswege Draehte Draht Runddraht Blank Aluminiumdraht */
+
+/** SECTION Betriebsmittel Uebertragungswege Draehte Draht Runddraht Blank Legierungsdraht */
+const { Legierungsdraht } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Draehte/Draht/Runddraht/Blank/Legierungsdraht/Legierungsdraht.js`
+));
+/** !SECTION Betriebsmittel Uebertragungswege Draehte Draht Runddraht Legierungsdraht */
+
+/** !SECTION Betriebsmittel Uebertragungswege Draehte Draht Runddraht Blank */
+
+/** SECTION Betriebsmittel Uebertragungswege Draehte Draht Runddraht Isoliert */
+const { Isoliert } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Draehte/Draht/Runddraht/Isoliert/Isoliert.js`
+));
+
+/** !SECTION Betriebsmittel Uebertragungswege Draehte Draht Runddraht Isoliert */
+
+/** !SECTION Betriebsmittel Uebertragungswege Draehte Draht Runddraht */
+
 /** !SECTION Betriebsmittel Uebertragungswege Draehte Draht */
 
 /** SECTION Betriebsmittel Uebertragungswege Draehte Wickeldraht */
@@ -736,7 +777,16 @@ module.exports = {
   Konfektioniert,
   OrtsveraenderlicheLegung,
 
+  Draehte,
   Draht,
+  Runddraht,
+  Blank,
+  Aluminiumdraht,
+  Kupferdraht,
+  Legierungsdraht,
+  Isoliert,
+  Wickeldraht,
+
   Induktivitaet,
   Spule,
   SpuleMitKern,

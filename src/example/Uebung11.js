@@ -22,13 +22,16 @@ const { readMaterialParameter } = require(path.resolve(
 function Uebung11(input) {
   const jsonfile = path.resolve("src/json/example/uebung11.json");
 
-  const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve("src/json/Sonstiges/kennzeichnung.json")
-  );
+  let W1 = new Freileitung({
+    Material: "Aluminium",
+    A: "25 mm^2",
+    l: "17 km",
+    n: "2",
+  });
 
-  const Parameter = input;
+  W1.Kennzeichnung.Art = "W";
+  W1.Kennzeichnung.Zählnummer = "1";
 
-  let W1 = new Freileitung(Kennzeichnung, Parameter, {});
   W1.Parameter.ρM = readMaterialParameter(
     W1.Parameter.Material,
     "ρ"

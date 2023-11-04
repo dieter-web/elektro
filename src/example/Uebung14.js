@@ -20,14 +20,15 @@ const dbJson = require(path.resolve("controllers/dbJson.js"));
 function Uebung14(input) {
   const jsonfile = path.resolve("src/json/example/uebung14.json");
 
-  const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve("src/json/Sonstiges/kennzeichnung.json")
-  );
+  const P1 = new Glasplatte({
+    Material: "Glas",
+    l: "0.8 m",
+    b: "1.25 m",
+    d: "1 mm",
+  });
 
-  const Parameter = input;
-  const Visual = {};
-
-  const P1 = new Glasplatte(Kennzeichnung, Parameter, Visual);
+  P1.Kennzeichnung.Art = "E";
+  P1.Kennzeichnung.Zählnummer = "1";
 
   P1.Parameter.ρgl = readMaterialParameter(
     P1.Parameter.Material,

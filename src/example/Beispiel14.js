@@ -30,9 +30,9 @@ const dbJson = require(path.resolve("controllers/dbJson.js"));
 function Beispiel14(input) {
   const jsonfile = path.resolve("src/json/example/beispiel14.json");
 
-  const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve("src/json/Uebertragungswege/Leitungen/Bezeichnung.json")
-  );
+  // const Kennzeichnung = dbJson.readJSONFile(
+  //   path.resolve("src/json/Uebertragungswege/Leitungen/Bezeichnung.json")
+  // );
 
   const W1 = new Leitung({
     // Parameter
@@ -46,7 +46,6 @@ function Beispiel14(input) {
     // grafische Position
     x: 50,
     y: 50,
-    
   });
 
   W1.Parameter.ρal = readMaterialParameter(

@@ -8,9 +8,7 @@ class Wickeldraht extends Draht {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
-    this.visWickeldraht = {
-      // path: ""
-    };
+    this.vis = {};
   }
 }
 exports.Wickeldraht = Wickeldraht;

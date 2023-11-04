@@ -26,13 +26,17 @@ const { readMaterialParameter } = require(path.resolve(
 function Uebung15(input) {
   const jsonfile = path.resolve("src/json/example/uebung15.json");
 
-  const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve("src/json/Sonstiges/kennzeichnung.json")
-  );
+  const P1 = new Spannungsmesser({
+    Material: "Kupfer",
+    Ug: "300 mV",
+    l: "2 cm",
+    b: "1 cm",
+    N: 200,
+    d: "0.03 mm",
+    x: 50,
+    y: 50
+  });
 
-  const Parameter = input;
-
-  const P1 = new Spannungsmesser(Kennzeichnung, Parameter, {});
   P1.Parameter.ρM = readMaterialParameter(
     P1.Parameter.Material,
     "ρ"

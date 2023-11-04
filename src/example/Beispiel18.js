@@ -23,13 +23,15 @@ const { readMaterialParameter } = require(path.resolve(
 function Beispiel18(input) {
   const jsonfile = path.resolve("src/json/example/beispiel18.json");
 
-  const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve("src/json/Sonstiges/kennzeichnung.json")
-  );
+  const L1 = new Spule({
+    Material: "Kupfer",
+    δ: "12 celsius",
+    R: "45 ohm",
+    p: 28,
+    x: 50,
+    y: 50,
+  });
 
-  const Parameter = input;
-
-  const L1 = new Spule(Kennzeichnung, Parameter, {});
   L1.Parameter.ρM = readMaterialParameter(
     L1.Parameter.Material,
     "ρ"

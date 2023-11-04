@@ -28,12 +28,19 @@ const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
 function Uebung110(input) {
   const jsonfile = path.resolve("src/json/example/uebung110.json");
 
-  const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve("src/json/Sonstiges/kennzeichnung.json")
-  );
+  const W1 = new Kabel({
+    Material: "Kupfer",
+    n: 2,
+    U: "24 V",
+    S: "50 mA/mm^2",
+    p: 10, // Prozentsatz
+    x: 50,
+    y: 50,
+  });
 
-  const Parameter = input;
-  const W1 = new Kabel(Kennzeichnung, Parameter, {});
+  W1.Kennzeichnung.Art = "W";
+  W1.Kennzeichnung.Zählnummer = "1";
+
   W1.Parameter.κM = readMaterialParameter(
     W1.Parameter.Material,
     "κ"

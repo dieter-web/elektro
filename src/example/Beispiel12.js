@@ -20,9 +20,8 @@ const dbJson = require(path.resolve("controllers/dbJson.js"));
 function Beispiel12(input) {
   // Speicherort für Daten
   const jsonfile = path.resolve("src/json/example/beispiel12.json");
+
   const W1 = new Draht({
-    Name: "W1",
-    // input
     l: input.l,
     d: input.d,
     R: input.R,
@@ -44,9 +43,9 @@ function Beispiel12(input) {
   dbJson.writeJSONItem(jsonfile, W1);
 }
 // let input = {
-//   l: '3 km',
-//   d: '0.9 mm',
-//   R: '84.5 ohm'
-// }
-// Beispiel12(input)
+//   l: "3 km",
+//   d: "0.9 mm",
+//   R: "84.5 ohm",
+// };
+// Beispiel12(input);
 exports.func = Beispiel12;

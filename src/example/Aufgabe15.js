@@ -35,15 +35,15 @@ function Aufgabe15(input) {
     y: 50,
   });
 
+  W1.Kennzeichnung.Art = "W";
+  W1.Kennzeichnung.Zählnummer = "1";
+
   // Zusätzliche notwendige Parameter
   W1.Parameter.ρm = readMaterialParameter(input.Material, "ρ").toString();
   W1.Parameter.α20 = readMaterialParameter(input.Material, "α20").toString();
   W1.Parameter.δ20 = readKonstante("Vergleichstemperatur").toString();
 
   // Aktualisierung der Kennzeichnung
-
-  W1.Kennzeichnung.Art = "W";
-  W1.Kennzeichnung.Zählnummer = "1";
 
   W1.vis.width = "300";
   W1.vis.height = "5";

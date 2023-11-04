@@ -13,18 +13,17 @@ const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
  */
 function Uebung19(input) {
   const jsonfile = path.resolve("src/json/example/uebung19.json");
-  const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve("src/json/Sonstiges/kennzeichnung.json")
-  );
 
-  // Konkrete Kennzeichnung
+  let R1 = new Kaltleiter({
+    R20: "40 kohm",
+    Rδ2: "41 kohm",
+    δ2: "25.5 celsius",
+    x: 50,
+    y: 50,
+  });
+
   Kennzeichnung.Art = "R";
   Kennzeichnung.Zählnummer = "20";
-  Kennzeichnung.Funktion = "R";
-
-  const Parameter = input;
-
-  let R1 = new Kaltleiter(Kennzeichnung, Parameter);
 
   // Konkrete Visualisierungswerte
   R1.visWiderstand.name = "R20"; //TODO: Key Wert eintragen ?
