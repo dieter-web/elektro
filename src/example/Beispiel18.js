@@ -2,9 +2,11 @@ require("use-strict");
 const path = require("path");
 const dbJson = require(path.resolve("controllers/dbJson"));
 
-const { ElektroKernel, ArithmetikKernel, Spule } = require(path.resolve(
-  "include/system"
-));
+const {
+  ElektroKernel,
+  ArithmetikKernel,
+  MehrlagigeSpule,
+} = require(path.resolve("include/system"));
 
 const { readMaterialParameter } = require(path.resolve(
   "src/js/readMaterialParameter.js"
@@ -23,19 +25,20 @@ const { readMaterialParameter } = require(path.resolve(
 function Beispiel18(input) {
   const jsonfile = path.resolve("src/json/example/beispiel18.json");
 
-  const L1 = new Spule({
-    Material: "Kupfer",
-    δ: "12 celsius",
-    R: "45 ohm",
-    p: 28,
+  const L1 = new MehrlagigeSpule({
+    Material: input.Material,
+    δ: input.δ,
+    R: input.R,
+    p: input.p,
+
     x: 50,
     y: 50,
   });
 
-  L1.Parameter.ρM = readMaterialParameter(
-    L1.Parameter.Material,
-    "ρ"
-  ).toString();
+  L1.Kennzeichnung.Art = "L";
+  L1.Kennzeichnung.Zählnummer = "1";
+
+  L1.Parameter.ρM = readMaterialParameter(input.Material, "ρ").toString();
 
   L1.Parameter.δ0M = readMaterialParameter(
     L1.Parameter.Material,
@@ -58,15 +61,15 @@ function Beispiel18(input) {
     δ1: L1.Parameter.δ,
   });
 
-  L1.Parameter.δ2 = EK.δ2().toString();
+  L1.Parameter.erg = EK.δ2().toString();
 
   dbJson.writeJSONItem(jsonfile, L1);
 }
-let input = {
-  Material: "Kupfer",
-  δ: "12 celsius",
-  R: "45 ohm",
-  p: 28,
-};
-Beispiel18(input);
-// exports.func = Beispiel18;
+// let input = {
+//   Material: "Kupfer",
+//   δ: "12 celsius",
+//   R: "45 ohm",
+//   p: 28,
+// };
+// Beispiel18(input);
+exports.func = Beispiel18;

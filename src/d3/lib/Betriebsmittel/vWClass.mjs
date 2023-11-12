@@ -17,6 +17,8 @@ class vWClass extends Betriebsmittel {
       .attr("height", this.data.vis.height)
       .attr("width", this.data.vis.width);
   }
+
+  fanschluss() {}
 }
 
 export { vWClass };

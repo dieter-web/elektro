@@ -3,13 +3,13 @@ import { Betriebsmittel } from "/d3/lib/Betriebsmittel/Betriebsmittel.mjs";
 class vCLampe extends Betriebsmittel {
   constructor(data) {
     super(data);
-    this.nr = data.nr;
+    // this.nr = data.nr;
     // this.x = data.Parameter.x;
     // this.y = data.Parameter.y;
     this.rx = data.vis.rx;
     this.ry = data.vis.ry;
     this.a = 15;
-    this.Symbol = d3.create("svg:g").attr("id", this.nr);
+    // this.Symbol = d3.create("svg:g").attr("id", this.nr);
   }
   fshape() {
     this.Symbol.select("#shape")

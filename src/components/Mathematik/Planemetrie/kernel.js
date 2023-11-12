@@ -22,6 +22,7 @@ class PlanemetrieKernel {
   parameter (obj) {
     this.param = {
       w360: obj.w360 ? math.unit(obj.w360) : null,
+      A: obj.A ? math.unit(obj.A) : null,
       d: obj.d ? math.unit(obj.d) : null,
       D: obj.D ? math.unit(obj.D) : null,
       α: obj.α ? math.unit(obj.α) : null,
@@ -42,6 +43,11 @@ class PlanemetrieKernel {
   KAd () {
     return run('(PI / 4) * pow(d,2)', this.param)
   }
+
+  KdA () {
+    return run('sqrt( 4 / PI * A)', this.param)
+  }
+
   KUd () {
     return run('PI * d', this.param)
   }

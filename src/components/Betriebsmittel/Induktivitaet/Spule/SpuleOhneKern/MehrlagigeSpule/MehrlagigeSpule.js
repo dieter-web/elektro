@@ -15,7 +15,7 @@ class MehrlagigeSpule extends SpuleOhneKern {
       width: 64,
       height: 20,
       path: "M 50 50 m 0 10 l -20 0 m 84 0 l 20 0",
-      name: "",
+      name: "L",
       value: "",
       "pointer-events": "all",
     };

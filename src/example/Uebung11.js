@@ -2,9 +2,12 @@ require("use-strict");
 const path = require("path");
 const dbJson = require(path.resolve("controllers/dbJson"));
 
-const { ElektroKernel, ArithmetikKernel, Freileitung } = require(path.resolve(
-  "include/system"
-));
+const {
+  ElektroKernel,
+  ArithmetikKernel,
+  PlanemetrieKernel,
+  Freileitung,
+} = require(path.resolve("include/system"));
 
 const { readMaterialParameter } = require(path.resolve(
   "src/js/readMaterialParameter.js"
@@ -27,6 +30,12 @@ function Uebung11(input) {
     A: "25 mm^2",
     l: "17 km",
     n: "2",
+
+    x: 50,
+    y: 50,
+
+    xzoom: 1,
+    yzoom: 1,
   });
 
   W1.Kennzeichnung.Art = "W";
@@ -38,22 +47,32 @@ function Uebung11(input) {
   ).toString();
 
   const AK = new ArithmetikKernel();
+  const PK = new PlanemetrieKernel();
   const EK = new ElektroKernel();
+
+  PK.parameter({ A: W1.Parameter.A });
+  W1.Parameter.d = PK.KdA().toString();
+
+  // regulare Expression für die Herausfilterung des Zahlenwertes
+  // W1.vis.height = W1.Parameter.d;
+  // W1.vis.width = W1.Parameter.l;
+  W1.vis.height = 5.641;
+  W1.vis.width = 170;
 
   AK.parameter({ a: W1.Parameter.l, b: W1.Parameter.n });
   W1.Parameter.lges = AK.mul().toString();
 
   EK.parameter({ ρ: W1.Parameter.ρM, A: W1.Parameter.A, l: W1.Parameter.lges });
 
-  W1.Parameter.Rfl = EK.RρlA().toString();
+  W1.Parameter.erg = EK.RρlA().toString();
 
   dbJson.writeJSONItem(jsonfile, W1);
 }
 // let input = {
-//   Material: 'Aluminium',
-//   A: '25 mm^2',
-//   l: '17 km',
-//   n: '2'
-// }
-// Uebung11(input)
+//   Material: "Aluminium",
+//   A: "25 mm^2",
+//   l: "17 km",
+//   n: "2",
+// };
+// Uebung11(input);
 exports.func = Uebung11;

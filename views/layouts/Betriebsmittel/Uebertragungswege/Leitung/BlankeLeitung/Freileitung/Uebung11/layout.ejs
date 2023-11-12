@@ -1,7 +1,7 @@
-<%- include('../../../../../../partials/head',{}) %>
+<%- include('../../../../../partials/head',{}) %>
 
 <body>
-    <%- include('../../../../../../partials/navbarTemplate', {}) %>
+    <%- include('../../../../../partials/navbarTemplate', {}) %>
     <script type="module">
         import {mainNavbar} from "/modules/mainNavbar.js"
         let menu=[
@@ -9,9 +9,9 @@
             {"name": "Betriebsmittel","link": "/betriebsmittel","class": "nav-link"},
             {"name": "Übertragungswege","link": "/betriebsmittel/uebertragungswege","class": "nav-link"},
             {"name": "Leitung","link": "/betriebsmittel/uebertragungswege/leitung","class": "nav-link"},
-            {"name": "IsolierteLeitung","link": "/betriebsmittel/uebertragungswege/leitung/isolierteleitung","class": "nav-link"},
-            {"name": "Starkstromleitung","link": "/betriebsmittel/uebertragungswege/leitung/isolierteleitung/starkstromleitung","class": "nav-link"},
-            {"name": "Uebung11","link": "/betriebsmittel/uebertragungswege/leitung/isolierteleitung/starkstromleitung/uebung11","class": "nav-link"},
+            {"name": "Blanke Leitung","link": "/betriebsmittel/uebertragungswege/leitung/blankeleitung","class": "nav-link"},
+            {"name": "Freileitung","link": "/betriebsmittel/uebertragungswege/leitung/blankeleitung/freileitung","class": "nav-link"},
+            {"name": "Übung 1.1","link": "/betriebsmittel/uebertragungswege/leitung/blankeleitung/freileitung/uebung11","class": "nav-link"},
         ]
         mainNavbar( menu );
     </script>

@@ -2,8 +2,8 @@ import { Betriebsmittel } from "/d3/lib/Betriebsmittel/Betriebsmittel.mjs";
 class vRClass extends Betriebsmittel {
   constructor(data) {
     super(data);
-    this.nr = data.nr;
-    this.Symbol = d3.create("svg:g").attr("id", this.nr);
+    // this.nr = data.nr;
+    // this.Symbol = d3.create("svg:g").attr("id", `${data.Kennzeichnung.Art}${data.Kennzeichnung.Zählnummer}`);
   }
 
   fshape() {

@@ -8,7 +8,18 @@ class Freileitung extends BlankeLeitung {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
-    this.visFreileitung = {};
+    this.vis = {
+      fill: "#B8733",
+      fillopacity: 1,
+      style: "stroke:#ffff; strocke-width: 1.0",
+      width: this.Parameter.l,
+      height: this.Parameter.h,
+      // path: "",
+      // name: "",
+      // value: "",
+      // Events
+      "pointer-events": "all",
+    };
   }
 }
 exports.Freileitung = Freileitung;

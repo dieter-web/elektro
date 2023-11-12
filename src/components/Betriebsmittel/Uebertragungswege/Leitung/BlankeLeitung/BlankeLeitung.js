@@ -7,7 +7,7 @@ const { Leitung } = require(path.resolve(
 class BlankeLeitung extends Leitung {
   constructor() {
     super();
-    this.vis = {};
+    this.visBlankeLeitung = {};
   }
 }
 exports.BlankeLeitung = BlankeLeitung;

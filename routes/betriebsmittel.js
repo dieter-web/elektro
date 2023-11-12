@@ -113,9 +113,6 @@ erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_4_1_2, R2.b14);
 /** NOTE Betriebsmittel Übertragungswege Leitung IsolierteLeitung Starkstromleitung Aufgabe15 */
 erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_4_1_2, R2.a15);
 
-/** NOTE Betriebsmittel Übertragungswege Leitung Übung11 */
-erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_4_1_2, R2.u11);
-
 /** !SECTION Betriebsmittel Übertragungswege Leitung IsolierteLeitung Starkstromleitung */
 
 /** !SECTION Betriebsmittel Übertragungswege Leitung IsolierteLeitung */
@@ -125,6 +122,10 @@ routerGet(router, R2.r2_21_4_2, R2.p2, R2.l2);
 
 /** SECTION Betriebsmittel Übertragungswege Leitung BlankeLeitung Freileitung */
 routerGet(router, R2.r2_21_4_2_1, R2.p2, R2.l2);
+
+/**NOTE Betriebsmittel Übertragungswege Leitung BlankeLeitung Freileitung Übung 1.1 */
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_4_2_1, R2.u11);
+
 /** !SECTION Betriebsmittel Übertragungswege Leitung BlankeLeitung Freileitung */
 
 /** SECTION Betriebsmittel Übertragungswege Leitung BlankeLeitung Hochfrequenzleitung */
