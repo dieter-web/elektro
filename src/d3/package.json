@@ -2,13 +2,7 @@
   "name": "d3",
   "version": "1.0.0",
   "directories": {
-    "array": "array",
-    "axis": "axis",
-    "fetch": "fetch",
-    "hierarchy": "hierarchy",
-    "lib": "lib",
-    "shape": "shape",
-    "table": "table"
+    "lib": "lib"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,8 +1,7 @@
 require("use-strict");
 const path = require("path");
-const dbJson = require(path.resolve("controllers/dbJson.js"));
 
-class Material {
+class Werkstoff {
   constructor(Parameter) {
     this.Parameter = Parameter;
 
@@ -14,6 +13,12 @@ class Material {
       height: 64,
       "pointer-events": "all",
     };
+
+    this.Kennzeichnung = require(path.resolve(
+      "src/json/Bezeichnungssysteme/Material.json"
+    ));
+
+    const dbJson = require(path.resolve("controllers/dbJson.js"));
 
     this.data = dbJson.readJSONFile(
       path.resolve("src/json/Sonstiges/EigenschaftenVonMetallen.json")
@@ -45,4 +50,4 @@ class Material {
   }
 }
 
-exports.Material = Material;
+exports.Werkstoff = Werkstoff;

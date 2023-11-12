@@ -36,6 +36,7 @@ function Beispiel18(input) {
     L1.Parameter.Material,
     "ρ"
   ).toString();
+
   L1.Parameter.δ0M = readMaterialParameter(
     L1.Parameter.Material,
     "δ0"
@@ -61,11 +62,11 @@ function Beispiel18(input) {
 
   dbJson.writeJSONItem(jsonfile, L1);
 }
-// let input = {
-//   Material: 'Kupfer',
-//   δ: '12 celsius',
-//   R: '45 ohm',
-//   p: 28
-// }
-// Beispiel18(input)
-exports.func = Beispiel18;
+let input = {
+  Material: "Kupfer",
+  δ: "12 celsius",
+  R: "45 ohm",
+  p: 28,
+};
+Beispiel18(input);
+// exports.func = Beispiel18;

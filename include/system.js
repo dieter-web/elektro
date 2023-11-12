@@ -12,10 +12,10 @@ const PBetriebsmittel = "src/components/Betriebsmittel";
 const PDatenverarbeitung = "src/components/Datenverarbeitung";
 const PPhysikalischeChemie = "src/components/PhysikalischeChemie";
 const PVerbindungstechnik = "src/components/Verbindungstechnik";
-const PMaterial = "src/components/Material";
+const PMaterial = "src/components/Werkstoff";
 
 /** SECTION Material */
-const { Material } = require(path.resolve(`${PMaterial}/Material.js`));
+const { Werkstoff } = require(path.resolve(`${PMaterial}/Werkstoff.js`));
 /** !SECTION Material */
 
 /** SECTION Bauelemente */
@@ -733,7 +733,7 @@ const { Stack } = require(path.resolve(
 ));
 
 module.exports = {
-  Material,
+  Werkstoff,
   Bauelemente,
   Betriebsmittel,
   Baugruppen,

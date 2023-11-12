@@ -1,17 +1,16 @@
-require('use-strict')
-const path = require('path')
+require("use-strict");
+const path = require("path");
 
 const { Verschiedenes } = require(path.resolve(
-  'src/components/Betriebsmittel/Verschiedenes/Verschiedenes.js'
-))
+  "src/components/Betriebsmittel/Verschiedenes/Verschiedenes.js"
+));
 
 class Beleuchtung extends Verschiedenes {
-  constructor (Kennzeichnung, Parameter, Visual) {
-    super(Kennzeichnung)
-    this.Kennzeichnung = Kennzeichnung
-    this.Parameter = Parameter
-    this.Visual = Visual
+  constructor() {
+    super();
+
+    this.visBeleuchung = {};
   }
 }
 
-exports.Beleuchtung = Beleuchtung
+exports.Beleuchtung = Beleuchtung;

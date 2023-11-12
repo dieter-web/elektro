@@ -2,10 +2,10 @@
 function drawboard(pviewbox = "0 0 200 10") {
   const parameter = {
     id: "#grafik",
-    width: 800,
-    height: 200,
+    width: 928,
+    height: 500,
     backgroundcolor: "none",
-    viewbox: pviewbox,
+    viewbox: [0, 0, 928, 500],
   };
 
   const can = d3

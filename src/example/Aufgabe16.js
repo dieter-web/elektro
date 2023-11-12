@@ -23,8 +23,8 @@ function Aufgabe16(input) {
     y: 50,
   });
 
-  GoCh.Kennzeichnung.Art = "Konstante";
-  GoCh.Kennzeichnung.Zählnummer = "1";
+  GoCh.Kennzeichnung.Name = "Gold-Chrom";
+  GoCh.Kennzeichnung.Menge = "1";
 
   // Es wird noch die Vergleichstemperatur benötigt δ20
   GoCh.Parameter.δ20 = δ20;

@@ -1,15 +1,15 @@
-require('use-strict')
-const path = require('path')
+require("use-strict");
+const path = require("path");
 
 const { Betriebsmittel } = require(path.resolve(
-  'src/components/Betriebsmittel/Betriebsmittel.js'
-))
+  "src/components/Betriebsmittel/Betriebsmittel.js"
+));
 
 class Verschiedenes extends Betriebsmittel {
-  constructor (Visual) {
-    super(Visual)
-    this.Visual = Visual
+  constructor() {
+    super();
+    this.visVerschiedenes = {};
   }
 }
 
-exports.Verschiedenes = Verschiedenes
+exports.Verschiedenes = Verschiedenes;

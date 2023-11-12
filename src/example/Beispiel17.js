@@ -2,13 +2,13 @@ require("use-strict");
 const path = require("path");
 const dbJson = require(path.resolve("controllers/dbJson"));
 
-const { PlanemetrieKernel, ElektroKernel } = require(path.resolve(
+const { PlanemetrieKernel, ElektroKernel, Gluehlampe } = require(path.resolve(
   "include/system"
 ));
 
-const { Gluehlampe } = require(path.resolve(
-  "src/components/Betriebsmittel/Verschiedenes/Beleuchtung/Lampe/Gluehlampe/Gluehlampe.js"
-));
+// const { Gluehlampe } = require(path.resolve(
+//   "src/components/Betriebsmittel/Verschiedenes/Beleuchtung/Lampe/Gluehlampe/Gluehlampe.js"
+// ));
 
 const { readMaterialParameter } = require(path.resolve(
   "src/js/readMaterialParameter.js"
@@ -34,13 +34,14 @@ function Beispiel17(input) {
     l: input.l,
     d: input.d,
     δ2: "2250 celsius",
-
-    x: 50,
-    y: 50,
+    x: 150,
+    y: 150,
   });
 
   E1.Kennzeichnung.Art = "E";
   E1.Kennzeichnung.Zählnummer = "1";
+
+  E1.vis.value = "2250 celsius";
 
   E1.Parameter.ρM = readMaterialParameter(
     E1.Parameter.Material,
@@ -61,15 +62,15 @@ function Beispiel17(input) {
   E1.Parameter.Awd = PK.KAd().toString();
 
   EK.parameter({ ρ: E1.Parameter.ρM, l: E1.Parameter.l, A: E1.Parameter.Awd });
-  E1.Parameter.R20 = EK.RρlA().toString();
+  E1.Parameter.erg1 = EK.RρlA().toString();
 
   EK.parameter({
-    R20: E1.Parameter.R20,
+    R20: E1.Parameter.erg1,
     α20: E1.Parameter.α20,
     δ2: E1.Parameter.δ2,
     δ20: E1.Parameter.δ20,
   });
-  E1.Parameter.R2250 = EK.Rδ().toString();
+  E1.Parameter.erg = EK.Rδ().toString();
 
   dbJson.writeJSONItem(jsonfile, E1);
 }

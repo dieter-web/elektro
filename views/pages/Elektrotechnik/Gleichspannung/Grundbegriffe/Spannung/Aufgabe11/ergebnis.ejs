@@ -9,6 +9,10 @@
     import {populate} from '/modules/populate.mjs'
     import {vRClass} from '/d3/lib/Betriebsmittel/vRClass.mjs'
 
+    import {dline} from '/modules/d3/shape/lines.mjs'
+    import {draw} from '/modules/draw.mjs'
+
+
     // tabelle ergebnis
     const data=await populate( "http://localhost:8000/json/example/aufgabe11.json" )
 
@@ -17,12 +21,13 @@
 
     // Rückkopplung
     const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
-    G.value=tab[ 0 ]
-    I.value=tab[ 1 ]
+    G.y=tab[ 0 ]
+    I.y=tab[ 1 ]
 
     // Visualisierung
     const g=drawboard()
     let vG1=new vRClass( data )
     g.append( () => vG1.fdraw() )
 
+  
 </script>
