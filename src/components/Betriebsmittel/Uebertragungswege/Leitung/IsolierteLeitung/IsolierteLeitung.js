@@ -1,5 +1,6 @@
 require("use-strict");
 const path = require("path");
+
 const { Leitung } = require(path.resolve(
   "src/components/Betriebsmittel/Uebertragungswege/Leitung/Leitung.js"
 ));
@@ -7,7 +8,7 @@ const { Leitung } = require(path.resolve(
 class IsolierteLeitung extends Leitung {
   constructor() {
     super();
-    this.vis = {};
+    this.visIsolierteLeitung = {};
   }
 }
 exports.IsolierteLeitung = IsolierteLeitung;

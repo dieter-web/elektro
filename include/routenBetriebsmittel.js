@@ -76,15 +76,45 @@ module.exports = {
   r2_21_2_2: `/Uebertragungswege/Draehte/Wickeldraht`,
 
   r2_21_3: `/Uebertragungswege/Kabel`,
+
   r2_21_3_1: `/Uebertragungswege/Kabel/Fernmeldekabel`,
+  r2_21_3_1_1: `/Uebertragungswege/Kabel/Fernmeldekabel/Niederfrequenzkabel`,
+  r2_21_3_1_2: `/Uebertragungswege/Kabel/Fernmeldekabel/Trägerfrequenzkabel`,
+  r2_21_3_1_3: `/Uebertragungswege/Kabel/Fernmeldekabel/Trägerfrequenzkabel`,
+  r2_21_3_1_4: `/Uebertragungswege/Kabel/Fernmeldekabel/BesondererZweck`,
+
   r2_21_3_2: `/Uebertragungswege/Kabel/Hochfrequenzkabel`,
   r2_21_3_3: `/Uebertragungswege/Kabel/Starkstromkabel`,
 
   r2_21_4: `/Uebertragungswege/Leitung`,
 
   r2_21_4_1: `/Uebertragungswege/Leitung/IsolierteLeitung`,
+
   r2_21_4_1_1: `/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung`,
+  r2_21_4_1_1_1: `/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/Eindrahtleitung`,
+  r2_21_4_1_1_2: `/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/Lahnlitzenleitung`,
+  r2_21_4_1_1_3: `/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/Litzenleitung`,
+
+  r2_21_4_1_1_4: `/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/FesteLegung`,
+  r2_21_4_1_1_4_1: `/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/FesteLegung/Schaltdraehte`,
+  r2_21_4_1_1_4_2: `/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/FesteLegung/Schaltleitung`,
+  r2_21_4_1_1_4_3: `/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/FesteLegung/Mantelleitung`,
+  r2_21_4_1_1_4_4: `/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/FesteLegung/Schaltlitzen`,
+
+  r2_21_4_1_1_5: `/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/OrtsveraenderlicheLegung`,
+  r2_21_4_1_1_5_1: `/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/OrtsveraenderlicheLegung/Schlauchleitungen`,
+  r2_21_4_1_1_5_2: `/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/OrtsveraenderlicheLegung/Anschlussleitungen`,
+  r2_21_4_1_1_5_3: `/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/OrtsveraenderlicheLegung/Apparateleitungen`,
+
+  r2_21_4_1_1_6: `/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/BesondererZweck`,
+
   r2_21_4_1_2: `/Uebertragungswege/Leitung/IsolierteLeitung/Starkstromleitung`,
+
+  r2_21_4_1_2_1: `/Uebertragungswege/Leitung/IsolierteLeitung/Starkstromleitung/BesondereZweck`,
+
+  r2_21_4_1_2_2: `/Uebertragungswege/Leitung/IsolierteLeitung/Starkstromleitung/FesteLegung`,
+  r2_21_4_1_2_3: `/Uebertragungswege/Leitung/IsolierteLeitung/Starkstromleitung/Konfektioniert`,
+  r2_21_4_1_2_4: `/Uebertragungswege/Leitung/IsolierteLeitung/Starkstromleitung/OrtsveraenderlicheLegung`,
 
   r2_21_4_2: `/Uebertragungswege/Leitung/BlankeLeitung`,
   r2_21_4_2_1: `/Uebertragungswege/Leitung/BlankeLeitung/Freileitung`,

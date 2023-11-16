@@ -171,6 +171,24 @@ const { Fernmeldeleitung } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/Fernmeldeleitung.js`
 ));
 
+/** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Fernmeldeleitung Eindrahtleitung */
+const { Eindrahtleitung } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/Eindrahtleitung/Eindrahtleitung.js`
+));
+/** !SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Fernmeldeleitung Eindrahtleitung */
+
+/** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Fernmeldeleitung Lahnlitzeleitung */
+const { Lahnlitzeleitung } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/Lahnlitzeleitung/Lahnlitzeleitung.js`
+));
+/** !SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Fernmeldeleitung Lahnlitzeleitung */
+
+/** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Fernmeldeleitung Litzeleitung */
+const { Litzeleitung } = require(path.resolve(
+  `${PBetriebsmittel}/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/Litzeleitung/Litzeleitung.js`
+));
+/** !SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Fernmeldeleitung Litzeleitung */
+
 /** !SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Fernmeldeleitung */
 
 /** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung */
@@ -770,6 +788,9 @@ module.exports = {
 
   IsolierteLeitung,
   Fernmeldeleitung,
+  Eindrahtleitung,
+  Lahnlitzeleitung,
+  Litzeleitung,
 
   Starkstromleitung,
   BesondererZweck,

@@ -6,7 +6,7 @@ const {
   ElektroKernel,
   ArithmetikKernel,
   PlanemetrieKernel,
-  Leitung,
+  Litzeleitung,
 } = require(path.resolve("include/system"));
 
 const { readMaterialParameter } = require(path.resolve(
@@ -27,7 +27,7 @@ const { readMaterialParameter } = require(path.resolve(
 function Uebung12(input) {
   const jsonfile = path.resolve("src/json/example/uebung12.json");
 
-  const W1 = new Leitung({
+  const W1 = new Litzeleitung({
     Material: "Kupfer",
     l: "8 m",
     R: "1.58 ohm",
@@ -61,10 +61,10 @@ function Uebung12(input) {
   dbJson.writeJSONItem(jsonfile, W1);
 }
 // let input = {
-//   Material: 'Kupfer',
-//   l: '8 m',
-//   R: '1.58 ohm',
-//   d: '0.08 mm'
-// }
-// Uebung12(input)
+//   Material: "Kupfer",
+//   l: "8 m",
+//   R: "1.58 ohm",
+//   d: "0.08 mm",
+// };
+// Uebung12(input);
 exports.func = Uebung12;
