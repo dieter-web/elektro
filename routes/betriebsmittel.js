@@ -107,17 +107,17 @@ routerGet(router, R2.r2_21_4_1_1, R2.p2, R2.l2);
 routerGet(router, R2.r2_21_4_1_1_1, R2.p2, R2.l2);
 /** !SECTION Betriebsmittel Übertragungswege Leitung IsolierteLeitung Fernmeldeleitung Eindrahtleitung */
 
-/** SECTION Betriebsmittel Übertragungswege Leitung IsolierteLeitung Fernmeldeleitung Lahnlitzenleitung */
+/** SECTION Betriebsmittel Übertragungswege Leitung IsolierteLeitung Fernmeldeleitung Lahnlitzeleitung */
 routerGet(router, R2.r2_21_4_1_1_2, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Übertragungswege Leitung IsolierteLeitung Fernmeldeleitung Lahnlitzenleitung */
+/** !SECTION Betriebsmittel Übertragungswege Leitung IsolierteLeitung Fernmeldeleitung Lahnlitzeleitung */
 
-/** SECTION Betriebsmittel Übertragungswege Leitung IsolierteLeitung Fernmeldeleitung Litzenleitung */
+/** SECTION Betriebsmittel Übertragungswege Leitung IsolierteLeitung Fernmeldeleitung Litzeleitung */
 routerGet(router, R2.r2_21_4_1_1_3, R2.p2, R2.l2);
 
-/** NOTE Betriebsmittel Übertragungswege Leitung IsolierteLeitung Fernmeldeleitung Litzenleitung Uebung12 */
+/** NOTE Betriebsmittel Übertragungswege Leitung IsolierteLeitung Fernmeldeleitung Litzeleitung Uebung12 */
 erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_4_1_1_3, R2.u12);
 
-/** !SECTION Betriebsmittel Übertragungswege Leitung IsolierteLeitung Fernmeldeleitung Litzenleitung */
+/** !SECTION Betriebsmittel Übertragungswege Leitung IsolierteLeitung Fernmeldeleitung Litzeleitung */
 
 /** !SECTION Betriebsmittel Übertragungswege Leitung IsolierteLeitung Fernmeldeleitung */
 

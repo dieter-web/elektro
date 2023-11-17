@@ -9,7 +9,20 @@ class Litzeleitung extends Fernmeldeleitung {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
-    this.vis = {};
+    this.vis = {
+      fill: "none",
+      fillopacity: "0.2",
+      style: "stroke:#ffff; stroke-width: 1.0",
+      width: 200,
+      height: 10,
+
+      // Anschlüsse
+
+      // Pins
+
+      // Events
+      "pointer-events": "all",
+    };
   }
 }
 exports.Litzeleitung = Litzeleitung;

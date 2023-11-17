@@ -92,8 +92,8 @@ module.exports = {
 
   r2_21_4_1_1: `/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung`,
   r2_21_4_1_1_1: `/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/Eindrahtleitung`,
-  r2_21_4_1_1_2: `/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/Lahnlitzenleitung`,
-  r2_21_4_1_1_3: `/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/Litzenleitung`,
+  r2_21_4_1_1_2: `/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/Lahnlitzeleitung`,
+  r2_21_4_1_1_3: `/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/Litzeleitung`,
 
   r2_21_4_1_1_4: `/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/FesteLegung`,
   r2_21_4_1_1_4_1: `/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/FesteLegung/Schaltdraehte`,
