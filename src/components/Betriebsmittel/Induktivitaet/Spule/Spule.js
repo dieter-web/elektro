@@ -7,18 +7,12 @@ const { Induktivitaet } = require(path.resolve(
 class Spule extends Induktivitaet {
   constructor() {
     super();
-    // this.Kennzeichnung = Kennzeichnung
-    this.Parameter = {};
-    this.visSpule = {};
   }
 }
 
 class Spulenkoerper extends Spule {
   constructor() {
     super();
-    // this.Kennzeichnung = Kennzeichnung
-    this.Parameter = {};
-    this.visSpulenkoerper = {};
   }
 }
 

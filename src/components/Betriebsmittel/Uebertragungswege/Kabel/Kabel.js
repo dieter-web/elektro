@@ -9,9 +9,6 @@ class Kabel extends Uebertragungswege {
   constructor(parameter) {
     super();
     this.Parameter = Parameter;
-    this.visKabel = {
-      //
-    };
   }
 }
 exports.Kabel = Kabel;

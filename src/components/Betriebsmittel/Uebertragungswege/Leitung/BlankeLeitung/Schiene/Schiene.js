@@ -8,7 +8,6 @@ class Schiene extends BlankeLeitung {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
-    this.vis = {};
   }
 }
 exports.Schiene = Schiene;

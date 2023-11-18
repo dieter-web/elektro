@@ -1,17 +1,14 @@
-require('use-strict')
-const math = require('mathjs')
-const path = require('path')
+require("use-strict");
+const path = require("path");
 
 const { Messgeraet } = require(path.resolve(
-  'src/components/Betriebsmittel/Messgeraet/Messgeraet.js'
-))
+  "src/components/Betriebsmittel/Messgeraet/Messgeraet.js"
+));
 
 class Phasenwinkelmesser extends Messgeraet {
-  constructor (Kennzeichnung, Parameter, Visual) {
-    super(Visual)
-    this.Kennzeichnung = Kennzeichnung
-    this.Parameter = Parameter
-    this.Visual = Visual
+  constructor(Parameter) {
+    super();
+    this.Parameter = Parameter;
   }
 }
-exports.Phasenwinkelmesser = Phasenwinkelmesser
+exports.Phasenwinkelmesser = Phasenwinkelmesser;

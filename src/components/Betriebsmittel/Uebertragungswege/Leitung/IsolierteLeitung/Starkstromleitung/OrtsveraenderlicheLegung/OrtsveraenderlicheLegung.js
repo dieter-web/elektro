@@ -8,7 +8,6 @@ class OrtsveraenderlicheLegung extends Starkstromleitung {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
-    this.vis = {};
   }
 }
 exports.OrtsveraenderlicheLegung = OrtsveraenderlicheLegung;

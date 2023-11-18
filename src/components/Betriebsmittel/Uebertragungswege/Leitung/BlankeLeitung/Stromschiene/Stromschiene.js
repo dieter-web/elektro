@@ -8,7 +8,6 @@ class Stromschiene extends BlankeLeitung {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
-    this.vis = {};
   }
 }
 exports.Stromschiene = Stromschiene;

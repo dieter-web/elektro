@@ -5,25 +5,25 @@ class Werkstoff {
   constructor(Parameter) {
     this.Parameter = Parameter;
 
-    this.vis = {
-      fill: "#c1b59b",
-      fillopacity: 1,
-      style: "stroke:#ffff; stroke-width: 1.0",
-      width: 64,
-      height: 64,
-      "pointer-events": "all",
-    };
+  //   this.vis = {
+  //     fill: "#c1b59b",
+  //     fillopacity: 1,
+  //     style: "stroke:#ffff; stroke-width: 1.0",
+  //     width: 64,
+  //     height: 64,
+  //     "pointer-events": "all",
+  //   };
 
-    this.Kennzeichnung = require(path.resolve(
-      "src/json/Bezeichnungssysteme/Material.json"
-    ));
+  //   this.Kennzeichnung = require(path.resolve(
+  //     "src/json/Bezeichnungssysteme/Material.json"
+  //   ));
 
-    const dbJson = require(path.resolve("controllers/dbJson.js"));
+  //   const dbJson = require(path.resolve("controllers/dbJson.js"));
 
-    this.data = dbJson.readJSONFile(
-      path.resolve("src/json/Sonstiges/EigenschaftenVonMetallen.json")
-    )[Parameter.Material];
-  }
+  //   this.data = dbJson.readJSONFile(
+  //     path.resolve("src/json/Sonstiges/EigenschaftenVonMetallen.json")
+  //   )[Parameter.Material];
+  // }
 
   fρ(name) {
     return this.data.ρ[0];

@@ -1,17 +1,14 @@
-require('use-strict')
-const path = require('path')
+require("use-strict");
+const path = require("path");
 
 const { UnloesbareVerbindung } = require(path.resolve(
-  'src/components/Verbindungstechnik/UnloesbareVerbindung/UnloesbareVerbindung.js'
-))
+  "src/components/Verbindungstechnik/UnloesbareVerbindung/UnloesbareVerbindung.js"
+));
 
 class Spleissen extends UnloesbareVerbindung {
-  constructor (Kennzeichnung, Parameter, Visual) {
-    super(Kennzeichnung, Parameter, Visual)
-    this.Kennzeichnung = Kennzeichnung
-    this.Parameter = Parameter
-    this.Visual = Visual
+  constructor() {
+    super();
   }
 }
 
-exports.Spleissen = Spleissen
+exports.Spleissen = Spleissen;

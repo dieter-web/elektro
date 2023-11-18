@@ -7,10 +7,7 @@ const { SpuleOhneKern } = require(path.resolve(
 class EinlagigeSpule extends SpuleOhneKern {
   constructor(Parameter) {
     super();
-    // this.Kennzeichnung = Kennzeichnung
     this.Parameter = Parameter;
-    this.visEinlagigeSpule = {};
-    // this.Visual = Visual
   }
 }
 exports.EinlagigeSpule = EinlagigeSpule;

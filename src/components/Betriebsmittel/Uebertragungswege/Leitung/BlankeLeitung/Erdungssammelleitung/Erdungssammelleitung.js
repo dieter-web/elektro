@@ -8,7 +8,6 @@ class Erdungssammelleitung extends BlankeLeitung {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
-    this.vis = {};
   }
 }
 exports.Erdungssammelleitung = Erdungssammelleitung;

@@ -7,7 +7,6 @@ const { IsolierteLeitung } = require(path.resolve(
 class Starkstromleitung extends IsolierteLeitung {
   constructor() {
     super();
-    this.vis = {};
   }
 }
 exports.Starkstromleitung = Starkstromleitung;

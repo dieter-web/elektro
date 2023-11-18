@@ -1,17 +1,15 @@
-require('use-strict')
-const path = require('path')
+require("use-strict");
+const path = require("path");
 
 const { Transformator } = require(path.resolve(
-  'src/components/Betriebsmittel/Transformator/Transformator.js'
-))
+  "src/components/Betriebsmittel/Transformator/Transformator.js"
+));
 
 class HFTransformator extends Transformator {
-  constructor (Kennzeichnung, Parameter, Visual) {
-    super(Visual)
-    this.Kennzeichnung = Kennzeichnung
-    this.Parameter = Parameter
-    this.Visual = Visual
+  constructor(Parameter) {
+    super();
+    this.Parameter = Parameter;
   }
 }
 
-exports.HFTransformator = HFTransformator
+exports.HFTransformator = HFTransformator;

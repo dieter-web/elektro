@@ -9,7 +9,6 @@ class Lahnlitzeleitung extends Fernmeldeleitung {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
-    this.vis = {};
   }
 }
 

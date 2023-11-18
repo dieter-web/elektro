@@ -32,12 +32,14 @@ function Uebung12(input) {
     l: "8 m",
     R: "1.58 ohm",
     d: "0.08 mm",
+    Bezeichnung: "H05V-U/K",
     x: 50,
     y: 50,
   });
 
   W1.Kennzeichnung.Art = "W";
   W1.Kennzeichnung.Zählnummer = "1";
+  W1.Bezeichnung = "H05V-U/K";
 
   W1.Parameter.ρM = readMaterialParameter(
     W1.Parameter.Material,

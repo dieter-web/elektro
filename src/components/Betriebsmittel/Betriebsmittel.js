@@ -15,7 +15,7 @@ class Betriebsmittel {
     this.Kennzeichnung = dbJson.readJSONFile(
       path.resolve("src/json/Sonstiges/kennzeichnung.json")
     );
-    this.visBetriebsmittel = {};
+    this.Bezeichnung = "";
   }
 }
 exports.Betriebsmittel = Betriebsmittel;

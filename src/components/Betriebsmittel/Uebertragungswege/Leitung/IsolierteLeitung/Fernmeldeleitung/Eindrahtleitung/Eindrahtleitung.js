@@ -9,7 +9,6 @@ class Eindrahtleitung extends Fernmeldeleitung {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
-    this.vis = {};
   }
 }
 exports.Eindrahtleitung = Eindrahtleitung;

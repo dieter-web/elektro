@@ -11,8 +11,6 @@ class Leitung extends Uebertragungswege {
     this.kennzeichnung = require(path.resolve(
       "src/json/Uebertragungswege/Leitungen/Bezeichnung.json"
     ));
-
-    this.visLeitung = {};
   }
 }
 exports.Leitung = Leitung;

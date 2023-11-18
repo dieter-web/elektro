@@ -8,9 +8,6 @@ const { Kabel } = require(path.resolve(
 class Starkstromkabel extends Kabel {
   constructor(Parameter) {
     super(Parameter);
-    this.visStarkstromkabel = {
-      //
-    };
   }
 }
 exports.Starkstromkabel = Starkstromkabel;

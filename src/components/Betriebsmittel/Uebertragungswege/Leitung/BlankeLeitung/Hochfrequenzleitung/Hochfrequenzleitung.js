@@ -7,7 +7,6 @@ const { BlankeLeitung } = require(path.resolve(
 class Hochfrequenzleitung extends BlankeLeitung {
   constructor(Parameter) {
     super();
-    this.vis = {};
   }
 }
 exports.Hochfrequenzleitung = Hochfrequenzleitung;

@@ -9,13 +9,13 @@ class Gluehlampe extends Lampe {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
-    this.vis = {
-      fill: "transparent",
-      fillopacity: 1,
-      style: "stroke:#ffffff; stroke-width: 1.0",
-      rx: 25,
-      ry: 25,
-    };
+    // this.vis = {
+    //   fill: "transparent",
+    //   fillopacity: 1,
+    //   style: "stroke:#ffffff; stroke-width: 1.0",
+    //   rx: 25,
+    //   ry: 25,
+    // };
   }
 
   // path() {

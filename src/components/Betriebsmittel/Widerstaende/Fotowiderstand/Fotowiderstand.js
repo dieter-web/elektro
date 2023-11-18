@@ -9,7 +9,6 @@ class Fotowiderstand extends Widerstaende {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
-    this.visFotowiderstand = {};
   }
 }
 

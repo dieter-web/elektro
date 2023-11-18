@@ -8,7 +8,6 @@ class Fahrleitung extends BlankeLeitung {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
-    this.vis = {};
   }
 }
 exports.Fahrleitung = Fahrleitung;

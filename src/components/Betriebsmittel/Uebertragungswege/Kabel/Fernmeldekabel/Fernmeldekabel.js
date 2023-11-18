@@ -6,11 +6,8 @@ const { Kabel } = require(path.resolve(
 ));
 
 class Fernmeldekabel extends Kabel {
-  constructor(Parameter) {
-    super(Parameter);
-    this.visFernmeldekabel = {
-      //
-    };
+  constructor() {
+    super();
   }
 }
 exports.Fernmeldekabel = Fernmeldekabel;

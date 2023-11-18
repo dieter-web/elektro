@@ -9,7 +9,6 @@ class Feldplatte extends Widerstaende {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
-    this.visFelsplatte = {};
   }
 }
 

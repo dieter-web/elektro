@@ -1,5 +1,4 @@
 require('use-strict')
-const math = require('mathjs')
 const path = require('path')
 
 const { Messgeraet } = require(path.resolve(
@@ -7,11 +6,9 @@ const { Messgeraet } = require(path.resolve(
 ))
 
 class Energiemesser extends Messgeraet {
-  constructor (Kennzeichnung, Parameter, Visual) {
-    super(Visual)
-    this.Kennzeichnung = Kennzeichnung
+  constructor (Parameter) {
+    super()
     this.Parameter = Parameter
-    this.Visual = Visual
   }
 }
 exports.Energiemesser = Energiemesser

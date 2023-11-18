@@ -8,9 +8,6 @@ class Heissleiter extends Thermistor {
   constructor(parameter) {
     super();
     this.Parameter = parameter;
-    this.visHeissleiter = {
-      // path: "M 50 50 ..."
-    };
   }
 }
 

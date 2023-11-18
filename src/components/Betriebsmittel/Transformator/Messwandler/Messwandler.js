@@ -6,11 +6,9 @@ const { Transformator } = require(path.resolve(
 ))
 
 class Messwandler extends Transformator {
-  constructor (Kennzeichnung, Parameter, Visual) {
-    super(Visual)
-    this.Kennzeichnung = Kennzeichnung
+  constructor (Parameter) {
+    super()
     this.Parameter = Parameter
-    this.Visual = Visual
   }
 }
 

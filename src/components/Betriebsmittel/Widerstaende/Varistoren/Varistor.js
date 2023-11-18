@@ -9,7 +9,6 @@ class Varistor extends Widerstaende {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
-    this.visVaristor = {};
   }
 }
 exports.Varistor = Varistor;

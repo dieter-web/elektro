@@ -8,7 +8,6 @@ const { Betriebsmittel } = require(path.resolve(
 class Widerstaende extends Betriebsmittel {
   constructor() {
     super();
-    this.visWiderstaende = {};
   }
 }
 

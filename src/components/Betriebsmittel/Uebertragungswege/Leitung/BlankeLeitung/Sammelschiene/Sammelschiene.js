@@ -8,7 +8,6 @@ class Sammelschiene extends BlankeLeitung {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
-    this.vis = {};
   }
 }
 exports.Sammelschiene = Sammelschiene;

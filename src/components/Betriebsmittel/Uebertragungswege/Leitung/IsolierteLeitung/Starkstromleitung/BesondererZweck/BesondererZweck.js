@@ -8,7 +8,6 @@ class BesondererZweck extends Starkstromleitung {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
-    this.vis = {};
   }
 }
 exports.BesondererZweck = BesondererZweck;

@@ -6,10 +6,9 @@ const { Platten } = require(path.resolve(
 ))
 
 class Glasplatte extends Platten {
-  constructor (kennzeichnung, parameter, views) {
-    super(kennzeichnung, parameter)
+  constructor (Parameter) {
+    super()
     this.Parameter = parameter
-    this.Views = views
     this.Name = 'Glasplatte'
   }
 }

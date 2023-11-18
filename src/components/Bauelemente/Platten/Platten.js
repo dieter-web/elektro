@@ -6,9 +6,8 @@ const { Bauelemente } = require(path.resolve(
 ))
 
 class Platten extends Bauelemente {
-  constructor (Kennzeichnung, Parameter) {
-    super(Kennzeichnung, Parameter)
-    // this.Kennzeichnung = Kennzeichnung
+  constructor () {
+    super()
   }
 }
 

@@ -7,8 +7,6 @@ const { Uebertragungswege } = require(path.resolve(
 class Draehte extends Uebertragungswege {
   constructor() {
     super();
-    this.Kennzeichnung = {};
-    this.visDraehte = {};
   }
 }
 exports.Draehte = Draehte;

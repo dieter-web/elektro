@@ -8,10 +8,7 @@ const { Thermistor } = require(path.resolve(
 class Kaltleiter extends Thermistor {
   constructor(Parameter) {
     super();
-    this.Parameter = {};
-    this.visKaltleiter = {
-      path: "",
-    };
+    this.Parameter = Parameter;
   }
 }
 

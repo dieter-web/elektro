@@ -8,7 +8,6 @@ class Schleifenleitung extends BlankeLeitung {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
-    this.vis = {};
   }
 }
 exports.Schleifenleitung = Schleifenleitung;

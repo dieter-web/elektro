@@ -8,17 +8,17 @@ class MehrlagigeSpule extends SpuleOhneKern {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
-    this.vis = {
-      fill: "black",
-      fillopacity: 1,
-      style: "stroke:#000000; stroke-width: 1.0",
-      width: 64,
-      height: 20,
-      path: "M 50 50 m 0 10 l -20 0 m 84 0 l 20 0",
-      name: "L",
-      value: "",
-      "pointer-events": "all",
-    };
+    // this.vis = {
+    //   fill: "black",
+    //   fillopacity: 1,
+    //   style: "stroke:#000000; stroke-width: 1.0",
+    //   width: 64,
+    //   height: 20,
+    //   path: "M 50 50 m 0 10 l -20 0 m 84 0 l 20 0",
+    //   name: "L",
+    //   value: "",
+    //   "pointer-events": "all",
+    // };
   }
 }
 exports.MehrlagigeSpule = MehrlagigeSpule;

@@ -9,7 +9,6 @@ class SpuleOhneKern extends Spule {
   constructor() {
     super();
     this.Parameter = {};
-    this.visSpuleOhneKern = {};
   }
 }
 exports.SpuleOhneKern = SpuleOhneKern;

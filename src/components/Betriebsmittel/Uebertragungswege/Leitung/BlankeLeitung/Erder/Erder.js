@@ -8,7 +8,6 @@ class Erder extends BlankeLeitung {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
-    this.vis = {};
   }
 }
 exports.Erder = Erder;

@@ -7,7 +7,6 @@ const { IsolierteLeitung } = require(path.resolve(
 class Fernmeldeleitung extends IsolierteLeitung {
   constructor() {
     super();
-    this.visFernmeldeleitung = {};
   }
 }
 exports.Fernmeldeleitung = Fernmeldeleitung;

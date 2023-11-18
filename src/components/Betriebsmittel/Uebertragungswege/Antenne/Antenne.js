@@ -8,9 +8,6 @@ class Antenne extends Uebertragungswege {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
-    this.visAntenne = {
-      // path: ""
-    };
   }
 }
 exports.Antenne = Antenne;

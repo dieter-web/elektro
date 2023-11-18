@@ -8,7 +8,6 @@ const { Leitung } = require(path.resolve(
 class IsolierteLeitung extends Leitung {
   constructor() {
     super();
-    this.visIsolierteLeitung = {};
   }
 }
 exports.IsolierteLeitung = IsolierteLeitung;

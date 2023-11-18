@@ -8,9 +8,6 @@ class Thermistor extends Widerstaende {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
-    this.visThermistor = {
-      path: "",
-    };
   }
 }
 

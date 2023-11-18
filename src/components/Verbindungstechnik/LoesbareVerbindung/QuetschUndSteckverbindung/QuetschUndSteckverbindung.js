@@ -1,16 +1,13 @@
-require('use-strict')
-const path = require('path')
+require("use-strict");
+const path = require("path");
 
 const { LoesbareVerbindung } = require(path.resolve(
-  'src/components/Verbindungstechnik/LoesbareVerbindung/LoesbareVerbindung.js'
-))
+  "src/components/Verbindungstechnik/LoesbareVerbindung/LoesbareVerbindung.js"
+));
 
 class Stecker extends LoesbareVerbindung {
-  constructor (Kennzeichnung, Parameter, Visual) {
-    super(Kennzeichnung, Parameter, Visual)
-    this.Kennzeichnung = Kennzeichnung
-    this.Parameter = Parameter
-    this.Visual = Visual
+  constructor() {
+    super();
   }
 }
-exports.Stecker = Stecker
+exports.Stecker = Stecker;

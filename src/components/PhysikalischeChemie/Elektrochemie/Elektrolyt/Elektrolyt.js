@@ -1,17 +1,16 @@
-require('use-strict')
-const path = require('path')
+require("use-strict");
+const path = require("path");
 
 const { Elektrochemie } = require(path.resolve(
-  'src/components/PhysikalischeChemie/Elektrochemie/Elektrochemie.js'
-))
+  "src/components/PhysikalischeChemie/Elektrochemie/Elektrochemie.js"
+));
 
 class Elektrolyt extends Elektrochemie {
-  constructor (Kennzeichnung, Parameter, Visual) {
-    super()
-    this.Kennzeichnung = Kennzeichnung
-    this.Parameter = Parameter
-    this.Visual = Visual
+  constructor(Parameter) {
+    super();
+
+    this.Parameter = Parameter;
   }
 }
 
-exports.Elektrolyt = Elektrolyt
+exports.Elektrolyt = Elektrolyt;

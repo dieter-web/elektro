@@ -5,8 +5,8 @@ class vBetriebsmittel {
     this.y = data.Parameter.y;
     this.hx = 10;
     this.hy = 10;
-    this.hh = data.vis.height + 20;
-    this.hw = data.vis.width + 20;
+    // this.hh = data.vis.height + 20;
+    // this.hw = data.vis.width + 20;
 
     this.Symbol = d3
       .create("svg:g")
@@ -35,6 +35,7 @@ class vBetriebsmittel {
   }
 
   fname() {
+    //Kennzeichnung
     this.Symbol.select("#name")
       .append("text")
       .attr("x", this.x)
@@ -42,6 +43,12 @@ class vBetriebsmittel {
       .text(
         `${this.data.Kennzeichnung.Art} ${this.data.Kennzeichnung.Zählnummer}`
       );
+    //Name
+    this.Symbol.select("#name")
+      .append("text")
+      .attr("x", this.x)
+      .attr("y", this.y + 100)
+      .text(`${this.data.Bezeichnung}`);
   }
 
   fvalue() {

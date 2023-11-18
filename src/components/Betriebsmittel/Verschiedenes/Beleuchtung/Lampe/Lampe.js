@@ -8,9 +8,6 @@ const { Beleuchtung } = require(path.resolve(
 class Lampe extends Beleuchtung {
   constructor() {
     super();
-    this.visLampe = {
-      
-    };
   }
 }
 

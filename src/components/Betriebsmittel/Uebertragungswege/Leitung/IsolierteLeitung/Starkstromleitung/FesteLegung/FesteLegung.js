@@ -8,7 +8,6 @@ class FesteLegung extends Starkstromleitung {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
-    this.vis = {};
   }
 }
 exports.FesteLegung = FesteLegung;
