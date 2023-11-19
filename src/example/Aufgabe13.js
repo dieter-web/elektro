@@ -41,7 +41,7 @@ function Aufgabe13(input) {
 
   // Ergänzung Visualisierung
   //TODO: falsche Element gewählt, sollte Spule sein und nicht MehrlagigeSpule !!
-  L1.vis.name = `${L1.Kennzeichnung.Art}${L1.Kennzeichnung.Zählnummer}`;
+  // L1.vis.name = `${L1.Kennzeichnung.Art}${L1.Kennzeichnung.Zählnummer}`;
 
   // Parameter von L1 ergänzen
 

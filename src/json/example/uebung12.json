@@ -1,1 +1,50 @@
-{"Kennzeichnung":{"=":{"Anlage":{"1":"","2":"","3":"","4":"","5":"","Trennzeichen":"-"}},"+":{"Ort":{"Aufstellungsort":{"1":"","2":"","3":"","4":"","5":""},"Trennzeichen":"-","Einbauort":{"6":"","7":"","8":"","9":""}}},"Art":"W","Zählnummer":"1","Funktion":"",":":[]},"Bezeichnung":"H05V-U/K","kennzeichnung":{"Kennzeichnung der Bestimmung":"","Bemessungsspannung in kV":"","Isolier- und Mantelwerkstoff":"","Trennzeichen":"-","Aufbauart":"","Leiterart":"","Adernzahl":"","Schutzleiter":"","Leiterquerschnitt":""},"Parameter":{"Material":"Kupfer","l":"8 m","R":"1.58 ohm","d":"0.08 mm","Bezeichnung":"H05V-U/K","x":50,"y":50,"ρM":"0.01786 (ohm mm^2) / m","Al":"5026.548245743669 um^2","Ag":"0.09043037974683543 mm^2","ng":"17.990552427982596"}}
+{
+  "Kennzeichnung": {
+    "=": {
+      "Anlage": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "Trennzeichen": "-"
+      }
+    },
+    "+": {
+      "Ort": {
+        "Aufstellungsort": { "1": "", "2": "", "3": "", "4": "", "5": "" },
+        "Trennzeichen": "-",
+        "Einbauort": { "6": "", "7": "", "8": "", "9": "" }
+      }
+    },
+    "Art": "W",
+    "Zählnummer": "1",
+    "Funktion": "",
+    ":": []
+  },
+  "Bezeichnung": "H05V-U/K",
+  "kennzeichnung": {
+    "Kennzeichnung der Bestimmung": "",
+    "Bemessungsspannung in kV": "",
+    "Isolier- und Mantelwerkstoff": "",
+    "Trennzeichen": "-",
+    "Aufbauart": "",
+    "Leiterart": "",
+    "Adernzahl": "",
+    "Schutzleiter": "",
+    "Leiterquerschnitt": ""
+  },
+  "Parameter": {
+    "Material": "Kupfer",
+    "l": "8 m",
+    "R": "1.58 ohm",
+    "d": "0.08 mm",
+    "Bezeichnung": "H05V-U/K",
+    "x": 50,
+    "y": 50,
+    "ρM": "0.01786 (ohm mm^2) / m",
+    "Al": "5026.548245743669 um^2",
+    "Ag": "0.09043037974683543 mm^2",
+    "ng": "17.990552427982596"
+  }
+}

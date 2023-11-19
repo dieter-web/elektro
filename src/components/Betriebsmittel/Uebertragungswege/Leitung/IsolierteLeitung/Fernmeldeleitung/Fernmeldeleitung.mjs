@@ -1,4 +1,4 @@
-import { vIsolierteLeitung } from "../IsolierteLeitung.mjs";
+import { vIsolierteleitung } from "../Isolierteleitung.mjs";
 
 class vFernmeldeleitung extends vIsolierteLeitung {
   constructor(data) {

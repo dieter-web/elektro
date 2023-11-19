@@ -19,8 +19,8 @@ function Aufgabe11(input) {
   const R1 = new Widerstand({
     G: input.G,
     I: input.I,
-    x: 50,
-    y: 50,
+    x: 150,
+    y: 150,
   });
 
   // Kennzeichnung anpassen
@@ -33,8 +33,8 @@ function Aufgabe11(input) {
   R1.Parameter.U12 = EK.UIG().toString();
 
   // Werte für Visualisierung
-  R1.vis.name = "G1";
-  R1.vis.value = input.G;
+  // R1.vis.name = "G1";
+  // R1.vis.value = input.G;
 
   dbJson.writeJSONItem(jsonfile, R1);
 }

@@ -8,7 +8,6 @@ const { Spule } = require(path.resolve(
 class SpuleOhneKern extends Spule {
   constructor() {
     super();
-    this.Parameter = {};
   }
 }
 exports.SpuleOhneKern = SpuleOhneKern;

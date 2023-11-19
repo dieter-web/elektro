@@ -1,10 +1,10 @@
 require("use-strict");
 const path = require("path");
-const { BlankeLeitung } = require(path.resolve(
-  "src/components/Betriebsmittel/Uebertragungswege/Leitung/BlankeLeitung/BlankeLeitung.js"
+const { Blankeleitung } = require(path.resolve(
+  "src/components/Betriebsmittel/Uebertragungswege/Leitung/Blankeleitung/Blankeleitung.js"
 ));
 
-class Fahrleitung extends BlankeLeitung {
+class Fahrleitung extends Blankeleitung {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;

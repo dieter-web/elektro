@@ -7,7 +7,8 @@
     import {tabulate} from '/modules/tabulate.mjs'
     import {drawboard} from '/modules/drawboard.mjs'
     import {populate} from '/modules/populate.mjs'
-    import {vLClass} from '/d3/lib/Betriebsmittel/vLClass.mjs'
+
+    import {vMehrlagigeSpule} from '/components/Betriebsmittel/Induktivitaet/Spule/SpuleOhneKern/MehrlagigeSpule/MehrlagigeSpule.mjs'
 
     // tabelle ergebnis
     const data=await populate( "http://localhost:8000/json/example/aufgabe13.json" )
@@ -27,7 +28,7 @@
 
     // Visualisierung
     const g=drawboard()
-    let vL=new vLClass( data )
+    let vL=new vMehrlagigeSpule( data )
     g.append( () => vL.fdraw() )
 
 

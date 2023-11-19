@@ -14,40 +14,41 @@ class Widerstand extends Widerstaende {
     // this.height = 20;
 
     this.Parameter = Parameter;
-    
-  //   this.vis = {
-  //     fill: "none",
-  //     // fillopacity: 1,
-  //     style: "stroke:#ffff; stroke-width: 1.0",
 
-  //     // Widerstandsrechteck
-  //     width: 64,
-  //     height: 20,
+    //   this.vis = {
+    //     fill: "none",
+    //     // fillopacity: 1,
+    //     style: "stroke:#ffff; stroke-width: 1.0",
 
-  //     // Anschlüsse
-  //     path: `M ${this.Parameter.x} ${this.Parameter.y} m 0 ${
-  //       this.height / 2
-  //     } l -${this.al} 0 m ${this.al + this.width} 0 l ${this.al} 0`,
-  //     name: this.Parameter.Name,
-  //     value: this.Parameter.R,
+    //     // Widerstandsrechteck
+    //     width: 64,
+    //     height: 20,
 
-  //     // Pins
-  //     pins: [
-  //       [`${this.Parameter.x} - ${this.al}`, `${this.height / 2}`],
-  //       [
-  //         `${this.Parameter.x + 2 * this.al + this.width}`,
-  //         `${this.height / 2}`,
-  //       ],
-  //     ],
+    //     // Anschlüsse
+    //     path: `M ${this.Parameter.x} ${this.Parameter.y} m 0 ${
+    //       this.height / 2
+    //     } l -${this.al} 0 m ${this.al + this.width} 0 l ${this.al} 0`,
+    //     name: this.Parameter.Name,
+    //     value: this.Parameter.R,
 
-  //     // Events
-  //     "pointer-events": "all",
-  //   };
-  // }
+    //     // Pins
+    //     pins: [
+    //       [`${this.Parameter.x} - ${this.al}`, `${this.height / 2}`],
+    //       [
+    //         `${this.Parameter.x + 2 * this.al + this.width}`,
+    //         `${this.height / 2}`,
+    //       ],
+    //     ],
 
-  // Symbol() {
-  //   return d3.create("svg:g").attr("id", this.nr);
-  // }
+    //     // Events
+    //     "pointer-events": "all",
+    //   };
+    // }
+
+    // Symbol() {
+    //   return d3.create("svg:g").attr("id", this.nr);
+    // }
+  }
 }
 
 exports.Widerstand = Widerstand;

@@ -5,9 +5,9 @@ const { Leitung } = require(path.resolve(
   "src/components/Betriebsmittel/Uebertragungswege/Leitung/Leitung.js"
 ));
 
-class IsolierteLeitung extends Leitung {
+class Isolierteleitung extends Leitung {
   constructor() {
     super();
   }
 }
-exports.IsolierteLeitung = IsolierteLeitung;
+exports.Isolierteleitung = Isolierteleitung;

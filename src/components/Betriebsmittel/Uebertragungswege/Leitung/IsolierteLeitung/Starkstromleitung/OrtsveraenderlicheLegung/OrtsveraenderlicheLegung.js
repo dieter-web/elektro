@@ -1,7 +1,7 @@
 require("use-strict");
 const path = require("path");
 const { Starkstromleitung } = require(path.resolve(
-  "src/components/Betriebsmittel/Uebertragungswege/Leitung/IsolierteLeitung/Starkstromleitung/Starkstromleitung.js"
+  "src/components/Betriebsmittel/Uebertragungswege/Leitung/Isolierteleitung/Starkstromleitung/Starkstromleitung.js"
 ));
 
 class OrtsveraenderlicheLegung extends Starkstromleitung {

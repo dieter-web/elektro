@@ -1,10 +1,10 @@
 require("use-strict");
 const path = require("path");
-const { IsolierteLeitung } = require(path.resolve(
-  "src/components/Betriebsmittel/Uebertragungswege/Leitung/IsolierteLeitung/IsolierteLeitung.js"
+const { Isolierteleitung } = require(path.resolve(
+  "src/components/Betriebsmittel/Uebertragungswege/Leitung/Isolierteleitung/Isolierteleitung.js"
 ));
 
-class Starkstromleitung extends IsolierteLeitung {
+class Starkstromleitung extends Isolierteleitung {
   constructor() {
     super();
   }

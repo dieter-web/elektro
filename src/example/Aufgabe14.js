@@ -41,7 +41,7 @@ function Aufgabe14(input) {
   // notwendige Externe Parameter
   L1.Parameter.ρcu = readMaterialParameter(input.Material, "ρ").toString();
 
-  L1.vis.name = `${L1.Kennzeichnung.Art}${L1.Kennzeichnung.Zählnummer}`;
+  // L1.vis.name = `${L1.Kennzeichnung.Art}${L1.Kennzeichnung.Zählnummer}`;
 
   const EK = new ElektroKernel();
   EK.parameter({ ρ: L1.Parameter.ρcu, l: L1.Parameter.l, U: L1.Parameter.U });

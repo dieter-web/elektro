@@ -6,7 +6,7 @@ class vLitzeleitung extends vFernmeldeleitung {
     this.vis = {
       fill: "none",
       fillopacity: "0.2",
-      style: "stroke:#ffff; stroke-width: 1.0",
+      style: "stroke:#ffffff; stroke-width: 1.0",
       width: 200,
       height: 10,
 

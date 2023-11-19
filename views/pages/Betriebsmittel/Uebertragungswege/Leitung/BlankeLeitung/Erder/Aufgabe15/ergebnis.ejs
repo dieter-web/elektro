@@ -2,6 +2,7 @@
 <%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
 
 <script type="module">
+
     import {drawkennzeichnung} from '/modules/drawkennzeichnung.mjs'
     import {tabulate} from '/modules/tabulate.mjs'
     import {drawboard} from '/modules/drawboard.mjs'
@@ -9,24 +10,22 @@
     import {vWClass} from '/d3/lib/Betriebsmittel/vWClass.mjs'
 
     //tabelle ergebnis
-    const data=await populate( "http://localhost:8000/json/example/aufgabe15.json" )
+    const data=await populate( "http://localhost:8000/json/example/uebung11.json" )
 
     drawkennzeichnung( data,"#kennzeichnung" )
     tabulate( data,"#ergebnis" )
 
 
     // Rückkopplung
-    const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
-
-
-    Material.value=sel[ 0 ]
-    d.value=sel[ 1 ]
-    l.value=sel[ 2 ]
-    δ2.value=sel[ 3 ]
+    const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
+    Material.value=tab[ 0 ]
+    d.value=tab[ 1 ]
+    l.value=tab[ 2 ]
+    δ2.value=tab[ 3 ]
 
     // Visualisierung
     const g=drawboard()
-    let vW=new vWClass( data )
-    g.append( () => vW.fdraw() )
+    let vd=new vWClass( data )
+    g.append( () => vd.fdraw() )
 
 </script>

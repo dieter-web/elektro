@@ -4,10 +4,10 @@ const { Leitung } = require(path.resolve(
   "src/components/Betriebsmittel/Uebertragungswege/Leitung/Leitung.js"
 ));
 
-class BlankeLeitung extends Leitung {
+class Blankeleitung extends Leitung {
   constructor() {
     super();
-    this.visBlankeLeitung = {};
+    this.visBlankeleitung = {};
   }
 }
-exports.BlankeLeitung = BlankeLeitung;
+exports.Blankeleitung = Blankeleitung;
