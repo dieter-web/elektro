@@ -7,12 +7,12 @@
     import {populate} from '/modules/populate.mjs'
     import {tabulate} from '/modules/tabulate.mjs'
     import {drawboard} from '/modules/drawboard.mjs'
-    import {vMaterial} from '/d3/lib/Material/vMaterial.mjs'
+    import {vWerkstoff} from '/components/Werkstoff/Werkstoff.mjs'
 
     // tabelle ergebnis
     const data=await populate( "http://localhost:8000/json/example/aufgabe16.json" )
 
-    const mat=await populate( "http://localhost:8000/json/Sonstiges/EigenschaftenVonMetallen.json" )
+    const mat=await populate( "http://localhost:8000/json/Sonstiges/Leiterwerkstoffe.json" )
 
     // drawKennzeichnung( data,"#kennzeichnung" )
     tabulate( data,"#ergebnis" )
@@ -24,7 +24,7 @@
     // Visualisierung
     const gM=drawboard();
 
-    let M=new vMaterial( data )
+    let M=new vWerkstoff( data )
 
     gM.append( () => M.fdraw() )
 

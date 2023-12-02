@@ -4,7 +4,9 @@ const dbJson = require(path.resolve("controllers/dbJson.js"));
 
 const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
 
-const { ElektroKernel, Material } = require(path.resolve("include/system"));
+const { ElektroKernel, Leiterwerkstoff } = require(path.resolve(
+  "include/system"
+));
 
 /**
  * @description
@@ -15,21 +17,14 @@ const { ElektroKernel, Material } = require(path.resolve("include/system"));
  */
 function Aufgabe16(input) {
   const jsonfile = path.resolve("src/json/example/aufgabe16.json");
-  const δ20 = readKonstante("Vergleichstemperatur").toString();
-
-  const GoCh = new Material({
+  const GoCh = new Leiterwerkstoff({
     Material: input.Material,
-    x: 50,
-    y: 50,
+    δ20: readKonstante("Vergleichstemperatur").toString(),
+    Position: {
+      x: 50,
+      y: 50,
+    },
   });
-
-  GoCh.Kennzeichnung.Name = "Gold-Chrom";
-  GoCh.Kennzeichnung.Menge = "1";
-
-  // Es wird noch die Vergleichstemperatur benötigt δ20
-  GoCh.Parameter.δ20 = δ20;
-  GoCh.vis.fill = "#c1b59b"; // Materialfarbe
-  GoCh.vis.name = GoCh.Parameter.Material;
 
   const Ek = new ElektroKernel();
   Ek.parameter({
@@ -37,7 +32,7 @@ function Aufgabe16(input) {
     δ20: GoCh.Parameter.δ20,
   });
 
-  GoCh.Parameter.theta0 = Ek.δM().toString();
+  GoCh.data.theta0 = Ek.δM().toString();
 
   dbJson.writeJSONItem(jsonfile, GoCh);
 }

@@ -4,7 +4,7 @@
   "description": "",
   "files": [
     "konstanten.json",
-    "EigenschaftenVonMetallen.json"
+    "Leiterwerkstoffe.json"
   ],
   "directories": {
     "example": "example"

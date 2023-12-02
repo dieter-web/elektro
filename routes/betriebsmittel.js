@@ -127,9 +127,6 @@ routerGet(router, R2.r2_21_4_1_2, R2.p2, R2.l2);
 /** NOTE Betriebsmittel Übertragungswege Leitung Isolierteleitung Starkstromleitung Beispiel14  */
 erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_4_1_2, R2.b14);
 
-/** NOTE Betriebsmittel Übertragungswege Leitung Isolierteleitung Starkstromleitung Aufgabe15 */
-erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_4_1_2, R2.a15);
-
 /** !SECTION Betriebsmittel Übertragungswege Leitung Isolierteleitung Starkstromleitung */
 
 /** !SECTION Betriebsmittel Übertragungswege Leitung Isolierteleitung */
@@ -151,6 +148,10 @@ routerGet(router, R2.r2_21_4_2_2, R2.p2, R2.l2);
 
 /** SECTION Betriebsmittel Übertragungswege Leitung Blankeleitung Erder */
 routerGet(router, R2.r2_21_4_2_3, R2.p2, R2.l2);
+
+/** NOTE Betriebsmittel Übertragungswege Leitung Blankeleitung Erder Aufgabe15 */
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_4_2_3, R2.a15);
+
 /** !SECTION Betriebsmittel Übertragungswege Leitung Blankeleitung Erder */
 
 /** SECTION Betriebsmittel Übertragungswege Leitung Blankeleitung Erdungssammelleitung */

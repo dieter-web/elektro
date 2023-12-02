@@ -7,7 +7,7 @@
     import {tabulate} from '/modules/tabulate.mjs'
     import {drawboard} from '/modules/drawboard.mjs'
     import {populate} from '/modules/populate.mjs'
-    import {vWClass} from '/d3/lib/Betriebsmittel/vWClass.mjs'
+    import {vErder} from '/components/Betriebsmittel/Uebertragungswege/Leitung/Blankeleitung/Erder/Erder.mjs'
 
     //tabelle ergebnis
     const data=await populate( "http://localhost:8000/json/example/uebung11.json" )
@@ -25,7 +25,7 @@
 
     // Visualisierung
     const g=drawboard()
-    let vd=new vWClass( data )
+    let vd=new vErder( data )
     g.append( () => vd.fdraw() )
 
 </script>

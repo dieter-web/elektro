@@ -1,15 +1,11 @@
-import { vBlankeleitung } from "./../Blankeleitung.mjs";
-
-class vErder extends vBlankeleitung {
+class vWerkstoff {
   constructor(data) {
-    super(data);
-
     this.vis = {
       fill: "none",
       style: "stroke:#ffffff; stroke-width:1.0",
-      width: 200,
-      height: 10,
-      al: 10,
+      width: 64,
+      height: 64,
+      al: 20,
       "pointer-events": "all",
     };
   }
@@ -43,4 +39,4 @@ class vErder extends vBlankeleitung {
   }
 }
 
-export { vErder };
+export { vWerkstoff };

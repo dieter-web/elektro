@@ -14,7 +14,7 @@ const dbJson = require(path.resolve("controllers/dbJson.js"));
 function readMaterialParameter(Material, parameter) {
   return math.unit(
     dbJson.readJSONFile(
-      path.resolve("src/json/Sonstiges/EigenschaftenVonMetallen.json")
+      path.resolve("src/json/Sonstiges/Leiterwerkstoffe.json")
     )[Material][parameter][0]
   );
 }

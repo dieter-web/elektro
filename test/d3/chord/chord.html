@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>d3-brush</title>
+    <script type="text/javascript" src="/lib/d3js/d3.js"></script>
+</head>
+
+<body>
+    <svg>
+
+    </svg>
+
+</body>
+<script>
+    const matrix=[
+        [ 11975,5871,8916,2868 ],
+        [ 1951,10048,2060,6171 ],
+        [ 8010,16145,8090,8045 ],
+        [ 1013,990,940,6907 ]
+    ]
+    const c=new d3.chord();
+
+    const ribbon=d3.ribbon();
+
+    console.log( ribbon( {
+        source: {startAngle: 0.7524114,endAngle: 1.1212972,radius: 240},
+        target: {startAngle: 1.8617078,endAngle: 1.9842927,radius: 240}
+    } ) );
+
+
+</script>
+
+</html>

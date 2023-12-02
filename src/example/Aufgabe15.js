@@ -45,10 +45,10 @@ function Aufgabe15(input) {
 
   // Aktualisierung der Kennzeichnung
 
-  W1.vis.width = "300";
-  W1.vis.height = "5";
-  W1.vis.name = `${W1.Kennzeichnung.Art}${W1.Kennzeichnung.Zählnummer}`;
-  W1.vis.value = `${W1.Parameter.Material}${W1.Parameter.d}${W1.Parameter.l}`;
+  // W1.vis.width = "300";
+  // W1.vis.height = "5";
+  // W1.vis.name = `${W1.Kennzeichnung.Art}${W1.Kennzeichnung.Zählnummer}`;
+  // W1.vis.value = `${W1.Parameter.Material}${W1.Parameter.d}${W1.Parameter.l}`;
 
   const PK = new PlanemetrieKernel();
   const EK = new ElektroKernel();

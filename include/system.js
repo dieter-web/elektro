@@ -12,11 +12,24 @@ const PBetriebsmittel = "src/components/Betriebsmittel";
 const PDatenverarbeitung = "src/components/Datenverarbeitung";
 const PPhysikalischeChemie = "src/components/PhysikalischeChemie";
 const PVerbindungstechnik = "src/components/Verbindungstechnik";
-const PMaterial = "src/components/Werkstoff";
+const PWerkstoff = "src/components/Werkstoff";
 
-/** SECTION Material */
-const { Werkstoff } = require(path.resolve(`${PMaterial}/Werkstoff.js`));
-/** !SECTION Material */
+/** SECTION Werkstoff */
+const { Werkstoff } = require(path.resolve(`${PWerkstoff}/Werkstoff.js`));
+const { Eisenwerkstoff } = require(path.resolve(`${PWerkstoff}/Werkstoff.js`));
+const { Baustahl } = require(path.resolve(`${PWerkstoff}/Werkstoff.js`));
+const { Automatenstahl } = require(path.resolve(`${PWerkstoff}/Werkstoff.js`));
+const { Einsatzstahl } = require(path.resolve(`${PWerkstoff}/Werkstoff.js`));
+const { Verguetungsstahl } = require(path.resolve(
+  `${PWerkstoff}/Werkstoff.js`
+));
+const { Werkzeugstahl } = require(path.resolve(`${PWerkstoff}/Werkstoff.js`));
+const { Leiterwerkstoff } = require(path.resolve(`${PWerkstoff}/Werkstoff.js`));
+const { MagnetischerWerkstoff } = require(path.resolve(
+  `${PWerkstoff}/Werkstoff.js`
+));
+
+/** !SECTION Werkstoff */
 
 /** SECTION Bauelemente */
 const { Bauelemente } = require(path.resolve(`${PBauelemente}/Bauelemente.js`));
@@ -752,6 +765,15 @@ const { Stack } = require(path.resolve(
 
 module.exports = {
   Werkstoff,
+  Eisenwerkstoff,
+  Baustahl,
+  Automatenstahl,
+  Einsatzstahl,
+  Verguetungsstahl,
+  Werkzeugstahl,
+  Leiterwerkstoff,
+  MagnetischerWerkstoff,
+
   Bauelemente,
   Betriebsmittel,
   Baugruppen,

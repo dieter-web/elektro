@@ -1,0 +1,88 @@
+{
+  "1": "/components/Betriebsmittel/Abschluesse/Abschluesse.mjs",
+
+  "2": "/components/Betriebsmittel/Baugruppen/Baugruppen.mjs",
+  "2.1": "/components/Betriebsmittel/Baugruppen/Zweipole/Zweipole.mjs",
+  "2.1.1": "/components/Betriebsmittel/Baugruppen/Zweipole/PassiverZweipol/PassiverZweipol.mjs",
+  "2.1.2": "/components/Betriebsmittel/Baugruppen/Zweipole/PassiverZweipol/Reihenschaltung.mjs",
+
+  "3": "/components/Betriebsmittel/Filter/Filter.mjs",
+  "4": "/components/Betriebsmittel/Generatoren/Generatoren.mjs",
+  "5": "/components/Betriebsmittel/GeraeteMitElektrischenAntrieb/GeraeteMitElektrischenAntrieb.mjs",
+  "6": "/components/Betriebsmittel/Halbleiter/Halbleiter.mjs",
+
+  "7": "/components/Betriebsmittel/Induktivitaet/Induktivitaet.mjs",
+  "7.1": "/components/Betriebsmittel/Induktivitaet/MagnetischeBauelementeDigitalerEinrichtungen/MagnetischeBauelementeDigitalerEinrichtungen.mjs",
+  "7.2": "/components/Betriebsmittel/Induktivitaet/Spule/Spule.mjs",
+  "7.2.1": "/components/Betriebsmittel/Induktivitaet/Spule/SpuleMitKern/SpuleMitKern.mjs",
+  "7.2.1.1": "/components/Betriebsmittel/Induktivitaet/Spule/SpuleMitKern/Magnetspule/Magnetspule.mjs",
+  "7.2.2": "/components/Betriebsmittel/Induktivitaet/Spule/SpuleOhneKern/SpuleOhneKern.mjs",
+  "7.2.2.1": "/components/Betriebsmittel/Induktivitaet/Spule/SpuleOhneKern/AbgeschirmteSpule/AbgeschirmteSpule.mjs",
+  "7.2.2.2": "/components/Betriebsmittel/Induktivitaet/Spule/SpuleOhneKern/EinlagigeSpule/EinlagigeSpule.mjs",
+  "7.2.2.3": "/components/Betriebsmittel/Induktivitaet/Spule/SpuleOhneKern/MehrlagigeSpule/MehrlagigeSpule.mjs",
+  "7.2.2.4": "/components/Betriebsmittel/Induktivitaet/Spule/SpuleOhneKern/Ringspule/Ringspule.mjs",
+  "7.2.2.5": "/components/Betriebsmittel/Induktivitaet/Spule/SpuleOhneKern/Zylinderspule/Zylinderspule.mjs",
+  "7.2.3": "/components/Betriebsmittel/Induktivitaet/Spule/Variometer/Variometer.mjs",
+
+  "8": "/components/Betriebsmittel/Kondensatoren/Kondensatoren.mjs",
+  "9": "/components/Betriebsmittel/Leiter/Leiter.mjs",
+  "10": "/components/Betriebsmittel/Melder/Melder.mjs",
+
+  "11": "/components/Betriebsmittel/Messgeraet/Messgeraet.mjs",
+  "11.1": "/components/Betriebsmittel/Messgeraet/Energiemesser/Energiemesser.mjs",
+  "11.2": "/components/Betriebsmittel/Messgeraet/Frequenzmesser/Frequenzmesser.mjs",
+  "11.3": "/components/Betriebsmittel/Messgeraet/Impedanzmesser/Impedanzmesser.mjs",
+  "11.4": "/components/Betriebsmittel/Messgeraet/Leistungsmesser/Leistungsmesser.mjs",
+  "11.5": "/components/Betriebsmittel/Messgeraet/MagnetischeGroessemesser/MagnetischeGroessemesser.mjs",
+  "11.6": "/components/Betriebsmittel/Messgeraet/Phasenwinkelmesser/Phasenwinkelmesser.mjs",
+  "11.7": "/components/Betriebsmittel/Messgeraet/Spannungsmesser/Spannungsmesser.mjs",
+  "11.8": "/components/Betriebsmittel/Messgeraet/Strommesser/Strommesser.mjs",
+  "11.9": "/components/Betriebsmittel/Messgeraet/Zeitmesser/Zeitmesser.mjs",
+
+  "12": "/components/Betriebsmittel/Motoren/Motoren.mjs",
+  "13": "/components/Betriebsmittel/Pruefgerate/Pruefgeraete.mjs",
+  "14": "/components/Betriebsmittel/Regler/Regler.mjs",
+  "15": "/components/Betriebsmittel/Schalter/Schalter.mjs",
+  "16": "/components/Betriebsmittel/Schuetze/Schuetze.mjs",
+  "17": "/components/Betriebsmittel/Schutzeinrichtungen/Schutzeinrichtungen.mjs",
+  "18": "/components/Betriebsmittel/Sensoren/Sensoren.mjs",
+  "19": "/components/Betriebsmittel/Steckvorrichtungen/Steckvorrichtungen.mjs",
+
+  "20": "/components/Betriebsmittel/Transformator/Transformator.mjs",
+  "20.1": "/components/Betriebsmittel/Transformator/Audiotransformator/Audiotransformator.mjs",
+  "20.2": "/components/Betriebsmittel/Transformator/Dreiphasentransformator/Dreiphasentransformator.mjs",
+  "20.3": "/components/Betriebsmittel/Transformator/Einphasentransformator/Einphasentransformator.mjs",
+  "20.4": "/components/Betriebsmittel/Transformator/HFTransformator/HFTransformator.mjs",
+  "20.5": "/components/Betriebsmittel/Transformator/Impulstransformator/Impulstransformator.mjs",
+  "20.6": "/components/Betriebsmittel/Transformator/Messwandler/Messwandler.mjs",
+  "20.7": "/components/Betriebsmittel/Transformator/Transaktor/Transaktor.mjs",
+  "20.8": "/components/Betriebsmittel/Transformator/TransformatorMitMittenabgriff/TransformatorMitMittenabgriff.mjs",
+
+  "21": "/components/Betriebsmittel/Uebertragungswege/Uebertragungswege.mjs",
+  "21.1": "/components/Betriebsmittel/Uebertragungswege/Antennen/Antennen.mjs",
+  "21.2": "/components/Betriebsmittel/Uebertragungswege/Draehte/Draehte.mjs",
+  "21.3": "/components/Betriebsmittel/Uebertragungswege/Kabel/Kabel.mjs",
+  "21.4": "/components/Betriebsmittel/Uebertragungswege/Leitung/Leitung.mjs",
+
+  "22": "/components/Betriebsmittel/Umformer/Umformer.mjs",
+  "23": "/components/Betriebsmittel/Umsetzer/Umsetzer.mjs",
+
+  "24": "/components/Betriebsmittel/Verschiedenes/Verschiedenes.mjs",
+  "24.1": "/components/Betriebsmittel/Verschiedenes/Beleuchtung/Beleuchtung.mjs",
+  "24.2": "/components/Betriebsmittel/Verschiedenes/Elektrode/Elektrode.mjs",
+  "24.3": "/components/Betriebsmittel/Verschiedenes/Gleichstromnetz/Gleichstromnetz.mjs",
+
+  "25": "/components/Betriebsmittel/Verstaerker/Verstaerker.mjs",
+  "26": "/components/Betriebsmittel/Waehler/Waehler.mjs",
+
+  "27": "/components/Betriebsmittel/Widerstaende/Widerstaende.mjs",
+  "27.1": "/components/Betriebsmittel/Widerstaende/Feldplatte/Feldplatte.mjs",
+  "27.2": "/components/Betriebsmittel/Widerstaende/Fotowiderstand/Fotowiderstand.mjs",
+
+  "27.3": "/components/Betriebsmittel/Widerstaende/Thermistor/Thermistor.mjs",
+  "27.3.1": "/components/Betriebsmittel/Widerstaende/Thermistor/Heissleiter/Heissleiter.mjs",
+  "27.3.2": "/components/Betriebsmittel/Widerstaende/Thermistor/Kaltleiter/Kaltleiter.mjs",
+
+  "27.4": "/components/Betriebsmittel/Widerstaende/Varistor/Varistor.mjs",
+  "27.5": "/components/Betriebsmittel/Widerstaende/Widerstand/Widerstand.mjs"
+}
