@@ -1,14 +1,15 @@
-import { vBlankeleitung } from "./../Blankeleitung.mjs";
+import { vLoesbareVerbindung } from "./../LoesbareVerbindung.mjs";
 
-class vErder extends vBlankeleitung {
+class vSchraubverbindung extends vLoesbareVerbindung {
   constructor(data) {
     super(data);
 
     this.vis = {
       fill: "none",
+      fillopacity: "1.0",
       style: "stroke:#ffffff; stroke-width:1.0",
-      width: 200,
-      height: 10,
+      width: 5,
+      height: 5,
       al: 10,
       "pointer-events": "all",
     };
@@ -17,13 +18,12 @@ class vErder extends vBlankeleitung {
   fshape() {
     this.Symbol.select("#shape")
       .attr("fill", this.vis.fill)
-      .attr("fill-opacity", this.data.fillopacity)
+      .attr("fill-opacity", this.vis.fillopacity)
       .attr("style", this.vis.style)
-      .append("rect")
-      .attr("x", this.data.Position.x)
-      .attr("y", this.data.Position.y)
-      .attr("height", this.vis.height)
-      .attr("width", this.vis.width);
+      .append("circle")
+      .attr("cx", this.data.Position.x)
+      .attr("cy", this.data.Position.y)
+      .attr("r", this.vis.width);
   }
 
   fanschluss() {
@@ -43,4 +43,4 @@ class vErder extends vBlankeleitung {
   }
 }
 
-export { vErder };
+export { vSchraubverbindung };

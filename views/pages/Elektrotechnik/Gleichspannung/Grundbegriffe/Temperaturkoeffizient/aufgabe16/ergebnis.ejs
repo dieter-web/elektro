@@ -7,7 +7,7 @@
     import {populate} from '/modules/populate.mjs'
     import {tabulate} from '/modules/tabulate.mjs'
     import {drawboard} from '/modules/drawboard.mjs'
-    import {vWerkstoff} from '/components/Werkstoff/Werkstoff.mjs'
+    import {vLeiterwerkstoff} from '/components/Werkstoff/Werkstoff.mjs'
 
     // tabelle ergebnis
     const data=await populate( "http://localhost:8000/json/example/aufgabe16.json" )
@@ -24,7 +24,7 @@
     // Visualisierung
     const gM=drawboard();
 
-    let M=new vWerkstoff( data )
+    let M=new vLeiterwerkstoff( data )
 
     gM.append( () => M.fdraw() )
 

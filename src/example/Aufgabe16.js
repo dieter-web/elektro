@@ -17,6 +17,7 @@ const { ElektroKernel, Leiterwerkstoff } = require(path.resolve(
  */
 function Aufgabe16(input) {
   const jsonfile = path.resolve("src/json/example/aufgabe16.json");
+
   const GoCh = new Leiterwerkstoff({
     Material: input.Material,
     δ20: readKonstante("Vergleichstemperatur").toString(),
@@ -26,13 +27,17 @@ function Aufgabe16(input) {
     },
   });
 
+  GoCh.Kennzeichnung.Art = "M";
+  GoCh.Kennzeichnung.Zählnummer = "1";
+
   const Ek = new ElektroKernel();
   Ek.parameter({
     α20: GoCh.fα20(),
     δ20: GoCh.Parameter.δ20,
   });
 
-  GoCh.data.theta0 = Ek.δM().toString();
+  GoCh.Parameter.theta0 = Ek.δM().toString();
+  GoCh.Parameter.erg = Ek.δM().toString();
 
   dbJson.writeJSONItem(jsonfile, GoCh);
 }

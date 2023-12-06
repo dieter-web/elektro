@@ -8,8 +8,6 @@ const { Verbindungstechnik } = require(path.resolve(
 class LoesbareVerbindung extends Verbindungstechnik {
   constructor () {
     super()
-    this.Kennzeichnung = {}
-    this.Vis = {}
   }
 }
 

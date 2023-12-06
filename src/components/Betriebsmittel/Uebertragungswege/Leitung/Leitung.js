@@ -8,7 +8,9 @@ const { Uebertragungswege } = require(path.resolve(
 class Leitung extends Uebertragungswege {
   constructor() {
     super();
-    this.kennzeichnung = require(path.resolve(
+
+    // TODO: Nicht Kennzeichnung sondern Kabelname
+    this.Bezeichnung = require(path.resolve(
       "src/json/Uebertragungswege/Leitungen/Bezeichnung.json"
     ));
   }

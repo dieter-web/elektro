@@ -4,14 +4,16 @@ const dbJson = require(path.resolve("controllers/dbJson.js"));
 
 class Werkstoff {
   constructor() {
-    //   this.vis = {
-    //     fill: "#c1b59b",
-    //     fillopacity: 1,
-    //     style: "stroke:#ffff; stroke-width: 1.0",
-    //     width: 64,
-    //     height: 64,
-    //     "pointer-events": "all",
-    //   };
+    // this.vis = {
+    //   fill: "#c1b59b",
+    //   fillopacity: 1,
+    //   style: "stroke:#ffff; stroke-width: 1.0",
+    //   width: 64,
+    //   height: 64,
+    //   "pointer-events": "all",
+    // };
+    // TODO: Hier vieleicht auch besser die Bezeichnung benutzen ?
+    // Kennzeichnung trifft nur für Betriebsmittel zu
     this.Kennzeichnung = require(path.resolve(
       "src/json/Bezeichnungssysteme/Material.json"
     ));

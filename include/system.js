@@ -690,6 +690,12 @@ const { QuetschUndSteckverbindung } = require(path.resolve(
 ));
 /** !SECTION Verbindungstechnik LoesbareVerbindung QuetschUndSteckverbindung */
 
+/** SECTION Verbindungstechnik LoesbareVerbindung SchraubVerbindung */
+const { SchraubVerbindung } = require(path.resolve(
+  `${PVerbindungstechnik}/LoesbareVerbindung/SchraubVerbindung/SchraubVerbindung.js`
+));
+/** !SECTION Verbindungstechnik LoesbareVerbindung SchraubVerbindung */
+
 /** !SECTION Verbindungstechnik LoesbareVerbindung */
 
 /** SECTION Verbindungstechnik UnloesbareVerbindung */
@@ -875,15 +881,20 @@ module.exports = {
   Spannungswandler,
   Transaktor,
   Stack,
+
   Verbindungstechnik,
+
   BedingtLoesbareVerbindung,
   Drahtwickeltechnik,
   Einpresstechnik,
   Loettechnik,
   Schneidklemmtechnik,
+
   LoesbareVerbindung,
   Klemmverbindung,
   QuetschUndSteckverbindung,
+  SchraubVerbindung,
+
   UnloesbareVerbindung,
   Bonden,
   Klebeverbindung,
