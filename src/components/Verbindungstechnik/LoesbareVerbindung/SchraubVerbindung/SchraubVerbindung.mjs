@@ -1,17 +1,31 @@
 import { vLoesbareVerbindung } from "./../LoesbareVerbindung.mjs";
 
 class vSchraubverbindung extends vLoesbareVerbindung {
-  constructor(data) {
+  // data Schraubverbindung, data1 zu Verbindung1, data2 zu Verbindung2
+  constructor(data, data1, data2) {
     super(data);
 
     this.vis = {
       fill: "none",
       fillopacity: "1.0",
       style: "stroke:#ffffff; stroke-width:1.0",
-      width: 5,
-      height: 5,
-      al: 10,
+      r: 2.5,
+      al: 2,
       "pointer-events": "all",
+    };
+    this.data1 = data1;
+    this.data2 = data2;
+    this.pins = {
+      // Ausgang ist horizontale Lage
+      // Durch drehen in eine Andere Lage bringen möglich ?
+      1: {
+        x: data.pos.x -2,
+        y: data.pos.y,
+      },
+      2. {
+        x: data.pos.x + 2,
+        y: data.pos.y
+      }
     };
   }
 
@@ -23,7 +37,17 @@ class vSchraubverbindung extends vLoesbareVerbindung {
       .append("circle")
       .attr("cx", this.data.Position.x)
       .attr("cy", this.data.Position.y)
-      .attr("r", this.vis.width);
+      .attr("r", this.vis.r);
+  }
+
+  // Verbindung 1 zu dem shapeverbinder
+  v1(data1) {
+    this.Symbol.select("#anschluss").append("path");
+  }
+
+  // Verbindung2 zu dem shapeverbinder
+  v2(data2) {
+    this.Symbol.select("#anschluss").append("path");
   }
 
   fanschluss() {
@@ -34,11 +58,10 @@ class vSchraubverbindung extends vLoesbareVerbindung {
       .attr("style", this.vis.style)
       .attr(
         "d",
-        `M ${this.data.Position.x} ${this.data.Position.y} m 0 ${
-          this.vis.height / 2
-        } l -${this.vis.al} 0 m ${this.vis.al + this.vis.width} 0 l ${
-          this.vis.al
-        } 0`
+        `M ${this.data.Position.x - 2} ${this.data.Position.y}
+        l -${this.vis.al} 0 
+        M ${this.data.Position.x + 2} ${this.data.Position.y} 
+        l ${this.vis.al} 0`
       );
   }
 }

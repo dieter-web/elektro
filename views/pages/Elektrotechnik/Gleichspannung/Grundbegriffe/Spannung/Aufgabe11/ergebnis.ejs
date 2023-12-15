@@ -5,12 +5,14 @@
 <script type="module">
     import {drawkennzeichnung} from '/modules/drawkennzeichnung.mjs'
     import {tabulate} from '/modules/tabulate.mjs'
+
     import {drawboard} from '/modules/drawboard.mjs'
     import {populate} from '/modules/populate.mjs'
+
     import {vWiderstand} from '/components/Betriebsmittel/Widerstaende/Widerstand/Widerstand.mjs'
 
-    import {dline} from '/modules/d3/shape/lines.mjs'
-    import {draw} from '/modules/draw.mjs'
+    // import {dline} from '/modules/d3/shape/lines.mjs'
+    // import {draw} from '/modules/draw.mjs'
 
 
     // tabelle ergebnis
@@ -26,7 +28,9 @@
 
     // Visualisierung
     const g=drawboard()
-    let vG1=new vWiderstand( data )
+
+    let vG1=new vWiderstand(data, {x: 50,y: 50} )
+
     g.append( () => vG1.fdraw() )
 
 

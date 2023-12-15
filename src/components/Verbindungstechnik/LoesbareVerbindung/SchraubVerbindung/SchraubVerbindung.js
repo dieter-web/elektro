@@ -9,13 +9,10 @@ const { LoesbareVerbindung } = require(path.resolve(
 class SchraubVerbindung extends LoesbareVerbindung {
   constructor(Parameter) {
     super();
-
     this.Parameter = Parameter;
-
-    // this.data = dbJson.readJSONFile(
-    //   path.resolve("src/json/Verbindungstechnik/Schraubverbindung.json")[Parameter.Verbindung];
-    // );
   }
+
+  
 }
 
 exports.SchraubVerbindung = SchraubVerbindung;

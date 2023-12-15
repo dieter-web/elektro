@@ -1,1 +1,5 @@
-{"Kennzeichnung":{"Art":"X","Zählnummer":"1"},"Parameter":{},"Position":{"x":50,"y":50}}
+{
+  "Kennzeichnung": { "Art": "X", "Zählnummer": "1" },
+  "Parameter": {},
+  "Position": { "x": 30, "y": 55 }
+}

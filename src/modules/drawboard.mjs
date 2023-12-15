@@ -1,14 +1,18 @@
 // function drawboard(id, width, height, backgroundcolor, viewBox)
-function drawboard(pviewbox = "0 0 200 10") {
+// function drawboard(pviewbox = "0 0 200 10") {
+function drawboard(pviewbox = [0, 0, 200, 200]) {
   const parameter = {
     id: "#grafik",
-    width: 928,
-    height: 500,
+    // width: 928,
+    width: 200,
+    // height: 500,
+    height: 200,
     backgroundcolor: "none",
-    viewbox: [0, 0, 928, 500],
+    // viewbox: [0, 0, 928, 500],
+    viewbox: pviewbox,
   };
 
-  const can = d3
+  const svg = d3
     .select(parameter.id)
     .attr("width", parameter.width)
     .attr("height", parameter.height)
@@ -18,6 +22,6 @@ function drawboard(pviewbox = "0 0 200 10") {
     .style("background-color", parameter.backgroundcolor)
     .attr("viewBox", parameter.viewBox);
 
-  return can;
+  return svg;
 }
 export { drawboard };

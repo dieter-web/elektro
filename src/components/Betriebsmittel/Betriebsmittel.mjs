@@ -1,8 +1,7 @@
 class vBetriebsmittel {
-  constructor(data) {
+  constructor(data, pos) {
     this.data = data;
-    this.x = data.Position.x;
-    this.y = data.Position.y;
+    this.pos = pos;
     this.hx = 10;
     this.hy = 10;
     // this.hh = data.vis.height + 20;
@@ -27,8 +26,8 @@ class vBetriebsmittel {
       .append("rect")
       .attr("fill", "none")
       .attr("style", "stroke:#ffffff; stroke-width: 1.0")
-      .attr("x", this.x - this.hx)
-      .attr("y", this.y - this.hy)
+      .attr("x", this.pos.x - this.hx)
+      .attr("y", this.pos.y - this.hy)
       .attr("height", this.hh)
       .attr("width", this.hw)
       .attr("hidden", "true"); // soll es sichtbar sein --> Zeile ausdokumentieren
@@ -38,8 +37,8 @@ class vBetriebsmittel {
     //Kennzeichnung
     this.Symbol.select("#name")
       .append("text")
-      .attr("x", this.x)
-      .attr("y", this.y + 50)
+      .attr("x", this.pos.x)
+      .attr("y", this.pos.y + 50)
       .text(
         `${this.data.Kennzeichnung.Art} ${this.data.Kennzeichnung.Zählnummer}`
       );
@@ -55,8 +54,8 @@ class vBetriebsmittel {
   fvalue() {
     this.Symbol.select("#value")
       .append("text")
-      .attr("x", this.x + 50)
-      .attr("y", this.y + 50)
+      .attr("x", this.pos.x + 50)
+      .attr("y", this.pos.y + 50)
       .text(`${this.data.Parameter.erg}`);
   }
 
@@ -69,6 +68,12 @@ class vBetriebsmittel {
     this.fvalue();
     return this.Symbol.node();
   }
+
+  fmove(x, y) {
+    this.Symbol.select("#shape");
+  }
+
+  fverbinde(obj1, obj2) {}
 }
 
 export { vBetriebsmittel };

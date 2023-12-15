@@ -2,12 +2,9 @@
 const path = require("path");
 const dbJson = require(path.resolve("controllers/dbJson.js"));
 
-const {
-  ElektroKernel,
-  PlanemetrieKernel,
-  Erder,
-  SchraubVerbindung,
-} = require(path.resolve("include/system"));
+const { ElektroKernel, PlanemetrieKernel, Erder } = require(path.resolve(
+  "include/system"
+));
 
 /**
  * @description
@@ -30,7 +27,9 @@ async function Aufgabe15(input) {
   ));
   const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
 
-  const X1 = new SchraubVerbindung({});
+  // const X1 = new SchraubVerbindung({
+  // });
+
   const W1 = new Erder(input);
   const PK = new PlanemetrieKernel();
   const EK = new ElektroKernel();
@@ -38,15 +37,10 @@ async function Aufgabe15(input) {
   // Promises zum erzeugen des Pfades ../Aufgabe15
   makeDirectory("src/json/example/Aufgabe15").then(
     function () {
-      X1.Kennzeichnung = {
-        Art: "X",
-        Zählnummer: "1",
-      };
-
-      X1.Position = {
-        x: 50,
-        y: 50,
-      };
+      // X1.Kennzeichnung = {
+      //   Art: "X",
+      //   Zählnummer: "1",
+      // };
 
       W1.Kennzeichnung.Art = "W";
       W1.Kennzeichnung.Zählnummer = "1";
@@ -56,7 +50,12 @@ async function Aufgabe15(input) {
         y: 50,
       };
 
-      // Zusätzliche notwendige Parameter
+      // X1.Position = {
+      //   x: W1.Position - ,
+      //   y: 50 + 10 / 2,
+      // };
+
+      // Zusätzliche Parameter W1
       W1.Parameter.ρm = readMaterialParameter(input.Material, "ρ").toString();
       W1.Parameter.α20 = readMaterialParameter(
         input.Material,
@@ -83,18 +82,14 @@ async function Aufgabe15(input) {
 
       W1.Parameter.R2 = EK.Rδ().toString();
 
-      // let jsonX1 = ;
-      // let jsonW1 = ;
-
       dbJson.writeJSONItem(
         path.resolve("src/json/example/Aufgabe15/W1.json"),
         W1
       );
-      dbJson.writeJSONItem(
-        path.resolve("src/json/example/Aufgabe15/X1.json"),
-        X1
-      );
-      // return jd15;
+      // dbJson.writeJSONItem(
+      //   path.resolve("src/json/example/Aufgabe15/X1.json"),
+      //   X1
+      // );
     },
     function () {
       console.error("FEHLER aufgetreten");

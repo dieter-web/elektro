@@ -16,12 +16,7 @@ function Aufgabe11(input) {
   const jsonfile = path.resolve("src/json/example/aufgabe11.json");
 
   // const Parameter = input;
-  const R1 = new Widerstand({
-    G: input.G,
-    I: input.I,
-    x: 150,
-    y: 150,
-  });
+  const R1 = new Widerstand(input);
 
   // Kennzeichnung anpassen
   R1.Kennzeichnung.Art = "G";
@@ -32,15 +27,11 @@ function Aufgabe11(input) {
   EK.parameter({ G: R1.Parameter.G, I: R1.Parameter.I });
   R1.Parameter.U12 = EK.UIG().toString();
 
-  // Werte für Visualisierung
-  // R1.vis.name = "G1";
-  // R1.vis.value = input.G;
-
   dbJson.writeJSONItem(jsonfile, R1);
 }
 // let input = {
-//   G: '3E-2 S',
-//   I: '600 mA'
-// }
-// Aufgabe11(input)
+//   G: "3E-2 S",
+//   I: "600 mA",
+// };
+// Aufgabe11(input);
 exports.func = Aufgabe11;

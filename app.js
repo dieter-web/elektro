@@ -1,13 +1,22 @@
 require("use-strict");
 const path = require("path");
 const ejs = require("ejs");
+
 const express = require("express");
+// const i18n = require("i18n");
+
+// i18n.configure({
+//   locales: ["de", "en"],
+//   cookie: "yourcookiename",
+//   directory: __dirname + "/locales",
+// });
+
 const expressLayouts = require("express-ejs-layouts");
 const cors = require("cors");
 const port = 8000;
 
 const requestLogger = require(path.join(__dirname, "middleware/requestLogger"));
-const app = express();
+const app = (module.exports = express());
 
 app.engine("html", ejs.renderFile);
 app.set("views", path.join(__dirname, "views"));
@@ -98,6 +107,14 @@ app.use((req, res, next) => {
   next();
 });
 
+// app.configure(function () {
+//   // you will need to use cookieParser to expose cookies to req.cookies
+//   app.use(express.cookieParser());
+
+//   // i18n init parses req for language headers, cookies, etc.
+//   app.use(i18n.init);
+// });
+
 app.get("/", (req, res) => {
   res.render(
     "index",
@@ -120,6 +137,19 @@ app.get("/", (req, res) => {
       res.send(html);
     }
   );
+});
+
+let users = [
+  {
+    id: 1,
+    name: "Dieter Krause",
+    age: "63",
+    email: "dieterkrause31960@gmail.com",
+  },
+];
+
+app.get("/api/users", function (req, res) {
+  return res.json(users);
 });
 
 app.use("/bauelemente", require(path.resolve("routes/bauelemente")));

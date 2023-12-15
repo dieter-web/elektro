@@ -6,6 +6,7 @@ class vErder extends vBlankeleitung {
 
     this.vis = {
       fill: "none",
+      fillopacity: "1.0",
       style: "stroke:#ffffff; stroke-width:1.0",
       width: 200,
       height: 10,
@@ -17,7 +18,7 @@ class vErder extends vBlankeleitung {
   fshape() {
     this.Symbol.select("#shape")
       .attr("fill", this.vis.fill)
-      .attr("fill-opacity", this.data.fillopacity)
+      .attr("fill-opacity", this.vis.fillopacity)
       .attr("style", this.vis.style)
       .append("rect")
       .attr("x", this.data.Position.x)
@@ -34,11 +35,11 @@ class vErder extends vBlankeleitung {
       .attr("style", this.vis.style)
       .attr(
         "d",
-        `M ${this.data.Position.x} ${this.data.Position.y} m 0 ${
-          this.vis.height / 2
-        } l -${this.vis.al} 0 m ${this.vis.al + this.vis.width} 0 l ${
-          this.vis.al
-        } 0`
+        `M ${this.data.Position.x} ${this.data.Position.y} 
+        m 0 ${this.vis.height / 2} 
+        l -${this.vis.al} 0 
+        m ${this.vis.al + this.vis.width} 0 
+        l ${this.vis.al} 0`
       );
   }
 }

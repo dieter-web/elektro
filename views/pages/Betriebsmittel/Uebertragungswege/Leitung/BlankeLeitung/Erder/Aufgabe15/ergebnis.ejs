@@ -10,13 +10,13 @@
 
     // Visualisierung
     import {vErder} from '/components/Betriebsmittel/Uebertragungswege/Leitung/Blankeleitung/Erder/Erder.mjs'
-    import {vSchraubverbindung} from '/components/Verbindungstechnik/LoesbareVerbindung/SchraubVerbindung/SchraubVerbindung.mjs'
+    // import {vSchraubverbindung} from '/components/Verbindungstechnik/LoesbareVerbindung/SchraubVerbindung/SchraubVerbindung.mjs'
 
     //Kabel für Tabelle und Visualisierung
     const dataW1=await populate( "http://localhost:8000/json/example/Aufgabe15/W1.json" )
 
     // Klemme für Visualisierung
-    const dataX1=await populate( "http://localhost:8000/json/example/Aufgabe15/X1.json" )
+    // const dataX1=await populate( "http://localhost:8000/json/example/Aufgabe15/X1.json" )
 
     drawkennzeichnung( dataW1,"#kennzeichnung" )
     tabulate( dataW1,"#ergebnis" )
@@ -33,9 +33,9 @@
     const g=drawboard()
 
     let vE=new vErder( dataW1 )
-    // let vS=new vSchraubverbindung( dataX1.Klemme )
+    // let vS=new vSchraubverbindung( dataX1 )
 
-    g.append( () => vE.fdraw() )
-    // g.append( () => vS.fdraw() )
+    g.append( () => vE.fdraw( dataW1 ) )
+    // g.append( () => vS.fdraw( dataX1 ) )
 
 </script>

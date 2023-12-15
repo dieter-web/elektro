@@ -15,10 +15,6 @@ class Betriebsmittel {
     this.Kennzeichnung = dbJson.readJSONFile(
       path.resolve("src/json/Sonstiges/kennzeichnung.json")
     );
-
-    // TODO: Bezieht sich auf Kabelbezeichnungen
-    // Also auch dort unterbringen !
-    // this.Bezeichnung = "";
   }
 }
 exports.Betriebsmittel = Betriebsmittel;
