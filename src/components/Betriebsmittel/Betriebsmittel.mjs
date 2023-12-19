@@ -1,11 +1,9 @@
 class vBetriebsmittel {
-  constructor(data, pos) {
+  constructor(data, point) {
     this.data = data;
-    this.pos = pos;
-    this.hx = 10;
-    this.hy = 10;
-    // this.hh = data.vis.height + 20;
-    // this.hw = data.vis.width + 20;
+    this.point = point;
+    this.bbox = undefined;
+    this.node = undefined;
 
     this.Symbol = d3
       .create("svg:g")
@@ -21,24 +19,24 @@ class vBetriebsmittel {
     this.Symbol.append("g").attr("id", "value");
   }
 
-  fhuelle() {
-    this.Symbol.select("#huelle")
-      .append("rect")
-      .attr("fill", "none")
-      .attr("style", "stroke:#ffffff; stroke-width: 1.0")
-      .attr("x", this.pos.x - this.hx)
-      .attr("y", this.pos.y - this.hy)
-      .attr("height", this.hh)
-      .attr("width", this.hw)
-      .attr("hidden", "true"); // soll es sichtbar sein --> Zeile ausdokumentieren
-  }
+  // fhuelle() {
+  //   this.Symbol.select("#huelle")
+  //     .append("rect")
+  //     .attr("fill", "none")
+  //     .attr("style", "stroke:#ffffff; stroke-width: 1.0")
+  //     .attr("x", this.pos.x - this.hx)
+  //     .attr("y", this.pos.y - this.hy)
+  //     .attr("height", this.hh)
+  //     .attr("width", this.hw)
+  //     .attr("hidden", "true"); // soll es sichtbar sein --> Zeile ausdokumentieren
+  // }
 
   fname() {
     //Kennzeichnung
     this.Symbol.select("#name")
       .append("text")
-      .attr("x", this.pos.x)
-      .attr("y", this.pos.y + 50)
+      .attr("x", this.point.x)
+      .attr("y", this.point.y + 50)
       .text(
         `${this.data.Kennzeichnung.Art} ${this.data.Kennzeichnung.Zählnummer}`
       );
@@ -54,26 +52,23 @@ class vBetriebsmittel {
   fvalue() {
     this.Symbol.select("#value")
       .append("text")
-      .attr("x", this.pos.x + 50)
-      .attr("y", this.pos.y + 50)
+      .attr("x", this.point.x + 50)
+      .attr("y", this.point.y + 50)
       .text(`${this.data.Parameter.erg}`);
   }
 
-  fdraw() {
+  createNode() {
     this.finit();
-    // this.fhuelle();
     this.fshape();
     this.fanschluss();
     this.fname();
     this.fvalue();
-    return this.Symbol.node();
-  }
 
-  fmove(x, y) {
-    this.Symbol.select("#shape");
-  }
+    this.node = this.Symbol.node();
+    this.bbox = this.node.getBBox();
 
-  fverbinde(obj1, obj2) {}
+    return this.node;
+  }
 }
 
 export { vBetriebsmittel };

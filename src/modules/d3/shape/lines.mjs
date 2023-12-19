@@ -1,9 +1,1 @@
-function dline(data) {
-  const l = d3
-    .line()
-    .x((d) => x(data.x))
-    .y((d) => y(data.y));
-  return l;
-}
-
-export { dline };
+import { line } from "/lib/d3js/d3v785/d3.js";

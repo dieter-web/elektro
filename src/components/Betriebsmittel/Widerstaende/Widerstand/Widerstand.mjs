@@ -1,10 +1,10 @@
 import { vWiderstaende } from "../Widerstaende.mjs";
 
 class vWiderstand extends vWiderstaende {
-  constructor(data, pos) {
+  constructor(data, point) {
     // Verknüpfung der Visualisierung mit den daten
     // an der gewünschten Position
-    super(data, pos);
+    super(data, point);
 
     this.vis = {
       fill: "none",
@@ -27,8 +27,8 @@ class vWiderstand extends vWiderstaende {
       .attr("fill-opacity", this.vis.fillopacity)
       .attr("style", this.vis.style)
       .append("rect")
-      .attr("x", this.pos.x)
-      .attr("y", this.pos.y)
+      .attr("x", this.point.x)
+      .attr("y", this.point.y)
       .attr("height", this.vis.height)
       .attr("width", this.vis.width)
       .on("mouseover", function () {
@@ -47,10 +47,22 @@ class vWiderstand extends vWiderstaende {
       .attr("style", this.vis.style)
       .attr(
         "d",
-        `M ${this.pos.x} ${this.pos.y} m 0 ${this.vis.height / 2} l -${
+        `M ${this.point.x} ${this.point.y} m 0 ${this.vis.height / 2} l -${
           this.vis.al
         } 0 m ${this.vis.al + this.vis.width} 0 l ${this.vis.al} 0`
       );
+  }
+
+  addNode(point) {
+    var ID = nextID();
+    var group = svg.append("g");
+
+    var text = group.append("text").attr("x", 0).attr("y", 0).text(ID);
+
+    var box = text.node().getBBox();
+    text.attr("dx", -box.width / 2).attr("dy", box.height / 2);
+
+    box = text.node().getBBox();
   }
 }
 

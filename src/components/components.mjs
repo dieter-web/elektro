@@ -54,7 +54,7 @@ class vComponents {
       .text(`${this.data.Parameter.erg}`);
   }
 
-  fdraw() {
+  createNode() {
     this.finit();
     // this.fhuelle();
     this.fshape();

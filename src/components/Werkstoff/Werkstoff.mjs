@@ -46,7 +46,7 @@ class vWerkstoff {
       .attr("y", this.y + 50)
       .text(`${this.data.Parameter.erg}`);
   }
-  fdraw() {
+  createNode() {
     this.finit();
     // this.fhuelle();
     this.fshape();

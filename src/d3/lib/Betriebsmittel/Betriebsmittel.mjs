@@ -8,7 +8,9 @@ class Betriebsmittel {
     this.hh = data.vis.height + 20;
     this.hw = data.vis.width + 20;
 
-    this.Symbol = d3.create("svg:g").attr("id",`${data.Kennzeichnung.Art}${data.Kennzeichnung.Zählnummer}`);
+    this.Symbol = d3
+      .create("svg:g")
+      .attr("id", `${data.Kennzeichnung.Art}${data.Kennzeichnung.Zählnummer}`);
   }
 
   finit() {
@@ -50,7 +52,7 @@ class Betriebsmittel {
       .text(`${this.data.Parameter.erg}`);
   }
 
-  fdraw() {
+  createNode() {
     this.finit();
     // this.fhuelle();
     this.fshape();
