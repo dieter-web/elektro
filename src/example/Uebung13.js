@@ -1,8 +1,4 @@
 require("use-strict");
-const path = require("path");
-const dbJson = require(path.resolve("controllers/dbJson"));
-
-const { ElektroKernel, Strommesser } = require(path.resolve("include/system"));
 
 /**
  * @description
@@ -14,8 +10,13 @@ const { ElektroKernel, Strommesser } = require(path.resolve("include/system"));
  * @date 25/07/2023
  * @param {*} input
  */
-function Uebung13(input) {
-  const jsonfile = path.resolve("src/json/example/uebung13.json");
+async function Uebung13(input) {
+  const path = require("path");
+  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
+  const dbJson = require(path.resolve("controllers/dbJson"));
+  const { ElektroKernel, Strommesser } = require(path.resolve(
+    "include/system"
+  ));
 
   const P1 = new Strommesser({
     R: "2.5 ohm",
@@ -24,14 +25,23 @@ function Uebung13(input) {
     y: 50,
   });
 
-  P1.Kennzeichnung.Art = "P";
-  P1.Kennzeichnung.Zählnummer = "1";
-
   const EK = new ElektroKernel();
-  EK.parameter({ R: P1.Parameter.R, U: P1.Parameter.U });
-  P1.Parameter.Ism = EK.IUR().toString();
+  const datadir = "src/json/example/Uebung13";
 
-  dbJson.writeJSONItem(jsonfile, P1);
+  makeDirectory(datadir).then(
+    function () {
+      P1.Kennzeichnung.Art = "P";
+      P1.Kennzeichnung.Zählnummer = "1";
+
+      EK.parameter({ R: P1.Parameter.R, U: P1.Parameter.U });
+      P1.Parameter.Ism = EK.IUR().toString();
+
+      dbJson.writeJSONItem(path.resolve(`${datadir}/P1.json`), P1);
+    },
+    function () {
+      console.error(`${datadir}`);
+    }
+  );
 }
 // let input = {
 //   R: '2.5 ohm',

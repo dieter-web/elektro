@@ -1,20 +1,4 @@
 require("use-strict");
-const path = require("path");
-const dbJson = require(path.resolve("controllers/dbJson"));
-
-const { PlanemetrieKernel, ElektroKernel, Gluehlampe } = require(path.resolve(
-  "include/system"
-));
-
-// const { Gluehlampe } = require(path.resolve(
-//   "src/components/Betriebsmittel/Verschiedenes/Beleuchtung/Lampe/Gluehlampe/Gluehlampe.js"
-// ));
-
-const { readMaterialParameter } = require(path.resolve(
-  "src/js/readMaterialParameter.js"
-));
-
-const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
 
 /**TODO: Das Ergebnis stimmt nicht überein ? */
 /**
@@ -26,8 +10,23 @@ const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
  * @date 28/07/2023
  * @param {*} input
  */
-function Beispiel17(input) {
-  const jsonfile = path.resolve("src/json/example/beispiel17.json");
+async function Beispiel17(input) {
+  const path = require("path");
+  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
+  const dbJson = require(path.resolve("controllers/dbJson"));
+
+  const { PlanemetrieKernel, ElektroKernel, Gluehlampe } = require(path.resolve(
+    "include/system"
+  ));
+
+  const { readMaterialParameter } = require(path.resolve(
+    "src/js/readMaterialParameter.js"
+  ));
+
+  const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
+
+  const PK = new PlanemetrieKernel();
+  const EK = new ElektroKernel();
 
   const E1 = new Gluehlampe({
     Material: input.Material,
@@ -38,41 +37,51 @@ function Beispiel17(input) {
     y: 150,
   });
 
-  E1.Kennzeichnung.Art = "E";
-  E1.Kennzeichnung.Zählnummer = "1";
+  const datadir = "src/json/example/Beispiel17";
 
-  E1.vis.value = "2250 celsius";
+  makeDirectory(datadir).then(
+    function () {
+      E1.Kennzeichnung.Art = "E";
+      E1.Kennzeichnung.Zählnummer = "1";
 
-  E1.Parameter.ρM = readMaterialParameter(
-    E1.Parameter.Material,
-    "ρ"
-  ).toString();
+      E1.vis.value = "2250 celsius";
 
-  E1.Parameter.α20 = readMaterialParameter(
-    E1.Parameter.Material,
-    "α20"
-  ).toString();
+      E1.Parameter.ρM = readMaterialParameter(
+        E1.Parameter.Material,
+        "ρ"
+      ).toString();
 
-  E1.Parameter.δ20 = readKonstante("Vergleichstemperatur").toString();
+      E1.Parameter.α20 = readMaterialParameter(
+        E1.Parameter.Material,
+        "α20"
+      ).toString();
 
-  const PK = new PlanemetrieKernel();
-  const EK = new ElektroKernel();
+      E1.Parameter.δ20 = readKonstante("Vergleichstemperatur").toString();
 
-  PK.parameter({ l: E1.Parameter.l, d: E1.Parameter.d });
-  E1.Parameter.Awd = PK.KAd().toString();
+      PK.parameter({ l: E1.Parameter.l, d: E1.Parameter.d });
+      E1.Parameter.Awd = PK.KAd().toString();
 
-  EK.parameter({ ρ: E1.Parameter.ρM, l: E1.Parameter.l, A: E1.Parameter.Awd });
-  E1.Parameter.erg1 = EK.RρlA().toString();
+      EK.parameter({
+        ρ: E1.Parameter.ρM,
+        l: E1.Parameter.l,
+        A: E1.Parameter.Awd,
+      });
+      E1.Parameter.erg1 = EK.RρlA().toString();
 
-  EK.parameter({
-    R20: E1.Parameter.erg1,
-    α20: E1.Parameter.α20,
-    δ2: E1.Parameter.δ2,
-    δ20: E1.Parameter.δ20,
-  });
-  E1.Parameter.erg = EK.Rδ().toString();
+      EK.parameter({
+        R20: E1.Parameter.erg1,
+        α20: E1.Parameter.α20,
+        δ2: E1.Parameter.δ2,
+        δ20: E1.Parameter.δ20,
+      });
+      E1.Parameter.erg = EK.Rδ().toString();
 
-  dbJson.writeJSONItem(jsonfile, E1);
+      dbJson.writeJSONItem(path.resolve(`${datadir}/E1.json`), E1);
+    },
+    function () {
+      console.error(`${datadir}`);
+    }
+  );
 }
 // let input = {
 //   Material: 'Wolfram',

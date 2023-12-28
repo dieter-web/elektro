@@ -5,30 +5,39 @@
 <script type="module">
     import {drawkennzeichnung} from '/modules/drawkennzeichnung.mjs'
     import {tabulate} from '/modules/tabulate.mjs'
-
-    // import {drawboard} from '/modules/drawboard.mjs'
     import {DrawBoard} from '/sysFrontend/DrawBoard.mjs'
-
     import {populate} from '/modules/populate.mjs'
-
     import {vWiderstand} from '/components/Betriebsmittel/Widerstaende/Widerstand/Widerstand.mjs'
 
-    // tabelle ergebnis
-    const data=await populate( "http://localhost:8000/json/example/aufgabe11.json" )
+    const data=await populate( "Aufgabe11/R1.json" )
 
+    // Kennzeichen ausgeben 
     drawkennzeichnung( data,"#kennzeichnung" )
-    tabulate( data,"#ergebnis" )
+
+    // Tabelle ausgeben
+    tabulate( data,"#ergebnis" );
+
 
     // Rückkopplung
     const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
-    G.y=tab[ 0 ]
-    I.y=tab[ 1 ]
+    G.value=tab[ 0 ]
+    I.value=tab[ 1 ]
 
     // Visualisierung
-    const point={x: 10,y: 10};
-    const g=new DrawBoard( 'grafik',640,480,[ 0,0,100,100 ] );
-    const node=new vWiderstand( data,point ).createNode();
+    const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
 
-    g.addNode( node )
+
+
+    // Einfügepunkt
+    const point={x: 320,y: 240};
+
+    const R1=new vWiderstand( data,point );
+    R1.createNode();
+
+    // R1.createBBox();
+    // console.log( R1.bbox );
+
+    // Grafik ausgeben
+    view.addNode( R1.node )
 
 </script>

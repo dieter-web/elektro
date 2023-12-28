@@ -1,12 +1,4 @@
 require("use-strict");
-const path = require("path");
-const dbJson = require(path.resolve("controllers/dbJson.js"));
-
-const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
-
-const { ElektroKernel, Leiterwerkstoff } = require(path.resolve(
-  "include/system"
-));
 
 /**
  * @description
@@ -15,34 +7,42 @@ const { ElektroKernel, Leiterwerkstoff } = require(path.resolve(
  * @date 03/07/2023
  * @param {*} input
  */
-function Aufgabe16(input) {
-  const jsonfile = path.resolve("src/json/example/aufgabe16.json");
+async function Aufgabe16(input) {
+  const path = require("path");
+  const dbJson = require(path.resolve("controllers/dbJson.js"));
+  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
+  const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
 
-  const GoCh = new Leiterwerkstoff({
-    Material: input.Material,
-    δ20: readKonstante("Vergleichstemperatur").toString(),
-    Position: {
-      x: 50,
-      y: 50,
-    },
-  });
+  const { ElektroKernel, Leiterwerkstoff } = require(path.resolve(
+    "include/system"
+  ));
 
-  GoCh.Kennzeichnung.Art = "M";
-  GoCh.Kennzeichnung.Zählnummer = "1";
-
+  const GoCh = new Leiterwerkstoff(input);
   const Ek = new ElektroKernel();
-  Ek.parameter({
-    α20: GoCh.fα20(),
-    δ20: GoCh.Parameter.δ20,
-  });
 
-  GoCh.Parameter.theta0 = Ek.δM().toString();
-  GoCh.Parameter.erg = Ek.δM().toString();
+  const data = "src/json/example/Aufgabe16";
 
-  dbJson.writeJSONItem(jsonfile, GoCh);
+  makeDirectory(data).then(function () {
+    GoCh.Kennzeichnung.Art = "M";
+    GoCh.Kennzeichnung.Zählnummer = "1";
+
+    Ek.parameter({
+      α20: GoCh.fα20(input.Material),
+      δ20: "20celsius",
+      Material: input.Material,
+    });
+
+    GoCh.data.theta0 = Ek.δM().toString();
+    GoCh.data.erg = Ek.δM().toString();
+
+    dbJson.writeJSONItem(path.resolve(`${data}/GoCh.json`), GoCh);
+  }),
+    function () {
+      console.error(`${data}`);
+    };
 }
-// let input = {
-//   Material: "GoldChrom",
-// };
-// Aufgabe16(input);
-exports.func = Aufgabe16;
+let input = {
+  Material: "GoldChrom",
+};
+Aufgabe16(input);
+// exports.func = Aufgabe16;

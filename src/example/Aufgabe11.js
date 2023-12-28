@@ -1,8 +1,4 @@
 require("use-strict");
-const path = require("path");
-const dbJson = require(path.resolve("controllers/dbJson.js"));
-
-const { ElektroKernel, Widerstand } = require(path.resolve("include/system"));
 
 /**
  * @description
@@ -13,21 +9,29 @@ const { ElektroKernel, Widerstand } = require(path.resolve("include/system"));
  * @param {*} input
  */
 function Aufgabe11(input) {
-  const jsonfile = path.resolve("src/json/example/aufgabe11.json");
-
-  // const Parameter = input;
+  const path = require("path");
+  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
+  const dbJson = require(path.resolve("controllers/dbJson.js"));
+  
+  const { ElektroKernel, Widerstand } = require(path.resolve("include/system"));
   const R1 = new Widerstand(input);
-
-  // Kennzeichnung anpassen
-  R1.Kennzeichnung.Art = "G";
-  R1.Kennzeichnung.Zählnummer = "1";
-
   const EK = new ElektroKernel();
+  const datadir = "src/json/example/Aufgabe11";
 
-  EK.parameter({ G: R1.Parameter.G, I: R1.Parameter.I });
-  R1.Parameter.U12 = EK.UIG().toString();
+  makeDirectory(datadir).then(
+    function () {
+      R1.Kennzeichnung.Art = "G";
+      R1.Kennzeichnung.Zählnummer = "1";
 
-  dbJson.writeJSONItem(jsonfile, R1);
+      EK.parameter({ G: R1.Parameter.G, I: R1.Parameter.I });
+      R1.Parameter.U12 = EK.UIG().toString();
+
+      dbJson.writeJSONItem(path.resolve(`${datadir}/R1.json`), R1);
+    },
+    function () {
+      console.error(`${datadir}`);
+    }
+  );
 }
 // let input = {
 //   G: "3E-2 S",

@@ -1,0 +1,34 @@
+<%- include('aufgabe.ejs',{}) %>
+<%- include('./../../../../layouts/partials/ergebnis.ejs') %>
+
+
+<script type="module">
+    import {drawkennzeichnung} from '/modules/drawkennzeichnung.mjs'
+    import {tabulate} from '/modules/tabulate.mjs'
+    import {DrawBoard} from '/sysFrontend/DrawBoard.mjs'
+    import {populate} from '/modules/populate.mjs'
+    import {vWerkstoff} from '/components/Werkstoff/Werkstoff.mjs'
+
+    const data=await populate( "Aufgabe16/GoCh.json" )
+
+    // Kennzeichen ausgeben 
+    drawkennzeichnung( data,"#kennzeichnung" )
+
+    // Tabelle ausgeben
+    tabulate( data,"#ergebnis" );
+
+
+    // Rückkopplung
+    const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
+    G.value=tab[ 0 ]
+    I.value=tab[ 1 ]
+
+    // Visualisierung
+    const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
+
+    const point={x: 320,y: 240};
+    const GoCh=new vWerkstoff( data,point );
+    GoCh.createNode();
+    view.addNode( GoCh.node )
+
+</script>

@@ -1,10 +1,4 @@
 require("use-strict");
-const path = require("path");
-
-const { ElektroKernel, Widerstand, Stack } = require(path.resolve(
-  "include/system"
-));
-const dbJson = require(path.resolve("controllers/dbJson.js"));
 
 /**
  * @function Beispiel11
@@ -17,72 +11,86 @@ const dbJson = require(path.resolve("controllers/dbJson.js"));
  * @param {*} input
  * @returns {*}
  */
-function Beispiel11(input) {
-  const jsonfile = path.resolve("src/json/example/beispiel11.json");
+async function Beispiel11(input) {
+  const path = require("path");
+  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
+  const { ElektroKernel, Widerstand, Stack } = require(path.resolve(
+    "include/system"
+  ));
+  const dbJson = require(path.resolve("controllers/dbJson.js"));
 
-  let R1 = new Widerstand({
-    Name: "R1",
-    R: input.R1, // Gegeben
-    U: input.U,
+  const datadir = "src/json/example/Beispiel11";
 
-    // grafische Position
-    x: 50,
-    y: 50,
-  });
+  makeDirectory(datadir).then(
+    function () {
+      let R1 = new Widerstand({
+        Name: "R1",
+        R: input.R1, // Gegeben
+        U: input.U,
 
-  R1.Kennzeichnung.Art = "R";
-  R1.Kennzeichnung.Zählnummer = "1";
+        // grafische Position
+        x: 50,
+        y: 50,
+      });
 
-  let R2 = new Widerstand({
-    Name: "R2",
-    R: "80kohm", // Gegeben
-    U: "60V",
+      R1.Kennzeichnung.Art = "R";
+      R1.Kennzeichnung.Zählnummer = "1";
 
-    x: 250,
-    y: 50,
-  });
+      let R2 = new Widerstand({
+        Name: "R2",
+        R: "80kohm", // Gegeben
+        U: "60V",
 
-  R2.Kennzeichnung.Art = "R";
-  R2.Kennzeichnung.Zählnummer = "2";
+        x: 250,
+        y: 50,
+      });
 
-  let R3 = new Widerstand({
-    Name: "R3",
-    R: "500ohm", // Gegeben
-    U: "60V",
+      R2.Kennzeichnung.Art = "R";
+      R2.Kennzeichnung.Zählnummer = "2";
 
-    x: 500,
-    y: 50,
-  });
+      let R3 = new Widerstand({
+        Name: "R3",
+        R: "500ohm", // Gegeben
+        U: "60V",
 
-  R3.Kennzeichnung.Art = "R";
-  R3.Kennzeichnung.Zählnummer = "3";
+        x: 500,
+        y: 50,
+      });
 
-  let R4 = new Widerstand({
-    Name: "R4",
-    R: "75ohm", // Gegeben
-    U: "60V",
+      R3.Kennzeichnung.Art = "R";
+      R3.Kennzeichnung.Zählnummer = "3";
 
-    x: 750,
-    y: 50,
-  });
+      let R4 = new Widerstand({
+        Name: "R4",
+        R: "75ohm", // Gegeben
+        U: "60V",
 
-  R4.Kennzeichnung.Art = "R";
-  R4.Kennzeichnung.Zählnummer = "4";
+        x: 750,
+        y: 50,
+      });
 
-  // Widerstandsarray !
-  let RBEA = [R1, R2, R3, R4];
+      R4.Kennzeichnung.Art = "R";
+      R4.Kennzeichnung.Zählnummer = "4";
 
-  const EK = new ElektroKernel();
+      // Widerstandsarray !
+      let RBEA = [R1, R2, R3, R4];
 
-  RBEA.map((R, i) => {
-    EK.parameter({ U: R.Parameter.U, R: RBEA[i].Parameter.R });
-    RBEA[i].Parameter.I = EK.IUR().toString();
+      const EK = new ElektroKernel();
 
-    EK.parameter({ I: RBEA[i].Parameter.I, U: R.Parameter.U });
-    RBEA[i].Parameter.G = EK.GIU().toString();
-  });
+      RBEA.map((R, i) => {
+        EK.parameter({ U: R.Parameter.U, R: RBEA[i].Parameter.R });
+        RBEA[i].Parameter.I = EK.IUR().toString();
 
-  dbJson.writeJSONItem(jsonfile, RBEA);
+        EK.parameter({ I: RBEA[i].Parameter.I, U: R.Parameter.U });
+        RBEA[i].Parameter.G = EK.GIU().toString();
+      });
+
+      dbJson.writeJSONItem(path.resolve(`${datadir}/RBEA.json`), RBEA);
+    },
+    function () {
+      console.error(`${datadir}`);
+    }
+  );
 }
 
 // let input = {

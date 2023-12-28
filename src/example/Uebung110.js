@@ -1,16 +1,4 @@
 require("use-strict");
-const path = require("path");
-const dbJson = require(path.resolve("controllers/dbJson.js"));
-
-const { ElektroKernel, ArithmetikKernel, Kabel } = require(path.resolve(
-  "include/system"
-));
-
-const { readMaterialParameter } = require(path.resolve(
-  "src/js/readMaterialParameter.js"
-));
-
-const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
 
 /**
  * @description
@@ -25,8 +13,20 @@ const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
  * @date 26/07/2023
  * @param {*} input
  */
-function Uebung110(input) {
-  const jsonfile = path.resolve("src/json/example/uebung110.json");
+async function Uebung110(input) {
+  const path = require("path");
+  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
+  const dbJson = require(path.resolve("controllers/dbJson.js"));
+
+  const { ElektroKernel, ArithmetikKernel, Kabel } = require(path.resolve(
+    "include/system"
+  ));
+
+  const { readMaterialParameter } = require(path.resolve(
+    "src/js/readMaterialParameter.js"
+  ));
+
+  const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
 
   const W1 = new Kabel({
     Material: "Kupfer",
@@ -38,49 +38,66 @@ function Uebung110(input) {
     y: 50,
   });
 
-  W1.Kennzeichnung.Art = "W";
-  W1.Kennzeichnung.Zählnummer = "1";
-
-  W1.Parameter.κM = readMaterialParameter(
-    W1.Parameter.Material,
-    "κ"
-  ).toString();
-  W1.Parameter.α20M = readMaterialParameter(
-    W1.Parameter.Material,
-    "α20"
-  ).toString();
-  W1.Parameter.δ20 = readKonstante("Vergleichstemperatur").toString();
-
   const AK = new ArithmetikKernel();
   const EK = new ElektroKernel();
 
-  EK.parameter({ U: W1.Parameter.U, κ: W1.Parameter.κM, S: W1.Parameter.S });
-  W1.Parameter.ld = EK.lκus().toString();
+  const datadir = "src/json/example/Uebung110";
 
-  AK.parameter({ a: W1.Parameter.ld, b: W1.Parameter.n });
-  W1.Parameter.lk = AK.div().toString();
+  makeDirectory(datadir).then(
+    function () {
+      W1.Kennzeichnung.Art = "W";
+      W1.Kennzeichnung.Zählnummer = "1";
 
-  // Berechnung der Stromdichte S2
-  AK.parameter({ G: W1.Parameter.S, p: W1.Parameter.p });
-  W1.Parameter.S2 = AK.Prozentwert().toString();
+      W1.Parameter.κM = readMaterialParameter(
+        W1.Parameter.Material,
+        "κ"
+      ).toString();
+      W1.Parameter.α20M = readMaterialParameter(
+        W1.Parameter.Material,
+        "α20"
+      ).toString();
+      W1.Parameter.δ20 = readKonstante("Vergleichstemperatur").toString();
 
-  AK.parameter({ G: W1.Parameter.S, p: W1.Parameter.S2 });
-  W1.Parameter.S1 = AK.Grundwertp().toString();
+      EK.parameter({
+        U: W1.Parameter.U,
+        κ: W1.Parameter.κM,
+        S: W1.Parameter.S,
+      });
+      W1.Parameter.ld = EK.lκus().toString();
 
-  EK.parameter({ U: W1.Parameter.U, S: W1.Parameter.S1, l: W1.Parameter.ld });
-  W1.Parameter.κ1M = EK.κlsu().toString();
+      AK.parameter({ a: W1.Parameter.ld, b: W1.Parameter.n });
+      W1.Parameter.lk = AK.div().toString();
 
-  EK.parameter({
-    α20: W1.Parameter.α20M,
-    κ: W1.Parameter.κM,
-    κ1: W1.Parameter.κ1M,
-  });
-  W1.Parameter.Δδ = EK.Δδκ().toString();
+      // Berechnung der Stromdichte S2
+      AK.parameter({ G: W1.Parameter.S, p: W1.Parameter.p });
+      W1.Parameter.S2 = AK.Prozentwert().toString();
 
-  AK.parameter({ a: W1.Parameter.δ20, b: W1.Parameter.Δδ });
-  W1.Parameter.δ2 = AK.add().toString();
+      AK.parameter({ G: W1.Parameter.S, p: W1.Parameter.S2 });
+      W1.Parameter.S1 = AK.Grundwertp().toString();
 
-  dbJson.writeJSONItem(jsonfile.W1);
+      EK.parameter({
+        U: W1.Parameter.U,
+        S: W1.Parameter.S1,
+        l: W1.Parameter.ld,
+      });
+      W1.Parameter.κ1M = EK.κlsu().toString();
+
+      EK.parameter({
+        α20: W1.Parameter.α20M,
+        κ: W1.Parameter.κM,
+        κ1: W1.Parameter.κ1M,
+      });
+      W1.Parameter.Δδ = EK.Δδκ().toString();
+
+      AK.parameter({ a: W1.Parameter.δ20, b: W1.Parameter.Δδ });
+      W1.Parameter.δ2 = AK.add().toString();
+
+      dbJson.writeJSONItem(path.resolve(`${datadir}/W1.json`).W1);
+    },
+    function () {
+      console.error(`${datadir}`);
+    }
+  );
 }
 // let input = {
 //   Material: 'Kupfer',

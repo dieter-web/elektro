@@ -1,11 +1,4 @@
 require("use-strict");
-const path = require("path");
-
-const { ElektroKernel, PlanemetrieKernel, Draht } = require(path.resolve(
-  "include/system"
-));
-
-const dbJson = require(path.resolve("controllers/dbJson.js"));
 
 /**
  * @description
@@ -17,10 +10,15 @@ const dbJson = require(path.resolve("controllers/dbJson.js"));
  * @param {*} input
  * @returns {*}
  */
-function Beispiel12(input) {
-  // Speicherort für Daten
-  const jsonfile = path.resolve("src/json/example/beispiel12.json");
-
+async function Beispiel12(input) {
+  const path = require("path");
+  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
+  const dbJson = require(path.resolve("controllers/dbJson.js"));
+  const { ElektroKernel, PlanemetrieKernel, Draht } = require(path.resolve(
+    "include/system"
+  ));
+  const PK = new PlanemetrieKernel();
+  const EK = new ElektroKernel();
   const W1 = new Draht({
     l: input.l,
     d: input.d,
@@ -31,16 +29,16 @@ function Beispiel12(input) {
     y: 50,
   });
 
-  const PK = new PlanemetrieKernel();
-  const EK = new ElektroKernel();
+  const datadir = "src/json/example/Beispiel12";
+  makeDirectory(datadir).then(function () {
+    PK.parameter({ d: W1.Parameter.d });
+    W1.Parameter.A = PK.KAd().toString();
 
-  PK.parameter({ d: W1.Parameter.d });
-  W1.Parameter.A = PK.KAd().toString();
+    EK.parameter({ l: W1.Parameter.l, R: W1.Parameter.R, A: W1.Parameter.A });
+    W1.Parameter.ρ = EK.ρRAl().toString();
 
-  EK.parameter({ l: W1.Parameter.l, R: W1.Parameter.R, A: W1.Parameter.A });
-  W1.Parameter.ρ = EK.ρRAl().toString();
-
-  dbJson.writeJSONItem(jsonfile, W1);
+    dbJson.writeJSONItem(path.resolve(`${datadir}/W1.json`), W1);
+  });
 }
 // let input = {
 //   l: "3 km",

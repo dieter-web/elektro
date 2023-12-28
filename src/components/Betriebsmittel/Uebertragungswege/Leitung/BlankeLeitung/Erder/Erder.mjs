@@ -1,8 +1,8 @@
 import { vBlankeleitung } from "./../Blankeleitung.mjs";
 
 class vErder extends vBlankeleitung {
-  constructor(data) {
-    super(data);
+  constructor(data, point) {
+    super(data, point);
 
     this.vis = {
       fill: "none",
@@ -21,13 +21,11 @@ class vErder extends vBlankeleitung {
       .attr("fill-opacity", this.vis.fillopacity)
       .attr("style", this.vis.style)
       .append("rect")
-      .attr("x", this.data.Position.x)
-      .attr("y", this.data.Position.y)
+      .attr("x", this.point.x)
+      .attr("y", this.point.y)
       .attr("height", this.vis.height)
       .attr("width", this.vis.width);
-  }
 
-  fanschluss() {
     this.Symbol.select("#anschluss")
       .append("path")
       .attr("fill", this.vis.fill)
@@ -35,7 +33,7 @@ class vErder extends vBlankeleitung {
       .attr("style", this.vis.style)
       .attr(
         "d",
-        `M ${this.data.Position.x} ${this.data.Position.y} 
+        `M ${this.point.x} ${this.point.y} 
         m 0 ${this.vis.height / 2} 
         l -${this.vis.al} 0 
         m ${this.vis.al + this.vis.width} 0 

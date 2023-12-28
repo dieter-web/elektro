@@ -1,17 +1,4 @@
 require("use-strict");
-const path = require("path");
-const dbJson = require(path.resolve("controllers/dbJson"));
-
-const {
-  ArithmetikKernel,
-  PlanemetrieKernel,
-  ElektroKernel,
-  Spannungsmesser,
-} = require(path.resolve("include/system"));
-
-const { readMaterialParameter } = require(path.resolve(
-  "src/js/readMaterialParameter.js"
-));
 
 /**
  * @description
@@ -24,7 +11,19 @@ const { readMaterialParameter } = require(path.resolve(
  * @param {*} input
  */
 function Uebung15(input) {
-  const jsonfile = path.resolve("src/json/example/uebung15.json");
+  const path = require("path");
+  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
+  const dbJson = require(path.resolve("controllers/dbJson"));
+  const {
+    ArithmetikKernel,
+    PlanemetrieKernel,
+    ElektroKernel,
+    Spannungsmesser,
+  } = require(path.resolve("include/system"));
+
+  const { readMaterialParameter } = require(path.resolve(
+    "src/js/readMaterialParameter.js"
+  ));
 
   const P1 = new Spannungsmesser({
     Material: "Kupfer",
@@ -34,44 +33,52 @@ function Uebung15(input) {
     N: 200,
     d: "0.03 mm",
     x: 50,
-    y: 50
+    y: 50,
   });
-
-  P1.Parameter.ρM = readMaterialParameter(
-    P1.Parameter.Material,
-    "ρ"
-  ).toString();
 
   const PK = new PlanemetrieKernel();
   const AK = new ArithmetikKernel();
   const EK = new ElektroKernel();
 
-  PK.parameter({ g: P1.Parameter.l, h: P1.Parameter.b });
-  P1.Parameter.Ur = PK.RUgh().toString();
+  const datadir = "src/json/example/Uebung15";
+  makeDirectory(datadir).then(
+    function () {
+      P1.Parameter.ρM = readMaterialParameter(
+        P1.Parameter.Material,
+        "ρ"
+      ).toString();
 
-  PK.parameter({ d: P1.Parameter.d });
-  P1.Parameter.Ad = PK.KAd().toString();
+      PK.parameter({ g: P1.Parameter.l, h: P1.Parameter.b });
+      P1.Parameter.Ur = PK.RUgh().toString();
 
-  AK.parameter({ a: P1.Parameter.Ur, b: P1.Parameter.N });
-  P1.Parameter.ld = AK.mul().toString();
+      PK.parameter({ d: P1.Parameter.d });
+      P1.Parameter.Ad = PK.KAd().toString();
 
-  EK.parameter({
-    ρ: P1.Parameter.ρM,
-    l: P1.Parameter.ld,
-    A: P1.Parameter.Ad,
-    U: P1.Parameter.Ug,
-  });
-  P1.Parameter.Ie = EK.IρAlU().toString();
+      AK.parameter({ a: P1.Parameter.Ur, b: P1.Parameter.N });
+      P1.Parameter.ld = AK.mul().toString();
 
-  dbJson.writeJSONItem(jsonfile, P1);
+      EK.parameter({
+        ρ: P1.Parameter.ρM,
+        l: P1.Parameter.ld,
+        A: P1.Parameter.Ad,
+        U: P1.Parameter.Ug,
+      });
+      P1.Parameter.Ie = EK.IρAlU().toString();
+
+      dbJson.writeJSONItem(path.resolve(`${datadir}/P1.json`), P1);
+    },
+    function () {
+      console.error(`${datadir}`);
+    }
+  );
 }
-let input = {
-  Material: "Kupfer",
-  Ug: "300 mV",
-  l: "2 cm",
-  b: "1 cm",
-  N: 200,
-  d: "0.03 mm",
-};
-Uebung15(input);
-// exports.func = Uebung15
+// let input = {
+//   Material: "Kupfer",
+//   Ug: "300 mV",
+//   l: "2 cm",
+//   b: "1 cm",
+//   N: 200,
+//   d: "0.03 mm",
+// };
+// Uebung15(input);
+exports.func = Uebung15;

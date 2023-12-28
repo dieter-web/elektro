@@ -16,6 +16,7 @@ const PWerkstoff = "src/components/Werkstoff";
 
 /** SECTION Werkstoff */
 const { Werkstoff } = require(path.resolve(`${PWerkstoff}/Werkstoff.js`));
+
 const { Eisenwerkstoff } = require(path.resolve(`${PWerkstoff}/Werkstoff.js`));
 const { Baustahl } = require(path.resolve(`${PWerkstoff}/Werkstoff.js`));
 const { Automatenstahl } = require(path.resolve(`${PWerkstoff}/Werkstoff.js`));

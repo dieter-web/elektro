@@ -1,14 +1,4 @@
 require("use-strict");
-const path = require("path");
-const dbJson = require(path.resolve("controllers/dbJson.js"));
-
-const {
-  ElektroKernel,
-  ArithmetikKernel,
-  PlanemetrieKernel,
-  MehrlagigeSpule,
-} = require(path.resolve("include/system"));
-
 /**
  * @description
  *  Auf einem Spulenkörper mit einer mittleren Windungslänge lm = 4.35 cm sind 680
@@ -19,56 +9,68 @@ const {
  * @date 20/07/2023
  * @param {*} input
  */
-function Aufgabe13(input) {
-  const jsonfile = path.resolve("src/json/example/aufgabe13.json");
+async function Aufgabe13(input) {
+  const path = require("path");
+  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
+  const dbJson = require(path.resolve("controllers/dbJson.js"));
+
+  const {
+    ElektroKernel,
+    ArithmetikKernel,
+    PlanemetrieKernel,
+    MehrlagigeSpule,
+  } = require(path.resolve("include/system"));
 
   const { readMaterialParameter } = require(path.resolve(
     "src/js/readMaterialParameter.js"
   ));
 
-  const L1 = new MehrlagigeSpule({
-    Material: input.Material,
-    lm: input.lm,
-    N: input.N,
-    d: input.d,
-    x: 50,
-    y: 50,
-  });
-
-  // Ergänzung Kennzeichnung
-  L1.Kennzeichnung.Art = "L";
-  L1.Kennzeichnung.Zählnummer = "1";
-
-  // Ergänzung Visualisierung
-  //TODO: falsche Element gewählt, sollte Spule sein und nicht MehrlagigeSpule !!
-  // L1.vis.name = `${L1.Kennzeichnung.Art}${L1.Kennzeichnung.Zählnummer}`;
-
-  // Parameter von L1 ergänzen
-
-  L1.Parameter.ρM = readMaterialParameter(
-    L1.Parameter.Material,
-    "ρ"
-  ).toString();
+  const L1 = new MehrlagigeSpule(input);
+  //   {
+  //   Material: input.Material,
+  //   lm: input.lm,
+  //   N: input.N,
+  //   d: input.d,
+  //   x: 50,
+  //   y: 50,
+  // });
 
   const AK = new ArithmetikKernel();
   const PK = new PlanemetrieKernel();
   const EK = new ElektroKernel();
 
-  AK.parameter({ a: L1.Parameter.lm, b: L1.Parameter.N });
-  L1.Parameter.lg = AK.mul().toString();
+  const datadir = "src/json/example/Aufgabe13";
 
-  PK.parameter({ d: L1.Parameter.d });
-  L1.Parameter.Al = PK.KAd().toString();
+  makeDirectory(datadir).then(
+    function () {
+      L1.Kennzeichnung.Art = "L";
+      L1.Kennzeichnung.Zählnummer = "1";
 
-  EK.parameter({
-    l: L1.Parameter.lg,
-    A: L1.Parameter.Al,
-    ρ: L1.Parameter.ρM,
-  });
+      L1.Parameter.ρM = readMaterialParameter(
+        L1.Parameter.Material,
+        "ρ"
+      ).toString();
 
-  L1.Parameter.G = EK.GAρl().toString();
+      AK.parameter({ a: L1.Parameter.lm, b: L1.Parameter.N });
+      L1.Parameter.lg = AK.mul().toString();
 
-  dbJson.writeJSONItem(jsonfile, L1);
+      PK.parameter({ d: L1.Parameter.d });
+      L1.Parameter.Al = PK.KAd().toString();
+
+      EK.parameter({
+        l: L1.Parameter.lg,
+        A: L1.Parameter.Al,
+        ρ: L1.Parameter.ρM,
+      });
+
+      L1.Parameter.G = EK.GAρl().toString();
+
+      dbJson.writeJSONItem(path.resolve(`${datadir}/L1.json`), L1);
+    },
+    function () {
+      console.error(`${datadir}`);
+    }
+  );
 }
 // let input = {
 //   Material: "Aluminium",

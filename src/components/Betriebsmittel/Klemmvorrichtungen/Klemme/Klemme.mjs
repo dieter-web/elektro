@@ -1,8 +1,8 @@
-import {vKlemmvorrichtungen} from '../Klemmvorrichtungen.mjs'
+import { vKlemmvorrichtungen } from "../Klemmvorrichtungen.mjs";
 
-class vKlemme exteds vKlemmvorrichtungen {
-    constructor(data){
-        super(data)
-    }
+class vKlemme extends vKlemmvorrichtungen {
+  constructor(data) {
+    super(data);
+  }
 }
-export {vKlemme};
+export { vKlemme };

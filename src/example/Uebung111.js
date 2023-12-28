@@ -1,14 +1,4 @@
 require("use-strict");
-const path = require("path");
-const dbJson = require(path.resolve("controllers/dbJson.js"));
-
-const {
-  ElektroKernel,
-  ArithmetikKernel,
-  Reihenschaltung,
-  Widerstand,
-  Klemme,
-} = require(path.resolve("include/system.js"));
 
 /**
  * @description
@@ -20,8 +10,18 @@ const {
  * @date 01/08/2023
  * @param {*} input
  */
-function Uebung111(input) {
-  const jsonfile = path.resolve("src/json/example/uebung111.json");
+async function Uebung111(input) {
+  const path = require("path");
+  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
+  const dbJson = require(path.resolve("controllers/dbJson.js"));
+
+  const {
+    ElektroKernel,
+    ArithmetikKernel,
+    Reihenschaltung,
+    Widerstand,
+    Klemme,
+  } = require(path.resolve("include/system.js"));
 
   // Reihenschaltung
   // Hier müssen die Widerstände verbunden werden.
@@ -37,73 +37,81 @@ function Uebung111(input) {
     y: 50,
   });
 
-  RS1.Kennzeichnung.Art = "RS";
-  RS1.Kennzeichnung.Zählnummer = "1";
-
-  RS1.Schaltung = {
-    Klemme: {
-      A: (A = new Klemme({}, {}, {})),
-      B: (B = new Klemme({}, {}, {})),
-      C: (C = new Klemme({}, {}, {})),
-      D: (D = new Klemme({}, {}, {})),
-    }, // Verbindungspunkte
-    bm: {
-      // Betriebsmittel
-      R1: (R1 = new Widerstand(
-        { Art: "R", Zaehlnummer: 1 },
-        {
-          value: input.R1,
-        },
-        {}
-      )),
-      R2: (R2 = new Widerstand(
-        { Art: "R", Zaehlnummer: 2 },
-        {
-          value: input.R2,
-        },
-        {}
-      )),
-      R3: (R3 = new Widerstand(
-        { Art: "R", Zaehlnummer: 3 },
-        {
-          value: input.R3,
-        },
-        {}
-      )),
-    },
-  };
-
-  RS1.Schaltung.Klemme.C.Parameter.Φ = input.Φc;
-
   const EK = new ElektroKernel();
   const AK = new ArithmetikKernel();
 
-  AK.parameter({
-    a: RS1.Schaltung.bm.R1.Parameter.value,
-    b: RS1.Schaltung.bm.R2.Parameter.value,
-  });
-  let R1R2 = AK.add();
+  const datadir = "src/json/example/Uebung111";
+  makeDirectory(datadir).then(
+    function () {
+      RS1.Kennzeichnung.Art = "RS";
+      RS1.Kennzeichnung.Zählnummer = "1";
 
-  EK.parameter({ R: R1R2, I: RS1.Parameter.I });
+      RS1.Schaltung = {
+        Klemme: {
+          A: (A = new Klemme({}, {}, {})),
+          B: (B = new Klemme({}, {}, {})),
+          C: (C = new Klemme({}, {}, {})),
+          D: (D = new Klemme({}, {}, {})),
+        }, // Verbindungspunkte
+        bm: {
+          // Betriebsmittel
+          R1: (R1 = new Widerstand(
+            { Art: "R", Zaehlnummer: 1 },
+            {
+              value: input.R1,
+            },
+            {}
+          )),
+          R2: (R2 = new Widerstand(
+            { Art: "R", Zaehlnummer: 2 },
+            {
+              value: input.R2,
+            },
+            {}
+          )),
+          R3: (R3 = new Widerstand(
+            { Art: "R", Zaehlnummer: 3 },
+            {
+              value: input.R3,
+            },
+            {}
+          )),
+        },
+      };
 
-  RS1.Schaltung.Klemme.A.Parameter.Φ = EK.ΦRI().toString();
+      RS1.Schaltung.Klemme.C.Parameter.Φ = input.Φc;
 
-  EK.parameter({
-    R: RS1.Schaltung.bm.R2.Parameter.value,
-    I: RS1.Parameter.I,
-  });
-  RS1.Schaltung.Klemme.B.Parameter.Φ = EK.ΦRI().toString();
+      AK.parameter({
+        a: RS1.Schaltung.bm.R1.Parameter.value,
+        b: RS1.Schaltung.bm.R2.Parameter.value,
+      });
+      let R1R2 = AK.add();
 
-  EK.parameter({
-    R: RS1.Schaltung.bm.R3.Parameter.value,
-    I: RS1.Parameter.I,
-  });
-  RS1.Schaltung.Klemme.D.Parameter.Φ = EK.ΦRI();
+      EK.parameter({ R: R1R2, I: RS1.Parameter.I });
 
-  AK.parameter({ a: RS1.Schaltung.Klemme.D.Parameter.Φ, b: -1 }); // liegt auf der anderen Seite vom Bezugspotential
-  RS1.Schaltung.Klemme.D.Parameter.Φ = AK.mul().toString();
+      RS1.Schaltung.Klemme.A.Parameter.Φ = EK.ΦRI().toString();
 
-  dbJson.writeJSONItem(jsonfile, RS1);
+      EK.parameter({
+        R: RS1.Schaltung.bm.R2.Parameter.value,
+        I: RS1.Parameter.I,
+      });
+      RS1.Schaltung.Klemme.B.Parameter.Φ = EK.ΦRI().toString();
+
+      EK.parameter({
+        R: RS1.Schaltung.bm.R3.Parameter.value,
+        I: RS1.Parameter.I,
+      });
+      RS1.Schaltung.Klemme.D.Parameter.Φ = EK.ΦRI();
+
+      AK.parameter({ a: RS1.Schaltung.Klemme.D.Parameter.Φ, b: -1 }); // liegt auf der anderen Seite vom Bezugspotential
+      RS1.Schaltung.Klemme.D.Parameter.Φ = AK.mul().toString();
+
+      dbJson.writeJSONItem(path.resolve(`${datadir}/RS1.json`), RS1);
+    },
+    function () {
+      console.error(`${datadir}`);
+    }
+  );
 }
 // let input = {
 //   R1: '5.2 ohm',

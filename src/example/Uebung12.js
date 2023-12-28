@@ -1,17 +1,4 @@
 require("use-strict");
-const path = require("path");
-const dbJson = require(path.resolve("controllers/dbJson"));
-
-const {
-  ElektroKernel,
-  ArithmetikKernel,
-  PlanemetrieKernel,
-  Litzeleitung,
-} = require(path.resolve("include/system"));
-
-const { readMaterialParameter } = require(path.resolve(
-  "src/js/readMaterialParameter.js"
-));
 
 /**
  * @description
@@ -25,7 +12,20 @@ const { readMaterialParameter } = require(path.resolve(
  * @param {*} input
  */
 function Uebung12(input) {
-  const jsonfile = path.resolve("src/json/example/uebung12.json");
+  const path = require("path");
+  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
+  const dbJson = require(path.resolve("controllers/dbJson"));
+
+  const {
+    ElektroKernel,
+    ArithmetikKernel,
+    PlanemetrieKernel,
+    Litzeleitung,
+  } = require(path.resolve("include/system"));
+
+  const { readMaterialParameter } = require(path.resolve(
+    "src/js/readMaterialParameter.js"
+  ));
 
   const W1 = new Litzeleitung({
     Material: "Kupfer",
@@ -37,31 +37,44 @@ function Uebung12(input) {
     y: 50,
   });
 
-  W1.Kennzeichnung.Art = "W";
-  W1.Kennzeichnung.Zählnummer = "1";
-  
-  W1.Bezeichnung = "H05V-U/K";
-
-  W1.Parameter.ρM = readMaterialParameter(
-    W1.Parameter.Material,
-    "ρ"
-  ).toString();
-
   const AK = new ArithmetikKernel();
   const PK = new PlanemetrieKernel();
   const EK = new ElektroKernel();
 
-  PK.parameter({ d: W1.Parameter.d });
-  W1.Parameter.Al = PK.KAd().toString(); // Litze
+  const datadir = "src/json/example/Uebung12";
 
-  EK.parameter({ l: W1.Parameter.l, ρ: W1.Parameter.ρM, R: W1.Parameter.R });
+  makeDirectory(datadir).then(
+    function () {
+      W1.Kennzeichnung.Art = "W";
+      W1.Kennzeichnung.Zählnummer = "1";
 
-  W1.Parameter.Ag = EK.AρlR().toString();
+      W1.Bezeichnung = "H05V-U/K";
 
-  AK.parameter({ a: W1.Parameter.Ag, b: W1.Parameter.Al });
-  W1.Parameter.ng = AK.div().toString();
+      W1.Parameter.ρM = readMaterialParameter(
+        W1.Parameter.Material,
+        "ρ"
+      ).toString();
 
-  dbJson.writeJSONItem(jsonfile, W1);
+      PK.parameter({ d: W1.Parameter.d });
+      W1.Parameter.Al = PK.KAd().toString(); // Litze
+
+      EK.parameter({
+        l: W1.Parameter.l,
+        ρ: W1.Parameter.ρM,
+        R: W1.Parameter.R,
+      });
+
+      W1.Parameter.Ag = EK.AρlR().toString();
+
+      AK.parameter({ a: W1.Parameter.Ag, b: W1.Parameter.Al });
+      W1.Parameter.ng = AK.div().toString();
+
+      dbJson.writeJSONItem(path.resolve(`${datadir}/W1`), W1);
+    },
+    function () {
+      console.error(`${datadir}`);
+    }
+  );
 }
 // let input = {
 //   Material: "Kupfer",

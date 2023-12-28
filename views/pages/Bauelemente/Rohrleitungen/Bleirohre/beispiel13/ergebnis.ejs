@@ -3,11 +3,11 @@
 
 <script type="module">
     import {tabulate} from '/modules/tabulate.mjs'
-    import {drawboard} from '/modules/drawboard.mjs'
+    import {DrawBoard} from '/sysFrontend/DrawBoard.mjs'
     import {populate} from '/modules/populate.mjs'
-    import {vrl1} from '/d3/lib/Bauelemente/Rohrleitungen/vrl1.mjs'
+    import {vBleirohr} from '/components/Bauelemente/Rohrleitungen/Bleirohre/Bleirohr.mjs'
 
-    const data=await d3.json( "http://localhost:8000/json/example/beispiel13.json" )
+    const data=await populate( "Beispiel13/PtRohr.json" )
 
     // tabelle ergebnis
     tabulate( data,"#ergebnis" )
@@ -20,10 +20,13 @@
     d.value=sel[ 3 ]
     D.value=sel[ 4 ]
 
+    // Visualisierung
+    const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
+    const point={x: 320,y: 240}
 
-    // svg grafik
-    const g=drawboard()
+    const PtRohr=new vBleirohr( data,point );
+    PtRohr.createNode();
+    view.addNode( PtRohr.node )
 
-    g.append( () => vrl1( data ) )
 
 </script>

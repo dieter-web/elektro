@@ -19,13 +19,13 @@ class vSchraubverbindung extends vLoesbareVerbindung {
       // Ausgang ist horizontale Lage
       // Durch drehen in eine Andere Lage bringen möglich ?
       1: {
-        x: data.pos.x -2,
+        x: data.pos.x - 2,
         y: data.pos.y,
       },
-      2. {
+      2: {
         x: data.pos.x + 2,
-        y: data.pos.y
-      }
+        y: data.pos.y,
+      },
     };
   }
 
@@ -35,8 +35,8 @@ class vSchraubverbindung extends vLoesbareVerbindung {
       .attr("fill-opacity", this.vis.fillopacity)
       .attr("style", this.vis.style)
       .append("circle")
-      .attr("cx", this.data.Position.x)
-      .attr("cy", this.data.Position.y)
+      .attr("cx", this.point.x)
+      .attr("cy", this.point.y)
       .attr("r", this.vis.r);
   }
 
@@ -58,9 +58,9 @@ class vSchraubverbindung extends vLoesbareVerbindung {
       .attr("style", this.vis.style)
       .attr(
         "d",
-        `M ${this.data.Position.x - 2} ${this.data.Position.y}
+        `M ${this.point.x - 2} ${this.point.y}
         l -${this.vis.al} 0 
-        M ${this.data.Position.x + 2} ${this.data.Position.y} 
+        M ${this.point.x + 2} ${this.point.y} 
         l ${this.vis.al} 0`
       );
   }

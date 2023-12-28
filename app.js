@@ -103,7 +103,8 @@ app.use(express.urlencoded(urlencodedOptions));
 app.use(requestLogger);
 
 app.use((req, res, next) => {
-  console.log("Time: ", Date.now());
+  let datum = new Date(Date.now());
+  console.log(datum.toLocaleDateString() + "--" + datum.toLocaleTimeString());
   next();
 });
 
@@ -114,30 +115,6 @@ app.use((req, res, next) => {
 //   // i18n init parses req for language headers, cookies, etc.
 //   app.use(i18n.init);
 // });
-
-app.get("/", (req, res) => {
-  res.render(
-    "index",
-    {
-      text: "Grundlagen der Elektrotechnik",
-      teil: "Band 1",
-      menu: [
-        { name: "elektro", link: "/", class: "nav-link" },
-        { name: "Elektrotechnik", link: "/elektrotechnik", class: "nav-link" },
-        { name: "Bauelemente", link: "/bauelemente", class: "nav-link" },
-        { name: "Betriebsmittel", link: "/betriebsmittel", class: "nav-link" },
-        {
-          name: "PhysikalischeChemie",
-          link: "/physikalischechemie",
-          class: "nav-link",
-        },
-      ],
-    },
-    (err, html) => {
-      res.send(html);
-    }
-  );
-});
 
 let users = [
   {
@@ -152,6 +129,7 @@ app.get("/api/users", function (req, res) {
   return res.json(users);
 });
 
+app.use("/", require(path.resolve("routes/root")));
 app.use("/bauelemente", require(path.resolve("routes/bauelemente")));
 app.use("/betriebsmittel", require(path.resolve("routes/betriebsmittel")));
 app.use("/elektrotechnik", require(path.resolve("routes/elektrotechnik")));
@@ -159,6 +137,7 @@ app.use(
   "/physikalischechemie",
   require(path.resolve("routes/physikalischechemie"))
 );
+app.use("/werkstoff", require(path.resolve("routes/werkstoff")));
 app.use("/formulare", require(path.resolve("routes/formulare")));
 
 app.locals.title = "Elektro";

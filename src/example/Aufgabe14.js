@@ -1,10 +1,4 @@
 require("use-strict");
-const path = require("path");
-const dbJson = require(path.resolve("controllers/dbJson.js"));
-
-const { ElektroKernel, MehrlagigeSpule } = require(path.resolve(
-  "include/system"
-));
 
 /**
  * @description
@@ -16,38 +10,44 @@ const { ElektroKernel, MehrlagigeSpule } = require(path.resolve(
  * @param {*} input
  */
 function Aufgabe14(input) {
-  const jsonfile = path.resolve("src/json/example/aufgabe14.json");
+  const path = require("path");
+  const dbJson = require(path.resolve("controllers/dbJson.js"));
+  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
+
+  const { ElektroKernel, MehrlagigeSpule } = require(path.resolve(
+    "include/system"
+  ));
   const Kennzeichnung = dbJson.readJSONFile(
     path.resolve("src/json/Sonstiges/kennzeichnung.json")
   );
-
   const { readMaterialParameter } = require(path.resolve(
     "src/js/readMaterialParameter.js"
   ));
 
-  let L1 = new MehrlagigeSpule({
-    Material: input.Material,
-    l: input.l,
-    U: input.U,
-
-    // Ausgabeposition des Symbols
-    x: 50,
-    y: 50,
-  });
-
-  L1.Kennzeichnung.Art = "L";
-  L1.Kennzeichnung.Zählnummer = "1";
-
-  // notwendige Externe Parameter
-  L1.Parameter.ρcu = readMaterialParameter(input.Material, "ρ").toString();
-
-  // L1.vis.name = `${L1.Kennzeichnung.Art}${L1.Kennzeichnung.Zählnummer}`;
-
+  const L1 = new MehrlagigeSpule(input);
   const EK = new ElektroKernel();
-  EK.parameter({ ρ: L1.Parameter.ρcu, l: L1.Parameter.l, U: L1.Parameter.U });
-  L1.Parameter.S = EK.SUρl().toString();
 
-  dbJson.writeJSONItem(jsonfile, L1);
+  const datadir = "src/json/example/Aufgabe14";
+
+  makeDirectory(datadir).then(
+    function () {
+      L1.Kennzeichnung.Art = "L";
+      L1.Kennzeichnung.Zählnummer = "1";
+      L1.Parameter.ρcu = readMaterialParameter(input.Material, "ρ").toString();
+
+      EK.parameter({
+        ρ: L1.Parameter.ρcu,
+        l: L1.Parameter.l,
+        U: L1.Parameter.U,
+      });
+      L1.Parameter.S = EK.SUρl().toString();
+
+      dbJson.writeJSONItem(path.resolve(`${datadir}/L1.json`), L1);
+    },
+    function () {
+      console.error(`${datadir}`);
+    }
+  );
 }
 // let input = {
 //   Material: "Kupfer",

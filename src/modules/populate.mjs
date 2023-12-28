@@ -6,8 +6,8 @@
  * @param {*} requestURL - JSON Datei
  * @returns {*}
  */
-async function populate(requestURL) {
-  const request = new Request(requestURL);
+async function populate(name) {
+  const request = new Request(`http://localhost:8000/json/example/${name}`);
   const response = await fetch(request);
   const text = await response.text();
   const data = JSON.parse(text);

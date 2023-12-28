@@ -1,16 +1,4 @@
 require("use-strict");
-const path = require("path");
-const dbJson = require(path.resolve("controllers/dbJson"));
-
-const {
-  ElektroKernel,
-  ArithmetikKernel,
-  MehrlagigeSpule,
-} = require(path.resolve("include/system"));
-
-const { readMaterialParameter } = require(path.resolve(
-  "src/js/readMaterialParameter.js"
-));
 
 /**
  * @description
@@ -22,48 +10,61 @@ const { readMaterialParameter } = require(path.resolve(
  * @date 25/07/2023
  * @param {*} input
  */
-function Beispiel18(input) {
-  const jsonfile = path.resolve("src/json/example/beispiel18.json");
+async function Beispiel18(input) {
+  const path = require("path");
+  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
+  const dbJson = require(path.resolve("controllers/dbJson"));
 
-  const L1 = new MehrlagigeSpule({
-    Material: input.Material,
-    δ: input.δ,
-    R: input.R,
-    p: input.p,
+  const {
+    ElektroKernel,
+    ArithmetikKernel,
+    MehrlagigeSpule,
+  } = require(path.resolve("include/system"));
 
-    x: 50,
-    y: 50,
-  });
+  const { readMaterialParameter } = require(path.resolve(
+    "src/js/readMaterialParameter.js"
+  ));
 
-  L1.Kennzeichnung.Art = "L";
-  L1.Kennzeichnung.Zählnummer = "1";
-
-  L1.Parameter.ρM = readMaterialParameter(input.Material, "ρ").toString();
-
-  L1.Parameter.δ0M = readMaterialParameter(
-    L1.Parameter.Material,
-    "δ0"
-  ).toString();
+  const L1 = new MehrlagigeSpule(input);
 
   const EK = new ElektroKernel();
   const AK = new ArithmetikKernel();
 
-  AK.parameter({ G: L1.Parameter.R, p: L1.Parameter.p });
-  L1.Parameter.Prozentwert = AK.Prozentwert().toString();
+  const datadir = "src/json/example/Beispiel18";
 
-  AK.parameter({ a: L1.Parameter.R, b: L1.Parameter.Prozentwert });
-  L1.Parameter.R2 = AK.add().toString();
+  makeDirectory(datadir).then(
+    function () {
+      L1.Kennzeichnung.Art = "L";
+      L1.Kennzeichnung.Zählnummer = "1";
 
-  EK.parameter({
-    δ0: L1.Parameter.δ0M,
-    R: L1.Parameter.R,
-    Rδ2: L1.Parameter.R2,
-    δ1: L1.Parameter.δ,
-  });
+      L1.Parameter.ρM = readMaterialParameter(input.Material, "ρ").toString();
 
-  L1.Parameter.erg = EK.δ2().toString();
+      L1.Parameter.δ0M = readMaterialParameter(
+        L1.Parameter.Material,
+        "δ0"
+      ).toString();
 
-  dbJson.writeJSONItem(jsonfile, L1);
+      AK.parameter({ G: L1.Parameter.R, p: L1.Parameter.p });
+      L1.Parameter.Prozentwert = AK.Prozentwert().toString();
+
+      AK.parameter({ a: L1.Parameter.R, b: L1.Parameter.Prozentwert });
+      L1.Parameter.R2 = AK.add().toString();
+
+      EK.parameter({
+        δ0: L1.Parameter.δ0M,
+        R: L1.Parameter.R,
+        Rδ2: L1.Parameter.R2,
+        δ1: L1.Parameter.δ,
+      });
+
+      L1.Parameter.erg = EK.δ2().toString();
+
+      dbJson.writeJSONItem(path.resolve(`${datadir}/L1.json`), L1);
+    },
+    function () {
+      console.error(`${datadir}`);
+    }
+  );
 }
 // let input = {
 //   Material: "Kupfer",

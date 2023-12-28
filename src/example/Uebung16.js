@@ -1,17 +1,4 @@
 require("use-strict");
-const path = require("path");
-const dbJson = require(path.resolve("controllers/dbJson"));
-
-const {
-  ArithmetikKernel,
-  PlanemetrieKernel,
-  ElektroKernel,
-  Kabel,
-} = require(path.resolve("include/system"));
-
-const { readMaterialParameter } = require(path.resolve(
-  "src/js/readMaterialParameter.js"
-));
 
 /**
  * @description
@@ -23,8 +10,21 @@ const { readMaterialParameter } = require(path.resolve(
  * @date 26/07/2023
  * @param {*} input
  */
-function Uebung16(input) {
-  const jsonfile = path.resolve("src/json/example/uebung16.json");
+async function Uebung16(input) {
+  const path = require("path");
+  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
+  const dbJson = require(path.resolve("controllers/dbJson"));
+
+  const {
+    ArithmetikKernel,
+    PlanemetrieKernel,
+    ElektroKernel,
+    Kabel,
+  } = require(path.resolve("include/system"));
+
+  const { readMaterialParameter } = require(path.resolve(
+    "src/js/readMaterialParameter.js"
+  ));
 
   const W1 = new Kabel({
     Material: "Blei",
@@ -35,31 +35,44 @@ function Uebung16(input) {
     y: 50,
   });
 
-  W1.Kennzeichnung.Art = "W";
-  W1.Kennzeichnung.Zählnummer = "1";
-
-  W1.Parameter.ρM = readMaterialParameter(
-    W1.Parameter.Material,
-    "ρ"
-  ).toString();
-
   const AK = new ArithmetikKernel();
   const PK = new PlanemetrieKernel();
   const EK = new ElektroKernel();
 
-  AK.parameter({ a: W1.Parameter.d, b: 2 });
-  W1.Parameter.d2 = AK.mul().toString();
+  const datadir = "src/json/example/Uebung16";
 
-  AK.parameter({ a: W1.Parameter.D, b: W1.Parameter.d2 });
-  W1.Parameter.di = AK.sub().toString();
+  makeDirectory(datadir).then(
+    function () {
+      W1.Kennzeichnung.Art = "W";
+      W1.Kennzeichnung.Zählnummer = "1";
 
-  PK.parameter({ D: W1.Parameter.D, d: W1.Parameter.di });
-  W1.Parameter.A = PK.KRADd().toString();
+      W1.Parameter.ρM = readMaterialParameter(
+        W1.Parameter.Material,
+        "ρ"
+      ).toString();
 
-  EK.parameter({ ρ: W1.Parameter.ρM, A: W1.Parameter.A, R: W1.Parameter.R });
-  W1.Parameter.lbm = EK.lρra().toString();
+      AK.parameter({ a: W1.Parameter.d, b: 2 });
+      W1.Parameter.d2 = AK.mul().toString();
 
-  dbJson.writeJSONItem(jsonfile, W1);
+      AK.parameter({ a: W1.Parameter.D, b: W1.Parameter.d2 });
+      W1.Parameter.di = AK.sub().toString();
+
+      PK.parameter({ D: W1.Parameter.D, d: W1.Parameter.di });
+      W1.Parameter.A = PK.KRADd().toString();
+
+      EK.parameter({
+        ρ: W1.Parameter.ρM,
+        A: W1.Parameter.A,
+        R: W1.Parameter.R,
+      });
+      W1.Parameter.lbm = EK.lρra().toString();
+
+      dbJson.writeJSONItem(path.resolve(`${datadir}/W1.json`), W1);
+    },
+    function () {
+      console.error(`${datadir}`);
+    }
+  );
 }
 // let input = {
 //   Material: 'Blei',

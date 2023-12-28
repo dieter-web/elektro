@@ -9,4 +9,4 @@ function darc(data) {
   return a;
 }
 
-export { dard };
+export { darc };

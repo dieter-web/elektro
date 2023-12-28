@@ -5,7 +5,7 @@
 <script type="module">
 
     import {tabulate} from '/modules/tabulate.mjs'
-    import {drawboard} from '/modules/drawboard.mjs'
+    import {DrawBoard} from '/sysFrontend/DrawBoard.mjs'
     import {populate} from '/modules/populate.mjs'
     import {vR} from '/d3/lib/Betriebsmittel/vR.mjs'
 
@@ -16,7 +16,7 @@
 
     // Rückkopplung
     const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
-    
+
     R20.value=sel[ 0 ]
     Rδ2.value=sel[ 1 ]
     δ2.value=sel[ 2 ]

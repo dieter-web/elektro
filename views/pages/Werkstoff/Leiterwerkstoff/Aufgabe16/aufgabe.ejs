@@ -1,0 +1,31 @@
+<%- include('./../../../../layouts/partials/aufgabe.ejs', {
+    id : "aufgabe16",
+    action: "/werkstoff/leiterwerkstoff/aufgabe16/aufgabe"
+}) %>
+
+<script type="module">
+    import {finput} from '/modules/finput.mjs'
+    import {fsubmit} from '/modules/fsubmit.mjs'
+    import {ftext} from '/modules/ftext.mjs'
+
+    const idBeispiel="#aufgabe16"
+    const idText="#text"
+
+    const dataSubmit=[ "Rechnen" ] // 1 Button 
+
+    const dataForm=[
+        {id: 'Material',text: "Material",name: "Material",value: "GoldChrom"},
+    ]
+
+    const dataText=[
+        {
+            title: "Aufgabe 1.6",
+            subtitle: "Material",
+            text: `Wie groß ist die Temperaturkonstante δ0 für Gold-Chrom`
+        }
+
+    ]
+    ftext( dataText,idText )
+    finput( dataForm,idBeispiel )
+    fsubmit( dataSubmit,idBeispiel )
+</script>

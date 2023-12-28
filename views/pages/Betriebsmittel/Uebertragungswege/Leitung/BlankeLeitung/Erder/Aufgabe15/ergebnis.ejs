@@ -5,21 +5,15 @@
 
     import {drawkennzeichnung} from '/modules/drawkennzeichnung.mjs'
     import {tabulate} from '/modules/tabulate.mjs'
-    import {drawboard} from '/modules/drawboard.mjs'
+    import {DrawBoard} from '/sysFrontend/DrawBoard.mjs'
     import {populate} from '/modules/populate.mjs'
 
-    // Visualisierung
     import {vErder} from '/components/Betriebsmittel/Uebertragungswege/Leitung/Blankeleitung/Erder/Erder.mjs'
-    // import {vSchraubverbindung} from '/components/Verbindungstechnik/LoesbareVerbindung/SchraubVerbindung/SchraubVerbindung.mjs'
 
-    //Kabel für Tabelle und Visualisierung
-    const dataW1=await populate( "http://localhost:8000/json/example/Aufgabe15/W1.json" )
+    const data=await populate( "Aufgabe15/W1.json" )
 
-    // Klemme für Visualisierung
-    // const dataX1=await populate( "http://localhost:8000/json/example/Aufgabe15/X1.json" )
-
-    drawkennzeichnung( dataW1,"#kennzeichnung" )
-    tabulate( dataW1,"#ergebnis" )
+    drawkennzeichnung( data,"#kennzeichnung" )
+    tabulate( data,"#ergebnis" )
 
 
     // Rückkopplung
@@ -30,12 +24,13 @@
     δ2.value=tab[ 3 ]
 
     // Visualisierung
-    const g=drawboard()
+    const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
 
-    let vE=new vErder( dataW1 )
-    // let vS=new vSchraubverbindung( dataX1 )
+    const point={x: 320,y: 240};
 
-    g.append( () => vE.createNode( dataW1 ) )
-    // g.append( () => vS.createNode( dataX1 ) )
+    let W1=new vErder( data,point )
+    W1.createNode();
+    view.addNode( W1.node )
+
 
 </script>

@@ -1,16 +1,4 @@
 require("use-strict");
-const path = require("path");
-
-const { ElektroKernel, ArithmetikKernel, Leitung } = require(path.resolve(
-  "include/system"
-));
-
-const { readMaterialParameter } = require(path.resolve(
-  "src/js/readMaterialParameter.js"
-));
-
-const dbJson = require(path.resolve("controllers/dbJson.js"));
-
 /**
  * @function Beispiel14
  *
@@ -27,50 +15,48 @@ const dbJson = require(path.resolve("controllers/dbJson.js"));
  * @param {math.Unit} I - Stromstärke
  * @returns {string} A - Querschnitt der Leitung
  */
-function Beispiel14(input) {
-  const jsonfile = path.resolve("src/json/example/beispiel14.json");
-
-  // const Kennzeichnung = dbJson.readJSONFile(
-  //   path.resolve("src/json/Uebertragungswege/Leitungen/Bezeichnung.json")
-  // );
-
-  const W1 = new Leitung({
-    // Parameter
-    Material: input.Material,
-    U: input.U,
-    p: input.p,
-    l: input.l,
-    a: input.a,
-    I: input.I,
-
-    // grafische Position
-    x: 50,
-    y: 50,
-  });
-
-  W1.Parameter.ρal = readMaterialParameter(
-    W1.Parameter.Material,
-    "ρ"
-  ).toString();
-
+async function Beispiel14(input) {
+  const path = require("path");
+  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
+  const dbJson = require(path.resolve("controllers/dbJson.js"));
+  const { ElektroKernel, ArithmetikKernel, Leitung } = require(path.resolve(
+    "include/system"
+  ));
+  const { readMaterialParameter } = require(path.resolve(
+    "src/js/readMaterialParameter.js"
+  ));
+  const W1 = new Leitung(input);
   const AK = new ArithmetikKernel();
   const EK = new ElektroKernel();
+  const datadir = "src/json/example/Beispiel14";
 
-  AK.parameter({ G: W1.Parameter.U, p: W1.Parameter.p });
-  W1.Parameter.prozentwert = AK.Prozentwert().toString();
+  makeDirectory(datadir).then(
+    function () {
+      W1.Parameter.ρal = readMaterialParameter(
+        W1.Parameter.Material,
+        "ρ"
+      ).toString();
 
-  AK.parameter({ a: W1.Parameter.a, b: W1.Parameter.l });
-  W1.Parameter.lg = AK.mul().toString();
+      AK.parameter({ G: W1.Parameter.U, p: W1.Parameter.p });
+      W1.Parameter.prozentwert = AK.Prozentwert().toString();
 
-  EK.parameter({
-    ρ: W1.Parameter.ρal,
-    l: W1.Parameter.lg,
-    U: W1.Parameter.prozentwert,
-    I: W1.Parameter.I,
-  });
-  W1.Parameter.A = EK.AρlUI().toString();
+      AK.parameter({ a: W1.Parameter.a, b: W1.Parameter.l });
+      W1.Parameter.lg = AK.mul().toString();
 
-  dbJson.writeJSONItem(jsonfile, W1);
+      EK.parameter({
+        ρ: W1.Parameter.ρal,
+        l: W1.Parameter.lg,
+        U: W1.Parameter.prozentwert,
+        I: W1.Parameter.I,
+      });
+      W1.Parameter.A = EK.AρlUI().toString();
+
+      dbJson.writeJSONItem(path.resolve(`${datadir}/W1.json`), W1);
+    },
+    function () {
+      console.error(`${datadir}`);
+    }
+  );
 }
 // let input = {
 //   p: "5", //  ArithmetikKernel

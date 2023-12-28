@@ -5,7 +5,6 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "C:\\src\\lib\\emsdk\\emscripten\\1.38.0\\system\\include",
-                "C:\\src\\lib\\emsdk\\emscripten\\1.38.31\\system\\include"
             ],
             "defines": [
                 "_DEBUG",
@@ -18,5 +17,9 @@
             "intelliSenseMode": "${default}"
         }
     ],
-    "version": 4
+    "version": 4,
+    "enableConfigurationSquiggles": true,
+    "env": {
+
+    }
 }

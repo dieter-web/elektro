@@ -1,0 +1,19 @@
+<%- include('./../../../layouts/partials/head.ejs',{}) %>
+
+<body>
+    <%- include('./../../../layouts/partials/navbarTemplate', {}) %>
+
+    <script type="module">
+        import {mainNavbar} from "/modules/mainNavbar.js"
+        let menu=[
+            {"name": "elektro","link": "/","class": "nav-link"},
+            {"name": "Werkstoff","link": "/werkstoff","class": "nav-link"},
+            {"name": "Baustahl","link": "/werkstoff/baustahl","class": "nav-link"},
+        ]
+        mainNavbar( menu );
+    </script>
+    <main>
+        <%- body %>
+    </main>
+    <%#- include('./../partials/footer',{}) %>
+</body>

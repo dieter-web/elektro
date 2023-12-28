@@ -1,14 +1,4 @@
 require("use-strict");
-const path = require("path");
-const dbJson = require(path.resolve("controllers/dbJson"));
-
-const { ElektroKernel, Magnetspule } = require(path.resolve("include/system"));
-
-const { readMaterialParameter } = require(path.resolve(
-  "src/js/readMaterialParameter.js"
-));
-
-const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
 
 /**
  * @description
@@ -21,8 +11,20 @@ const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
  * @date 26/07/2023
  * @param {*} input
  */
-function Uebung18(input) {
-  const jsonfile = path.resolve("src/json/example/uebung18.json");
+async function Uebung18(input) {
+  const path = require("path");
+  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
+  const dbJson = require(path.resolve("controllers/dbJson"));
+
+  const { ElektroKernel, Magnetspule } = require(path.resolve(
+    "include/system"
+  ));
+
+  const { readMaterialParameter } = require(path.resolve(
+    "src/js/readMaterialParameter.js"
+  ));
+
+  const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
 
   const L1 = new Magnetspule({
     Material: "Kupfer",
@@ -30,31 +32,40 @@ function Uebung18(input) {
     δ2: "60 celsius",
   });
 
-  L1.Kennzeichnung.Art = "L";
-  L1.Kennzeichnung.Zählnummer = "1";
-
-  L1.Parameter.ρM = readMaterialParameter(
-    L1.Parameter.Material,
-    "ρ"
-  ).toString();
-  L1.Parameter.α20 = readMaterialParameter(
-    L1.Parameter.Material,
-    "α20"
-  ).toString();
-
-  L1.Parameter.δ20 = readKonstante("Vergleichstemperatur").toString();
-
   const EK = new ElektroKernel();
-  EK.parameter({
-    δ1: L1.Parameter.δ1,
-    δ2: L1.Parameter.δ2,
-    δ20: L1.Parameter.δ20,
-    α20: L1.Parameter.α20,
-  });
 
-  L1.Parameter.pI = EK.Rpδ1δ2().toString();
+  const datadir = "src/json/example/Uebung16";
+  makeDirectory(datadir).then(
+    function () {
+      L1.Kennzeichnung.Art = "L";
+      L1.Kennzeichnung.Zählnummer = "1";
 
-  dbJson.writeJSONItem(jsonfile, L1);
+      L1.Parameter.ρM = readMaterialParameter(
+        L1.Parameter.Material,
+        "ρ"
+      ).toString();
+      L1.Parameter.α20 = readMaterialParameter(
+        L1.Parameter.Material,
+        "α20"
+      ).toString();
+
+      L1.Parameter.δ20 = readKonstante("Vergleichstemperatur").toString();
+
+      EK.parameter({
+        δ1: L1.Parameter.δ1,
+        δ2: L1.Parameter.δ2,
+        δ20: L1.Parameter.δ20,
+        α20: L1.Parameter.α20,
+      });
+
+      L1.Parameter.pI = EK.Rpδ1δ2().toString();
+
+      dbJson.writeJSONItem(path.resolve(`${datadir}/L1.json`), L1);
+    },
+    function () {
+      console.error(`${datadir}`);
+    }
+  );
 }
 // let input = {
 //   Material: 'Kupfer',

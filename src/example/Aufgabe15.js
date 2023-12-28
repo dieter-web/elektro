@@ -1,10 +1,4 @@
-// require("use-strict");
-const path = require("path");
-const dbJson = require(path.resolve("controllers/dbJson.js"));
-
-const { ElektroKernel, PlanemetrieKernel, Erder } = require(path.resolve(
-  "include/system"
-));
+require("use-strict");
 
 /**
  * @description
@@ -15,47 +9,35 @@ const { ElektroKernel, PlanemetrieKernel, Erder } = require(path.resolve(
  * @param {*} input
  */
 async function Aufgabe15(input) {
+  const path = require("path");
   const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
+  const dbJson = require(path.resolve("controllers/dbJson.js"));
 
-  //TODO: Was ist wenn der Ordner schon vorhanden ist, wird er überschrieben Ordner
-  // sollte man ihn vorher löschen ?
+  const { ElektroKernel, PlanemetrieKernel, Erder } = require(path.resolve(
+    "include/system"
+  ));
 
-  // const projectFolder = "src/json/example/Aufgabe15";
+  const Kennzeichnung = dbJson.readJSONFile(
+    path.resolve("src/json/Sonstiges/kennzeichnung.json")
+  );
 
   const { readMaterialParameter } = require(path.resolve(
     "src/js/readMaterialParameter.js"
   ));
-  const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
 
-  // const X1 = new SchraubVerbindung({
-  // });
+  const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
 
   const W1 = new Erder(input);
   const PK = new PlanemetrieKernel();
   const EK = new ElektroKernel();
 
-  // Promises zum erzeugen des Pfades ../Aufgabe15
-  makeDirectory("src/json/example/Aufgabe15").then(
-    function () {
-      // X1.Kennzeichnung = {
-      //   Art: "X",
-      //   Zählnummer: "1",
-      // };
+  const datadir = "src/json/example/Aufgabe15";
 
+  makeDirectory(datadir).then(
+    function () {
       W1.Kennzeichnung.Art = "W";
       W1.Kennzeichnung.Zählnummer = "1";
 
-      W1.Position = {
-        x: 50,
-        y: 50,
-      };
-
-      // X1.Position = {
-      //   x: W1.Position - ,
-      //   y: 50 + 10 / 2,
-      // };
-
-      // Zusätzliche Parameter W1
       W1.Parameter.ρm = readMaterialParameter(input.Material, "ρ").toString();
       W1.Parameter.α20 = readMaterialParameter(
         input.Material,
@@ -82,17 +64,10 @@ async function Aufgabe15(input) {
 
       W1.Parameter.R2 = EK.Rδ().toString();
 
-      dbJson.writeJSONItem(
-        path.resolve("src/json/example/Aufgabe15/W1.json"),
-        W1
-      );
-      // dbJson.writeJSONItem(
-      //   path.resolve("src/json/example/Aufgabe15/X1.json"),
-      //   X1
-      // );
+      dbJson.writeJSONItem(path.resolve(`${datadir}/W1.json`), W1);
     },
     function () {
-      console.error("FEHLER aufgetreten");
+      console.error(`${datadir}`);
     }
   );
 }

@@ -1,8 +1,8 @@
 import { vUebertragungswege } from "../Uebertragungswege.mjs";
 
 class vLeitung extends vUebertragungswege {
-  constructor(data) {
-    super(data);
+  constructor(data, point) {
+    super(data, point);
   }
 }
 
