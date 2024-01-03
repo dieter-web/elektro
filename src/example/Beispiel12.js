@@ -37,7 +37,7 @@ async function Beispiel12(input) {
     EK.parameter({ l: W1.Parameter.l, R: W1.Parameter.R, A: W1.Parameter.A });
     W1.Parameter.ρ = EK.ρRAl().toString();
 
-    dbJson.writeJSONItem(path.resolve(`${datadir}/W1.json`), W1);
+    dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), W1);
   });
 }
 // let input = {

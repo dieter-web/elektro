@@ -60,7 +60,7 @@ async function Uebung11(input) {
 
       W1.Parameter.erg = EK.RρlA().toString();
 
-      dbJson.writeJSONItem(path.resolve(`${datadir}/W1`), W1);
+      dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), W1);
     },
     function () {
       console.error(`${datadir}`);

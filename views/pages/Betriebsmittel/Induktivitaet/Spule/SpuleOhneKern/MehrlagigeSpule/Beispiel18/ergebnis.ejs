@@ -1,45 +1,28 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
 
-<!-- <div class="container text-left">
-    <div class="row ">
-        <table class="table table-bordered" id="ergebnis1">SK1</table>
-    </div>
-    <div class="row ">
-        <table class="table table-bordered" id="ergebnis2">W1</table>
-    </div>
-</div> -->
+import {vMehrlagigeSpule} from
+'/components/Betriebsmittel/Induktivitaet/Spule/SpuleOhneKern/MehrlagigeSpule/MehrlagigeSpule.mjs'
 
-<script type="module">
+// vom Server laden
+const data=await populate( "example/beispiel18.json" )
 
-    import {drawkennzeichnung} from '/modules/drawkennzeichnung.mjs'
-    import {tabulate} from '/modules/tabulate.mjs'
-    import {DrawBoard} from '/sysFrontend/DrawBoard.mjs'
-    import {populate} from '/modules/populate.mjs'
-    import {vMehrlagigeSpule} from '/components/Betriebsmittel/Induktivitaet/Spule/SpuleOhneKern/MehrlagigeSpule/MehrlagigeSpule.mjs'
+// drawkennzeichnung( data,"#kennzeichnung" )
+const table=new Tabelle( data,"#ergebnis" );
+table.tabulate();
 
-    // vom Server laden
-    const data=await populate( "http://localhost:8000/json/example/beispiel18.json" )
 
-    // let dataSK1=data.Parameter.SK1
-    // let dataW1=data.Parameter.W1
+// Rückkopplung
+const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
+Material.value=sel[ 0 ]
+δ.value=sel[ 1 ]
+R.value=sel[ 2 ]
+p.value=sel[ 3 ]
 
-    // tabulate( dataSK1,"#ergebnis1" )
-    // tabulate( dataW1,"#ergebnis2" )
-    drawkennzeichnung( data,"#kennzeichnung" )
-    tabulate( data,"#ergebnis" )
-
-    // Rückkopplung
-    const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
-    Material.value=sel[ 0 ]
-    δ.value=sel[ 1 ]
-    R.value=sel[ 2 ]
-    p.value=sel[ 3 ]
-
-    // Visualisierung
-    const g=drawboard()
-    let vL=new vMehrlagigeSpule( data )
-    g.append( () => vL.createNode() )
+// Visualisierung
+const g=drawboard()
+let vL=new vMehrlagigeSpule( data )
+g.append( () => vL.createNode() )
 
 
 </script>

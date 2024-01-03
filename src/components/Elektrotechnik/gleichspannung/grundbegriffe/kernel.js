@@ -13,11 +13,17 @@ const config = {
 const math = create(all, config);
 
 const { run } = require(path.resolve("src/js/run.js"));
+// const { appendJSONItem } = require(path.resolve("controllers/dbJson.js"));
 
 class ElektroKernel {
   constructor(par = {}) {
     this.param = {};
     this.parameter(par);
+  }
+
+  //TODO: Abfrage das key auch im Zeichenvorrat vorhanden ist 1
+  appendParameter(key, value) {
+    this.param[`${key}`] = math.unit(value);
   }
 
   parameter(obj) {

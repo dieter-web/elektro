@@ -2,24 +2,22 @@
 <%- include('../../../../../../layouts/partials/ergebnis.ejs') %>
 
 
-<script type="module">
-    import {tabulate} from '/modules/tabulate.mjs'
-    import {DrawBoard} from '/sysFrontend/DrawBoard.mjs'
-    import {populate} from '/modules/populate.mjs'
-    import {vW} from '/d3/lib/Betriebsmittel/vW.mjs'
+import {vW} from '/d3/lib/Betriebsmittel/vW.mjs'
 
-    // tabelle ergebnis
-    const data=await populate( "http://localhost:8000/json/example/beispiel12.json" )
-    tabulate( data,"#ergebnis" )
 
-    // Rückkopplung
-    const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
-    l.value=tab[ 1 ]
-    d.value=tab[ 2 ]
-    R.value=tab[ 3 ]
+const data=await populate( "example/Beispiel12/data.json" )
 
-    // svg grafik
-    const g=drawboard();
-    g.append( () => vW( data ) )
+const table=new Tabelle( data,"#ergebnis" );
+table.tabulate();
+
+// Rückkopplung
+const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
+l.value=tab[ 1 ]
+d.value=tab[ 2 ]
+R.value=tab[ 3 ]
+
+// svg grafik
+const g=drawboard();
+g.append( () => vW( data ) )
 
 </script>

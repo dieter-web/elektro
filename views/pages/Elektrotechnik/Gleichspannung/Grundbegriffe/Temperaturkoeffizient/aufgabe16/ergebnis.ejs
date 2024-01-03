@@ -1,33 +1,29 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../layouts/partials/ergebnis.ejs') %>
 
-<script type="module">
-
-    import {drawkennzeichnung} from '/modules/drawkennzeichnung.mjs'
-    import {populate} from '/modules/populate.mjs'
-    import {tabulate} from '/modules/tabulate.mjs'
-    import {DrawBoard} from '/sysFrontend/DrawBoard.mjs'
-    import {vLeiterwerkstoff} from '/components/Werkstoff/Werkstoff.mjs'
-
-    // tabelle ergebnis
-    const data=await populate( "http://localhost:8000/json/example/aufgabe16.json" )
-
-    const mat=await populate( "http://localhost:8000/json/Sonstiges/Leiterwerkstoffe.json" )
-
-    // drawKennzeichnung( data,"#kennzeichnung" )
-    tabulate( data,"#ergebnis" )
-
-    // Rückkopplung
-    const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
-    Material.value=tab[ 0 ]
-
-    // Visualisierung
-    const gM=drawboard();
-
-    let M=new vLeiterwerkstoff( data )
-
-    gM.append( () => M.createNode() )
 
 
+import {vLeiterwerkstoff} from '/components/Werkstoff/Werkstoff.mjs'
+
+
+const data=await populate( "example/Aufgabe16/data.json" )
+const mat=await populate( "Sonstiges/Leiterwerkstoffe.json" )
+
+drawKennzeichnung( data,"#kennzeichnung" )
+
+const table=new Tabelle( data,"#ergebnis" );
+table.tabulate();
+
+
+// Rückkopplung
+const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
+Material.value=tab[ 0 ]
+
+// Visualisierung
+const gM= new DrawBoard();
+
+let M=new vLeiterwerkstoff( data )
+
+gM.append( () => M.createNode() )
 
 </script>

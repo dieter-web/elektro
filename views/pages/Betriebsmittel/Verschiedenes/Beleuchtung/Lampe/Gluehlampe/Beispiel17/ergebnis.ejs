@@ -1,28 +1,26 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
 
-<script type="module">
-    import {drawkennzeichnung} from '/modules/drawkennzeichnung.mjs'
-    import {tabulate} from '/modules/tabulate.mjs'
-    import {DrawBoard} from '/sysFrontend/DrawBoard.mjs'
-    import {populate} from '/modules/populate.mjs'
-    import {vCLampe} from '/d3/lib/Betriebsmittel/vCLampe.mjs'
+import {vCLampe} from '/d3/lib/Betriebsmittel/vCLampe.mjs'
 
-    const data=await populate( "http://localhost:8000/json/example/beispiel17.json" )
+const data=await populate( "example/Beispiel17/data.json" )
 
-    drawkennzeichnung( data,"#kennzeichnung" )
-    tabulate( data,"#ergebnis" )
+drawkennzeichnung( data,"#kennzeichnung" )
 
-    // Rückkopplung
-    const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
-    Material.value=tab[ 0 ]
-    l.value=tab[ 1 ]
-    d.value=tab[ 2 ]
-    δ2.value=tab[ 3 ]
+const table=new Tabelle( data,"#ergebnis" );
+table.tabulate();
 
-    // Visualisierung
-    const g=drawboard()
-    let Lampe=new vCLampe( data )
-    g.append( () => Lampe.createNode() )
+
+// Rückkopplung
+const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
+Material.value=tab[ 0 ]
+l.value=tab[ 1 ]
+d.value=tab[ 2 ]
+δ2.value=tab[ 3 ]
+
+// Visualisierung
+const g=drawboard()
+let Lampe=new vCLampe( data )
+g.append( () => Lampe.createNode() )
 
 </script>

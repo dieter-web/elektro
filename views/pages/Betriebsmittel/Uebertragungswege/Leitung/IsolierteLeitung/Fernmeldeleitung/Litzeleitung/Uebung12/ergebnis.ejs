@@ -1,32 +1,31 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../../../layouts/partials/ergebnis.ejs') %>
 
-<script type="module">
-    import {drawkennzeichnung} from '/modules/drawkennzeichnung.mjs'
-    import {tabulate} from '/modules/tabulate.mjs'
-    import {DrawBoard} from '/sysFrontend/DrawBoard.mjs'
-    import {populate} from '/modules/populate.mjs'
-    import {vLitzeleitung} from '/components/Betriebsmittel/Uebertragungswege/Leitung/Isolierteleitung/Fernmeldeleitung/Litzeleitung/Litzeleitung.mjs'
 
-    //tabelle ergebnis
-    const data=await populate( "http://localhost:8000/json/example/uebung12.json" )
-
-    drawkennzeichnung( data,"#kennzeichnung" )
-    tabulate( data,"#ergebnis" )
+import {vLitzeleitung} from
+'/components/Betriebsmittel/Uebertragungswege/Leitung/Isolierteleitung/Fernmeldeleitung/Litzeleitung/Litzeleitung.mjs'
 
 
-    // Rückkopplung
-    const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
+const data=await populate( "example/Uebung12/data.json" )
+
+drawkennzeichnung( data,"#kennzeichnung" )
+
+const table=new Tabelle( data,"#ergebnis" );
+table.tabulate();
 
 
-    Material.value=sel[ 0 ]
-    l.value=sel[ 1 ]
-    R.value=sel[ 2 ]
-    d.value=sel[ 3 ]
+// Rückkopplung
+const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
 
-    // Visualisierung
-    const g=drawboard()
-    let vW=new vLitzeleitung( data )
-    g.append( () => vW.createNode() )
+
+Material.value=sel[ 0 ]
+l.value=sel[ 1 ]
+R.value=sel[ 2 ]
+d.value=sel[ 3 ]
+
+// Visualisierung
+const g=drawboard()
+let vW=new vLitzeleitung( data )
+g.append( () => vW.createNode() )
 
 </script>

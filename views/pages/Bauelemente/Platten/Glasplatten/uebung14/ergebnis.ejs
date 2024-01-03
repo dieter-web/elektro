@@ -1,37 +1,33 @@
 <%- include('./aufgabe.ejs', { }) %>
 <%- include('../../../../../layouts/partials/ergebnis.ejs') %>
 
-<script type="module">
+import {vb1} from '/d3/lib/Bauelemente/vb1.mjs'
 
-    import {tabulate} from '/modules/tabulate.mjs'
-    import {canvas} from '/modules/canvas.mjs'
-    import {populate} from '/modules/populate.mjs'
-    import {vb1} from '/d3/lib/Bauelemente/vb1.mjs'
+const data=await populate( "example/Uebung14/P1.json" )
 
-    //tabelle ergebnis
-    const data=await populate( "Uebung14/P1.json" )
+// tabulate( data,"#ergebnis" )
+const table=new Tabelle( data,"#ergebnis" );
+table.tabulate();
 
-    tabulate( data,"#ergebnis" )
+// Rückkopplung
+const sel=d3.select( 'table#ergebnis' ).selectAll( 'tr' ).selectAll( 'td' )._groups[ 1 ]
+Material.value=sel[ 0 ].innerHTML
+l.value=sel[ 1 ].innerHTML
+b.value=sel[ 2 ].innerHTML
+d.value=sel[ 3 ].innerHTML
 
-    // Rückkopplung
-    const sel=d3.select( 'table#ergebnis' ).selectAll( 'tr' ).selectAll( 'td' )._groups[ 1 ]
-    Material.value=sel[ 0 ].innerHTML
-    l.value=sel[ 1 ].innerHTML
-    b.value=sel[ 2 ].innerHTML
-    d.value=sel[ 3 ].innerHTML
+// svg grafik
+const g=canvas( '#grafik',800,300,"10,10,200,200" )
 
-    // svg grafik 
-    const g=canvas( '#grafik',800,300,"10,10,200,200" )
+let dataGP=[
+{
+opacity: 0.4,
+height: 125,
+width: 80,
+text: "Glasplatte"
+}
+]
 
-    let dataGP=[
-        {
-            opacity: 0.4,
-            height: 125,
-            width: 80,
-            text: "Glasplatte"
-        }
-    ]
-
-    g.append( () => vb1( dataGP,[ 50,50 ] ) )
+g.append( () => vb1( dataGP,[ 50,50 ] ) )
 
 </script>

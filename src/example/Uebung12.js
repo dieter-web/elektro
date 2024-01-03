@@ -69,7 +69,7 @@ function Uebung12(input) {
       AK.parameter({ a: W1.Parameter.Ag, b: W1.Parameter.Al });
       W1.Parameter.ng = AK.div().toString();
 
-      dbJson.writeJSONItem(path.resolve(`${datadir}/W1`), W1);
+      dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), W1);
     },
     function () {
       console.error(`${datadir}`);

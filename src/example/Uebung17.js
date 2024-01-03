@@ -49,7 +49,7 @@ async function Uebung17(input) {
       });
       T1.Parameter.δ2 = EK.δ2().toString();
 
-      dbJson.writeJSONItem(path.resolve(`${datadir}/T1.json`), T1);
+      dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), T1);
     },
     function () {
       console.error(`${datadir}`);

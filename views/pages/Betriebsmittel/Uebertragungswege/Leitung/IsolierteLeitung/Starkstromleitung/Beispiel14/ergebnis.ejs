@@ -1,37 +1,32 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
 
-<script type="module">
 
-    import {tabulate} from '/modules/tabulate.mjs'
-    import {DrawBoard} from '/sysFrontend/DrawBoard.mjs'
-    import {populate} from '/modules/populate.mjs'
-
-    // notwendige grafische Elemente importieren
-    import {vWClass} from '/d3/lib/Betriebsmittel/vWClass.mjs' // Leitung
-    import {Verbinder} from '/d3/lib/Schaltzeichen/Verbinder/Verbinder.mjs'
-
-    //tabelle ergebnis
-    const data=await populate( "http://localhost:8000/json/example/beispiel14.json" )
-
-    tabulate( data,"#ergebnis" )
+import {vWClass} from '/d3/lib/Betriebsmittel/vWClass.mjs' // Leitung
+import {Verbinder} from '/d3/lib/Schaltzeichen/Verbinder/Verbinder.mjs'
 
 
-    // Rückkopplung
-    const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
+const data=await populate( "example/Beispiel14/data.json" )
 
-    Material.value=sel[ 0 ]
-    p.value=sel[ 2 ]
-    l.value=sel[ 3 ]
-    a.value=sel[ 4 ]
-    I.value=sel[ 5 ]
+const table=new Tabelle( data,"#ergebnis" );
+table.tabulate();
 
 
-    // svg grafik
-    const g=drawboard()
+// Rückkopplung
+const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
 
-    let W1=new vWClass( data )
-    g.append( () => W1.createNode() )
+Material.value=sel[ 0 ]
+p.value=sel[ 2 ]
+l.value=sel[ 3 ]
+a.value=sel[ 4 ]
+I.value=sel[ 5 ]
+
+
+// svg grafik
+const g=drawboard()
+
+let W1=new vWClass( data )
+g.append( () => W1.createNode() )
 
 
 </script>

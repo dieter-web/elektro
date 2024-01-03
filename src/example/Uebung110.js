@@ -92,7 +92,7 @@ async function Uebung110(input) {
       AK.parameter({ a: W1.Parameter.δ20, b: W1.Parameter.Δδ });
       W1.Parameter.δ2 = AK.add().toString();
 
-      dbJson.writeJSONItem(path.resolve(`${datadir}/W1.json`).W1);
+      dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`).W1);
     },
     function () {
       console.error(`${datadir}`);

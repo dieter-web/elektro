@@ -65,7 +65,7 @@ function Uebung15(input) {
       });
       P1.Parameter.Ie = EK.IρAlU().toString();
 
-      dbJson.writeJSONItem(path.resolve(`${datadir}/P1.json`), P1);
+      dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), P1);
     },
     function () {
       console.error(`${datadir}`);

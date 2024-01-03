@@ -1,32 +1,30 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../layouts/partials/ergebnis.ejs') %>
 
-<script type="module">
-    import {tabulate} from '/modules/tabulate.mjs'
-    import {DrawBoard} from '/sysFrontend/DrawBoard.mjs'
-    import {populate} from '/modules/populate.mjs'
-    import {vBleirohr} from '/components/Bauelemente/Rohrleitungen/Bleirohre/Bleirohr.mjs'
 
-    const data=await populate( "Beispiel13/PtRohr.json" )
+import {vBleirohr} from '/components/Bauelemente/Rohrleitungen/Bleirohre/Bleirohr.mjs'
 
-    // tabelle ergebnis
-    tabulate( data,"#ergebnis" )
+const data=await populate( "example/Beispiel13/PtRohr.json" )
 
-    // Rückkopplung
-    const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
+const table=new Tabelle( data,"#ergebnis" );
+table.tabulate();
 
-    Material.value=sel[ 1 ]
-    G.value=sel[ 2 ]
-    d.value=sel[ 3 ]
-    D.value=sel[ 4 ]
 
-    // Visualisierung
-    const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
-    const point={x: 320,y: 240}
+// Rückkopplung
+const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
 
-    const PtRohr=new vBleirohr( data,point );
-    PtRohr.createNode();
-    view.addNode( PtRohr.node )
+Material.value=sel[ 1 ]
+G.value=sel[ 2 ]
+d.value=sel[ 3 ]
+D.value=sel[ 4 ]
+
+// Visualisierung
+const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
+const point={x: 320,y: 240}
+
+const PtRohr=new vBleirohr( data,point );
+PtRohr.createNode();
+view.addNode( PtRohr.node )
 
 
 </script>

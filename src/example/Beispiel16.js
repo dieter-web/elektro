@@ -78,7 +78,7 @@ async function Beispiel16(input) {
       });
       W1.Parameter.Rδ3 = EK.Rδ().toString();
 
-      dbJson.writeJSONItem(path.resolve(`${datadir}/W1.json`), W1);
+      dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), W1);
     },
     function () {
       console.error(`${datadir}`);

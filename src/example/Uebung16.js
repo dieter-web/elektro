@@ -67,7 +67,7 @@ async function Uebung16(input) {
       });
       W1.Parameter.lbm = EK.lρra().toString();
 
-      dbJson.writeJSONItem(path.resolve(`${datadir}/W1.json`), W1);
+      dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), W1);
     },
     function () {
       console.error(`${datadir}`);

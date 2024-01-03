@@ -36,7 +36,7 @@ async function Uebung13(input) {
       EK.parameter({ R: P1.Parameter.R, U: P1.Parameter.U });
       P1.Parameter.Ism = EK.IUR().toString();
 
-      dbJson.writeJSONItem(path.resolve(`${datadir}/P1.json`), P1);
+      dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), P1);
     },
     function () {
       console.error(`${datadir}`);

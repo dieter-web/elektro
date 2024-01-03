@@ -8,7 +8,11 @@ const { Betriebsmittel } = require(path.resolve(
 class Widerstaende extends Betriebsmittel {
   constructor() {
     super();
+    this.Rmap = new Map();
   }
+
+  //TODO: Rmap Operationen schreiben
+
 }
 
 exports.Widerstaende = Widerstaende;

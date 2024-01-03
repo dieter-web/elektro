@@ -7,7 +7,7 @@
  * @returns {*}
  */
 async function populate(name) {
-  const request = new Request(`http://localhost:8000/json/example/${name}`);
+  const request = new Request(`http://localhost:8000/json/${name}`);
   const response = await fetch(request);
   const text = await response.text();
   const data = JSON.parse(text);

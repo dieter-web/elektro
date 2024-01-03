@@ -51,7 +51,7 @@ async function Beispiel14(input) {
       });
       W1.Parameter.A = EK.AρlUI().toString();
 
-      dbJson.writeJSONItem(path.resolve(`${datadir}/W1.json`), W1);
+      dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), W1);
     },
     function () {
       console.error(`${datadir}`);

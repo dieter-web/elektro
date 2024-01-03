@@ -60,7 +60,7 @@ async function Uebung18(input) {
 
       L1.Parameter.pI = EK.Rpδ1δ2().toString();
 
-      dbJson.writeJSONItem(path.resolve(`${datadir}/L1.json`), L1);
+      dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), L1);
     },
     function () {
       console.error(`${datadir}`);

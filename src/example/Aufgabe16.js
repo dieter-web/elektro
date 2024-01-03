@@ -32,17 +32,17 @@ async function Aufgabe16(input) {
       Material: input.Material,
     });
 
-    GoCh.data.theta0 = Ek.δM().toString();
-    GoCh.data.erg = Ek.δM().toString();
+    GoCh.Parameter.theta0 = Ek.δM().toString();
+    // GoCh.Parameter.erg = Ek.δM().toString();
 
-    dbJson.writeJSONItem(path.resolve(`${data}/GoCh.json`), GoCh);
+    dbJson.writeJSONItem(path.resolve(`${data}/data.json`), GoCh);
   }),
     function () {
       console.error(`${data}`);
     };
 }
-let input = {
-  Material: "GoldChrom",
-};
-Aufgabe16(input);
-// exports.func = Aufgabe16;
+// let input = {
+//   Material: "GoldChrom",
+// };
+// Aufgabe16(input);
+exports.func = Aufgabe16;

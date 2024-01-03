@@ -106,7 +106,7 @@ async function Uebung111(input) {
       AK.parameter({ a: RS1.Schaltung.Klemme.D.Parameter.Φ, b: -1 }); // liegt auf der anderen Seite vom Bezugspotential
       RS1.Schaltung.Klemme.D.Parameter.Φ = AK.mul().toString();
 
-      dbJson.writeJSONItem(path.resolve(`${datadir}/RS1.json`), RS1);
+      dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), RS1);
     },
     function () {
       console.error(`${datadir}`);

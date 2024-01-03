@@ -1,5 +1,8 @@
 require("use-strict");
 const path = require("path");
+
+const { Components } = require(path.resolve("src/components/components.js"));
+
 const dbJson = require(path.resolve("controllers/dbJson.js"));
 
 /**
@@ -10,8 +13,9 @@ const dbJson = require(path.resolve("controllers/dbJson.js"));
  * @date 03/10/2023
  * @class Betriebsmittel
  */
-class Betriebsmittel {
+class Betriebsmittel extends Components {
   constructor() {
+    super();
     this.Kennzeichnung = dbJson.readJSONFile(
       path.resolve("src/json/Sonstiges/kennzeichnung.json")
     );

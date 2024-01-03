@@ -1,50 +1,47 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../layouts/partials/ergebnis.ejs') %>
 
-<script type="module">
-    import {tabulate} from "/modules/tabulate.mjs";
-    import {drawboard} from "/modules/drawboard.mjs";
-    import {populate} from "/modules/populate.mjs";
-    import {vRClass} from "/d3/lib/Betriebsmittel/vRClass.mjs";
 
-    // daten vom Server holen
-    const data=await populate(
-        "http://localhost:8000/json/example/beispiel11.json"
-    );
+import {vWiderstand} from "/components/Betriebsmittel/Widerstaende/Widerstand/Widerstand.mjs";
 
-    // tabelle ausgeben
-    data.map( ( R ) =>
-    {
-        tabulate( R,"#ergebnis" );
-    } );
+const data=await populate( "example/Beispiel11/data.json" );
 
-    // Rückkopplung
-    const sel=d3.selectAll( "tbody" )._groups[ 0 ];
+drawkennzeichnung( data,"#kennzeichnung" )
 
-    // TODO: Doppelte Bezeichnung von R1 vermeiden !
-    R1.value=sel[ 0 ].innerText.split( "\t" )[ 1 ];
-    R2.value=sel[ 1 ].innerText.split( "\t" )[ 1 ];
-    R3.value=sel[ 2 ].innerText.split( "\t" )[ 1 ];
-    R4.value=sel[ 3 ].innerText.split( "\t" )[ 1 ];
-
-    U.value=sel[ 0 ].innerText.split( "\t" )[ 2 ];
-
-    // svg grafik
-    const g=drawboard();
-
-    let vR1=new vRClass( data[ 0 ] )
-    let vR2=new vRClass( data[ 1 ] )
-    let vR3=new vRClass( data[ 2 ] )
-    let vR4=new vRClass( data[ 3 ] )
+const table=new Tabelle( data,"#ergebnis" );
+table.tabulate();
 
 
-    g.append( () => vR1.createNode() )
-    g.append( () => vR2.createNode() )
-    g.append( () => vR3.createNode() )
-    g.append( () => vR4.createNode() )
+// Rückkopplung
+const tab=d3.selectAll( "tbody" )._groups[ 0 ][ 0 ].innerText.split( '\t' );
 
-    // g.append( () => vRC( data[ 0 ] ) ); // R1
-    // g.append( () => vRC( data[ 1 ] ) ); // R2
-    // g.append( () => vRC( data[ 2 ] ) ); // R3
-    // g.append( () => vRC( data[ 3 ] ) ); // R4
+R1.value=tab[ 0 ]
+R2.value=tab[ 1 ]
+R3.value=tab[ 2 ]
+R4.value=tab[ 3 ]
+U.value=tab[ 4 ]
+
+// Visualisierung
+const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
+
+// Einfügepunkt
+const point1={x: 100,y: 240};
+const vR1=new vWiderstand( data,point1 );
+vR1.createNode();
+view.addNode( vR1.node )
+
+const point2={x: 300,y: 240};
+const vR2=new vWiderstand( data,point2 );
+vR2.createNode();
+view.addNode( vR2.node )
+
+const point3={x: 500,y: 240};
+const vR3=new vWiderstand( data,point3 );
+vR3.createNode();
+view.addNode( vR3.node )
+
+const point4={x: 700,y: 240};
+const vR4=new vWiderstand( data,point4 );
+vR4.createNode();
+view.addNode( vR4.node )
 </script>

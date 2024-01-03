@@ -1,39 +1,37 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
 
-<script type="module">
 
-    import {drawkennzeichnung} from '/modules/drawkennzeichnung.mjs'
-    import {tabulate} from '/modules/tabulate.mjs'
-    import {DrawBoard} from '/sysFrontend/DrawBoard.mjs'
-    import {populate} from '/modules/populate.mjs'
+import {vMehrlagigeSpule} from
+'/components/Betriebsmittel/Induktivitaet/Spule/SpuleOhneKern/MehrlagigeSpule/MehrlagigeSpule.mjs'
 
-    import {vMehrlagigeSpule} from '/components/Betriebsmittel/Induktivitaet/Spule/SpuleOhneKern/MehrlagigeSpule/MehrlagigeSpule.mjs'
+// tabelle ergebnis
+const data=await populate( "example/Aufgabe13/L1.json" )
 
-    // tabelle ergebnis
-    const data=await populate( "Aufgabe13/L1.json" )
+// Ausgabe Kennzeichnung
+drawkennzeichnung( data,"#kennzeichnung" )
 
-    // Ausgabe Kennzeichnung
-    drawkennzeichnung( data,"#kennzeichnung" )
+// Ausgabe Datentabelle
+// tabulate( data,"#ergebnis" )
+const table=new Tabelle( data,"#ergebnis" );
+table.tabulate();
 
-    // Ausgabe Datentabelle
-    tabulate( data,"#ergebnis" )
 
-    // Rückkopplung zum Eingebeformular
-    const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
-    Material.value=sel[ 0 ]
-    lm.value=sel[ 1 ]
-    N.value=sel[ 2 ]
-    d.value=sel[ 3 ]
+// Rückkopplung zum Eingebeformular
+const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
+Material.value=sel[ 0 ]
+lm.value=sel[ 1 ]
+N.value=sel[ 2 ]
+d.value=sel[ 3 ]
 
-    // Visualisierung
-    const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
+// Visualisierung
+const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
 
-    const point={x: 320,y: 240};
+const point={x: 320,y: 240};
 
-    let L1=new vMehrlagigeSpule( data,point )
-    L1.createNode();
-    view.addNode( L1.node )
+let L1=new vMehrlagigeSpule( data,point )
+L1.createNode();
+view.addNode( L1.node )
 
 
 </script>

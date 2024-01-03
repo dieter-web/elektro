@@ -1,43 +1,37 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../layouts/partials/ergebnis.ejs') %>
 
+import {vWiderstand} from '/components/Betriebsmittel/Widerstaende/Widerstand/Widerstand.mjs'
 
-<script type="module">
-    import {drawkennzeichnung} from '/modules/drawkennzeichnung.mjs'
-    import {tabulate} from '/modules/tabulate.mjs'
-    import {DrawBoard} from '/sysFrontend/DrawBoard.mjs'
-    import {populate} from '/modules/populate.mjs'
-    import {vWiderstand} from '/components/Betriebsmittel/Widerstaende/Widerstand/Widerstand.mjs'
+const data=await populate( "example/Aufgabe11/data.json" )
 
-    const data=await populate( "Aufgabe11/R1.json" )
+// Kennzeichen ausgeben
+drawkennzeichnung( data,"#kennzeichnung" )
 
-    // Kennzeichen ausgeben 
-    drawkennzeichnung( data,"#kennzeichnung" )
-
-    // Tabelle ausgeben
-    tabulate( data,"#ergebnis" );
+// Tabelle ausgeben
+// tabulate( data,"#ergebnis" );
+const table=new Tabelle( data,"#ergebnis" );
+table.tabulate();
 
 
-    // Rückkopplung
-    const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
-    G.value=tab[ 0 ]
-    I.value=tab[ 1 ]
+// Rückkopplung
+const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
+G.value=tab[ 0 ]
+I.value=tab[ 1 ]
 
-    // Visualisierung
-    const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
+// Visualisierung
+const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
 
+// Einfügepunkt
+const point={x: 320,y: 240};
 
+const R1=new vWiderstand( data,point );
+R1.createNode();
 
-    // Einfügepunkt
-    const point={x: 320,y: 240};
+// R1.createBBox();
+// console.log( R1.bbox );
 
-    const R1=new vWiderstand( data,point );
-    R1.createNode();
-
-    // R1.createBBox();
-    // console.log( R1.bbox );
-
-    // Grafik ausgeben
-    view.addNode( R1.node )
+// Grafik ausgeben
+view.addNode( R1.node )
 
 </script>

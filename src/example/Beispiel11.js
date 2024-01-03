@@ -13,79 +13,44 @@ require("use-strict");
  */
 async function Beispiel11(input) {
   const path = require("path");
-  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
-  const { ElektroKernel, Widerstand, Stack } = require(path.resolve(
-    "include/system"
-  ));
   const dbJson = require(path.resolve("controllers/dbJson.js"));
+  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
+
+  const { ElektroKernel, Widerstand } = require(path.resolve("include/system"));
 
   const datadir = "src/json/example/Beispiel11";
 
   makeDirectory(datadir).then(
     function () {
-      let R1 = new Widerstand({
-        Name: "R1",
-        R: input.R1, // Gegeben
-        U: input.U,
+      let R = new Widerstand(input);
+      let G = [];
 
-        // grafische Position
-        x: 50,
-        y: 50,
-      });
-
-      R1.Kennzeichnung.Art = "R";
-      R1.Kennzeichnung.Zählnummer = "1";
-
-      let R2 = new Widerstand({
-        Name: "R2",
-        R: "80kohm", // Gegeben
-        U: "60V",
-
-        x: 250,
-        y: 50,
-      });
-
-      R2.Kennzeichnung.Art = "R";
-      R2.Kennzeichnung.Zählnummer = "2";
-
-      let R3 = new Widerstand({
-        Name: "R3",
-        R: "500ohm", // Gegeben
-        U: "60V",
-
-        x: 500,
-        y: 50,
-      });
-
-      R3.Kennzeichnung.Art = "R";
-      R3.Kennzeichnung.Zählnummer = "3";
-
-      let R4 = new Widerstand({
-        Name: "R4",
-        R: "75ohm", // Gegeben
-        U: "60V",
-
-        x: 750,
-        y: 50,
-      });
-
-      R4.Kennzeichnung.Art = "R";
-      R4.Kennzeichnung.Zählnummer = "4";
-
-      // Widerstandsarray !
-      let RBEA = [R1, R2, R3, R4];
+      R.add("R1", input.R1);
+      R.add("R2", input.R2);
+      R.add("R3", input.R3);
+      R.add("R4", input.R4);
 
       const EK = new ElektroKernel();
+      EK.parameter({ U: input.U });
 
-      RBEA.map((R, i) => {
-        EK.parameter({ U: R.Parameter.U, R: RBEA[i].Parameter.R });
-        RBEA[i].Parameter.I = EK.IUR().toString();
-
-        EK.parameter({ I: RBEA[i].Parameter.I, U: R.Parameter.U });
-        RBEA[i].Parameter.G = EK.GIU().toString();
+      R.Rmap.forEach((Ri) => {
+        EK.appendParameter("R", Ri);
+        EK.appendParameter("I", EK.IUR().toString());
+        G.push(EK.GIU().toString());
       });
 
-      dbJson.writeJSONItem(path.resolve(`${datadir}/RBEA.json`), RBEA);
+      R.Parameter.R1 = { Widerstand: R.Parameter.R1, Leitwert: G[0] };
+      R.Parameter.R2 = { Widerstand: R.Parameter.R2, Leitwert: G[1] };
+      R.Parameter.R3 = { Widerstand: R.Parameter.R3, Leitwert: G[2] };
+      R.Parameter.R4 = { Widerstand: R.Parameter.R4, Leitwert: G[3] };
+
+      // R.Parameter.G1 = G[0];
+      // R.Parameter.G2 = G[1];
+      // R.Parameter.G3 = G[2];
+      // R.Parameter.G4 = G[3];
+
+      dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), R);
+      // Nur Widerstand nicht Widerstände also Rmap
     },
     function () {
       console.error(`${datadir}`);

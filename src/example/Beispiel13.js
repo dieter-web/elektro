@@ -60,7 +60,7 @@ async function Beispiel13(input) {
       });
       PtRohr.Parameter.l = RK.lAρG().toString();
 
-      dbJson.writeJSONItem(path.resolve(`${datadir}/PtRohr.json`), PtRohr);
+      dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), PtRohr);
     },
     function () {
       console.error(`${datadir}`);

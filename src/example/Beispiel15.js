@@ -43,7 +43,7 @@ async function Beispiel15(input) {
       });
       Elyt.Parameter.κ = EK.κlra().toString();
 
-      dbJson.writeJSONItem(path.resolve(`${datadir}/Elyt.json`), Elyt);
+      dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), Elyt);
     },
     function () {
       console.error(`${datadir}`);

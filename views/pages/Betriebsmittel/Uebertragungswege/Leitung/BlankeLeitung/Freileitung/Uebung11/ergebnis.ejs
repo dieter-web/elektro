@@ -1,31 +1,28 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
 
-<script type="module">
 
-    import {drawkennzeichnung} from '/modules/drawkennzeichnung.mjs'
-    import {tabulate} from '/modules/tabulate.mjs'
-    import {DrawBoard} from '/sysFrontend/DrawBoard.mjs'
-    import {populate} from '/modules/populate.mjs'
-    import {vWClass} from '/d3/lib/Betriebsmittel/vWClass.mjs'
-
-    //tabelle ergebnis
-    const data=await populate( "http://localhost:8000/json/example/uebung11.json" )
-
-    drawkennzeichnung( data,"#kennzeichnung" )
-    tabulate( data,"#ergebnis" )
+import {vWClass} from '/d3/lib/Betriebsmittel/vWClass.mjs'
 
 
-    // Rückkopplung
-    const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
-    Material.value=tab[ 0 ]
-    A.value=tab[ 1 ]
-    l.value=tab[ 2 ]
-    n.value=tab[ 3 ]
+const data=await populate( "example/Uebung11/data.json" )
 
-    // Visualisierung
-    const g=drawboard()
-    let vd=new vWClass( data )
-    g.append( () => vd.createNode() )
+drawkennzeichnung( data,"#kennzeichnung" )
+
+const table=new Tabelle( data,"#ergebnis" );
+table.tabulate();
+
+
+// Rückkopplung
+const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
+Material.value=tab[ 0 ]
+A.value=tab[ 1 ]
+l.value=tab[ 2 ]
+n.value=tab[ 3 ]
+
+// Visualisierung
+const g=drawboard()
+let vd=new vWClass( data )
+g.append( () => vd.createNode() )
 
 </script>

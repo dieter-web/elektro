@@ -27,12 +27,12 @@ async function Uebung19(input) {
 
   makeDirectory(datadir).then(
     function () {
-      Kennzeichnung.Art = "R";
-      Kennzeichnung.Zählnummer = "20";
+      // Kennzeichnung.Art = "R";
+      // Kennzeichnung.Zählnummer = "20";
 
       // Konkrete Visualisierungswerte
-      R1.visWiderstand.name = "R20"; //TODO: Key Wert eintragen ?
-      R1.visWiderstand.value = input.R20;
+      // R1.visWiderstand.name = "R20"; //TODO: Key Wert eintragen ?
+      // R1.visWiderstand.value = input.R20;
 
       R1.Parameter.δ20 = readKonstante("Vergleichstemperatur").toString();
 
@@ -44,7 +44,7 @@ async function Uebung19(input) {
       });
       R1.Parameter.Rα20 = EK.α20().toString();
 
-      dbJson.writeJSONItem(jsonfile, R1);
+      dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), R1);
     },
     function () {
       console.error(`${datadir}`);
