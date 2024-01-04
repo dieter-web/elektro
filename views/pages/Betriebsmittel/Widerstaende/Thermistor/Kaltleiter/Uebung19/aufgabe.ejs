@@ -3,32 +3,17 @@
     action: "/betriebsmittel/widerstand/thermistor/kaltleiter/uebung19/aufgabe"
 }) %>
 
-<script type="module">
-    import {finput} from '/modules/finput.mjs'
-    import {fsubmit} from '/modules/fsubmit.mjs'
-    import {ftext} from '/modules/ftext.mjs'
-
-    const idBeispiel="#uebung19"
-    const idText="#text"
-    const dataSubmit=[ "Rechnen" ] // 1 Button 
-    const dataText=[
-        {
-            title: "Übung 1.9",
-            subtitle: "Kaltleiter",
-            text: `Ein temperaturabhängiger Widerstand hat bei 20°C einen Gleichstromwiderstand
-             von 40 kohm.Wie groß ist der Temperaturkoeffizient,wenn bei 25.5°C der Widerstand 41 kohm beträgt.`
-        }
-
-    ]
-    const dataForm=[
-        {id: 'R20',text: "Widerstand bei 20°C",name: "R20",value: "40kohm"},
-        {id: 'Rδ2',text: "Widerstand bei δ2",name: "Rδ2",value: "41kohm"},
-        {id: 'δ2',text: "Temperatur δ2",name: "δ2",value: "25.5 celsius"},
-    ]
-
-    ftext( dataText,idText )
-    finput( dataForm,idBeispiel )
-    fsubmit( dataSubmit,idBeispiel )
-
+eingabe(
+"uebung19",
+[{
+title: "Übung 1.9",
+subtitle: "Kaltleiter",
+text: `Ein temperaturabhängiger Widerstand hat bei 20°C einen Gleichstromwiderstand
+von 40 kohm.Wie groß ist der Temperaturkoeffizient,wenn bei 25.5°C der Widerstand 41 kohm beträgt.`
+}],
+[{id: 'R20',text: "Widerstand bei 20°C",name: "R20",value: "40kohm"},
+{id: 'Rδ2',text: "Widerstand bei δ2",name: "Rδ2",value: "41kohm"},
+{id: 'δ2',text: "Temperatur δ2",name: "δ2",value: "25.5 celsius"},]
+)
 
 </script>

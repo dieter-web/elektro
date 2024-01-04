@@ -16,10 +16,9 @@ Material.value=tab[ 0 ]
 
 // Visualisierung
 const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
-
-const point={x: 320,y: 240};
-const GoCh=new vLeiterwerkstoff( data,point );
-GoCh.createNode();
-view.addNode( GoCh.node )
+const pos={"x": 320,"y": 240};
+const shape= new vLeiterwerkstoff( data, point );
+shape.createNode();
+view.addNode( shape.node )
 
 </script>

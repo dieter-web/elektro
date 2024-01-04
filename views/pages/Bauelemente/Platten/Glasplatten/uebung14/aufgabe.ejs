@@ -3,32 +3,19 @@
     action: "/bauelemente/platten/glasplatten/uebung14/aufgabe"
 }) %>
 
-<script type="module">
-    import {finput} from '/modules/finput.mjs'
-    import {fsubmit} from '/modules/fsubmit.mjs'
-    import {ftext} from '/modules/ftext.mjs'
-
-    const idBeispiel="#uebung14"
-    const idText="#text"
-
-    const dataSubmit=[ "Rechnen" ]
-
-    const dataText=[
-        {
-            title: "Übung 1.4",
-            subtitle: "Bauelemente/Platten",
-            text: `Zwischen zwei Metallplatten mit einer Fläche von je 0.8 m x 1.25 m befindet sich eine 1 mm dicke, gleichgroße Glasplatte. Wie groß ist der Widerstand zwischen den Metallplatten ? (roh_glas = 10^12 ohm cm)`
-        }
-    ]
-
-    const dataForm=[
-        {id: 'Material',text: 'Material',name: 'Material',value: 'Glas'},
-        {id: 'l',text: 'Länge',name: 'l',value: '0.8 m'},
-        {id: 'b',text: 'Breite',name: 'b',value: '1.25 m'},
-        {id: 'd',text: 'Dicke',name: 'd',value: '1 mm'},
-    ]
-
-    ftext( dataText,idText )
-    finput( dataForm,idBeispiel )
-    fsubmit( dataSubmit,idBeispiel )
+eingabe(
+"#uebung14",
+[{
+title: "Übung 1.4",
+subtitle: "Bauelemente/Platten",
+text: `Zwischen zwei Metallplatten mit einer Fläche von je 0.8 m x 1.25 m befindet sich eine 1 mm dicke, gleichgroße
+Glasplatte. Wie groß ist der Widerstand zwischen den Metallplatten ? (roh_glas = 10^12 ohm cm)`
+}],
+[
+{id: 'Material',text: 'Material',name: 'Material',value: 'Glas'},
+{id: 'l',text: 'Länge',name: 'l',value: '0.8 m'},
+{id: 'b',text: 'Breite',name: 'b',value: '1.25 m'},
+{id: 'd',text: 'Dicke',name: 'd',value: '1 mm'},
+]
+)
 </script>

@@ -5,11 +5,7 @@ import {vWiderstand} from '/components/Betriebsmittel/Widerstaende/Widerstand/Wi
 
 const data=await populate( "example/Aufgabe11/data.json" )
 
-// Kennzeichen ausgeben
 drawkennzeichnung( data,"#kennzeichnung" )
-
-// Tabelle ausgeben
-// tabulate( data,"#ergebnis" );
 const table=new Tabelle( data,"#ergebnis" );
 table.tabulate();
 
@@ -21,17 +17,10 @@ I.value=tab[ 1 ]
 
 // Visualisierung
 const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
-
-// Einfügepunkt
 const point={x: 320,y: 240};
-
 const R1=new vWiderstand( data,point );
+
 R1.createNode();
-
-// R1.createBBox();
-// console.log( R1.bbox );
-
-// Grafik ausgeben
 view.addNode( R1.node )
 
 </script>

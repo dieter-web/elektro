@@ -1,8 +1,8 @@
 import { vComponents } from "../components.mjs";
 
 class vWerkstoff extends vComponents {
-  constructor(data, point) {
-    super(data, point);
+  constructor(data, pos) {
+    super(data, pos);
   }
 }
 
@@ -25,8 +25,8 @@ class vLeiterwerkstoff extends vWerkstoff {
       .attr("fill-opacity", this.data.fillopacity)
       .attr("style", this.vis.style)
       .append("rect")
-      .attr("x", this.point.x)
-      .attr("y", this.point.y)
+      .attr("x", this.pos.x)
+      .attr("y", this.pos.y)
       .attr("height", this.vis.height)
       .attr("width", this.vis.width);
 
@@ -37,7 +37,7 @@ class vLeiterwerkstoff extends vWerkstoff {
       .attr("style", this.vis.style)
       .attr(
         "d",
-        `M ${this.point.x} ${this.point.y} m 0 ${this.vis.height / 2} l -${
+        `M ${this.pos.x} ${this.pos.y} m 0 ${this.vis.height / 2} l -${
           this.vis.al
         } 0 m ${this.vis.al + this.vis.width} 0 l ${this.vis.al} 0`
       );
@@ -45,43 +45,43 @@ class vLeiterwerkstoff extends vWerkstoff {
 }
 
 class vEisenwerkstoff extends vWerkstoff {
-  constructor(data, point) {
-    super(data, point);
+  constructor(data, pos) {
+    super(data, pos);
     this.vis = {};
   }
   fshape() {}
 }
 class vBaustahl extends vWerkstoff {
-  constructor(data, point) {
-    super(data, point);
+  constructor(data, pos) {
+    super(data, pos);
     this.vis = {};
   }
   fshape() {}
 }
 class vAutomatenstahl extends vWerkstoff {
-  constructor(data, point) {
-    super(data, point);
+  constructor(data, pos) {
+    super(data, pos);
     this.vis = {};
   }
   fshape() {}
 }
 class vEinsatzstahl extends vWerkstoff {
-  constructor(data, point) {
-    super(data, point);
+  constructor(data, pos) {
+    super(data, pos);
     this.vis = {};
   }
   fshape() {}
 }
 class vVerguetungsstahl extends vWerkstoff {
-  constructor(data, point) {
-    super(data, point);
+  constructor(data, pos) {
+    super(data, pos);
     this.vis = {};
   }
   fshape() {}
 }
 class vWerkzeugstahl extends vWerkstoff {
-  constructor(data, point) {
-    super(data, point);
+  constructor(data, pos) {
+    super(data, pos);
     this.vis = {};
   }
   fshape() {}

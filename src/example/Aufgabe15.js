@@ -13,19 +13,15 @@ async function Aufgabe15(input) {
   const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson.js"));
 
-  const { ElektroKernel, PlanemetrieKernel, Erder } = require(path.resolve(
-    "include/system"
-  ));
-
-  const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve("src/json/Sonstiges/kennzeichnung.json")
-  );
-
   const { readMaterialParameter } = require(path.resolve(
     "src/js/readMaterialParameter.js"
   ));
 
   const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
+
+  const { ElektroKernel, PlanemetrieKernel, Erder } = require(path.resolve(
+    "include/system"
+  ));
 
   const W1 = new Erder(input);
   const PK = new PlanemetrieKernel();
@@ -53,15 +49,10 @@ async function Aufgabe15(input) {
         A: W1.Parameter.A,
         ρ: W1.Parameter.ρm,
       });
-      W1.Parameter.R20 = EK.RρlA().toString();
-
-      EK.parameter({
-        R20: W1.Parameter.R20,
-        α20: W1.Parameter.α20,
-        δ2: W1.Parameter.δ2,
-        δ20: W1.Parameter.δ20,
-      });
-
+      EK.appendParameter("R20", EK.RρlA().toString());
+      EK.appendParameter("α20", W1.Parameter.α20);
+      EK.appendParameter("δ2", W1.Parameter.δ2);
+      EK.appendParameter("δ20", W1.Parameter.δ20);
       W1.Parameter.R2 = EK.Rδ().toString();
 
       dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), W1);

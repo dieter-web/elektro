@@ -26,14 +26,6 @@ async function Aufgabe13(input) {
   ));
 
   const L1 = new MehrlagigeSpule(input);
-  //   {
-  //   Material: input.Material,
-  //   lm: input.lm,
-  //   N: input.N,
-  //   d: input.d,
-  //   x: 50,
-  //   y: 50,
-  // });
 
   const AK = new ArithmetikKernel();
   const PK = new PlanemetrieKernel();

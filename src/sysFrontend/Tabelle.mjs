@@ -6,26 +6,24 @@ class Tabelle {
     this.table = d3.select(id);
     this.keys = Object.keys(data.Parameter);
     this.values = Object.values(data.Parameter);
+    this.thead = this.table.append("thead");
+    this.tbody = this.table.append("tbody");
   }
 
-  // für einzeiligen Head
-  createThead() {
-    let thead = this.table.append("thead");
-    thead
-      .append("th")
+  createKopfzeile() {
+    this.thead
+      .append("tr")
       .selectAll("td")
       .data(this.keys)
       .enter()
-      .append("th")
+      .append("td")
       .text((d) => {
         return d;
       });
   }
 
-  // für einzeilige Tabelle
-  createTBody() {
-    let tbody = this.table.append("tbody");
-    tbody
+  createBody() {
+    this.tbody
       .append("tr")
       .selectAll("td")
       .data(this.values)
@@ -37,8 +35,8 @@ class Tabelle {
   }
 
   tabulate() {
-    this.createThead();
-    this.createTBody();
+    this.createKopfzeile();
+    this.createBody();
   }
 }
 

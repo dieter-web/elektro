@@ -9,8 +9,9 @@ require("use-strict");
  */
 async function Aufgabe16(input) {
   const path = require("path");
-  const dbJson = require(path.resolve("controllers/dbJson.js"));
   const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
+  const dbJson = require(path.resolve("controllers/dbJson.js"));
+
   const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
 
   const { ElektroKernel, Leiterwerkstoff } = require(path.resolve(

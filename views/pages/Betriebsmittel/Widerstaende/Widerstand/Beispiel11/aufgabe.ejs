@@ -3,45 +3,22 @@
     action: "/betriebsmittel/widerstaende/widerstand/beispiel11/aufgabe"
 }) %>
 
-<script type="module">
-    import {finput} from '/modules/finput.mjs'
-    import {fsubmit} from '/modules/fsubmit.mjs'
-    import {ftext} from '/modules/ftext.mjs'
+eingabe(
+"#beispiel11",
+[{
+title: "Beispiel 1.1",
+subtitle: "Bemessung des elektrischen Widerstands",
+text: `An den Klemmen der Widerstände
+liegt eine Spannung von U =
+Wie groß sind die Ströme durch diese Widerstände ? Wie groß sind die Leitwerte ?`
+}],
+[
+{id: 'R1',text: "Widerstand R1",name: "R1",value: "2.5Mohm"},
+{id: 'R2',text: "Widerstand R2",name: "R2",value: "80kohm"},
+{id: 'R3',text: "Widerstand R3",name: "R3",value: "500ohm"},
+{id: 'R4',text: "Widerstand R4",name: "R4",value: "75ohm"},
+{id: "U",text: "Spannung U",name: "U",value: "60V"}
+]
+)
 
-    const idBeispiel="#beispiel11"
-    const idText="#text"
-
-    const dataSubmit=[ "Rechnen" ] // 1 Button 
-
-    const dataForm=[
-        {id: 'R1',text: "Widerstand R1",name: "R1",value: "2.5Mohm"},
-        {id: 'R2',text: "Widerstand R2",name: "R2",value: "80kohm"},
-        {id: 'R3',text: "Widerstand R3",name: "R3",value: "500ohm"},
-        {id: 'R4',text: "Widerstand R4",name: "R4",value: "75ohm"},
-        {id: "U",text: "Spannung U",name: "U",value: "60V"}
-    ]
-
-
-    const dataText=[
-        {
-            title: "Beispiel 1.1",
-            subtitle: "Bemessung des elektrischen ,Widerstands",
-            text: `An den Klemmen der Widerstände 
-            ${ dataForm[ 0 ].id } 
-            ${ dataForm[ 1 ].id }
-            ${ dataForm[ 2 ].id } 
-            ${ dataForm[ 3 ].id } 
-            liegt eine Spannung von U = 
-            ${ dataForm[ 4 ].value }. 
-            R1 = ${ dataForm[ 0 ].value }, 
-            R2 = ${ dataForm[ 1 ].value },
-            R3 = ${ dataForm[ 2 ].value },
-            R4 = ${ dataForm[ 3 ].value }.
-            Wie groß sind die Ströme durch diese Widerstände ? Wie groß sind die Leitwerte ?`
-        }
-
-    ]
-    ftext( dataText,idText )
-    finput( dataForm,idBeispiel )
-    fsubmit( dataSubmit,idBeispiel )
 </script>

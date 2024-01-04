@@ -3,28 +3,16 @@
     action: "/elektrotechnik/gleichspannung/grundbegriffe/temperaturkoeffizient/aufgabe16/aufgabe"
 }) %>
 
-<script type="module">
-    import {finput} from '/modules/finput.mjs'
-    import {fsubmit} from '/modules/fsubmit.mjs'
-    import {ftext} from '/modules/ftext.mjs'
-
-    const idBeispiel="#aufgabe16"
-    const idText="#text"
-    const dataSubmit=[ "Rechnen" ]
-    const dataText=[
-        {
-            title: "Aufgabe 1.6",
-            subtitle: "Nichtlinearität durch systembedingten Stromwärmefluss",
-            text: `Wie groß ist die Temperaturkonstante theta0 für Gold-Chrom ?`
-        }
-    ]
-
-    const dataForm=[
-        {id: "Material",text: "Material",name: "Material",value: "GoldChrom"}
-    ]
-
-    ftext( dataText,idText )
-    finput( dataForm,idBeispiel )
-    fsubmit( dataSubmit,idBeispiel )
+eingabe(
+"#aufgabe16",
+[{
+title: "Aufgabe 1.6",
+subtitle: "Nichtlinearität durch systembedingten Stromwärmefluss",
+text:`Wie groß ist die Temperaturkonstante theta0 für Gold-Chrom ?`
+}],
+[
+{id: "Material",text: "Material",name: "Material",value: "GoldChrom"}
+]
+)
 
 </script>

@@ -8,7 +8,7 @@ require("use-strict");
  * @date 09/05/2023
  * @param {*} input
  */
-function Aufgabe11(input) {
+async function Aufgabe11(input) {
   const path = require("path");
   const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson.js"));
@@ -16,6 +16,7 @@ function Aufgabe11(input) {
   const { ElektroKernel, Widerstand } = require(path.resolve("include/system"));
   const R1 = new Widerstand(input);
   const EK = new ElektroKernel();
+  
   const datadir = "src/json/example/Aufgabe11";
 
   makeDirectory(datadir).then(

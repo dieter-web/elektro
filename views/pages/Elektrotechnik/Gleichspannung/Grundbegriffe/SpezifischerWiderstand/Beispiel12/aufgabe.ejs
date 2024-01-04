@@ -3,34 +3,19 @@
     action: "/elektrotechnik/gleichspannung/grundbegriffe/spezifischerwiderstand/beispiel12/aufgabe"
 }) %>
 
-<script type="module">
-  import {finput} from '/modules/finput.mjs'
-  import {fsubmit} from '/modules/fsubmit.mjs'
-  import {ftext} from '/modules/ftext.mjs'
-
-  function aufgabe ()
-  {
-    const idBeispiel="#beispiel12"
-    const idText="#text"
-    const dataSubmit=[ "Rechnen" ]
-    const dataText=[
-      {
-        title: "Beispiel 1.2",
-        subtitle: "Bemessungsgleichungen des elektrischen Widerstands",
-        text: `Wie groß ist der spezifische Widerstand eines 3 km langen Drahtes mit 0.9 mm Durchmesser,der einen Widerstand von 84.5 ohm hat?`
-      }
-    ]
-    const dataForm=[
-      {id: 'l',text: "Länge",name: "l",value: "3km"},
-      {id: 'd',text: "Durchmesser",name: "d",value: "0.9mm"},
-      {id: 'R',text: "Widerstand",name: "R",value: "84.5ohm"},
-    ]
-
-    ftext( dataText,idText )
-    finput( dataForm,idBeispiel )
-    fsubmit( dataSubmit,idBeispiel )
-  }
-
-  aufgabe()
-
+eingabe(
+"#beispiel12",
+[{
+title: "Beispiel 1.2",
+subtitle: "Bemessungsgleichungen des elektrischen Widerstands",
+text:`Bemessungsgleichungen des elektrischen Widerstands",
+text: `Wie groß ist der spezifische Widerstand eines 3 km langen Drahtes mit 0.9 mm Durchmesser,der einen Widerstand von
+84.5 ohm hat?`
+}],
+[
+{id: 'l',text: "Länge",name: "l",value: "3km"},
+{id: 'd',text: "Durchmesser",name: "d",value: "0.9mm"},
+{id: 'R',text: "Widerstand",name: "R",value: "84.5ohm"},
+]
+)
 </script>

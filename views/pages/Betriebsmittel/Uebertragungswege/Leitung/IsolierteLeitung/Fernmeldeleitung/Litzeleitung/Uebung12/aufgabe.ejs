@@ -3,30 +3,21 @@
     action: "/betriebsmittel/uebertragungswege/leitung/isolierteleitung/fernmeldeleitung/litzeleitung/uebung12/aufgabe"
 }) %>
 
-<script type="module">
-    import {finput} from '/modules/finput.mjs'
-    import {fsubmit} from '/modules/fsubmit.mjs'
-    import {ftext} from '/modules/ftext.mjs'
-
-    const idBeispiel="#uebung12"
-    const idText="#text"
-    const dataSubmit=[ "Rechnen" ]
-    const dataText=[
-        {
-            title: "Übung 1.2",
-            subtitle: "Litzeleitung",
-            text: `Eine Kupferleitung( Litze ), die aus mehreren verdrillten, dünnen Einzeldrähten besteht, ist 8m lang und hat einen Widerstand von 1.58 ohm. Der Durchmesser eines Einzeldrahtes beträgt 0.08 mm. Aus  wieviel Drähten besteht die Litze ?`
-        }
-    ]
-    const dataForm=[
-        {id: 'Material',text: "Material",name: "Material",value: "Kupfer"},
-        {id: 'l',text: "Länge",name: "l",value: "8 m"},
-        {id: 'R',text: "Widerstand",name: "R",value: "1.58 ohm"},
-        {id: 'd',text: "Durchmesser eines Drahtes der Litzeleitung",name: "d",value: "0.08mm"},
-    ]
-
-    ftext( dataText,idText )
-    finput( dataForm,idBeispiel )
-    fsubmit( dataSubmit,idBeispiel )
+eingabe(
+"uebung12",
+[{
+title: "Übung 1.2",
+subtitle: "Litzeleitung",
+text: `Eine Kupferleitung( Litze ), die aus mehreren verdrillten, dünnen Einzeldrähten besteht, ist 8m lang und hat
+einen
+Widerstand von 1.58 ohm. Der Durchmesser eines Einzeldrahtes beträgt 0.08 mm. Aus wieviel Drähten besteht die Litze ?`
+}],
+[
+{id: 'Material',text: "Material",name: "Material",value: "Kupfer"},
+{id: 'l',text: "Länge",name: "l",value: "8 m"},
+{id: 'R',text: "Widerstand",name: "R",value: "1.58 ohm"},
+{id: 'd',text: "Durchmesser eines Drahtes der Litzeleitung",name: "d",value: "0.08mm"},
+]
+)
 
 </script>

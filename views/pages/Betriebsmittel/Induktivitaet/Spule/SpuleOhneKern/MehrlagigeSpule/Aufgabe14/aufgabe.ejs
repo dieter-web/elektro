@@ -3,34 +3,20 @@
     action: "/betriebsmittel/induktivitaet/spule/spuleohnekern/mehrlagigespule/aufgabe14/aufgabe"
 }) %>
 
-<script type="module">
-    import {finput} from '/modules/finput.mjs'
-    import {fsubmit} from '/modules/fsubmit.mjs'
-    import {ftext} from '/modules/ftext.mjs'
-
-    const idBeispiel="#aufgabe14"
-    const idText="#text"
-
-    const dataSubmit=[ "Rechnen" ] // 1 Button 
-
-    const dataText=[
-        {
-            title: "Aufgabe 14",
-            subtitle: "Leitwert",
-            text: `Auf eine Spule sind 870 m Cu-Draht gewickelt.Wie groß ist die Stromdichte im Wickeldraht,wenn an die Spule eine Spannung von 24 V Gleichspannung angelegt wird? Angaben in A/mm²!`
-            // TODO: noch Umrechnen in A/mm²
-        }
-
-    ]
-
-    const dataForm=[
-        {id: 'Material',text: "Material",name: "Material",value: "Kupfer"},
-        {id: 'l',text: "Kupferdrahtlänge",name: "l",value: "870m"},
-        {id: 'U',text: "Spannung",name: "U",value: "24V"},
-    ]
-
-    ftext( dataText,idText )
-    finput( dataForm,idBeispiel )
-    fsubmit( dataSubmit,idBeispiel )
+eingabe(
+"#aufgabe14",
+[{
+title: "Aufgabe 14",
+subtitle: "Leitwert",
+text: `Auf eine Spule sind 870 m Cu-Draht gewickelt.Wie groß ist die Stromdichte im Wickeldraht,wenn an die Spule eine
+Spannung von 24 V Gleichspannung angelegt wird? Angaben in A/mm²!`
+// TODO: noch Umrechnen in A/mm²
+}],
+[
+{id: 'Material',text: "Material",name: "Material",value: "Kupfer"},
+{id: 'l',text: "Kupferdrahtlänge",name: "l",value: "870m"},
+{id: 'U',text: "Spannung",name: "U",value: "24V"},
+]
+)
 
 </script>

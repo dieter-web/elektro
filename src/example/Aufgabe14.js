@@ -9,21 +9,18 @@ require("use-strict");
  * @date 21/07/2023
  * @param {*} input
  */
-function Aufgabe14(input) {
+async function Aufgabe14(input) {
   const path = require("path");
-  const dbJson = require(path.resolve("controllers/dbJson.js"));
   const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
+  const dbJson = require(path.resolve("controllers/dbJson.js"));
 
-  const { ElektroKernel, MehrlagigeSpule } = require(path.resolve(
-    "include/system"
-  ));
-  const Kennzeichnung = dbJson.readJSONFile(
-    path.resolve("src/json/Sonstiges/kennzeichnung.json")
-  );
   const { readMaterialParameter } = require(path.resolve(
     "src/js/readMaterialParameter.js"
   ));
 
+  const { ElektroKernel, MehrlagigeSpule } = require(path.resolve(
+    "include/system"
+  ));
   const L1 = new MehrlagigeSpule(input);
   const EK = new ElektroKernel();
 
@@ -33,6 +30,7 @@ function Aufgabe14(input) {
     function () {
       L1.Kennzeichnung.Art = "L";
       L1.Kennzeichnung.Zählnummer = "1";
+
       L1.Parameter.ρcu = readMaterialParameter(input.Material, "ρ").toString();
 
       EK.parameter({
