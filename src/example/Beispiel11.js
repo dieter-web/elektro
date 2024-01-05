@@ -22,7 +22,7 @@ async function Beispiel11(input) {
 
   makeDirectory(datadir).then(
     function () {
-      let R = new Widerstand(input);
+      let R = new Widerstand({});
       let G = [];
 
       R.add("R1", input.R1);
@@ -39,10 +39,26 @@ async function Beispiel11(input) {
         G.push(EK.GIU().toString());
       });
 
-      R.Parameter.R1 = { Widerstand: R.Parameter.R1, Leitwert: G[0] };
-      R.Parameter.R2 = { Widerstand: R.Parameter.R2, Leitwert: G[1] };
-      R.Parameter.R3 = { Widerstand: R.Parameter.R3, Leitwert: G[2] };
-      R.Parameter.R4 = { Widerstand: R.Parameter.R4, Leitwert: G[3] };
+      R.Parameter.R1 = {
+        Widerstand: input.R1,
+        Leitwert: G[0],
+        Spannung: input.U,
+      };
+      R.Parameter.R2 = {
+        Widerstand: input.R2,
+        Leitwert: G[1],
+        Spannung: input.U,
+      };
+      R.Parameter.R3 = {
+        Widerstand: input.R3,
+        Leitwert: G[2],
+        Spannung: input.U,
+      };
+      R.Parameter.R4 = {
+        Widerstand: input.R4,
+        Leitwert: G[3],
+        Spannung: input.U,
+      };
 
       // R.Parameter.G1 = G[0];
       // R.Parameter.G2 = G[1];

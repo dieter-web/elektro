@@ -1,14 +1,14 @@
 import { vComponents } from "../components.mjs";
 
 class vWerkstoff extends vComponents {
-  constructor(data, pos) {
-    super(data, pos);
+  constructor(data, point) {
+    super(data, point);
   }
 }
 
 class vLeiterwerkstoff extends vWerkstoff {
-  constructor(data, pos) {
-    super(data, pos);
+  constructor(data, point) {
+    super(data, point);
     this.vis = {
       fill: "yellow",
       style: "stroke:#ffffff; stroke-width:1.0",
@@ -25,8 +25,8 @@ class vLeiterwerkstoff extends vWerkstoff {
       .attr("fill-opacity", this.data.fillopacity)
       .attr("style", this.vis.style)
       .append("rect")
-      .attr("x", this.pos.x)
-      .attr("y", this.pos.y)
+      .attr("x", this.point.x)
+      .attr("y", this.point.y)
       .attr("height", this.vis.height)
       .attr("width", this.vis.width);
 
@@ -37,7 +37,7 @@ class vLeiterwerkstoff extends vWerkstoff {
       .attr("style", this.vis.style)
       .attr(
         "d",
-        `M ${this.pos.x} ${this.pos.y} m 0 ${this.vis.height / 2} l -${
+        `M ${this.point.x} ${this.point.y} m 0 ${this.vis.height / 2} l -${
           this.vis.al
         } 0 m ${this.vis.al + this.vis.width} 0 l ${this.vis.al} 0`
       );

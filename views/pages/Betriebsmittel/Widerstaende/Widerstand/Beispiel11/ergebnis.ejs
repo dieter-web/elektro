@@ -4,44 +4,40 @@
 
 import {vWiderstand} from "/components/Betriebsmittel/Widerstaende/Widerstand/Widerstand.mjs";
 
+import {Tabelle2} from "/sysFrontend/Tabelle.mjs";
+
 const data=await populate( "example/Beispiel11/data.json" );
 
-drawkennzeichnung( data,"#kennzeichnung" )
 
-const table=new Tabelle( data,"#ergebnis" );
+
+const table=new Tabelle2( data,"#ergebnis" );
 table.tabulate();
 
 
 // Rückkopplung
-const tab=d3.selectAll( "tbody" )._groups[ 0 ][ 0 ].innerText.split( '\t' );
+//const tab=d3.selectAll( "tbody" )._groups[ 0 ][ 0 ].innerText.split( '\t' );
 
-R1.value=tab[ 0 ]
-R2.value=tab[ 1 ]
-R3.value=tab[ 2 ]
-R4.value=tab[ 3 ]
-U.value=tab[ 4 ]
+// TODO: neu schreiben !
+// R1.value=tab[ 0 ]
+// R2.value=tab[ 1 ]
+// R3.value=tab[ 2 ]
+// R4.value=tab[ 3 ]
+// U.value=tab[ 4 ]
 
 // Visualisierung
 const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
 
 // Einfügepunkt
-const point1={x: 100,y: 240};
-const vR1=new vWiderstand( data,point1 );
-vR1.createNode();
-view.addNode( vR1.node )
+const points=[
+{x: 100,y: 240},
+{x: 300,y: 240},
+{x: 500,y: 240},
+{x: 700,y: 240}
+];
 
-const point2={x: 300,y: 240};
-const vR2=new vWiderstand( data,point2 );
-vR2.createNode();
-view.addNode( vR2.node )
-
-const point3={x: 500,y: 240};
-const vR3=new vWiderstand( data,point3 );
-vR3.createNode();
-view.addNode( vR3.node )
-
-const point4={x: 700,y: 240};
-const vR4=new vWiderstand( data,point4 );
-vR4.createNode();
-view.addNode( vR4.node )
+points.forEach((p) => {
+let shape = new vWiderstand(data,p);
+shape.createNode();
+view.addNode(shape.node)
+})
 </script>

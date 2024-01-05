@@ -34,7 +34,6 @@ async function Aufgabe16(input) {
     });
 
     GoCh.Parameter.theta0 = Ek.δM().toString();
-    // GoCh.Parameter.erg = Ek.δM().toString();
 
     dbJson.writeJSONItem(path.resolve(`${data}/data.json`), GoCh);
   }),

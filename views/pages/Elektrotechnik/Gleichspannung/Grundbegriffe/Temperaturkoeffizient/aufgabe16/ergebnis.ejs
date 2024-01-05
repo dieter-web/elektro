@@ -9,7 +9,7 @@ import {vLeiterwerkstoff} from '/components/Werkstoff/Werkstoff.mjs'
 const data=await populate( "example/Aufgabe16/data.json" )
 const mat=await populate( "Sonstiges/Leiterwerkstoffe.json" )
 
-drawkennzeichnung( data,"#kennzeichnung" )
+// drawkennzeichnung( data,"#kennzeichnung" )
 
 const table=new Tabelle( data,"#ergebnis" );
 table.tabulate();
@@ -22,7 +22,7 @@ Material.value=tab[ 0 ]
 // Visualisierung
 const view=new DrawBoard('grafik',640,480,[0,0,500,500]);
 const point={x: 320,y: 240};
-const shape = new vLeiterwerkstoff(data)
+const shape = new vLeiterwerkstoff(data,point)
 shape.createNode();
 view.addNode(shape.node)
 

@@ -1,8 +1,8 @@
 async function drawkennzeichnung(data, id) {
   d3.select(id)
     .append("text")
-    .attr("x", 50)
-    .attr("y", 50)
+    .attr("x", data.point.x)
+    .attr("y", data.point.y)
     .text(`${data.Kennzeichnung.Art}${data.Kennzeichnung.Zählnummer}`);
   return 1;
 }
