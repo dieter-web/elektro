@@ -17,20 +17,17 @@ async function Beispiel12(input) {
   const { ElektroKernel, PlanemetrieKernel, Draht } = require(path.resolve(
     "include/system"
   ));
+
   const PK = new PlanemetrieKernel();
   const EK = new ElektroKernel();
-  const W1 = new Draht({
-    l: input.l,
-    d: input.d,
-    R: input.R,
-
-    //grafische Position
-    x: 50,
-    y: 50,
-  });
+  const W1 = new Draht(input);
 
   const datadir = "src/json/example/Beispiel12";
+
   makeDirectory(datadir).then(function () {
+    W1.Kennzeichnung.Art = "W";
+    W1.Kennzeichnung.Zählnummer = "1";
+
     PK.parameter({ d: W1.Parameter.d });
     W1.Parameter.A = PK.KAd().toString();
 

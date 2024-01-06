@@ -1,3 +1,0 @@
-function visualisierung(data, id){
-    
-}

@@ -3,16 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "files": [
-    "canvas.mjs",
     "finput.mjs",
     "fsubmit.mjs",
     "ftext.mjs",
     "kennzeichnungUpdate.mjs",
     "mainNavbar.js",
     "populate.mjs",
-    "showCards_old.js",
     "showCards.mjs",
-    "tabulate.mjs"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
