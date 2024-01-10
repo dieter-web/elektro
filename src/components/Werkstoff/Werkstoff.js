@@ -7,6 +7,7 @@ class Werkstoff {
     this.Kennzeichnung = require(path.resolve(
       "src/json/Bezeichnungssysteme/Material.json"
     ));
+    // this.Berechung = {};
   }
 }
 
@@ -127,6 +128,5 @@ exports.Automatenstahl = Automatenstahl;
 exports.Einsatzstahl = Einsatzstahl;
 exports.Verguetungsstahl = Verguetungsstahl;
 exports.Werkzeugstahl = Werkzeugstahl;
-
 exports.Leiterwerkstoff = Leiterwerkstoff;
 exports.MagnetischerWerkstoff = MagnetischerWerkstoff;

@@ -1,10 +1,7 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../layouts/partials/ergebnis.ejs') %>
 
-
-
 import {vLeiterwerkstoff} from '/components/Werkstoff/Werkstoff.mjs'
-
 
 const data=await populate( "example/Aufgabe16/data.json" )
 const mat=await populate( "Sonstiges/Leiterwerkstoffe.json" )
@@ -13,7 +10,6 @@ const mat=await populate( "Sonstiges/Leiterwerkstoffe.json" )
 
 const table=new Tabelle( data,"#ergebnis" );
 table.tabulate();
-
 
 // Rückkopplung
 const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );

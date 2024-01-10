@@ -28,12 +28,13 @@ async function Aufgabe16(input) {
     GoCh.Kennzeichnung.Zählnummer = "1";
 
     Ek.parameter({
-      α20: GoCh.fα20(input.Material),
+      α20: GoCh.fα20(input.Material).toString(),
       δ20: "20celsius",
       Material: input.Material,
     });
 
-    GoCh.Parameter.theta0 = Ek.δM().toString();
+    GoCh.Berechnung = {};
+    GoCh.Berechnung["δ0"] = Ek.δM();
 
     dbJson.writeJSONItem(path.resolve(`${data}/data.json`), GoCh);
   }),

@@ -38,7 +38,7 @@ async function Aufgabe14(input) {
         l: L1.Parameter.l,
         U: L1.Parameter.U,
       });
-      L1.Parameter.S = EK.SUρl().toString();
+      L1.Berechnung.S = EK.SUρl().to("A/mm^2");
 
       dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), L1);
     },

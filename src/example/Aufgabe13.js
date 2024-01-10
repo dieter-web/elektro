@@ -26,7 +26,6 @@ async function Aufgabe13(input) {
   ));
 
   const L1 = new MehrlagigeSpule(input);
-
   const AK = new ArithmetikKernel();
   const PK = new PlanemetrieKernel();
   const EK = new ElektroKernel();
@@ -44,18 +43,18 @@ async function Aufgabe13(input) {
       ).toString();
 
       AK.parameter({ a: L1.Parameter.lm, b: L1.Parameter.N });
-      L1.Parameter.lg = AK.mul().toString();
+      L1.Berechnung["lg"] = AK.mul().to("m");
 
       PK.parameter({ d: L1.Parameter.d });
-      L1.Parameter.Al = PK.KAd().toString();
+      L1.Berechnung["Al"] = PK.KAd();
 
       EK.parameter({
-        l: L1.Parameter.lg,
-        A: L1.Parameter.Al,
+        l: L1.Berechnung["lg"].toString(),
+        A: L1.Berechnung["Al"].toString(),
         ρ: L1.Parameter.ρM,
       });
 
-      L1.Parameter.G = EK.GAρl().toString();
+      L1.Berechnung["G"] = EK.GAρl().to("mS");
 
       dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), L1);
     },

@@ -42,18 +42,20 @@ async function Aufgabe15(input) {
       W1.Parameter.δ20 = readKonstante("Vergleichstemperatur").toString();
 
       PK.parameter({ d: W1.Parameter.d });
-      W1.Parameter.A = PK.KAd().toString();
+      W1.Berechnung["A"] = PK.KAd();
 
       EK.parameter({
         l: W1.Parameter.l,
-        A: W1.Parameter.A,
+        A: W1.Berechnung["A"].toString(),
         ρ: W1.Parameter.ρm,
       });
+
       EK.appendParameter("R20", EK.RρlA().toString());
       EK.appendParameter("α20", W1.Parameter.α20);
       EK.appendParameter("δ2", W1.Parameter.δ2);
       EK.appendParameter("δ20", W1.Parameter.δ20);
-      W1.Parameter.R2 = EK.Rδ().toString();
+
+      W1.Berechnung["R2"] = EK.Rδ();
 
       dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), W1);
     },

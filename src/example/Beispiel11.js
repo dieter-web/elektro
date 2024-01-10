@@ -24,6 +24,7 @@ async function Beispiel11(input) {
     function () {
       let R = new Widerstand({});
       let G = [];
+      let I = [];
 
       R.add("R1", input.R1);
       R.add("R2", input.R2);
@@ -33,37 +34,48 @@ async function Beispiel11(input) {
       const EK = new ElektroKernel();
       EK.parameter({ U: input.U });
 
-      R.Rmap.forEach((Ri) => {
+      R.Rmap.forEach((Ri, index) => {
         EK.appendParameter("R", Ri);
+        I.push(EK.IUR().to("mA"));
         EK.appendParameter("I", EK.IUR().toString());
-        G.push(EK.GIU().toString());
+        G.push(EK.GIU().to("mS"));
       });
 
       R.Parameter.R1 = {
         Widerstand: input.R1,
+        Spannung: input.U,
+      };
+      R.Berechnung.R1 = {
+        Stromstärke: I[0],
         Leitwert: G[0],
-        Spannung: input.U,
-      };
-      R.Parameter.R2 = {
-        Widerstand: input.R2,
-        Leitwert: G[1],
-        Spannung: input.U,
-      };
-      R.Parameter.R3 = {
-        Widerstand: input.R3,
-        Leitwert: G[2],
-        Spannung: input.U,
-      };
-      R.Parameter.R4 = {
-        Widerstand: input.R4,
-        Leitwert: G[3],
-        Spannung: input.U,
       };
 
-      // R.Parameter.G1 = G[0];
-      // R.Parameter.G2 = G[1];
-      // R.Parameter.G3 = G[2];
-      // R.Parameter.G4 = G[3];
+      R.Parameter.R2 = {
+        Widerstand: input.R2,
+        Spannung: input.U,
+      };
+      R.Berechnung.R2 = {
+        Stromstärke: I[1],
+        Leitwert: G[1],
+      };
+
+      R.Parameter.R3 = {
+        Widerstand: input.R3,
+        Spannung: input.U,
+      };
+      R.Berechnung.R3 = {
+        Stromstärke: I[2],
+        Leitwert: G[2],
+      };
+
+      R.Parameter.R4 = {
+        Widerstand: input.R4,
+        Spannung: input.U,
+      };
+      R.Berechnung.R4 = {
+        Stromstärke: I[3],
+        Leitwert: G[3],
+      };
 
       dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), R);
       // Nur Widerstand nicht Widerstände also Rmap
@@ -73,7 +85,6 @@ async function Beispiel11(input) {
     }
   );
 }
-
 // let input = {
 //   R1: "2.5 Mohm",
 //   R2: "80 kohm",

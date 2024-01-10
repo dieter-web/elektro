@@ -16,7 +16,7 @@ async function Aufgabe11(input) {
   const { ElektroKernel, Widerstand } = require(path.resolve("include/system"));
   const R1 = new Widerstand(input);
   const EK = new ElektroKernel();
-  
+
   const datadir = "src/json/example/Aufgabe11";
 
   makeDirectory(datadir).then(
@@ -25,7 +25,7 @@ async function Aufgabe11(input) {
       R1.Kennzeichnung.Zählnummer = "1";
 
       EK.parameter({ G: R1.Parameter.G, I: R1.Parameter.I });
-      R1.Parameter.U12 = EK.UIG().toString();
+      R1.Berechnung["U"] = EK.UIG().to("V");
 
       dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), R1);
     },
