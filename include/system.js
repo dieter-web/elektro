@@ -742,13 +742,16 @@ const { Spleissen } = require(path.resolve(
 
 /** !SECTION Verbindungstechnik */
 
-const { ElektroKernel } = require(path.resolve(
-  `${PElektrotechnik}/gleichspannung/grundbegriffe/kernel.js`
-));
+/** SECTION Kernel */
 
-const { RohrleitungstechnikKernel } = require(path.resolve(
-  `${PRohrleitungstechnik}/kernel.js`
+const { Elektro } = require(path.resolve("src/Kernel/Elektro.js"));
+const { Rohrleitungstechnik } = require(path.resolve(
+  "src/Kernel/Rohrleitungstechnik.js"
 ));
+const { Arithmetik } = require(path.resolve("src/Kernel/Arithmetik.js"));
+const { Planemetrie } = require(path.resolve("src/Kernel/Planemetrie.js"));
+
+/** !SECTION Kernel */
 
 // const { Rohrleitungen } = require(path.resolve(
 //   `${PBauelemente}/Rohrleitungen/Rohrleitungen.js`
@@ -758,17 +761,11 @@ const { RohrleitungstechnikKernel } = require(path.resolve(
 //   `${PBauelemente}/Rohrleitungen/Bleirohre/Bleirohr.js`
 // ))
 
-const { ArithmetikKernel } = require(path.resolve(
-  `${PMathematik}/Arithmetik/kernel.js`
-));
-
-const { PlanemetrieKernel } = require(path.resolve(
-  `${PMathematik}/Planemetrie/kernel.js`
-));
-
+/** SECTION Dynamische Datenstrukturen */
 const { Stack } = require(path.resolve(
   `${PDatenverarbeitung}/dynamischeDatenstrukturen/listen/stapel/stack.js`
 ));
+/** SECTION Dynamische Datenstrukturen */
 
 module.exports = {
   Werkstoff,
@@ -788,10 +785,7 @@ module.exports = {
   PassiverZweipol,
   Rohrleitungen,
   Bleirohr,
-  ElektroKernel,
-  ArithmetikKernel,
-  PlanemetrieKernel,
-  RohrleitungstechnikKernel,
+
   Reihenschaltung,
   Widerstand,
   Feldplatte,
@@ -902,4 +896,9 @@ module.exports = {
   Pressverbindung,
   Schweisstechnik,
   Spleissen,
+
+  Elektro,
+  Arithmetik,
+  Planemetrie,
+  Rohrleitungstechnik,
 };

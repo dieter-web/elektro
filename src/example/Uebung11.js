@@ -14,9 +14,9 @@ async function Uebung11(input) {
   const dbJson = require(path.resolve("controllers/dbJson"));
 
   const {
-    ElektroKernel,
-    ArithmetikKernel,
-    PlanemetrieKernel,
+    Elektro,
+    Arithmetik,
+    Planemetrie,
     Freileitung,
   } = require(path.resolve("include/system"));
 
@@ -25,9 +25,9 @@ async function Uebung11(input) {
   ));
 
   const W1 = new Freileitung(input);
-  const AK = new ArithmetikKernel();
-  const PK = new PlanemetrieKernel();
-  const EK = new ElektroKernel();
+  const AK = new Arithmetik();
+  const PK = new Planemetrie();
+  const EK = new Elektro();
 
   const datadir = "src/json/example/Uebung11";
   makeDirectory(datadir).then(

@@ -6,6 +6,7 @@ module.exports = {
   e: path.resolve('src/example'),
   p: 'pages/PhysikalischeChemie',
   l: 'layouts/PhysikalischeChemie',
+  
   r4: '/Elektrochemie',
   r4_1: '/Elektrochemie/Elektrolyt',
   

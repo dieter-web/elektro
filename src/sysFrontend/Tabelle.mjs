@@ -38,7 +38,7 @@ class Tabelle {
     for (this.i; this.i < this.len; this.i++) {
       this.erg.push(
         [
-          d3.format(".3f")(this.bvalues[this.i].value),
+          d3.format(".3E")(this.bvalues[this.i].value),
           this.bvalues[this.i].unit,
         ].join(" ")
       );
@@ -71,13 +71,18 @@ class Tabelle2 {
     this.id = id;
     this.data = data;
     this.table = d3.select(id);
+
     this.valuesP = Object.values(data.Parameter); // {Widerstand: '', Spannung: ''} Array(4)
     this.valuesB = Object.values(data.Berechnung); // {Stromstärek: {...}, Leitwert: {...}} Array(4)
+
     this.space = [" "];
+
     this.kopfspalte = Object.keys(data.Parameter); // ['R1','R2','R3','R4']
+
     this.keyszP = Object.keys(this.valuesP[0]); // ['Widerstand','Spannung']
     this.keyszB = Object.keys(this.valuesB[0]);
     this.keyszs = this.space.concat(this.keyszP).concat(this.keyszB); // [' ','Widerstand','Spannung','Stromstärke','Leitwert']
+
     this.thead = this.table.append("thead");
     this.tbody = this.table.append("tbody");
   }

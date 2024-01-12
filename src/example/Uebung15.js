@@ -15,9 +15,9 @@ function Uebung15(input) {
   const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson"));
   const {
-    ArithmetikKernel,
-    PlanemetrieKernel,
-    ElektroKernel,
+    Arithmetik,
+    Planemetrie,
+    Elektro,
     Spannungsmesser,
   } = require(path.resolve("include/system"));
 
@@ -36,9 +36,9 @@ function Uebung15(input) {
     y: 50,
   });
 
-  const PK = new PlanemetrieKernel();
-  const AK = new ArithmetikKernel();
-  const EK = new ElektroKernel();
+  const PK = new Planemetrie();
+  const AK = new Arithmetik();
+  const EK = new Elektro();
 
   const datadir = "src/json/example/Uebung15";
   makeDirectory(datadir).then(

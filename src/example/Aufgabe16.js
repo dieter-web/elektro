@@ -14,12 +14,10 @@ async function Aufgabe16(input) {
 
   const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
 
-  const { ElektroKernel, Leiterwerkstoff } = require(path.resolve(
-    "include/system"
-  ));
+  const { Elektro, Leiterwerkstoff } = require(path.resolve("include/system"));
 
   const GoCh = new Leiterwerkstoff(input);
-  const Ek = new ElektroKernel();
+  const Ek = new Elektro();
 
   const data = "src/json/example/Aufgabe16";
 

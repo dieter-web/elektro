@@ -1,7 +1,7 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
 
-import {vCLampe} from '/d3/lib/Betriebsmittel/vCLampe.mjs'
+// import {vCLampe} from '/d3/lib/Betriebsmittel/vCLampe.mjs'
 
 const data=await populate( "example/Beispiel17/data.json" )
 
@@ -19,8 +19,8 @@ d.value=tab[ 2 ]
 δ2.value=tab[ 3 ]
 
 // Visualisierung
-const g=drawboard()
-let Lampe=new vCLampe( data )
-g.append( () => Lampe.createNode() )
+// const g=drawboard()
+// let Lampe=new vCLampe( data )
+// g.append( () => Lampe.createNode() )
 
 </script>

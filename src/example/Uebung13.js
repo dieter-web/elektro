@@ -14,9 +14,7 @@ async function Uebung13(input) {
   const path = require("path");
   const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson"));
-  const { ElektroKernel, Strommesser } = require(path.resolve(
-    "include/system"
-  ));
+  const { Elektro, Strommesser } = require(path.resolve("include/system"));
 
   const P1 = new Strommesser({
     R: "2.5 ohm",
@@ -25,7 +23,7 @@ async function Uebung13(input) {
     y: 50,
   });
 
-  const EK = new ElektroKernel();
+  const EK = new Elektro();
   const datadir = "src/json/example/Uebung13";
 
   makeDirectory(datadir).then(

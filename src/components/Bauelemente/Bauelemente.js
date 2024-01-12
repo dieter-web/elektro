@@ -2,10 +2,7 @@ require('use-strict')
 
 class Bauelemente {
   constructor () {
-    this.Kennzeichnung = {
-
-    }
-    this.viewBauelemente = {}
+    this.Berechnung = {}
   }
 }
 exports.Bauelemente = Bauelemente

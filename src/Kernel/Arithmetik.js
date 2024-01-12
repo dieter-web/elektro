@@ -1,6 +1,5 @@
 require("use-strict");
 const path = require("path");
-
 const { create, all } = require("mathjs");
 const config = {
   epsilon: 1e-12,
@@ -12,15 +11,11 @@ const config = {
 };
 const math = create(all, config);
 
-const { run } = require(path.resolve("src/js/run.js"));
+const { Kernel } = require(path.resolve("src/Kernel/Kernel.js"));
 
-class Arithmetik {
+class Arithmetik extends Kernel {
   constructor() {
-    this.param = {};
-  }
-
-  appendParameter(key, value) {
-    this.param[`${key}`] = math.unit(value);
+    super();
   }
 
   parameter(obj) {
@@ -32,7 +27,6 @@ class Arithmetik {
       G: obj.G ? math.unit(obj.G) : null, // Grundwert
     };
   }
-
   add() {
     return run("a + b", this.param);
   }
@@ -47,7 +41,6 @@ class Arithmetik {
   }
 
   // mehr als 2 Werte
-
   // Prozentrechnung
 
   Prozentwert() {

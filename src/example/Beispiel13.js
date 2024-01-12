@@ -19,30 +19,23 @@ async function Beispiel13(input) {
   const {
     RohrleitungstechnikKernel,
     Bleirohr,
-    PlanemetrieKernel,
+    Planemetrie,
   } = require(path.resolve("include/system"));
+
   const { readMaterialParameter } = require(path.resolve(
     "src/js/readMaterialParameter.js"
   ));
 
   const RK = new RohrleitungstechnikKernel();
-  const PK = new PlanemetrieKernel();
+  const PK = new Planemetrie();
 
   // const Kennzeichnung = dbJson.readJSONFile(
   //   path.resolve("src/json/Sonstiges/kennzeichnung.json")
   // );
-  const PtRohr = new Bleirohr({
-    Name: "Bleirohr",
-    Material: input.Material,
-    G: input.G,
-    d: input.d,
-    D: input.D,
-
-    x: 50,
-    y: 50,
-  });
+  const PtRohr = new Bleirohr(input);
 
   const datadir = "src/json/example/Beispiel13";
+
   makeDirectory(datadir).then(
     function () {
       PtRohr.Parameter.ρ = readMaterialParameter(
@@ -51,14 +44,14 @@ async function Beispiel13(input) {
       ).toString();
 
       PK.parameter({ d: PtRohr.Parameter.d, D: PtRohr.Parameter.D });
-      PtRohr.Parameter.Ar = PK.KRADd().toString();
+      PtRohr.Berechnung.Ar = PK.KRADd();
 
       RK.parameter({
         ρ: PtRohr.Parameter.ρ,
-        A: PtRohr.Parameter.Ar,
         G: PtRohr.Parameter.G,
+        A: PtRohr.Berechnung.Ar.toString(),
       });
-      PtRohr.Parameter.l = RK.lAρG().toString();
+      PtRohr.Berechnung.l = RK.lAρG().to("m");
 
       dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), PtRohr);
     },

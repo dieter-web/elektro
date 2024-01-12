@@ -15,12 +15,9 @@ async function Uebung16(input) {
   const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson"));
 
-  const {
-    ArithmetikKernel,
-    PlanemetrieKernel,
-    ElektroKernel,
-    Kabel,
-  } = require(path.resolve("include/system"));
+  const { Arithmetik, Planemetrie, Elektro, Kabel } = require(path.resolve(
+    "include/system"
+  ));
 
   const { readMaterialParameter } = require(path.resolve(
     "src/js/readMaterialParameter.js"
@@ -35,9 +32,9 @@ async function Uebung16(input) {
     y: 50,
   });
 
-  const AK = new ArithmetikKernel();
-  const PK = new PlanemetrieKernel();
-  const EK = new ElektroKernel();
+  const AK = new Arithmetik();
+  const PK = new Planemetrie();
+  const EK = new Elektro();
 
   const datadir = "src/json/example/Uebung16";
 

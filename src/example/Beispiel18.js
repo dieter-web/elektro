@@ -15,11 +15,9 @@ async function Beispiel18(input) {
   const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson"));
 
-  const {
-    ElektroKernel,
-    ArithmetikKernel,
-    MehrlagigeSpule,
-  } = require(path.resolve("include/system"));
+  const { Elektro, Arithmetik, MehrlagigeSpule } = require(path.resolve(
+    "include/system"
+  ));
 
   const { readMaterialParameter } = require(path.resolve(
     "src/js/readMaterialParameter.js"
@@ -27,8 +25,8 @@ async function Beispiel18(input) {
 
   const L1 = new MehrlagigeSpule(input);
 
-  const EK = new ElektroKernel();
-  const AK = new ArithmetikKernel();
+  const EK = new Elektro();
+  const AK = new Arithmetik();
 
   const datadir = "src/json/example/Beispiel18";
 
@@ -45,10 +43,13 @@ async function Beispiel18(input) {
       ).toString();
 
       AK.parameter({ G: L1.Parameter.R, p: L1.Parameter.p });
-      L1.Parameter.Prozentwert = AK.Prozentwert().toString();
+      L1.Berechnung.Prozentwert = AK.Prozentwert();
 
-      AK.parameter({ a: L1.Parameter.R, b: L1.Parameter.Prozentwert });
-      L1.Parameter.R2 = AK.add().toString();
+      AK.parameter({
+        a: L1.Parameter.R,
+        b: L1.Berechnung.Prozentwert.toString(),
+      });
+      L1.Berechnung.R2 = AK.add();
 
       EK.parameter({
         δ0: L1.Parameter.δ0M,

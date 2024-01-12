@@ -18,11 +18,9 @@ async function Aufgabe14(input) {
     "src/js/readMaterialParameter.js"
   ));
 
-  const { ElektroKernel, MehrlagigeSpule } = require(path.resolve(
-    "include/system"
-  ));
+  const { Elektro, MehrlagigeSpule } = require(path.resolve("include/system"));
   const L1 = new MehrlagigeSpule(input);
-  const EK = new ElektroKernel();
+  const EK = new Elektro();
 
   const datadir = "src/json/example/Aufgabe14";
 

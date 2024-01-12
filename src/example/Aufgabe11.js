@@ -13,9 +13,10 @@ async function Aufgabe11(input) {
   const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson.js"));
 
-  const { ElektroKernel, Widerstand } = require(path.resolve("include/system"));
+  const { Elektro, Widerstand } = require(path.resolve("include/system"));
+
+  const EK = new Elektro();
   const R1 = new Widerstand(input);
-  const EK = new ElektroKernel();
 
   const datadir = "src/json/example/Aufgabe11";
 

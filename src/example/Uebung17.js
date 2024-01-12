@@ -5,9 +5,7 @@ async function Uebung17(input) {
 
   const dbJson = require(path.resolve("controllers/dbJson"));
   const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
-  const { ElektroKernel, Transformator } = require(path.resolve(
-    "include/system"
-  ));
+  const { Elektro, Transformator } = require(path.resolve("include/system"));
 
   const { readMaterialParameter } = require(path.resolve(
     "src/js/readMaterialParameter.js"
@@ -23,7 +21,7 @@ async function Uebung17(input) {
     y: 50,
   });
 
-  const EK = new ElektroKernel();
+  const EK = new Elektro();
 
   const datadir = "src/json/example/Uebung17";
   makeDirectory(datadir).then(

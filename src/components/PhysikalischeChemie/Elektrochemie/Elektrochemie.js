@@ -1,13 +1,14 @@
-require('use-strict')
-const path = require('path')
+require("use-strict");
+const path = require("path");
 const { PhysikalischeChemie } = require(path.resolve(
-  'src/components/PhysikalischeChemie/PhysikalischeChemie.js'
-))
+  "src/components/PhysikalischeChemie/PhysikalischeChemie.js"
+));
 
 class Elektrochemie extends PhysikalischeChemie {
-  constructor () {
-    super()
+  constructor() {
+    super();
+    this.Berechnung = {};
   }
 }
 
-exports.Elektrochemie = Elektrochemie
+exports.Elektrochemie = Elektrochemie;

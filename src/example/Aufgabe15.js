@@ -19,13 +19,13 @@ async function Aufgabe15(input) {
 
   const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
 
-  const { ElektroKernel, PlanemetrieKernel, Erder } = require(path.resolve(
+  const { Elektro, Planemetrie, Erder } = require(path.resolve(
     "include/system"
   ));
 
   const W1 = new Erder(input);
   const PK = new PlanemetrieKernel();
-  const EK = new ElektroKernel();
+  const EK = new Elektro();
 
   const datadir = "src/json/example/Aufgabe15";
 

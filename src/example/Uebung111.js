@@ -16,8 +16,8 @@ async function Uebung111(input) {
   const dbJson = require(path.resolve("controllers/dbJson.js"));
 
   const {
-    ElektroKernel,
-    ArithmetikKernel,
+    Elektro,
+    Arithmetik,
     Reihenschaltung,
     Widerstand,
     Klemme,
@@ -37,8 +37,8 @@ async function Uebung111(input) {
     y: 50,
   });
 
-  const EK = new ElektroKernel();
-  const AK = new ArithmetikKernel();
+  const EK = new Elektro();
+  const AK = new Arithmetik();
 
   const datadir = "src/json/example/Uebung111";
   makeDirectory(datadir).then(

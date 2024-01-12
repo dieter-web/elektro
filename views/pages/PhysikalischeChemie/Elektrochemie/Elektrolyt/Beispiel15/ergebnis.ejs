@@ -1,7 +1,10 @@
-<%- include('./aufgabe.ejs', { }) %>
+<%- include('./aufgabe.ejs', {
+  id: "beispiel15",
+  action: "/physikalischechemie/elektrochemie/elektrolyt/beispiel15/aufgabe"  
+ }) %>
 <%- include('../../../../../layouts/partials/ergebnis.ejs') %>
 
-import {vb1} from '/d3/lib/Bauelemente/vb1.mjs'
+// import {vb1} from '/d3/lib/Bauelemente/vb1.mjs'
 
 
 const data=await populate( "example/Beispiel15/data.json" )

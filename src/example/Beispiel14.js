@@ -19,15 +19,16 @@ async function Beispiel14(input) {
   const path = require("path");
   const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson.js"));
-  const { ElektroKernel, ArithmetikKernel, Leitung } = require(path.resolve(
+
+  const { Elektro, Arithmetik, FesteLegung } = require(path.resolve(
     "include/system"
   ));
   const { readMaterialParameter } = require(path.resolve(
     "src/js/readMaterialParameter.js"
   ));
-  const W1 = new Leitung(input);
-  const AK = new ArithmetikKernel();
-  const EK = new ElektroKernel();
+  const W1 = new FesteLegung(input);
+  const AK = new Arithmetik();
+  const EK = new Elektro();
   const datadir = "src/json/example/Beispiel14";
 
   makeDirectory(datadir).then(
@@ -38,18 +39,18 @@ async function Beispiel14(input) {
       ).toString();
 
       AK.parameter({ G: W1.Parameter.U, p: W1.Parameter.p });
-      W1.Parameter.prozentwert = AK.Prozentwert().toString();
+      W1.Berechnung.prozentwert = AK.Prozentwert();
 
       AK.parameter({ a: W1.Parameter.a, b: W1.Parameter.l });
-      W1.Parameter.lg = AK.mul().toString();
+      W1.Berechnung.lg = AK.mul().to("m");
 
       EK.parameter({
         ρ: W1.Parameter.ρal,
-        l: W1.Parameter.lg,
-        U: W1.Parameter.prozentwert,
         I: W1.Parameter.I,
+        l: W1.Berechnung.lg.toString(),
+        U: W1.Berechnung.prozentwert.toString(),
       });
-      W1.Parameter.A = EK.AρlUI().toString();
+      W1.Berechnung.A = EK.AρlUI().to("mm^2");
 
       dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), W1);
     },
@@ -59,9 +60,9 @@ async function Beispiel14(input) {
   );
 }
 // let input = {
-//   p: "5", //  ArithmetikKernel
+//   p: "5", //  Arithmetik
 //   a: "2",
-//   Material: "Aluminium", // ElektroKernel
+//   Material: "Aluminium", // Elektro
 //   U: "230 V",
 //   l: "800 m",
 //   I: "11 A",

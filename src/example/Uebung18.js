@@ -16,9 +16,7 @@ async function Uebung18(input) {
   const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson"));
 
-  const { ElektroKernel, Magnetspule } = require(path.resolve(
-    "include/system"
-  ));
+  const { Elektro, Magnetspule } = require(path.resolve("include/system"));
 
   const { readMaterialParameter } = require(path.resolve(
     "src/js/readMaterialParameter.js"
@@ -32,7 +30,7 @@ async function Uebung18(input) {
     δ2: "60 celsius",
   });
 
-  const EK = new ElektroKernel();
+  const EK = new Elektro();
 
   const datadir = "src/json/example/Uebung16";
   makeDirectory(datadir).then(

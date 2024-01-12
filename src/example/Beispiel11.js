@@ -16,7 +16,7 @@ async function Beispiel11(input) {
   const dbJson = require(path.resolve("controllers/dbJson.js"));
   const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
 
-  const { ElektroKernel, Widerstand } = require(path.resolve("include/system"));
+  const { Elektro, Widerstand } = require(path.resolve("include/system"));
 
   const datadir = "src/json/example/Beispiel11";
 
@@ -31,7 +31,7 @@ async function Beispiel11(input) {
       R.add("R3", input.R3);
       R.add("R4", input.R4);
 
-      const EK = new ElektroKernel();
+      const EK = new Elektro();
       EK.parameter({ U: input.U });
 
       R.Rmap.forEach((Ri, index) => {

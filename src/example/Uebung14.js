@@ -12,7 +12,7 @@ function Uebung14(input) {
   const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson.js"));
 
-  const { ElektroKernel, PlanemetrieKernel, Glasplatte } = require(path.resolve(
+  const { Elektro, Planemetrie, Glasplatte } = require(path.resolve(
     "include/system"
   ));
 
@@ -27,8 +27,8 @@ function Uebung14(input) {
     d: "1 mm",
   });
 
-  const PK = new PlanemetrieKernel();
-  const EK = new ElektroKernel();
+  const PK = new Planemetrie();
+  const EK = new Elektro();
 
   const datadir = "src/json/example/Uebung14";
 

@@ -11,7 +11,7 @@ async function Uebung19(input) {
   const path = require("path");
   const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson.js"));
-  const { ElektroKernel, Kaltleiter } = require(path.resolve("include/system"));
+  const { Elektro, Kaltleiter } = require(path.resolve("include/system"));
 
   const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
   const R1 = new Kaltleiter({
@@ -22,7 +22,7 @@ async function Uebung19(input) {
     y: 50,
   });
 
-  const EK = new ElektroKernel();
+  const EK = new Elektro();
   const datadir = "src/json/example/Uebung19";
 
   makeDirectory(datadir).then(

@@ -18,7 +18,7 @@ async function Uebung110(input) {
   const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson.js"));
 
-  const { ElektroKernel, ArithmetikKernel, Kabel } = require(path.resolve(
+  const { Elektro, Arithmetik, Kabel } = require(path.resolve(
     "include/system"
   ));
 
@@ -38,8 +38,8 @@ async function Uebung110(input) {
     y: 50,
   });
 
-  const AK = new ArithmetikKernel();
-  const EK = new ElektroKernel();
+  const AK = new Arithmetik();
+  const EK = new Elektro();
 
   const datadir = "src/json/example/Uebung110";
 

@@ -15,12 +15,12 @@ async function Beispiel12(input) {
   const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson.js"));
 
-  const { ElektroKernel, PlanemetrieKernel, Draht } = require(path.resolve(
+  const { Elektro, Planemetrie, Draht } = require(path.resolve(
     "include/system"
   ));
 
-  const PK = new PlanemetrieKernel();
-  const EK = new ElektroKernel();
+  const PK = new Planemetrie();
+  const EK = new Elektro();
   const W1 = new Draht(input);
 
   const datadir = "src/json/example/Beispiel12";

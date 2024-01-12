@@ -15,9 +15,9 @@ async function Aufgabe13(input) {
   const dbJson = require(path.resolve("controllers/dbJson.js"));
 
   const {
-    ElektroKernel,
-    ArithmetikKernel,
-    PlanemetrieKernel,
+    Elektro,
+    Arithmetik,
+    Planemetrie,
     MehrlagigeSpule,
   } = require(path.resolve("include/system"));
 
@@ -26,9 +26,9 @@ async function Aufgabe13(input) {
   ));
 
   const L1 = new MehrlagigeSpule(input);
-  const AK = new ArithmetikKernel();
-  const PK = new PlanemetrieKernel();
-  const EK = new ElektroKernel();
+  const AK = new Arithmetik();
+  const PK = new Planemetrie();
+  const EK = new Elektro();
 
   const datadir = "src/json/example/Aufgabe13";
 

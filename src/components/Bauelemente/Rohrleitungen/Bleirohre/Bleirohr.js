@@ -8,18 +8,8 @@ const { Rohrleitungen } = require(path.resolve(
 class Bleirohr extends Rohrleitungen {
   constructor (Parameter){
   super()
-    this.Parameter = Parameter
-    this.vis = {
-      fill: "#aaaaaa",
-      fillopacity: 0.5,
-      style: "stroke:#ffffff; stroke-width: 1.0",
-      width: this.Parameter.l,
-      height: this.Parameter.D,
-      name: this.Parameter.Name,
-
-      // Events
-      "pointer-events": "all"
-    }
+    this.Parameter = Parameter;
+    
   }
 }
 

@@ -13,9 +13,11 @@ const config = {
 const math = create(all, config);
 
 const { run } = require(path.resolve("src/js/run.js"));
+const { Kernel } = require(path.resolve("src/Kernel/Kernel.js"));
 
-class Elektro {
+class Elektro extends Kernel {
   constructor(par = {}) {
+    super();
     this.param = {};
     this.parameter(par);
   }
@@ -55,7 +57,6 @@ class Elektro {
       δ1: obj.δ1 ? math.unit(obj.δ1) : null,
       δ2: obj.δ2 ? math.unit(obj.δ2) : null,
       δ20: obj.δ20 ? math.unit(obj.δ20) : null,
-      // 'me': obj.me ? obj.me : null
     };
   }
 
@@ -176,4 +177,4 @@ class Elektro {
     return run("( (Rδ2 / R20) - 1 ) * (1 / (δ2 - δ20) )", this.param);
   }
 }
-exports.ElektroKernel = ElektroKernel;
+exports.Elektro = Elektro;
