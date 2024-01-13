@@ -60,36 +60,63 @@ erouter(router, R2.p2, R2.l2, R2.e, R2.r2_27_1, R2.b11);
 
 /** !SECTION Betriebsmittel Widerstand widerstand */
 
-/** SECTION Betriebsmittel Widerstand feldplatten */
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende */
 routerGet(router, R2.r2_27_2, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Widerstand feldplatten */
 
-/** SECTION Betriebsmittel Widerstand fotowiderstand */
-routerGet(router, R2.r2_27_3, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Widerstand fotowiderstand */
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende ElektrischeParameter */
+routerGet(router, R2.r2_27_2_1, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Widerstand thermistor */
-routerGet(router, R2.r2_27_4, R2.p2, R2.l2);
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende ElektrischeParameter Spannung */
+routerGet(router, R2.r2_27_2_1_1, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Widerstand thermistor heissleiter */
-routerGet(router, R2.r2_27_4_1, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Widerstand thermistor heissleiter */
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende ElektrischeParameter Spannung Varistor */
+routerGet(router, R2.r2_27_2_1_1_1, R2.p2, R2.l2);
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende ElektrischeParameter Spannung Varistor */
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende ElektrischeParameter Spannung */
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende ElektrischeParameter */
 
-/** SECTION Betriebsmittel Widerstand thermistor kaltleiter */
-routerGet(router, R2.r2_27_4_2, R2.p2, R2.l2);
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter */
+routerGet(router, R2.r2_27_2_2, R2.p2, R2.l2);
+
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter MagnetischesFeld */
+routerGet(router, R2.r2_27_2_2_1, R2.p2, R2.l2);
+
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter MagnetischesFeld Feldplatte */
+routerGet(router, R2.r2_27_2_2_1_1, R2.p2, R2.l2);
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter MagnetischesFeld Feldplatte */
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter MagnetischesFeld */
+
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Strahlung */
+routerGet(router, R2.r2_27_2_2_2, R2.p2, R2.l2);
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Strahlung Fotowiderstand */
+routerGet(router, R2.r2_27_2_2_2_1, R2.p2, R2.l2);
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Strahlung Fotowiderstand */
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Strahlung */
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur */
+routerGet(router, R2.r2_27_2_2_3, R2.p2, R2.l2);
+
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur Thermistor */
+routerGet(router, R2.r2_27_2_2_3_1, R2.p2, R2.l2);
+
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur Thermistor Heissleiter */
+routerGet(router, R2.r2_27_2_2_3_1_1, R2.p2, R2.l2);
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur Thermistor Heissleiter */
+
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur Thermistor Kaltleiter */
+routerGet(router, R2.r2_27_2_2_3_1_2, R2.p2, R2.l2);
 
 /** NOTE Uebung 19 */
-erouter(router, R2.p2, R2.l2, R2.e, R2.r2_27_4_2, R2.u19);
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_27_2_2_3_1_2, R2.u19);
 
-/** !SECTION Betriebsmittel Widerstand thermistor kaltleiter */
-
-/** !SECTION Betriebsmittel Widerstand thermistor */
-
-/** SECTION Betriebsmittel Widerstand varistor */
-routerGet(router, R2.r2_27_5, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Widerstand varistor */
-
-/** !SECTION Widerstand */
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur Thermistor Kaltleiter KeramischeKaltleiter */
+routerGet(router, R2.r2_27_2_2_3_1_2_1, R2.p2, R2.l2);
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur Thermistor Kaltleiter KeramischeKaltleiter */
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur Thermistor Kaltleiter */
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur Thermistor */
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur */
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter */
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende */
+/** !SECTION Widerstandaende */
 
 /** SECTION Betriebsmittel Übertragungswege */
 routerGet(router, R2.r2_21, R2.p2, R2.l2);

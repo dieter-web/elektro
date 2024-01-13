@@ -104,6 +104,50 @@ const { Widerstand } = require(path.resolve(
 ));
 /** !SECTION Betriebsmittel Widerstaende Widerstand */
 
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende */
+const { ParameterabhaengigeHalbleiterwiderstande } = require(path.resolve(
+  `${PBetriebsmittel}/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/Widerstand.js`
+));
+
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende ElektrischeParameter */
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende ElektrischeParameter Spannung */
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende ElektrischeParameter Spannung Varistor */
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende ElektrischeParameter Spannung Varistor */
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende ElektrischeParameter Spannung */
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende ElektrischeParameter */
+
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter */
+
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter ElektrischesFeld */
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter ElektrischesFeld Feldplatte */
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtlektrischeParameter ElektrischesFeld Feldplatte */
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtlektrischeParameter ElektrischesFeld */
+
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Strahlung */
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Strahlung Fotowiderstand */
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtlektrischeParameter Strahlung Fotowiderstand */
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtlektrischeParameter Strahlung */
+
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur */
+
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur Thermistor */
+
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur Thermistor Heissleiter */
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtlektrischeParameter Temperatur Heissleiter */
+
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur Thermistor Kaltleiter */
+/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur Thermistor Kaltleiter/KeramischeKaltleiter */
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtlektrischeParameter Temperatur Thermistor Kaltleiter KeramischeKaltleiter */
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtlektrischeParameter Temperatur Thermistor Kaltleiter */
+
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtlektrischeParameter Temperatur Thermistor */
+
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtlektrischeParameter Temperatur */
+
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtlektrischeParameter */
+
+/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende */
+
 /** SECTION Betriebsmittel Widerstaende Feldplatte */
 const { Feldplatte } = require(path.resolve(
   `${PBetriebsmittel}/Widerstaende/Feldplatte/Feldplatte.js`
