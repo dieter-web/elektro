@@ -16,17 +16,15 @@ async function Beispiel13(input) {
   const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson.js"));
 
-  const {
-    RohrleitungstechnikKernel,
-    Bleirohr,
-    Planemetrie,
-  } = require(path.resolve("include/system"));
+  const { Rohrleitungstechnik, Bleirohr, Planemetrie } = require(path.resolve(
+    "include/system"
+  ));
 
   const { readMaterialParameter } = require(path.resolve(
     "src/js/readMaterialParameter.js"
   ));
 
-  const RK = new RohrleitungstechnikKernel();
+  const RK = new Rohrleitungstechnik();
   const PK = new Planemetrie();
 
   // const Kennzeichnung = dbJson.readJSONFile(

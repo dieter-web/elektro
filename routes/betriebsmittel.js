@@ -327,6 +327,51 @@ routerGet(router, R2.r2_7_3, R2.p2, R2.l2);
 
 /** !SECTION Betriebsmittel Induktivitaet */
 
+/** SECTION Messgeraete */
+routerGet(router, R2.r2_10, R2.p2, R2.l2);
+
+/** SECTION Messgeraete Energiemesser */
+routerGet(router, R2.r2_10_1, R2.p2, R2.l2);
+/** !SECTION Messgeraete Energiemesser */
+
+/** SECTION Messgeraete Frequenzmesser */
+routerGet(router, R2.r2_10_2, R2.p2, R2.l2);
+/** !SECTION Messgeraete Frequenzmesser */
+
+/** SECTION Messgeraete Impedanzmesser */
+routerGet(router, R2.r2_10_3, R2.p2, R2.l2);
+/** !SECTION Messgeraete Impedanzmesser */
+
+/** SECTION Messgeraete Leistungsmesser */
+routerGet(router, R2.r2_10_4, R2.p2, R2.l2);
+/** !SECTION Messgeraete Leistungsmesser */
+
+/** SECTION Messgeraete MagnetischeGroessemesser */
+routerGet(router, R2.r2_10_5, R2.p2, R2.l2);
+/** !SECTION Messgeraete MagnetischeGroessemesser */
+
+/** SECTION Messgeraete Phasenwinkelmesser */
+routerGet(router, R2.r2_10_6, R2.p2, R2.l2);
+/** !SECTION Messgeraete Phasenwinkelmesser */
+
+/** SECTION Messgeraete Spannungsmesser */
+routerGet(router, R2.r2_10_7, R2.p2, R2.l2);
+/** !SECTION Messgeraete Spannungsmesser */
+
+/** SECTION Messgeraete Strommesser */
+routerGet(router, R2.r2_10_8, R2.p2, R2.l2);
+
+/** NOTE Betriebsmittel Messgeraete Strommesser Uebung13 */
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_10_8, R2.u13);
+
+/** !SECTION Messgeraete Strommesser */
+
+/** SECTION Messgeraete Zeitmesser */
+routerGet(router, R2.r2_10_9, R2.p2, R2.l2);
+/** !SECTION Messgeraete Zeitmesser */
+
+/** !SECTION Messgeraete */
+
 /** SECTION Betriebsmittel Verschiedenes */
 routerGet(router, R2.r2_24, R2.p2, R2.l2);
 

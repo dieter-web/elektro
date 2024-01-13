@@ -12,7 +12,6 @@ const config = {
 };
 const math = create(all, config);
 
-const { run } = require(path.resolve("src/js/run.js"));
 const { Kernel } = require(path.resolve("src/Kernel/Kernel.js"));
 
 class Elektro extends Kernel {
@@ -61,120 +60,120 @@ class Elektro extends Kernel {
   }
 
   IQt() {
-    return run("Q / t", this.param);
+    return this.run("Q / t", this.param);
   }
   IUR() {
-    return run("U / R", this.param);
+    return this.run("U / R", this.param);
   }
   III1() {
-    return run("I / I1", this.param);
+    return this.run("I / I1", this.param);
   }
   IρAlU() {
-    return run("U * (A / (ρ * l))", this.param);
+    return this.run("U * (A / (ρ * l))", this.param);
   }
   ΔI() {
-    return run(
+    return this.run(
       "(1 - ((1 + α20 * (δ1 - δ20)) / (1 + α20 * (δ2 - δ20)))) * 100",
       this.param
     );
   }
   QIt() {
-    return run("I * t", this.param);
+    return this.run("I * t", this.param);
   }
   lρra() {
-    return run("R * A / ρ", this.param);
+    return this.run("R * A / ρ", this.param);
   }
   lκra() {
-    return run("R * A * κ", this.param);
+    return this.run("R * A * κ", this.param);
   }
   lκus() {
-    return run("(U / S) * κ", this.param);
+    return this.run("(U / S) * κ", this.param);
   }
   lρus() {
-    return run("(U / S) / ρ", this.param);
+    return this.run("(U / S) / ρ", this.param);
   }
   AρlR() {
-    return run("(l * ρ) / R", this.param);
+    return this.run("(l * ρ) / R", this.param);
   }
   AρlUI() {
-    return run("(l * ρ * I) / U", this.param);
+    return this.run("(l * ρ * I) / U", this.param);
   }
   Ad() {
-    return run(this.Ad.evaluate(this.param));
+    return this.run(this.Ad.evaluate(this.param));
   }
   κlra() {
-    return run("l / (R * A)", this.param);
+    return this.run("l / (R * A)", this.param);
   }
   κlsu() {
-    return run("(l * S) / U ", this.param);
+    return this.run("(l * S) / U ", this.param);
   }
   GIU() {
-    return run("I / U", this.param);
+    return this.run("I / U", this.param);
   }
   GAρl() {
-    return run("A / ( ρ * l )", this.param);
+    return this.run("A / ( ρ * l )", this.param);
   }
   ΦRI() {
-    return run("R * I", this.param);
+    return this.run("R * I", this.param);
   }
   UIR() {
-    return run("I * R", this.param);
+    return this.run("I * R", this.param);
   }
   UIG() {
-    return run("I / G", this.param);
+    return this.run("I / G", this.param);
   }
   UUiNiNsum() {
-    return run("( Ui * Nsum ) / Ni", this.param);
+    return this.run("( Ui * Nsum ) / Ni", this.param);
   }
   ρRAl() {
-    return run("(R * A) / l", this.param);
+    return this.run("(R * A) / l", this.param);
   }
   ρUlS() {
-    return run("U / (l * S)", this.param);
+    return this.run("U / (l * S)", this.param);
   }
   SIA() {
-    return run("I / A", this.param);
+    return this.run("I / A", this.param);
   }
   SUρl() {
-    return run("U / (ρ * l)", this.param);
+    return this.run("U / (ρ * l)", this.param);
   }
   δM() {
-    return run("(1 / α20 ) - δ20", this.param);
+    return this.run("(1 / α20 ) - δ20", this.param);
   }
   δ2() {
-    return run("(((Rδ2 - R) / R) * (δ0 + δ1)) + δ1", this.param);
+    return this.run("(((Rδ2 - R) / R) * (δ0 + δ1)) + δ1", this.param);
   }
   Rδ() {
-    return run("R20 + R20 *α20 *( δ2 - δ20 )", this.param);
+    return this.run("R20 + R20 *α20 *( δ2 - δ20 )", this.param);
   }
 
   Rpδ1δ2() {
-    return run(
+    return this.run(
       "(1 - ( (1 + α20 * (δ1 - δ20)) / (1 + α20 * (δ2 - δ20)) )) * 100",
       this.param
     );
   }
 
   Δδρ() {
-    return run("1 /α20 * ((ρ / ρ1) - 1)", this.param);
+    return this.run("1 /α20 * ((ρ / ρ1) - 1)", this.param);
   }
   Δδκ() {
-    return run("1 /α20 * (( κ/ κ1) - 1) ", this.param);
+    return this.run("1 /α20 * (( κ/ κ1) - 1) ", this.param);
   }
   RρlA() {
-    return run("( ρ * (l / A))", this.param);
+    return this.run("( ρ * (l / A))", this.param);
   }
   RUI() {
-    return run("U / J", this.param);
+    return this.run("U / J", this.param);
   }
   RRR1() {
-    return run("R / R1", this.param);
+    return this.run("R / R1", this.param);
   }
   UUU1() {
-    return run("U / U1", this.param);
+    return this.run("U / U1", this.param);
   }
   α20() {
-    return run("( (Rδ2 / R20) - 1 ) * (1 / (δ2 - δ20) )", this.param);
+    return this.run("( (Rδ2 / R20) - 1 ) * (1 / (δ2 - δ20) )", this.param);
   }
 }
 exports.Elektro = Elektro;

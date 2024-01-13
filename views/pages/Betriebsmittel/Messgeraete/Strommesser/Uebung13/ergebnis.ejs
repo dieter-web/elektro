@@ -1,0 +1,14 @@
+<%- include('aufgabe.ejs',{}) %>
+<%- include('../../../../../layouts/partials/ergebnis.ejs') %>
+
+const data=await populate( "example/Uebung13/data.json" );
+
+const table=new Tabelle( data,"#ergebnis" );
+table.tabulate();
+
+
+// Rückkopplung
+//const tab=d3.selectAll( "tbody" )._groups[ 0 ][ 0 ].innerText.split( '\t' );
+
+
+</script>

@@ -485,66 +485,66 @@ const { Gluehlampe } = require(path.resolve(
 
 /** !SECTION Betriebsmittel Verschiedens */
 
-/** SECTION Betriebsmittel Messgeraet */
-const { Messgeraet } = require(path.resolve(
-  `${PBetriebsmittel}/Messgeraet/Messgeraet.js`
+/** SECTION Betriebsmittel Messgeraete */
+const { Messgeraete } = require(path.resolve(
+  `${PBetriebsmittel}/Messgeraete/Messgeraete.js`
 ));
 
-/** SECTION Betriebsmittel Messgeraet Energiemesser */
+/** SECTION Betriebsmittel Messgeraete Energiemesser */
 const { Energiemesser } = require(path.resolve(
-  `${PBetriebsmittel}/Messgeraet/Energiemesser/Energiemesser.js`
+  `${PBetriebsmittel}/Messgeraete/Energiemesser/Energiemesser.js`
 ));
-/** !SECTION Betriebsmittel Messgeraet Energiemesser */
+/** !SECTION Betriebsmittel Messgeraete Energiemesser */
 
-/** SECTION Betriebsmittel Messgeraet Frequenzmesser */
+/** SECTION Betriebsmittel Messgeraete Frequenzmesser */
 const { Frequenzmesser } = require(path.resolve(
-  `${PBetriebsmittel}/Messgeraet/Frequenzmesser/Frequenzmesser.js`
+  `${PBetriebsmittel}/Messgeraete/Frequenzmesser/Frequenzmesser.js`
 ));
-/** !SECTION Betriebsmittel Messgeraet Frequenz */
+/** !SECTION Betriebsmittel Messgeraete Frequenz */
 
-/** SECTION Betriebsmittel Messgeraet Impedanzmesser */
+/** SECTION Betriebsmittel Messgeraete Impedanzmesser */
 const { Impedanzmesser } = require(path.resolve(
-  `${PBetriebsmittel}/Messgeraet/Impedanzmesser/Impedanzmesser.js`
+  `${PBetriebsmittel}/Messgeraete/Impedanzmesser/Impedanzmesser.js`
 ));
-/** !SECTION Betriebsmittel Messgeraet Impedanzmesser */
+/** !SECTION Betriebsmittel Messgeraete Impedanzmesser */
 
-/** SECTION Betriebsmittel Messgeraet Leistungsmesser */
+/** SECTION Betriebsmittel Messgeraete Leistungsmesser */
 const { Leistungsmesser } = require(path.resolve(
-  `${PBetriebsmittel}/Messgeraet/Leistungsmesser/Leistungsmesser.js`
+  `${PBetriebsmittel}/Messgeraete/Leistungsmesser/Leistungsmesser.js`
 ));
-/** !SECTION Betriebsmittel Messgeraet Leistungsmesser */
+/** !SECTION Betriebsmittel Messgeraete Leistungsmesser */
 
-/** SECTION Betriebsmittel Messgeraet MagnetischeGroessemesser */
+/** SECTION Betriebsmittel Messgeraete MagnetischeGroessemesser */
 const { MagnetischeGroessemesser } = require(path.resolve(
-  `${PBetriebsmittel}/Messgeraet/MagnetischeGroessemesser/MagnetischeGroessemesser.js`
+  `${PBetriebsmittel}/Messgeraete/MagnetischeGroessemesser/MagnetischeGroessemesser.js`
 ));
-/** !SECTION Betriebsmittel Messgeraet MagnetischeGroessemesser */
+/** !SECTION Betriebsmittel Messgeraete MagnetischeGroessemesser */
 
-/** SECTION Betriebsmittel Messgeraet Phasenwinkelmesser */
+/** SECTION Betriebsmittel Messgeraete Phasenwinkelmesser */
 const { Phasenwinkelmesser } = require(path.resolve(
-  `${PBetriebsmittel}/Messgeraet/Phasenwinkelmesser/Phasenwinkelmesser.js`
+  `${PBetriebsmittel}/Messgeraete/Phasenwinkelmesser/Phasenwinkelmesser.js`
 ));
-/** !SECTION Betriebsmittel Messgeraet Phasenwinkelmesser */
+/** !SECTION Betriebsmittel Messgeraete Phasenwinkelmesser */
 
-/** SECTION Betriebsmittel Messgeraet Spannungsmesser */
+/** SECTION Betriebsmittel Messgeraete Spannungsmesser */
 const { Spannungsmesser } = require(path.resolve(
-  `${PBetriebsmittel}/Messgeraet/Spannungsmesser/Spannungsmesser.js`
+  `${PBetriebsmittel}/Messgeraete/Spannungsmesser/Spannungsmesser.js`
 ));
-/** !SECTION Betriebsmittel Messgeraet Spannungsmesser */
+/** !SECTION Betriebsmittel Messgeraete Spannungsmesser */
 
-/** SECTION Betriebsmittel Messgeraet Strommesser */
+/** SECTION Betriebsmittel Messgeraete Strommesser */
 const { Strommesser } = require(path.resolve(
-  `${PBetriebsmittel}/Messgeraet/Strommesser/Strommesser.js`
+  `${PBetriebsmittel}/Messgeraete/Strommesser/Strommesser.js`
 ));
-/** !SECTION Betriebsmittel Messgeraet Strommesser */
+/** !SECTION Betriebsmittel Messgeraete Strommesser */
 
-/** SECTION Betriebsmittel Messgeraet Zeitmesser */
+/** SECTION Betriebsmittel Messgeraete Zeitmesser */
 const { Zeitmesser } = require(path.resolve(
-  `${PBetriebsmittel}/Messgeraet/Zeitmesser/Zeitmesser.js`
+  `${PBetriebsmittel}/Messgeraete/Zeitmesser/Zeitmesser.js`
 ));
-/** !SECTION Betriebsmittel Messgeraet Zeitmesser */
+/** !SECTION Betriebsmittel Messgeraete Zeitmesser */
 
-/** !SECTION Betriebsmittel Messgeraet */
+/** !SECTION Betriebsmittel Messgeraete */
 
 /** SECTION Betriebsmittel Transformator */
 const { Transformator } = require(path.resolve(
@@ -850,7 +850,8 @@ module.exports = {
   Beleuchtung,
   Lampe,
   Gluehlampe,
-  Messgeraet,
+
+  Messgeraete,
   Energiemesser,
   Frequenzmesser,
   Impedanzmesser,
@@ -860,6 +861,7 @@ module.exports = {
   Spannungsmesser,
   Strommesser,
   Zeitmesser,
+
   Uebertragungswege,
   Kabel,
   Fernmeldekabel,

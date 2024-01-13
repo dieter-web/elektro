@@ -24,7 +24,6 @@ async function Beispiel18(input) {
   ));
 
   const L1 = new MehrlagigeSpule(input);
-
   const EK = new Elektro();
   const AK = new Arithmetik();
 
@@ -58,7 +57,7 @@ async function Beispiel18(input) {
         δ1: L1.Parameter.δ,
       });
 
-      L1.Parameter.erg = EK.δ2().toString();
+      L1.Berechnung.δ2 = EK.δ2();
 
       dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), L1);
     },

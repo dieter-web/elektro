@@ -18,9 +18,13 @@ module.exports = {
   r2_2_1_1_2: `/Baugruppen/Zweipole/passiverZweipol/Kettenschaltung`,
   r2_2_1_1_3: `/Baugruppen/Zweipole/passiverZweipol/Parallelschaltung`,
   r2_2_1_1_4: `/Baugruppen/Zweipole/passiverZweipol/Reihenschaltung`,
+
   r2_3: `/Filter`,
+
   r2_4: `/Generatoren`,
+
   r2_5: `/GeraeteMitElektrischenAntrieb`,
+
   r2_6: `/Halbleiter`,
 
   r2_7: `/Induktivitaet`,
@@ -37,8 +41,20 @@ module.exports = {
   r2_7_2_3: `/Induktivitaet/Variometer`,
 
   r2_8: `/Kondensatoren`,
+
   r2_9: `/Melder`,
+
   r2_10: `/Messgeraete`,
+  r2_10_1: `/Messgeraete/Energiemesser`,
+  r2_10_2: `/Messgeraete/Frequenzmesser`,
+  r2_10_3: `/Messgeraete/Impedanzmesser`,
+  r2_10_4: `/Messgeraete/Leistungsmesser`,
+  r2_10_5: `/Messgeraete/MagnetischeGroessemesser`,
+  r2_10_6: `/Messgeraete/Phasenwinkelmesser`,
+  r2_10_7: `/Messgeraete/Spannungsmesser`,
+  r2_10_8: `/Messgeraete/Strommesser`,
+  r2_10_9: `/Messgeraete/Zeitmesser`,
+
   r2_11: `/Motoren`,
   r2_12: `/Pruefgeraete`,
   r2_13: `/Regler`,

@@ -27,15 +27,7 @@ function Uebung12(input) {
     "src/js/readMaterialParameter.js"
   ));
 
-  const W1 = new Litzeleitung({
-    Material: "Kupfer",
-    l: "8 m",
-    R: "1.58 ohm",
-    d: "0.08 mm",
-    Bezeichnung: "H05V-U/K",
-    x: 50,
-    y: 50,
-  });
+  const W1 = new Litzeleitung(input);
 
   const AK = new Arithmetik();
   const PK = new Planemetrie();
@@ -56,7 +48,7 @@ function Uebung12(input) {
       ).toString();
 
       PK.parameter({ d: W1.Parameter.d });
-      W1.Parameter.Al = PK.KAd().toString(); // Litze
+      W1.Berechnung.Al = PK.KAd().to("mm^2"); // Litze
 
       EK.parameter({
         l: W1.Parameter.l,
@@ -64,10 +56,14 @@ function Uebung12(input) {
         R: W1.Parameter.R,
       });
 
-      W1.Parameter.Ag = EK.AρlR().toString();
+      W1.Berechnung.Ag = EK.AρlR();
 
-      AK.parameter({ a: W1.Parameter.Ag, b: W1.Parameter.Al });
-      W1.Parameter.ng = AK.div().toString();
+      AK.parameter({
+        a: W1.Berechnung.Ag.toString(),
+        b: W1.Berechnung.Al.toString(),
+      });
+
+      W1.Berechnung.ng = AK.div();
 
       dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), W1);
     },
@@ -76,11 +72,11 @@ function Uebung12(input) {
     }
   );
 }
-// let input = {
-//   Material: "Kupfer",
-//   l: "8 m",
-//   R: "1.58 ohm",
-//   d: "0.08 mm",
-// };
-// Uebung12(input);
+let input = {
+  Material: "Kupfer",
+  l: "8 m",
+  R: "1.58 ohm",
+  d: "0.08 mm",
+};
+Uebung12(input);
 exports.func = Uebung12;

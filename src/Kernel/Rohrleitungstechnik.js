@@ -12,7 +12,6 @@ const config = {
 };
 const math = create(all, config);
 
-const { run } = require(path.resolve("src/js/run.js"));
 const { Kernel } = require(path.resolve("src/Kernel/Kernel.js"));
 
 class Rohrleitungstechnik extends Kernel {
@@ -34,7 +33,7 @@ class Rohrleitungstechnik extends Kernel {
   }
 
   lAρG() {
-    return run("A / (ρ * G)", this.param);
+    return this.run("A / (ρ * G)", this.param);
   }
 }
 exports.Rohrleitungstechnik = Rohrleitungstechnik;

@@ -28,33 +28,33 @@ class Arithmetik extends Kernel {
     };
   }
   add() {
-    return run("a + b", this.param);
+    return math.unit(this.run("a + b", this.param));
   }
   sub() {
-    return run("a - b", this.param);
+    return math.unit(this.run("a - b", this.param));
   }
   mul() {
-    return run("a * b", this.param);
+    return math.unit(this.run("a * b", this.param));
   }
   div() {
-    return run("a / b", this.param);
+    return math.unit(this.run("a / b", this.param));
   }
 
   // mehr als 2 Werte
   // Prozentrechnung
 
   Prozentwert() {
-    return run("(p * G) / 100", this.param);
+    return this.run("(p * G) / 100", this.param);
   }
   Prozentsatz() {
-    return run("(100 * P) / G", this.param);
+    return this.run("(100 * P) / G", this.param);
   }
   Grundwert() {
-    return run("(P * 100)  / G", this.param);
+    return this.run("(P * 100)  / G", this.param);
   }
   // Steigerung des Grundwertes um den Prozentsatz
   Grundwertp() {
-    return run("G + p", this.param);
+    return this.run("G + p", this.param);
   }
 }
 

@@ -16,12 +16,7 @@ async function Uebung13(input) {
   const dbJson = require(path.resolve("controllers/dbJson"));
   const { Elektro, Strommesser } = require(path.resolve("include/system"));
 
-  const P1 = new Strommesser({
-    R: "2.5 ohm",
-    U: "0.625 V",
-    x: 50,
-    y: 50,
-  });
+  const P1 = new Strommesser(input);
 
   const EK = new Elektro();
   const datadir = "src/json/example/Uebung13";
@@ -32,7 +27,7 @@ async function Uebung13(input) {
       P1.Kennzeichnung.Zählnummer = "1";
 
       EK.parameter({ R: P1.Parameter.R, U: P1.Parameter.U });
-      P1.Parameter.Ism = EK.IUR().toString();
+      P1.Berechnung.Ism = EK.IUR();
 
       dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), P1);
     },
@@ -42,8 +37,8 @@ async function Uebung13(input) {
   );
 }
 // let input = {
-//   R: '2.5 ohm',
-//   U: '0.625 V'
-// }
-// Uebung13(input)
+//   R: "2.5 ohm",
+//   U: "0.625 V",
+// };
+// Uebung13(input);
 exports.func = Uebung13;

@@ -1,0 +1,26 @@
+<%- include('../../../../../../../layouts/partials/aufgabe.ejs', {
+    id : "beispiel14",
+    action: "/betriebsmittel/uebertragungswege/leitung/isolierteleitung/starkstromleitung/beispiel14/aufgabe"
+}) %>
+
+eingabe(
+"#beispiel14",
+[{
+title: "Beispiel 1.4",
+subtitle: "Bemessung des elektrischen Widerstands",
+text: `Eine zweiadrige Aluminiumleitung verbindet ein Gleichstromnetz von 230V Netzspannung mit einem 800m entfernt
+liegenden
+Verbraucher. Die Leitung wird mit einem Strom I = 11A belastet. Wie groß muß der erforderliche Querschnitt sein, wenn
+der längs der Leitung maximal 5% der Netzspannung betragen darf ?`
+}],
+[
+{id: 'Material',text: "Material",name: "Material",value: "Aluminium"},
+{id: 'U',text: "Netzspannung",name: "U",value: "230V"},
+{id: 'p',text: "max. Spannungsabfall in %",name: "p",value: "5"},
+{id: 'l',text: "Kabellänge",name: "l",value: "800m"},
+{id: 'a',text: "Anzahl der Adern",name: "a",value: "2"},
+{id: 'I',text: "Stromstärke",name: "I",value: "11A"},
+]
+)
+
+</script>

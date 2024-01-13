@@ -2,7 +2,7 @@
 <%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
 
 
-import {vWClass} from '/d3/lib/Betriebsmittel/vWClass.mjs'
+// import {vWClass} from '/d3/lib/Betriebsmittel/vWClass.mjs'
 
 
 const data=await populate( "example/Uebung11/data.json" )
@@ -21,8 +21,8 @@ l.value=tab[ 2 ]
 n.value=tab[ 3 ]
 
 // Visualisierung
-const g=drawboard()
-let vd=new vWClass( data )
-g.append( () => vd.createNode() )
+// const g=drawboard()
+// let vd=new vWClass( data )
+// g.append( () => vd.createNode() )
 
 </script>

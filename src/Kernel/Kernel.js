@@ -11,14 +11,21 @@ const config = {
 };
 const math = create(all, config);
 
-const { run } = require(path.resolve("src/js/run.js"));
-
 class Kernel {
   constructor() {
     this.param = {};
   }
+
   appendParameter(key, value) {
     this.param[`${key}`] = math.unit(value);
+  }
+
+  run(code, param) {
+    try {
+      return math.unit(math.parse(code).compile().evaluate(param));
+    } catch (err) {
+      console.error(err);
+    }
   }
 }
 

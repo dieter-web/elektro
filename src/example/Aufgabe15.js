@@ -24,7 +24,7 @@ async function Aufgabe15(input) {
   ));
 
   const W1 = new Erder(input);
-  const PK = new PlanemetrieKernel();
+  const PK = new Planemetrie();
   const EK = new Elektro();
 
   const datadir = "src/json/example/Aufgabe15";

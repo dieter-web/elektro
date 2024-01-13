@@ -1,0 +1,32 @@
+<%- include('aufgabe.ejs',{}) %>
+<%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
+
+
+// import {vWClass} from '/d3/lib/Betriebsmittel/vWClass.mjs' // Leitung
+// import {Verbinder} from '/d3/lib/Schaltzeichen/Verbinder/Verbinder.mjs'
+
+
+const data=await populate( "example/Beispiel14/data.json" )
+
+const table=new Tabelle( data,"#ergebnis" );
+table.tabulate();
+
+
+// Rückkopplung
+const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
+
+Material.value=sel[ 0 ]
+p.value=sel[ 2 ]
+l.value=sel[ 3 ]
+a.value=sel[ 4 ]
+I.value=sel[ 5 ]
+
+
+// svg grafik
+const g=drawboard()
+
+let W1=new vWClass( data )
+g.append( () => W1.createNode() )
+
+
+</script>

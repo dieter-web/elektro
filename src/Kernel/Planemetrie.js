@@ -42,75 +42,75 @@ class Planemetrie extends Kernel {
   }
 
   KAd() {
-    return run("(PI / 4) * pow(d,2)", this.param);
+    return this.run("(PI / 4) * pow(d,2)", this.param);
   }
 
   KdA() {
-    return run("sqrt( 4 / PI * A)", this.param);
+    return this.run("sqrt( 4 / PI * A)", this.param);
   }
 
   KUd() {
-    return run("PI * d", this.param);
+    return this.run("PI * d", this.param);
   }
   KRADd() {
-    return run("(PI / 4) * ( pow(D,2) - pow(d,2))", this.param);
+    return this.run("(PI / 4) * ( pow(D,2) - pow(d,2))", this.param);
   }
   KAuA() {
-    return run("(pow(r) * PI * α) / w360", this.param);
+    return this.run("(pow(r) * PI * α) / w360", this.param);
   }
   KAub() {
-    return run("(d * PI * α) / w360", this.param);
+    return this.run("(d * PI * α) / w360", this.param);
   }
   KAbA() {
-    return run("(pow(r) * PI * α) / w360 - (s * (r - h)) / 2", this.param);
+    return this.run("(pow(r) * PI * α) / w360 - (s * (r - h)) / 2", this.param);
   }
   ElA() {
-    return run("D * d * PI / 4", this.param);
+    return this.run("D * d * PI / 4", this.param);
   }
   ElU() {
-    return run("(D + d) /2 * PI", this.param);
+    return this.run("(D + d) /2 * PI", this.param);
   }
   QUa() {
-    return run("4 * l", this.param);
+    return this.run("4 * l", this.param);
   }
   QAa() {
-    return run("l * l", this.param);
+    return this.run("l * l", this.param);
   }
   QEa() {
-    return run("l * sqrt(2)", this.param);
+    return this.run("l * sqrt(2)", this.param);
   }
   RDab() {
-    return run("sqrt(pow(g,2) + sqrt(pow(h,2)))", this.param);
+    return this.run("sqrt(pow(g,2) + sqrt(pow(h,2)))", this.param);
   }
   RAgh() {
-    return run("g * h", this.param);
+    return this.run("g * h", this.param);
   }
   RUgh() {
-    return run("2 * ( g + h)", this.param);
+    return this.run("2 * ( g + h)", this.param);
   }
   PaA() {
-    return run("g * h", this.param);
+    return this.run("g * h", this.param);
   }
   PaU() {
-    return run("2 * ( g + s)", this.param);
+    return this.run("2 * ( g + s)", this.param);
   }
   RoA() {
-    return run("l * h", this.param);
+    return this.run("l * h", this.param);
   }
   RoU() {
-    return run("4 * l", this.param);
+    return this.run("4 * l", this.param);
   }
   TrA() {
-    return run("(l1 + l2) / 2 * h", this.param);
+    return this.run("(l1 + l2) / 2 * h", this.param);
   }
   TrU() {
-    return run("l1 + l2 + s1 + s2", this.param);
+    return this.run("l1 + l2 + s1 + s2", this.param);
   }
   DrA() {
-    return run("(g * h) / 2", this.param);
+    return this.run("(g * h) / 2", this.param);
   }
   DrU() {
-    return run("a + b + g", this.param);
+    return this.run("a + b + g", this.param);
   }
 }
 exports.Planemetrie = Planemetrie;

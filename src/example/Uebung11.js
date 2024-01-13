@@ -41,24 +41,18 @@ async function Uebung11(input) {
       ).toString();
 
       PK.parameter({ A: W1.Parameter.A });
-      W1.Parameter.d = PK.KdA().toString();
-
-      // regulare Expression für die Herausfilterung des Zahlenwertes
-      // W1.vis.height = W1.Parameter.d;
-      // W1.vis.width = W1.Parameter.l;
-      // W1.vis.height = 5.641;
-      // W1.vis.width = 170;
+      W1.Berechnung.d = PK.KdA();
 
       AK.parameter({ a: W1.Parameter.l, b: W1.Parameter.n });
-      W1.Parameter.lges = AK.mul().toString();
+      W1.Berechnung.lges = AK.mul();
 
       EK.parameter({
         ρ: W1.Parameter.ρM,
         A: W1.Parameter.A,
-        l: W1.Parameter.lges,
+        l: W1.Berechnung.lges.toString(),
       });
 
-      W1.Parameter.erg = EK.RρlA().toString();
+      W1.Berechnung.R = EK.RρlA().to("ohm");
 
       dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), W1);
     },
