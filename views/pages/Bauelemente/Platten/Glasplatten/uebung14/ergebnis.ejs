@@ -1,9 +1,9 @@
 <%- include('./aufgabe.ejs', { }) %>
 <%- include('../../../../../layouts/partials/ergebnis.ejs') %>
 
-import {vb1} from '/d3/lib/Bauelemente/vb1.mjs'
+// import {vb1} from '/d3/lib/Bauelemente/vb1.mjs'
 
-const data=await populate( "example/Uebung14/P1.json" )
+const data=await populate( "example/Uebung14/data.json" )
 
 // tabulate( data,"#ergebnis" )
 const table=new Tabelle( data,"#ergebnis" );
@@ -17,17 +17,17 @@ b.value=sel[ 2 ].innerHTML
 d.value=sel[ 3 ].innerHTML
 
 // svg grafik
-const g=canvas( '#grafik',800,300,"10,10,200,200" )
+// const g=canvas( '#grafik',800,300,"10,10,200,200" )
 
-let dataGP=[
-{
-opacity: 0.4,
-height: 125,
-width: 80,
-text: "Glasplatte"
-}
-]
+// let dataGP=[
+// {
+// opacity: 0.4,
+// height: 125,
+// width: 80,
+//text: "Glasplatte"
+//}
+//]
 
-g.append( () => vb1( dataGP,[ 50,50 ] ) )
+//g.append( () => vb1( dataGP,[ 50,50 ] ) )
 
 </script>

@@ -1,10 +1,10 @@
 require("use-strict");
 const path = require("path");
-const { Widerstaende } = require(path.resolve(
-  "src/components/Betriebsmittel/Widerstaende/Widerstaende.js"
+const { ParameterabhaengigeHalbleiterwiderstaende } = require(path.resolve(
+  "src/components/Betriebsmittel/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/ParameterabhaengigeHalbleiterwiderstaende.js"
 ));
 
-class Thermistor extends Widerstaende {
+class Thermistor extends ParameterabhaengigeHalbleiterwiderstaende {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;

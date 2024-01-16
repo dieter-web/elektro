@@ -106,7 +106,7 @@ const { Widerstand } = require(path.resolve(
 
 /** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende */
 const { ParameterabhaengigeHalbleiterwiderstande } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/Widerstand.js`
+  `${PBetriebsmittel}/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/ParameterabhaengigeHalbleiterwiderstaende.js`
 ));
 
 /** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende ElektrischeParameter */
@@ -150,13 +150,13 @@ const { ParameterabhaengigeHalbleiterwiderstande } = require(path.resolve(
 
 /** SECTION Betriebsmittel Widerstaende Feldplatte */
 const { Feldplatte } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstaende/Feldplatte/Feldplatte.js`
+  `${PBetriebsmittel}/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/NichtelektrischeParameter/MagnetischesFeld/Feldplatte/Feldplatte.js`
 ));
 /** !SECTION Betriebsmittel Widerstaende Feldplatte */
 
 /** SECTION Betriebsmittel Widerstaende  Fotowiderstand */
 const { Fotowiderstand } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstaende/Fotowiderstand/Fotowiderstand.js`
+  `${PBetriebsmittel}/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/NichtelektrischeParameter/Strahlung/Fotowiderstand/Fotowiderstand.js`
 ));
 /** !SECTION Betriebsmittel Widerstaende Fotowiderstand */
 
@@ -164,13 +164,13 @@ const { Fotowiderstand } = require(path.resolve(
 
 /** SECTION Betriebsmittel Widerstaende Thermistor Heissleiter */
 const { Heissleiter } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstaende/Thermistor/Heissleiter/Heissleiter.js`
+  `${PBetriebsmittel}/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/NichtelektrischeParameter/Temperatur/Thermistor/Heissleiter/Heissleiter.js`
 ));
 /** !SECTION Betriebsmittel Widerstaende Thermistor Heissleiter */
 
 /** SECTION Betriebsmittel Widerstaende Thermistor Kaltleiter */
 const { Kaltleiter } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstaende/Thermistor/Kaltleiter/Kaltleiter.js`
+  `${PBetriebsmittel}/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/NichtelektrischeParameter/Temperatur/Thermistor/Kaltleiter/Kaltleiter.js`
 ));
 /** !SECTION Betriebsmittel Widerstaende Thermistor Kaltleiter */
 
@@ -178,7 +178,7 @@ const { Kaltleiter } = require(path.resolve(
 
 /** SECTION Betriebsmittel Widerstaende Varistor */
 const { Varistor } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstaende/Varistoren/Varistor.js`
+  `${PBetriebsmittel}/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/ElektrischeParameter/Spannung/Varistoren/Varistor.js`
 ));
 /** !SECTION Betriebsmittel Widerstaende Varistor */
 

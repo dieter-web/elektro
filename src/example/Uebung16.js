@@ -23,14 +23,7 @@ async function Uebung16(input) {
     "src/js/readMaterialParameter.js"
   ));
 
-  const W1 = new Kabel({
-    Material: "Blei",
-    D: "42 mm",
-    d: "4 mm",
-    R: "80 mohm",
-    x: 50,
-    y: 50,
-  });
+  const W1 = new Kabel(input);
 
   const AK = new Arithmetik();
   const PK = new Planemetrie();
@@ -49,20 +42,20 @@ async function Uebung16(input) {
       ).toString();
 
       AK.parameter({ a: W1.Parameter.d, b: 2 });
-      W1.Parameter.d2 = AK.mul().toString();
+      W1.Berechnung["d2"] = AK.mul();
 
-      AK.parameter({ a: W1.Parameter.D, b: W1.Parameter.d2 });
-      W1.Parameter.di = AK.sub().toString();
+      AK.parameter({ a: W1.Parameter.D, b: W1.Berechnung.d2.toString() });
+      W1.Berechnung["di"] = AK.sub();
 
-      PK.parameter({ D: W1.Parameter.D, d: W1.Parameter.di });
-      W1.Parameter.A = PK.KRADd().toString();
+      PK.parameter({ D: W1.Parameter.D, d: W1.Berechnung.di.toString() });
+      W1.Berechnung["A"] = PK.KRADd();
 
       EK.parameter({
         ρ: W1.Parameter.ρM,
-        A: W1.Parameter.A,
         R: W1.Parameter.R,
+        A: W1.Berechnung.A.toString(),
       });
-      W1.Parameter.lbm = EK.lρra().toString();
+      W1.Berechnung.lbm = EK.lρra();
 
       dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), W1);
     },

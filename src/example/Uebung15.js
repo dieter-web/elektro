@@ -14,6 +14,7 @@ function Uebung15(input) {
   const path = require("path");
   const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson"));
+
   const {
     Arithmetik,
     Planemetrie,
@@ -25,22 +26,14 @@ function Uebung15(input) {
     "src/js/readMaterialParameter.js"
   ));
 
-  const P1 = new Spannungsmesser({
-    Material: "Kupfer",
-    Ug: "300 mV",
-    l: "2 cm",
-    b: "1 cm",
-    N: 200,
-    d: "0.03 mm",
-    x: 50,
-    y: 50,
-  });
+  const P1 = new Spannungsmesser(input);
 
   const PK = new Planemetrie();
   const AK = new Arithmetik();
   const EK = new Elektro();
 
   const datadir = "src/json/example/Uebung15";
+
   makeDirectory(datadir).then(
     function () {
       P1.Parameter.ρM = readMaterialParameter(
@@ -49,21 +42,21 @@ function Uebung15(input) {
       ).toString();
 
       PK.parameter({ g: P1.Parameter.l, h: P1.Parameter.b });
-      P1.Parameter.Ur = PK.RUgh().toString();
+      P1.Berechnung["Ur"] = PK.RUgh();
 
       PK.parameter({ d: P1.Parameter.d });
-      P1.Parameter.Ad = PK.KAd().toString();
+      P1.Berechnung["Ad"] = PK.KAd().to("mm^2");
 
-      AK.parameter({ a: P1.Parameter.Ur, b: P1.Parameter.N });
-      P1.Parameter.ld = AK.mul().toString();
+      AK.parameter({ a: P1.Berechnung.Ur.toString(), b: P1.Parameter.N });
+      P1.Berechnung["ld"] = AK.mul().to("m");
 
       EK.parameter({
         ρ: P1.Parameter.ρM,
-        l: P1.Parameter.ld,
-        A: P1.Parameter.Ad,
         U: P1.Parameter.Ug,
+        l: P1.Berechnung.ld.toString(),
+        A: P1.Berechnung.Ad.toString(),
       });
-      P1.Parameter.Ie = EK.IρAlU().toString();
+      P1.Berechnung["Ie"] = EK.IρAlU().to("mA");
 
       dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), P1);
     },

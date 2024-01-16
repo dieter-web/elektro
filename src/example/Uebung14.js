@@ -3,6 +3,9 @@ require("use-strict");
 /** TODO: Das Ergebnis stimmt mit der Vorlage nicht überein ? */
 /**
  * @description
+ * Zwischen zwei Metallplatten mit einer Fläche von je 0.8m x 1.25m befindet sich eine 1mm dicke,
+ * gleich große Glasplatte.
+ * Wie groß ist der Widerstand zwischen den Metallplatten, wenn für Glas roh = 10^12ohmcm beträgt?
  * @author Dieter Krause
  * @date 26/07/2023
  * @param {*} input
@@ -20,12 +23,7 @@ function Uebung14(input) {
     "src/js/readMaterialParameter.js"
   ));
 
-  const P1 = new Glasplatte({
-    Material: "Glas",
-    l: "0.8 m",
-    b: "1.25 m",
-    d: "1 mm",
-  });
+  const P1 = new Glasplatte(input);
 
   const PK = new Planemetrie();
   const EK = new Elektro();
@@ -34,8 +32,8 @@ function Uebung14(input) {
 
   makeDirectory(datadir).then(
     function () {
-      P1.Kennzeichnung.Art = "E";
-      P1.Kennzeichnung.Zählnummer = "1";
+      // P1.Kennzeichnung.Art = "E";
+      // P1.Kennzeichnung.Zählnummer = "1";
 
       P1.Parameter.ρgl = readMaterialParameter(
         P1.Parameter.Material,
@@ -43,16 +41,16 @@ function Uebung14(input) {
       ).toString();
 
       PK.parameter({ g: P1.Parameter.l, h: P1.Parameter.b });
-      P1.Parameter.Ap = PK.RAgh().toString();
+      P1.Berechnung["Ap"] = PK.RAgh().to("m^2");
 
       EK.parameter({
         ρ: P1.Parameter.ρgl,
         l: P1.Parameter.d,
-        A: P1.Parameter.Ap,
+        A: P1.Berechnung.Ap.toString(),
       });
-      P1.Parameter.R = EK.RρlA().toString();
+      P1.Berechnung.R = EK.RρlA().to("Mohm");
 
-      dbJson.writeJSONItem(path.resolve(`$datadir` / data.json), P1);
+      dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), P1);
     },
     function () {
       console.error(`${datadir}`);

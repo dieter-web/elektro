@@ -100,6 +100,7 @@ module.exports = {
   r2_21_3_1_4: `/Uebertragungswege/Kabel/Fernmeldekabel/BesondererZweck`,
 
   r2_21_3_2: `/Uebertragungswege/Kabel/Hochfrequenzkabel`,
+
   r2_21_3_3: `/Uebertragungswege/Kabel/Starkstromkabel`,
 
   r2_21_4: `/Uebertragungswege/Leitung`,
@@ -165,7 +166,7 @@ module.exports = {
   r2_27_2_1: `/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/ElektrischeParameter`,
   r2_27_2_1_1: `/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/ElektrischeParameter/Spannung`,
   r2_27_2_1_1_1: `/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/ElektrischeParameter/Spannung/Varistoren`,
-  
+
   r2_27_2_2: `/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/NichtelektrischeParameter`,
   r2_27_2_2_1: `/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/NichtelektrischeParameter/MagnetischesFeld`,
   r2_27_2_2_1_1: `/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/NichtelektrischeParameter/MagnetischesFeld/Feldplatte`,

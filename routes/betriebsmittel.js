@@ -383,6 +383,9 @@ routerGet(router, R2.r2_10_6, R2.p2, R2.l2);
 
 /** SECTION Messgeraete Spannungsmesser */
 routerGet(router, R2.r2_10_7, R2.p2, R2.l2);
+
+/** NOTE Betriebsmittel Messgeraete Spannungsmesser Uebung15 */
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_10_7, R2.u15);
 /** !SECTION Messgeraete Spannungsmesser */
 
 /** SECTION Messgeraete Strommesser */

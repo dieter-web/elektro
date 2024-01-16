@@ -11,7 +11,7 @@ class Betriebsmittel extends Components {
     this.Kennzeichnung = dbJson.readJSONFile(
       path.resolve("src/json/Sonstiges/kennzeichnung.json")
     );
-    this.Berechnung = {};
+    
   }
 }
 exports.Betriebsmittel = Betriebsmittel;

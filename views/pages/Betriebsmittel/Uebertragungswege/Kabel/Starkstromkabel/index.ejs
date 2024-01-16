@@ -1,0 +1,28 @@
+<div id="e1"></div>
+
+<script type="module">
+    import {showCards} from '/modules/showCards.mjs';
+    const id="#e1"
+    const data=[
+        {
+            "id": 1,
+            "href": "/betriebsmittel/uebertragungswege/kabel/starkstromkabel/uebung16/aufgabe",
+            "name": "Übung 1.6",
+            "text": `Ein Bleimantelkabel hat einen Aussendurchmesser von 42 mm.
+                     Der Bleimantel ist 4 mm dick. Der Widerstand des Bleimantel
+                     zwischen den Kabelenden beträgt 80 mohm.
+                     Wie lang ist das Kabel ?`
+        },
+        {
+            "id": 2,
+            "href": "/betriebsmittel/uebertragungswege/kabel/starkstromkabel/uebung110/aufgabe",
+            "name": "Übung 1.10",
+            "text": `An die Kupferadern eines zweiadrigen, zwischen den Orten A und B im Erdreich 
+                     verlegten Kabels wird in A eine Spannung von 24 V angelegt. Am Ort B werden die Adern kurzgeschlossen. Die Stromdichte ist bei einer Temperatur von 20°C 50 mA/mm² groß. Wie lang ist das Kabel ? 
+
+                    Bei einer späteren Messung am gleichen Kabel ist infolge Temperaturänderung die Stromdichte
+                    um 10% gestiegen.  Welche Temperatur hat das Kabel bei dieser Messung ?`
+        },
+    ]
+    showCards( data,id )
+</script>
