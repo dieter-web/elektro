@@ -71,4 +71,4 @@ async function Uebung16(input) {
 //   R: '80 mohm'
 // }
 // Uebung16(input)
-exports.func = uebung16;
+exports.func = Uebung16;

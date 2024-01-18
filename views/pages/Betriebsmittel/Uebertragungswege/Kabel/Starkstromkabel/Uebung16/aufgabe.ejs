@@ -1,0 +1,24 @@
+<%- include('../../../../../../layouts/partials/aufgabe.ejs', {
+    id : "uebung16",
+    action: "/betriebsmittel/uebertragungswege/kabel/starkstromkabel/uebung16/aufgabe"
+}) %>
+
+eingabe(
+"#uebung16",
+[{
+title: "Übung 1.6",
+subtitle: "Kabel",
+text: `Ein Bleimantelkabel hat einen Außendurchmesser von 42 mm.
+Der Bleimantel ist 4 mm dick. Der Widerstand des Bleimantel
+zwischen den Kabelenden beträgt 80 mohm.
+Wie lang ist das Kabel ?`
+}],
+[
+{id: 'Material',text: "Material",name: "Material",value: "Blei"},
+{id: 'D',text: "Außendurchmesser",name: "D",value: "42mm"},
+{id: 'd',text: "Dicke",name: "d",value: "4mm"},
+{id: 'R',text: "Widerstand",name: "R",value: "80 mohm"},
+]
+)
+
+</script>

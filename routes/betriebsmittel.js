@@ -18,414 +18,451 @@ router.get("/", function (req, res) {
 /** SECTION  Baugruppen */
 routerGet(router, R2.r2_2, R2.p2, R2.l2);
 
-/** SECTION Baugruppen Zweipole */
+/** SECTION Zweipole */
 routerGet(router, R2.r2_2_1, R2.p2, R2.l2);
 
-/** SECTION Baugruppen Zweipole passiver Zweipol */
+/** SECTION passiver Zweipol */
 routerGet(router, R2.r2_2_1_1, R2.p2, R2.l2);
 
-/** SECTION Baugruppen Zweipole passiver Zweipol gemischte Schaltung */
+/** SECTION gemischte Schaltung */
 routerGet(router, R2.r2_2_1_1_1, R2.p2, R2.l2);
-/** !SECTION Baugruppen Zweipole passiver Zweipol gemischteSchaltung */
+/** !SECTION gemischteSchaltung */
 
-/** SECTION Baugruppen Zweipole passiver Zweipol Kettenschaltung */
+/** SECTION Kettenschaltung */
 routerGet(router, R2.r2_2_1_1_2, R2.p2, R2.l2);
-/** !SECTION Baugruppen Zweipole passiver Zweipol Kettenschaltung */
+/** !SECTION Kettenschaltung */
 
-/** SECTION Baugruppen Zweipole passiver Zweipol Parallelschaltung */
+/** SECTION Parallelschaltung */
 routerGet(router, R2.r2_2_1_1_3, R2.p2, R2.l2);
-/** !SECTION Baugruppen Zweipole passiver Zweipol Parallelschaltung */
+/** !SECTION Parallelschaltung */
 
-/** SECTION Baugruppen Zweipole passiver Zweipol Reihenschaltung */
+/** SECTION Reihenschaltung */
 routerGet(router, R2.r2_2_1_1_4, R2.p2, R2.l2);
 
 /** NOTE Übung 1.111 */
 erouter(router, R2.p2, R2.l2, R2.e, R2.r2_2_1_1_4, R2.u111);
 
-/** !SECTION Baugruppen Zweipole passiver Zweipol Reihenschaltung */
+/** !SECTION Reihenschaltung */
 
-/** !SECTION Baugruppen Zweipole passiver Zweipol */
+/** !SECTION passiver Zweipol */
+/** !SECTION Zweipol */
 
-/** !SECTION Betriebsmittel Baugruppen */
-/** !SECTION Betriebsmittel Baugruppen */
+/** !SECTION Baugruppen */
 
-/** SECTION  Betriebsmittel Widerstaende */
+/** SECTION  Widerstaende */
 routerGet(router, R2.r2_27, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Widerstaende widerstand */
+/** SECTION Widerstand */
 routerGet(router, R2.r2_27_1, R2.p2, R2.l2);
 
 /** NOTE Beispiel 1.1 */
 erouter(router, R2.p2, R2.l2, R2.e, R2.r2_27_1, R2.b11);
 
-/** !SECTION Betriebsmittel Widerstand widerstand */
+/** !SECTION Widerstand */
 
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende */
+/** SECTION ParameterabhaengigeHalbleiterwiderstaende */
 routerGet(router, R2.r2_27_2, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende ElektrischeParameter */
+/** SECTION ElektrischeParameter */
 routerGet(router, R2.r2_27_2_1, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende ElektrischeParameter Spannung */
+/** SECTION Spannung */
 routerGet(router, R2.r2_27_2_1_1, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende ElektrischeParameter Spannung Varistor */
+/** SECTION Varistor */
 routerGet(router, R2.r2_27_2_1_1_1, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende ElektrischeParameter Spannung Varistor */
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende ElektrischeParameter Spannung */
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende ElektrischeParameter */
+/** !SECTION Varistor */
+/** !SECTION Spannung */
+/** !SECTION ElektrischeParameter */
 
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter */
+/** SECTION NichtelektrischeParameter */
 routerGet(router, R2.r2_27_2_2, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter MagnetischesFeld */
+/** SECTION MagnetischesFeld */
 routerGet(router, R2.r2_27_2_2_1, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter MagnetischesFeld Feldplatte */
+/** SECTION Feldplatte */
 routerGet(router, R2.r2_27_2_2_1_1, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter MagnetischesFeld Feldplatte */
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter MagnetischesFeld */
+/** !SECTION Feldplatte */
+/** !SECTION MagnetischesFeld */
 
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Strahlung */
+/** SECTION Strahlung */
 routerGet(router, R2.r2_27_2_2_2, R2.p2, R2.l2);
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Strahlung Fotowiderstand */
+/** SECTION Fotowiderstand */
 routerGet(router, R2.r2_27_2_2_2_1, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Strahlung Fotowiderstand */
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Strahlung */
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur */
+/** !SECTION Fotowiderstand */
+/** !SECTION Strahlung */
+/** SECTION Temperatur */
 routerGet(router, R2.r2_27_2_2_3, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur Thermistor */
+/** SECTION Thermistor */
 routerGet(router, R2.r2_27_2_2_3_1, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur Thermistor Heissleiter */
+/** SECTION Heissleiter */
 routerGet(router, R2.r2_27_2_2_3_1_1, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur Thermistor Heissleiter */
+/** !SECTION Heissleiter */
 
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur Thermistor Kaltleiter */
+/** SECTION Kaltleiter */
 routerGet(router, R2.r2_27_2_2_3_1_2, R2.p2, R2.l2);
 
 /** NOTE Uebung 19 */
 erouter(router, R2.p2, R2.l2, R2.e, R2.r2_27_2_2_3_1_2, R2.u19);
 
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur Thermistor Kaltleiter KeramischeKaltleiter */
+/** SECTION KeramischeKaltleiter */
 routerGet(router, R2.r2_27_2_2_3_1_2_1, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur Thermistor Kaltleiter KeramischeKaltleiter */
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur Thermistor Kaltleiter */
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur Thermistor */
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur */
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter */
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende */
+/** !SECTION KeramischeKaltleiter */
+/** !SECTION Kaltleiter */
+/** !SECTION Thermistor */
+/** !SECTION Temperatur */
+/** !SECTION NichtelektrischeParameter */
+/** !SECTION ParameterabhaengigeHalbleiterwiderstaende */
 /** !SECTION Widerstandaende */
 
-/** SECTION Betriebsmittel Übertragungswege */
+/** SECTION Übertragungswege */
 routerGet(router, R2.r2_21, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Übertragungswege Leitung */
+/** SECTION Leitung */
 routerGet(router, R2.r2_21_4, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Übertragungswege Leitung Isolierteleitung */
+/** SECTION Isolierteleitung */
 routerGet(router, R2.r2_21_4_1, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Übertragungswege Leitung Isolierteleitung Fernmeldeleitung */
+/** SECTION Fernmeldeleitung */
 routerGet(router, R2.r2_21_4_1_1, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Übertragungswege Leitung Isolierteleitung Fernmeldeleitung Eindrahtleitung */
+/** SECTION Eindrahtleitung */
 routerGet(router, R2.r2_21_4_1_1_1, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Übertragungswege Leitung Isolierteleitung Fernmeldeleitung Eindrahtleitung */
+/** !SECTION Eindrahtleitung */
 
-/** SECTION Betriebsmittel Übertragungswege Leitung Isolierteleitung Fernmeldeleitung Lahnlitzeleitung */
+/** SECTION Lahnlitzeleitung */
 routerGet(router, R2.r2_21_4_1_1_2, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Übertragungswege Leitung Isolierteleitung Fernmeldeleitung Lahnlitzeleitung */
+/** !SECTION Lahnlitzeleitung */
 
-/** SECTION Betriebsmittel Übertragungswege Leitung Isolierteleitung Fernmeldeleitung Litzeleitung */
+/** SECTION Litzeleitung */
 routerGet(router, R2.r2_21_4_1_1_3, R2.p2, R2.l2);
 
-/** NOTE Betriebsmittel Übertragungswege Leitung Isolierteleitung Fernmeldeleitung Litzeleitung Uebung12 */
+/** NOTE Litzeleitung Uebung12 */
 erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_4_1_1_3, R2.u12);
 
-/** !SECTION Betriebsmittel Übertragungswege Leitung Isolierteleitung Fernmeldeleitung Litzeleitung */
+/** !SECTION Litzeleitung */
 
-/** !SECTION Betriebsmittel Übertragungswege Leitung Isolierteleitung Fernmeldeleitung */
+/** !SECTION Fernmeldeleitung */
 
-/** SECTION Betriebsmittel Übertragungswege Leitung Isolierteleitung Starkstromleitung */
+/** SECTION Starkstromleitung */
 routerGet(router, R2.r2_21_4_1_2, R2.p2, R2.l2);
 
-/** NOTE Betriebsmittel Übertragungswege Leitung Isolierteleitung Starkstromleitung Beispiel14  */
+/** NOTE Starkstromleitung Beispiel14  */
 erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_4_1_2, R2.b14);
 
-/** !SECTION Betriebsmittel Übertragungswege Leitung Isolierteleitung Starkstromleitung */
+/** !SECTION Starkstromleitung */
 
-/** !SECTION Betriebsmittel Übertragungswege Leitung Isolierteleitung */
+/** !SECTION Isolierteleitung */
 
-/** SECTION Betriebsmittel Übertragungswege Leitung Blankeleitung */
+/** SECTION Blankeleitung */
 routerGet(router, R2.r2_21_4_2, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Übertragungswege Leitung Blankeleitung Freileitung */
+/** SECTION Freileitung */
 routerGet(router, R2.r2_21_4_2_1, R2.p2, R2.l2);
 
-/**NOTE Betriebsmittel Übertragungswege Leitung Blankeleitung Freileitung Übung 1.1 */
+/**NOTE Freileitung Übung 1.1 */
 erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_4_2_1, R2.u11);
 
-/** !SECTION Betriebsmittel Übertragungswege Leitung Blankeleitung Freileitung */
+/** !SECTION Freileitung */
 
-/** SECTION Betriebsmittel Übertragungswege Leitung Blankeleitung Hochfrequenzleitung */
+/** SECTION Hochfrequenzleitung */
 routerGet(router, R2.r2_21_4_2_2, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Übertragungswege Leitung Blankeleitung Hochfrequenzleitung */
+/** !SECTION Hochfrequenzleitung */
 
-/** SECTION Betriebsmittel Übertragungswege Leitung Blankeleitung Erder */
+/** SECTION Erder */
 routerGet(router, R2.r2_21_4_2_3, R2.p2, R2.l2);
 
-/** NOTE Betriebsmittel Übertragungswege Leitung Blankeleitung Erder Aufgabe15 */
+/** NOTE Erder Aufgabe15 */
 erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_4_2_3, R2.a15);
 
-/** !SECTION Betriebsmittel Übertragungswege Leitung Blankeleitung Erder */
+/** !SECTION Erder */
 
-/** SECTION Betriebsmittel Übertragungswege Leitung Blankeleitung Erdungssammelleitung */
+/** SECTION Erdungssammelleitung */
 routerGet(router, R2.r2_21_4_2_4, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Übertragungswege Leitung Blankeleitung Erdungssammelleitung */
+/** !SECTION Erdungssammelleitung */
 
-/** SECTION Betriebsmittel Übertragungswege Leitung Blankeleitung Fahrleitung */
+/** SECTION Fahrleitung */
 routerGet(router, R2.r2_21_4_2_5, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Übertragungswege Leitung Blankeleitung Fahrleitung */
+/** !SECTION Fahrleitung */
 
-/** SECTION Betriebsmittel Übertragungswege Leitung Blankeleitung Freileitung */
+/** SECTION Freileitung */
 routerGet(router, R2.r2_21_4_2_6, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Übertragungswege Leitung Blankeleitung Freileitung */
+/** !SECTION Freileitung */
 
-/** SECTION Betriebsmittel Übertragungswege Leitung Blankeleitung OffenGelegteLeitung */
+/** SECTION OffenGelegteLeitung */
 routerGet(router, R2.r2_21_4_2_7, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Übertragungswege Leitung Blankeleitung OffenGelegteLeitung */
+/** !SECTION OffenGelegteLeitung */
 
-/** SECTION Betriebsmittel Übertragungswege Leitung Blankeleitung Sammelschiene */
+/** SECTION Sammelschiene */
 routerGet(router, R2.r2_21_4_2_8, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Übertragungswege Leitung Blankeleitung Sammelschiene */
+/** !SECTION Sammelschiene */
 
-/** SECTION Betriebsmittel Übertragungswege Leitung Blankeleitung Schiene */
+/** SECTION Schiene */
 routerGet(router, R2.r2_21_4_2_9, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Übertragungswege Leitung Blankeleitung Schiene */
+/** !SECTION Schiene */
 
-/** SECTION Betriebsmittel Übertragungswege Leitung Blankeleitung Stromschiene */
+/** SECTION Stromschiene */
 routerGet(router, R2.r2_21_4_2_10, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Übertragungswege Leitung Blankeleitung Stromschiene */
+/** !SECTION Stromschiene */
 
-/** !SECTION Betriebsmittel Übertragungswege Leitung Blankeleitung */
+/** !SECTION Blankeleitung */
 
-/** !SECTION Betriebsmittel Übertragungswege Leitungen */
+/** !SECTION Leitungen */
 
-/** SECTION Betriebsmittel Übertragungswege Antenne */
+/** SECTION Antenne */
 routerGet(router, R2.r2_21_1, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Übertragungswege Antenne */
+/** !SECTION Antenne */
 
-/** SECTION Betriebsmittel Übertragungswege Kabel */
+/** SECTION Kabel */
 routerGet(router, R2.r2_21_3, R2.p2, R2.l2);
 
-/** NOTE Betriebsmittel Übertragungswege Kabel Aufgabe 110 */
-erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_3, R2.u110);
-
-/** SECTION Betriebsmittel Übertragungswege Kabel Fernmeldekabel */
+/** SECTION Fernmeldekabel */
 routerGet(router, R2.r2_21_3_1, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Übertragungswege Kabel Fernmeldekabel */
+/** !SECTION Fernmeldekabel */
 
-/** SECTION Betriebsmittel Übertragungswege Kabel Hochfrequenzkabel */
+/** SECTION Hochfrequenzkabel */
 routerGet(router, R2.r2_21_3_2, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Übertragungswege Kabel Hochfrequenzkabel */
+/** !SECTION Hochfrequenzkabel */
 
-/** SECTION Betriebsmittel Übertragungswege Kabel Starkstromkabel */
+/** SECTION Starkstromkabel */
 routerGet(router, R2.r2_21_3_3, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Übertragungswege Kabel Starkstromkabel */
 
-/** !SECTION Betriebsmittel Übertragungswege Kabel */
+/** NOTE Starkstromkabel Übung16 */
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_3_3, R2.u16);
 
-/** SECTION Betriebsmittel Übertragungswege Drahete */
+/** NOTE Starkstromkabel Aufgabe 110 */
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_3_3, R2.u110);
+
+/** !SECTION Starkstromkabel */
+
+/** !SECTION Kabel */
+
+/** SECTION Drahete */
 routerGet(router, R2.r2_21_2, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Übertragungswege Drahete Draht */
+/** SECTION Draht */
 routerGet(router, R2.r2_21_2_1, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Übertragungswege Drahete Draht Runddraht */
+/** SECTION Runddraht */
 routerGet(router, R2.r2_21_2_1_1, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Übertragungswege Drahete Draht Runddraht Blank */
+/** SECTION Blank */
 routerGet(router, R2.r2_21_2_1_1_1, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Übertragungswege Drahete Draht Runddraht Blank Kupferdraht */
+/** SECTION Kupferdraht */
 routerGet(router, R2.r2_21_2_1_1_1_1, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Übertragungswege Drahete Draht Runddraht Blank Kupferdraht */
+/** !SECTION Kupferdraht */
 
-/** SECTION Betriebsmittel Übertragungswege Drahete Draht Runddraht Blank Legierungsdraht */
+/** SECTION Legierungsdraht */
 routerGet(router, R2.r2_21_2_1_1_1_2, R2.p2, R2.l2);
 
-/** !SECTION Betriebsmittel Übertragungswege Drahete Draht Runddraht Blank Legierungsdraht */
+/** !SECTION Legierungsdraht */
 
-/** SECTION Betriebsmittel Übertragungswege Drahete Draht Runddraht Blank Aluminiumdraht */
+/** SECTION Aluminiumdraht */
 routerGet(router, R2.r2_21_2_1_1_1_3, R2.p2, R2.l2);
 
-/** NOTE Betriebsmittel Übertragungswege Draehte Draht Runddraht Blank Aluminiumdraht Beispiel16 */
+/** NOTE Aluminiumdraht Beispiel16 */
 erouter(router, R2.p2, R2.l2, R2.e, R2.r2_21_2_1_1_1_3, R2.b16);
 
-/** !SECTION Betriebsmittel Übertragungswege Drahete Draht Runddraht Blank Aluminiumdraht */
+/** !SECTION Aluminiumdraht */
 
-/** !SECTION Betriebsmittel Übertragungswege Drahete Draht Runddraht Blank */
+/** !SECTION Blank */
 
-/** SECTION Betriebsmittel Übertragungswege Drahete Draht Runddraht Isoliert */
+/** SECTION Isoliert */
 routerGet(router, R2.r2_21_2_1_1_2, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Übertragungswege Drahete Draht Runddraht Isoliert */
+/** !SECTION Isoliert */
 
-/** !SECTION Betriebsmittel Übertragungswege Drahete Draht Runddraht */
+/** !SECTION Runddraht */
 
-/** !SECTION Betriebsmittel Übertragungswege Drahete Draht */
+/** !SECTION Draht */
 
-/** SECTION Betriebsmittel Übertragungswege Drahete Wickeldraht */
+/** SECTION Wickeldraht */
 routerGet(router, R2.r2_21_2_2, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Übertragungswege Drahete Wickeldraht */
+/** !SECTION Wickeldraht */
 
-/** !SECTION Betriebsmittel Übertragungswege Draehte */
+/** !SECTION Draehte */
 
-/** SECTION Betriebsmittel Übertragungswege Sammelschiene */
+/** SECTION Sammelschiene */
 routerGet(router, R2.r2_21_5, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Übertragungswege Sammelschiene */
+/** !SECTION Sammelschiene */
 
-/** !SECTION Betriebsmittel Übertragungswege */
+/** !SECTION Übertragungswege */
 
-/** SECTION Betriebsmittel Induktivitaet */
+/** SECTION Induktivitaet */
 routerGet(router, R2.r2_7, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Induktivitaet Magnetische Bauelemente digitaler Einrichtungen */
+/** SECTION Magnetische Bauelemente digitaler Einrichtungen */
 routerGet(router, R2.r2_7_1, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Induktivitaet Magnetische Bauelemente digitaler Einrichtungen */
+/** !SECTION Magnetische Bauelemente digitaler Einrichtungen */
 
-/** SECTION Betriebsmittel Induktivitaet Spule */
+/** SECTION Spule */
 routerGet(router, R2.r2_7_2, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Induktivitaet Spule SpulenmitKern */
+/** SECTION SpulenmitKern */
 routerGet(router, R2.r2_7_2_1, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Induktivitaet Spule SpulenmitKern Magnetspule */
+/** SECTION Magnetspule */
 routerGet(router, R2.r2_7_2_1_1, R2.p2, R2.l2);
 
-/** NOTE Betriebsmittel Induktivitaet Spule SpulemitKern Magnetspuel Uebung18 */
+/** NOTE Magnetspuel Uebung18 */
 erouter(router, R2.p2, R2.l2, R2.e, R2.r2_7_2_1_1, R2.u18);
 
-/** !SECTION Betriebsmittel Induktivitaet Spule SpulenmitKern Magnetspule */
+/** !SECTION Magnetspule */
 
-/** !SECTION Betriebsmittel Induktivitaet Spule SpulenmitKern */
+/** !SECTION SpulenmitKern */
 
-/** SECTION Betriebsmittel Induktivitaet Spule SpulenohneKern */
+/** SECTION SpulenohneKern */
 routerGet(router, R2.r2_7_2_2, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Induktivitaet Spule SpulenohneKern Abgeschirmte Spule */
+/** SECTION Abgeschirmte Spule */
 routerGet(router, R2.r2_7_2_2_1, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Induktivitaet Spule SpulenohneKern Abgeschirmte Spule */
+/** !SECTION Abgeschirmte Spule */
 
-/** SECTION Betriebsmittel Induktivitaet Spule SpulenohneKern EinlagigeSpule  */
+/** SECTION EinlagigeSpule  */
 routerGet(router, R2.r2_7_2_2_2, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Induktivitaet Spule SpulenohneKern EinlagigeSpule  */
+/** !SECTION EinlagigeSpule  */
 
-/** SECTION Betriebsmittel Induktivitaet Spule SpulenohneKern MehrlagigeSpule  */
+/** SECTION MehrlagigeSpule  */
 routerGet(router, R2.r2_7_2_2_3, R2.p2, R2.l2);
 
-/** NOTE Betriebsmittel Induktivitaet SpuleohneKern MehrlagigeSpule Aufgabe13 */
+/** NOTE MehrlagigeSpule Aufgabe13 */
 erouter(router, R2.p2, R2.l2, R2.e, R2.r2_7_2_2_3, R2.a13);
 
-/** NOTE Betriebsmittel Induktivitaet SpuleohneKern MehrlagigeSpule Aufgabe 14 */
+/** NOTE MehrlagigeSpule Aufgabe 14 */
 erouter(router, R2.p2, R2.l2, R2.e, R2.r2_7_2_2_3, R2.a14);
 
-/** NOTE Betriebsmittel Induktivitaet SpuleohneKern MehrlagigeSpule Beispiel 18 */
+/** NOTE MehrlagigeSpule Beispiel 18 */
 erouter(router, R2.p2, R2.l2, R2.e, R2.r2_7_2_2_3, R2.b18);
 
-/** !SECTION Betriebsmittel Induktivitaet Spule SpulenohneKern MehrlagigeSpule  */
+/** !SECTION MehrlagigeSpule  */
 
-/** SECTION Betriebsmittel Induktivitaet Spule SpulenohneKern Ringspule  */
+/** SECTION Ringspule  */
 routerGet(router, R2.r2_7_2_2_4, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Induktivitaet Spule SpulenohneKern Ringspule  */
+/** !SECTION Ringspule  */
 
-/** SECTION Betriebsmittel Induktivitaet Spule SpulenohneKern Zylinderspule */
+/** SECTION Zylinderspule */
 routerGet(router, R2.r2_7_2_2_5, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Induktivitaet Spule SpulenohneKern Zylinderspule */
+/** !SECTION Zylinderspule */
 
-/** !SECTION Betriebsmittel Induktivitaet Spule Spulen ohne Kern */
+/** !SECTION SpulenohneKern */
 
-/** SECTION Betriebsmittel Induktivitaeten Variometer */
+/** SECTION Variometer */
 routerGet(router, R2.r2_7_3, R2.p2, R2.l2);
-/** !SECTION Betriebsmittel Induktivitaeten Variometer */
+/** !SECTION Variometer */
 
-/** !SECTION Betriebsmittel Induktivitaet Spule */
+/** !SECTION Spule */
 
-/** !SECTION Betriebsmittel Induktivitaet */
+/** !SECTION Induktivitaet */
 
 /** SECTION Messgeraete */
 routerGet(router, R2.r2_10, R2.p2, R2.l2);
 
-/** SECTION Messgeraete Energiemesser */
+/** SECTION Energiemesser */
 routerGet(router, R2.r2_10_1, R2.p2, R2.l2);
-/** !SECTION Messgeraete Energiemesser */
+/** !SECTION Energiemesser */
 
-/** SECTION Messgeraete Frequenzmesser */
+/** SECTION Frequenzmesser */
 routerGet(router, R2.r2_10_2, R2.p2, R2.l2);
-/** !SECTION Messgeraete Frequenzmesser */
+/** !SECTION Frequenzmesser */
 
-/** SECTION Messgeraete Impedanzmesser */
+/** SECTION Impedanzmesser */
 routerGet(router, R2.r2_10_3, R2.p2, R2.l2);
-/** !SECTION Messgeraete Impedanzmesser */
+/** !SECTION Impedanzmesser */
 
-/** SECTION Messgeraete Leistungsmesser */
+/** SECTION Leistungsmesser */
 routerGet(router, R2.r2_10_4, R2.p2, R2.l2);
-/** !SECTION Messgeraete Leistungsmesser */
+/** !SECTION Leistungsmesser */
 
-/** SECTION Messgeraete MagnetischeGroessemesser */
+/** SECTION MagnetischeGroessemesser */
 routerGet(router, R2.r2_10_5, R2.p2, R2.l2);
-/** !SECTION Messgeraete MagnetischeGroessemesser */
+/** !SECTION MagnetischeGroessemesser */
 
-/** SECTION Messgeraete Phasenwinkelmesser */
+/** SECTION Phasenwinkelmesser */
 routerGet(router, R2.r2_10_6, R2.p2, R2.l2);
-/** !SECTION Messgeraete Phasenwinkelmesser */
+/** !SECTION Phasenwinkelmesser */
 
-/** SECTION Messgeraete Spannungsmesser */
+/** SECTION Spannungsmesser */
 routerGet(router, R2.r2_10_7, R2.p2, R2.l2);
 
-/** NOTE Betriebsmittel Messgeraete Spannungsmesser Uebung15 */
+/** NOTE Spannungsmesser Uebung15 */
 erouter(router, R2.p2, R2.l2, R2.e, R2.r2_10_7, R2.u15);
-/** !SECTION Messgeraete Spannungsmesser */
+/** !SECTION pannungsmesser */
 
-/** SECTION Messgeraete Strommesser */
+/** SECTION Strommesser */
 routerGet(router, R2.r2_10_8, R2.p2, R2.l2);
 
-/** NOTE Betriebsmittel Messgeraete Strommesser Uebung13 */
+/** NOTE Strommesser Uebung13 */
 erouter(router, R2.p2, R2.l2, R2.e, R2.r2_10_8, R2.u13);
 
-/** !SECTION Messgeraete Strommesser */
+/** !SECTION Strommesser */
 
-/** SECTION Messgeraete Zeitmesser */
+/** SECTION Zeitmesser */
 routerGet(router, R2.r2_10_9, R2.p2, R2.l2);
-/** !SECTION Messgeraete Zeitmesser */
+/** !SECTION Zeitmesser */
 
 /** !SECTION Messgeraete */
 
-/** SECTION Betriebsmittel Verschiedenes */
+/** SECTION Verschiedenes */
 routerGet(router, R2.r2_24, R2.p2, R2.l2);
 
-/**SECTION Betriebsmittel Verschiedenes Beleuchtung */
+/**SECTION Beleuchtung */
 routerGet(router, R2.r2_24_1, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Verschiedenes Beleuchtung Lampe */
+/** SECTION Lampe */
 routerGet(router, R2.r2_24_1_1, R2.p2, R2.l2);
 
-/** SECTION Betriebsmittel Verschiedenes Beleuchtung Lampe Gluehlampe */
+/** SECTION Gluehlampe */
 routerGet(router, R2.r2_24_1_1_1, R2.p2, R2.l2);
 
-/** NOTE Betriebsmittel Verschiedenes Beleuchtung Lampe Gluehlampe Beispiel17 */
+/** NOTE Gluehlampe Beispiel17 */
 erouter(router, R2.p2, R2.l2, R2.e, R2.r2_24_1_1_1, R2.b17);
 
-/** !SECTION Betriebsmittel Verschiedenes Beleuchtung Lampe Gluehlampe */
+/** !SECTION Gluehlampe */
 
-/** !SECTION Betriebsmittel Verschiedenes Beleuchtung Lampe */
+/** !SECTION Lampe */
 
-/**!SECTION Betriebsmittel Verschiedenes Beleuchtung */
+/**!SECTION Beleuchtung */
 
-/** SECTION Betriebsmittel Verschiedenes Elektrode */
-/** !SECTION Betriebsmittel Verschiedenes Elektrode */
+/** SECTION Elektrode */
+/** !SECTION Elektrode */
 
-/** !SECTION Betriebsmittel Verschiedenes */
+/** !SECTION Verschiedenes */
+
+/** SECTION Transformatoren */
+
+/** SECTION Audiotransformator */
+/** !SECTION Audiotransformator */
+
+/** SECTION Dreiphasentransformator */
+/** !SECTION Dreiphasentransformator */
+
+/** SECTION Einphasentransformator */
+/** !SECTION Einphasentransformator */
+
+/** SECTION HFTransformator */
+/** !SECTION HFTransformator */
+
+/** SECTION Impulstransformator */
+/** !SECTION Impulstransformator */
+
+/** SECTION Messwandler */
+/** !SECTION Messwandler */
+
+/** SECTION Transaktor */
+/** !SECTION Transaktor */
+
+/** SECTION Transformator */
+/** !SECTION Transformator*/
+
+/** SECTION TransformatorMitMittenabgriff */
+/** !SECTION TransformatorMitMittenabgriff */
+
+/** !SECTION Transformatoren */
+
+/** !SECTION Betriebsmittel */
 
 module.exports = router;

@@ -178,11 +178,6 @@ module.exports = {
   r2_27_2_2_3_1_2: `/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/NichtelektrischeParameter/Temperatur/Thermistor/Kaltleiter`,
   r2_27_2_2_3_1_2_1: `/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/NichtelektrischeParameter/Temperatur/Kaltleiter/KeramischeKaltleiter`,
 
-  // r2_27_4: `/Widerstaende/Thermistor`,
-  // r2_27_4_1: `/Widerstaende/Thermistor/Heissleiter`,
-  // r2_27_4_2: `/Widerstaende/Thermistor/Kaltleiter`,
-  // r2_27_5: `/Widerstaende/Varistor`,
-
   a11: `/Aufgabe11`,
   a13: `/Aufgabe13`,
   a14: `/Aufgabe14`,

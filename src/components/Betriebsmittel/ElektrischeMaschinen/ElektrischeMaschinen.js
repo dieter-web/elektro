@@ -5,10 +5,10 @@ const { Betriebsmittel } = require(path.resolve(
   "src/components/Betriebsmittel/Betriebsmittel.js"
 ));
 
-class Transformator extends Betriebsmittel {
+class ElektrischeMaschinen extends Betriebsmittel {
   constructor() {
     super();
   }
 }
 
-exports.Transformator = Transformator;
+exports.ElektrischeMaschinen = ElektrischeMaschinen;

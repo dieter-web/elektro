@@ -38,11 +38,11 @@ const { Bauelemente } = require(path.resolve(`${PBauelemente}/Bauelemente.js`));
 /** SECTION Platten */
 const { Platten } = require(path.resolve(`${PBauelemente}/Platten/Platten.js`));
 
-/** SECTION Platten Glasplatten */
+/** SECTION Glasplatten */
 const { Glasplatte } = require(path.resolve(
   `${PBauelemente}/Platten/Glasplatte/Glasplatte.js`
 ));
-/** !SECTION Platten Glasplatten */
+/** !SECTION Glasplatten */
 /** !SECTION Platten */
 
 /** SECTION Rohrleitungen */
@@ -51,11 +51,11 @@ const { Rohrleitungen } = require(path.resolve(
   `${PBauelemente}/Rohrleitungen/Rohrleitungen.js`
 ));
 
-/** SECTION Rohrleitungen Bleirohre */
+/** SECTION Bleirohre */
 const { Bleirohr } = require(path.resolve(
   `${PBauelemente}/Rohrleitungen/Bleirohre/Bleirohr.js`
 ));
-/** !SECTION Rohrleitungen Bleirohre */
+/** !SECTION Bleirohre */
 /** !SECTION Rohrleitungen */
 
 /** !SECTION Bauelemente */
@@ -66,597 +66,570 @@ const { Betriebsmittel } = require(path.resolve(
   `${PBetriebsmittel}/Betriebsmittel.js`
 ));
 
-/** SECTION Betriebsmittel Baugruppen */
+/** SECTION Baugruppen */
 const { Baugruppen } = require(path.resolve(
   `${PBetriebsmittel}/Baugruppen/Baugruppen.js`
 ));
 
-/** SECTION Betriebsmittel Baugruppen Zweipole */
+/** SECTION Zweipole */
 const { Zweipole } = require(path.resolve(
   `${PBetriebsmittel}/Baugruppen/Zweipole/Zweipole.js`
 ));
 
-/** SECTION Betriebsmittel Baugruppen Zweipole PassiverZweipol */
+/** SECTION PassiverZweipol */
 const { PassiverZweipol } = require(path.resolve(
   `${PBetriebsmittel}/Baugruppen/Zweipole/PassiverZweipol/PassiverZweipol.js`
 ));
 
-/** SECTION Betriebsmittel Baugruppen Zweipole Reihenschaltung */
+/** SECTION Reihenschaltung */
 const { Reihenschaltung } = require(path.resolve(
   `${PBetriebsmittel}/Baugruppen/Zweipole/PassiverZweipol/Reihenschaltung.js`
 ));
-/** !SECTION Betriebsmittel Baugruppen Zweipole Reihenschaltung */
+/** !SECTION Reihenschaltung */
 
-/** !SECTION Betriebsmittel Baugruppen Zweipole PassiverZweipol */
+/** !SECTION PassiverZweipol */
 
-/** !SECTION Betriebsmittel Baugruppen Zweipole */
+/** !SECTION Zweipole */
 
-/** !SECTION Betriebsmittel Baugruppen */
+/** !SECTION Baugruppen */
 
-/** SECTION  Betriebsmittel Widerstaende*/
+/** SECTION   Widerstaende*/
 const { Widerstaende } = require(path.resolve(
   `${PBetriebsmittel}/Widerstaende/Widerstaende.js`
 ));
 
-/** SECTION Betriebsmittel Widerstaende Widerstand */
+/** SECTION Widerstand */
 const { Widerstand } = require(path.resolve(
   `${PBetriebsmittel}/Widerstaende/Widerstand/Widerstand.js`
 ));
-/** !SECTION Betriebsmittel Widerstaende Widerstand */
+/** !SECTION Widerstand */
 
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende */
+/** SECTION ParameterabhaengigeHalbleiterwiderstaende */
 const { ParameterabhaengigeHalbleiterwiderstande } = require(path.resolve(
   `${PBetriebsmittel}/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/ParameterabhaengigeHalbleiterwiderstaende.js`
 ));
 
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende ElektrischeParameter */
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende ElektrischeParameter Spannung */
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende ElektrischeParameter Spannung Varistor */
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende ElektrischeParameter Spannung Varistor */
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende ElektrischeParameter Spannung */
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende ElektrischeParameter */
-
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter */
-
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter ElektrischesFeld */
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter ElektrischesFeld Feldplatte */
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtlektrischeParameter ElektrischesFeld Feldplatte */
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtlektrischeParameter ElektrischesFeld */
-
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Strahlung */
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Strahlung Fotowiderstand */
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtlektrischeParameter Strahlung Fotowiderstand */
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtlektrischeParameter Strahlung */
-
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur */
-
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur Thermistor */
-
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur Thermistor Heissleiter */
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtlektrischeParameter Temperatur Heissleiter */
-
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur Thermistor Kaltleiter */
-/** SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtelektrischeParameter Temperatur Thermistor Kaltleiter/KeramischeKaltleiter */
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtlektrischeParameter Temperatur Thermistor Kaltleiter KeramischeKaltleiter */
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtlektrischeParameter Temperatur Thermistor Kaltleiter */
-
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtlektrischeParameter Temperatur Thermistor */
-
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtlektrischeParameter Temperatur */
-
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende NichtlektrischeParameter */
-
-/** !SECTION Betriebsmittel Widerstaende ParameterabhaengigeHalbleiterwiderstaende */
-
-/** SECTION Betriebsmittel Widerstaende Feldplatte */
-const { Feldplatte } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/NichtelektrischeParameter/MagnetischesFeld/Feldplatte/Feldplatte.js`
-));
-/** !SECTION Betriebsmittel Widerstaende Feldplatte */
-
-/** SECTION Betriebsmittel Widerstaende  Fotowiderstand */
-const { Fotowiderstand } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/NichtelektrischeParameter/Strahlung/Fotowiderstand/Fotowiderstand.js`
-));
-/** !SECTION Betriebsmittel Widerstaende Fotowiderstand */
-
-/** SECTION Betriebsmittel Widerstaende Thermistor */
-
-/** SECTION Betriebsmittel Widerstaende Thermistor Heissleiter */
-const { Heissleiter } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/NichtelektrischeParameter/Temperatur/Thermistor/Heissleiter/Heissleiter.js`
-));
-/** !SECTION Betriebsmittel Widerstaende Thermistor Heissleiter */
-
-/** SECTION Betriebsmittel Widerstaende Thermistor Kaltleiter */
-const { Kaltleiter } = require(path.resolve(
-  `${PBetriebsmittel}/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/NichtelektrischeParameter/Temperatur/Thermistor/Kaltleiter/Kaltleiter.js`
-));
-/** !SECTION Betriebsmittel Widerstaende Thermistor Kaltleiter */
-
-/** !SECTION Betriebsmittel Widerstaende Thermistor */
-
-/** SECTION Betriebsmittel Widerstaende Varistor */
+/** SECTION ElektrischeParameter */
+/** SECTION Spannung */
+/** SECTION Varistor */
 const { Varistor } = require(path.resolve(
   `${PBetriebsmittel}/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/ElektrischeParameter/Spannung/Varistoren/Varistor.js`
 ));
-/** !SECTION Betriebsmittel Widerstaende Varistor */
+/** !SECTION Varistor */
+/** !SECTION Spannung */
+/** !SECTION ElektrischeParameter */
 
+/** SECTION NichtelektrischeParameter */
+
+/** SECTION ElektrischesFeld */
+/** SECTION Feldplatte */
+const { Feldplatte } = require(path.resolve(
+  `${PBetriebsmittel}/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/NichtelektrischeParameter/MagnetischesFeld/Feldplatte/Feldplatte.js`
+));
+/** !SECTION Feldplatte */
+/** !SECTION ElektrischesFeld */
+
+/** SECTION Strahlung */
+/** SECTION Fotowiderstand */
+const { Fotowiderstand } = require(path.resolve(
+  `${PBetriebsmittel}/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/NichtelektrischeParameter/Strahlung/Fotowiderstand/Fotowiderstand.js`
+));
+/** !SECTION Fotowiderstand */
+/** !SECTION Strahlung */
+
+/** SECTION Temperatur */
+/** SECTION Thermistor */
+/** SECTION Heissleiter */
+const { Heissleiter } = require(path.resolve(
+  `${PBetriebsmittel}/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/NichtelektrischeParameter/Temperatur/Thermistor/Heissleiter/Heissleiter.js`
+));
+/** !SECTION Heissleiter */
+/** SECTION Kaltleiter */
+const { Kaltleiter } = require(path.resolve(
+  `${PBetriebsmittel}/Widerstaende/ParameterabhaengigeHalbleiterwiderstaende/NichtelektrischeParameter/Temperatur/Thermistor/Kaltleiter/Kaltleiter.js`
+));
+/** SECTION KeramischeKaltleiter */
+/** !SECTION KeramischeKaltleiter */
+/** !SECTION Kaltleiter */
+/** !SECTION Thermistor */
+/** !SECTION Temperatur */
+/** !SECTION NichtlektrischeParameter */
+/** !SECTION ParameterabhaengigeHalbleiterwiderstaende */
 /** !SECTION Betriebsmittel Widerstaende*/
 
-/** SECTION  Betriebsmittel Uebertragungswege */
+/** SECTION  Uebertragungswege */
 const { Uebertragungswege } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Uebertragungswege.js`
 ));
 
-/** SECTION Betriebsmittel Uebertragungswege Kabel */
+/** SECTION Kabel */
 const { Kabel } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Kabel/Kabel.js`
 ));
 
-/** SECTION Betriebsmittel Uebertragungswege Kabel Fernmeldekabel */
+/** SECTION Fernmeldekabel */
 const { Fernmeldekabel } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Kabel/Fernmeldekabel/Fernmeldekabel.js`
 ));
-/** !SECTION Betriebsmittel Uebertragungswege Kabel Fernmeldekabel */
+/** !SECTION Fernmeldekabel */
 
-/** SECTION Betriebsmittel Uebertragungswege Kabel Hochfrequenzkabel */
+/** SECTION Hochfrequenzkabel */
 const { Hochfrequenzkabel } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Kabel/Hochfrequenzkabel/Hochfrequenzkabel.js`
 ));
-/** !SECTION Betriebsmittel Uebertragungswege Kabel Hochfrequenzkabel */
+/** !SECTION Hochfrequenzkabel */
 
-/** SECTION Betriebsmittel Uebertragungswege Kabel Starkstromkabel */
+/** SECTION  Starkstromkabel */
 const { Starkstromkabel } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Kabel/Starkstromkabel/Starkstromkabel.js`
 ));
-/** !SECTION Betriebsmittel Uebertragungswege Kabel Starkstromkabel */
+/** !SECTION Starkstromkabel */
 
-/** !SECTION Betriebsmittel Uebertragungswege Kabel */
+/** !SECTION Kabel */
 
-/** SECTION Betriebsmittel Uebertragungswege Leitung */
+/** SECTION Leitung */
 const { Leitung } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Leitung/Leitung.js`
 ));
 
-/** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung */
+/** SECTION IsolierteLeitung */
 const { IsolierteLeitung } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Leitung/IsolierteLeitung/IsolierteLeitung.js`
 ));
 
-/** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Fernmeldeleitung */
+/** SECTION Fernmeldeleitung */
 const { Fernmeldeleitung } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/Fernmeldeleitung.js`
 ));
 
-/** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Fernmeldeleitung Eindrahtleitung */
+/** SECTION Eindrahtleitung */
 const { Eindrahtleitung } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/Eindrahtleitung/Eindrahtleitung.js`
 ));
-/** !SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Fernmeldeleitung Eindrahtleitung */
+/** !SECTION Eindrahtleitung */
 
-/** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Fernmeldeleitung Lahnlitzeleitung */
+/** SECTION Lahnlitzeleitung */
 const { Lahnlitzeleitung } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/Lahnlitzeleitung/Lahnlitzeleitung.js`
 ));
-/** !SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Fernmeldeleitung Lahnlitzeleitung */
+/** !SECTION Lahnlitzeleitung */
 
-/** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Fernmeldeleitung Litzeleitung */
+/** SECTION Litzeleitung */
 const { Litzeleitung } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Leitung/IsolierteLeitung/Fernmeldeleitung/Litzeleitung/Litzeleitung.js`
 ));
-/** !SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Fernmeldeleitung Litzeleitung */
+/** !SECTION Litzeleitung */
 
-/** !SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Fernmeldeleitung */
+/** !SECTION Fernmeldeleitung */
 
-/** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung */
+/** SECTION Starkstromleitung */
 const { Starkstromleitung } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Leitung/IsolierteLeitung/Starkstromleitung/Starkstromleitung.js`
 ));
 
-/** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung besondererZweck */
+/** SECTION besondererZweck */
 const { BesondererZweck } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Leitung/IsolierteLeitung/Starkstromleitung/BesondererZweck/BesondererZweck.js`
 ));
 
-/** !SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung besondererZweck */
+/** !SECTION besondererZweck */
 
-/** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung festeVerlegung */
+/** SECTION festeVerlegung */
 
 const { FesteLegung } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Leitung/IsolierteLeitung/Starkstromleitung/FesteLegung/FesteLegung.js`
 ));
 
-/** !SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung festeVerlegung */
+/** !SECTION festeVerlegung */
 
-/** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung Konfektioniert */
+/** SECTION Konfektioniert */
 const { Konfektioniert } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Leitung/IsolierteLeitung/Starkstromleitung/Konfektioniert/Konfektioniert.js`
 ));
 
-/** !SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung Konfektioniert */
+/** !SECTION Konfektioniert */
 
-/** SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung ortsveraenderlicheBetriebsmittel */
+/** SECTION ortsveraenderlicheBetriebsmittel */
 const { OrtsveraenderlicheLegung } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Leitung/IsolierteLeitung/Starkstromleitung/OrtsveraenderlicheLegung/OrtsveraenderlicheLegung.js`
 ));
 
-/** !SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung ortsveraenderlicheBetriebsmittel */
+/** !SECTION ortsveraenderlicheBetriebsmittel */
 
-/** !SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung Starkstromleitung */
+/** !SECTION Starkstromleitung */
 
-/** !SECTION Betriebsmittel Uebertragungswege Leitung IsolierteLeitung */
+/** !SECTION IsolierteLeitung */
 
-/** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung */
+/** SECTION BlankeLeitung */
 const { BlankeLeitung } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Leitung/BlankeLeitung/BlankeLeitung.js`
 ));
 
-/** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Erder */
+/** SECTION Erder */
 const { Erder } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Leitung/BlankeLeitung/Erder/Erder.js`
 ));
 
-/** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Erder  */
+/** !SECTION Erder  */
 
-/** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Erdungssammelleitung */
+/** SECTION Erdungssammelleitung */
 const { Erdungssammelleitung } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Leitung/BlankeLeitung/Erdungssammelleitung/Erdungssammelleitung.js`
 ));
 
-/** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Erdungssammelleitung  */
+/** !SECTION Erdungssammelleitung  */
 
-/** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Fahrleitung */
+/** SECTION Fahrleitung */
 const { Fahrleitung } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Leitung/BlankeLeitung/Fahrleitung/Fahrleitung.js`
 ));
 
-/** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Fahrleitung  */
+/** !SECTION Fahrleitung  */
 
-/** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Freileitung */
+/** SECTION Freileitung */
 const { Freileitung } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Leitung/BlankeLeitung/Freileitung/Freileitung.js`
 ));
-/** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Freileitung  */
+/** !SECTION Freileitung  */
 
-/** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Hochfrequenzleitung */
+/** SECTION Hochfrequenzleitung */
 const { Hochfrequenzleitung } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Leitung/BlankeLeitung/Hochfrequenzleitung/Hochfrequenzleitung.js`
 ));
 
-/** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Hochfrequenzleitung  */
+/** !SECTION Hochfrequenzleitung  */
 
-/** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung OffenGelegteLeitung */
+/** SECTION OffenGelegteLeitung */
 const { OffenGelegteLeitung } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Leitung/BlankeLeitung/OffenGelegteLeitung/OffenGelegteLeitung.js`
 ));
 
-/** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung OffenGelegteLeitung  */
+/** !SECTION OffenGelegteLeitung  */
 
-/** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Sammelschiene */
+/** SECTION Sammelschiene */
 const { Sammelschiene } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Leitung/BlankeLeitung/Sammelschiene/Sammelschiene.js`
 ));
 
-/** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Sammelschiene  */
+/** !SECTION Sammelschiene  */
 
-/** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Schiene */
+/** SECTION Schiene */
 const { Schiene } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Leitung/BlankeLeitung/Schiene/Schiene.js`
 ));
 
-/** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Schiene  */
+/** !SECTION Schiene  */
 
-/** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Schleifenleitung */
+/** SECTION Schleifenleitung */
 const { Schleifenleitung } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Leitung/BlankeLeitung/Schleifenleitung/Schleifenleitung.js`
 ));
 
-/** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Schleifenleitung */
+/** !SECTION Schleifenleitung */
 
-/** SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Stromschiene */
+/** SECTION Stromschiene */
 const { Stromschiene } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Leitung/BlankeLeitung/Stromschiene/Stromschiene.js`
 ));
 
-/** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung Stromschiene  */
+/** !SECTION Stromschiene  */
 
-/** !SECTION Betriebsmittel Uebertragungswege Leitung BlankeLeitung */
+/** !SECTION BlankeLeitung */
 
-/** !SECTION Betriebsmittel Uebertragungswege Leitung  */
+/** !SECTION Leitung  */
 
-/** SECTION Betriebsmittel Uebertragungswege Draehte */
+/** SECTION Draehte */
 const { Draehte } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Draehte/Draehte.js`
 ));
 
-/** SECTION Betriebsmittel Uebertragungswege Draehte Draht */
+/** SECTION Draht */
 const { Draht } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Draehte/Draht/Draht.js`
 ));
 
-/** SECTION Betriebsmittel Uebertragungswege Draehte Draht Runddraht */
+/** SECTION Runddraht */
 const { Runddraht } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Draehte/Draht/Runddraht/Runddraht.js`
 ));
 
-/** SECTION Betriebsmittel Uebertragungswege Draehte Draht Runddraht Blank */
+/** SECTION Blank */
 const { Blank } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Draehte/Draht/Runddraht/Blank/Blank.js`
 ));
 
-/** SECTION Betriebsmittel Uebertragungswege Draehte Draht Runddraht Blank Kupferdraht */
+/** SECTION Kupferdraht */
 const { Kupferdraht } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Draehte/Draht/Runddraht/Blank/Kupferdraht/Kupferdraht.js`
 ));
-/** !SECTION Betriebsmittel Uebertragungswege Draehte Draht Runddraht Blank Kupferdraht */
+/** !SECTION Kupferdraht */
 
-/** SECTION Betriebsmittel Uebertragungswege Draehte Draht Runddraht Blank Aluminiumdraht */
+/** SECTION Aluminiumdraht */
 const { Aluminiumdraht } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Draehte/Draht/Runddraht/Blank/Aluminiumdraht/Aluminiumdraht.js`
 ));
-/** !SECTION Betriebsmittel Uebertragungswege Draehte Draht Runddraht Blank Aluminiumdraht */
+/** !SECTION Aluminiumdraht */
 
-/** SECTION Betriebsmittel Uebertragungswege Draehte Draht Runddraht Blank Legierungsdraht */
+/** SECTION Legierungsdraht */
 const { Legierungsdraht } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Draehte/Draht/Runddraht/Blank/Legierungsdraht/Legierungsdraht.js`
 ));
-/** !SECTION Betriebsmittel Uebertragungswege Draehte Draht Runddraht Legierungsdraht */
+/** !SECTION Legierungsdraht */
 
-/** !SECTION Betriebsmittel Uebertragungswege Draehte Draht Runddraht Blank */
+/** !SECTION Blank */
 
-/** SECTION Betriebsmittel Uebertragungswege Draehte Draht Runddraht Isoliert */
+/** SECTION Isoliert */
 const { Isoliert } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Draehte/Draht/Runddraht/Isoliert/Isoliert.js`
 ));
 
-/** !SECTION Betriebsmittel Uebertragungswege Draehte Draht Runddraht Isoliert */
+/** !SECTION Isoliert */
 
-/** !SECTION Betriebsmittel Uebertragungswege Draehte Draht Runddraht */
+/** !SECTION Runddraht */
 
-/** !SECTION Betriebsmittel Uebertragungswege Draehte Draht */
+/** !SECTION Draht */
 
-/** SECTION Betriebsmittel Uebertragungswege Draehte Wickeldraht */
+/** SECTION Wickeldraht */
 const { Wickeldraht } = require(path.resolve(
   `${PBetriebsmittel}/Uebertragungswege/Draehte/Wickeldraht/Wickeldraht.js`
 ));
-/** !SECTION Betriebsmittel Uebertragungswege Draehte Wickeldraht */
+/** !SECTION Wickeldraht */
 
-/** !SECTION Betriebsmittel Uebertragungswege Draehte */
+/** !SECTION Draehte */
 
-/** !SECTION Betriebsmittel Uebertragungswege */
+/** !SECTION Uebertragungswege */
 
-/** SECTION Betriebsmittel Induktivitaet */
+/** SECTION Induktivitaet */
 
 const { Induktivitaet } = require(path.resolve(
   `${PBetriebsmittel}/Induktivitaet/Induktivitaet.js`
 ));
 
-/** SECTION Betriebsmittel Induktivitaet Spule */
+/** SECTION Spule */
 const { Spule } = require(path.resolve(
   `${PBetriebsmittel}/Induktivitaet/Spule/Spule.js`
 ));
 
-/** SECTION Betriebsmittel Induktivitaet Spule SpuleMitKern */
+/** SECTION SpuleMitKern */
 const { SpuleMitKern } = require(path.resolve(
   `${PBetriebsmittel}/Induktivitaet/Spule/SpuleMitKern/SpuleMitKern.js`
 ));
 
-/** SECTION Betriebsmittel Induktivitaet Spule SpuleMitKern Magnetspule */
+/** SECTION Magnetspule */
 const { Magnetspule } = require(path.resolve(
   `${PBetriebsmittel}/Induktivitaet/Spule/SpuleMitKern/Magnetspule/Magnetspule.js`
 ));
-/** !SECTION Betriebsmittel Induktivitaet Spule SpuleMitKern Magnetspule */
+/** !SECTION Magnetspule */
 
-/** !SECTION Betriebsmittel Induktivitaet Spule SpuleMitKern */
+/** !SECTION SpuleMitKern */
 
-/** SECTION Betriebsmittel Induktivitaet Spule SpuleOhneKern */
+/** SECTION SpuleOhneKern */
 const { SpuleOhneKern } = require(path.resolve(
   `${PBetriebsmittel}/Induktivitaet/Spule/SpuleOhneKern/SpuleOhneKern.js`
 ));
 
-/** SECTION Betriebsmittel Induktivitaet Spule SpuleOhneKern AbgeschirmteSpule */
+/** SECTION AbgeschirmteSpule */
 const { AbgeschirmteSpule } = require(path.resolve(
   `${PBetriebsmittel}/Induktivitaet/Spule/SpuleOhneKern/AbgeschirmteSpule/AbgeschirmteSpule.js`
 ));
-/** !SECTION Betriebsmittel Induktivitaet Spule SpuleOhneKern AbgeschirmteSpule */
+/** !SECTION AbgeschirmteSpule */
 
-/** SECTION Betriebsmittel Induktivitaet Spule SpuleOhneKern EinlagigeSpule */
+/** SECTION EinlagigeSpule */
 const { EinlagigeSpule } = require(path.resolve(
   `${PBetriebsmittel}/Induktivitaet/Spule/SpuleOhneKern/EinlagigeSpule/EinlagigeSpule.js`
 ));
-/** !SECTION Betriebsmittel Induktivitaet Spule SpuleOhneKern EinlagigeSpule */
+/** !SECTION EinlagigeSpule */
 
-/** SECTION Betriebsmittel Induktivitaet Spule SpuleOhneKern MehrlagigeSpule */
+/** SECTION MehrlagigeSpule */
 const { MehrlagigeSpule } = require(path.resolve(
   `${PBetriebsmittel}/Induktivitaet/Spule/SpuleOhneKern/MehrlagigeSpule/MehrlagigeSpule.js`
 ));
-/** !SECTION Betriebsmittel Induktivitaet Spule SpuleOhneKern MehrlagigeSpule */
+/** !SECTION MehrlagigeSpule */
 
-/** SECTION Betriebsmittel Induktivitaet Spule SpuleOhneKern Ringspule */
+/** SECTION Ringspule */
 const { Ringspule } = require(path.resolve(
   `${PBetriebsmittel}/Induktivitaet/Spule/SpuleOhneKern/Ringspule/Ringspule.js`
 ));
-/** !SECTION Betriebsmittel Induktivitaet Spule SpuleOhneKern Ringspule */
+/** !SECTION Ringspule */
 
-/** SECTION Betriebsmittel Induktivitaet Spule SpuleOhneKern Zylinderspule */
+/** SECTION Zylinderspule */
 const { Zylinderspule } = require(path.resolve(
   `${PBetriebsmittel}/Induktivitaet/Spule/SpuleOhneKern/Zylinderspule/Zylinderspule.js`
 ));
-/** !SECTION Betriebsmittel Induktivitaet Spule SpuleOhneKern Zylinderspule */
-/** !SECTION Betriebsmittel Induktivitaet Spule SpuleOhneKern */
+/** !SECTION Zylinderspule */
+/** !SECTION SpuleOhneKern */
 
-/** SECTION Betriebsmittel Induktivitaet Spule Variometer */
+/** SECTION Variometer */
 const { Variometer } = require(path.resolve(
   `${PBetriebsmittel}/Induktivitaet/Spule/Variometer/Variometer.js`
 ));
-/** !SECTION Betriebsmittel Induktivitaet Spule Variometer */
+/** !SECTION Variometer */
 
-/** !SECTION Betriebsmittel Induktivitaet Spule */
+/** !SECTION Spule */
 
-/** !SECTION Betriebsmittel Induktivitaet */
+/** !SECTION Induktivitaet */
 
-/** SECTION Betriebsmittel Verschiedens */
+/** SECTION Verschiedens */
 const { Verschiedenes } = require(path.resolve(
   `${PBetriebsmittel}/Verschiedenes/Verschiedenes.js`
 ));
-/** SECTION Betriebsmittel Verschiedenes Elektrode */
+/** SECTION Elektrode */
 const { Elektrode } = require(path.resolve(
   `${PBetriebsmittel}/Verschiedenes/Elektrode/Elektrode.js`
 ));
-/** !SECTION Betriebsmittel Verschiedenes Elektrode */
+/** !SECTION Elektrode */
 
-/** SECTION Betriebsmittel Verschiedenes Beleuchtung */
+/** SECTION Beleuchtung */
 const { Beleuchtung } = require(path.resolve(
   `${PBetriebsmittel}/Verschiedenes/Beleuchtung/Beleuchtung.js`
 ));
 
-/** SECTION Betriebsmittel Verschiedenes Beleuchtung Lampe */
+/** SECTION Lampe */
 const { Lampe } = require(path.resolve(
   `${PBetriebsmittel}/Verschiedenes/Beleuchtung/Lampe/Lampe.js`
 ));
 
-/** SECTION Betriebsmittel Verschiedenes Beleuchtung Lampe Gluehlampe */
+/** SECTION Gluehlampe */
 const { Gluehlampe } = require(path.resolve(
   `${PBetriebsmittel}/Verschiedenes/Beleuchtung/Lampe/Gluehlampe/Gluehlampe.js`
 ));
 
-/** !SECTION Betriebsmittel Verschiedenes Beleuchtung Lampe Gluehlampe */
+/** !SECTION Gluehlampe */
 
-/** !SECTION Betriebsmittel Verschiedenes Beleuchtung Lampe */
+/** !SECTION Lampe */
 
-/** !SECTION Beriebsmittel Verschiedenes Beleuchtung */
+/** !SECTION Beleuchtung */
 
-/** !SECTION Betriebsmittel Verschiedens */
+/** !SECTION Verschiedens */
 
-/** SECTION Betriebsmittel Messgeraete */
+/** SECTION Messgeraete */
 const { Messgeraete } = require(path.resolve(
   `${PBetriebsmittel}/Messgeraete/Messgeraete.js`
 ));
 
-/** SECTION Betriebsmittel Messgeraete Energiemesser */
+/** SECTION Energiemesser */
 const { Energiemesser } = require(path.resolve(
   `${PBetriebsmittel}/Messgeraete/Energiemesser/Energiemesser.js`
 ));
-/** !SECTION Betriebsmittel Messgeraete Energiemesser */
+/** !SECTION Energiemesser */
 
-/** SECTION Betriebsmittel Messgeraete Frequenzmesser */
+/** SECTION Frequenzmesser */
 const { Frequenzmesser } = require(path.resolve(
   `${PBetriebsmittel}/Messgeraete/Frequenzmesser/Frequenzmesser.js`
 ));
-/** !SECTION Betriebsmittel Messgeraete Frequenz */
+/** !SECTION Frequenzmesser */
 
-/** SECTION Betriebsmittel Messgeraete Impedanzmesser */
+/** SECTION Impedanzmesser */
 const { Impedanzmesser } = require(path.resolve(
   `${PBetriebsmittel}/Messgeraete/Impedanzmesser/Impedanzmesser.js`
 ));
-/** !SECTION Betriebsmittel Messgeraete Impedanzmesser */
+/** !SECTION Impedanzmesser */
 
-/** SECTION Betriebsmittel Messgeraete Leistungsmesser */
+/** SECTION Leistungsmesser */
 const { Leistungsmesser } = require(path.resolve(
   `${PBetriebsmittel}/Messgeraete/Leistungsmesser/Leistungsmesser.js`
 ));
-/** !SECTION Betriebsmittel Messgeraete Leistungsmesser */
+/** !SECTION Leistungsmesser */
 
-/** SECTION Betriebsmittel Messgeraete MagnetischeGroessemesser */
+/** SECTION MagnetischeGroessemesser */
 const { MagnetischeGroessemesser } = require(path.resolve(
   `${PBetriebsmittel}/Messgeraete/MagnetischeGroessemesser/MagnetischeGroessemesser.js`
 ));
-/** !SECTION Betriebsmittel Messgeraete MagnetischeGroessemesser */
+/** !SECTION MagnetischeGroessemesser */
 
-/** SECTION Betriebsmittel Messgeraete Phasenwinkelmesser */
+/** SECTION Phasenwinkelmesser */
 const { Phasenwinkelmesser } = require(path.resolve(
   `${PBetriebsmittel}/Messgeraete/Phasenwinkelmesser/Phasenwinkelmesser.js`
 ));
-/** !SECTION Betriebsmittel Messgeraete Phasenwinkelmesser */
+/** !SECTION Phasenwinkelmesser */
 
-/** SECTION Betriebsmittel Messgeraete Spannungsmesser */
+/** SECTION Spannungsmesser */
 const { Spannungsmesser } = require(path.resolve(
   `${PBetriebsmittel}/Messgeraete/Spannungsmesser/Spannungsmesser.js`
 ));
-/** !SECTION Betriebsmittel Messgeraete Spannungsmesser */
+/** !SECTION Spannungsmesser */
 
-/** SECTION Betriebsmittel Messgeraete Strommesser */
+/** SECTION Strommesser */
 const { Strommesser } = require(path.resolve(
   `${PBetriebsmittel}/Messgeraete/Strommesser/Strommesser.js`
 ));
-/** !SECTION Betriebsmittel Messgeraete Strommesser */
+/** !SECTION Strommesser */
 
-/** SECTION Betriebsmittel Messgeraete Zeitmesser */
+/** SECTION Zeitmesser */
 const { Zeitmesser } = require(path.resolve(
   `${PBetriebsmittel}/Messgeraete/Zeitmesser/Zeitmesser.js`
 ));
-/** !SECTION Betriebsmittel Messgeraete Zeitmesser */
+/** !SECTION Zeitmesser */
 
-/** !SECTION Betriebsmittel Messgeraete */
+/** !SECTION Messgeraete */
 
-/** SECTION Betriebsmittel Transformator */
+/** SECTION Transformator */
 const { Transformator } = require(path.resolve(
   `${PBetriebsmittel}/Transformator/Transformator.js`
 ));
 
-/** SECTION Betriebsmittel Transformator AudioTransformator */
+/** SECTION AudioTransformator */
 const { Audiotransformator } = require(path.resolve(
   `${PBetriebsmittel}/Transformator/Audiotransformator/Audiotransformator.js`
 ));
-/** !SECTION Betriebsmittel Transformator AudioTransformator */
+/** !SECTION AudioTransformator */
 
-/** SECTION Betriebsmittel Transformator Dreiphasentransformator */
+/** SECTION Dreiphasentransformator */
 const { Dreiphasentransformator } = require(path.resolve(
   `${PBetriebsmittel}/Transformator/Dreiphasentransformator/Dreiphasentransformator.js`
 ));
-/** !SECTION Betriebsmittel Transformator Dreiphasentransformator */
+/** !SECTION Dreiphasentransformator */
 
-/** SECTION Betriebsmittel Transformator Einphasentransformator */
+/** SECTION Einphasentransformator */
 const { Einphasentransformator } = require(path.resolve(
   `${PBetriebsmittel}/Transformator/Einphasentransformator/Einphasentransformator.js`
 ));
-/** !SECTION Betriebsmittel Transformator Einphasentransformator */
+/** !SECTION Einphasentransformator */
 
-/** SECTION Betriebsmittel Transformator HFTransformator */
+/** SECTION HFTransformator */
 const { HFTransformator } = require(path.resolve(
   `${PBetriebsmittel}/Transformator/HFTransformator/HFTransformator.js`
 ));
-/** !SECTION Betriebsmittel Transformator HFTransformator */
+/** !SECTION HFTransformator */
 
-/** SECTION Betriebsmittel Transformator Impulstransformator */
+/** SECTION Impulstransformator */
 const { Impulstransformator } = require(path.resolve(
   `${PBetriebsmittel}/Transformator/Impulstransformator/Impulstransformator.js`
 ));
-/** !SECTION Betriebsmittel Transformator Impulstransformator */
+/** !SECTION Impulstransformator */
 
-/** SECTION Betriebsmittel Transformator Messwandler */
+/** SECTION Messwandler */
 const { Messwandler } = require(path.resolve(
   `${PBetriebsmittel}/Transformator/Messwandler/Messwandler.js`
 ));
 
-/** SECTION Betriebsmittel Transformator Messwandler Stromwandler */
+/** SECTION Stromwandler */
 const { Stromwandler } = require(path.resolve(
   `${PBetriebsmittel}/Transformator/Messwandler/Stromwandler/Stromwandler.js`
 ));
-/** !SECTION Betriebsmittel Transformator Messwandler Stromwandler */
+/** !SECTION Stromwandler */
 
-/** SECTION Betriebsmittel Transformator Messwandler Spannungswandler */
+/** SECTION Spannungswandler */
 const { Spannungswandler } = require(path.resolve(
   `${PBetriebsmittel}/Transformator/Messwandler/Spannungswandler/Spannungswandler.js`
 ));
-/** !SECTION Betriebsmittel Transformator Messwandler Spannungswandler */
+/** !SECTION Spannungswandler */
 
-/** !SECTION Betriebsmittel Transformator Messwandler */
+/** !SECTION Messwandler */
 
-/** SECTION Betriebsmittel Transformator Transaktor */
+/** SECTION Transaktor */
 const { Transaktor } = require(path.resolve(
   `${PBetriebsmittel}/Transformator/Transaktor/Transaktor.js`
 ));
-/** !SECTION Betriebsmittel Transformator Transaktor */
+/** !SECTION Transaktor */
 
-/** SECTION Betriebsmittel Transformator TransformatorMitMittenabgriff */
+/** SECTION TransformatorMitMittenabgriff */
 const { TransformatorMitMittenabgriff } = require(path.resolve(
   `${PBetriebsmittel}/Transformator/TransformatorMitMittenabgriff/TransformatorMitMittenabgriff.js`
 ));
-/** !SECTION Betriebsmittel Transformator TransformatorMitMittenabgriff */
+/** !SECTIONTransformatorMitMittenabgriff */
 
-/** !SECTION Betriebsmittel Transformator */
+/** !SECTION Transformator */
 
 /** !SECTION Betriebsmittel */
 
@@ -665,126 +638,128 @@ const { PhysikalischeChemie } = require(path.resolve(
   `${PPhysikalischeChemie}/PhysikalischeChemie.js`
 ));
 
-/** SECTION PhysikalischeChemie Elektrochemie */
+/** SECTION Elektrochemie */
 const { Elektrochemie } = require(path.resolve(
   `${PPhysikalischeChemie}/Elektrochemie/Elektrochemie.js`
 ));
 
-/** SECTION PhysikalischeChemie Elektrochemie Elektrolyt */
+/** SECTION Elektrolyt */
 const { Elektrolyt } = require(path.resolve(
   `${PPhysikalischeChemie}/Elektrochemie/Elektrolyt/Elektrolyt.js`
 ));
 
-/** !SECTION PhysikalischeChemie Elektrochemie Elektrolyt */
+/** !SECTION Elektrolyt */
 
-/** !SECTION PhysikalischeChemie Elektrochemie */
+/** !SECTION Elektrochemie */
 
-/** !SECTION Physikalische Chemie */
+/** !SECTION PhysikalischeChemie */
 
 /** SECTION Verbindungstechnik */
 const { Verbindungstechnik } = require(path.resolve(
   `${PVerbindungstechnik}/Verbindungstechnik.js`
 ));
 
-/** SECTION Verbindungstechnik BedingtLoesbareVerbindung */
+/** SECTION BedingtLoesbareVerbindung */
 const { BedingtLoesbareVerbindung } = require(path.resolve(
   `${PVerbindungstechnik}/BedingtLoesbareVerbindung/BedingtLoesbareVerbindung.js`
 ));
 
-/** SECTION Verbindungstechnik BedingtLoesbareVerbindung Drahtwickeltechnik */
+/** SECTION Drahtwickeltechnik */
 const { Drahtwickeltechnik } = require(path.resolve(
   `${PVerbindungstechnik}/BedingtLoesbareVerbindung/Drahtwickeltechnik/Drahtwickeltechnik.js`
 ));
-/** !SECTION Verbindungstechnik BedingtLoesbareVerbindung Drahtwickeltechnik */
+/** !SECTION Drahtwickeltechnik */
 
-/** SECTION Verbindungstechnik BedingtLoesbareVerbindung Einpresstechnik */
+/** SECTION Einpresstechnik */
 const { Einpresstechnik } = require(path.resolve(
   `${PVerbindungstechnik}/BedingtLoesbareVerbindung/Einpresstechnik/Einpresstechnik.js`
 ));
 
-/** !SECTION Verbindungstechnik BedingtLoesbareVerbindung Einpresstechnik */
+/** !SECTION Einpresstechnik */
 
-/** SECTION Verbindungstechnik BedingtLoesbareVerbindung Loettechnik */
+/** SECTION Loettechnik */
 const { Loettechnik } = require(path.resolve(
   `${PVerbindungstechnik}/BedingtLoesbareVerbindung/Loettechnik/Loettechnik.js`
 ));
-/** !SECTION Verbindungstechnik BedingtLoesbareVerbindung Loeten */
+/** !SECTION Loettechnik */
 
-/** SECTION Verbindungstechnik BedingtLoesbareVerbindung Schneidklemmtechnik */
+/** SECTION Schneidklemmtechnik */
 const { Schneidklemmtechnik } = require(path.resolve(
   `${PVerbindungstechnik}/BedingtLoesbareVerbindung/Schneidklemmtechnik/Schneidklemmtechnik.js`
 ));
-/** !SECTION Verbindungstechnik BedingtLoesbareVerbindung Schneidklemmtechnik */
+/** !SECTION Schneidklemmtechnik */
 
-/** !SECTION Verbindungstechnik BedingtLoesbareVerbindung */
+/** !SECTION BedingtLoesbareVerbindung */
 
-/** SECTION Verbindungstechnik LoesbareVerbindung */
+/** SECTION LoesbareVerbindung */
 const { LoesbareVerbindung } = require(path.resolve(
   `${PVerbindungstechnik}/LoesbareVerbindung/LoesbareVerbindung.js`
 ));
 
-/** SECTION Verbindungstechnik LoesbareVerbindung Klemmverbindung */
+/** SECTION Klemmverbindung */
 const { Klemmverbindung } = require(path.resolve(
   `${PVerbindungstechnik}/LoesbareVerbindung/Klemmverbindung/Klemmverbindung.js`
 ));
-/** !SECTION Verbindungstechnik LoesbareVerbindung Klemmverbindung */
+/** !SECTION Klemmverbindung */
 
-/** SECTION Verbindungstechnik LoesbareVerbindung QuetschUndSteckverbindung */
+/** SECTION QuetschUndSteckverbindung */
 const { QuetschUndSteckverbindung } = require(path.resolve(
   `${PVerbindungstechnik}/LoesbareVerbindung/QuetschUndSteckverbindung/QuetschUndSteckverbindung.js`
 ));
-/** !SECTION Verbindungstechnik LoesbareVerbindung QuetschUndSteckverbindung */
+/** !SECTION QuetschUndSteckverbindung */
 
-/** SECTION Verbindungstechnik LoesbareVerbindung SchraubVerbindung */
+/** SECTION SchraubVerbindung */
 const { SchraubVerbindung } = require(path.resolve(
   `${PVerbindungstechnik}/LoesbareVerbindung/SchraubVerbindung/SchraubVerbindung.js`
 ));
-/** !SECTION Verbindungstechnik LoesbareVerbindung SchraubVerbindung */
+/** !SECTION SchraubVerbindung */
 
-/** !SECTION Verbindungstechnik LoesbareVerbindung */
+/** !SECTION LoesbareVerbindung */
 
-/** SECTION Verbindungstechnik UnloesbareVerbindung */
+/** SECTION UnloesbareVerbindung */
 const { UnloesbareVerbindung } = require(path.resolve(
   `${PVerbindungstechnik}/UnloesbareVerbindung/UnloesbareVerbindung.js`
 ));
 
-/** SECTION Verbindungstechnik UnloesbareVerbindung Bonden */
+/** SECTION Bonden */
 const { Bonden } = require(path.resolve(
   `${PVerbindungstechnik}/UnloesbareVerbindung/Bonden/Bonden.js`
 ));
 
-/** !SECTION Verbindungstechnik UnloesbareVerbindung Bonden */
+/** !SECTION Bonden */
 
-/** SECTION Verbindungstechnik UnloesbareVerbindung Klebeverbindung */
+/** SECTION Klebeverbindung */
 const { Klebeverbindung } = require(path.resolve(
   `${PVerbindungstechnik}/UnloesbareVerbindung/Klebeverbindung/Klebeverbindung.js`
 ));
 
-/** !SECTION Verbindungstechnik UnloesbareVerbindung Klebeverbindung */
+/** !SECTION Klebeverbindung */
 
-/** SECTION Verbindungstechnik UnloesbareVerbindung Pressverbindung */
+/** SECTION Pressverbindung */
 const { Pressverbindung } = require(path.resolve(
   `${PVerbindungstechnik}/UnloesbareVerbindung/Pressverbindung/Pressverbindung.js`
 ));
 
-/** !SECTION Verbindungstechnik UnloesbareVerbindung Pressverbindung */
+/** !SECTION Pressverbindung */
 
-/** SECTION Verbindungstechnik UnloesbareVerbindung Schweisstechnik */
+/** SECTION Schweisstechnik */
 const { Schweisstechnik } = require(path.resolve(
   `${PVerbindungstechnik}/UnloesbareVerbindung/Schweisstechnik/Schweisstechnik.js`
 ));
 
-/** !SECTION Verbindungstechnik UnloesbareVerbindung Schweisstechnik */
+/** !SECTION Schweisstechnik */
 
-/** SECTION Verbindungstechnik UnloesbareVerbindung Spleissen */
+/** SECTION Spleissen */
 const { Spleissen } = require(path.resolve(
   `${PVerbindungstechnik}/UnloesbareVerbindung/Spleissen/Spleissen.js`
 ));
-/** !SECTION Verbindungstechnik UnloesbareVerbindung Spleissen */
+/** !SECTION Spleissen */
 
-/** !SECTION Verbindungstechnik UnloesbareVerbindung */
+/** !SECTION UnloesbareVerbindung */
 
 /** !SECTION Verbindungstechnik */
+
+/** !SECTION Betriebsmittel */
 
 /** SECTION Kernel */
 
@@ -809,7 +784,7 @@ const { Planemetrie } = require(path.resolve("src/Kernel/Planemetrie.js"));
 const { Stack } = require(path.resolve(
   `${PDatenverarbeitung}/dynamischeDatenstrukturen/listen/stapel/stack.js`
 ));
-/** SECTION Dynamische Datenstrukturen */
+/** !SECTION Dynamische Datenstrukturen */
 
 module.exports = {
   Werkstoff,

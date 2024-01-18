@@ -6,7 +6,7 @@ const { Uebertragungswege } = require(path.resolve(
 ));
 
 class Kabel extends Uebertragungswege {
-  constructor(parameter) {
+  constructor(Parameter) {
     super();
     this.Parameter = Parameter;
   }

@@ -1,0 +1,22 @@
+<%- include('aufgabe.ejs',{}) %>
+<%- include('../../../../../../layouts/partials/ergebnis.ejs') %>
+
+const data=await populate( "example/Uebung16/data.json" )
+
+// let dataSK1=data.Parameter.SK1
+// let dataW1=data.Parameter.W1
+
+const table=new Tabelle( data,"#ergebnis" );
+table.tabulate();
+
+// Rückkopplung
+const sel=d3.select( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][0].innerText.split('\t');
+Material.value = sel[0];
+D.value = sel[1];
+d.value = sel[2];
+R.value = sel[3];
+
+
+// svg grafik
+
+</script>

@@ -78,7 +78,6 @@ async function Beispiel11(input) {
       };
 
       dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), R);
-      // Nur Widerstand nicht Widerstände also Rmap
     },
     function () {
       console.error(`${datadir}`);

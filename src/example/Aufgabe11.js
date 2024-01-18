@@ -1,5 +1,4 @@
 require("use-strict");
-
 /**
  * @description
  * Wie groß ist die Spannung, die an einem Widerstand liegt, dessen Leitwert 3*E-2 S beträgt und
