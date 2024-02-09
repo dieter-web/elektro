@@ -1,0 +1,21 @@
+<%- include('../../../partials/head',{}) %>
+
+<body>
+    <%- include('../../../partials/navbarTemplate', {}) %>
+    <script type="module">
+        import {mainNavbar} from "/modules/mainNavbar.js"
+        let menu=[
+            {"name": "elektro","link": "/","class": "nav-link"},
+            {"name": "Betriebsmittel","link": "/betriebsmittel","class": "nav-link"},
+            {"name": "ElektrischeMaschinen","link": "/betriebsmittel/elektrischemaschinen","class": "nav-link"},
+            {"name": "Beweglich","link": "/betriebsmittel/elektrischemaschinen/beweglich","class": "nav-link"},
+            {"name": "RotierendeElektrischeMaschinen","link": "/betriebsmittel/elektrischemaschinen/beweglich/rotierendeelektrischemaschinen","class": "nav-link"},
+            {"name": "Umformer","link": "/betriebsmittel/elektrischemaschinen/beweglich/rotierendeelektrischemaschinen/umformer","class": "nav-link"},
+        ]
+        mainNavbar( menu );
+    </script>
+    <main>
+        <%- body %>
+    </main>
+    <%#- include('../../partials/footer',{}) %>
+</body>

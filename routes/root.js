@@ -9,21 +9,14 @@ router.get("/", (req, res) => {
     {
       text: "Grundlagen der Elektrotechnik",
       teil: "Band 1",
-      menu: [
-        { name: "elektro", link: "/", class: "nav-link" },
-        { name: "Elektrotechnik", link: "/elektrotechnik", class: "nav-link" },
-        { name: "Bauelemente", link: "/bauelemente", class: "nav-link" },
-        { name: "Betriebsmittel", link: "/betriebsmittel", class: "nav-link" },
-        {
-          name: "PhysikalischeChemie",
-          link: "/physikalischechemie",
-          class: "nav-link",
-        },
-        { name: "Werkstoff", link: "/werkstoff", class: "nav-link" },
-      ],
+      Einleitung: `Aus den Büchern 'Grundlagen der Elektrotechnik Band1 und Band2 Lehrbuch für Ingenieurschulen der Elektrotechnik  9.,durchgesehene Auflage Autorenkollektiv VEB VERLAG TECHNIK BERLIN' werden die Beispiele und Aufgaben hier wiedergegeben. Wobei der Blickpunkt auf Weiterentwicklung dieser App seht.`,
     },
     (err, html) => {
-      res.send(html);
+      if (err) {
+        res.send(`Fehler: ${err}`);
+      } else {
+        res.send(html);
+      }
     }
   );
 });

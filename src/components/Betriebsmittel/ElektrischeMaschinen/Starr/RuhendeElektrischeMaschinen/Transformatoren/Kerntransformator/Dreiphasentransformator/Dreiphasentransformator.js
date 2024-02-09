@@ -1,11 +1,11 @@
 require("use-strict");
 const path = require("path");
 
-const { Transformator } = require(path.resolve(
-  "src/components/Betriebsmittel/Transformator/Transformator.js"
+const { Kerntransformator } = require(path.resolve(
+  "src/components/Betriebsmittel/ElektrischeMaschinen/Starr/RuhendeElektrischeMaschinen/Transformatoren/Kerntransformator/Kerntransformator.js"
 ));
 
-class Dreiphasentransformator extends Transformator {
+class Dreiphasentransformator extends Kerntransformator {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;

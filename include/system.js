@@ -563,74 +563,124 @@ const { Zeitmesser } = require(path.resolve(
 
 /** !SECTION Messgeraete */
 
-/** SECTION Transformator */
-const { Transformator } = require(path.resolve(
-  `${PBetriebsmittel}/Transformator/Transformator.js`
+/** SECTION Elektrische Maschinen */
+const { ElektrischeMaschinen } = require(path.resolve(
+  `${PBetriebsmittel}/ElektrischeMaschinen/ElektrischeMaschinen.js`
 ));
 
-/** SECTION AudioTransformator */
-const { Audiotransformator } = require(path.resolve(
-  `${PBetriebsmittel}/Transformator/Audiotransformator/Audiotransformator.js`
+/** SECTION Beweglich */
+
+/** SECTION RotierendeElektrischeMaschinen */
+
+/** SECTION Asynchronmaschienen */
+/** !SECTION Asynchronmaschienen */
+
+/** SECTION Generatoren */
+/** !SECTION Generatoren */
+
+/** SECTION KommutatorMaschinen */
+/** !SECTION KommutatorMaschinen */
+
+/** SECTION Motoren */
+/** !SECTION Motoren */
+
+/** SECTION Synchronmaschinen */
+/** !SECTION Synchronmaschinen */
+
+/** SECTION Umformer */
+/** !SECTION Umformer */
+
+/** !SECTION RotierendeElektrischeMaschinen *
+
+/** !SECTION Beweglich */
+
+/** SECTION Starr */
+
+/** SECTION RuhendeElektrischeMaschinen */
+
+/** SECTION Transformatoren */
+
+/** SECTION HFTransformator */
+const { HFTransformator } = require(path.resolve(
+  `${PBetriebsmittel}/ElektrischeMaschinen/Starr/RuhendeElektrischeMaschinen/Transformatoren/HFTransformator/HFTransformator.js`
 ));
-/** !SECTION AudioTransformator */
+
+/** !SECTION HFTransformator */
+
+/** SECTION Impulstransformator */
+const { Impulstransformator } = require(path.resolve(
+  `${PBetriebsmittel}/ElektrischeMaschinen/Starr/RuhendeElektrischeMaschinen/Transformatoren/Impulstransformator/Impulstransformator.js`
+));
+/** !SECTION Impulstransformator */
+
+/** SECTION Kerntransformator */
+
+/** SECTION Audiotransformator */
+const { Audiotransformator } = require(path.resolve(
+  `${PBetriebsmittel}/ElektrischeMaschinen/Starr/RuhendeElektrischeMaschinen/Transformatoren/Kerntransformator/Audiotransformator/Audiotransformator.js`
+));
+/** !SECTION Audiotransformator */
 
 /** SECTION Dreiphasentransformator */
 const { Dreiphasentransformator } = require(path.resolve(
-  `${PBetriebsmittel}/Transformator/Dreiphasentransformator/Dreiphasentransformator.js`
+  `${PBetriebsmittel}/ElektrischeMaschinen/Starr/RuhendeElektrischeMaschinen/Transformatoren/Kerntransformator/Dreiphasentransformator/Dreiphasentransformator.js`
 ));
 /** !SECTION Dreiphasentransformator */
 
 /** SECTION Einphasentransformator */
 const { Einphasentransformator } = require(path.resolve(
-  `${PBetriebsmittel}/Transformator/Einphasentransformator/Einphasentransformator.js`
+  `${PBetriebsmittel}/ElektrischeMaschinen/Starr/RuhendeElektrischeMaschinen/Transformatoren/Kerntransformator/Einphasentransformator/Einphasentransformator.js`
 ));
 /** !SECTION Einphasentransformator */
 
-/** SECTION HFTransformator */
-const { HFTransformator } = require(path.resolve(
-  `${PBetriebsmittel}/Transformator/HFTransformator/HFTransformator.js`
-));
-/** !SECTION HFTransformator */
+/** SECTION Ringkerntransformator */
+/** !SECTION Ringkerntransformator */
 
-/** SECTION Impulstransformator */
-const { Impulstransformator } = require(path.resolve(
-  `${PBetriebsmittel}/Transformator/Impulstransformator/Impulstransformator.js`
+/** SECTION TransformatorMitMittenabgriff */
+const { TransformatorMitMittenabgriff } = require(path.resolve(
+  `${PBetriebsmittel}/ElektrischeMaschinen/Starr/RuhendeElektrischeMaschinen/Transformatoren/Kerntransformator/TransformatorMitMittenabgriff/TransformatorMitMittenabgriff.js`
 ));
-/** !SECTION Impulstransformator */
+/** !SECTION TransformatorMitMittenabgriff */
+
+/** !SECTION Kerntransformator */
+
+/** SECTION Manteltransformator */
+/** !SECTION Manteltransformator */
 
 /** SECTION Messwandler */
 const { Messwandler } = require(path.resolve(
-  `${PBetriebsmittel}/Transformator/Messwandler/Messwandler.js`
+  `${PBetriebsmittel}/ElektrischeMaschinen/Starr/RuhendeElektrischeMaschinen/Transformatoren/Messwandler/Messwandler.js`
 ));
-
-/** SECTION Stromwandler */
-const { Stromwandler } = require(path.resolve(
-  `${PBetriebsmittel}/Transformator/Messwandler/Stromwandler/Stromwandler.js`
-));
-/** !SECTION Stromwandler */
 
 /** SECTION Spannungswandler */
 const { Spannungswandler } = require(path.resolve(
-  `${PBetriebsmittel}/Transformator/Messwandler/Spannungswandler/Spannungswandler.js`
+  `${PBetriebsmittel}/ElektrischeMaschinen/Starr/RuhendeElektrischeMaschinen/Transformatoren/Messwandler/Spannungswandler/Spannungswandler.js`
 ));
 /** !SECTION Spannungswandler */
+
+/** SECTION Stromwandler */
+const { Stromwandler } = require(path.resolve(
+  `${PBetriebsmittel}/ElektrischeMaschinen/Starr/RuhendeElektrischeMaschinen/Transformatoren/Messwandler/Stromwandler/Stromwandler.js`
+));
+/** !SECTION Stromwandler */
 
 /** !SECTION Messwandler */
 
 /** SECTION Transaktor */
 const { Transaktor } = require(path.resolve(
-  `${PBetriebsmittel}/Transformator/Transaktor/Transaktor.js`
+  `${PBetriebsmittel}/ElektrischeMaschinen/Starr/RuhendeElektrischeMaschinen/Transformatoren/Transaktor/Transaktor.js`
 ));
 /** !SECTION Transaktor */
-
-/** SECTION TransformatorMitMittenabgriff */
-const { TransformatorMitMittenabgriff } = require(path.resolve(
-  `${PBetriebsmittel}/Transformator/TransformatorMitMittenabgriff/TransformatorMitMittenabgriff.js`
+/** SECTION Transformator */
+const { Transformator } = require(path.resolve(
+  `${PBetriebsmittel}/ElektrischeMaschinen/Starr/RuhendeElektrischeMaschinen/Transformatoren/Transformator/Transformator.js`
 ));
-/** !SECTIONTransformatorMitMittenabgriff */
-
 /** !SECTION Transformator */
 
+/** !SECTION Transformatoren */
+/** !SECTION RuhendeElektrischeMaschinen */
+/** !SECTION Starr */
+/** !SECTION ElektrischeMaschinen */
 /** !SECTION Betriebsmittel */
 
 /** SECTION PhysikalischeChemie */

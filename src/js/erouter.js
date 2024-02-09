@@ -35,9 +35,12 @@ function erouter(router, p, l, e, route, example) {
       body().isJSON(), // Validierung
       (req, res) => {
         const { func } = require(`${e}${example}`);
-        func(req.body); // Daten werden in die json-Datei geschrieben
+        let R1 = func(req.body); // Daten werden in die json-Datei geschrieben
+        // let erg = func(req.body); // In Erg sollte das Ergebnis-JSON stehen ?
         res.render(`${p}${route}${example}${ergebnis}`, {
+          // im ergebnis sollte erg sichtbar sein ?
           layout: `${l}${route}${layout}`,
+          // ergebnis: erg
         });
       }
     );

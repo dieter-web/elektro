@@ -26,8 +26,8 @@ async function Aufgabe11(input) {
 
       EK.parameter({ G: R1.Parameter.G, I: R1.Parameter.I });
       R1.Berechnung["U"] = EK.UIG().to("V");
-
       dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), R1);
+      return R1;
     },
     function () {
       console.error(`${datadir}`);

@@ -432,36 +432,119 @@ erouter(router, R2.p2, R2.l2, R2.e, R2.r2_24_1_1_1, R2.b17);
 
 /** !SECTION Verschiedenes */
 
+/** SECTION Elektrische Maschinen */
+routerGet(router, R2.r2_20, R2.p2, R2.l2);
+/** SECTION Beweglich */
+routerGet(router, R2.r2_20_1, R2.p2, R2.l2);
+/** SECTION RotierendeElektrischeMaschinen */
+routerGet(router, R2.r2_20_1_1, R2.p2, R2.l2);
+/** SECTION Asynchronmaschienen */
+routerGet(router, R2.r2_20_1_1_1, R2.p2, R2.l2);
+/** !SECTION Asynchronmaschienen */
+
+/** SECTION Generatoren */
+routerGet(router, R2.r2_20_1_1_2, R2.p2, R2.l2);
+/** !SECTION Generatoren */
+
+/** SECTION KommutatorMaschinen */
+routerGet(router, R2.r2_20_1_1_3, R2.p2, R2.l2);
+
+/** SECTION DreiphasenKommutatorMaschienen */
+routerGet(router, R2.r2_20_1_1_3_1, R2.p2, R2.l2);
+/** !SECTION DreiphasenKommutatorMaschienen */
+
+/** SECTION EinphasenKommutatorMaschienen */
+routerGet(router, R2.r2_20_1_1_3_2, R2.p2, R2.l2);
+/** !SECTION EinphasenKommutatorMaschienen */
+
+/** SECTION Gleichstrommaschine */
+routerGet(router, R2.r2_20_1_1_3_3, R2.p2, R2.l2);
+/** !SECTION Gleichstrommaschine */
+
+/** !SECTION KommutatorMaschinen */
+
+/** SECTION Motoren */
+routerGet(router, R2.r2_20_1_1_4, R2.p2, R2.l2);
+/** !SECTION Motoren */
+
+/** SECTION Synchronmaschinen */
+routerGet(router, R2.r2_20_1_1_5, R2.p2, R2.l2);
+/** !SECTION Synchronmaschinen */
+
+/** SECTION Umformer */
+routerGet(router, R2.r2_20_1_1_6, R2.p2, R2.l2);
+/** !SECTION Umformer */
+
+/** !SECTION RotierendeElektrischeMaschinen *
+
+/** !SECTION Beweglich */
+
+/** SECTION Starr */
+routerGet(router, R2.r2_20_2, R2.p2, R2.l2);
+/** SECTION RuhendeElektrischeMaschinen */
+routerGet(router, R2.r2_20_2_1, R2.p2, R2.l2);
 /** SECTION Transformatoren */
-
-/** SECTION Audiotransformator */
-/** !SECTION Audiotransformator */
-
-/** SECTION Dreiphasentransformator */
-/** !SECTION Dreiphasentransformator */
-
-/** SECTION Einphasentransformator */
-/** !SECTION Einphasentransformator */
-
+routerGet(router, R2.r2_20_2_1_1, R2.p2, R2.l2);
 /** SECTION HFTransformator */
+routerGet(router, R2.r2_20_2_1_1_1, R2.p2, R2.l2);
 /** !SECTION HFTransformator */
 
 /** SECTION Impulstransformator */
+routerGet(router, R2.r2_20_2_1_1_2, R2.p2, R2.l2);
 /** !SECTION Impulstransformator */
 
+/** SECTION Kerntransformator */
+routerGet(router, R2.r2_20_2_1_1_3, R2.p2, R2.l2);
+
+/** SECTION Audiotransformator */
+routerGet(router, R2.r2_20_2_1_1_3_1, R2.p2, R2.l2);
+/** !SECTION Audiotransformator */
+
+/** SECTION Dreiphasentransformator */
+routerGet(router, R2.r2_20_2_1_1_3_2, R2.p2, R2.l2);
+/** !SECTION Dreiphasentransformator */
+
+/** SECTION Einphasentransformator */
+routerGet(router, R2.r2_20_2_1_1_3_3, R2.p2, R2.l2);
+/** !SECTION Einphasentransformator */
+
+/** SECTION Ringkerntransformator */
+routerGet(router, R2.r2_20_2_1_1_3_4, R2.p2, R2.l2);
+/** !SECTION Ringkerntransformator */
+
+/** SECTION TransformatorMitMittenabgriff */
+routerGet(router, R2.r2_20_2_1_1_3_5, R2.p2, R2.l2);
+/** !SECTION TransformatorMitMittenabgriff */
+
+/** !SECTION Kerntransformator */
+
+/** SECTION Manteltransformator */
+routerGet(router, R2.r2_20_2_1_1_4, R2.p2, R2.l2);
+/** !SECTION Manteltransformator */
+
 /** SECTION Messwandler */
+routerGet(router, R2.r2_20_2_1_1_5, R2.p2, R2.l2);
+/** SECTION Spannungswandler */
+routerGet(router, R2.r2_20_2_1_1_5_1, R2.p2, R2.l2);
+/** !SECTION Spannungswandler */
+
+/** SECTION Stromwandler */
+routerGet(router, R2.r2_20_2_1_1_5_2, R2.p2, R2.l2);
+/** !SECTION Stromwandler */
+
 /** !SECTION Messwandler */
 
 /** SECTION Transaktor */
+routerGet(router, R2.r2_20_2_1_1_6, R2.p2, R2.l2);
 /** !SECTION Transaktor */
 
-/** SECTION Transformator */
-/** !SECTION Transformator*/
-
-/** SECTION TransformatorMitMittenabgriff */
-/** !SECTION TransformatorMitMittenabgriff */
-
 /** !SECTION Transformatoren */
+
+/** !SECTION RuhendeElektrischeMaschinen */
+
+/** !SECTION Starr */
+
+/** !SECTION Elektrische Maschinen */
 
 /** !SECTION Betriebsmittel */
 

@@ -32,17 +32,9 @@ async function Uebung17(input) {
       T1.Kennzeichnung.Art = "T";
       T1.Kennzeichnung.Zählnummer = "1";
 
-      T1.Parameter.ρM = readMaterialParameter(
-        T1.Parameter.Material,
-        "ρ"
-      ).toString();
-
-      T1.Parameter.δ0M = readMaterialParameter(
-        T1.Parameter.Material,
-        "δ0"
-      ).toString();
-
-      T1.Parameter.δ20 = readKonstante("Vergleichstemperatur").toString();
+      T1.Parameter.ρM = readMaterialParameter(T1.Parameter.Material, "ρ");
+      T1.Parameter.δ0M = readMaterialParameter(T1.Parameter.Material, "δ0");
+      T1.Parameter.δ20 = readKonstante("Vergleichstemperatur");
 
       EK.parameter({
         Rδ2: T1.Parameter.R2,
@@ -59,10 +51,10 @@ async function Uebung17(input) {
     }
   );
 }
-// let input = {
-//   Material: 'Kupfer',
-//   R1: '560 ohm',
-//   R2: '604 ohm'
-// }
-// Uebung17(input)
-exports.func = Uebung17;
+let input = {
+  Material: "Kupfer",
+  R1: "560 ohm",
+  R2: "604 ohm",
+};
+Uebung17(input);
+// exports.func = Uebung17;
