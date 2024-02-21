@@ -5,3 +5,44 @@
 <p>
     <%= locals.Einleitung %>
 </p>
+
+<div id="e1"></div>
+
+<script type="module">
+    import {showCards} from '/modules/showCards.mjs'
+    const id="#e1"
+    const data=[
+        {
+            "id": 1,
+            "href": "/bauelemente",
+            "name": "Bauelemente",
+            "text": "Absperrschieber, Achsen, Ausleger, Balken, Baukonstruktionen, Behälter, Böcke, Bolzen, Buchsen, Dächer, Decken, Drahtseiltriebe, Exzenter, Federn, Fenster, Flansche, Gefäse, Gelenke, Geradführungen, Getriebe, Gewinde, Hähne, Haltestifte, Hanfseiltriebe, Hebel, Kegelräder, Keile, Kolben, Kolbenbolzen, Kolbenringe, Kolbenstange, Konus, Kreuzköpfe, Kreuzkopfboltzen, Kupplungen, Kurbel, Kurbeltrieb, Kurbelwellen, Kurbelzapfen, Lager, Maschinenfundamente, Mauern, Muttern, Naben, Nägel, Nieten, Passungen, Platten, Riementriebe, Ringe, Rohrleitungen, Säulen, Scheiben, Schraubenräder, Schubstangen, Senkungen, Sicherungsbleche, Sicherungsringe, Splinte, Stahlblech, Stahldraht, Stahlprofile, Stifte, Stopfbüchsen, Träger, Transmissionen, Türen, Ventile, Wandarm, Wellen, Zahnräder, Zapfen, Zylinder "
+        },
+        {
+            "id": 2,
+            "href": "/betriebsmittel",
+            "name": "Betriebsmittel",
+            "text": "Abschluesse, Baugruppen, ElektrischeMaschinen, Filter, Geräte mit elektrischen Antrieb, Halbleiter, Induktivität, Klemmvorrichtungen, Kondensatoren, Leiter, Melder, Messgeräte, Prüfgeräte, Regler, Relais, Schalter, Schütze, Schutzeinrichtungen, Sensoren, Steckvorrichtungen, Übertragungswege, Umsetzer, Verschiedenes, Verstärkter, Wähler, Widerstände"
+        },
+        {
+            "id": 3,
+            "href": "/elektrotechnik",
+            "name": "Elektrotechnik",
+            "text": "Gleichspannung"
+        },
+        {
+            "id": 4,
+            "href": "/physikalischechemie",
+            "name": "Physikalische Chemie",
+            "text": "Elektrochemie"
+        },
+        {
+            "id": 5,
+            "href": "/werkstoffe",
+            "name": "Werkstoffe",
+            "text": "Automatenstahl, Baustahl, Einsatzstahl, Eisenwerkstoffe, Leiterwerkstoffe, Magnetischer Werkstoff, Vergütungsstahl, Werkzeugstahl"
+        },
+    ]
+
+    showCards( data,id )
+</script>

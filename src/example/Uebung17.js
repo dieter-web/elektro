@@ -18,13 +18,9 @@ async function Uebung17(input) {
   ));
 
   const { Elektro, Transformator } = require(path.resolve("include/system"));
-
   const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
-
   const T1 = new Transformator(input);
-
   const EK = new Elektro();
-
   const datadir = "src/json/example/Uebung17";
 
   makeDirectory(datadir).then(
@@ -51,10 +47,10 @@ async function Uebung17(input) {
     }
   );
 }
-let input = {
-  Material: "Kupfer",
-  R1: "560 ohm",
-  R2: "604 ohm",
-};
-Uebung17(input);
-// exports.func = Uebung17;
+// let input = {
+//   Material: "Kupfer",
+//   R1: "560 ohm",
+//   R2: "604 ohm",
+// };
+// Uebung17(input);
+exports.func = Uebung17;

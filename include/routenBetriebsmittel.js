@@ -96,6 +96,7 @@ module.exports = {
   r2_20_2_1_1_5_2: `/ElektrischeMaschinen/Starr/RuhendeElektrischeMaschinen/Transformatoren/Messwandler/Stromwandler`,
 
   r2_20_2_1_1_6: `/ElektrischeMaschinen/Starr/RuhendeElektrischeMaschinen/Transformatoren/Transaktor`,
+  r2_20_2_1_1_7: `/ElektrischeMaschinen/Starr/RuhendeElektrischeMaschinen/Transformatoren/Transformator`,
 
   r2_21: `/Uebertragungswege`,
   r2_21_1: `/Uebertragungswege/Antennen`,

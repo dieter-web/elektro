@@ -1,0 +1,35 @@
+<%- include('aufgabe.ejs',{}) %>
+<%- include('../../../../../../../../layouts/partials/ergebnis.ejs') %>
+
+
+import {vTransformator} from
+'/components/Betriebsmittel/ElektrischeMaschinen/Starr/RuhendeElektrischeMaschinen/Transformatoren/Transformator/Transformator.mjs'
+
+// tabelle ergebnis
+const data=await populate( "example/Uebung17/data.json" )
+
+// Ausgabe Kennzeichnung
+drawkennzeichnung( data,"#kennzeichnung" )
+
+// Ausgabe Datentabelle
+// tabulate( data,"#ergebnis" )
+const table=new Tabelle( data,"#ergebnis" );
+table.tabulate();
+
+
+// Rückkopplung zum Eingebeformular
+const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
+Material.value=sel[ 0 ]
+R1.value=sel[ 1 ]
+R2.value=sel[ 2 ]
+
+
+// Visualisierung
+const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
+const point={x: 320,y: 240};
+
+let T1=new vTransformator( data,point )
+T1.createNode();
+view.addNode( T1.node )
+
+</script>

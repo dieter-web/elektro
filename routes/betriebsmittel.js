@@ -483,8 +483,18 @@ routerGet(router, R2.r2_20_1_1_6, R2.p2, R2.l2);
 routerGet(router, R2.r2_20_2, R2.p2, R2.l2);
 /** SECTION RuhendeElektrischeMaschinen */
 routerGet(router, R2.r2_20_2_1, R2.p2, R2.l2);
+
 /** SECTION Transformatoren */
 routerGet(router, R2.r2_20_2_1_1, R2.p2, R2.l2);
+
+/** SECTION Transformator */
+routerGet(router, R2.r2_20_2_1_1_7, R2.p2, R2.l2);
+
+/** NOTE Transformator Übung 1.7 */
+erouter(router, R2.p2, R2.l2, R2.e, R2.r2_20_2_1_1_7, R2.u17);
+
+/** !SECTION Transformator */
+
 /** SECTION HFTransformator */
 routerGet(router, R2.r2_20_2_1_1_1, R2.p2, R2.l2);
 /** !SECTION HFTransformator */
