@@ -13,41 +13,27 @@ require("use-strict");
  */
 async function Uebung18(input) {
   const path = require("path");
-  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
+
   const dbJson = require(path.resolve("controllers/dbJson"));
-
-  const { Elektro, Magnetspule } = require(path.resolve("include/system"));
-
+  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const { readMaterialParameter } = require(path.resolve(
     "src/js/readMaterialParameter.js"
   ));
-
   const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
 
-  const L1 = new Magnetspule({
-    Material: "Kupfer",
-    δ1: "12 celsius",
-    δ2: "60 celsius",
-  });
-
+  const { Elektro, Magnetspule } = require(path.resolve("include/system"));
+  const L1 = new Magnetspule(input);
   const EK = new Elektro();
+  const datadir = "src/json/example/Uebung18";
 
-  const datadir = "src/json/example/Uebung16";
   makeDirectory(datadir).then(
     function () {
       L1.Kennzeichnung.Art = "L";
       L1.Kennzeichnung.Zählnummer = "1";
 
-      L1.Parameter.ρM = readMaterialParameter(
-        L1.Parameter.Material,
-        "ρ"
-      ).toString();
-      L1.Parameter.α20 = readMaterialParameter(
-        L1.Parameter.Material,
-        "α20"
-      ).toString();
-
-      L1.Parameter.δ20 = readKonstante("Vergleichstemperatur").toString();
+      L1.Parameter.ρM = readMaterialParameter(L1.Parameter.Material, "ρ");
+      L1.Parameter.α20 = readMaterialParameter(L1.Parameter.Material, "α20");
+      L1.Parameter.δ20 = readKonstante("Vergleichstemperatur");
 
       EK.parameter({
         δ1: L1.Parameter.δ1,
@@ -55,8 +41,7 @@ async function Uebung18(input) {
         δ20: L1.Parameter.δ20,
         α20: L1.Parameter.α20,
       });
-
-      L1.Parameter.pI = EK.Rpδ1δ2().toString();
+      L1.Berechnung.pI = EK.Rpδ1δ2();
 
       dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), L1);
     },
@@ -66,9 +51,9 @@ async function Uebung18(input) {
   );
 }
 // let input = {
-//   Material: 'Kupfer',
-//   δ1: '12 celsius',
-//   δ2: '60 celsius'
-// }
-// Uebung18(input)
+//   Material: "Kupfer",
+//   δ1: "12 celsius",
+//   δ2: "60 celsius",
+// };
+// Uebung18(input);
 exports.func = Uebung18;

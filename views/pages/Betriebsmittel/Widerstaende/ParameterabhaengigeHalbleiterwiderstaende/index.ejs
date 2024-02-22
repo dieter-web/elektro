@@ -1,0 +1,21 @@
+<div id="e1"></div>
+
+<script type="module">
+    import {showCards} from '/modules/showCards.mjs';
+    const id="#e1"
+    const data=[
+        {
+            "id": 1,
+            "href": "/betriebsmittel/widerstaende/parameterabhaengigehalbleiterwiderstaende/elektrischeparameter",
+            "name": "Elektrische Parameter",
+            "text": "Spannung"
+        },
+        {
+            "id": 2,
+            "href": "/betriebsmittel/widerstaende/parameterabhaengigehalbleiterwiderstaende/nichtelektrischeparameter",
+            "name": "Nichtelektrische Parameter",
+            "text": "Druck, MagnetischesFeld, Strahlung, Temperatur"
+        },
+    ]
+    showCards( data,id )
+</script>

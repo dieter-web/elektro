@@ -1,10 +1,9 @@
 require("use-strict");
 const path = require("path");
 const ejs = require("ejs");
-
 const express = require("express");
-// const i18n = require("i18n");
 
+// const i18n = require("i18n");
 // i18n.configure({
 //   locales: ["de", "en"],
 //   cookie: "yourcookiename",
@@ -41,6 +40,9 @@ const staticOptions = {
     "css.map",
     "jpg",
     "json",
+    "tcl",
+    "pl",
+    "php",
   ],
   fallthrough: true,
   immutable: false,
@@ -53,8 +55,8 @@ app.use(express.static(`${__dirname}/public`, staticOptions));
 app.use(express.static(`${__dirname}/src`, staticOptions));
 app.use(express.static(`${__dirname}/controllers`, staticOptions));
 app.use(express.static(`${__dirname}/lib`, staticOptions));
-
 app.use(express.static(`${__dirname}/include`, staticOptions));
+app.use(express.static(`${__dirname}/administrator`, staticOptions));
 
 const jsonOptions = {
   inflate: true,

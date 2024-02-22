@@ -22,7 +22,7 @@ class Kernel {
 
   run(code, param) {
     try {
-      return math.unit(math.parse(code).compile().evaluate(param).toSI());
+      return math.unit(math.parse(code).compile().evaluate(param)); //.toSI();
     } catch (err) {
       console.error(err);
     }

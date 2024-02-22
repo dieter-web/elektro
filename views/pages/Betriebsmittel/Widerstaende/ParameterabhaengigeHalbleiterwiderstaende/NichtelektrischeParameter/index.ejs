@@ -1,0 +1,27 @@
+<div id="e1"></div>
+
+<script type="module">
+    import {showCards} from '/modules/showCards.mjs';
+    const id="#e1"
+    const data=[
+        {
+            "id": 1,
+            "href": "/betriebsmittel/widerstaende/parameterabhaengigehalbleiterwiderstaende/nichtelektrischeparameter/magnetischesfeld",
+            "name": "Magnetisches Feld",
+            "text": "Feldplatte"
+        },
+        {
+            "id": 2,
+            "href": "/betriebsmittel/widerstaende/parameterabhaengigehalbleiterwiderstaende/nichtelektrischeparameter/strahlung",
+            "name": "Strahlung",
+            "text": "Fotowiderstand"
+        },
+        {
+            "id": 3,
+            "href": "/betriebsmittel/widerstaende/parameterabhaengigehalbleiterwiderstaende/nichtelektrischeparameter/temperatur",
+            "name": "Temperatur",
+            "text": "Thermistor"
+        },
+    ]
+    showCards( data,id )
+</script>

@@ -1,1 +1,1 @@
-{"Berechnung":{"Ar":{"mathjs":"Unit","value":0.00021598449493429817,"unit":"m^2","fixPrefix":true},"l":{"mathjs":"Unit","value":0.8003872334048479,"unit":"m","fixPrefix":true}},"Parameter":{"Material":"Blei","G":"1285S","d":"2.5cm","D":"3.0cm","ρ":"0.21 ohm*mm^2/m"}}
+{"Berechnung":{"Ar":{"mathjs":"Unit","value":2.1598449493429817,"unit":"cm^2","fixPrefix":false},"l":{"mathjs":"Unit","value":0.8003872334048479,"unit":"m","fixPrefix":true}},"Parameter":{"Material":"Blei","G":"1285S","d":"2.5cm","D":"3.0cm","ρ":"0.21 ohm*mm^2/m"}}

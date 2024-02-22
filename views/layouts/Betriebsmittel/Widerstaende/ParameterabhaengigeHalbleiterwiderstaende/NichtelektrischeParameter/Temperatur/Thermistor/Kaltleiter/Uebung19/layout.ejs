@@ -1,0 +1,24 @@
+<%- include('../../../../../../../../partials/head',{}) %>
+
+<body>
+    <%- include('../../../../../../../../partials/navbarTemplate', {}) %>
+    <script type="module">
+        import {mainNavbar} from "/modules/mainNavbar.js"
+        let menu=[
+            {"name": "elektro","link": "/","class": "nav-link"},
+            {"name": "Betriebsmittel","link": "/betriebsmittel","class": "nav-link"},
+            {"name": "Widerstand","link": "/betriebsmittel/widerstaende","class": "nav-link"},
+            {"name": "Parameterabhängige Halbleiterwiderstände","link": "/betriebsmittel/widerstaende/parameterabhaengigehalbleiterwiderstaende","class": "nav-link"},
+            {"name": "Nicht elektrische Parameter","link": "/betriebsmittel/widerstaende/parameterabhaengigehalbleiterwiderstaende/nichtelektrischeparameter","class": "nav-link"},
+            {"name": "Temperatur","link": "/betriebsmittel/widerstaende/parameterabhaengigehalbleiterwiderstaende/nichtelektrischeparameter/Temperatur","class": "nav-link"},
+            {"name": "Thermistor","link": "/betriebsmittel/widerstaende/parameterabhaengigehalbleiterwiderstaende/nichtelektrischeparameter/Temperatur/Thermistor","class": "nav-link"},
+            {"name": "Kaltleiter","link": "/betriebsmittel/widerstaende/parameterabhaengigehalbleiterwiderstaende/nichtelektrischeparameter/temperatur/thermistor/kaltleiter","class": "nav-link"},
+            {"name": "Übung 1.9","link": "/betriebsmittel/widerstaende/parameterabhaengigehalbleiterwiderstaende/nichtelektrischeparameter/temperatur/thermistor/kaltleiter/uebung19","class": "nav-link"},
+        ]
+        mainNavbar( menu );
+    </script>
+    <main>
+        <%- body %>
+    </main>
+    <%#- include('../../partials/footer',{}) %>
+</body>

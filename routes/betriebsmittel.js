@@ -72,7 +72,9 @@ routerGet(router, R2.r2_27_2_1_1, R2.p2, R2.l2);
 /** SECTION Varistor */
 routerGet(router, R2.r2_27_2_1_1_1, R2.p2, R2.l2);
 /** !SECTION Varistor */
+
 /** !SECTION Spannung */
+
 /** !SECTION ElektrischeParameter */
 
 /** SECTION NichtelektrischeParameter */

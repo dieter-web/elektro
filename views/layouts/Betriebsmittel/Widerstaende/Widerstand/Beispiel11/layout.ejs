@@ -1,14 +1,15 @@
-<%- include('../../../partials/head',{}) %>
+<%- include('../../../../partials/head',{}) %>
 
 <body>
-    <%- include('../../../partials/navbarTemplate', {}) %>
+    <%- include('../../../../partials/navbarTemplate', {}) %>
     <script type="module">
         import {mainNavbar} from "/modules/mainNavbar.js"
         let menu=[
             {"name": "elektro","link": "/","class": "nav-link"},
             {"name": "Betriebsmittel","link": "/betriebsmittel","class": "nav-link"},
-            {"name": "Widerstand","link": "/betriebsmittel/widerstand","class": "nav-link"},
-            {"name": "Beispiel11","link": "/betriebsmittel/widerstaende/widerstand/beispiel11","class": "nav-link"},
+            {"name": "Widerstaende","link": "/betriebsmittel/widerstaende","class": "nav-link"},
+            {"name": "Widerstand","link": "/betriebsmittel/widerstaende/widerstand","class": "nav-link"},
+            {"name": "Beispiel 1.1","link": "/betriebsmittel/widerstaende/widerstand/beispiel11","class": "nav-link"},
         ]
         mainNavbar( menu );
     </script>
