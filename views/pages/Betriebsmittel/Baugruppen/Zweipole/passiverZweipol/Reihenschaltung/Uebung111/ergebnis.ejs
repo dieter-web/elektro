@@ -1,61 +1,19 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
 
-<script type="module">
+const data = await populate("example/Uebung111/data.json")
 
-    import {tabulate} from '/modules/tabulate2.mjs'
-    import {DrawBoard} from '/sysFrontend/DrawBoard.mjs'
-    import {populate} from '/modules/populate.mjs'
-    import {vR} from '/d3/lib/Betriebsmittel/vR.mjs'
+drawkennzeichnung(data,"#kennzeichnung")
 
-    //tabelle ergebnis
-    const data=await populate( "http://localhost:8000/json/example/uebung111.json" )
+const table = new Tabelle(data,"#ergebnis")
+table.tabulate()
 
-    /** TODO: Tabelle
-     * Ergebnisse sind noch nicht gerundet
-     * Die Maßeinheit wird nicht richtig aufgelöst: V <==> ohm A ?
-     * 
-     */
+const tab = d3.selectAll('tbody').selectAll('tr')._groups[0][0].innerText.split('\t')
 
-    tabulate( data,"group","#ergebnis" )
-
-    // Rückkopplung
-    let sel=d3.select( 'tbody' ).selectAll( 'td' )._groups[ 0 ];
-
-    R1.value=sel[ 0 ].innerText;
-    R2.value=sel[ 1 ].innerText;
-    R3.value=sel[ 2 ].innerText;
-    Φc.value=sel[ 3 ].innerText;
-    I.value=sel[ 4 ].innerText;
-
-    // svg grafik
-    const g=canvas( 800,300,'#grafik' )
-
-    let dataR1=[
-        {
-            // vis: data.Object.Parameter.Objecte[0].Visual,
-            width: 50,
-            height: 20,
-            id: "R1"
-        }
-    ]
-    let dataR2=[
-        {
-            width: 50,
-            height: 20,
-            id: "R2"
-        }
-    ]
-    let dataR3=[
-        {
-            width: 50,
-            height: 20,
-            id: "R3"
-        }
-    ]
-
-    g.append( () => vR( dataR1,[ 50,50 ] ) )
-    g.append( () => vR( dataR2,[ 150,50 ] ) )
-    g.append( () => vR( dataR3,[ 250,50 ] ) )
+R1.value = tab[0] 
+R2.value = tab[1] 
+R2.value = tab[2] 
+Φc.value = tab[3] 
+I.value = tab[4]
 
 </script>

@@ -27,20 +27,11 @@ async function Uebung111(input) {
   // Hier müssen die Widerstände verbunden werden.
   // Es entstehen Verbindungspunkte !
 
-  const RS1 = new Reihenschaltung({
-    R1: "5.2 ohm",
-    R2: "6.9 ohm",
-    R3: "3.4 ohm",
-    Φc: "0 V",
-    I: "2 A",
-    x: 50,
-    y: 50,
-  });
-
+  const RS1 = new Reihenschaltung(input);
   const EK = new Elektro();
   const AK = new Arithmetik();
-
   const datadir = "src/json/example/Uebung111";
+
   makeDirectory(datadir).then(
     function () {
       RS1.Kennzeichnung.Art = "RS";
@@ -48,34 +39,16 @@ async function Uebung111(input) {
 
       RS1.Schaltung = {
         Klemme: {
-          A: (A = new Klemme({}, {}, {})),
-          B: (B = new Klemme({}, {}, {})),
-          C: (C = new Klemme({}, {}, {})),
-          D: (D = new Klemme({}, {}, {})),
+          A: new Klemme({ ID: "A" }),
+          B: new Klemme({ ID: "B" }),
+          C: new Klemme({ ID: "C" }),
+          D: new Klemme({ ID: "D" }),
         }, // Verbindungspunkte
         bm: {
           // Betriebsmittel
-          R1: (R1 = new Widerstand(
-            { Art: "R", Zaehlnummer: 1 },
-            {
-              value: input.R1,
-            },
-            {}
-          )),
-          R2: (R2 = new Widerstand(
-            { Art: "R", Zaehlnummer: 2 },
-            {
-              value: input.R2,
-            },
-            {}
-          )),
-          R3: (R3 = new Widerstand(
-            { Art: "R", Zaehlnummer: 3 },
-            {
-              value: input.R3,
-            },
-            {}
-          )),
+          R1: new Widerstand({ Art: "R", Zaehlnummer: 1, value: input.R1 }),
+          R2: new Widerstand({ Art: "R", Zaehlnummer: 2, value: input.R2 }),
+          R3: new Widerstand({ Art: "R", Zaehlnummer: 3, value: input.R3 }),
         },
       };
 
@@ -85,26 +58,26 @@ async function Uebung111(input) {
         a: RS1.Schaltung.bm.R1.Parameter.value,
         b: RS1.Schaltung.bm.R2.Parameter.value,
       });
-      let R1R2 = AK.add();
+      RS1.Berechnung.R1R2 = AK.add();
 
-      EK.parameter({ R: R1R2, I: RS1.Parameter.I });
+      EK.parameter({ R: RS1.Berechnung.R1R2, I: RS1.Parameter.I });
 
-      RS1.Schaltung.Klemme.A.Parameter.Φ = EK.ΦRI().toString();
+      RS1.Berechnung.AΦ = EK.ΦRI();
 
       EK.parameter({
         R: RS1.Schaltung.bm.R2.Parameter.value,
         I: RS1.Parameter.I,
       });
-      RS1.Schaltung.Klemme.B.Parameter.Φ = EK.ΦRI().toString();
+      RS1.Berechnung.BΦ = EK.ΦRI();
 
       EK.parameter({
         R: RS1.Schaltung.bm.R3.Parameter.value,
         I: RS1.Parameter.I,
       });
-      RS1.Schaltung.Klemme.D.Parameter.Φ = EK.ΦRI();
+      RS1.Berechnung.DΦ = EK.ΦRI();
 
-      AK.parameter({ a: RS1.Schaltung.Klemme.D.Parameter.Φ, b: -1 }); // liegt auf der anderen Seite vom Bezugspotential
-      RS1.Schaltung.Klemme.D.Parameter.Φ = AK.mul().toString();
+      AK.parameter({ a: RS1.Berechnung.DΦ, b: -1 }); // liegt auf der anderen Seite vom Bezugspotential
+      RS1.Berechnung.DΦ = AK.mul();
 
       dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), RS1);
     },
@@ -114,11 +87,11 @@ async function Uebung111(input) {
   );
 }
 // let input = {
-//   R1: '5.2 ohm',
-//   R2: '6.9 ohm',
-//   R3: '3.4 ohm',
-//   Φc: '0 V',
-//   I: '2 A'
-// }
-// Uebung111(input)
+//   R1: "5.2 ohm",
+//   R2: "6.9 ohm",
+//   R3: "3.4 ohm",
+//   Φc: "0 V",
+//   I: "2 A",
+// };
+// Uebung111(input);
 exports.func = Uebung111;

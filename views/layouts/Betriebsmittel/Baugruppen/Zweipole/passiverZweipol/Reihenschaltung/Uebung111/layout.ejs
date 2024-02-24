@@ -1,0 +1,21 @@
+<%- include ('../../../../../../partials/head.ejs', {}) %>
+
+<body>
+    <%- include('../../../../../../partials/navbarTemplate', {}) %>
+    <script type="module">
+        import {mainNavbar} from "/modules/mainNavbar.js"
+        let menu=[
+            {"name": "elektro","link": "/","class": "nav-link"},
+            {"name": "Betriebsmittel","link": "/betriebsmittel","class": "nav-link"},
+            {"name": "Baugruppen","link": "/betriebsmittel/baugruppen","class": "nav-link"},
+            {"name": "Zweipole","link": "/betriebsmittel/baugruppen/zweipole","class": "nav-link"},
+            {"name": "passiver Zweipol","link": "/betriebsmittel/baugruppen/zweipole/passiverzweipol","class": "nav-link"},
+            {"name": "Reihenschaltung","link": "/betriebsmittel/baugruppen/zweipole/passiverzweipol/reihenschaltung","class": "nav-link"},
+        ]
+        mainNavbar( menu );
+    </script>
+    <main>
+        <%- body %>
+    </main>
+    <%#- include('../../partials/footer',{}) %>
+</body>

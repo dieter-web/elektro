@@ -14,6 +14,8 @@ class vLeiterwerkstoff extends vWerkstoff {
       style: "stroke:#ffffff; stroke-width:1.0",
       width: 64,
       height: 64,
+      x: point.x,
+      y: point.y,
       al: 20,
       "pointer-events": "all",
     };
@@ -25,10 +27,10 @@ class vLeiterwerkstoff extends vWerkstoff {
       .attr("fill-opacity", this.data.fillopacity)
       .attr("style", this.vis.style)
       .append("rect")
-      .attr("x", this.point.x)
-      .attr("y", this.point.y)
+      .attr("x", this.vis.x)
+      .attr("y", this.vis.y)
       .attr("height", this.vis.height)
-      .attr("width", this.vis.width);
+      .attr("width", this.vils.width);
 
     this.Symbol.select("#anschluss")
       .append("path")
@@ -37,7 +39,7 @@ class vLeiterwerkstoff extends vWerkstoff {
       .attr("style", this.vis.style)
       .attr(
         "d",
-        `M ${this.point.x} ${this.point.y} m 0 ${this.vis.height / 2} l -${
+        `M ${this.vis.x} ${this.vis.y} m 0 ${this.vis.height / 2} l -${
           this.vis.al
         } 0 m ${this.vis.al + this.vis.width} 0 l ${this.vis.al} 0`
       );

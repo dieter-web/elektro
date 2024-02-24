@@ -86,14 +86,18 @@ routerGet(router, R2.r2_27_2_2_1, R2.p2, R2.l2);
 /** SECTION Feldplatte */
 routerGet(router, R2.r2_27_2_2_1_1, R2.p2, R2.l2);
 /** !SECTION Feldplatte */
+
 /** !SECTION MagnetischesFeld */
 
 /** SECTION Strahlung */
 routerGet(router, R2.r2_27_2_2_2, R2.p2, R2.l2);
+
 /** SECTION Fotowiderstand */
 routerGet(router, R2.r2_27_2_2_2_1, R2.p2, R2.l2);
+
 /** !SECTION Fotowiderstand */
 /** !SECTION Strahlung */
+
 /** SECTION Temperatur */
 routerGet(router, R2.r2_27_2_2_3, R2.p2, R2.l2);
 

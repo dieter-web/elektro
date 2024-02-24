@@ -1,9 +1,5 @@
 <%- include('aufgabe.ejs',{}) %>
-<%- include('../../../../../layouts/partials/ergebnis.ejs') %>
-
-
-import {vR} from '/d3/lib/Betriebsmittel/vR.mjs'
-
+<%- include('../../../../../../../../../layouts/partials/ergebnis.ejs') %>
 
 const data=await populate( "example/Uebung19/data.json" )
 
@@ -13,50 +9,10 @@ table.tabulate();
 
 
 // Rückkopplung
-// const sel=d3.select( 'tbody' ).selectAll( 'tr' )._groups[ 0 ];
+const sel=d3.select( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][0].innerText.split('\t')
 
-// R1.value=sel[ 0 ].innerText.split( '\t' )[ 0 ];
-// R2.value=sel[ 1 ].innerText.split( '\t' )[ 0 ];
-// R3.value=sel[ 2 ].innerText.split( '\t' )[ 0 ];
-// R4.value=sel[ 3 ].innerText.split( '\t' )[ 0 ];
-// U.value=sel[ 0 ].innerText.split( '\t' )[ 1 ];
-
-
-// svg grafik
-const g=canvas( '#grafik',800,300,"0 0 200 100" )
-
-// let dataR1=[
-// {
-// width: 50,
-// height: 20,
-// id: "R1"
-// }
-// ]
-// let dataR2=[
-// {
-// width: 50,
-// height: 20,
-// id: "R2"
-// }
-// ]
-// let dataR3=[
-// {
-// width: 50,
-// height: 20,
-// id: "R3"
-// }
-// ]
-// let dataR4=[
-// {
-// width: 50,
-// height: 20,
-// id: "R4"
-// }
-// ]
-
-// g.append( () => vR( dataR1,[ 50,50 ] ) )
-// g.append( () => vR( dataR2,[ 50,100 ] ) )
-// g.append( () => vR( dataR3,[ 50,150 ] ) )
-// g.append( () => vR( dataR4,[ 50,200 ] ) )
+R20.value=sel[ 0 ]
+Rδ2.value=sel[ 1 ]
+δ2.value =sel[ 2 ]
 
 </script>

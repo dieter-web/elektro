@@ -750,6 +750,14 @@ const { LoesbareVerbindung } = require(path.resolve(
 const { Klemmverbindung } = require(path.resolve(
   `${PVerbindungstechnik}/LoesbareVerbindung/Klemmverbindung/Klemmverbindung.js`
 ));
+
+/** SECTION Klemme */
+
+const { Klemme } = require(path.resolve(
+  `${PVerbindungstechnik}/LoesbareVerbindung/Klemmverbindung/Klemme/Klemme.js`
+));
+/** !SECTION Klemme */
+
 /** !SECTION Klemmverbindung */
 
 /** SECTION QuetschUndSteckverbindung */
@@ -958,6 +966,7 @@ module.exports = {
 
   LoesbareVerbindung,
   Klemmverbindung,
+  Klemme,
   QuetschUndSteckverbindung,
   SchraubVerbindung,
 
