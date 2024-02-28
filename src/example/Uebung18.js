@@ -21,7 +21,11 @@ async function Uebung18(input) {
   ));
   const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
 
-  const { Elektro, Magnetspule } = require(path.resolve("include/system"));
+  const { Elektro } = require(path.resolve("src/Kernel/Elektro.js"));
+  const { Magnetspule } = require(path.resolve(
+    "src/components/Betriebsmittel.js"
+  ));
+
   const L1 = new Magnetspule(input);
   const EK = new Elektro();
   const datadir = "src/json/example/Uebung18";

@@ -14,8 +14,6 @@ class vLeiterwerkstoff extends vWerkstoff {
       style: "stroke:#ffffff; stroke-width:1.0",
       width: 64,
       height: 64,
-      x: point.x,
-      y: point.y,
       al: 20,
       "pointer-events": "all",
     };
@@ -27,8 +25,8 @@ class vLeiterwerkstoff extends vWerkstoff {
       .attr("fill-opacity", this.data.fillopacity)
       .attr("style", this.vis.style)
       .append("rect")
-      .attr("x", this.vis.x)
-      .attr("y", this.vis.y)
+      .attr("x", this.point.x)
+      .attr("y", this.point.y)
       .attr("height", this.vis.height)
       .attr("width", this.vils.width);
 

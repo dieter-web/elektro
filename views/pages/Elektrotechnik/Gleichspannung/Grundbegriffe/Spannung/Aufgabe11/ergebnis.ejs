@@ -1,15 +1,11 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../layouts/partials/ergebnis.ejs') %>
 
-import {vWiderstand} from '/components/Betriebsmittel/Widerstaende/Widerstand/Widerstand.mjs'
-
+// Tabelle ausgeben
 const data=await populate( "example/Aufgabe11/data.json" )
-
 drawkennzeichnung( data,"#kennzeichnung" )
-
 const table=new Tabelle( data,"#ergebnis" );
 table.tabulate();
-
 
 // Rückkopplung
 const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
@@ -17,9 +13,12 @@ G.value=tab[ 0 ]
 I.value=tab[ 1 ]
 
 // Visualisierung
-const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
+import {vWiderstand} from '/components/Betriebsmittel.mjs'
+
 const point={x: 320,y: 240};
 const R1=new vWiderstand( data,point );
+
+const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
 
 R1.createNode();
 view.addNode( R1.node )

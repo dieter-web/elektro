@@ -12,7 +12,10 @@ async function Aufgabe11(input) {
   const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson.js"));
 
-  const { Elektro, Widerstand } = require(path.resolve("include/system"));
+  const { Widerstand } = require(path.resolve(
+    "src/components/Betriebsmittel.js"
+  ));
+  const { Elektro } = require(path.resolve("src/Kernel/Elektro.js"));
 
   const EK = new Elektro();
   const R1 = new Widerstand(input);

@@ -5,6 +5,19 @@ class vComponents {
     this.bbox = undefined;
     this.node = undefined;
 
+    this.offx = 20;
+    this.offy = 20;
+
+    this.vis = {
+      fill: "none",
+      "fill-opacity": 1,
+      style: "stroke:#ffffff;stroke-width:1.0",
+      width: 64,  // Definierte Größe einer Komponente
+      height: 20,
+      al: 20,     // Linienlänge Anschlüsse
+      "pointer-events": "all",
+    };
+
     this.Symbol = d3
       .create("svg:g")
       .attr("id", `${data.Kennzeichnung.Art}${data.Kennzeichnung.Zählnummer}`);
@@ -22,14 +35,14 @@ class vComponents {
   fvalue() {
     this.Symbol.select("#value")
       .append("text")
-      .attr("x", this.point.x + 50)
-      .attr("y", this.point.y + this.vis.height + 20)
-      .text(`${this.data.Parameter.erg}`);
+      .attr("x", this.point.x + this.offx)
+      .attr("y", this.point.y + this.vis.height + this.offy)
+      .text(`${this.data.Berechnung}`);
 
     this.Symbol.select("#name")
       .append("text")
       .attr("x", this.point.x)
-      .attr("y", this.point.y + this.vis.height + 20)
+      .attr("y", this.point.y + this.vis.height + this.offy)
       .text(
         `${this.data.Kennzeichnung.Art}${this.data.Kennzeichnung.Zählnummer} `
       );

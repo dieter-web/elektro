@@ -1,7 +1,5 @@
 <%- include('aufgabe.ejs',{}) %>
-<%- include('../../../../../../layouts/partials/ergebnis.ejs') %>
-
-import {vLeiterwerkstoff} from '/components/Werkstoff/Werkstoff.mjs'
+<%- include('../../../../../../layouts/partials/ergebnisOhneDrawBoardOhneKennzeichnung.ejs') %>
 
 const data=await populate( "example/Aufgabe16/data.json" )
 const mat=await populate( "Sonstiges/Leiterwerkstoffe.json" )
@@ -16,10 +14,13 @@ const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.
 Material.value=tab[ 0 ]
 
 // Visualisierung
-const view=new DrawBoard('grafik',640,480,[0,0,500,500]);
-const point={x: 320,y: 240};
-const shape = new vLeiterwerkstoff(data,point)
-shape.createNode();
-view.addNode(shape.node)
+// import {vLeiterwerkstoff} from '/components/Werkstoff/Werkstoff.mjs'
+// const view=new DrawBoard('grafik',640,480,[0,0,500,500]);
+// const point={x: 320,y: 240};
+// const shape = new vLeiterwerkstoff(data,point)
+// shape.createNode();
+// view.addNode(shape.node)
 
 </script>
+
+<%- include('../../../../../../layouts/partials/footer.ejs') %>

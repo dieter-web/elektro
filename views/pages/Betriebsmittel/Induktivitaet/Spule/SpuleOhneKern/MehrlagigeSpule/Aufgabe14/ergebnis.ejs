@@ -1,29 +1,25 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
 
-import {vMehrlagigeSpule} from
-'/components/Betriebsmittel/Induktivitaet/Spule/SpuleOhneKern/MehrlagigeSpule/MehrlagigeSpule.mjs'
-
-// hash vom Server laden
 const data=await populate( "example/Aufgabe14/data.json" )
 
 drawkennzeichnung( data,"#kennzeichnung" )
+
 const table=new Tabelle( data,"#ergebnis" );
 table.tabulate();
 
-
-// Rückkopplung
 const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
+
+
 Material.value=sel[ 0 ]
 l.value=sel[ 1 ]
 U.value=sel[ 2 ]
 
+import {vMehrlagigeSpule} from
+'/components/Betriebsmittel/Induktivitaet/Spule/SpuleOhneKern/MehrlagigeSpule/MehrlagigeSpule.mjs'
 
-// Visualisierung
 const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
-
 const point={x: 320,y: 240};
-
 let L1=new vMehrlagigeSpule( data,point )
 L1.createNode();
 view.addNode( L1.node )

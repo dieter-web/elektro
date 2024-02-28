@@ -1,9 +1,6 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../layouts/partials/ergebnis.ejs') %>
 
-
-import {vBleirohr} from '/components/Bauelemente/Rohrleitungen/Bleirohre/Bleirohr.mjs'
-
 const data=await populate( "example/Beispiel13/data.json" )
 
 const table=new Tabelle( data,"#ergebnis" );
@@ -19,6 +16,7 @@ d.value=sel[ 3 ]
 D.value=sel[ 4 ]
 
 // Visualisierung
+import {vBleirohr} from '/components/Bauelemente/Rohrleitungen/Rohrleitung/Bleirohre/Bleirohr.mjs'
 const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
 const point={x: 320,y: 240}
 

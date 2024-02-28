@@ -26,20 +26,19 @@ async function Beispiel13(input) {
 
   const RK = new Rohrleitungstechnik();
   const PK = new Planemetrie();
-
-  // const Kennzeichnung = dbJson.readJSONFile(
-  //   path.resolve("src/json/Sonstiges/kennzeichnung.json")
-  // );
   const PtRohr = new Bleirohr(input);
 
   const datadir = "src/json/example/Beispiel13";
 
   makeDirectory(datadir).then(
     function () {
+      PtRohr.Kennzeichnung.Art = "Rohr";
+      PtRohr.Kennzeichnung.Zählnummer = "1";
+
       PtRohr.Parameter.ρ = readMaterialParameter(
-        input.Material,
+        PtRohr.Parameter.Material,
         "ρ"
-      ).toString();
+      );
 
       PK.parameter({ d: PtRohr.Parameter.d, D: PtRohr.Parameter.D });
       PtRohr.Berechnung.Ar = PK.KRADd();
@@ -60,10 +59,10 @@ async function Beispiel13(input) {
 }
 
 // let input = {
-//   Material: 'Blei',
-//   G: '1285 S',
-//   d: '2.5 cm',
-//   D: '3.0 cm'
-// }
-// Beispiel13(input)
+//   Material: "Blei",
+//   G: "1285 S",
+//   d: "2.5 cm",
+//   D: "3.0 cm",
+// };
+// Beispiel13(input);
 exports.func = Beispiel13;
