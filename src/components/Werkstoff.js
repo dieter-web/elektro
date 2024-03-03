@@ -1,12 +1,9 @@
-require("use-strict");
 const path = require("path");
 const dbJson = require(path.resolve("controllers/dbJson.js"));
 
 class Werkstoff {
   constructor() {
-    this.Kennzeichnung = require(path.resolve(
-      "src/json/Bezeichnungssysteme/Material.json"
-    ));
+    // this.Kennzeichnung = require(path.resolve("src/json/Bezeichnungssysteme/Material.json"));
     // this.Berechung = {};
   }
 }
@@ -84,10 +81,7 @@ class Leiterwerkstoff extends Werkstoff {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
-
-    this.data = dbJson.readJSONFile(
-      path.resolve("src/json/Sonstiges/Leiterwerkstoffe.json")
-    )[Parameter.Material];
+    this.data = dbJson.readJSONFile(path.resolve("src/json/Sonstiges/Leiterwerkstoffe.json"))[Parameter.Material];
   }
 
   fρ(name) {

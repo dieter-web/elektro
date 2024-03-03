@@ -1,20 +1,12 @@
-class vComponents {
+class vElektrischeAnlagen {
   constructor(data, point) {
     this.data = data;
     this.point = point;
-    this.bbox = undefined;
-    this.node = undefined;
-
-    this.offx = 20;
-    this.offy = 20;
 
     this.vis = {
       fill: "none",
       "fill-opacity": 1,
       style: "stroke:#ffffff;stroke-width:1.0",
-      width: 64, // Definierte Größe einer Komponente
-      height: 20,
-      al: 20, // Linienlänge Anschlüsse
       "pointer-events": "all",
     };
 
@@ -34,9 +26,13 @@ class vComponents {
     this.Symbol.select("#value")
       .append("text")
       .attr("x", this.point.x)
-      .attr("y", this.point.y + 16)
-      // TODO: Hier weitermachen
-      .text(`${this.data.Berechnung}`); // Kein Array sondern {} !! Key <-> Value Paare !
+      .attr("y", this.point.y)
+      .text((t) => {
+        this.data.Berechunung.map((s) => {
+          return s;
+        });
+      });
+    // `${this.data.Berechnung}`);
   }
 
   fname() {
@@ -50,10 +46,10 @@ class vComponents {
   createNode() {
     this.finit();
     this.fshape();
-    this.fvalue();
+    // this.fvalue();
     this.fname();
     this.node = this.Symbol.node();
   }
 }
 
-export { vComponents };
+export { vElektrischeAnlagen };

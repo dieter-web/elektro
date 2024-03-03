@@ -14,9 +14,10 @@ require("use-strict");
 async function Beispiel11(input) {
   const path = require("path");
   const dbJson = require(path.resolve("controllers/dbJson.js"));
-  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
 
-  const { Elektro, Widerstand } = require(path.resolve("include/system"));
+  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
+  const { Elektro } = require(path.resolve("src/Kernel/Elektro.js"));
+  const { Widerstand } = require(path.resolve("src/components/Betriebsmittel.js"));
 
   const datadir = "src/json/example/Beispiel11";
 
@@ -41,41 +42,14 @@ async function Beispiel11(input) {
         G.push(EK.GIU().to("mS"));
       });
 
-      R.Parameter.R1 = {
-        Widerstand: input.R1,
-        Spannung: input.U,
-      };
-      R.Berechnung.R1 = {
-        Stromstärke: I[0],
-        Leitwert: G[0],
-      };
-
-      R.Parameter.R2 = {
-        Widerstand: input.R2,
-        Spannung: input.U,
-      };
-      R.Berechnung.R2 = {
-        Stromstärke: I[1],
-        Leitwert: G[1],
-      };
-
-      R.Parameter.R3 = {
-        Widerstand: input.R3,
-        Spannung: input.U,
-      };
-      R.Berechnung.R3 = {
-        Stromstärke: I[2],
-        Leitwert: G[2],
-      };
-
-      R.Parameter.R4 = {
-        Widerstand: input.R4,
-        Spannung: input.U,
-      };
-      R.Berechnung.R4 = {
-        Stromstärke: I[3],
-        Leitwert: G[3],
-      };
+      R.Parameter.R1 = { Widerstand: input.R1, Spannung: input.U };
+      R.Berechnung.R1 = { Stromstärke: I[0], Leitwert: G[0] };
+      R.Parameter.R2 = { Widerstand: input.R2, Spannung: input.U };
+      R.Berechnung.R2 = { Stromstärke: I[1], Leitwert: G[1] };
+      R.Parameter.R3 = { Widerstand: input.R3, Spannung: input.U };
+      R.Berechnung.R3 = { Stromstärke: I[2], Leitwert: G[2] };
+      R.Parameter.R4 = { Widerstand: input.R4, Spannung: input.U };
+      R.Berechnung.R4 = { Stromstärke: I[3], Leitwert: G[3] };
 
       dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), R);
     },

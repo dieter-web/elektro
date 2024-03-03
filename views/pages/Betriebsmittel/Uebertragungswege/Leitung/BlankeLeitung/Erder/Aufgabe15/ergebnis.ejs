@@ -1,32 +1,22 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
 
-
-import {vErder} from '/components/Betriebsmittel/Uebertragungswege/Leitung/Blankeleitung/Erder/Erder.mjs'
-
 const data=await populate( "example/Aufgabe15/data.json" )
 
 drawkennzeichnung( data,"#kennzeichnung" )
-// tabulate( data,"#ergebnis" )
+
 const table=new Tabelle( data,"#ergebnis" );
 table.tabulate();
-
-
-// Rückkopplung
 const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
 Material.value=tab[ 0 ]
 d.value=tab[ 1 ]
 l.value=tab[ 2 ]
 δ2.value=tab[ 3 ]
 
-// Visualisierung
+import {vErder} from '/components/Betriebsmittel.mjs'
 const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
-
 const point={x: 320,y: 240};
-
 let W1=new vErder( data,point )
 W1.createNode();
 view.addNode( W1.node )
-
-
 </script>

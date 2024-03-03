@@ -11,19 +11,13 @@ require("use-strict");
  */
 async function Aufgabe13(input) {
   const path = require("path");
-  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson.js"));
-
-  const {
-    Elektro,
-    Arithmetik,
-    Planemetrie,
-    MehrlagigeSpule,
-  } = require(path.resolve("include/system"));
-
-  const { readMaterialParameter } = require(path.resolve(
-    "src/js/readMaterialParameter.js"
-  ));
+  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
+  const { Elektro } = require(path.resolve("src/Kernel/Elektro.js"));
+  const { Planemetrie } = require(path.resolve("src/Kernel/Planemetrie.js"));
+  const { Arithmetik } = require(path.resolve("src/Kernel/Arithmetik.js"));
+  const { MehrlagigeSpule } = require(path.resolve("src/components/Betriebsmittel.js"));
+  const { readMaterialParameter } = require(path.resolve("src/js/readMaterialParameter.js"));
 
   const L1 = new MehrlagigeSpule(input);
   const AK = new Arithmetik();
@@ -37,10 +31,7 @@ async function Aufgabe13(input) {
       L1.Kennzeichnung.Art = "L";
       L1.Kennzeichnung.Zählnummer = "1";
 
-      L1.Parameter.ρM = readMaterialParameter(
-        L1.Parameter.Material,
-        "ρ"
-      ).toString();
+      L1.Parameter.ρM = readMaterialParameter(L1.Parameter.Material, "ρ").toString();
 
       AK.parameter({ a: L1.Parameter.lm, b: L1.Parameter.N });
       L1.Berechnung["lg"] = AK.mul().to("m");

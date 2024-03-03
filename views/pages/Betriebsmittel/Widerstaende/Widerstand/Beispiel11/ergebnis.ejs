@@ -2,7 +2,7 @@
 <%- include('../../../../../layouts/partials/ergebnis.ejs') %>
 
 
-import {vWiderstand} from "/components/Betriebsmittel/Widerstaende/Widerstand/Widerstand.mjs";
+
 
 import {Tabelle2} from "/sysFrontend/Tabelle.mjs";
 
@@ -23,6 +23,7 @@ table.tabulate();
 // U.value=tab[ 4 ]
 
 // Visualisierung
+import {vWiderstand} from "/components/Betriebsmittel.mjs";
 const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
 
 // Einfügepunkt

@@ -1,5 +1,6 @@
 import { vComponents } from "./components.mjs";
 
+/** SECTION vBetriebsmittel */
 class vBetriebsmittel extends vComponents {
   constructor(data, point) {
     super(data, point);
@@ -10,35 +11,46 @@ class vBetriebsmittel extends vComponents {
     this.Form3 = ""; // Circle
   }
 }
+
+/** SECTION  vBaugruppen*/
 class vBaugruppen extends vBetriebsmittel {
   constructor(data, point) {
     super(data, point);
   }
 }
 
+/** SECTION  vZweipole*/
 class vZweipole extends vBaugruppen {
   constructor(data, point) {
     super(data, point);
   }
 }
 
+/** SECTION  vPassiveZweipole*/
 class vPassiveZweipole extends vZweipole {
   constructor(data, point) {
     super(data, point);
   }
 }
+/** !SECTION  vPassiveZweipole*/
+/** !SECTION  vZweipole */
+/** !SECTION  vBaugruppen */
 
+/** SECTION  vElektrischeMaschinen*/
 class vElektrischeMaschinen extends vBetriebsmittel {
   constructor(data, point) {
     super(data, point);
   }
 }
-
+/** !SECTION  vElektrischeMaschinen*/
+/** SECTION  vInduktivitaet*/
 class vInduktivitaet extends vBetriebsmittel {
   constructor(data, point) {
     super(data, point);
   }
 }
+
+/** SECTION vSpule */
 class vSpule extends vInduktivitaet {
   constructor(data, point) {
     super(data, point);
@@ -72,194 +84,240 @@ class vSpule extends vInduktivitaet {
   }
 }
 
+/** SECTION  vVariometer*/
 class vVariometer extends vSpule {
   constructor(data) {
     super(data);
   }
 }
+/** !SECTION  vVariometer*/
+/** SECTION  vSpuleOhneKern*/
 class vSpuleOhneKern extends vSpule {
   constructor(data, point) {
     super(data, point);
   }
 }
 
+/** SECTION  vZylinderspule*/
 class vZylinderspule extends vSpuleOhneKern {
   constructor(data, point) {
     super(data, point);
   }
 }
+/** !SECTION  vZylinderspule*/
 
+/** SECTION  vRingspule*/
 class vRingspule extends vSpuleOhneKern {
   constructor(data, point) {
     super(data, point);
   }
 }
+/** !SECTION  vRingspule*/
 
+/** SECTION  vMehrlagigeSpule*/
 class vMehrlagigeSpule extends vSpuleOhneKern {
   constructor(data, point) {
     super(data, point);
   }
 }
-
+/** !SECTION  vMehrlagigeSpule*/
+/** SECTION  vEinlagigeSpule*/
 class vEinlagigeSpule extends vSpuleOhneKern {
   constructor(data, point) {
     super(data, point);
   }
 }
-
+/** !SECTION  vEinlagigeSpule*/
+/** SECTION  vAbgeschirmteSpule*/
 class vAbgeschirmteSpule extends vSpuleOhneKern {
   constructor(data, point) {
     super(data, point);
   }
 }
+/** !SECTION  vAbgeschirmteSpule*/
+/** !SECTION  vSpuleOhneKern*/
+
+/** SECTION  vSpuleMitKern*/
 class vSpuleMitKern extends vSpule {
   constructor(data, point) {
     super(data, point);
   }
 }
-
+/** SECTION  vMagnetspule*/
 class vMagnetspule extends vSpuleMitKern {
   constructor(data, point) {
     super(data, point);
   }
 }
+/** !SECTION  vMagnetspule*/
+/** !SECTION  vSpuleMItKern*/
+/** !SECTION  vSpule*/
+/** !SECTION  vInduktivitaet*/
 
+/** SECTION vKlemmvorrichtung */
 class vKlemmvorrichtung extends vBetriebsmittel {
   constructor(data) {
     super(data);
   }
 }
-
+/** SECTION  vKlemme*/
 class vKlemme extends vKlemmvorrichtung {
   constructor(data) {
     super(data);
   }
 }
-
+/** SECTION  vKlemmleiste*/
 class vKlemmleiste extends vKlemme {
   constructor(data) {
     super(data);
   }
 }
+/** !SECTION  vKlemmleiste*/
+/** !SECTION  vKlemme*/
+/** !SECTION  vKlemmvorrichtung*/
+
+/** SECTION  vMessgeraete*/
 class vMessgeraete extends vBetriebsmittel {
   constructor(data, point) {
     super(data, point);
   }
 }
 
+/** SECTION  vZeitmesser*/
 class vZeitmesser extends vMessgeraete {
   constructor(data, point) {
     super(data, point);
   }
 }
-
+/** !SECTION  vZeitmesser*/
+/** SECTION  vStrommesser*/
 class vStrommesser extends vMessgeraete {
   constructor(data, point) {
     super(data, point);
   }
 }
-
+/** !SECTION  vStrommesser*/
+/** SECTION  vSpannungsmesser*/
 class vSpannungsmesser extends vMessgeraete {
   constructor(data, point) {
     super(data, point);
   }
 }
-
+/** !SECTION  vSpannungsmesser*/
+/** SECTION  vPhasenwinkelmesser*/
 class vPhasenwinkelmesser extends vMessgeraete {
   constructor(data, point) {
     super(data, point);
   }
 }
-
+/** !SECTION  vPhasenwinkelmesser*/
+/** SECTION  vMagnetischeGroessenmesser*/
 class vMagnetischeGroessenmesser extends vMessgeraete {
   constructor(data, point) {
     super(data, point);
   }
 }
-
+/** !SECTION  vMagnetischeGroessenmesser*/
+/** SECTION  vLeistungsmesser*/
 class vLeistungsmesser extends vMessgeraete {
   constructor(data, point) {
     super(data, point);
   }
 }
-
+/** !SECTION  vLeistungsmesser*/
+/** SECTION  vImpedanzmesser*/
 class vImpedanzmesser extends vMessgeraete {
   constructor(data, point) {
     super(data, point);
   }
 }
-
+/** !SECTION  vImpedanzmesser*/
+/** SECTION  vFrequenzmesser*/
 class vFrequenzmesser extends vMessgeraete {
   constructor(data, point) {
     super(data, point);
   }
 }
-
+/** !SECTION  vFrequenzmesser*/
+/** SECTION  vEnergiemesser*/
 class vEnergiemesser extends vMessgeraete {
   constructor(data, point) {
     super(data, point);
   }
 }
+/** !SECTION  vEnergiemesser*/
+/** !SECTION  vMessgeraete*/
 
+/** SECTION  vSteckvorrichtungen*/
 class vSteckvorrichtungen extends vBetriebsmittel {
   constructor(data) {
     super(data);
   }
 }
-
+/** !SECTION  vSteckvorrichtungen*/
+/** SECTION  vUebertragungswege*/
 class vUebertragungswege extends vBetriebsmittel {
   constructor(data, point) {
     super(data, point);
   }
 }
-
+/** SECTION  vAntenne*/
 class vAntenne extends vUebertragungswege {
   constructor(data, point) {
     super(data, point);
   }
 }
-
+/** !SECTION  vAntenne*/
+/** SECTION  vDraehte*/
 class vDraehte extends vUebertragungswege {
   constructor(data, point) {
     super(data, point);
   }
 }
-
+/** !SECTION  vDraehte*/
+/** SECTION  vDraht*/
 class vDraht extends vDraehte {
   constructor(data, point) {
     super(data, point);
   }
 }
-
+/** !SECTION  vDraht*/
+/** SECTION  vKabel*/
 class vKabel extends vUebertragungswege {
   constructor(data, point) {
     super(data, point);
   }
 }
 
+/** SECTION  vStarkstromkabel*/
 class vStarkstromkabel extends vKabel {
   constructor(data, point) {
     super(data, point);
   }
 }
-
+/** !SECTION  vStarkstromkabel*/
+/** SECTION  vHochfrequenzkabel*/
 class vHochfrequenzkabel extends vKabel {
   constructor(data, point) {
     super(data, point);
   }
 }
-
+/** !SECTION  vHochfrequenzkabel*/
+/** SECTION  vFernmeldekabel*/
 class vFernmeldekabel extends vKabel {
   constructor(data, point) {
     super(data, point);
   }
 }
+/** !SECTION  vFernmeldekabel*/
+/** !SECTION  vKabel */
 
+/** SECTION  vLeitung*/
 class vLeitung extends vUebertragungswege {
   constructor(data, point) {
     super(data, point);
 
-    this.shape = `M 0 0 L 100 0 `;
+    this.shape = `M 0 0 L 200 0 `;
   }
 
   fshape() {
@@ -272,12 +330,15 @@ class vLeitung extends vUebertragungswege {
       });
   }
 }
+
+/** SECTION  vBlankeleitung*/
 class vBlankeleitung extends vLeitung {
   constructor(data, point) {
     super(data, point);
   }
 }
 
+/** SECTION  vErder*/
 class vErder extends vBlankeleitung {
   constructor(data, point) {
     super(data, point);
@@ -313,13 +374,51 @@ class vErder extends vBlankeleitung {
       });
   }
 }
+/** !SECTION  vErder*/
+/** !SECTION  vBlankeleitung*/
 
+/** SECTION  vIsolierteleitung*/
 class vIsolierteleitung extends vLeitung {
   constructor(data) {
     super(data);
   }
 }
+/** !SECTION  vIsolierteleitung*/
+/** !SECTION  vIsolierteleitung*/
+/** !SECTION  vLeitung*/
 
+/** SECTION Verschiedenes */
+class vVerschiedenes extends vBetriebsmittel {
+  constructor(data, point) {
+    super(data, point);
+  }
+}
+
+/** SECTION Verbraucher */
+
+class vVerbraucher extends vVerschiedenes {
+  constructor(data, point) {
+    super(data, point);
+  }
+  fshape() {
+    this.Symbol.select("#shape")
+      .append("path")
+      .attr("d", this.Form1)
+      .attr("fill", "none")
+      .attr("stroke", "rgb(240,240,240")
+      .attr("stroke-linejoin", "round")
+      .attr("stroke-miterlimit", "10")
+      .attr("pointer-events", "all")
+      .attr("transform", () => {
+        return `translate(${this.point.x},${this.point.y})`;
+      });
+  }
+}
+/** !SECTION Verbraucher */
+
+/** !SECTION Verschiedenes */
+
+/** SECTION  vWiderstaende*/
 class vWiderstaende extends vBetriebsmittel {
   constructor(data, point) {
     super(data, point);
@@ -338,6 +437,7 @@ class vWiderstaende extends vBetriebsmittel {
   }
 }
 
+/** SECTION  vWiderstand*/
 class vWiderstand extends vWiderstaende {
   constructor(data, point) {
     super(data, point);
@@ -379,48 +479,55 @@ class vWiderstand extends vWiderstaende {
       });
   }
 }
+/** !SECTION  vWiderstand*/
+/** !SECTION  vWiderstaende*/
+/** !SECTION vBetriebsmittel */
 
-export { vWiderstand };
-export { vBetriebsmittel };
-export { vBaugruppen };
-export { vZweipole };
-export { vPassiveZweipole };
-export { vElektrischeMaschinen };
-export { vInduktivitaet };
-export { vSpule };
-export { vVariometer };
-export { vSpuleOhneKern };
-export { vZylinderspule };
-export { vRingspule };
-export { vMehrlagigeSpule };
-export { vEinlagigeSpule };
-export { vAbgeschirmteSpule };
-export { vSpuleMitKern };
-export { vMagnetspule };
-export { vKlemmvorrichtung };
-export { vKlemme };
-export { vKlemmleiste };
-export { vMessgeraete };
-export { vZeitmesser };
-export { vStrommesser };
-export { vSpannungsmesser };
-export { vPhasenwinkelmesser };
-export { vMagnetischeGroessenmesser };
-export { vLeistungsmesser };
-export { vImpedanzmesser };
-export { vFrequenzmesser };
-export { vEnergiemesser };
-export { vSteckvorrichtungen };
-export { vUebertragungswege };
-export { vAntenne };
-export { vDraehte };
-export { vDraht };
-export { vKabel };
-export { vStarkstromkabel };
-export { vHochfrequenzkabel };
-export { vFernmeldekabel };
-export { vLeitung };
-export { vBlankeleitung };
-export { vErder };
-export { vIsolierteleitung };
-export { vWiderstaende };
+export {
+  vVerschiedenes,
+  vVerbraucher,
+  vWiderstand,
+  vBetriebsmittel,
+  vBaugruppen,
+  vZweipole,
+  vPassiveZweipole,
+  vElektrischeMaschinen,
+  vInduktivitaet,
+  vSpule,
+  vVariometer,
+  vSpuleOhneKern,
+  vZylinderspule,
+  vRingspule,
+  vMehrlagigeSpule,
+  vEinlagigeSpule,
+  vAbgeschirmteSpule,
+  vSpuleMitKern,
+  vMagnetspule,
+  vKlemmvorrichtung,
+  vKlemme,
+  vKlemmleiste,
+  vMessgeraete,
+  vZeitmesser,
+  vStrommesser,
+  vSpannungsmesser,
+  vPhasenwinkelmesser,
+  vMagnetischeGroessenmesser,
+  vLeistungsmesser,
+  vImpedanzmesser,
+  vFrequenzmesser,
+  vEnergiemesser,
+  vSteckvorrichtungen,
+  vUebertragungswege,
+  vAntenne,
+  vDraehte,
+  vDraht,
+  vKabel,
+  vStarkstromkabel,
+  vHochfrequenzkabel,
+  vFernmeldekabel,
+  vLeitung,
+  vBlankeleitung,
+  vErder,
+  vIsolierteleitung,
+  vWiderstaende,
+};

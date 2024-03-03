@@ -17,28 +17,39 @@ require("use-strict");
  */
 async function Beispiel14(input) {
   const path = require("path");
-  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson.js"));
+  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
+  const { readMaterialParameter } = require(path.resolve("src/js/readMaterialParameter.js"));
 
-  const { Elektro, Arithmetik, FesteLegung } = require(path.resolve(
-    "include/system"
-  ));
-  const { readMaterialParameter } = require(path.resolve(
-    "src/js/readMaterialParameter.js"
-  ));
-  const W1 = new FesteLegung(input);
-  const AK = new Arithmetik();
-  const EK = new Elektro();
+  const { Elektro } = require(path.resolve("src/Kernel/Elektro.js"));
+  const { Arithmetik } = require(path.resolve("src/Kernel/Arithmetik.js"));
+
+  const { Gleichstromnetz } = require(path.resolve("src/ElektrischeAnlagen/Verteilungssysteme/Verteilungssysteme.js"));
+  const { FesteLegung } = require(path.resolve("src/components/Betriebsmittel.js"));
+  const { Verbraucher } = require(path.resolve("src/components/Betriebsmittel.js"));
+
   const datadir = "src/json/example/Beispiel14";
 
   makeDirectory(datadir).then(
     function () {
-      W1.Parameter.ρal = readMaterialParameter(
-        W1.Parameter.Material,
-        "ρ"
-      ).toString();
+      const N1 = new Gleichstromnetz({ U: input.U });
+      N1.Kennzeichnung.Art = "N";
+      N1.Kennzeichnung.Zählnummer = "1";
 
-      AK.parameter({ G: W1.Parameter.U, p: W1.Parameter.p });
+      const W1 = new FesteLegung({ a: input.a, Material: input.Material, l: input.l, p: input.p }); // Leitung
+      W1.Kennzeichnung.Art = "W";
+      W1.Kennzeichnung.Zählnummer = "1";
+      
+      W1.Parameter.ρal = readMaterialParameter(W1.Parameter.Material, "ρ");
+
+      const V1 = new Verbraucher({ I: input.I });
+      V1.Kennzeichnung.Art = "V";
+      V1.Kennzeichnung.Zählnummer = "1";
+
+      const AK = new Arithmetik();
+      const EK = new Elektro();
+
+      AK.parameter({ G: N1.Parameter.U, p: W1.Parameter.p });
       W1.Berechnung.prozentwert = AK.Prozentwert();
 
       AK.parameter({ a: W1.Parameter.a, b: W1.Parameter.l });
@@ -46,13 +57,16 @@ async function Beispiel14(input) {
 
       EK.parameter({
         ρ: W1.Parameter.ρal,
-        I: W1.Parameter.I,
+        I: V1.Parameter.I,
         l: W1.Berechnung.lg.toString(),
         U: W1.Berechnung.prozentwert.toString(),
       });
       W1.Berechnung.A = EK.AρlUI().to("mm^2");
 
-      dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), W1);
+      // mehrere Elemente im json array
+      dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), N1); // [0]
+      dbJson.appendJSONItem(path.resolve(`${datadir}/data.json`), W1); //  [1]
+      dbJson.appendJSONItem(path.resolve(`${datadir}/data.json`), V1); // [2]
     },
     function () {
       console.error(`${datadir}`);

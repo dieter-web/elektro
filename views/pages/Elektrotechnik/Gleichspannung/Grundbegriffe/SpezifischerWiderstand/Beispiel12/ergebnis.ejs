@@ -1,23 +1,13 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../layouts/partials/ergebnisOhneDrawBoardOhneKennzeichnung.ejs') %>
 
-
-// import {vW} from '/d3/lib/Betriebsmittel/vW.mjs'
-
-
 const data=await populate( "example/Beispiel12/data.json" )
 
 const table=new Tabelle( data,"#ergebnis" );
 table.tabulate();
-
-// Rückkopplung
 const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
 l.value=tab[ 0 ]
 d.value=tab[ 1 ]
 R.value=tab[ 2 ]
-
-// svg grafik
-// const g=drawboard();
-// g.append( () => vW( data ) )
 
 </script>

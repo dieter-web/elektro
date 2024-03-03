@@ -12,20 +12,20 @@ require("use-strict");
  */
 async function Beispiel12(input) {
   const path = require("path");
-  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson.js"));
+  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
 
-  const { Elektro, Planemetrie, Draht } = require(path.resolve(
-    "include/system"
-  ));
-
-  const PK = new Planemetrie();
-  const EK = new Elektro();
-  const W1 = new Draht(input);
+  const { Elektro } = require(path.resolve("src/Kernel/Elektro.js"));
+  const { Planemetrie } = require(path.resolve("src/Kernel/Planemetrie.js"));
+  const { Draht } = require(path.resolve("src/components/Betriebsmittel.js"));
 
   const datadir = "src/json/example/Beispiel12";
 
   makeDirectory(datadir).then(function () {
+    const PK = new Planemetrie();
+    const EK = new Elektro();
+    const W1 = new Draht(input);
+
     W1.Kennzeichnung.Art = "W";
     W1.Kennzeichnung.Zählnummer = "1";
 

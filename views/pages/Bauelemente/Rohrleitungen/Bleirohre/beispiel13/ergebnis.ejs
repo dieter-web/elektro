@@ -5,24 +5,17 @@ const data=await populate( "example/Beispiel13/data.json" )
 
 const table=new Tabelle( data,"#ergebnis" );
 table.tabulate();
-
-
-// Rückkopplung
 const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
-
 Material.value=sel[ 1 ]
 G.value=sel[ 2 ]
 d.value=sel[ 3 ]
 D.value=sel[ 4 ]
 
-// Visualisierung
-import {vBleirohr} from '/components/Bauelemente/Rohrleitungen/Rohrleitung/Bleirohre/Bleirohr.mjs'
+import {vBleirohre} from '/components/Bauelemente.mjs'
+
 const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
 const point={x: 320,y: 240}
-
-const PtRohr=new vBleirohr( data,point );
+const PtRohr=new vBleirohre( data,point );
 PtRohr.createNode();
 view.addNode( PtRohr.node )
-
-
 </script>

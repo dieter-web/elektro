@@ -8,7 +8,7 @@ class Betriebsmittel extends Components {
   }
 }
 
-/** SECTION Abschlüsee */
+/** SECTION Abschlüsse */
 class Abschluesse extends Betriebsmittel {
   constructor() {
     super();
@@ -290,8 +290,9 @@ class Spule extends Induktivitaet {
 }
 /** SECTION Spulenkoerper */
 class Spulenkoerper extends Spule {
-  constructor() {
+  constructor(Parameter) {
     super();
+    this.Parameter = Parameter;
   }
 }
 /** !SECTION  */
@@ -325,8 +326,9 @@ class Ringspule extends SpuleOhneKern {
 /** !SECTION  */
 /** SECTION MehrlagigeSpule */
 class MehrlagigeSpule extends SpuleOhneKern {
-  constructor() {
+  constructor(Parameter) {
     super();
+    this.Parameter = Parameter;
   }
 }
 /** !SECTION  */
@@ -698,9 +700,7 @@ class Leitung extends Uebertragungswege {
   constructor() {
     super();
     // TODO: Nicht Kennzeichnung sondern Kabelname
-    this.Bezeichnung = require(path.resolve(
-      "src/json/Uebertragungswege/Leitungen/Bezeichnung.json"
-    ));
+    // this.Bezeichnung = require(path.resolve("src/json/Uebertragungswege/Leitungen/Bezeichnung.json"));
   }
 }
 
@@ -739,6 +739,7 @@ class FesteLegung extends Starkstromleitung {
   constructor(Parameter) {
     super();
     this.Parameter = Parameter;
+    this.Berechnung = {};
   }
 }
 /** !SECTION  */
@@ -888,13 +889,26 @@ class Verschiedenes extends Betriebsmittel {
     super();
   }
 }
+
+/** SECTION Verbraucher */
+class Verbraucher extends Verschiedenes {
+  constructor(Parameter) {
+    super();
+    this.Parameter = Parameter;
+    this.Berechnung = {};
+  }
+}
+/** !SECTION Verbraucher */
+
 /** !SECTION  */
 /** SECTION Verstärker */
 class Verstaerker extends Betriebsmittel {
-  constructor() {
+  constructor(Parameter) {
     super();
+    this.Parameter = Parameter;
   }
 }
+
 /** !SECTION  */
 /** SECTION Wähler */
 class Waehler extends Betriebsmittel {
@@ -1041,6 +1055,7 @@ class Varistor extends Spannung {
 /** !SECTION  */
 /** !SECTION Betriebsmittel */
 
+exports.Verbraucher = Verbraucher;
 exports.Varistor = Varistor;
 exports.Spannung = Spannung;
 exports.ElektrischeParameter = ElektrischeParameter;

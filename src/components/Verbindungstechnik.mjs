@@ -1,4 +1,4 @@
-import { vComponents } from "./../components.mjs";
+import { vComponents } from "./components.mjs";
 
 class vVerbindungstechnik extends vComponents {
   constructor(data) {

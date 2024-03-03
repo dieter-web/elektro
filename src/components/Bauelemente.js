@@ -477,8 +477,9 @@ class Faserzementrohre extends Rohrleitungen {
 /** !SECTION  */
 /** SECTION Bleirohre */
 class Bleirohre extends Rohrleitungen {
-  constructor() {
+  constructor(Parameter) {
     super();
+    this.Parameter = Parameter;
   }
 }
 /** !SECTION  */

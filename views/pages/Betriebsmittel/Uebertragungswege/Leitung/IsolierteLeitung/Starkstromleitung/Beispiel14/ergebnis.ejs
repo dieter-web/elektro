@@ -1,32 +1,47 @@
 <%- include('aufgabe.ejs',{}) %>
-<%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
-
-
-// import {vWClass} from '/d3/lib/Betriebsmittel/vWClass.mjs' // Leitung
-// import {Verbinder} from '/d3/lib/Schaltzeichen/Verbinder/Verbinder.mjs'
-
+<%- include('../../../../../../../layouts/partials/ergebnis3Tabellen.ejs') %>
 
 const data=await populate( "example/Beispiel14/data.json" )
 
-const table=new Tabelle( data,"#ergebnis" );
+drawkennzeichnung(data[0],"#kennzeichnung")
+const table=new Tabelle( data[0],"#ergebnis" );
 table.tabulate();
 
+drawkennzeichnung(data[1],"#kennzeichnung")
+const table1=new Tabelle( data[1],"#ergebnis1" );
+table1.tabulate();
 
-// Rückkopplung
-const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
+drawkennzeichnung(data[2],"#kennzeichnung")
+const table2=new Tabelle( data[2],"#ergebnis2" );
+table2.tabulate();
 
-Material.value=sel[ 0 ]
-p.value=sel[ 2 ]
-l.value=sel[ 3 ]
-a.value=sel[ 4 ]
-I.value=sel[ 5 ]
+// const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
+// Material.value=sel[ 0 ]
+// p.value=sel[ 2 ]
+// l.value=sel[ 3 ]
+// a.value=sel[ 4 ]
+// I.value=sel[ 5 ]
 
+import {vGleichstromnetz} from '/ElektrischeAnlagen/Verteilungssysteme/Verteilungssysteme.mjs'
+const point = {x:300, y:240};
+const V1 = new vGleichstromnetz(data[0],point)
 
-// svg grafik
-const g=drawboard()
+import { vLeitung } from '/components/Betriebsmittel.mjs'
+const point1 = {x:370, y:275};
+const W1 = new vLeitung(data[1],point1);
 
-let W1=new vWClass( data )
-g.append( () => W1.createNode() )
+import {vVerbraucher} from '/components/Betriebsmittel.mjs'
+const point2 = {x:570, y:240}
+const Z1 = new vVerbraucher(data[2],point2);
 
+const view = new DrawBoard('grafik', 640, 480,[0,0,500,500]);
+
+W1.createNode();
+V1.createNode();
+N1.createNode();
+
+view.addNode(V1.node)
+view.addNode(W1.node)
+view.addNode(Z1.node)
 
 </script>
