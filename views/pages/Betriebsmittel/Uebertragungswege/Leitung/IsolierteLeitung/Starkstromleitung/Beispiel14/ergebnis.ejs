@@ -32,16 +32,16 @@ const W1 = new vLeitung(data[1],point1);
 
 import {vVerbraucher} from '/components/Betriebsmittel.mjs'
 const point2 = {x:570, y:240}
-const Z1 = new vVerbraucher(data[2],point2);
+const N1 = new vVerbraucher(data[2],point2);
 
 const view = new DrawBoard('grafik', 640, 480,[0,0,500,500]);
 
-W1.createNode();
 V1.createNode();
+W1.createNode();
 N1.createNode();
 
 view.addNode(V1.node)
 view.addNode(W1.node)
-view.addNode(Z1.node)
+view.addNode(N1.node)
 
 </script>
