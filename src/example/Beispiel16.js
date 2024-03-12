@@ -1,5 +1,4 @@
 require("use-strict");
-
 /**
  * @description
  * Welche Widerstandswerte hat ein Aluminiumdraht von 300 m Länge und 0.2 mm Durchmesser
@@ -9,47 +8,41 @@ require("use-strict");
  * @param {*} input
  */
 async function Beispiel16(input) {
+  // Statischer Bereich
   const path = require("path");
-  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson"));
-
-  const { Elektro, Planemetrie, Aluminiumdraht } = require(path.resolve(
-    "include/system"
-  ));
-
-  const { readMaterialParameter } = require(path.resolve(
-    "src/js/readMaterialParameter.js"
-  ));
-  const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
-  const PK = new Planemetrie();
-  const EK = new Elektro();
-  const W1 = new Aluminiumdraht(input);
-
+  const { readMaterialParameter, readKonstante, makeDirectory } = require(path.resolve("src/js/utility.js"));
+  const { Elektro, Planemetrie } = require(path.resolve("src/mathjs/Kernel.js"));
+  const { Draht } = require(path.resolve("src/components/Betriebsmittel"));
   const datadir = "src/json/example/Beispiel16";
+  const EK = new Elektro();
+  const PK = new Planemetrie();
+  const W1 = new Draht({ Material: input.Material, l: input.l, d: input.d });
 
   makeDirectory(datadir).then(
+    // Dynamischer Bereich
     function () {
-      W1.Kennzeichnung.Art = "W";
-      W1.Kennzeichnung.Zählnummer = "1";
+      // W1 ist das Objekt der Klasse Draht ... !!
+      W1.Kennzeichnung = {
+        Art: "W",
+        Zählnummer: 1,
+      };
 
-      W1.Parameter.ρM = readMaterialParameter(
-        W1.Parameter.Material,
-        "ρ"
-      ).toString();
+      W1.Parameter = {
+        ρM: readMaterialParameter(W1.Eigenschaften.Material, "ρ"), // ermittelte Parameter
+        α20: readMaterialParameter(W1.Eigenschaften.Material, "α20"),
+        δ20: readKonstante("Vergleichstemperatur"),
+        δ1: input.δ1, // Parameter
+        δ2: input.δ2,
+        δ3: input.δ3,
+      };
 
-      W1.Parameter.α20 = readMaterialParameter(
-        W1.Parameter.Material,
-        "α20"
-      ).toString();
-
-      W1.Parameter.δ20 = readKonstante("Vergleichstemperatur").toString();
-
-      PK.parameter({ d: W1.Parameter.d });
+      PK.parameter({ d: W1.Eigenschaften.d });
       W1.Berechnung.Ad = PK.KAd().to("mm^2");
 
       EK.parameter({
         ρ: W1.Parameter.ρM,
-        l: W1.Parameter.l,
+        l: W1.Eigenschaften.l,
         A: W1.Berechnung.Ad.toString(),
       });
       W1.Berechnung.R20 = EK.RρlA().to("ohm");
@@ -76,10 +69,10 @@ async function Beispiel16(input) {
   );
 }
 // let input = {
-//   Material: "Aluminium",
+//   Material: "Aluminium", // Eigenschaften
 //   l: "300 m",
 //   d: "0.2 mm",
-//   δ1: "20 celsius",
+//   δ1: "20 celsius", // Parameter
 //   δ2: "75 celsius",
 //   δ3: "-8 celsius",
 // };

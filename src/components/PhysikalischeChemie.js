@@ -1,5 +1,11 @@
+const path = require("path");
+const dbJson = require(path.resolve("controllers/dbJson.js"));
+
 class PhysikalischeChemie {
-  constructor() {}
+  constructor() {
+    this.Berechnung = {};
+    this.Kennzeichnung = dbJson.readJSONFile(path.resolve("src/json/Sonstiges/kennzeichnung.json"));
+  }
 }
 
 class Elektrochemie extends PhysikalischeChemie {
@@ -9,16 +15,16 @@ class Elektrochemie extends PhysikalischeChemie {
 }
 
 class Elektrode extends Elektrochemie {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 
 class Elektrolyt extends Elektrochemie {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 

@@ -1,6 +1,4 @@
 const path = require("path");
-const math = require("mathjs");
-
 const dbJson = require(path.resolve("controllers/dbJson.js"));
 
 /**
@@ -12,8 +10,6 @@ const dbJson = require(path.resolve("controllers/dbJson.js"));
  * @returns {*} [Unit, Unit] min und max
  */
 function readMaterialParameter(Material, parameter) {
-  return dbJson.readJSONFile(
-    path.resolve("src/json/Sonstiges/Leiterwerkstoffe.json")
-  )[Material][parameter][0];
+  return dbJson.readJSONFile(path.resolve("src/json/Sonstiges/Leiterwerkstoffe.json"))[Material][parameter][0];
 }
 exports.readMaterialParameter = readMaterialParameter;

@@ -84,6 +84,32 @@ class vSpule extends vInduktivitaet {
   }
 }
 
+class vSpulenkoerper extends vSpule {
+  constructor(data, point) {
+    super(data, point);
+    this.shape = `M 0 6 
+    l 100 0 
+    l 0 -4
+    l -100 0
+    l 0 4
+    `;
+  }
+  fshape() {
+    this.Symbol.select("#shape")
+      .append("path")
+      .attr("d", this.shape)
+      .attr("stroke", "rgb(240,240,240")
+      .attr("stroke-linejoin", "round")
+      .attr("stroke-miterlimit", "10")
+      .attr("pointer-events", "all")
+      .attr("transform", () => {
+        let x = this.point.x;
+        let y = this.point.y;
+        return `translate(${x},${y})`;
+      });
+  }
+}
+
 /** SECTION  vVariometer*/
 class vVariometer extends vSpule {
   constructor(data) {
@@ -279,6 +305,17 @@ class vDraehte extends vUebertragungswege {
 class vDraht extends vDraehte {
   constructor(data, point) {
     super(data, point);
+    this.shape = `M 0 0 L 100 0`;
+  }
+
+  fshape() {
+    this.Symbol.select("#shape")
+      .append("path")
+      .attr("d", this.shape)
+      .attr("stroke", "rgb(240,240,240")
+      .attr("transform", () => {
+        return `translate(${this.point.x},${this.point.y})`;
+      });
   }
 }
 /** !SECTION  vDraht*/
@@ -494,6 +531,7 @@ export {
   vElektrischeMaschinen,
   vInduktivitaet,
   vSpule,
+  vSpulenkoerper,
   vVariometer,
   vSpuleOhneKern,
   vZylinderspule,

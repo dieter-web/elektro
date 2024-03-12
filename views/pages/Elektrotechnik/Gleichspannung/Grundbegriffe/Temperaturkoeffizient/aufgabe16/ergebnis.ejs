@@ -1,25 +1,13 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../layouts/partials/ergebnisOhneDrawBoardOhneKennzeichnung.ejs') %>
 
-const data=await populate( "example/Aufgabe16/data.json" )
-const mat=await populate( "Sonstiges/Leiterwerkstoffe.json" )
+import {Tabelle3} from "/sysFrontend/Tabelle.mjs";
+const data = await populate("example/Aufgabe16/data.json")
 
-// drawkennzeichnung( data,"#kennzeichnung" )
+Material.value = data.Eigenschaften.Material;
 
-const table=new Tabelle( data,"#ergebnis" );
+const table = new Tabelle3(data, "#ergebnis");
 table.tabulate();
-
-// Rückkopplung
-const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
-Material.value=tab[ 0 ]
-
-// Visualisierung
-// import {vLeiterwerkstoff} from '/components/Werkstoff/Werkstoff.mjs'
-// const view=new DrawBoard('grafik',640,480,[0,0,500,500]);
-// const point={x: 320,y: 240};
-// const shape = new vLeiterwerkstoff(data,point)
-// shape.createNode();
-// view.addNode(shape.node)
 
 </script>
 

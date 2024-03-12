@@ -9,17 +9,13 @@
         </div>
     </div>
 </div>
-<script type="module">
-    import {finput} from '/modules/finput.mjs'
-    import {fsubmit} from '/modules/fsubmit.mjs'
-    import {ftext} from '/modules/ftext.mjs'
 
-    const dataSubmit=[ "Rechnen" ];
-    const idText="#text";
+<script type="module">
+    import {finput,fsubmit,ftext} from '/modules/utility.mjs'
 
     function eingabe ( idBeispiel,Text,Form )
     {
-        ftext( Text,idText );
+        ftext( Text,"#text" );
         finput( Form,idBeispiel );
-        fsubmit( dataSubmit,idBeispiel )
+        fsubmit( [ "Rechnen" ],idBeispiel )
     }

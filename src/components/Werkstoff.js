@@ -3,8 +3,8 @@ const dbJson = require(path.resolve("controllers/dbJson.js"));
 
 class Werkstoff {
   constructor() {
-    // this.Kennzeichnung = require(path.resolve("src/json/Bezeichnungssysteme/Material.json"));
-    // this.Berechung = {};
+    this.Kennzeichnung = {};
+    this.Berechnungen = {};
   }
 }
 
@@ -78,10 +78,10 @@ class Werkzeugstahl extends Eisenwerkstoff {
 }
 
 class Leiterwerkstoff extends Werkstoff {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
-    this.data = dbJson.readJSONFile(path.resolve("src/json/Sonstiges/Leiterwerkstoffe.json"))[Parameter.Material];
+    this.Eigenschaften = Eigenschaften;
+    this.data = dbJson.readJSONFile(path.resolve("src/json/Sonstiges/Leiterwerkstoffe.json"))[Eigenschaften.Material];
   }
 
   fρ(name) {

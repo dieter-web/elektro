@@ -4,6 +4,7 @@
   "description": "Lösen von Aufgaben aus dem Bereich  Grundlagen der Elektrotechnik",
   "main": "app.js",
   "directories": {
+    "administrator": "administrator",
     "controllers": "controllers",
     "hint-report": "hint-report",
     "include": "include",
@@ -16,13 +17,20 @@
     "views": "views"
   },
   "files": [
+    ".babelrc",
     ".gitignore",
+    ".hintrc",
     ".jshintrc",
     "app.js",
+    "audit",
+    "index.json",
     "jsconfig.json",
     "LICENSE",
+    "npm-shrinkwrap.json",
     "package.json",
-    "README.md"
+    "php.ini",
+    "README.md",
+    "SECURITY.md"
   ],
   "scripts": {
     "dev": "nodemon app.js",

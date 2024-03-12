@@ -8,6 +8,8 @@ class vComponents {
     this.offx = 20;
     this.offy = 20;
 
+    this.y = point.y + 16;
+
     this.vis = {
       fill: "none",
       "fill-opacity": 1,
@@ -49,15 +51,14 @@ class vComponents {
   }
 
   fvalue() {
-    let y = this.point.y;
     this.Symbol.select("#value")
       .selectAll("text")
-      .data(this.o2d(this.data.Parameter))
+      .data(this.o2d(this.data.Eigenschaften))
       .enter()
       .append("text")
       .attr("x", this.point.x)
       .attr("y", () => {
-        return (y += 16);
+        return (this.y += 16);
       })
       .text((d) => {
         return d;
@@ -68,7 +69,9 @@ class vComponents {
     this.Symbol.select("#name")
       .append("text")
       .attr("x", this.point.x)
-      .attr("y", this.point.y)
+      .attr("y", () => {
+        return (this.y += 16);
+      })
       .text(`${this.data.Kennzeichnung.Art}${this.data.Kennzeichnung.Zählnummer} `);
   }
 
@@ -76,7 +79,9 @@ class vComponents {
     this.Symbol.select("#kennzeichnung")
       .append("text")
       .attr("x", this.point.x)
-      .attr("y", this.point.y)
+      .attr("y", () => {
+        return (this.y += 16);
+      })
       .text(`Hier steht die Kennzeichnung`);
   }
 

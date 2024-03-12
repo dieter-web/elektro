@@ -12,24 +12,27 @@ require("use-strict");
 async function Aufgabe14(input) {
   const path = require("path");
   const dbJson = require(path.resolve("controllers/dbJson.js"));
-  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
-  const { readMaterialParameter } = require(path.resolve("src/js/readMaterialParameter.js"));
-  const { Elektro } = require(path.resolve("src/Kernel/Elektro.js"));
-  const { MehrlagigeSpule } = require(path.resolve("src/components/Betriebsmittel"));
+  const { readMaterialParameter, makeDirectory } = require(path.resolve("src/js/utility.js"));
+  const { Elektro } = require(path.resolve("src/mathjs/Kernel.js"));
+  const { Spule } = require(path.resolve("src/components/Betriebsmittel.js"));
 
-  const L1 = new MehrlagigeSpule(input);
+  const L1 = new Spule({ Material: input.Material, l: input.l });
   const EK = new Elektro();
   const datadir = "src/json/example/Aufgabe14";
 
   makeDirectory(datadir).then(
     function () {
-      L1.Kennzeichnung.Art = "L";
-      L1.Kennzeichnung.Zählnummer = "1";
+      L1.Kennzeichnung = {
+        Art: "L",
+        Zählnummer: "1",
+      };
+
+      L1.Parameter.U = input.U;
       L1.Parameter.ρcu = readMaterialParameter(input.Material, "ρ");
 
       EK.parameter({
         ρ: L1.Parameter.ρcu,
-        l: L1.Parameter.l,
+        l: L1.Eigenschaften.l,
         U: L1.Parameter.U,
       });
       L1.Berechnung.S = EK.SUρl().to("A/mm^2");

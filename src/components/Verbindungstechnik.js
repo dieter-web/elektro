@@ -95,37 +95,37 @@ class LoesbareVerbindung extends Verbindungstechnik {
 }
 
 class SchraubVerbindung extends LoesbareVerbindung {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 
 class Steckverbindung extends LoesbareVerbindung {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 
 class QuetschUndSteckvergindung extends LoesbareVerbindung {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 
 class Klemmverbindung extends LoesbareVerbindung {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 
 class Klemme extends Klemmverbindung {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 

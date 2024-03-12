@@ -9,28 +9,31 @@ require("use-strict");
  */
 async function Aufgabe11(input) {
   const path = require("path");
-  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson.js"));
-
-  const { Widerstand } = require(path.resolve(
-    "src/components/Betriebsmittel.js"
-  ));
-  const { Elektro } = require(path.resolve("src/Kernel/Elektro.js"));
+  const { makeDirectory } = require(path.resolve("src/js/utility.js"));
+  const { Widerstand } = require(path.resolve("src/components/Betriebsmittel.js"));
+  const { Elektro } = require(path.resolve("src/mathjs/Kernel.js"));
 
   const EK = new Elektro();
-  const R1 = new Widerstand(input);
+  const R1 = new Widerstand({ G: input.G });
 
   const datadir = "src/json/example/Aufgabe11";
 
   makeDirectory(datadir).then(
     function () {
-      R1.Kennzeichnung.Art = "G";
-      R1.Kennzeichnung.Zählnummer = "1";
+      R1.Kennzeichnung = {
+        Art: "G",
+        Zählnummer: 1,
+      };
 
-      EK.parameter({ G: R1.Parameter.G, I: R1.Parameter.I });
+      R1.Parameter = {
+        I: input.I,
+      };
+
+      EK.parameter({ G: R1.Eigenschaften.G, I: R1.Parameter.I });
       R1.Berechnung["U"] = EK.UIG().to("V");
+
       dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), R1);
-      return R1;
     },
     function () {
       console.error(`${datadir}`);
@@ -38,8 +41,8 @@ async function Aufgabe11(input) {
   );
 }
 // let input = {
-//   G: "3E-2 S",
-//   I: "600 mA",
+//   G: "3E-2 S", // Eigenschaft
+//   I: "600 mA", // Parameter
 // };
 // Aufgabe11(input);
 exports.func = Aufgabe11;

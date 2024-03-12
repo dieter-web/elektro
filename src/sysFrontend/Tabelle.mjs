@@ -1,18 +1,29 @@
-// Einzeilige Tabelle (Mit Kopfzeile und einer Bodyzeile)
+// Einzeilige Tabelle (Mit Kopfzeile und einer Bodyzeile) Bestehend aus Parameter und Berechnung
 class Tabelle {
   constructor(data, id) {
     this.id = id;
     this.data = data;
     this.table = d3.select(id);
+    this.keyss = [];
+    this.bvalues = [];
 
-    // Kopfzeile
-    this.keyss = Object.keys(this.data.Parameter).concat(
-      Object.keys(this.data.Berechnung)
-    );
+    for (let property in data.Parameter) {
+      if (data.Parameter.hasOwnProperty(property)) {
+        this.keyss = Object.keys(data.Parameter);
+        this.values = Object.values(data.Parameter);
+      }
+    }
+
+    for (let property in data.Berechnung) {
+      if (data.Berechnung.hasOwnProperty(property)) {
+        this.keyss = this.keyss.concat(Object.keys(data.Berechnung));
+        this.bvalues = Object.values(this.data.Berechnung);
+      }
+    }
 
     // Bodyzeile
-    this.bvalues = Object.values(this.data.Berechnung);
-    this.values = Object.values(this.data.Parameter);
+    // this.bvalues = Object.values(this.data.Berechnung);
+    // this.values = Object.values(this.data.Parameter);
 
     this.thead = this.table.append("thead");
     this.tbody = this.table.append("tbody");
@@ -30,18 +41,13 @@ class Tabelle {
       });
   }
 
-  // Werte aus this.bvalues werden verwendet
+  //Werte aus this.bvalues werden verwendet
   formatValues() {
     this.erg = [];
     this.len = this.bvalues.length;
     this.i = 0;
     for (this.i; this.i < this.len; this.i++) {
-      this.erg.push(
-        [
-          d3.format(".3E")(this.bvalues[this.i].value),
-          this.bvalues[this.i].unit,
-        ].join(" ")
-      );
+      this.erg.push([d3.format(".3E")(this.bvalues[this.i].value), this.bvalues[this.i].unit].join(" "));
     }
     this.valuess = this.values.concat(this.erg);
   }
@@ -147,5 +153,46 @@ class Tabelle2 {
     this.createBody();
   }
 }
+// Tabelle ohne Parameter nur mit Eigenschaften
+class Tabelle3 extends Tabelle {
+  constructor(data, id) {
+    super(data, id);
+    // this.id = id;
+    // this.data = data;
+    // this.table = d3.select(id);
 
-export { Tabelle, Tabelle2 };
+    // Kopfzeile
+    this.keyss = Object.keys(data.Berechnungen);
+
+    // Bodyzeile
+
+    this.bvalues = Object.values(data.Berechnungen);
+    // Es gibt keine Parameter
+    this.values = {};
+
+    this.thead = this.table.append("thead");
+    this.tbody = this.table.append("tbody");
+  }
+
+  // Formatierung erfolgt direkt im createBody
+  formatValues = function () {};
+
+  createBody() {
+    this.tbody
+      .append("tr")
+      .selectAll("td")
+      .data(this.bvalues)
+      .enter()
+      .append("td")
+      .text((t) => {
+        return `${d3.format(".3E")(t.value)} ${t.unit}`;
+      });
+  }
+
+  tabulate() {
+    this.createKopfzeile();
+    this.createBody();
+  }
+}
+
+export { Tabelle, Tabelle2, Tabelle3 };

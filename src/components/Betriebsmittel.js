@@ -31,9 +31,9 @@ class Zweipole extends Baugruppen {
 /** !SECTION  */
 /** SECTION Passiver Zweipol */
 class PassiverZweipol extends Zweipole {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
@@ -63,113 +63,113 @@ class Transformatoren extends RuhendeElektrischeMaschinen {
 }
 /** SECTION Transformator  */
 class Transformator extends Transformatoren {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** SECTION Transaktor */
 class Transaktor extends Transformatoren {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** !SECTION  */
 /** SECTION Messwandler */
 class Messwandler extends Transformator {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** SECTION Stromwandler */
 class Stromwandler extends Messwandler {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** SECTION Spannungswandler */
 class Spannungswandler extends Messwandler {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** !SECTION Messwandler */
 /** SECTION  Manteltransformator */
 class Manteltransformator extends Transformator {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** SECTION Kerntransformator */
 class Kerntransformator extends Transformator {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** SECTION Transformator mit Mittenabgriff */
 class TransformatorMitMittenabgriff extends Kerntransformator {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** SECTION Ringkerntransformator */
 class Ringkerntransformator extends Kerntransformator {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** SECTION Einphasentransformator */
 class Einphasentransformator extends Kerntransformator {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** SECTION Dreiphasentransformator */
 class Dreiphasentransformator extends Kerntransformator {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** SECTION  AudioTransformator */
 class AudioTransformator extends Kerntransformator {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** !SECTION  */
 /** SECTION Impulstransformator */
 class Impulstransformator extends Transformator {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** SECTION HF Transformator */
 class HFTransformator extends Transformator {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
@@ -284,23 +284,24 @@ class Induktivitaet extends Betriebsmittel {
 /** !SECTION  */
 /** SECTION Spule */
 class Spule extends Induktivitaet {
-  constructor() {
+  constructor(Eigenschaften) {
     super();
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** SECTION Spulenkoerper */
 class Spulenkoerper extends Spule {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** SECTION Variometer */
 class Variometer extends Spule {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
@@ -326,9 +327,9 @@ class Ringspule extends SpuleOhneKern {
 /** !SECTION  */
 /** SECTION MehrlagigeSpule */
 class MehrlagigeSpule extends SpuleOhneKern {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
@@ -356,9 +357,9 @@ class SpuleMitKern extends Spule {
 
 /** SECTION Magnetspule  */
 class Magnetspule extends SpuleMitKern {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
@@ -373,17 +374,17 @@ class MagnetischeBauelementeDigitalerEinrichtungen extends Induktivitaet {
 /** !SECTION  */
 /** SECTION Klemmvorrichtungen */
 class Klemmvorrichtungen extends Betriebsmittel {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 
 /** SECTION Klemme */
 class Klemme extends Klemmvorrichtungen {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
@@ -425,461 +426,220 @@ class Messgeraete extends Betriebsmittel {
 
 /** SECTION Zeitmesser */
 class Zeitmesser extends Messgeraete {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** SECTION Strommesser */
 class Strommesser extends Messgeraete {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** SECTION Spannungsmesser */
 class Spannungsmesser extends Messgeraete {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** SECTION Phasenwinkelmesser */
 class Phasenwinkelmesser extends Messgeraete {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** SECTION MagnetischeGroessemesser */
 class MagnetischeGroessemesser extends Messgeraete {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** SECTION Leistungsmesser */
 class Leistungsmesser extends Messgeraete {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaftenften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** SECTION Impedanzmesser */
 class Impedanzmesser extends Messgeraete {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** SECTION Frequenzmesser */
 class Frequenzmesser extends Messgeraete {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** SECTION Energiemesser */
 class Energiemesser extends Messgeraete {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** !SECTION  */
 /** SECTION Prüfgeräte */
 class Pruefgeraete extends Betriebsmittel {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** SECTION Regler */
 class Regler extends Betriebsmittel {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** SECTION Relais */
 class Relais extends Betriebsmittel {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** SECTION Schalter */
 class Schalter extends Betriebsmittel {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** SECTION Schütze */
 class Schuetze extends Betriebsmittel {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** SECTION Schutzeinrichtungen */
 class Schutzeinrichtungen extends Betriebsmittel {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** SECTION Sensoren */
 class Sensoren extends Betriebsmittel {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** SECTION Steckvorrichtungen */
 class Steckvorrichtungen extends Betriebsmittel {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 
 /** SECTION Stecker */
 class Stecker extends Steckvorrichtungen {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaftenften;
   }
 }
 /** !SECTION  */
 /** SECTION Steckerleiste */
 class Steckerleiste extends Steckvorrichtungen {
-  constructor(Parameter) {
+  constructor(Eigenschaftenften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** !SECTION  */
+
 /** SECTION Übertragungswege */
 class Uebertragungswege extends Betriebsmittel {
-  constructor() {
+  constructor(Eigenschaften) {
     super();
+    // this.Eigenschaften = Eigenschaften;
   }
 }
 
-/** SECTION Antennen */
+/** SECTION Antenne */
 class Antenne extends Uebertragungswege {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
-/** SECTION Drähte */
-class Draehte extends Uebertragungswege {
-  constructor() {
-    super();
-  }
-}
 
 /** SECTION Draht  */
-class Draht extends Draehte {
-  constructor(Parameter) {
+class Draht extends Uebertragungswege {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 
-/** SECTION Wickeldraht */
-class Wickeldraht extends Draht {
-  constructor(Parameter) {
-    super();
-    this.Parameter = Parameter;
-  }
-}
-/** !SECTION  */
-/** SECTION Runddraht */
-class Runddraht extends Draht {
-  constructor() {
-    super();
-  }
-}
+/** !SECTION Draht  */
 
-/** SECTION Isoliert */
-
-class Isoliert extends Runddraht {
-  constructor() {
-    super();
-  }
-}
-/** !SECTION  */
-/** SECTION Blank */
-class Blank extends Runddraht {
-  constructor() {
-    super();
-  }
-}
-
-/** SECTION Legierungsdraht */
-class Legierungsdraht extends Blank {
-  constructor(Parameter) {
-    super();
-    this.Parameter = Parameter;
-  }
-}
-/** !SECTION  */
-/** SECTION Kupferdraht */
-class Kupferdraht extends Blank {
-  constructor(Parameter) {
-    super();
-    this.Parameter = Parameter;
-  }
-}
-/** !SECTION  */
-/** SECTION Aluminiumdraht */
-class Aluminiumdraht extends Blank {
-  constructor(Parameter) {
-    super();
-    this.Parameter = Parameter;
-  }
-}
-/** !SECTION  */
-/** !SECTION  */
-/** !SECTION  */
-/** !SECTION  */
-/** !SECTION  */
 /** SECTION Kabel */
 class Kabel extends Uebertragungswege {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
+/** !SECTION Kabel */
 
-/** SECTION Starkstromkabel */
-class Starkstromkabel extends Kabel {
-  constructor(Parameter) {
-    super(Parameter);
-  }
-}
-/** !SECTION  */
-/** SECTION Hochfrequenzkabel */
-class Hochfrequenzkabel extends Kabel {
-  constructor(Parameter) {
-    super(Parameter);
-  }
-}
-/** !SECTION  */
-/** SECTION Fernmeldekabel */
-class Fernmeldekabel extends Kabel {
-  constructor() {
-    super();
-  }
-}
-/** !SECTION  */
-/** !SECTION  */
 /** SECTION Leitung */
 class Leitung extends Uebertragungswege {
-  constructor() {
+  constructor(Eigenschaften) {
     super();
-    // TODO: Nicht Kennzeichnung sondern Kabelname
-    // this.Bezeichnung = require(path.resolve("src/json/Uebertragungswege/Leitungen/Bezeichnung.json"));
+    this.Eigenschaften = Eigenschaften;
   }
 }
+/** !SECTION Leitung */
 
-/** SECTION Isolierteleitung */
-class Isolierteleitung extends Leitung {
-  constructor() {
-    super();
-  }
-}
-
-/** SECTION Starkstromleitung */
-class Starkstromleitung extends Isolierteleitung {
-  constructor() {
-    super();
-  }
-}
-
-/** SECTION OrtsveraenderlicheLegung */
-class OrtsveraenderlicheLegung extends Starkstromleitung {
-  constructor(Parameter) {
-    super();
-    this.Parameter = Parameter;
-  }
-}
-
-/** SECTION Konfektioniert */
-class Konfektioniert extends Starkstromleitung {
-  constructor(Parameter) {
-    super();
-    this.Parameter = Parameter;
-  }
-}
-/** !SECTION  */
-/** SECTION FesteLegung */
-class FesteLegung extends Starkstromleitung {
-  constructor(Parameter) {
-    super();
-    this.Parameter = Parameter;
-    this.Berechnung = {};
-  }
-}
-/** !SECTION  */
-/** SECTION BesondererZweck */
-class BesondererZweck extends Starkstromleitung {
-  constructor(Parameter) {
-    super();
-    this.Parameter = Parameter;
-  }
-}
-/** !SECTION  */
-/** !SECTION  */
-/** !SECTION  */
-/** SECTION Fernmeldeleitung */
-class Fernmeldeleitung extends Isolierteleitung {
-  constructor() {
-    super();
-  }
-}
-/** !SECTION  */
-/** SECTION Litzeleitung */
-class Litzeleitung extends Fernmeldeleitung {
-  constructor(Parameter) {
-    super();
-    this.Parameter = Parameter;
-  }
-}
-/** !SECTION  */
-/** SECTION Lahnlitzeleitung */
-class Lahnlitzeleitung extends Fernmeldeleitung {
-  constructor(Parameter) {
-    super();
-    this.Parameter = Parameter;
-  }
-}
-/** !SECTION  */
-/** SECTION Eindrahtleitung */
-class Eindrahtleitung extends Fernmeldeleitung {
-  constructor(Parameter) {
-    super();
-    this.Parameter = Parameter;
-  }
-}
-/** !SECTION  */
-/** !SECTION  */
-/** SECTION Blankeleitung */
-class Blankeleitung extends Leitung {
-  constructor() {
-    super();
-    this.visBlankeleitung = {};
-  }
-}
-
-/** SECTION Stromschiene */
-class Stromschiene extends Blankeleitung {
-  constructor(Parameter) {
-    super();
-    this.Parameter = Parameter;
-  }
-}
-/** !SECTION  */
-/** SECTION Schleifenleitung */
-class Schleifenleitung extends Blankeleitung {
-  constructor(Parameter) {
-    super();
-    this.Parameter = Parameter;
-  }
-}
-/** !SECTION  */
 /** SECTION Schiene */
-class Schiene extends Blankeleitung {
-  constructor(Parameter) {
+class Schiene extends Uebertragungswege {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
-/** SECTION Sammelschiene */
-class Sammelschiene extends Blankeleitung {
-  constructor(Parameter) {
-    super();
-    this.Parameter = Parameter;
-  }
-}
+
 /** !SECTION  */
-/** SECTION OffenGelegteLeing */
-class OffenGelegteLeing extends Blankeleitung {
-  constructor(Parameter) {
-    super();
-    this.Parameter = Parameter;
-  }
-}
-/** !SECTION  */
-/** SECTION Hochfrequenzleitung */
-class Hochfrequenzleitung extends Blankeleitung {
-  constructor(Parameter) {
-    super();
-  }
-}
-/** !SECTION  */
-/** SECTION Freileitung */
-class Freileitung extends Blankeleitung {
-  constructor(Parameter) {
-    super();
-    this.Parameter = Parameter;
-  }
-}
-/** !SECTION  */
-/** SECTION Fahrleitung */
-class Fahrleitung extends Blankeleitung {
-  constructor(Parameter) {
-    super();
-    this.Parameter = Parameter;
-  }
-}
-/** !SECTION  */
-/** SECTION  Erdungssammelleitung */
-class Erdungssammelleitung extends Blankeleitung {
-  constructor(Parameter) {
-    super();
-    this.Parameter = Parameter;
-  }
-}
-/** !SECTION  */
-/** SECTION Erder */
-class Erder extends Blankeleitung {
-  constructor(Parameter) {
-    super();
-    this.Parameter = Parameter;
-  }
-}
-/** !SECTION  */
-/** !SECTION  */
-/** !SECTION  */
-/** !SECTION  */
+
 /** SECTION  Umsetzer */
 class Umsetzer extends Betriebsmittel {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
@@ -892,9 +652,9 @@ class Verschiedenes extends Betriebsmittel {
 
 /** SECTION Verbraucher */
 class Verbraucher extends Verschiedenes {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
     this.Berechnung = {};
   }
 }
@@ -903,9 +663,9 @@ class Verbraucher extends Verschiedenes {
 /** !SECTION  */
 /** SECTION Verstärker */
 class Verstaerker extends Betriebsmittel {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 
@@ -921,7 +681,6 @@ class Waehler extends Betriebsmittel {
 class Widerstaende extends Betriebsmittel {
   constructor() {
     super();
-    this.Rmap = new Map();
   }
 
   //TODO: Rmap Operationen schreiben
@@ -929,13 +688,9 @@ class Widerstaende extends Betriebsmittel {
 
 /** SECTION Widerstand  */
 class Widerstand extends Widerstaende {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
-  }
-
-  add(name, Parameter) {
-    this.Rmap.set(name, Parameter);
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
@@ -962,23 +717,23 @@ class Temperatur extends NichtelektrischeParameter {
 
 /** SECTION Thermistor */
 class Thermistor extends Temperatur {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** SECTION Kaltleiter */
 class Kaltleiter extends Thermistor {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** SECTION KeramischeKaltleiter */
 class KeramischerKaltleiter extends Kaltleiter {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
@@ -994,9 +749,9 @@ class Strahlung extends NichtelektrischeParameter {
 
 /** SECTION Fotowiderstand */
 class Fotowiderstand extends Strahlung {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 
@@ -1011,9 +766,9 @@ class MagnetischesFeld extends NichtelektrischeParameter {
 
 /** SECTION Feldplatte */
 class Feldplatte extends MagnetischesFeld {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
@@ -1042,9 +797,9 @@ class Spannung extends ElektrischeParameter {
 
 /** SECTION  Varistor*/
 class Varistor extends Spannung {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 
@@ -1073,43 +828,55 @@ exports.ParameterabhaengigeHalbleiterwiderstaende = ParameterabhaengigeHalbleite
 exports.Widerstand = Widerstand;
 exports.Widerstaende = Widerstaende;
 exports.Verschiedenes = Verschiedenes;
-exports.Erder = Erder;
-exports.Erdungssammelleitung = Erdungssammelleitung;
-exports.Fahrleitung = Fahrleitung;
-exports.Freileitung = Freileitung;
-exports.Hochfrequenzleitung = Hochfrequenzleitung;
-exports.OffenGelegteLeing = OffenGelegteLeing;
-exports.Sammelschiene = Sammelschiene;
+
+// exports.Erder = Erder;
+// exports.Erdungssammelleitung = Erdungssammelleitung;
+// exports.Fahrleitung = Fahrleitung;
+// exports.Freileitung = Freileitung;
+// exports.Hochfrequenzleitung = Hochfrequenzleitung;
+// exports.OffenGelegteLeing = OffenGelegteLeing;
+// exports.Sammelschiene = Sammelschiene;
+
 exports.Schiene = Schiene;
-exports.Schleifenleitung = Schleifenleitung;
-exports.Stromschiene = Stromschiene;
-exports.Blankeleitung = Blankeleitung;
-exports.Eindrahtleitung = Eindrahtleitung;
-exports.Lahnlitzeleitung = Lahnlitzeleitung;
-exports.Litzeleitung = Litzeleitung;
-exports.Fernmeldeleitung = Fernmeldeleitung;
-exports.BesondererZweck = BesondererZweck;
-exports.FesteLegung = FesteLegung;
-exports.Konfektioniert = Konfektioniert;
-exports.OrtsveraenderlicheLegung = OrtsveraenderlicheLegung;
-exports.Starkstromleitung = Starkstromleitung;
-exports.Isolierteleitung = Isolierteleitung;
+
+// exports.Schleifenleitung = Schleifenleitung;
+// exports.Stromschiene = Stromschiene;
+// exports.Blankeleitung = Blankeleitung;
+// exports.Eindrahtleitung = Eindrahtleitung;
+// exports.Lahnlitzeleitung = Lahnlitzeleitung;
+// exports.Litzeleitung = Litzeleitung;
+// exports.Fernmeldeleitung = Fernmeldeleitung;
+// exports.BesondererZweck = BesondererZweck;
+// exports.FesteLegung = FesteLegung;
+// exports.Konfektioniert = Konfektioniert;
+// exports.OrtsveraenderlicheLegung = OrtsveraenderlicheLegung;
+// exports.Starkstromleitung = Starkstromleitung;
+// exports.Isolierteleitung = Isolierteleitung;
+
 exports.Leitung = Leitung;
-exports.Fernmeldekabel = Fernmeldekabel;
-exports.Hochfrequenzkabel = Hochfrequenzkabel;
-exports.Starkstromkabel = Starkstromkabel;
+
+// exports.Fernmeldekabel = Fernmeldekabel;
+// exports.Hochfrequenzkabel = Hochfrequenzkabel;
+// exports.Starkstromkabel = Starkstromkabel;
+
 exports.Kabel = Kabel;
-exports.Aluminiumdraht = Aluminiumdraht;
-exports.Kupferdraht = Kupferdraht;
-exports.Legierungsdraht = Legierungsdraht;
-exports.Blank = Blank;
-exports.Isoliert = Isoliert;
-exports.Runddraht = Runddraht;
-exports.Wickeldraht = Wickeldraht;
+
+// exports.Aluminiumdraht = Aluminiumdraht;
+// exports.Kupferdraht = Kupferdraht;
+// exports.Legierungsdraht = Legierungsdraht;
+// exports.Blank = Blank;
+// exports.Isoliert = Isoliert;
+// exports.Runddraht = Runddraht;
+// exports.Wickeldraht = Wickeldraht;
+
 exports.Draht = Draht;
-exports.Draehte = Draehte;
+
+// exports.Draehte = Draehte;
+
 exports.Antenne = Antenne;
-exports.Uebertragungswege = Uebertragungswege;
+
+// intern?  exports.Uebertragungswege = Uebertragungswege;
+
 exports.Steckvorrichtungen = Steckvorrichtungen;
 exports.Stecker = Stecker;
 exports.Steckerleiste = Steckerleiste;

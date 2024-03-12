@@ -2,16 +2,24 @@
   id: "beispiel15",
   action: "/physikalischechemie/elektrochemie/elektrolyt/beispiel15/aufgabe"  
  }) %>
-<%- include('../../../../../layouts/partials/ergebnis.ejs') %>
+<%- include('../../../../../layouts/partials/ergebnis3Tabellen.ejs') %>
 
-// import {vb1} from '/d3/lib/Bauelemente/vb1.mjs'
+const data=await populate( "example/Beispiel15/data.json" );
 
+drawkennzeichnung(data[0],"#kennzeichnung");
 
-const data=await populate( "example/Beispiel15/data.json" )
-
-
-const table=new Tabelle( data,"#ergebnis" );
+const table=new Tabelle( data[0],"#ergebnis" );
 table.tabulate();
+
+drawkennzeichnung(data[1],"#kennzeichnung");
+
+const table1=new Tabelle( data[1],"#ergebnis1" );
+table1.tabulate();
+
+drawkennzeichnung(data[2],"#kennzeichnung");
+
+const table2=new Tabelle( data[2],"#ergebnis2" );
+table2.tabulate();
 
 
 // Rückkopplung
@@ -21,18 +29,20 @@ table.tabulate();
 // b.value=sel[ 2 ].innerHTML
 // d.value=sel[ 3 ].innerHTML
 
-// svg grafik
-const g=canvas( '#grafik',800,300,"10,10,200,200" )
+import {vForm1} from '/components/physikalischechemie.mjs'
+// import {vElektrolyt} from '/components/physikalischechemie.mjs'
+const point1 = {x:300, y: 200};
+const point2 = {x:350, y: 200};
 
-// let dataGP=[
-// {
-// opacity: 0.4,
-// height: 125,
-// width: 80,
-// text: "Glasplatte"
-// }
-// ]
+const vE1 = new vForm1(data[1],point1);
+const vE2 = new vForm1(data[2],point2);
 
-// g.append( () => vb1( dataGP,[ 50,50 ] ) )
+const view = new DrawBoard('grafik',640, 480,[0,0,500,500])
+
+vE1.createNode()
+view.addNode(vE1.node)
+
+vE2.createNode()
+view.addNode(vE2.node)
 
 </script>

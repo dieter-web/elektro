@@ -2,9 +2,8 @@ require("use-strict");
 
 /**
  * @description
- * Wie groß ist der spezifische Widerstand eines 3 km langen Drahtes
- * mit 0.9 mm Durchmesser, der
- * einen Widerstand von 84.5 Ohm hat ?
+ * Wie groß ist der spezifische Widerstand eines 3 km langen Drahtes mit 0.9 mm Durchmesser,
+ * der  einen Widerstand von 84.5 Ohm hat ?
  * @author Dieter Krause
  * @date 23/06/2023
  * @param {*} input

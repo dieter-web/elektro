@@ -7,13 +7,7 @@ require("use-strict");
  * Wie groß muß der erforderliche Querschnitt sein, wenn der Spannungsverlust längs der Leitung
  * maximal 5% der Netzspannung betragen darf ?
  *
- * @param {string} Material - Material
- * @param {math.Unit} U - Netzspannung
- * @param {numeric} p - max. zulässiger prozendualer Spannungsabfall
- * @param {math.Unit} l - Länge der Leitung
- * @param {numeric} a - Anzahl der Adern der Leitung
- * @param {math.Unit} I - Stromstärke
- * @returns {string} A - Querschnitt der Leitung
+ * @param {*} input 
  */
 async function Beispiel14(input) {
   const path = require("path");

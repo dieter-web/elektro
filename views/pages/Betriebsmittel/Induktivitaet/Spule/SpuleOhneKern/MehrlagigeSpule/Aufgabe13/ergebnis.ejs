@@ -3,25 +3,38 @@
 
 const data=await populate( "example/Aufgabe13/data.json" )
 
-drawkennzeichnung( data,"#kennzeichnung" )
+Material.value = data[0].Eigenschaften.Material;
+lm.value = data[1].Eigenschaften.lm;
+N.value = data[0].Eigenschaften.N;
+d.value = data[0].Eigenschaften.d;
 
-const table=new Tabelle( data,"#ergebnis" );
+drawkennzeichnung( data[0],"#kennzeichnung" )
+drawkennzeichnung( data[1],"#kennzeichnung" )
+
+const table=new Tabelle( data[0],"#ergebnis" );
 table.tabulate();
+const table1=new Tabelle( data[1],"#ergebnis" );
+table1.tabulate();
 
-const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
-Material.value=sel[ 0 ]
-lm.value=sel[ 1 ]
-N.value=sel[ 2 ]
-d.value=sel[ 3 ]
+
+
+// const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
+// Material.value=sel[ 0 ]
+// lm.value=sel[ 1 ]
+// N.value=sel[ 2 ]
+// d.value=sel[ 3 ]
 
 // Visualisierung
-import {vMehrlagigeSpule} from '/components/Betriebsmittel.mjs'
+import {vSpule} from '/components/Betriebsmittel.mjs'
+import {vSpulenkoerper} from '/components/Betriebsmittel.mjs'
 
 const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
 const point={x: 320,y: 240};
-let L1=new vMehrlagigeSpule( data,point )
-L1.createNode();
-view.addNode( L1.node )
 
-
+let g1=new vSpule( data[0],point )
+let g2=new vSpulenkoerper( data[1],point )
+g1.createNode();
+g2.createNode();
+view.addNode( g2.node )
+view.addNode( g1.node )
 </script>

@@ -3,20 +3,19 @@
 
 const data=await populate( "example/Aufgabe15/data.json" )
 
+d.value = data.Eigenschaften.d;
+l.value = data.Eigenschaften.l;
+δ2.value = data.Parameter.δ2;
+
 drawkennzeichnung( data,"#kennzeichnung" )
 
 const table=new Tabelle( data,"#ergebnis" );
 table.tabulate();
-const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
-Material.value=tab[ 0 ]
-d.value=tab[ 1 ]
-l.value=tab[ 2 ]
-δ2.value=tab[ 3 ]
 
-import {vErder} from '/components/Betriebsmittel.mjs'
 const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
+import {vErder} from '/components/Betriebsmittel.mjs'
 const point={x: 320,y: 240};
-let W1=new vErder( data,point )
-W1.createNode();
-view.addNode( W1.node )
+let vW =new vErder( data,point )
+vW.createNode();
+view.addNode( vW.node )
 </script>

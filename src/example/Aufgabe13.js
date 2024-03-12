@@ -12,42 +12,47 @@ require("use-strict");
 async function Aufgabe13(input) {
   const path = require("path");
   const dbJson = require(path.resolve("controllers/dbJson.js"));
-  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
-  const { Elektro } = require(path.resolve("src/Kernel/Elektro.js"));
-  const { Planemetrie } = require(path.resolve("src/Kernel/Planemetrie.js"));
-  const { Arithmetik } = require(path.resolve("src/Kernel/Arithmetik.js"));
-  const { MehrlagigeSpule } = require(path.resolve("src/components/Betriebsmittel.js"));
-  const { readMaterialParameter } = require(path.resolve("src/js/readMaterialParameter.js"));
+  const { readMaterialParameter, makeDirectory } = require(path.resolve("src/js/utility.js"));
+  const { Elektro, Planemetrie, Arithmetik } = require(path.resolve("src/mathjs/Kernel.js"));
+  const { Spulenkoerper, Spule } = require(path.resolve("src/components/Betriebsmittel.js"));
 
-  const L1 = new MehrlagigeSpule(input);
-  const AK = new Arithmetik();
-  const PK = new Planemetrie();
   const EK = new Elektro();
+  const PK = new Planemetrie();
+  const AK = new Arithmetik();
 
+  const LK1 = new Spulenkoerper({ lm: input.lm });
+  const L1 = new Spule({ Material: input.Material, N: input.N, d: input.d });
   const datadir = "src/json/example/Aufgabe13";
 
   makeDirectory(datadir).then(
     function () {
-      L1.Kennzeichnung.Art = "L";
-      L1.Kennzeichnung.Zählnummer = "1";
+      LK1.Kennzeichnung = {
+        Art: "Spulenkörper",
+        Zählnummer: 1,
+      };
+      L1.Kennzeichnung = {
+        Art: "L",
+        Zählnummer: 1,
+      };
 
-      L1.Parameter.ρM = readMaterialParameter(L1.Parameter.Material, "ρ").toString();
+      L1.Parameter.ρM = readMaterialParameter(L1.Eigenschaften.Material, "ρ");
 
-      AK.parameter({ a: L1.Parameter.lm, b: L1.Parameter.N });
-      L1.Berechnung["lg"] = AK.mul().to("m");
+      AK.parameter({ a: LK1.Eigenschaften.lm, b: L1.Eigenschaften.N });
+      L1.Berechnung.lg = AK.mul().to("m");
 
-      PK.parameter({ d: L1.Parameter.d });
-      L1.Berechnung["Al"] = PK.KAd();
+      PK.parameter({ d: L1.Eigenschaften.d });
+      L1.Berechnung.Al = PK.KAd();
 
       EK.parameter({
-        l: L1.Berechnung["lg"].toString(),
-        A: L1.Berechnung["Al"].toString(),
+        l: L1.Berechnung.lg.toString(),
+        A: L1.Berechnung.Al.toString(),
         ρ: L1.Parameter.ρM,
       });
 
-      L1.Berechnung["G"] = EK.GAρl().to("mS");
+      L1.Berechnung.G = EK.GAρl().to("mS");
 
       dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), L1);
+      dbJson.appendJSONItem(path.resolve(`${datadir}/data.json`), LK1);
     },
     function () {
       console.error(`${datadir}`);

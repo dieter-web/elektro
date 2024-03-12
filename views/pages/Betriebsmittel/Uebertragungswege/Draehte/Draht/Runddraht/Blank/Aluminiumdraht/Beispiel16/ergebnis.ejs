@@ -1,31 +1,29 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../../../../layouts/partials/ergebnis.ejs') %>
 
-// import {vWClass} from '/d3/lib/Betriebsmittel/vWClass.mjs'
-
-
 const data=await populate( "example/Beispiel16/data.json" )
 
-//drawkennzeichnung( data,"#kennzeichnung" )
+// Formular
+Material.value = data.Eigenschaften.Material;
+l.value = data.Eigenschaften.l;
+d.value = data.Eigenschaften.d;
+δ1.value = data.Parameter.δ1;
+δ2.value = data.Parameter.δ2;
+δ3.value = data.Parameter.δ3;
 
+//Kennzeichnung gesamt
+drawkennzeichnung( data,"#kennzeichnung" )
+
+// Tabelle
 const table=new Tabelle( data,"#ergebnis" );
 table.tabulate();
 
-
-// Rückkopplung
-const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
-
-Material.value=sel[ 0 ]
-l.value=sel[ 1 ]
-d.value=sel[ 2 ]
-δ1.value=sel[ 3 ]
-δ2.value=sel[ 4 ]
-δ3.value=sel[ 5 ]
-
 // svg grafik
-const g=drawboard()
-let vD=new vWClass( data )
-g.append( () => vD.createNode() )
-
+import {vDraht} from '/components/Betriebsmittel.mjs';
+const point = {x:320, y:240};
+const L1 = new vDraht(data,point);
+const view = new DrawBoard('grafik', 640, 480, [0,0,500,500]);
+L1.createNode();
+view.addNode(L1.node);
 
 </script>

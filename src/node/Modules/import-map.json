@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "a-module": "./some-module.js"
+  }
+}

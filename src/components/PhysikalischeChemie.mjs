@@ -1,42 +1,58 @@
 import { vComponents } from "./components.mjs";
 
 class vPhysikalischeChemie extends vComponents {
-    constructor() {
-        this.vis = {}
-    }
+  constructor(data, point) {
+    super(data, point);
+  }
 }
-    
-class vElektrochemie extends vPhysikalischeChemie {
-    constructor(data, point) {
-        super();
-        this.data = data;
-        this.point = point;
-    }
 
-    this.Symbol = d3.create("svg:g")
-    .attr("id",`${data.Kennzeichnung.Art}${data.Kennzeichnung.Zählnummer}`);
+class vElektrochemie extends vPhysikalischeChemie {
+  constructor(data, point) {
+    super(data, point);
+  }
 }
 
 class vElektrode extends vElektrochemie {
-    constructor(data, point) {
-        super(data, point);
-        this.shape = '';
-    }
+  constructor(data, point) {
+    super(data, point);
+  }
+}
 
-    fshape() {};
+class vForm1 extends vElektrode {
+  constructor(data, point) {
+    super(data, point);
+    this.shape = "";
+  }
+
+  fshape() {
+    this.Symbol.select("#shape")
+      .append("rect")
+      .attr("x", 0)
+      .attr("y", 0)
+      .attr("height", 130)
+      .attr("width", 10)
+      .attr("fill", "none")
+      .attr("stroke", "rgb(240,240,240")
+      .attr("stroke-linejoin", "round")
+      .attr("stroke-miterlimit", "10")
+      .attr("pointer-events", "all")
+      .attr("transform", () => {
+        return `translate(${this.point.x},${this.point.y})`;
+      });
+  }
 }
 
 class vElektrolyt extends vElektrochemie {
-    constructor(data, point) {
-        super(data, point);
-        this.shape = '';
-    }
+  constructor(data, point) {
+    super(data, point);
+    this.shape = "";
+  }
 
-    fshape() {};
+  fshape() {}
 }
 
-
-export {vPhysikalischeChemie};
-export {vElektrochemie};
-export {vElektrode};
-export {vElektrolyt};
+export { vPhysikalischeChemie };
+export { vElektrochemie };
+export { vElektrode };
+export { vElektrolyt };
+export { vForm1 };
