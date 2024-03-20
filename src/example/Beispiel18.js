@@ -12,18 +12,15 @@ require("use-strict");
  */
 async function Beispiel18(input) {
   const path = require("path");
-  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson"));
+  const { makeDirectory, readMaterialParameter } = require(path.resolve("src/js/utility.js"));
+  const { Elektro, Arithmetik } = require(path.resolve("src/mathjs/Kernel.js"));
 
-  const { Elektro, Arithmetik, MehrlagigeSpule } = require(path.resolve(
-    "include/system"
-  ));
+  const { Spule } = require(path.resolve("src/components/Betriebsmittel.js"));
 
-  const { readMaterialParameter } = require(path.resolve(
-    "src/js/readMaterialParameter.js"
-  ));
-
-  const L1 = new MehrlagigeSpule(input);
+  const L1 = new Spule({
+    Material: input.Material,
+  });
   const EK = new Elektro();
   const AK = new Arithmetik();
 
@@ -31,23 +28,23 @@ async function Beispiel18(input) {
 
   makeDirectory(datadir).then(
     function () {
-      L1.Kennzeichnung.Art = "L";
-      L1.Kennzeichnung.Zählnummer = "1";
+      L1.Kennzeichnung = {
+        Art: "L",
+        Zählnummer: 1,
+      };
 
-      L1.Parameter.ρM = readMaterialParameter(input.Material, "ρ").toString();
-
-      L1.Parameter.δ0M = readMaterialParameter(
-        L1.Parameter.Material,
-        "δ0"
-      ).toString();
+      L1.Parameter = {
+        δ: input.δ,
+        R: input.R,
+        p: input.p,
+        ρM: readMaterialParameter(L1.Eigenschaften.Material, "ρ"),
+        δ0M: readMaterialParameter(L1.Eigenschaften.Material, "δ0"),
+      };
 
       AK.parameter({ G: L1.Parameter.R, p: L1.Parameter.p });
       L1.Berechnung.Prozentwert = AK.Prozentwert();
 
-      AK.parameter({
-        a: L1.Parameter.R,
-        b: L1.Berechnung.Prozentwert.toString(),
-      });
+      AK.parameter({ a: L1.Parameter.R, b: L1.Berechnung.Prozentwert.toString() });
       L1.Berechnung.R2 = AK.add();
 
       EK.parameter({
@@ -56,7 +53,6 @@ async function Beispiel18(input) {
         Rδ2: L1.Parameter.R2,
         δ1: L1.Parameter.δ,
       });
-
       L1.Berechnung.δ2 = EK.δ2();
 
       dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), L1);

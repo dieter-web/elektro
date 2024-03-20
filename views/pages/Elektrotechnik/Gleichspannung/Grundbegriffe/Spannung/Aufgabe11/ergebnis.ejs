@@ -1,15 +1,15 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../layouts/partials/ergebnis.ejs') %>
 
-const data=await populate( "example/Aufgabe11/data.json" )
+import {Tabelle1} from "/sysFrontend/Tabelle.mjs"
+const data=await populate( "example/Aufgabe11/data.json" );
 
 drawkennzeichnung( data,"#kennzeichnung" )
 
 G.value = data.Eigenschaften.G;
 I.value = data.Parameter.I;
 
-const table=new Tabelle( data,"#ergebnis" );
-
+const table=new Tabelle1( data,"#ergebnis" );
 table.tabulate();
 
 const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );

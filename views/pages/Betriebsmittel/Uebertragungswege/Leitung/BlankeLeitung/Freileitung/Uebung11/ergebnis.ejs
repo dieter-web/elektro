@@ -1,28 +1,25 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
 
-
-// import {vWClass} from '/d3/lib/Betriebsmittel/vWClass.mjs'
-
+import {Tabelle1} from "/sysFrontend/Tabelle.mjs";
 
 const data=await populate( "example/Uebung11/data.json" )
 
-drawkennzeichnung( data,"#kennzeichnung" )
+drawkennzeichnung(data,"#kennzeichnung");
 
-const table=new Tabelle( data,"#ergebnis" );
+Material.value = data.Eigenschaften.Material;
+A.value = data.Eigenschaften.A;
+l.value = data.Eigenschaften.l;
+n.value = data.Eigenschaften.n;
+
+const table=new Tabelle1( data,"#ergebnis" );
 table.tabulate();
 
-
-// Rückkopplung
-const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
-Material.value=tab[ 0 ]
-A.value=tab[ 1 ]
-l.value=tab[ 2 ]
-n.value=tab[ 3 ]
-
-// Visualisierung
-// const g=drawboard()
-// let vd=new vWClass( data )
-// g.append( () => vd.createNode() )
+const view = new DrawBoard('grafik', 640, 480, [0, 0, 500, 500]);
+import { vLeitung } from '/components/Betriebsmittel.mjs';
+const point = {x:320, y:240};
+let vW = new vLeitung(data,point);
+vW.createNode();
+view.addNode(vW.node);
 
 </script>

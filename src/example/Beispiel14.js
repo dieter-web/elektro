@@ -7,19 +7,17 @@ require("use-strict");
  * Wie groß muß der erforderliche Querschnitt sein, wenn der Spannungsverlust längs der Leitung
  * maximal 5% der Netzspannung betragen darf ?
  *
- * @param {*} input 
+ * @param {*} input
  */
 async function Beispiel14(input) {
   const path = require("path");
   const dbJson = require(path.resolve("controllers/dbJson.js"));
-  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
-  const { readMaterialParameter } = require(path.resolve("src/js/readMaterialParameter.js"));
+  const { makeDirectory, readMaterialParameter } = require(path.resolve("src/js/utility.js"));
 
-  const { Elektro } = require(path.resolve("src/Kernel/Elektro.js"));
-  const { Arithmetik } = require(path.resolve("src/Kernel/Arithmetik.js"));
+  const { Elektro, Arithmetik } = require(path.resolve("src/mathjs/Kernel.js"));
 
   const { Gleichstromnetz } = require(path.resolve("src/ElektrischeAnlagen/Verteilungssysteme/Verteilungssysteme.js"));
-  const { FesteLegung } = require(path.resolve("src/components/Betriebsmittel.js"));
+  const { Leitung } = require(path.resolve("src/components/Betriebsmittel.js"));
   const { Verbraucher } = require(path.resolve("src/components/Betriebsmittel.js"));
 
   const datadir = "src/json/example/Beispiel14";
@@ -27,26 +25,44 @@ async function Beispiel14(input) {
   makeDirectory(datadir).then(
     function () {
       const N1 = new Gleichstromnetz({ U: input.U });
-      N1.Kennzeichnung.Art = "N";
-      N1.Kennzeichnung.Zählnummer = "1";
 
-      const W1 = new FesteLegung({ a: input.a, Material: input.Material, l: input.l, p: input.p }); // Leitung
-      W1.Kennzeichnung.Art = "W";
-      W1.Kennzeichnung.Zählnummer = "1";
-      
-      W1.Parameter.ρal = readMaterialParameter(W1.Parameter.Material, "ρ");
+      N1.Kennzeichnung = {
+        Art: "Gleichstromnetz",
+        Zählnummer: "1",
+      };
 
-      const V1 = new Verbraucher({ I: input.I });
-      V1.Kennzeichnung.Art = "V";
-      V1.Kennzeichnung.Zählnummer = "1";
+      N1.Parameter = { name: "GS" };
+
+      const W1 = new Leitung({ a: input.a, Material: input.Material, l: input.l }); // Leitung
+
+      W1.Kennzeichnung = {
+        Art: "W",
+        Zählnummer: "1",
+      };
+
+      W1.Parameter = {
+        ρal: readMaterialParameter(W1.Eigenschaften.Material, "ρ"),
+        p: input.p,
+      };
+
+      const V1 = new Verbraucher({});
+
+      V1.Kennzeichnung = {
+        Art: "Verbraucher",
+        Zählnummer: 1,
+      };
+
+      V1.Parameter = {
+        I: input.I,
+      };
 
       const AK = new Arithmetik();
       const EK = new Elektro();
 
-      AK.parameter({ G: N1.Parameter.U, p: W1.Parameter.p });
+      AK.parameter({ G: N1.Eigenschaften.U, p: W1.Parameter.p });
       W1.Berechnung.prozentwert = AK.Prozentwert();
 
-      AK.parameter({ a: W1.Parameter.a, b: W1.Parameter.l });
+      AK.parameter({ a: W1.Eigenschaften.a, b: W1.Eigenschaften.l });
       W1.Berechnung.lg = AK.mul().to("m");
 
       EK.parameter({

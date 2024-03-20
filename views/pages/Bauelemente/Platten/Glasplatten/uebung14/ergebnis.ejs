@@ -1,33 +1,46 @@
 <%- include('./aufgabe.ejs', { }) %>
-<%- include('../../../../../layouts/partials/ergebnis.ejs') %>
+<%- include('../../../../../layouts/partials/ergebnis3Tabellen.ejs') %>
 
-// import {vb1} from '/d3/lib/Bauelemente/vb1.mjs'
-
+import {Tabelle1} from "/sysFrontend/Tabelle.mjs";
 const data=await populate( "example/Uebung14/data.json" )
 
-// tabulate( data,"#ergebnis" )
-const table=new Tabelle( data,"#ergebnis" );
+//drawKennzeichnung(data[0],"#kennzeichnung"); // Glassplatte
+//drawKennzeichnung(data[1],"#kennzeichnung");
+//drawKennzeichnung(data[2],"#kennzeichnung");
+
+Material.value = data[0].Eigenschaften.Material;
+l.value = data[1].Eigenschaften.l;
+b.value = data[1].Eigenschaften.b;
+d.value = data[0].Eigenschaften.d;
+
+const table=new Tabelle1( data[0],"#ergebnis" );
 table.tabulate();
 
-// Rückkopplung
-const sel=d3.select( 'table#ergebnis' ).selectAll( 'tr' ).selectAll( 'td' )._groups[ 1 ]
-Material.value=sel[ 0 ].innerHTML
-l.value=sel[ 1 ].innerHTML
-b.value=sel[ 2 ].innerHTML
-d.value=sel[ 3 ].innerHTML
+const table1=new Tabelle1( data[1],"#ergebnis1" );
+table1.tabulate();
 
-// svg grafik
-// const g=canvas( '#grafik',800,300,"10,10,200,200" )
+const table2=new Tabelle1( data[2],"#ergebnis2" );
+table2.tabulate();
 
-// let dataGP=[
-// {
-// opacity: 0.4,
-// height: 125,
-// width: 80,
-//text: "Glasplatte"
-//}
-//]
+const view = new DrawBoard('grafik', 640, 480, [0,0,500, 500]);
+import {vPlatte} from '/components/Bauelemente.mjs'
 
-//g.append( () => vb1( dataGP,[ 50,50 ] ) )
+const point = [
+{x:320,y:40},
+{x:323, y:40},
+{x:326, y:40}
+];
+
+const P1 = new vPlatte(data[0], point[0]);
+const P2 = new vPlatte(data[1], point[1]);
+const P3 = new vPlatte(data[2], point[2]);
+
+P1.createNode();
+P2.createNode();
+P3.createNode();
+
+view.addNode(P1.node);
+view.addNode(P2.node);
+view.addNode(P3.node);
 
 </script>

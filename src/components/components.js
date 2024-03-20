@@ -1,8 +1,9 @@
 const path = require("path");
 const dbJson = require(path.resolve("controllers/dbJson.js"));
 
-class Components {
+class Components extends Object {
   constructor() {
+    super();
     this.Berechnung = {};
     this.Parameter = {};
     // this.Kennzeichnung = dbJson.readJSONFile(

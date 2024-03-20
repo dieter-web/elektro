@@ -1,4 +1,4 @@
-require("use-strict");
+require( "use-strict" );
 
 /** TODO: Das Ergebnis stimmt mit der Vorlage nicht überein ? */
 /**
@@ -10,50 +10,77 @@ require("use-strict");
  * @date 26/07/2023
  * @param {*} input
  */
-function Uebung14(input) {
-  const path = require("path");
-  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
-  const dbJson = require(path.resolve("controllers/dbJson.js"));
+function Uebung14 ( input )
+{
+  const path = require( "path" );
+  const dbJson = require( path.resolve( "controllers/dbJson.js" ) );
 
-  const { Elektro, Planemetrie, Glasplatte } = require(path.resolve(
-    "include/system"
-  ));
+  const { makeDirectory, readMaterialParameter } = require( path.resolve( "src/js/utility.js" ) );
 
-  const { readMaterialParameter } = require(path.resolve(
-    "src/js/readMaterialParameter.js"
-  ));
 
-  const P1 = new Glasplatte(input);
+  const { Elektro, Planemetrie } = require( path.resolve( "src/mathjs/Kernel.js" ) );
+
+  const { Platte } = require( path.resolve( "src/components/Bauelemente.js" ) );
+
+  const Platte1 = new Platte( {
+    Material: input.Material,
+    l: input.l,
+    b: input.b,
+    d: input.d
+  } );
+
+  const Platte2 = new Platte( {
+    l: input.l,
+    b: input.b
+  } )
+
+  const Platte3 = new Platte( {
+    l: input.l,
+    b: input.b
+  } )
 
   const PK = new Planemetrie();
   const EK = new Elektro();
 
   const datadir = "src/json/example/Uebung14";
 
-  makeDirectory(datadir).then(
-    function () {
-      // P1.Kennzeichnung.Art = "E";
-      // P1.Kennzeichnung.Zählnummer = "1";
+  makeDirectory( datadir ).then(
+    function ()
+    {
+      Platte1.Kennzeichnung = {
+        Art: "Glasplatte",
+        Zählnummer: 1
+      };
+      Platte2.Kennzeichnung = {
+        Art: "Metallplatte",
+        Zählnummer: 1
+      };
+      Platte3.Kennzeichnung = {
+        Art: "Metallplatte",
+        Zählnummer: 2
+      };
 
-      P1.Parameter.ρgl = readMaterialParameter(
-        P1.Parameter.Material,
-        "ρ"
-      ).toString();
+      Platte1.Parameter = {
+        ρgl: readMaterialParameter( Platte1.Eigenschaften.Material, "ρ" ),
+      }
 
-      PK.parameter({ g: P1.Parameter.l, h: P1.Parameter.b });
-      P1.Berechnung["Ap"] = PK.RAgh().to("m^2");
+      PK.parameter( { g: Platte1.Eigenschaften.l, h: Platte1.Eigenschaften.b } );
+      Platte1.Berechnung.Ap = PK.RAgh().to( "m^2" );
 
-      EK.parameter({
-        ρ: P1.Parameter.ρgl,
-        l: P1.Parameter.d,
-        A: P1.Berechnung.Ap.toString(),
-      });
-      P1.Berechnung.R = EK.RρlA().to("Mohm");
+      EK.parameter( {
+        ρ: Platte1.Parameter.ρgl,
+        l: Platte1.Eigenschaften.d,
+        A: Platte1.Berechnung.Ap.toString(),
+      } );
+      Platte1.Berechnung.R = EK.RρlA().to( "Mohm" );
 
-      dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), P1);
+      dbJson.writeJSONItem( path.resolve( `${ datadir }/data.json` ), Platte1 );
+      dbJson.appendJSONItem( path.resolve( `${ datadir }/data.json` ), Platte2 );
+      dbJson.appendJSONItem( path.resolve( `${ datadir }/data.json` ), Platte3 );
     },
-    function () {
-      console.error(`${datadir}`);
+    function ()
+    {
+      console.error( `${ datadir }` );
     }
   );
 }
@@ -64,6 +91,6 @@ function Uebung14(input) {
 //   b: '1.25 m',
 //   d: '1 mm'
 // }
-// Uebung14(input)
+// Uebung14( input )
 
 exports.func = Uebung14;

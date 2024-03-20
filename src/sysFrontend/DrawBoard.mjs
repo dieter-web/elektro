@@ -22,7 +22,7 @@ class DrawBoard {
 
   addNode(node) {
     this.nextID();
-    console.log(this.counter);
+    // console.log(this.counter);
     this.svg.append(() => node);
   }
 

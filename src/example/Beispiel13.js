@@ -15,26 +15,34 @@ async function Beispiel13(input) {
   const path = require("path");
   const dbJson = require(path.resolve("controllers/dbJson.js"));
 
-  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
-  const { Rohrleitungstechnik } = require(path.resolve("src/Kernel/Rohrleitungstechnik.js"));
-  const { Planemetrie } = require(path.resolve("src/Kernel/Planemetrie.js"));
+  const { makeDirectory, readMaterialParameter } = require(path.resolve("src/js/utility.js"));
+  const { Rohrleitungstechnik, Planemetrie } = require(path.resolve("src/mathjs/Kernel.js"));
   const { Bleirohre } = require(path.resolve("src/components/Bauelemente.js"));
-  const { readMaterialParameter } = require(path.resolve("src/js/readMaterialParameter.js"));
 
   const datadir = "src/json/example/Beispiel13";
 
   makeDirectory(datadir).then(
     function () {
+      const PtRohr = new Bleirohre({
+        Material: input.Material,
+        d: input.d,
+        D: input.D,
+      });
+
+      PtRohr.Kennzeichnung = {
+        Art: "Rohr",
+        Zählnummer: 1,
+      };
+
+      PtRohr.Parameter = {
+        ρ: readMaterialParameter(PtRohr.Eigenschaften.Material, "ρ"),
+        G: input.G,
+      };
+
       const RK = new Rohrleitungstechnik();
       const PK = new Planemetrie();
-      const PtRohr = new Bleirohre(input);
 
-      PtRohr.Kennzeichnung.Art = "Rohr";
-      PtRohr.Kennzeichnung.Zählnummer = "1";
-
-      PtRohr.Parameter.ρ = readMaterialParameter(PtRohr.Parameter.Material, "ρ");
-
-      PK.parameter({ d: PtRohr.Parameter.d, D: PtRohr.Parameter.D });
+      PK.parameter({ d: PtRohr.Eigenschaften.d, D: PtRohr.Eigenschaften.D });
       PtRohr.Berechnung.Ar = PK.KRADd();
 
       RK.parameter({

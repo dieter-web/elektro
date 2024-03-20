@@ -12,31 +12,35 @@ require("use-strict");
 async function Beispiel12(input) {
   const path = require("path");
   const dbJson = require(path.resolve("controllers/dbJson.js"));
-  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
+  const { makeDirectory } = require(path.resolve("src/js/utility.js"));
 
-  const { Elektro } = require(path.resolve("src/Kernel/Elektro.js"));
-  const { Planemetrie } = require(path.resolve("src/Kernel/Planemetrie.js"));
+  const { Elektro, Planemetrie } = require(path.resolve("src/mathjs/Kernel.js"));
+
   const { Draht } = require(path.resolve("src/components/Betriebsmittel.js"));
 
   const datadir = "src/json/example/Beispiel12";
 
   makeDirectory(datadir).then(function () {
+    const W1 = new Draht({ l: "3km", d: "0.9mm" });
+
+    W1.Parameter.R = input.R;
+
+    W1.Kennzeichnung = {
+      Art: "W",
+      Zählnummer: "1",
+    };
+
     const PK = new Planemetrie();
+    PK.parameter({ d: W1.Eigenschaften.d });
+    W1.Berechnung.A = PK.KAd();
+
     const EK = new Elektro();
-    const W1 = new Draht(input);
-
-    W1.Kennzeichnung.Art = "W";
-    W1.Kennzeichnung.Zählnummer = "1";
-
-    PK.parameter({ d: W1.Parameter.d });
-    W1.Berechnung["A"] = PK.KAd();
-
     EK.parameter({
-      l: W1.Parameter.l,
+      l: W1.Eigenschaften.l,
       R: W1.Parameter.R,
-      A: W1.Berechnung["A"].toString(),
+      A: W1.Berechnung.A.toString(),
     });
-    W1.Berechnung["ρ"] = EK.ρRAl();
+    W1.Berechnung.ρ = EK.ρRAl();
 
     dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), W1);
   });

@@ -1,6 +1,7 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../../../../layouts/partials/ergebnis.ejs') %>
 
+import {Tabelle1} from "/sysFrontend/Tabelle.mjs" ;
 const data=await populate( "example/Beispiel16/data.json" )
 
 // Formular
@@ -15,7 +16,7 @@ d.value = data.Eigenschaften.d;
 drawkennzeichnung( data,"#kennzeichnung" )
 
 // Tabelle
-const table=new Tabelle( data,"#ergebnis" );
+const table=new Tabelle1( data,"#ergebnis" );
 table.tabulate();
 
 // svg grafik

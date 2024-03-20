@@ -1,1 +1,1 @@
-{"Berechnung":{"Ism":{"mathjs":"Unit","value":250,"unit":"mA","fixPrefix":true}},"Kennzeichnung":{"=":{"Anlage":{"1":"","2":"","3":"","4":"","5":"","Trennzeichen":"-"}},"+":{"Ort":{"Aufstellungsort":{"1":"","2":"","3":"","4":"","5":""},"Trennzeichen":"-","Einbauort":{"6":"","7":"","8":"","9":""}}},"Art":"P","Zählnummer":"1","Funktion":"",":":[]},"Parameter":{"R":"2.5 ohm","U":"0.625 V"}}
+{"Berechnung":{"Ism":{"mathjs":"Unit","value":130,"unit":"mA","fixPrefix":true}},"Parameter":{"R":"12.5ohm","U":"1.625V"},"Eigenschaften":{},"Kennzeichnung":{"Art":"P","Zählnummer":1}}

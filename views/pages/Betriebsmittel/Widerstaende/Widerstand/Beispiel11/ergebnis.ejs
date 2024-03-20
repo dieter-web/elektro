@@ -1,42 +1,35 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../layouts/partials/ergebnis.ejs') %>
 
-
-
-
 import {Tabelle2} from "/sysFrontend/Tabelle.mjs";
 
 const data=await populate( "example/Beispiel11/data.json" );
+
+R1.value = data[0].Eigenschaften.Wert;
+R2.value = data[1].Eigenschaften.Wert;
+R3.value = data[2].Eigenschaften.Wert;
+R4.value = data[3].Eigenschaften.Wert;
+U.value = data[0].Parameter.U;
 
 const table=new Tabelle2( data,"#ergebnis" );
 table.tabulate();
 
 
-// Rückkopplung
-//const tab=d3.selectAll( "tbody" )._groups[ 0 ][ 0 ].innerText.split( '\t' );
-
-// TODO: neu schreiben !
-// R1.value=tab[ 0 ]
-// R2.value=tab[ 1 ]
-// R3.value=tab[ 2 ]
-// R4.value=tab[ 3 ]
-// U.value=tab[ 4 ]
-
 // Visualisierung
-import {vWiderstand} from "/components/Betriebsmittel.mjs";
 const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
+import {vWiderstand} from '/components/Betriebsmittel.mjs';
 
 // Einfügepunkt
 const points=[
-{x: 100,y: 240},
-{x: 300,y: 240},
-{x: 500,y: 240},
-{x: 700,y: 240}
+{x: 0,y: 240},
+{x: 200,y: 240},
+{x: 400,y: 240},
+{x: 600,y: 240}
 ];
 
-points.forEach((p) => {
-let shape = new vWiderstand(data,p);
-shape.createNode();
-view.addNode(shape.node)
+points.forEach((p,i) => {
+let vR = new vWiderstand(data[i],p);
+vR.createNode();
+view.addNode(vR.node)
 })
 </script>

@@ -12,49 +12,43 @@ require("use-strict");
  */
 async function Beispiel17(input) {
   const path = require("path");
-  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson"));
 
-  const { Planemetrie, Elektro, Gluehlampe } = require(path.resolve(
-    "include/system"
-  ));
-
-  const { readMaterialParameter } = require(path.resolve(
-    "src/js/readMaterialParameter.js"
-  ));
-
-  const { readKonstante } = require(path.resolve("src/js/readKonstante.js"));
-
-  const PK = new Planemetrie();
-  const EK = new Elektro();
-
-  const E1 = new Gluehlampe(input);
+  const { makeDirectory, readMaterialParameter, readKonstante } = require(path.resolve("src/js/utility.js"));
+  const { Planemetrie, Elektro } = require(path.resolve("src/mathjs/Kernel.js"));
+  const { Gluehlampe } = require(path.resolve("src/components/Betriebsmittel.js"));
 
   const datadir = "src/json/example/Beispiel17";
 
   makeDirectory(datadir).then(
     function () {
-      E1.Kennzeichnung.Art = "E";
-      E1.Kennzeichnung.Zählnummer = "1";
+      const E1 = new Gluehlampe({
+        Material: input.Material,
+        l: input.l,
+        d: input.d,
+      });
 
-      E1.Parameter.ρM = readMaterialParameter(
-        E1.Parameter.Material,
-        "ρ"
-      ).toString();
+      E1.Kennzeichnung = {
+        Art: "E",
+        Zählnummer: 1,
+      };
 
-      E1.Parameter.α20 = readMaterialParameter(
-        E1.Parameter.Material,
-        "α20"
-      ).toString();
+      E1.Parameter = {
+        ρM: readMaterialParameter(E1.Eigenschaften.Material, "ρ"),
+        α20: readMaterialParameter(E1.Eigenschaften.Material, "α20"),
+        δ20: readKonstante("Vergleichstemperatur"),
+        δ2: input.δ2,
+      };
 
-      E1.Parameter.δ20 = readKonstante("Vergleichstemperatur").toString();
+      const PK = new Planemetrie();
+      const EK = new Elektro();
 
-      PK.parameter({ l: E1.Parameter.l, d: E1.Parameter.d });
+      PK.parameter({ l: E1.Eigenschaften.l, d: E1.Eigenschaften.d });
       E1.Berechnung.Awd = PK.KAd().to("mm^2");
 
       EK.parameter({
         ρ: E1.Parameter.ρM,
-        l: E1.Parameter.l,
+        l: E1.Eigenschaften.l,
         A: E1.Berechnung.Awd.toString(),
       });
       E1.Berechnung.R20 = EK.RρlA().to("ohm");

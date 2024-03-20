@@ -7,23 +7,23 @@ class Verteilungssysteme extends ElektrischeAnlagen {
 }
 
 class Gleichstromnetz extends Verteilungssysteme {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 
 class Wechselstromnetz extends Verteilungssysteme {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 
 class Drehstromnetz extends Verteilungssysteme {
-  constructor(Parameter) {
+  constructor(Eigenschaften) {
     super();
-    this.Parameter = Parameter;
+    this.Eigenschaften = Eigenschaften;
   }
 }
 

@@ -13,21 +13,17 @@ require("use-strict");
  */
 function Uebung12(input) {
   const path = require("path");
-  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson"));
 
-  const {
-    Elektro,
-    Arithmetik,
-    Planemetrie,
-    Litzeleitung,
-  } = require(path.resolve("include/system"));
+  const { makeDirectory, readMaterialParameter } = require(path.resolve("src/js/utility.js"));
+  const { Elektro, Arithmetik, Planemetrie } = require(path.resolve("src/mathjs/Kernel.js"));
+  const { Leitung } = require(path.resolve("src/components/Betriebsmittel.js"));
 
-  const { readMaterialParameter } = require(path.resolve(
-    "src/js/readMaterialParameter.js"
-  ));
-
-  const W1 = new Litzeleitung(input);
+  const W1 = new Leitung({
+    Material: input.Material,
+    l: input.l,
+    d: input.d,
+  });
 
   const AK = new Arithmetik();
   const PK = new Planemetrie();
@@ -37,21 +33,22 @@ function Uebung12(input) {
 
   makeDirectory(datadir).then(
     function () {
-      W1.Kennzeichnung.Art = "W";
-      W1.Kennzeichnung.Zählnummer = "1";
+      W1.Kennzeichnung = {
+        Art: "W",
+        Zählnummer: 1,
+        Bezeichnung: "H05V-U/K",
+      };
 
-      W1.Bezeichnung = "H05V-U/K";
+      W1.Parameter = {
+        ρM: readMaterialParameter(W1.Eigenschaften.Material, "ρ"),
+        R: input.R,
+      };
 
-      W1.Parameter.ρM = readMaterialParameter(
-        W1.Parameter.Material,
-        "ρ"
-      ).toString();
-
-      PK.parameter({ d: W1.Parameter.d });
+      PK.parameter({ d: W1.Eigenschaften.d });
       W1.Berechnung.Al = PK.KAd().to("mm^2"); // Litze
 
       EK.parameter({
-        l: W1.Parameter.l,
+        l: W1.Eigenschaften.l,
         ρ: W1.Parameter.ρM,
         R: W1.Parameter.R,
       });
@@ -62,7 +59,6 @@ function Uebung12(input) {
         a: W1.Berechnung.Ag.toString(),
         b: W1.Berechnung.Al.toString(),
       });
-
       W1.Berechnung.ng = AK.div();
 
       dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), W1);
@@ -72,11 +68,11 @@ function Uebung12(input) {
     }
   );
 }
-let input = {
-  Material: "Kupfer",
-  l: "8 m",
-  R: "1.58 ohm",
-  d: "0.08 mm",
-};
-Uebung12(input);
+// let input = {
+//   Material: "Kupfer",
+//   l: "8 m",
+//   R: "1.58 ohm",
+//   d: "0.08 mm",
+// };
+// Uebung12(input);
 exports.func = Uebung12;

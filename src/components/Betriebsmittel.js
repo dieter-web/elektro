@@ -655,12 +655,20 @@ class Verbraucher extends Verschiedenes {
   constructor(Eigenschaften) {
     super();
     this.Eigenschaften = Eigenschaften;
-    this.Berechnung = {};
   }
 }
 /** !SECTION Verbraucher */
 
-/** !SECTION  */
+/** SECTION Gluehlampe */
+class Gluehlampe extends Verschiedenes {
+  constructor(Eigenschaften) {
+    super();
+    this.Eigenschaften = Eigenschaften;
+  }
+}
+/** !SECTION Gluehlampe */
+
+/** !SECTION Verschiedenes */
 /** SECTION Verstärker */
 class Verstaerker extends Betriebsmittel {
   constructor(Eigenschaften) {
@@ -682,8 +690,6 @@ class Widerstaende extends Betriebsmittel {
   constructor() {
     super();
   }
-
-  //TODO: Rmap Operationen schreiben
 }
 
 /** SECTION Widerstand  */
@@ -828,6 +834,7 @@ exports.ParameterabhaengigeHalbleiterwiderstaende = ParameterabhaengigeHalbleite
 exports.Widerstand = Widerstand;
 exports.Widerstaende = Widerstaende;
 exports.Verschiedenes = Verschiedenes;
+exports.Gluehlampe = Gluehlampe;
 
 // exports.Erder = Erder;
 // exports.Erdungssammelleitung = Erdungssammelleitung;

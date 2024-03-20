@@ -4,30 +4,28 @@
  }) %>
 <%- include('../../../../../layouts/partials/ergebnis3Tabellen.ejs') %>
 
+import {Tabelle1} from "/sysFrontend/Tabelle.mjs";
+
 const data=await populate( "example/Beispiel15/data.json" );
 
+l.value = data[1].Eigenschaften.l;
+b.value = data[1].Eigenschaften.b;
+d.value = data[0].Parameter.d;
+R.value = data[0].Eigenschaften.R;
+
 drawkennzeichnung(data[0],"#kennzeichnung");
-
-const table=new Tabelle( data[0],"#ergebnis" );
-table.tabulate();
-
 drawkennzeichnung(data[1],"#kennzeichnung");
-
-const table1=new Tabelle( data[1],"#ergebnis1" );
-table1.tabulate();
-
 drawkennzeichnung(data[2],"#kennzeichnung");
 
-const table2=new Tabelle( data[2],"#ergebnis2" );
+
+const table=new Tabelle1( data[0],"#ergebnis" );
+table.tabulate();
+
+const table1=new Tabelle1( data[1],"#ergebnis1" );
+table1.tabulate();
+
+const table2=new Tabelle1( data[2],"#ergebnis2" );
 table2.tabulate();
-
-
-// Rückkopplung
-// const sel=d3.select( 'table#ergebnis' ).selectAll( 'tr' ).selectAll( 'td' )._groups[ 1 ]
-// Material.value=sel[ 0 ].innerHTML
-// l.value=sel[ 1 ].innerHTML
-// b.value=sel[ 2 ].innerHTML
-// d.value=sel[ 3 ].innerHTML
 
 import {vForm1} from '/components/physikalischechemie.mjs'
 // import {vElektrolyt} from '/components/physikalischechemie.mjs'

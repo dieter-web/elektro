@@ -1,26 +1,23 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../../../layouts/partials/ergebnis.ejs') %>
 
+import {Tabelle1} from "/sysFrontend/Tabelle.mjs";
 const data=await populate( "example/Uebung12/data.json" )
 
-// drawkennzeichnung( data,"#kennzeichnung" )
+drawkennzeichnung( data,"#kennzeichnung" );
 
-const table=new Tabelle( data,"#ergebnis" );
+l.value = data.Eigenschaften.l;
+R.value = data.Parameter.R;
+d.value = data.Eigenschaften.d;
+
+const table=new Tabelle1( data,"#ergebnis" );
 table.tabulate();
 
-
-// Rückkopplung
-const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
-
-
-Material.value=sel[ 0 ]
-l.value=sel[ 1 ]
-R.value=sel[ 2 ]
-d.value=sel[ 3 ]
-
-// Visualisierung
-// const g=drawboard()
-// let vW=new vLitzeleitung( data )
-// g.append( () => vW.createNode() )
+const view = new DrawBoard('grafik', 640, 480, [0,0,500,500]);
+import {vLeitung} from '/components/Betriebsmittel.mjs';
+const point = {x:320, y:240};
+let vW = new vLeitung(data,point);
+vW.createNode();
+view.addNode(vW.node);
 
 </script>

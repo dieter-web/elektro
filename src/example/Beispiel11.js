@@ -15,48 +15,63 @@ async function Beispiel11(input) {
   const path = require("path");
   const dbJson = require(path.resolve("controllers/dbJson.js"));
 
-  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
-  const { Elektro } = require(path.resolve("src/Kernel/Elektro.js"));
+  const { makeDirectory } = require(path.resolve("src/js/utility.js"));
+  const { Elektro } = require(path.resolve("src/mathjs/Kernel.js"));
   const { Widerstand } = require(path.resolve("src/components/Betriebsmittel.js"));
 
   const datadir = "src/json/example/Beispiel11";
 
   makeDirectory(datadir).then(
     function () {
-      let R = new Widerstand({});
-      let G = [];
-      let I = [];
+      let R1 = new Widerstand({ Wert: input.R1 });
+      R1.Parameter.U = input.U;
+      R1.Kennzeichnung = {
+        Art: "R",
+        Zählnummer: 1,
+      };
 
-      R.add("R1", input.R1);
-      R.add("R2", input.R2);
-      R.add("R3", input.R3);
-      R.add("R4", input.R4);
+      let R2 = new Widerstand({ Wert: input.R2 });
+      R2.Parameter.U = input.U;
+      R2.Kennzeichnung = {
+        Art: "R",
+        Zählnummer: 2,
+      };
+
+      let R3 = new Widerstand({ Wert: input.R3 });
+      R3.Parameter.U = input.U;
+      R3.Kennzeichnung = {
+        Art: "R",
+        Zählnummer: 3,
+      };
+
+      let R4 = new Widerstand({ Wert: input.R4 });
+      R4.Parameter.U = input.U;
+      R4.Kennzeichnung = {
+        Art: "R",
+        Zählnummer: 4,
+      };
 
       const EK = new Elektro();
       EK.parameter({ U: input.U });
 
-      R.Rmap.forEach((Ri, index) => {
-        EK.appendParameter("R", Ri);
-        I.push(EK.IUR().to("mA"));
-        EK.appendParameter("I", EK.IUR().toString());
-        G.push(EK.GIU().to("mS"));
+      [R1, R2, R3, R4].forEach((element) => {
+        EK.appendParameter("R", element.Eigenschaften.Wert);
+        element.Berechnung.I = EK.IUR().to("mA");
+        EK.appendParameter("I", element.Berechnung.I.toString());
+        element.Berechnung.G = EK.GIU().to("mS");
       });
 
-      R.Parameter.R1 = { Widerstand: input.R1, Spannung: input.U };
-      R.Berechnung.R1 = { Stromstärke: I[0], Leitwert: G[0] };
-      R.Parameter.R2 = { Widerstand: input.R2, Spannung: input.U };
-      R.Berechnung.R2 = { Stromstärke: I[1], Leitwert: G[1] };
-      R.Parameter.R3 = { Widerstand: input.R3, Spannung: input.U };
-      R.Berechnung.R3 = { Stromstärke: I[2], Leitwert: G[2] };
-      R.Parameter.R4 = { Widerstand: input.R4, Spannung: input.U };
-      R.Berechnung.R4 = { Stromstärke: I[3], Leitwert: G[3] };
-
-      dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), R);
+      dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), R1);
+      [R2, R3, R4].forEach((element) => {
+        dbJson.appendJSONItem(path.resolve(`${datadir}/data.json`), element);
+      });
     },
     function () {
       console.error(`${datadir}`);
+      return -1;
     }
   );
+  return 0;
 }
 // let input = {
 //   R1: "2.5 Mohm",

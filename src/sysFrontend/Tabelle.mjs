@@ -1,30 +1,8 @@
-// Einzeilige Tabelle (Mit Kopfzeile und einer Bodyzeile) Bestehend aus Parameter und Berechnung
 class Tabelle {
   constructor(data, id) {
     this.id = id;
     this.data = data;
     this.table = d3.select(id);
-    this.keyss = [];
-    this.bvalues = [];
-
-    for (let property in data.Parameter) {
-      if (data.Parameter.hasOwnProperty(property)) {
-        this.keyss = Object.keys(data.Parameter);
-        this.values = Object.values(data.Parameter);
-      }
-    }
-
-    for (let property in data.Berechnung) {
-      if (data.Berechnung.hasOwnProperty(property)) {
-        this.keyss = this.keyss.concat(Object.keys(data.Berechnung));
-        this.bvalues = Object.values(this.data.Berechnung);
-      }
-    }
-
-    // Bodyzeile
-    // this.bvalues = Object.values(this.data.Berechnung);
-    // this.values = Object.values(this.data.Parameter);
-
     this.thead = this.table.append("thead");
     this.tbody = this.table.append("tbody");
   }
@@ -33,7 +11,7 @@ class Tabelle {
     this.thead
       .append("tr")
       .selectAll("td")
-      .data(this.keyss)
+      .data(this.dth)
       .enter()
       .append("td")
       .text((d) => {
@@ -41,22 +19,11 @@ class Tabelle {
       });
   }
 
-  //Werte aus this.bvalues werden verwendet
-  formatValues() {
-    this.erg = [];
-    this.len = this.bvalues.length;
-    this.i = 0;
-    for (this.i; this.i < this.len; this.i++) {
-      this.erg.push([d3.format(".3E")(this.bvalues[this.i].value), this.bvalues[this.i].unit].join(" "));
-    }
-    this.valuess = this.values.concat(this.erg);
-  }
-
   createBody() {
     this.tbody
       .append("tr")
       .selectAll("td")
-      .data(this.valuess)
+      .data(this.dtd)
       .enter()
       .append("td")
       .text((t) => {
@@ -65,39 +32,79 @@ class Tabelle {
   }
 
   tabulate() {
-    this.formatValues();
     this.createKopfzeile();
     this.createBody();
   }
 }
+// Einzeilige Tabelle (Mit Kopfzeile und einer Bodyzeile) Bestehend aus Parameter und Berechnung
+class Tabelle1 extends Tabelle {
+  constructor(data, id) {
+    super(data, id);
 
-// Tabelle mit einer Kopfspalte und einer Kopfzeile (mehrere Bodyzeilen)
+    this.dthK = Object.keys(this.data.Kennzeichnung);
+    this.dthE = Object.keys(this.data.Eigenschaften);
+    this.dthP = Object.keys(this.data.Parameter);
+    this.dthB = Object.keys(this.data.Berechnung);
+
+    this.dth = this.dthK.concat(this.dthE, this.dthP, this.dthB);
+
+    this.dtdK = Object.values(this.data.Kennzeichnung);
+    this.dtdE = Object.values(this.data.Eigenschaften);
+    this.dtdP = Object.values(this.data.Parameter);
+
+    this.dtdBA = [];
+    this.dtdB = Object.values(this.data.Berechnung);
+    this.dtdB.map((b) => {
+      this.dtdBA.push(`${d3.format(".3E")(b.value)} ${b.unit}`);
+    });
+
+    this.dtd = this.dtdK.concat(this.dtdE, this.dtdP, this.dtdBA);
+  }
+}
+
+// Tabelle mit einer Kopfspalte und einer Kopfzeile (mehrere g l e i c h e Betriebsmittel)
 class Tabelle2 {
   constructor(data, id) {
-    this.id = id;
     this.data = data;
+    this.id = id;
     this.table = d3.select(id);
-
-    this.valuesP = Object.values(data.Parameter); // {Widerstand: '', Spannung: ''} Array(4)
-    this.valuesB = Object.values(data.Berechnung); // {Stromstärek: {...}, Leitwert: {...}} Array(4)
-
-    this.space = [" "];
-
-    this.kopfspalte = Object.keys(data.Parameter); // ['R1','R2','R3','R4']
-
-    this.keyszP = Object.keys(this.valuesP[0]); // ['Widerstand','Spannung']
-    this.keyszB = Object.keys(this.valuesB[0]);
-    this.keyszs = this.space.concat(this.keyszP).concat(this.keyszB); // [' ','Widerstand','Spannung','Stromstärke','Leitwert']
-
     this.thead = this.table.append("thead");
     this.tbody = this.table.append("tbody");
+    this.datalength = data.length - 1;
+    this.dtr = [];
+
+    this.dthK = Object.keys(this.data[0].Kennzeichnung);
+    this.dthP = Object.keys(this.data[0].Parameter);
+    this.dthE = Object.keys(this.data[0].Eigenschaften);
+    this.dthB = Object.keys(this.data[0].Berechnung);
+
+    this.dth = this.dthK.concat(this.dthP, this.dthE, this.dthB);
+
+    for (let i = 0; i <= this.datalength; i++) {
+      this.dtdK = Object.values(this.data[i].Kennzeichnung);
+      this.dtdP = Object.values(this.data[i].Parameter);
+      this.dtdW = Object.values(this.data[i].Eigenschaften);
+      // this.dtd = this.dtdK.concat(this.dtdP);
+
+      this.dtd = this.dtdK.concat(this.dtdP, this.dtdW);
+
+      this.dtdB = Object.values(this.data[i].Berechnung);
+
+      this.dtdBA = [];
+      this.dtdB.map((b) => {
+        this.dtdBA.push(`${d3.format(".3E")(b.value)} ${b.unit}`);
+      });
+      this.dtd = this.dtd.concat(this.dtdBA);
+
+      this.dtr.push(this.dtd);
+    }
   }
 
   createKopfzeile() {
     this.thead
       .append("tr")
       .selectAll("td")
-      .data(this.keyszs)
+      .data(this.dth)
       .enter()
       .append("td")
       .text((d) => {
@@ -106,46 +113,17 @@ class Tabelle2 {
   }
 
   createBody() {
-    let tmpB = [];
-    let colP = [];
-    let colB = [];
-    let colBa = [];
-    let col = [];
-    this.rows = [];
-
-    for (let i = 0; i < this.kopfspalte.length; i++) {
-      col = Object.values(this.valuesP[i]);
-
-      colB = tmpB.concat(Object.values(this.valuesB[i]));
-
-      colB.map((a, i) => {
-        tmpB = colBa.concat(d3.format(".3E")(a.value) + " " + a.unit);
-        colBa = tmpB;
-      });
-
-      col.push(tmpB);
-      col.unshift(this.kopfspalte[i]);
-      col = col.flat();
-
-      this.rows.push(col);
-
-      tmpB = [];
-      colP = [];
-      colB = [];
-      colBa = [];
-    }
-
-    this.rows.map((row) => {
+    for (let i = 0; i <= this.datalength; i++) {
       this.tbody
         .append("tr")
         .selectAll("td")
-        .data(row)
+        .data(this.dtr[i])
         .enter()
         .append("td")
-        .text((t) => {
-          return t;
+        .text((d) => {
+          return d;
         });
-    });
+    }
   }
 
   tabulate() {
@@ -153,46 +131,30 @@ class Tabelle2 {
     this.createBody();
   }
 }
+
 // Tabelle ohne Parameter nur mit Eigenschaften
 class Tabelle3 extends Tabelle {
   constructor(data, id) {
     super(data, id);
-    // this.id = id;
-    // this.data = data;
-    // this.table = d3.select(id);
+    this.dthK = Object.keys(this.data.Kennzeichnung);
+    this.dthE = Object.keys(this.data.Eigenschaften);
+    this.dthP = Object.keys(data.Parameter);
+    this.dthB = Object.keys(data.Berechnung);
 
-    // Kopfzeile
-    this.keyss = Object.keys(data.Berechnungen);
+    this.dth = this.dthK.concat(this.dthE, this.dthP, this.dthB);
 
-    // Bodyzeile
+    this.dtdK = Object.values(this.data.Kennzeichnung);
+    this.dtdE = Object.values(this.data.Eigenschaften);
+    this.dtdP = Object.values(data.Parameter);
 
-    this.bvalues = Object.values(data.Berechnungen);
-    // Es gibt keine Parameter
-    this.values = {};
+    this.dtdBA = [];
+    this.dtdB = Object.values(data.Berechnung);
+    this.dtdB.map((b) => {
+      this.dtdBA.push(`${d3.format(".3E")(b.value)} ${b.unit}`);
+    });
 
-    this.thead = this.table.append("thead");
-    this.tbody = this.table.append("tbody");
-  }
-
-  // Formatierung erfolgt direkt im createBody
-  formatValues = function () {};
-
-  createBody() {
-    this.tbody
-      .append("tr")
-      .selectAll("td")
-      .data(this.bvalues)
-      .enter()
-      .append("td")
-      .text((t) => {
-        return `${d3.format(".3E")(t.value)} ${t.unit}`;
-      });
-  }
-
-  tabulate() {
-    this.createKopfzeile();
-    this.createBody();
+    this.dtd = this.dtdK.concat(this.dtdE, this.dtdP, this.dtdBA);
   }
 }
 
-export { Tabelle, Tabelle2, Tabelle3 };
+export { Tabelle, Tabelle1, Tabelle2, Tabelle3 };

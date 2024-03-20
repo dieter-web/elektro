@@ -3,13 +3,16 @@
 
 const data=await populate( "example/Beispiel13/data.json" )
 
-const table=new Tabelle( data,"#ergebnis" );
+drawkennzeichnung(data,"#kennzeichnung");
+
+import {Tabelle1} from "/sysFrontend/Tabelle.mjs";
+
+G.value = data.Parameter.G;
+d.value = data.Eigenschaften.d;
+D.value = data.Eigenschaften.D;
+
+const table=new Tabelle1( data,"#ergebnis" );
 table.tabulate();
-const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
-Material.value=sel[ 1 ]
-G.value=sel[ 2 ]
-d.value=sel[ 3 ]
-D.value=sel[ 4 ]
 
 import {vBleirohre} from '/components/Bauelemente.mjs'
 

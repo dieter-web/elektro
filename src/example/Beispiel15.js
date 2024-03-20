@@ -13,10 +13,10 @@ require("use-strict");
 async function Beispiel15(input) {
   const path = require("path");
   const dbJson = require(path.resolve("controllers/dbJson"));
-  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
 
-  const { Elektro } = require(path.resolve("src/Kernel/Elektro.js"));
-  const { Planemetrie } = require(path.resolve("src/Kernel/Planemetrie.js"));
+  const { makeDirectory } = require(path.resolve("src/js/utility.js"));
+
+  const { Elektro, Planemetrie } = require(path.resolve("src/mathjs/Kernel.js"));
 
   const { Elektrolyt } = require(path.resolve("src/components/PhysikalischeChemie.js"));
   const { Elektrode } = require(path.resolve("src/components/PhysikalischeChemie.js"));
@@ -26,24 +26,42 @@ async function Beispiel15(input) {
   makeDirectory(datadir).then(
     function () {
       const Elyt = new Elektrolyt({ R: input.R });
-      Elyt.Kennzeichnung.Art = "Elektrolydflüssigkeit";
-      Elyt.Kennzeichnung.Zählnummer = "1";
+      Elyt.Kennzeichnung = {
+        Art: "Elektrolydflüssigkeit",
+        Zählnummer: "1",
+      };
+
+      Elyt.Parameter = {
+        d: input.d,
+      };
 
       const Eltr1 = new Elektrode({ l: input.l, b: input.b });
-      Eltr1.Kennzeichnung.Art = "Elektrode";
-      Eltr1.Kennzeichnung.Zählnummer = "1";
+      Eltr1.Kennzeichnung = {
+        Art: "Elektrode",
+        Zählnummer: 1,
+      };
+
+      Eltr1.Parameter = {
+        name: "Eltr1",
+      };
 
       const Eltr2 = new Elektrode({ l: input.l, b: input.b });
-      Eltr2.Kennzeichnung.Art = "Elektrode";
-      Eltr2.Kennzeichnung.Zählnummer = "2";
+      Eltr2.Kennzeichnung = {
+        Art: "Elektrode",
+        Zählnummer: 2,
+      };
+
+      Eltr2.Parameter = {
+        name: "Eltr2",
+      };
 
       const EK = new Elektro();
       const PK = new Planemetrie();
 
-      PK.parameter({ g: Eltr1.Parameter.l, h: Eltr1.Parameter.b });
+      PK.parameter({ g: Eltr1.Eigenschaften.l, h: Eltr1.Eigenschaften.b });
       Eltr1.Berechnung.Ar = PK.RAgh().to("cm^2");
 
-      PK.parameter({ g: Eltr2.Parameter.l, h: Eltr2.Parameter.b });
+      PK.parameter({ g: Eltr2.Eigenschaften.l, h: Eltr2.Eigenschaften.b });
       Eltr2.Berechnung.Ar = PK.RAgh().to("cm^2");
 
       // Die Flächen beider Elektroden sind gleich groß
@@ -51,8 +69,8 @@ async function Beispiel15(input) {
       // TODO: was wenn sie sich nicht flächendeckend gegeüber stehen, sonder z.B. versetzt ??
 
       EK.parameter({
-        l: input.d,
-        R: Elyt.Parameter.R,
+        l: Elyt.Parameter.d,
+        R: Elyt.Eigenschaften.R,
         A: Eltr1.Berechnung.Ar.toString(),
       });
 

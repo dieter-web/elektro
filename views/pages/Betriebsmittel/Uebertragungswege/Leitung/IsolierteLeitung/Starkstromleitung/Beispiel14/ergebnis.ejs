@@ -1,26 +1,33 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../../layouts/partials/ergebnis3Tabellen.ejs') %>
 
+import {Tabelle1} from "/sysFrontend/Tabelle.mjs";
+
 const data=await populate( "example/Beispiel14/data.json" )
 
+
+
 drawkennzeichnung(data[0],"#kennzeichnung")
-const table=new Tabelle( data[0],"#ergebnis" );
+drawkennzeichnung(data[1],"#kennzeichnung")
+drawkennzeichnung(data[2],"#kennzeichnung")
+
+U.value = data[0].Eigenschaften.U;
+Material.value = data[1].Eigenschaften.Material;
+p.value = data[1].Parameter.p;
+l.value = data[1].Eigenschaften.l;
+a.value = data[1].Eigenschaften.a;
+I.value = data[2].Parameter.I;
+
+
+
+const table=new Tabelle1( data[0],"#ergebnis" );
 table.tabulate();
 
-drawkennzeichnung(data[1],"#kennzeichnung")
-const table1=new Tabelle( data[1],"#ergebnis1" );
+const table1=new Tabelle1( data[1],"#ergebnis1" );
 table1.tabulate();
 
-drawkennzeichnung(data[2],"#kennzeichnung")
-const table2=new Tabelle( data[2],"#ergebnis2" );
+const table2=new Tabelle1( data[2],"#ergebnis2" );
 table2.tabulate();
-
-// const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
-// Material.value=sel[ 0 ]
-// p.value=sel[ 2 ]
-// l.value=sel[ 3 ]
-// a.value=sel[ 4 ]
-// I.value=sel[ 5 ]
 
 import {vGleichstromnetz} from '/ElektrischeAnlagen/Verteilungssysteme/Verteilungssysteme.mjs'
 const point = {x:300, y:240};

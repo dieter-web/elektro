@@ -1,349 +1,450 @@
-const { Components } = require("./components.js");
+const { Components } = require( "./components.js" );
 /** SECTION Bauelemente */
-class Bauelemente extends Components {
-  constructor() {
+class Bauelemente extends Components
+{
+  constructor ()
+  {
     super();
   }
 }
 /** SECTION Achsen  */
-class Achsen extends Bauelemente {
-  constructor() {
+class Achsen extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Ausleger */
-class Ausleger extends Bauelemente {
-  constructor() {
+class Ausleger extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Balken */
-class Balken extends Bauelemente {
-  constructor() {
+class Balken extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Baukonstruktionen */
-class Baukonstruktionen extends Bauelemente {
-  constructor() {
+class Baukonstruktionen extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Behaelter */
-class Behaelter extends Bauelemente {
-  constructor() {
+class Behaelter extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION  Boecke*/
-class Boecke extends Bauelemente {
-  constructor() {
+class Boecke extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Bolzen */
-class Bolzen extends Bauelemente {
-  constructor() {
+class Bolzen extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION  Buchsen*/
-class Buchsen extends Bauelemente {
-  constructor() {
+class Buchsen extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Daecher */
-class Daecher extends Bauelemente {
-  constructor() {
+class Daecher extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Decken */
-class Decken extends Bauelemente {
-  constructor() {
+class Decken extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Drahtseiltriebe */
-class Drahtseiltriebe extends Bauelemente {
-  constructor() {
+class Drahtseiltriebe extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION  Exzenter*/
-class Exzenter extends Bauelemente {
-  constructor() {
+class Exzenter extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Federn */
-class Federn extends Bauelemente {
-  constructor() {
+class Federn extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Fenster */
-class Fenster extends Bauelemente {
-  constructor() {
+class Fenster extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Flansche */
-class Flansche extends Bauelemente {
-  constructor() {
+class Flansche extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Gefaese */
-class Gefaese extends Bauelemente {
-  constructor() {
+class Gefaese extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Gelenke */
-class Gelenke extends Bauelemente {
-  constructor() {
+class Gelenke extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Geradfuehrungen */
-class Geradfuehrungen extends Bauelemente {
-  constructor() {
+class Geradfuehrungen extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Getriebe */
-class Getriebe extends Bauelemente {
-  constructor() {
+class Getriebe extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION  Gewinde*/
-class Gewinde extends Bauelemente {
-  constructor() {
+class Gewinde extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Haehne */
-class Haehne extends Bauelemente {
-  constructor() {
+class Haehne extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Haltestifte */
-class Haltestifte extends Bauelemente {
-  constructor() {
+class Haltestifte extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Hanfseiltriebe */
-class Hanfseiltriebe extends Bauelemente {
-  constructor() {
+class Hanfseiltriebe extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Hebel */
-class Hebel extends Bauelemente {
-  constructor() {
+class Hebel extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION  Kegelraeder*/
-class Kegelraeder extends Bauelemente {
-  constructor() {
+class Kegelraeder extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Keile */
-class Keile extends Bauelemente {
-  constructor() {
+class Keile extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Kolben */
-class Kolben extends Bauelemente {
-  constructor() {
+class Kolben extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Kolbenbolzen */
-class Kolbenbolzen extends Bauelemente {
-  constructor() {
+class Kolbenbolzen extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Kolbenringe */
-class Kolbenringe extends Bauelemente {
-  constructor() {
+class Kolbenringe extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Kolbenstange */
-class Kolbenstange extends Bauelemente {
-  constructor() {
+class Kolbenstange extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Konus */
-class Konus extends Bauelemente {
-  constructor() {
+class Konus extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Kreuzkoepfe */
-class Kreuzkoepfe extends Bauelemente {
-  constructor() {
+class Kreuzkoepfe extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Kreuzkopfbolzen */
-class Kreuzkopfbolzen extends Bauelemente {
-  constructor() {
+class Kreuzkopfbolzen extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Kupplungen */
-class Kupplungen extends Bauelemente {
-  constructor() {
+class Kupplungen extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Kurbel */
-class Kurbel extends Bauelemente {
-  constructor() {
+class Kurbel extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Kurbeltrieb */
-class Kurbeltrieb extends Bauelemente {
-  constructor() {
+class Kurbeltrieb extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Kurbelwellen */
-class Kurbelwellen extends Bauelemente {
-  constructor() {
+class Kurbelwellen extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Kurbelzapfen */
-class Kurbelzapfen extends Bauelemente {
-  constructor() {
+class Kurbelzapfen extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Lager */
-class Lager extends Bauelemente {
-  constructor() {
+class Lager extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION  Maschinenfundamente*/
-class Maschinenfundamente extends Bauelemente {
-  constructor() {
+class Maschinenfundamente extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Mauern */
-class Mauern extends Bauelemente {
-  constructor() {
+class Mauern extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Muttern */
-class Muttern extends Bauelemente {
-  constructor() {
+class Muttern extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Naben */
-class Naben extends Bauelemente {
-  constructor() {
+class Naben extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Naegel */
-class Naegel extends Bauelemente {
-  constructor() {
+class Naegel extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Niete */
-class Niete extends Bauelemente {
-  constructor() {
+class Niete extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Passungen */
-class Passungen extends Bauelemente {
-  constructor() {
+class Passungen extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
-/** SECTION Platten */
-class Platten extends Bauelemente {
-  constructor() {
+/** SECTION Platte */
+class Platte extends Bauelemente
+{
+  constructor ( Eigenschaften )
+  {
     super();
+    this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** SECTION Riementriebe */
-class Riementriebe extends Bauelemente {
-  constructor() {
+class Riementriebe extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Ringe */
-class Ringe extends Bauelemente {
-  constructor() {
+class Ringe extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
@@ -395,104 +496,132 @@ const DN = [
   4000,
 ];
 
-const PN = [2.5, 6, 10, 16, 25, 40, 63, 100];
+const PN = [ 2.5, 6, 10, 16, 25, 40, 63, 100 ];
 
-class Rohrleitungen extends Bauelemente {
-  constructor() {
+class Rohrleitungen extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
   //TODO: schreiben!
-  getDN() {}
-  getPN() {}
+  getDN () { }
+  getPN () { }
 }
 /** SECTION Rohrleitung */
-class Rohrleitung extends Rohrleitungen {
-  constructor() {
+class Rohrleitung extends Rohrleitungen
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Stahlrohre */
-class Stahlrohre extends Rohrleitungen {
-  constructor() {
+class Stahlrohre extends Rohrleitungen
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Praezisionsstahlrohre */
-class Praezisionsstahlrohre extends Stahlrohre {
-  constructor() {
+class Praezisionsstahlrohre extends Stahlrohre
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION NahtloseStahlrohre */
-class NahtloseStahlrohre extends Stahlrohre {
-  constructor() {
+class NahtloseStahlrohre extends Stahlrohre
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Gewinderohre */
-class Gewinderohre extends Stahlrohre {
-  constructor() {
+class Gewinderohre extends Stahlrohre
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION GeschweissteStahlrohre */
-class GeschweissteStahlrohre extends Stahlrohre {
-  constructor() {
+class GeschweissteStahlrohre extends Stahlrohre
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Kupferrohre */
-class Kupferrohre extends Rohrleitungen {
-  constructor() {
+class Kupferrohre extends Rohrleitungen
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Kunststoffrohre */
-class Kunststoffrohre extends Rohrleitungen {
-  constructor() {
+class Kunststoffrohre extends Rohrleitungen
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Gussrohre */
-class Gussrohre extends Rohrleitungen {
-  constructor() {
+class Gussrohre extends Rohrleitungen
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Faserzementrohre */
-class Faserzementrohre extends Rohrleitungen {
-  constructor() {
+class Faserzementrohre extends Rohrleitungen
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Bleirohre */
-class Bleirohre extends Rohrleitungen {
-  constructor(Eigenschaften) {
+class Bleirohre extends Rohrleitungen
+{
+  constructor ( Eigenschaften )
+  {
     super();
     this.Eigenschaften = Eigenschaften;
   }
 }
 /** !SECTION  */
 /** SECTION Betonrohre */
-class Betonrohre extends Rohrleitungen {
-  constructor() {
+class Betonrohre extends Rohrleitungen
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Aluminiumrohre */
-class Aluminiumrohre extends Rohrleitungen {
-  constructor() {
+class Aluminiumrohre extends Rohrleitungen
+{
+  constructor ()
+  {
     super();
   }
 }
@@ -514,35 +643,45 @@ exports.Rohrleitungen = Rohrleitungen;
 /** !SECTION  */
 /** !SECTION Rohrleitungen */
 /** SECTION Saeulen */
-class Saeulen extends Bauelemente {
-  constructor() {
+class Saeulen extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Scheiben */
-class Scheiben extends Bauelemente {
-  constructor() {
+class Scheiben extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** SECTION Wellenenden */
-class Wellenenden extends Scheiben {
-  constructor() {
+class Wellenenden extends Scheiben
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Stuetzscheiben */
-class Stuetzscheiben extends Scheiben {
-  constructor() {
+class Stuetzscheiben extends Scheiben
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Passscheiben */
-class Passscheiben extends Scheiben {
-  constructor() {
+class Passscheiben extends Scheiben
+{
+  constructor ()
+  {
     super();
   }
 }
@@ -554,105 +693,135 @@ exports.Scheiben = Scheiben;
 /** !SECTION  */
 /** !SECTION Scheiben */
 /** SECTION Schrauben */
-class Schrauben extends Bauelemente {
-  constructor() {
+class Schrauben extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Schraubenraeder */
-class Schraubenraeder extends Bauelemente {
-  constructor() {
+class Schraubenraeder extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Schubstangen */
-class Schubstangen extends Bauelemente {
-  constructor() {
+class Schubstangen extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Senkungen */
-class Senkungen extends Bauelemente {
-  constructor() {
+class Senkungen extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Sicherungsbleche */
-class Sicherungsbleche extends Bauelemente {
-  constructor() {
+class Sicherungsbleche extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Sicherungsringe */
-class Sicherungsringe extends Bauelemente {
-  constructor() {
+class Sicherungsringe extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Splinte */
-class Splinte extends Bauelemente {
-  constructor() {
+class Splinte extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Stahlblech */
-class Stahlblech extends Bauelemente {
-  constructor() {
+class Stahlblech extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Stahldraht */
-class Stahldraht extends Bauelemente {
-  constructor() {
+class Stahldraht extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Stahlprofile */
-class Stahlprofile extends Bauelemente {
-  constructor() {
+class Stahlprofile extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Stifte */
-class Stifte extends Bauelemente {
-  constructor() {
+class Stifte extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** SECTION Zylinderstifte */
-class Zylinderstifte extends Stifte {
-  constructor() {
+class Zylinderstifte extends Stifte
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Spannstifte */
-class Spannstifte extends Stifte {
-  constructor() {
+class Spannstifte extends Stifte
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Kerbstifte */
-class Kerbstifte extends Stifte {
-  constructor() {
+class Kerbstifte extends Stifte
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Kegelstifte */
-class Kegelstifte extends Stifte {
-  constructor() {
+class Kegelstifte extends Stifte
+{
+  constructor ()
+  {
     super();
   }
 }
@@ -666,56 +835,72 @@ exports.Kegelstifte = Kegelstifte;
 /** !SECTION Stifte */
 
 /** SECTION Stopfbuechsen */
-class Stopfbuechsen extends Bauelemente {
-  constructor() {
+class Stopfbuechsen extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Traeger */
-class Traeger extends Bauelemente {
-  constructor() {
+class Traeger extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Transmissionen */
-class Transmissionen extends Bauelemente {
-  constructor() {
+class Transmissionen extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Tueren */
-class Tueren extends Bauelemente {
-  constructor() {
+class Tueren extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Ventile */
-class Ventile extends Bauelemente {
-  constructor() {
+class Ventile extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Wandarm */
-class Wandarm extends Bauelemente {
-  constructor() {
+class Wandarm extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Wellen */
-class Wellen extends Bauelemente {
-  constructor() {
+class Wellen extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** SECTION Keilwellen */
-class Keilwellen extends Wellen {
-  constructor() {
+class Keilwellen extends Wellen
+{
+  constructor ()
+  {
     super();
   }
 }
@@ -725,22 +910,28 @@ exports.Keilwellen = Keilwellen;
 /** !SECTION  */
 /** !SECTION Wellen  */
 /** SECTION Zahnraeder */
-class Zahnraeder extends Bauelemente {
-  constructor() {
+class Zahnraeder extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Zapfen */
-class Zapfen extends Bauelemente {
-  constructor() {
+class Zapfen extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
 /** !SECTION  */
 /** SECTION Zylinder */
-class Zylinder extends Bauelemente {
-  constructor() {
+class Zylinder extends Bauelemente
+{
+  constructor ()
+  {
     super();
   }
 }
@@ -793,7 +984,7 @@ exports.Naben = Naben;
 exports.Naegel = Naegel;
 exports.Niete = Niete;
 exports.Passungen = Passungen;
-exports.Platten = Platten;
+exports.Platte = Platte;
 exports.Riementriebe = Riementriebe;
 exports.Ringe = Ringe;
 exports.Saeulen = Saeulen;

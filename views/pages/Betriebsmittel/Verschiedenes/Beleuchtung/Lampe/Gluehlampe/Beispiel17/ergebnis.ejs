@@ -1,26 +1,25 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
 
-// import {vCLampe} from '/d3/lib/Betriebsmittel/vCLampe.mjs'
-
+import {Tabelle1} from "/sysFrontend/Tabelle.mjs";
 const data=await populate( "example/Beispiel17/data.json" )
 
 drawkennzeichnung( data,"#kennzeichnung" )
 
-const table=new Tabelle( data,"#ergebnis" );
+Material.value = data.Eigenschaften.Material;
+l.value = data.Eigenschaften.l;
+d.value = data.Eigenschaften.d;
+δ2.value = data.Parameter.δ2;
+
+const table=new Tabelle1( data,"#ergebnis" );
 table.tabulate();
 
+import {vGluehlampe} from '/components/Betriebsmittel.mjs';
+const point = {x:320, y:240};
+const vL = new vGluehlampe(data, point);
 
-// Rückkopplung
-const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
-Material.value=tab[ 0 ]
-l.value=tab[ 1 ]
-d.value=tab[ 2 ]
-δ2.value=tab[ 3 ]
-
-// Visualisierung
-// const g=drawboard()
-// let Lampe=new vCLampe( data )
-// g.append( () => Lampe.createNode() )
+const view = new DrawBoard('grafik',640, 480,[0,0,500,500]);
+vL.createNode();
+view.addNode(vL.node);
 
 </script>

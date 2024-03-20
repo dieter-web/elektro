@@ -1,14 +1,24 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../layouts/partials/ergebnis.ejs') %>
 
+import {Tabelle1} from "/sysFrontend/Tabelle.mjs";
 const data = await populate( "example/Uebung13/data.json" );
 
-const table= new Tabelle( data,"#ergebnis" );
+drawkennzeichnung(data,"#kennzeichnung");
+
+R.value = data.Parameter.R;
+U.value = data.Parameter.U;
+
+const table= new Tabelle1( data,"#ergebnis" );
 table.tabulate();
 
+const view = new DrawBoard('grafik', 640, 480, [0, 0, 500, 500]);
+import {vStrommesser} from '/components/Betriebsmittel.mjs';
+const point={x:320, y:240};
+const vP = new vStrommesser(data,point);
+vP.createNode();
+view.addNode(vP.node);
 
-// Rückkopplung
-//const tab=d3.selectAll( "tbody" )._groups[ 0 ][ 0 ].innerText.split( '\t' );
 
 
 </script>

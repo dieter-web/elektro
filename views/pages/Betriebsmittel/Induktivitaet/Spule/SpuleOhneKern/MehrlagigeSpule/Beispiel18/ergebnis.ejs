@@ -1,20 +1,23 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
 
+import {Tabelle1} from "/sysFrontend/Tabelle.mjs"
 const data=await populate( "example/Beispiel18/data.json" )
 
 drawkennzeichnung( data,"#kennzeichnung" )
 
-const table=new Tabelle( data,"#ergebnis" );
-table.tabulate();
-const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
-Material.value=sel[ 0 ]
-δ.value=sel[ 1 ]
-R.value=sel[ 2 ]
-p.value=sel[ 3 ]
+Material.value = data.Eigenschaften.Material;
+δ.value= data.Parameter.δ;
+R.value= data.Parameter.R;
+p.value= data.Parameter.p;
 
-import {vMehrlagigeSpule} from '/components/Betriebsmittel.mjs'
-const g=drawboard()
-let vL=new vMehrlagigeSpule( data )
-g.append( () => vL.createNode() )
+const table=new Tabelle1( data,"#ergebnis" );
+table.tabulate();
+
+const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
+import {vSpule} from '/components/Betriebsmittel.mjs'
+const point = {x:320, y:240};
+let vL=new vSpule( data, point )
+vL.createNode();
+view.addNode(vL.node);
 </script>

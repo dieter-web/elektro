@@ -1,13 +1,15 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../layouts/partials/ergebnisOhneDrawBoardOhneKennzeichnung.ejs') %>
 
+import {Tabelle1} from "/sysFrontend/Tabelle.mjs";
+
 const data=await populate( "example/Beispiel12/data.json" )
 
-const table=new Tabelle( data,"#ergebnis" );
+l.value = data.Eigenschaften.l;
+d.value = data.Eigenschaften.d;
+R.value = data.Parameter.R;
+
+const table=new Tabelle1( data,"#ergebnis" );
 table.tabulate();
-const tab=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
-l.value=tab[ 0 ]
-d.value=tab[ 1 ]
-R.value=tab[ 2 ]
 
 </script>

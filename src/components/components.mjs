@@ -1,5 +1,6 @@
-class vComponents {
+class vComponents extends Object {
   constructor(data, point) {
+    super();
     this.data = data;
     this.point = point;
     this.bbox = undefined;
