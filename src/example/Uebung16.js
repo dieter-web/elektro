@@ -12,18 +12,19 @@ require("use-strict");
  */
 async function Uebung16(input) {
   const path = require("path");
-  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson"));
 
-  const { Arithmetik, Planemetrie, Elektro, Kabel } = require(path.resolve(
-    "include/system"
-  ));
+  const { makeDirectory, readMaterialParameter } = require(path.resolve("src/js/utility.js"));
+  
+  const { Arithmetik, Planemetrie, Elektro } = require(path.resolve("src/mathjs/Kernel.js"));
 
-  const { readMaterialParameter } = require(path.resolve(
-    "src/js/readMaterialParameter.js"
-  ));
+  const {Kabel} = require(path.resolve("src/components/Betriebsmittel.js"));
 
-  const W1 = new Kabel(input);
+const W1 = new Kabel({
+  Material: input.Material,
+  D: input.D,
+  d: input.d,
+});
 
   const AK = new Arithmetik();
   const PK = new Planemetrie();
@@ -33,29 +34,32 @@ async function Uebung16(input) {
 
   makeDirectory(datadir).then(
     function () {
-      W1.Kennzeichnung.Art = "W";
-      W1.Kennzeichnung.Zählnummer = "1";
 
-      W1.Parameter.ρM = readMaterialParameter(
-        W1.Parameter.Material,
-        "ρ"
-      ).toString();
+      W1.Kennzeichnung = {
+        Art : "W",
+      Zählnummer : 1,
+    };
 
-      AK.parameter({ a: W1.Parameter.d, b: 2 });
-      W1.Berechnung["d2"] = AK.mul();
+      W1.Parameter = {
+        ρM : readMaterialParameter(W1.Eigenschaften.Material,"ρ"),
+        R: input.R,
+      }
 
-      AK.parameter({ a: W1.Parameter.D, b: W1.Berechnung.d2.toString() });
-      W1.Berechnung["di"] = AK.sub();
+      AK.parameter({ a: W1.Eigenschaften.d, b: 2 });
+      W1.Berechnung.d2 = AK.mul();
 
-      PK.parameter({ D: W1.Parameter.D, d: W1.Berechnung.di.toString() });
-      W1.Berechnung["A"] = PK.KRADd();
+      AK.parameter({ a: W1.Eigenschaften.D, b: W1.Berechnung.d2.toString() });
+      W1.Berechnung.di = AK.sub();
+
+      PK.parameter({ D: W1.Eigenschaften.D, d: W1.Berechnung.di.toString() });
+      W1.Berechnung.A = PK.KRADd();
 
       EK.parameter({
         ρ: W1.Parameter.ρM,
         R: W1.Parameter.R,
         A: W1.Berechnung.A.toString(),
       });
-      W1.Berechnung.lbm = EK.lρra();
+      W1.Berechnung.lbm = EK.lρra().to("m");
 
       dbJson.writeJSONItem(path.resolve(`${datadir}/data.json`), W1);
     },

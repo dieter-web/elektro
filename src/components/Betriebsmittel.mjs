@@ -15,52 +15,81 @@ class vBetriebsmittel extends vComponents
 }
 
 /** SECTION  vBaugruppen*/
-class vBaugruppen extends vBetriebsmittel
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vBaugruppen extends vBetriebsmittel{}
 
 /** SECTION  vZweipole*/
-class vZweipole extends vBaugruppen
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vZweipole extends vBaugruppen{}
 
 /** SECTION  vPassiveZweipole*/
-class vPassiveZweipole extends vZweipole
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vPassiveZweipole extends vZweipole{}
+
 /** !SECTION  vPassiveZweipole*/
 /** !SECTION  vZweipole */
 /** !SECTION  vBaugruppen */
 
 /** SECTION  vElektrischeMaschinen*/
-class vElektrischeMaschinen extends vBetriebsmittel
-{
-  constructor ( data, point )
+class vElektrischeMaschinen extends vBetriebsmittel{}
+
+/** SECTION Starr */
+class vStarr extends vElektrischeMaschinen {}
+
+/** SECTION  Ruhende Elektrische Maschinen*/
+class vRuhendeElektrischeMaschinen extends vStarr {}
+
+/** SECTION Transformatoren */
+class vTransformatoren extends vRuhendeElektrischeMaschinen {}
+
+/** SECTION Transformator  */
+class vTransformator extends vTransformatoren {
+  constructor(data, point) {
+    super(data,point);
+     this.shape = `M 0 60 
+     L 0 46 
+     C 0 41.58 3.58 38 8 38 
+     C 12.42 38 16 41.58 16 46 
+     C 16 41.58 19.58 38 24 38 
+     C 28.42 38 32 41.58 32 46 
+     C 32 41.58 35.58 38 40 38 
+     C 44.42 38 48 41.58 48 46 
+     C 48 41.58 51.58 38 56 38 
+     C 60.42 38 64 41.58 64 46 
+     L 64 60 M 0 32 
+     L 64 32 M 0 30 
+     L 64 30 M 0 28 
+     L 64 28 M 0 0 
+     L 0 14 
+     C 0 18.42 3.58 22 8 22 
+     C 12.42 22 16 18.42 16 14 
+     C 16 18.42 19.58 22 24 22 
+     C 28.42 22 32 18.42 32 14 
+     C 32 18.42 35.58 22 40 22 
+     C 44.42 22 48 18.42 48 14 
+     C 48 18.42 51.58 22 56 22 
+     C 60.42 22 64 18.42 64 14 
+     L 64 0`;
+
+        // <rect x="0" y="0" width="64" height="60" fill="none" stroke="none" pointer-events="all"/><path d="" fill="none" stroke="rgb(240, 240, 240)" stroke-linejoin="round" stroke-miterlimit="10" pointer-events="all"/></g></svg>
+  }
+   fshape ()
   {
-    super( data, point );
+    this.Symbol.select( "#shape" )
+      .append( "path" )
+      .attr( "d", this.shape )
+      .attr( "fill", "none" )
+      .attr( "stroke", "rgb(240,240,240" )
+      .attr( "stroke-linejoin", "round" )
+      .attr( "stroke-miterlimit", "10" )
+      .attr( "pointer-events", "all" )
+      .attr( "transform", () =>{return `translate(${ this.point.x },${ this.point.y })`;} );
   }
 }
+/** !SECTION vTransformator  */
+/** !SECTION vTransformatoren  */
+/** !SECTION vRuhendeElektrischeMaschinen  */
+/** !SECTION vstart  */
 /** !SECTION  vElektrischeMaschinen*/
 /** SECTION  vInduktivitaet*/
-class vInduktivitaet extends vBetriebsmittel
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vInduktivitaet extends vBetriebsmittel{}
 
 /** SECTION vSpule */
 class vSpule extends vInduktivitaet
@@ -93,9 +122,7 @@ class vSpule extends vInduktivitaet
       .attr( "pointer-events", "all" )
       .attr( "transform", () =>
       {
-        let x = this.point.x;
-        let y = this.point.y;
-        return `translate(${ x },${ y })`;
+        return `translate(${ this.point.x },${ this.point.y })`;
       } );
   }
 }
@@ -123,146 +150,70 @@ class vSpulenkoerper extends vSpule
       .attr( "pointer-events", "all" )
       .attr( "transform", () =>
       {
-        let x = this.point.x;
-        let y = this.point.y;
-        return `translate(${ x },${ y })`;
+        return `translate(${ this.point.x },${ this.point.y })`;
       } );
   }
 }
 
 /** SECTION  vVariometer*/
-class vVariometer extends vSpule
-{
-  constructor ( data )
-  {
-    super( data );
-  }
-}
+class vVariometer extends vSpule{}
+
 /** !SECTION  vVariometer*/
 /** SECTION  vSpuleOhneKern*/
-class vSpuleOhneKern extends vSpule
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vSpuleOhneKern extends vSpule{}
 
 /** SECTION  vZylinderspule*/
-class vZylinderspule extends vSpuleOhneKern
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vZylinderspule extends vSpuleOhneKern{}
 /** !SECTION  vZylinderspule*/
 
 /** SECTION  vRingspule*/
-class vRingspule extends vSpuleOhneKern
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vRingspule extends vSpuleOhneKern{}
 /** !SECTION  vRingspule*/
 
 /** SECTION  vMehrlagigeSpule*/
-class vMehrlagigeSpule extends vSpuleOhneKern
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vMehrlagigeSpule extends vSpuleOhneKern{}
+
 /** !SECTION  vMehrlagigeSpule*/
 /** SECTION  vEinlagigeSpule*/
-class vEinlagigeSpule extends vSpuleOhneKern
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vEinlagigeSpule extends vSpuleOhneKern{}
+
 /** !SECTION  vEinlagigeSpule*/
 /** SECTION  vAbgeschirmteSpule*/
-class vAbgeschirmteSpule extends vSpuleOhneKern
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vAbgeschirmteSpule extends vSpuleOhneKern{}
+
 /** !SECTION  vAbgeschirmteSpule*/
 /** !SECTION  vSpuleOhneKern*/
 
 /** SECTION  vSpuleMitKern*/
-class vSpuleMitKern extends vSpule
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vSpuleMitKern extends vSpule{}
+
 /** SECTION  vMagnetspule*/
-class vMagnetspule extends vSpuleMitKern
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vMagnetspule extends vSpuleMitKern{}
+
 /** !SECTION  vMagnetspule*/
 /** !SECTION  vSpuleMItKern*/
 /** !SECTION  vSpule*/
 /** !SECTION  vInduktivitaet*/
 
 /** SECTION vKlemmvorrichtung */
-class vKlemmvorrichtung extends vBetriebsmittel
-{
-  constructor ( data )
-  {
-    super( data );
-  }
-}
+class vKlemmvorrichtung extends vBetriebsmittel{}
+
 /** SECTION  vKlemme*/
-class vKlemme extends vKlemmvorrichtung
-{
-  constructor ( data )
-  {
-    super( data );
-  }
-}
+class vKlemme extends vKlemmvorrichtung{}
+
 /** SECTION  vKlemmleiste*/
-class vKlemmleiste extends vKlemme
-{
-  constructor ( data )
-  {
-    super( data );
-  }
-}
+class vKlemmleiste extends vKlemme{}
+
 /** !SECTION  vKlemmleiste*/
 /** !SECTION  vKlemme*/
 /** !SECTION  vKlemmvorrichtung*/
 
 /** SECTION  vMessgeraete*/
-class vMessgeraete extends vBetriebsmittel
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vMessgeraete extends vBetriebsmittel{}
 
 /** SECTION  vZeitmesser*/
-class vZeitmesser extends vMessgeraete
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vZeitmesser extends vMessgeraete{}
+
 /** !SECTION  vZeitmesser*/
 /** SECTION  vStrommesser*/
 class vStrommesser extends vMessgeraete
@@ -301,104 +252,81 @@ class vStrommesser extends vMessgeraete
 }
 /** !SECTION  vStrommesser*/
 /** SECTION  vSpannungsmesser*/
-class vSpannungsmesser extends vMessgeraete
-{
-  constructor ( data, point )
-  {
-    super( data, point );
+class vSpannungsmesser extends vMessgeraete{
+  constructor(data,point) {
+    super(data,point);
   }
+   fshape ()
+  {
+    this.Symbol.select( "#shape" )
+      .append( "ellipse" )
+      .attr( "cx", 45 )
+      .attr( "cy", 45 )
+      .attr( "rx", 45 )
+      .attr( "ry", 45 )
+      .attr( "fill", "none" )
+      .attr( "stroke", "rgb(240,240,240" )
+      .attr( "pointer-events", "all" );
+    this.Symbol.select( "#shape" )
+      .append( "text" )
+      .attr( "x", 45 )
+      .attr( "y", 60 )
+      .attr( "fill", "white" )
+      .attr( "stroke", "rgb(240,240,240" )
+      .attr( "font-family", "Helvetica" )
+      .attr( "font-size", "50px" )
+      .attr( "text-anchor", "middle" )
+      .text( "V" );
+    this.Symbol.select( "#shape" )
+      .attr( "transform", () =>
+      {
+        return `translate(${ this.point.x },${ this.point.y })`;
+      } );
+  }
+
 }
+
 /** !SECTION  vSpannungsmesser*/
 /** SECTION  vPhasenwinkelmesser*/
-class vPhasenwinkelmesser extends vMessgeraete
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vPhasenwinkelmesser extends vMessgeraete{}
+
 /** !SECTION  vPhasenwinkelmesser*/
 /** SECTION  vMagnetischeGroessenmesser*/
-class vMagnetischeGroessenmesser extends vMessgeraete
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vMagnetischeGroessenmesser extends vMessgeraete{}
+
 /** !SECTION  vMagnetischeGroessenmesser*/
 /** SECTION  vLeistungsmesser*/
-class vLeistungsmesser extends vMessgeraete
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vLeistungsmesser extends vMessgeraete{}
+
 /** !SECTION  vLeistungsmesser*/
 /** SECTION  vImpedanzmesser*/
-class vImpedanzmesser extends vMessgeraete
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vImpedanzmesser extends vMessgeraete{}
+
 /** !SECTION  vImpedanzmesser*/
 /** SECTION  vFrequenzmesser*/
-class vFrequenzmesser extends vMessgeraete
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vFrequenzmesser extends vMessgeraete{}
+
 /** !SECTION  vFrequenzmesser*/
 /** SECTION  vEnergiemesser*/
-class vEnergiemesser extends vMessgeraete
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vEnergiemesser extends vMessgeraete{}
+
 /** !SECTION  vEnergiemesser*/
 /** !SECTION  vMessgeraete*/
 
 /** SECTION  vSteckvorrichtungen*/
-class vSteckvorrichtungen extends vBetriebsmittel
-{
-  constructor ( data )
-  {
-    super( data );
-  }
-}
+class vSteckvorrichtungen extends vBetriebsmittel{}
+
 /** !SECTION  vSteckvorrichtungen*/
 /** SECTION  vUebertragungswege*/
-class vUebertragungswege extends vBetriebsmittel
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vUebertragungswege extends vBetriebsmittel{}
+
 /** SECTION  vAntenne*/
-class vAntenne extends vUebertragungswege
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vAntenne extends vUebertragungswege{}
+
 /** !SECTION  vAntenne*/
 /** SECTION  vDraehte*/
-class vDraehte extends vUebertragungswege
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vDraehte extends vUebertragungswege{}
+
 /** !SECTION  vDraehte*/
 /** SECTION  vDraht*/
 class vDraht extends vDraehte
@@ -423,40 +351,35 @@ class vDraht extends vDraehte
 }
 /** !SECTION  vDraht*/
 /** SECTION  vKabel*/
-class vKabel extends vUebertragungswege
-{
-  constructor ( data, point )
-  {
-    super( data, point );
+class vKabel extends vUebertragungswege{
+  constructor(data,point) {
+    super(data,point);
+    this.shape = `M 0 0 L 200 0`;
   }
+   fshape ()
+  {
+    this.Symbol.select( "#shape" )
+      .append( "path" )
+      .attr( "d", this.shape )
+      .attr( "stroke", "rgb(240,240,240" )
+      .attr( "stroke-width", "6" )
+      .attr( "transform", () =>
+      { return `translate(${ this.point.x },${ this.point.y })`; } );
+  }
+
 }
 
 /** SECTION  vStarkstromkabel*/
-class vStarkstromkabel extends vKabel
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vStarkstromkabel extends vKabel{}
+
 /** !SECTION  vStarkstromkabel*/
 /** SECTION  vHochfrequenzkabel*/
-class vHochfrequenzkabel extends vKabel
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vHochfrequenzkabel extends vKabel{}
+
 /** !SECTION  vHochfrequenzkabel*/
 /** SECTION  vFernmeldekabel*/
-class vFernmeldekabel extends vKabel
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vFernmeldekabel extends vKabel{}
+
 /** !SECTION  vFernmeldekabel*/
 /** !SECTION  vKabel */
 
@@ -483,13 +406,7 @@ class vLeitung extends vUebertragungswege
 }
 
 /** SECTION  vBlankeleitung*/
-class vBlankeleitung extends vLeitung
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vBlankeleitung extends vLeitung{}
 
 /** SECTION  vErder*/
 class vErder extends vBlankeleitung
@@ -535,25 +452,14 @@ class vErder extends vBlankeleitung
 /** !SECTION  vBlankeleitung*/
 
 /** SECTION  vIsolierteleitung*/
-class vIsolierteleitung extends vLeitung
-{
-  constructor ( data )
-  {
-    super( data );
-  }
-}
+class vIsolierteleitung extends vLeitung{}
+
 /** !SECTION  vIsolierteleitung*/
 /** !SECTION  vIsolierteleitung*/
 /** !SECTION  vLeitung*/
 
 /** SECTION Verschiedenes */
-class vVerschiedenes extends vBetriebsmittel
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-  }
-}
+class vVerschiedenes extends vBetriebsmittel{}
 
 /** SECTION Verbraucher */
 
@@ -753,4 +659,5 @@ export
   vErder,
   vIsolierteleitung,
   vWiderstaende,
+  vTransformator,
 };

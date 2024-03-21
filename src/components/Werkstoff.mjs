@@ -8,53 +8,21 @@ class vWerkstoff extends vComponents {
   }
 }
 
-class vEisenwerkstoff extends vWerkstoff {
-  constructor() {
-    super();
-  }
-}
+class vEisenwerkstoff extends vWerkstoff {}
 
-class vBaustahl extends vEisenwerkstoff {
-  constructor() {
-    super();
-  }
-}
+class vBaustahl extends vEisenwerkstoff {}
 
-class vAutomatenstahl extends vEisenwerkstoff {
-  constructor() {
-    super();
-  }
-}
+class vAutomatenstahl extends vEisenwerkstoff {}
 
-class vEinsatzstahl extends vEisenwerkstoff {
-  constructor() {
-    super();
-  }
-}
+class vEinsatzstahl extends vEisenwerkstoff {}
 
-class vVerguetungsstahl extends vEisenwerkstoff {
-  constructor() {
-    super();
-  }
-}
+class vVerguetungsstahl extends vEisenwerkstoff {}
 
-class vWerkzeugstahl extends vEisenwerkstoff {
-  constructor() {
-    super();
-  }
-}
+class vWerkzeugstahl extends vEisenwerkstoff {}
 
-class vLeiterwerkstoff extends vWerkstoff {
-  constructor() {
-    super();
-  }
-}
+class vLeiterwerkstoff extends vWerkstoff {}
 
-class vMagnetischerWerkstoff extends vWerkstoff {
-  constructor() {
-    super();
-  }
-}
+class vMagnetischerWerkstoff extends vWerkstoff {}
 
 exports.vWerkstoff = vWerkstoff;
 exports.vEisenwerkstoff = vEisenwerkstoff;

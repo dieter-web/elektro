@@ -1,14 +1,27 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../layouts/partials/ergebnis.ejs') %>
 
+import {Tabelle1} from "/sysFrontend/Tabelle.mjs";
 const data = await populate( "example/Uebung15/data.json" );
 
-const table= new Tabelle( data,"#ergebnis" );
+drawkennzeichnung(data,"#kennzeichnung");
+
+Material.value = data.Eigenschaften.Material;
+Ug.value = data.Parameter.Ug;
+l.value = data.Eigenschaften.l;
+b.value = data.Eigenschaften.b;
+N.value = data.Eigenschaften.N;
+d.value = data.Eigenschaften.d;
+
+
+const table= new Tabelle1( data,"#ergebnis" );
 table.tabulate();
 
-
-// Rückkopplung
-//const tab=d3.selectAll( "tbody" )._groups[ 0 ][ 0 ].innerText.split( '\t' );
-
+const view = new DrawBoard('grafik', 640, 480, [0, 0, 500, 500]);
+import {vSpannungsmesser} from '/components/Betriebsmittel.mjs';
+const point = {x:320, y:240};
+const vP = new vSpannungsmesser(data,point);
+vP.createNode();
+view.addNode(vP.node);
 
 </script>

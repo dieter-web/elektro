@@ -6,9 +6,6 @@ class Components extends Object {
     super();
     this.Berechnung = {};
     this.Parameter = {};
-    // this.Kennzeichnung = dbJson.readJSONFile(
-    //   path.resolve("src/json/Sonstiges/kennzeichnung.json")
-    // );
   }
 }
 

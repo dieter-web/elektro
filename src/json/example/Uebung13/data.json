@@ -1,1 +1,1 @@
-{"Berechnung":{"Ism":{"mathjs":"Unit","value":130,"unit":"mA","fixPrefix":true}},"Parameter":{"R":"12.5ohm","U":"1.625V"},"Eigenschaften":{},"Kennzeichnung":{"Art":"P","Zählnummer":1}}
+{"Berechnung":{"Ism":{"mathjs":"Unit","value":250,"unit":"mA","fixPrefix":true}},"Parameter":{"R":"2.5ohm","U":"0.625V"},"Eigenschaften":{},"Kennzeichnung":{"Art":"P","Zählnummer":1}}

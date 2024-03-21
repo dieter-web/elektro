@@ -4,95 +4,35 @@ class Verbindungstechnik {
   }
 }
 
-class UnloesbareVerbindung extends Verbindungstechnik {
-  constructor() {
-    super();
-  }
-}
+class UnloesbareVerbindung extends Verbindungstechnik {}
 
-class Spleissen extends UnloesbareVerbindung {
-  constructor() {
-    super();
-  }
-}
+class Spleissen extends UnloesbareVerbindung {}
 
-class Schweissen extends UnloesbareVerbindung {
-  constructor() {
-    super();
-  }
-}
+class Schweissen extends UnloesbareVerbindung {}
 
-class Widerstandsschweissen extends Schweissen {
-  constructor() {
-    super();
-  }
-}
+class Widerstandsschweissen extends Schweissen {}
 
-class Ultraschallschweissen extends Schweissen {
-  constructor() {
-    super();
-  }
-}
+class Ultraschallschweissen extends Schweissen {}
 
-class Schutzgasschweissen extends Schweissen {
-  constructor() {
-    super();
-  }
-}
+class Schutzgasschweissen extends Schweissen {}
 
-class Schmelzschweissen extends Schweissen {
-  constructor() {
-    super();
-  }
-}
+class Schmelzschweissen extends Schweissen {}
 
-class Pressschweissen extends Schweissen {
-  constructor() {
-    super();
-  }
-}
+class Pressschweissen extends Schweissen {}
 
-class Mikroplasmaschweissen extends Schweissen {
-  constructor() {
-    super();
-  }
-}
+class Mikroplasmaschweissen extends Schweissen {}
 
-class Impulsstromschweissen extends Schweissen {
-  constructor() {
-    super();
-  }
-}
+class Impulsstromschweissen extends Schweissen {}
 
-class Abbrennstumpfschweissen extends Schweissen {
-  constructor() {
-    super();
-  }
-}
+class Abbrennstumpfschweissen extends Schweissen {}
 
-class Pressverbindung extends UnloesbareVerbindung {
-  constructor() {
-    super();
-  }
-}
+class Pressverbindung extends UnloesbareVerbindung {}
 
-class Klebeverbindung extends UnloesbareVerbindung {
-  constructor() {
-    super();
-  }
-}
+class Klebeverbindung extends UnloesbareVerbindung {}
 
-class Bonden extends UnloesbareVerbindung {
-  constructor() {
-    super();
-  }
-}
+class Bonden extends UnloesbareVerbindung {}
 
-class LoesbareVerbindung extends Verbindungstechnik {
-  constructor() {
-    super();
-  }
-}
+class LoesbareVerbindung extends Verbindungstechnik {}
 
 class SchraubVerbindung extends LoesbareVerbindung {
   constructor(Eigenschaften) {
@@ -129,53 +69,22 @@ class Klemme extends Klemmverbindung {
   }
 }
 
-class BedingtLoesbareVerbindung extends Verbindungstechnik {
-  constructor() {
-    super();
-  }
-}
+class BedingtLoesbareVerbindung extends Verbindungstechnik {}
 
-class Schneidklemmtechnik extends BedingtLoesbareVerbindung {
-  constructor() {
-    super();
-  }
-}
+class Schneidklemmtechnik extends BedingtLoesbareVerbindung {}
 
-class Loettechnik extends BedingtLoesbareVerbindung {
-  constructor() {
-    super();
-  }
-}
+class Loettechnik extends BedingtLoesbareVerbindung {}
 
-class Weichloeten extends Loettechnik {
-  constructor() {
-    super();
-  }
-}
+class Weichloeten extends Loettechnik {}
 
-class Hochtemperaturloeten extends Loettechnik {
-  constructor() {
-    super();
-  }
-}
+class Hochtemperaturloeten extends Loettechnik {}
 
-class Hartloeten extends Loettechnik {
-  constructor() {
-    super();
-  }
-}
+class Hartloeten extends Loettechnik {}
 
-class Einpresstechnik extends BedingtLoesbareVerbindung {
-  constructor() {
-    super();
-  }
-}
+class Einpresstechnik extends BedingtLoesbareVerbindung {}
 
-class Drahtwickeltechnik extends BedingtLoesbareVerbindung {
-  constructor() {
-    super();
-  }
-}
+class Drahtwickeltechnik extends BedingtLoesbareVerbindung {}
+
 exports.Drahtwickeltechnik = Drahtwickeltechnik;
 exports.Einpresstechnik = Einpresstechnik;
 exports.Weichloeten = Weichloeten;

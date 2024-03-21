@@ -8,11 +8,7 @@ class PhysikalischeChemie {
   }
 }
 
-class Elektrochemie extends PhysikalischeChemie {
-  constructor() {
-    super();
-  }
-}
+class Elektrochemie extends PhysikalischeChemie {}
 
 class Elektrode extends Elektrochemie {
   constructor(Eigenschaften) {

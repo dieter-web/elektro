@@ -47,35 +47,15 @@ class Eisenwerkstoff extends Werkstoff {
   }
 }
 
-class Baustahl extends Eisenwerkstoff {
-  constructor() {
-    super();
-  }
-}
+class Baustahl extends Eisenwerkstoff {}
 
-class Automatenstahl extends Eisenwerkstoff {
-  constructor() {
-    super();
-  }
-}
+class Automatenstahl extends Eisenwerkstoff {}
 
-class Einsatzstahl extends Eisenwerkstoff {
-  constructor() {
-    super();
-  }
-}
+class Einsatzstahl extends Eisenwerkstoff {}
 
-class Verguetungsstahl extends Eisenwerkstoff {
-  constructor() {
-    super();
-  }
-}
+class Verguetungsstahl extends Eisenwerkstoff {}
 
-class Werkzeugstahl extends Eisenwerkstoff {
-  constructor() {
-    super();
-  }
-}
+class Werkzeugstahl extends Eisenwerkstoff {}
 
 class Leiterwerkstoff extends Werkstoff {
   constructor(Eigenschaften) {
@@ -109,11 +89,7 @@ class Leiterwerkstoff extends Werkstoff {
   }
 }
 
-class MagnetischerWerkstoff extends Werkstoff {
-  constructor() {
-    super();
-  }
-}
+class MagnetischerWerkstoff extends Werkstoff {}
 
 exports.Werkstoff = Werkstoff;
 exports.Eisenwerkstoff = Eisenwerkstoff;

@@ -12,21 +12,19 @@ require("use-strict");
  */
 function Uebung15(input) {
   const path = require("path");
-  const { makeDirectory } = require(path.resolve("src/js/makeDirectory.js"));
   const dbJson = require(path.resolve("controllers/dbJson"));
 
-  const {
-    Arithmetik,
-    Planemetrie,
-    Elektro,
-    Spannungsmesser,
-  } = require(path.resolve("include/system"));
-
-  const { readMaterialParameter } = require(path.resolve(
-    "src/js/readMaterialParameter.js"
-  ));
-
-  const P1 = new Spannungsmesser(input);
+  const { makeDirectory, readMaterialParameter } = require(path.resolve("src/js/utility.js"));
+  const {Arithmetik,Planemetrie,Elektro} = require(path.resolve("src/mathjs/Kernel.js"));
+  const { Spannungsmesser} = require(path.resolve("src/components/Betriebsmittel.js"));
+    
+  const P1 = new Spannungsmesser({
+    Material: input.Material,
+    l: input.l,
+    b: input.b,
+    N: input.N,
+    d: input.d,
+  });
 
   const PK = new Planemetrie();
   const AK = new Arithmetik();
@@ -36,19 +34,26 @@ function Uebung15(input) {
 
   makeDirectory(datadir).then(
     function () {
-      P1.Parameter.ρM = readMaterialParameter(
-        P1.Parameter.Material,
-        "ρ"
-      ).toString();
 
-      PK.parameter({ g: P1.Parameter.l, h: P1.Parameter.b });
-      P1.Berechnung["Ur"] = PK.RUgh();
+      P1.Kennzeichnung = {
+        Art: "P",
+        Zählnummer: 1,
+        Typ: "Drehspulspannungsmesser",
+      }
 
-      PK.parameter({ d: P1.Parameter.d });
-      P1.Berechnung["Ad"] = PK.KAd().to("mm^2");
+      P1.Parameter = {
+      ρM : readMaterialParameter(P1.Eigenschaften.Material,"ρ"),
+      Ug: input.Ug,
+      }
 
-      AK.parameter({ a: P1.Berechnung.Ur.toString(), b: P1.Parameter.N });
-      P1.Berechnung["ld"] = AK.mul().to("m");
+      PK.parameter({ g: P1.Eigenschaften.l, h: P1.Eigenschaften.b });
+      P1.Berechnung.Ur = PK.RUgh();
+
+      PK.parameter({ d: P1.Eigenschaften.d });
+      P1.Berechnung.Ad = PK.KAd().to("mm^2");
+
+      AK.parameter({ a: P1.Berechnung.Ur.toString(), b: P1.Eigenschaften.N });
+      P1.Berechnung.ld = AK.mul().to("m");
 
       EK.parameter({
         ρ: P1.Parameter.ρM,
