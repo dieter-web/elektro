@@ -1,11 +1,6 @@
 const { ElektrischeAnlagen } = require("../ElektrischeAnlagen.js");
 
-class Verteilungssysteme extends ElektrischeAnlagen {
-  constructor() {
-    super();
-  }
-}
-
+class Verteilungssysteme extends ElektrischeAnlagen {}
 class Gleichstromnetz extends Verteilungssysteme {
   constructor(Eigenschaften) {
     super();

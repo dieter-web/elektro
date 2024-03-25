@@ -200,13 +200,6 @@ class vPlatte extends vBauelemente
       .attr( "y", 0 )
       .attr( "width", 3 )
       .attr( "height", 365 )
-      .attr( "fill", "none" )
-      .attr( "stroke", "rgb(240,240,240" )
-      .attr( "pointer-events", "all" )
-      .attr( "transform", () =>
-      {
-        return `translate(${ this.point.x }, ${ this.point.y })`;
-      } );
   }
 }
 /** !SECTION  */
@@ -235,11 +228,6 @@ class vRohrleitung extends vRohrleitungen
     this.Symbol.select( "#shape" )
       .append( "path" )
       .attr( "d", this.shape )
-      .attr( "stroke", "rgb(240,240,240" )
-      .attr( "transform", () =>
-      {
-        return `translate(${ this.point.x },${ this.point.y })`;
-      } );
   }
 }
 

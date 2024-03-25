@@ -1,6 +1,7 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
 
+import {Tabelle1} from "/sysFrontend/Tabelle.mjs"
 const data=await populate( "example/Aufgabe13/data.json" )
 
 Material.value = data[0].Eigenschaften.Material;
@@ -11,23 +12,13 @@ d.value = data[0].Eigenschaften.d;
 drawkennzeichnung( data[0],"#kennzeichnung" )
 drawkennzeichnung( data[1],"#kennzeichnung" )
 
-const table=new Tabelle( data[0],"#ergebnis" );
+const table=new Tabelle1( data[0],"#ergebnis" );
 table.tabulate();
-const table1=new Tabelle( data[1],"#ergebnis" );
+const table1=new Tabelle1( data[1],"#ergebnis" );
 table1.tabulate();
 
-
-
-// const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' )
-// Material.value=sel[ 0 ]
-// lm.value=sel[ 1 ]
-// N.value=sel[ 2 ]
-// d.value=sel[ 3 ]
-
-// Visualisierung
 import {vSpule} from '/components/Betriebsmittel.mjs'
 import {vSpulenkoerper} from '/components/Betriebsmittel.mjs'
-
 const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
 const point={x: 320,y: 240};
 

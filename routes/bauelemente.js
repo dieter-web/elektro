@@ -1,17 +1,18 @@
-require('use-strict')
-const path = require('path')
-const express = require('express')
+require("use-strict")
+const path = require("path")
+const express = require("express")
+
 const router = express.Router()
 
-const { routerGet } = require(path.resolve('src/js/routerGet.js'))
-const { erouter } = require(path.resolve('src/js/erouter.js'))
+const { routerGet } = require(path.resolve("src/js/routerGet.js"))
+const { erouter } = require(path.resolve("src/js/erouter.js"))
 
-const R3 = require(path.resolve('include/routenBauelemente'))
+const R3 = require(path.resolve("include/routenBauelemente"))
 
 /** SECTION Bauelemente */
-router.get('/', function (req, res) {
+router.get("/", function (req, res) {
   res.render(R3.p3, {
-    layout: `${R3.l3}/layout.ejs`
+    layout: `${R3.l3}/layout.ejs`,
   })
 })
 

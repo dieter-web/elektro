@@ -1,12 +1,12 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../layouts/partials/ergebnisOhneDrawBoardOhneKennzeichnung.ejs') %>
 
-import {Tabelle3} from "/sysFrontend/Tabelle.mjs";
+import {Tabelle1} from "/sysFrontend/Tabelle.mjs";
 const data = await populate("example/Aufgabe16/data.json")
 
 Material.value = data.Eigenschaften.Material;
 
-const table = new Tabelle3(data, "#ergebnis");
+const table = new Tabelle1(data, "#ergebnis");
 table.tabulate();
 
 </script>

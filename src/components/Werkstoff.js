@@ -1,23 +1,23 @@
-const path = require("path");
-const dbJson = require(path.resolve("controllers/dbJson.js"));
+const path = require("path")
+const dbJson = require(path.resolve("controllers/dbJson.js"))
 
 class Werkstoff {
   constructor() {
-    this.Kennzeichnung = {};
-    this.Berechnungen = {};
+    this.Kennzeichnung = {}
+    this.Berechnung = {}
   }
 }
 
 class Eisenwerkstoff extends Werkstoff {
   constructor() {
-    super();
+    super()
     this.Werkstoffnummern = {
       Werkstoffhauptgruppe: [], //1
       Trennzeichen: ".",
       Sortennummern: [], // 2,3,4,5
       Trennzeichen: ".",
       Anhaengezahlen: [], // 6,7
-    };
+    }
     this.Kurznamen = {
       // Stahl mit Angaben der Gebrauchseigenschaft
       Gebrauchseigenschaft: {
@@ -43,7 +43,7 @@ class Eisenwerkstoff extends Werkstoff {
         Behandlung: "",
         "Besondere Eigenschaften aus Behandlung": "",
       },
-    };
+    }
   }
 }
 
@@ -58,45 +58,47 @@ class Verguetungsstahl extends Eisenwerkstoff {}
 class Werkzeugstahl extends Eisenwerkstoff {}
 
 class Leiterwerkstoff extends Werkstoff {
-  constructor(Eigenschaften) {
-    super();
-    this.Eigenschaften = Eigenschaften;
-    this.data = dbJson.readJSONFile(path.resolve("src/json/Sonstiges/Leiterwerkstoffe.json"))[Eigenschaften.Material];
+  constructor(Material) {
+    super()
+    this.Eigenschaften = Material
+    this.Parameter = dbJson.readJSONFile(path.resolve("src/json/Sonstiges/Leiterwerkstoffe.json"))[
+      this.Eigenschaften.Material
+    ]
   }
 
   fρ(name) {
-    return this.data.ρ[0];
+    return this.Parameter.ρ[0]
   }
 
   fκ(name) {
-    return this.data.κ[0];
+    return this.Parameter.κ[0]
   }
 
   fδ0(name) {
-    return this.data.δ0[0];
+    return this.Parameter.δ0[0]
   }
 
-  fα20(name) {
-    return this.data.α20[0];
+  fα20() {
+    return this.Parameter.α20[0]
   }
 
   fβ20(name) {
-    return this.data.β20[0];
+    return this.Parameter.β20[0]
   }
 
   color(name) {
-    return this.data.color;
+    return this.Material.color
   }
 }
 
 class MagnetischerWerkstoff extends Werkstoff {}
 
-exports.Werkstoff = Werkstoff;
-exports.Eisenwerkstoff = Eisenwerkstoff;
-exports.Baustahl = Baustahl;
-exports.Automatenstahl = Automatenstahl;
-exports.Einsatzstahl = Einsatzstahl;
-exports.Verguetungsstahl = Verguetungsstahl;
-exports.Werkzeugstahl = Werkzeugstahl;
-exports.Leiterwerkstoff = Leiterwerkstoff;
-exports.MagnetischerWerkstoff = MagnetischerWerkstoff;
+exports.Werkstoff = Werkstoff
+exports.Eisenwerkstoff = Eisenwerkstoff
+exports.Baustahl = Baustahl
+exports.Automatenstahl = Automatenstahl
+exports.Einsatzstahl = Einsatzstahl
+exports.Verguetungsstahl = Verguetungsstahl
+exports.Werkzeugstahl = Werkzeugstahl
+exports.Leiterwerkstoff = Leiterwerkstoff
+exports.MagnetischerWerkstoff = MagnetischerWerkstoff

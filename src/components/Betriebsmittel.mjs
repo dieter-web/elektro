@@ -1,34 +1,32 @@
-import { vComponents } from "./components.mjs";
+import { vComponents } from "./components.mjs"
 
 /** SECTION vBetriebsmittel */
-class vBetriebsmittel extends vComponents
-{
-  constructor ( data, point )
-  {
-    super( data, point );
+class vBetriebsmittel extends vComponents {
+  constructor(data, point) {
+    super(data, point)
 
     // Raster 1.25 mm
-    this.Form1 = "M 0 0 l 75 0 l 0 75 l -75 0 l 0 -75";
-    this.Form2 = "M 0 0 l 75 0 l 0 50 l -75 0 l 0 -50";
-    this.Form3 = ""; // Circle
+    this.Form1 = "M 0 0 l 75 0 l 0 75 l -75 0 l 0 -75"
+    this.Form2 = "M 0 0 l 75 0 l 0 50 l -75 0 l 0 -50"
+    this.Form3 = "" // Circle
   }
 }
 
 /** SECTION  vBaugruppen*/
-class vBaugruppen extends vBetriebsmittel{}
+class vBaugruppen extends vBetriebsmittel {}
 
 /** SECTION  vZweipole*/
-class vZweipole extends vBaugruppen{}
+class vZweipole extends vBaugruppen {}
 
 /** SECTION  vPassiveZweipole*/
-class vPassiveZweipole extends vZweipole{}
+class vPassiveZweipole extends vZweipole {}
 
 /** !SECTION  vPassiveZweipole*/
 /** !SECTION  vZweipole */
 /** !SECTION  vBaugruppen */
 
 /** SECTION  vElektrischeMaschinen*/
-class vElektrischeMaschinen extends vBetriebsmittel{}
+class vElektrischeMaschinen extends vBetriebsmittel {}
 
 /** SECTION Starr */
 class vStarr extends vElektrischeMaschinen {}
@@ -42,8 +40,8 @@ class vTransformatoren extends vRuhendeElektrischeMaschinen {}
 /** SECTION Transformator  */
 class vTransformator extends vTransformatoren {
   constructor(data, point) {
-    super(data,point);
-     this.shape = `M 0 60 
+    super(data, point)
+    this.shape = `M 0 60 
      L 0 46 
      C 0 41.58 3.58 38 8 38 
      C 12.42 38 16 41.58 16 46 
@@ -66,21 +64,14 @@ class vTransformator extends vTransformatoren {
      C 44.42 22 48 18.42 48 14 
      C 48 18.42 51.58 22 56 22 
      C 60.42 22 64 18.42 64 14 
-     L 64 0`;
+     L 64 0`
 
-        // <rect x="0" y="0" width="64" height="60" fill="none" stroke="none" pointer-events="all"/><path d="" fill="none" stroke="rgb(240, 240, 240)" stroke-linejoin="round" stroke-miterlimit="10" pointer-events="all"/></g></svg>
+    // <rect x="0" y="0" width="64" height="60" fill="none" stroke="none" pointer-events="all"/><path d="" fill="none" stroke="rgb(240, 240, 240)" stroke-linejoin="round" stroke-miterlimit="10" pointer-events="all"/></g></svg>
   }
-   fshape ()
-  {
-    this.Symbol.select( "#shape" )
-      .append( "path" )
-      .attr( "d", this.shape )
-      .attr( "fill", "none" )
-      .attr( "stroke", "rgb(240,240,240" )
-      .attr( "stroke-linejoin", "round" )
-      .attr( "stroke-miterlimit", "10" )
-      .attr( "pointer-events", "all" )
-      .attr( "transform", () =>{return `translate(${ this.point.x },${ this.point.y })`;} );
+  fshape() {
+    this.Symbol.select("#shape")
+      .append("path")
+      .attr("d", this.shape)
   }
 }
 /** !SECTION vTransformator  */
@@ -89,14 +80,12 @@ class vTransformator extends vTransformatoren {
 /** !SECTION vstart  */
 /** !SECTION  vElektrischeMaschinen*/
 /** SECTION  vInduktivitaet*/
-class vInduktivitaet extends vBetriebsmittel{}
+class vInduktivitaet extends vBetriebsmittel {}
 
 /** SECTION vSpule */
-class vSpule extends vInduktivitaet
-{
-  constructor ( data, point )
-  {
-    super( data, point );
+class vSpule extends vInduktivitaet {
+  constructor(data, point) {
+    super(data, point)
     this.shape = `M 0 8
         L 18 8 
         C 18 3.58 21.58 0 26 0 
@@ -107,88 +96,67 @@ class vSpule extends vInduktivitaet
         C 62.42 0 66 3.58 66 8 
         C 66 3.58 69.58 0 74 0 
         C 78.42 0 82 3.58 82 8 
-        L 100 8`;
+        L 100 8`
   }
 
-  fshape ()
-  {
-    this.Symbol.select( "#shape" )
-      .append( "path" )
-      .attr( "d", this.shape )
-      .attr( "fill", "none" )
-      .attr( "stroke", "rgb(240,240,240" )
-      .attr( "stroke-linejoin", "round" )
-      .attr( "stroke-miterlimit", "10" )
-      .attr( "pointer-events", "all" )
-      .attr( "transform", () =>
-      {
-        return `translate(${ this.point.x },${ this.point.y })`;
-      } );
+  fshape() {
+    this.Symbol.select("#shape")
+      .append("path")
+      .attr("d", this.shape);
   }
 }
 
-class vSpulenkoerper extends vSpule
-{
-  constructor ( data, point )
-  {
-    super( data, point );
+class vSpulenkoerper extends vSpule {
+  constructor(data, point) {
+    super(data, point)
     this.shape = `M 0 6 
     l 100 0 
     l 0 -4
     l -100 0
     l 0 4
-    `;
+    `
   }
-  fshape ()
-  {
-    this.Symbol.select( "#shape" )
-      .append( "path" )
-      .attr( "d", this.shape )
-      .attr( "stroke", "rgb(240,240,240" )
-      .attr( "stroke-linejoin", "round" )
-      .attr( "stroke-miterlimit", "10" )
-      .attr( "pointer-events", "all" )
-      .attr( "transform", () =>
-      {
-        return `translate(${ this.point.x },${ this.point.y })`;
-      } );
+  fshape() {
+    this.Symbol.select("#shape")
+      .append("path")
+      .attr("d", this.shape);
   }
 }
 
 /** SECTION  vVariometer*/
-class vVariometer extends vSpule{}
+class vVariometer extends vSpule {}
 
 /** !SECTION  vVariometer*/
 /** SECTION  vSpuleOhneKern*/
-class vSpuleOhneKern extends vSpule{}
+class vSpuleOhneKern extends vSpule {}
 
 /** SECTION  vZylinderspule*/
-class vZylinderspule extends vSpuleOhneKern{}
+class vZylinderspule extends vSpuleOhneKern {}
 /** !SECTION  vZylinderspule*/
 
 /** SECTION  vRingspule*/
-class vRingspule extends vSpuleOhneKern{}
+class vRingspule extends vSpuleOhneKern {}
 /** !SECTION  vRingspule*/
 
 /** SECTION  vMehrlagigeSpule*/
-class vMehrlagigeSpule extends vSpuleOhneKern{}
+class vMehrlagigeSpule extends vSpuleOhneKern {}
 
 /** !SECTION  vMehrlagigeSpule*/
 /** SECTION  vEinlagigeSpule*/
-class vEinlagigeSpule extends vSpuleOhneKern{}
+class vEinlagigeSpule extends vSpuleOhneKern {}
 
 /** !SECTION  vEinlagigeSpule*/
 /** SECTION  vAbgeschirmteSpule*/
-class vAbgeschirmteSpule extends vSpuleOhneKern{}
+class vAbgeschirmteSpule extends vSpuleOhneKern {}
 
 /** !SECTION  vAbgeschirmteSpule*/
 /** !SECTION  vSpuleOhneKern*/
 
 /** SECTION  vSpuleMitKern*/
-class vSpuleMitKern extends vSpule{}
+class vSpuleMitKern extends vSpule {}
 
 /** SECTION  vMagnetspule*/
-class vMagnetspule extends vSpuleMitKern{}
+class vMagnetspule extends vSpuleMitKern {}
 
 /** !SECTION  vMagnetspule*/
 /** !SECTION  vSpuleMItKern*/
@@ -196,226 +164,199 @@ class vMagnetspule extends vSpuleMitKern{}
 /** !SECTION  vInduktivitaet*/
 
 /** SECTION vKlemmvorrichtung */
-class vKlemmvorrichtung extends vBetriebsmittel{}
+class vKlemmvorrichtung extends vBetriebsmittel {}
 
 /** SECTION  vKlemme*/
-class vKlemme extends vKlemmvorrichtung{}
+class vKlemme extends vKlemmvorrichtung {
+  constructor(data, point) {
+    super()
+  }
+
+  fshape() {
+    this.Symbol.select("#shape")
+      .append("ellipse")
+      .attr("cx", 2.5)
+      .attr("cy", 2.5)
+      .attr("rx", 2.5)
+      .attr("ry", 2.5)
+      .attr("fill", "black")
+  }
+}
 
 /** SECTION  vKlemmleiste*/
-class vKlemmleiste extends vKlemme{}
+class vKlemmleiste extends vKlemme {}
 
 /** !SECTION  vKlemmleiste*/
 /** !SECTION  vKlemme*/
 /** !SECTION  vKlemmvorrichtung*/
 
 /** SECTION  vMessgeraete*/
-class vMessgeraete extends vBetriebsmittel{}
+class vMessgeraete extends vBetriebsmittel {}
 
 /** SECTION  vZeitmesser*/
-class vZeitmesser extends vMessgeraete{}
+class vZeitmesser extends vMessgeraete {}
 
 /** !SECTION  vZeitmesser*/
 /** SECTION  vStrommesser*/
-class vStrommesser extends vMessgeraete
-{
-  constructor ( data, point )
-  {
-    super( data, point );
+class vStrommesser extends vMessgeraete {
+  constructor(data, point) {
+    super(data, point)
   }
-  fshape ()
-  {
-    this.Symbol.select( "#shape" )
-      .append( "ellipse" )
-      .attr( "cx", 45 )
-      .attr( "cy", 45 )
-      .attr( "rx", 45 )
-      .attr( "ry", 45 )
-      .attr( "fill", "none" )
-      .attr( "stroke", "rgb(240,240,240" )
-      .attr( "pointer-events", "all" );
-    this.Symbol.select( "#shape" )
-      .append( "text" )
-      .attr( "x", 45 )
-      .attr( "y", 60 )
-      .attr( "fill", "white" )
-      .attr( "stroke", "rgb(240,240,240" )
-      .attr( "font-family", "Helvetica" )
-      .attr( "font-size", "50px" )
-      .attr( "text-anchor", "middle" )
-      .text( "A" );
-    this.Symbol.select( "#shape" )
-      .attr( "transform", () =>
-      {
-        return `translate(${ this.point.x },${ this.point.y })`;
-      } );
+  fshape() {
+    this.Symbol.select("#shape")
+      .append("ellipse")
+      .attr("cx", 45)
+      .attr("cy", 45)
+      .attr("rx", 45)
+      .attr("ry", 45)
+      
+    this.Symbol.select("#shape")
+      .append("text")
+      .attr("x", 45)
+      .attr("y", 60)
+      .attr("fill", "white")
+      .attr("stroke", "rgb(240,240,240")
+      .attr("font-family", "Helvetica")
+      .attr("font-size", "50px")
+      .attr("text-anchor", "middle")
+      .text("A");
   }
 }
 /** !SECTION  vStrommesser*/
 /** SECTION  vSpannungsmesser*/
-class vSpannungsmesser extends vMessgeraete{
-  constructor(data,point) {
-    super(data,point);
+class vSpannungsmesser extends vMessgeraete {
+  constructor(data, point) {
+    super(data, point)
   }
-   fshape ()
-  {
-    this.Symbol.select( "#shape" )
-      .append( "ellipse" )
-      .attr( "cx", 45 )
-      .attr( "cy", 45 )
-      .attr( "rx", 45 )
-      .attr( "ry", 45 )
-      .attr( "fill", "none" )
-      .attr( "stroke", "rgb(240,240,240" )
-      .attr( "pointer-events", "all" );
-    this.Symbol.select( "#shape" )
-      .append( "text" )
-      .attr( "x", 45 )
-      .attr( "y", 60 )
-      .attr( "fill", "white" )
-      .attr( "stroke", "rgb(240,240,240" )
-      .attr( "font-family", "Helvetica" )
-      .attr( "font-size", "50px" )
-      .attr( "text-anchor", "middle" )
-      .text( "V" );
-    this.Symbol.select( "#shape" )
-      .attr( "transform", () =>
-      {
-        return `translate(${ this.point.x },${ this.point.y })`;
-      } );
+  fshape() {
+    this.Symbol.select("#shape")
+      .append("ellipse")
+      .attr("cx", 45)
+      .attr("cy", 45)
+      .attr("rx", 45)
+      .attr("ry", 45)
+      
+    this.Symbol.select("#shape")
+      .append("text")
+      .attr("x", 45)
+      .attr("y", 60)
+      .attr("fill", "white")
+      .attr("stroke", "rgb(240,240,240")
+      .attr("font-family", "Helvetica")
+      .attr("font-size", "50px")
+      .attr("text-anchor", "middle")
+      .text("V")
   }
-
 }
 
 /** !SECTION  vSpannungsmesser*/
 /** SECTION  vPhasenwinkelmesser*/
-class vPhasenwinkelmesser extends vMessgeraete{}
+class vPhasenwinkelmesser extends vMessgeraete {}
 
 /** !SECTION  vPhasenwinkelmesser*/
 /** SECTION  vMagnetischeGroessenmesser*/
-class vMagnetischeGroessenmesser extends vMessgeraete{}
+class vMagnetischeGroessenmesser extends vMessgeraete {}
 
 /** !SECTION  vMagnetischeGroessenmesser*/
 /** SECTION  vLeistungsmesser*/
-class vLeistungsmesser extends vMessgeraete{}
+class vLeistungsmesser extends vMessgeraete {}
 
 /** !SECTION  vLeistungsmesser*/
 /** SECTION  vImpedanzmesser*/
-class vImpedanzmesser extends vMessgeraete{}
+class vImpedanzmesser extends vMessgeraete {}
 
 /** !SECTION  vImpedanzmesser*/
 /** SECTION  vFrequenzmesser*/
-class vFrequenzmesser extends vMessgeraete{}
+class vFrequenzmesser extends vMessgeraete {}
 
 /** !SECTION  vFrequenzmesser*/
 /** SECTION  vEnergiemesser*/
-class vEnergiemesser extends vMessgeraete{}
+class vEnergiemesser extends vMessgeraete {}
 
 /** !SECTION  vEnergiemesser*/
 /** !SECTION  vMessgeraete*/
 
 /** SECTION  vSteckvorrichtungen*/
-class vSteckvorrichtungen extends vBetriebsmittel{}
+class vSteckvorrichtungen extends vBetriebsmittel {}
 
 /** !SECTION  vSteckvorrichtungen*/
 /** SECTION  vUebertragungswege*/
-class vUebertragungswege extends vBetriebsmittel{}
+class vUebertragungswege extends vBetriebsmittel {}
 
 /** SECTION  vAntenne*/
-class vAntenne extends vUebertragungswege{}
+class vAntenne extends vUebertragungswege {}
 
 /** !SECTION  vAntenne*/
 /** SECTION  vDraehte*/
-class vDraehte extends vUebertragungswege{}
+class vDraehte extends vUebertragungswege {}
 
 /** !SECTION  vDraehte*/
 /** SECTION  vDraht*/
-class vDraht extends vDraehte
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-    this.shape = `M 0 0 L 100 0`;
+class vDraht extends vDraehte {
+  constructor(data, point) {
+    super(data, point)
+    this.shape = `M 0 0 L 100 0`
   }
 
-  fshape ()
-  {
-    this.Symbol.select( "#shape" )
-      .append( "path" )
-      .attr( "d", this.shape )
-      .attr( "stroke", "rgb(240,240,240" )
-      .attr( "transform", () =>
-      {
-        return `translate(${ this.point.x },${ this.point.y })`;
-      } );
+  fshape() {
+    this.Symbol.select("#shape")
+      .append("path")
+      .attr("d", this.shape);
   }
 }
 /** !SECTION  vDraht*/
 /** SECTION  vKabel*/
-class vKabel extends vUebertragungswege{
-  constructor(data,point) {
-    super(data,point);
-    this.shape = `M 0 0 L 200 0`;
+class vKabel extends vUebertragungswege {
+  constructor(data, point) {
+    super(data, point)
+    this.shape = `M 0 0 L 200 0`
   }
-   fshape ()
-  {
-    this.Symbol.select( "#shape" )
-      .append( "path" )
-      .attr( "d", this.shape )
-      .attr( "stroke", "rgb(240,240,240" )
-      .attr( "stroke-width", "6" )
-      .attr( "transform", () =>
-      { return `translate(${ this.point.x },${ this.point.y })`; } );
+  fshape() {
+    this.Symbol.select("#shape")
+      .append("path")
+      .attr("d", this.shape);
   }
-
 }
 
 /** SECTION  vStarkstromkabel*/
-class vStarkstromkabel extends vKabel{}
+class vStarkstromkabel extends vKabel {}
 
 /** !SECTION  vStarkstromkabel*/
 /** SECTION  vHochfrequenzkabel*/
-class vHochfrequenzkabel extends vKabel{}
+class vHochfrequenzkabel extends vKabel {}
 
 /** !SECTION  vHochfrequenzkabel*/
 /** SECTION  vFernmeldekabel*/
-class vFernmeldekabel extends vKabel{}
+class vFernmeldekabel extends vKabel {}
 
 /** !SECTION  vFernmeldekabel*/
 /** !SECTION  vKabel */
 
 /** SECTION  vLeitung*/
-class vLeitung extends vUebertragungswege
-{
-  constructor ( data, point )
-  {
-    super( data, point );
+class vLeitung extends vUebertragungswege {
+  constructor(data, point) {
+    super(data, point)
 
-    this.shape = `M 0 0 L 200 0 `;
+    this.shape = `M 0 0 L 200 0 `
   }
 
-  fshape ()
-  {
-    this.Symbol.select( "#shape" )
-      .append( "path" )
-      .attr( "d", this.shape )
-      .attr( "stroke", "rgb(240,240,240" )
-      .attr( "stroke-width", "3" )
-      .attr( "transform", () =>
-      { return `translate(${ this.point.x },${ this.point.y })`; } );
+  fshape() {
+    this.Symbol.select("#shape")
+      .append("path")
+      .attr("d", this.shape);
   }
 }
 
 /** SECTION  vBlankeleitung*/
-class vBlankeleitung extends vLeitung{}
+class vBlankeleitung extends vLeitung {}
 
 /** SECTION  vErder*/
-class vErder extends vBlankeleitung
-{
-  constructor ( data, point )
-  {
-    super( data, point );
+class vErder extends vBlankeleitung {
+  constructor(data, point) {
+    super(data, point)
 
-    this.shape = `M 25 5 
+    this.shape = `
+    M 25 5 
     L 50 5 
     M 27 7.5 
     L 48 7.5 
@@ -433,101 +374,60 @@ class vErder extends vBlankeleitung
     L 37.75 20
     M 0 20 
     L 80 20
-    `;
+    `
   }
 
-  fshape ()
-  {
-    this.Symbol.select( "#shape" )
-      .append( "path" )
-      .attr( "d", this.shape )
-      .attr( "stroke", "rgb(240,240,240" )
-      .attr( "transform", () =>
-      {
-        return `translate(${ this.point.x },${ this.point.y })`;
-      } );
+  fshape() {
+    this.Symbol.select("#shape")
+      .append("path")
+      .attr("d", this.shape)
+      .attr("stroke-width", 5);
   }
 }
 /** !SECTION  vErder*/
 /** !SECTION  vBlankeleitung*/
 
 /** SECTION  vIsolierteleitung*/
-class vIsolierteleitung extends vLeitung{}
+class vIsolierteleitung extends vLeitung {}
 
 /** !SECTION  vIsolierteleitung*/
 /** !SECTION  vIsolierteleitung*/
 /** !SECTION  vLeitung*/
 
 /** SECTION Verschiedenes */
-class vVerschiedenes extends vBetriebsmittel{}
+class vVerschiedenes extends vBetriebsmittel {}
 
 /** SECTION Verbraucher */
 
-class vVerbraucher extends vVerschiedenes
-{
-  constructor ( data, point )
-  {
-    super( data, point );
+class vVerbraucher extends vVerschiedenes {
+  constructor(data, point) {
+    super(data, point)
   }
-  fshape ()
-  {
-    this.Symbol.select( "#shape" )
-      .append( "path" )
-      .attr( "d", this.Form1 )
-      .attr( "fill", "none" )
-      .attr( "stroke", "rgb(240,240,240" )
-      .attr( "stroke-linejoin", "round" )
-      .attr( "stroke-miterlimit", "10" )
-      .attr( "pointer-events", "all" )
-      .attr( "transform", () =>
-      {
-        return `translate(${ this.point.x },${ this.point.y })`;
-      } );
+  fshape() {
+    this.Symbol.select("#shape")
+      .append("path")
+      .attr("d", this.Form1);
   }
 }
 /** !SECTION Verbraucher */
 
 /** SECTION Glühlampe */
-class vGluehlampe extends vVerschiedenes
-{
-  constructor ( data, point )
-  {
-    super( data, point );
+class vGluehlampe extends vVerschiedenes {
+  constructor(data, point) {
+    super(data, point)
   }
-  fshape ()
-  {
-    this.Symbol.select( "#shape" )
-      .append( "rect" )
-      .attr( "x", 0 )
-      .attr( "y", 0 )
-      .attr( "width", 60 )
-      .attr( "height", 50 )
-      .attr( "fill", "none" )
-      .attr( "stroke", "none" )
-      .attr( "pointer-events", "all" );
+  fshape() {
+    this.Symbol.select("#shape")
+      .append("ellipse")
+      .attr("cx", 30)
+      .attr("cy", 25)
+      .attr("rx", 25)
+      .attr("ry", 25);
+      
 
-    this.Symbol.select( "#shape" )
-      .append( "ellipse" )
-      .attr( "cx", 30 )
-      .attr( "cy", 25 )
-      .attr( "rx", 25 )
-      .attr( "ry", 25 )
-      .attr( "fill", "none" )
-      .attr( "stroke", "rgb(240, 240, 240" )
-      .attr( "pointer-events", "all" );
-
-    this.Symbol.select( "#shape" )
-      .append( "path" )
-      .attr( "d", "M 12.2 7.2 L 47.8 42.8 M 47.8 7.2 L 12.2 42.8 M 0 25 L 5 25 M 55 25 L 60 25" )
-      .attr( "fill", "none" )
-      .attr( "stroke", "rgb(240, 240, 240" )
-      .attr( "stroke-miterlimit", 10 )
-      .attr( "pointer-events", "all" );
-
-    this.Symbol.select( "#shape" ).attr( "transform", () =>
-    {
-      return `translate(${ this.point.x }, ${ this.point.y })`;
-    } );
+    this.Symbol.select("#shape")
+      .append("path")
+      .attr("d", "M 12.2 7.2 L 47.8 42.8 M 47.8 7.2 L 12.2 42.8 M 0 25 L 5 25 M 55 25 L 60 25");
   }
 }
 /** !SECTION Glühlampe */
@@ -535,82 +435,47 @@ class vGluehlampe extends vVerschiedenes
 /** !SECTION Verschiedenes */
 
 /** SECTION  vWiderstaende*/
-class vWiderstaende extends vBetriebsmittel
-{
-  constructor ( data, point )
-  {
-    super( data, point );
-    this.counter = 0;
-    this.firstNode = undefined;
-    this.selectedNode = undefined;
+class vWiderstaende extends vBetriebsmittel {
+  constructor(data, point) {
+    super(data, point)
+    this.counter = 0
+    this.firstNode = undefined
+    this.selectedNode = undefined
   }
 
-  nextID ()
-  {
-    return ++this.counter;
+  nextID() {
+    return ++this.counter
   }
 
-  addNode ( point )
-  {
-    let ID = nextID();
-    let group = this.Symbol;
+  addNode(point) {
+    let ID = nextID()
+    let group = this.Symbol
   }
 }
 
 /** SECTION  vWiderstand*/
-class vWiderstand extends vWiderstaende
-{
-  constructor ( data, point )
-  {
-    super( data, point );
+class vWiderstand extends vWiderstaende {
+  constructor(data, point) {
+    super(data, point)
   }
-  fshape ()
-  {
-    this.Symbol.select( "#shape" )
-      .append( "rect" )
-      .attr( "x", 0 )
-      .attr( "y", 0 )
-      .attr( "width", 100 )
-      .attr( "height", 20 )
-      .attr( "fill", "none" )
-      .attr( "stroke", "none" )
-      .attr( "pointer-events", "all" )
-      .attr( "transform", () =>
-      {
-        return `translate(${ this.point.x },${ this.point.y })`;
-      } );
-    this.Symbol.select( "#shape" )
-      .append( "rect" )
-      .attr( "x", 18 )
-      .attr( "y", 0 )
-      .attr( "width", 64 )
-      .attr( "height", 20 )
-      .attr( "fill", "none" )
-      .attr( "stroke", "rgb(42,42,42)" )
-      .attr( "pointer-events", "all" )
-      .attr( "transform", () =>
-      {
-        return `translate(${ this.point.x },${ this.point.y })`;
-      } );
-    this.Symbol.select( "#shape" )
-      .append( "path" )
-      .attr( "d", "M 0 10 L 18 10 M 82 10 L 100 10" )
-      .attr( "fill", "none" )
-      .attr( "stroke", "rgb(42, 42, 42)" )
-      .attr( "stroke-miterlimit", 10 )
-      .attr( "pointer-events", "all" )
-      .attr( "transform", () =>
-      {
-        return `translate(${ this.point.x },${ this.point.y })`;
-      } );
+  fshape() {
+    this.Symbol.select("#shape")
+      .append("rect")
+      .attr("x", 18)
+      .attr("y", 0)
+      .attr("width", 64)
+      .attr("height", 20);
+    
+    this.Symbol.select("#anschluss")
+      .append("path")
+      .attr("d", "M 0 10 L 18 10 M 82 10 L 100 10");
   }
 }
 /** !SECTION  vWiderstand*/
 /** !SECTION  vWiderstaende*/
 /** !SECTION vBetriebsmittel */
 
-export
-{
+export {
   vVerschiedenes,
   vVerbraucher,
   vGluehlampe,
@@ -660,4 +525,4 @@ export
   vIsolierteleitung,
   vWiderstaende,
   vTransformator,
-};
+}

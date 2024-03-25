@@ -1,4 +1,4 @@
-require("use-strict");
+require("use-strict")
 
 /**
  * @description
@@ -8,44 +8,42 @@ require("use-strict");
  * @param {*} input
  */
 async function Aufgabe16(input) {
-  const path = require("path");
-  const dbJson = require(path.resolve("controllers/dbJson.js"));
+  const path = require("path")
+  const dbJson = require(path.resolve("controllers/dbJson.js"))
 
-  const { makeDirectory, readKonstante } = require(path.resolve("src/js/utility.js"));
+  const { makeDirectory, readKonstante } = require(path.resolve("src/js/utility.js"))
 
-  const { Elektro } = require(path.resolve("src/mathjs/Kernel.js"));
-  const { Leiterwerkstoff } = require(path.resolve("src/components/Werkstoff.js"));
+  const { Elektro } = require(path.resolve("src/mathjs/Kernel.js"))
+  const { Leiterwerkstoff } = require(path.resolve("src/components/Werkstoff.js"))
 
-  const data = "src/json/example/Aufgabe16";
+  const data = "src/json/example/Aufgabe16"
 
   makeDirectory(data).then(function () {
-    const GoCh = new Leiterwerkstoff(input);
+    const Leiter = new Leiterwerkstoff(input)
 
-    GoCh.Kennzeichnung = {
+    Leiter.Kennzeichnung = {
       Art: "Leiterwerkstoff",
       Zählnummer: 1,
-    };
+    }
 
-    GoCh.Parameter = {};
-
-    const Ek = new Elektro();
+    const Ek = new Elektro()
 
     Ek.parameter({
-      α20: GoCh.fα20(GoCh.Eigenschaften.Material).toString(),
+      α20: Leiter.fα20(Leiter.Eigenschaften.Material).toString(),
       δ20: "20celsius",
-      Material: GoCh.Eigenschaften.Material,
-    });
+      Material: Leiter.Eigenschaften.Material,
+    })
 
-    GoCh.Berechnungen["δ0"] = Ek.δM();
+    Leiter.Berechnung.δ0 = Ek.δM()
 
-    dbJson.writeJSONItem(path.resolve(`${data}/data.json`), GoCh);
+    dbJson.writeJSONItem(path.resolve(`${data}/data.json`), Leiter)
   }),
     function () {
-      console.error(`${data}`);
-    };
+      console.error(`${data}`)
+    }
 }
 // let input = {
 //   Material: "GoldChrom",
 // };
 // Aufgabe16(input);
-exports.func = Aufgabe16;
+exports.func = Aufgabe16

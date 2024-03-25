@@ -31,14 +31,6 @@ class vForm1 extends vElektrode {
       .attr("y", 0)
       .attr("height", 130)
       .attr("width", 10)
-      .attr("fill", "none")
-      .attr("stroke", "rgb(240,240,240")
-      .attr("stroke-linejoin", "round")
-      .attr("stroke-miterlimit", "10")
-      .attr("pointer-events", "all")
-      .attr("transform", () => {
-        return `translate(${this.point.x},${this.point.y})`;
-      });
   }
 }
 

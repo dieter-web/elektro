@@ -1,148 +1,83 @@
-require("use-strict");
-const path = require("path");
-const ejs = require("ejs");
-const express = require("express");
+require("use-strict")
+const path = require("path")
+const ejs = require("ejs")
+const port = 8000
 
-// const i18n = require("i18n");
-// i18n.configure({
-//   locales: ["de", "en"],
-//   cookie: "yourcookiename",
-//   directory: __dirname + "/locales",
-// });
+var express = require("express")
 
-const expressLayouts = require("express-ejs-layouts");
-const cors = require("cors");
-const port = 8000;
+const i18n = require("i18n")
+i18n.configure({locales: ["de", "en"],cookie: "yourcookiename",directory: __dirname + "/locales",})
 
-const requestLogger = require(path.join(__dirname, "middleware/requestLogger"));
-const app = (module.exports = express());
+// the main app
 
-app.engine("html", ejs.renderFile);
-app.set("views", path.join(__dirname, "views"));
-app.set("layout", path.join("layouts/default"));
-app.set("view engine", "ejs");
+var app = express() 
+app.use(i18n.init)
 
-app.use(expressLayouts);
+// admin
 
-const corsOptions = { origin: "http://localhost:8000" };
-app.use(cors(corsOptions));
+var admin = express() // the sub app
+admin.use(i18n.init)
 
-const staticOptions = {
-  dotfiles: "ignore",
-  etag: false,
-  extensions: [
-    "htm",
-    "html",
-    "ejs",
-    "js",
-    "mjs",
-    "css",
-    "css.map",
-    "jpg",
-    "json",
-    "tcl",
-    "pl",
-    "php",
-  ],
-  fallthrough: true,
-  immutable: false,
-  index: false,
-  lastModified: true,
-  maxAge: 0,
-  redirect: true,
-};
-app.use(express.static(`${__dirname}/public`, staticOptions));
-app.use(express.static(`${__dirname}/src`, staticOptions));
-app.use(express.static(`${__dirname}/controllers`, staticOptions));
-app.use(express.static(`${__dirname}/lib`, staticOptions));
-app.use(express.static(`${__dirname}/include`, staticOptions));
-app.use(express.static(`${__dirname}/administrator`, staticOptions));
+admin.get('/', function(req, res) {
+  console.log(admin.mountpath) // /admin
+  res.send('Admin Homepage')
+})
+app.use('/admin', admin) // mount the sub app
+admin.use(i18n.init)
 
-const jsonOptions = {
-  inflate: true,
-  limit: "100kb",
-  reviver: null,
-  strict: true,
-  type: "application/json",
-  verify: undefined,
-};
-app.use(express.json(jsonOptions));
+// /admin/secret 
 
-const rawOptions = {
-  inflate: true,
-  limit: "100kb",
-  type: "application/octetstream",
-  verify: undefined,
-};
-app.use(express.raw(rawOptions));
+var secret = express()
+secret.use(i18n.init)
 
-const RouterOptions = {
-  caseSensitive: true,
-  mergeParams: false,
-  strict: true,
-};
-app.use(express.Router(RouterOptions));
+secret.get('/', function(req,res) {
+  console.log(secret.mountpath)
+  res.send('Admin Secret')
+})
 
-const textOptions = {
-  defaultCharset: "utf-8",
-  inflate: true,
-  limit: "100kb",
-  type: "text/plain",
-  verify: undefined,
-};
-app.use(express.text(textOptions));
+admin.use('/secr*t', secret)
+app.use(['/adm*n',"/manager"], admin)
 
-const urlencodedOptions = {
-  extended: true,
-  inflate: true,
-  limit: "100kb",
-  parameterlimit: 1000,
-  type: "application/x-www-from-urlencoded",
-  verify: undefined,
-};
-app.use(express.urlencoded(urlencodedOptions));
 
-app.use(requestLogger);
+const expressLayouts = require("express-ejs-layouts")
+app.use(expressLayouts)
 
-app.use((req, res, next) => {
-  let datum = new Date(Date.now());
-  console.log(datum.toLocaleDateString() + "--" + datum.toLocaleTimeString());
-  next();
-});
+const cors = require("cors")
+const corsOptions = { origin: `http://localhost:${port}` }
+app.use(cors(corsOptions))
 
-// app.configure(function () {
-//   // you will need to use cookieParser to expose cookies to req.cookies
-//   app.use(express.cookieParser());
+// const requestLogger = require(path.join(__dirname, "middleware/requestLogger"))
+// app.use(requestLogger)
 
-//   // i18n init parses req for language headers, cookies, etc.
-//   app.use(i18n.init);
-// });
+app.engine("html", ejs.renderFile)
+app.set("views", path.join(__dirname, "views"))
+app.set("layout", path.join("layouts/default"))
+app.set("view engine", "ejs")
 
-let users = [
-  {
-    id: 1,
-    name: "Dieter Krause",
-    age: "63",
-    email: "dieterkrause31960@gmail.com",
-  },
-];
+app.use(express.static(`${__dirname}/public`))
+app.use(express.static(`${__dirname}/src`))
+app.use(express.static(`${__dirname}/controllers`))
+app.use(express.static(`${__dirname}/lib`))
+app.use(express.static(`${__dirname}/include`))
+app.use(express.static(`${__dirname}/administrator`))
 
-app.get("/api/users", function (req, res) {
-  return res.json(users);
-});
+// app.use((req, res, next) => {
+//   let datum = new Date(Date.now())
+//   console.log(datum.toLocaleDateString() + "--" + datum.toLocaleTimeString())
+//   next()
+// })
 
-app.use("/", require(path.resolve("routes/root")));
-app.use("/bauelemente", require(path.resolve("routes/bauelemente")));
-app.use("/betriebsmittel", require(path.resolve("routes/betriebsmittel")));
-app.use("/elektrotechnik", require(path.resolve("routes/elektrotechnik")));
-app.use(
-  "/physikalischechemie",
-  require(path.resolve("routes/physikalischechemie"))
-);
-app.use("/werkstoff", require(path.resolve("routes/werkstoff")));
-app.use("/formulare", require(path.resolve("routes/formulare")));
+app.use("/", require(path.resolve("routes/elektro")))
+app.use("/bauelemente", require(path.resolve("routes/bauelemente")))
+app.use("/betriebsmittel", require(path.resolve("routes/betriebsmittel")))
+app.use("/elektrotechnik", require(path.resolve("routes/elektrotechnik")))
+app.use("/physikalischechemie", require(path.resolve("routes/physikalischechemie")))
+app.use("/werkstoff", require(path.resolve("routes/werkstoff")))
+app.use("/formulare", require(path.resolve("routes/formulare")))
 
-app.locals.title = "Elektro";
-app.locals.email = "dieterkrause31960@gmail.com";
 
-app.listen(port, () => console.info(`Express started on port ${port}`));
+app.locals.title = "Elektro"
+app.locals.strftime = require('strftime')
+app.locals.email = "dieterkrause31960@gmail.com"
+
+app.listen(port, () => console.info(`Express started on port ${port}`))

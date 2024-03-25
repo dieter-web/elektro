@@ -1,5 +1,5 @@
-require("use-strict");
-const { Components } = require("./components.js");
+require("use-strict")
+const { Components } = require("./components.js")
 
 /** SECTION Betriebsmittel */
 class Betriebsmittel extends Components {}
@@ -17,13 +17,18 @@ class Zweipole extends Baugruppen {}
 
 /** !SECTION  */
 /** SECTION Passiver Zweipol */
-class PassiverZweipol extends Zweipole {
+class PassiverZweipol extends Zweipole {}
+
+/** SECTION Reihenschaltung */
+class Reihenschaltung extends PassiverZweipol {
   constructor(Eigenschaften) {
-    super();
-    this.Eigenschaften = Eigenschaften;
+    super()
+    this.Eigenschaften = Eigenschaften
   }
 }
-/** !SECTION  */
+/** !SECTION Reihenschaltung */
+
+/** !SECTION Passiver Zweipol */
 /** SECTION Elektrische Maschinen */
 class ElektrischeMaschinen extends Betriebsmittel {}
 
@@ -39,8 +44,8 @@ class Transformatoren extends RuhendeElektrischeMaschinen {}
 /** SECTION Transformator  */
 class Transformator extends Transformatoren {
   constructor(Eigenschaften) {
-    super();
-    this.Eigenschaften = Eigenschaften;
+    super()
+    this.Eigenschaften = Eigenschaften
   }
 }
 /** SECTION Transaktor */
@@ -161,15 +166,15 @@ class Induktivitaet extends Betriebsmittel {}
 /** SECTION Spule */
 class Spule extends Induktivitaet {
   constructor(Eigenschaften) {
-    super();
-    this.Eigenschaften = Eigenschaften;
+    super()
+    this.Eigenschaften = Eigenschaften
   }
 }
 /** SECTION Spulenkoerper */
 class Spulenkoerper extends Spule {
   constructor(Eigenschaften) {
-    super();
-    this.Eigenschaften = Eigenschaften;
+    super()
+    this.Eigenschaften = Eigenschaften
   }
 }
 /** !SECTION  */
@@ -191,8 +196,8 @@ class Ringspule extends SpuleOhneKern {}
 /** SECTION MehrlagigeSpule */
 class MehrlagigeSpule extends SpuleOhneKern {
   constructor(Eigenschaften) {
-    super();
-    this.Eigenschaften = Eigenschaften;
+    super()
+    this.Eigenschaften = Eigenschaften
   }
 }
 /** !SECTION  */
@@ -211,8 +216,8 @@ class SpuleMitKern extends Spule {}
 /** SECTION Magnetspule  */
 class Magnetspule extends SpuleMitKern {
   constructor(Eigenschaften) {
-    super();
-    this.Eigenschaften = Eigenschaften;
+    super()
+    this.Eigenschaften = Eigenschaften
   }
 }
 /** !SECTION  */
@@ -223,21 +228,16 @@ class MagnetischeBauelementeDigitalerEinrichtungen extends Induktivitaet {}
 /** !SECTION  */
 /** !SECTION  */
 /** SECTION Klemmvorrichtungen */
-class Klemmvorrichtungen extends Betriebsmittel {
-  constructor(Eigenschaften) {
-    super();
-    this.Eigenschaften = Eigenschaften;
-  }
-}
+class Klemmvorrichtungen extends Betriebsmittel {}
 
 /** SECTION Klemme */
 class Klemme extends Klemmvorrichtungen {
   constructor(Eigenschaften) {
-    super();
-    this.Eigenschaften = Eigenschaften;
+    super()
+    this.Eigenschaften = Eigenschaften
   }
 }
-/** !SECTION  */
+/** !SECTION Klemmvorrichtung  */
 /** SECTION Klemmleiste */
 class Klemmleiste extends Klemme {}
 /** !SECTION  */
@@ -259,24 +259,24 @@ class Messgeraete extends Betriebsmittel {}
 /** SECTION Zeitmesser */
 class Zeitmesser extends Messgeraete {
   constructor(Eigenschaften) {
-    super();
-    this.Eigenschaften = Eigenschaften;
+    super()
+    this.Eigenschaften = Eigenschaften
   }
 }
 /** !SECTION  */
 /** SECTION Strommesser */
 class Strommesser extends Messgeraete {
   constructor(Eigenschaften) {
-    super();
-    this.Eigenschaften = Eigenschaften;
+    super()
+    this.Eigenschaften = Eigenschaften
   }
 }
 /** !SECTION  */
 /** SECTION Spannungsmesser */
 class Spannungsmesser extends Messgeraete {
   constructor(Eigenschaften) {
-    super();
-    this.Eigenschaften = Eigenschaften;
+    super()
+    this.Eigenschaften = Eigenschaften
   }
 }
 /** !SECTION  */
@@ -338,16 +338,16 @@ class Steckvorrichtungen extends Betriebsmittel {}
 /** SECTION Stecker */
 class Stecker extends Steckvorrichtungen {
   constructor(Eigenschaften) {
-    super();
-    this.Eigenschaften = Eigenschaftenften;
+    super()
+    this.Eigenschaften = Eigenschaftenften
   }
 }
 /** !SECTION  */
 /** SECTION Steckerleiste */
 class Steckerleiste extends Steckvorrichtungen {
   constructor(Eigenschaftenften) {
-    super();
-    this.Eigenschaften = Eigenschaften;
+    super()
+    this.Eigenschaften = Eigenschaften
   }
 }
 /** !SECTION  */
@@ -363,8 +363,8 @@ class Antenne extends Uebertragungswege {}
 /** SECTION Draht  */
 class Draht extends Uebertragungswege {
   constructor(Eigenschaften) {
-    super();
-    this.Eigenschaften = Eigenschaften;
+    super()
+    this.Eigenschaften = Eigenschaften
   }
 }
 
@@ -373,8 +373,8 @@ class Draht extends Uebertragungswege {
 /** SECTION Kabel */
 class Kabel extends Uebertragungswege {
   constructor(Eigenschaften) {
-    super();
-    this.Eigenschaften = Eigenschaften;
+    super()
+    this.Eigenschaften = Eigenschaften
   }
 }
 /** !SECTION Kabel */
@@ -382,8 +382,8 @@ class Kabel extends Uebertragungswege {
 /** SECTION Leitung */
 class Leitung extends Uebertragungswege {
   constructor(Eigenschaften) {
-    super();
-    this.Eigenschaften = Eigenschaften;
+    super()
+    this.Eigenschaften = Eigenschaften
   }
 }
 /** !SECTION Leitung */
@@ -391,8 +391,8 @@ class Leitung extends Uebertragungswege {
 /** SECTION Schiene */
 class Schiene extends Uebertragungswege {
   constructor(Eigenschaften) {
-    super();
-    this.Eigenschaften = Eigenschaften;
+    super()
+    this.Eigenschaften = Eigenschaften
   }
 }
 /** !SECTION  */
@@ -408,8 +408,8 @@ class Verschiedenes extends Betriebsmittel {}
 /** SECTION Verbraucher */
 class Verbraucher extends Verschiedenes {
   constructor(Eigenschaften) {
-    super();
-    this.Eigenschaften = Eigenschaften;
+    super()
+    this.Eigenschaften = Eigenschaften
   }
 }
 /** !SECTION Verbraucher */
@@ -417,8 +417,8 @@ class Verbraucher extends Verschiedenes {
 /** SECTION Gluehlampe */
 class Gluehlampe extends Verschiedenes {
   constructor(Eigenschaften) {
-    super();
-    this.Eigenschaften = Eigenschaften;
+    super()
+    this.Eigenschaften = Eigenschaften
   }
 }
 /** !SECTION Gluehlampe */
@@ -438,8 +438,8 @@ class Widerstaende extends Betriebsmittel {}
 /** SECTION Widerstand  */
 class Widerstand extends Widerstaende {
   constructor(Eigenschaften) {
-    super();
-    this.Eigenschaften = Eigenschaften;
+    super()
+    this.Eigenschaften = Eigenschaften
   }
 }
 /** !SECTION  */
@@ -455,22 +455,22 @@ class Temperatur extends NichtelektrischeParameter {}
 /** SECTION Thermistor */
 class Thermistor extends Temperatur {
   constructor(Eigenschaften) {
-    super();
-    this.Eigenschaften = Eigenschaften;
+    super()
+    this.Eigenschaften = Eigenschaften
   }
 }
 /** SECTION Kaltleiter */
 class Kaltleiter extends Thermistor {
   constructor(Eigenschaften) {
-    super();
-    this.Eigenschaften = Eigenschaften;
+    super()
+    this.Eigenschaften = Eigenschaften
   }
 }
 /** SECTION KeramischeKaltleiter */
 class KeramischerKaltleiter extends Kaltleiter {
   constructor(Eigenschaften) {
-    super();
-    this.Eigenschaften = Eigenschaften;
+    super()
+    this.Eigenschaften = Eigenschaften
   }
 }
 /** !SECTION  */
@@ -483,8 +483,8 @@ class Strahlung extends NichtelektrischeParameter {}
 /** SECTION Fotowiderstand */
 class Fotowiderstand extends Strahlung {
   constructor(Eigenschaften) {
-    super();
-    this.Eigenschaften = Eigenschaften;
+    super()
+    this.Eigenschaften = Eigenschaften
   }
 }
 
@@ -512,8 +512,8 @@ class Spannung extends ElektrischeParameter {}
 /** SECTION  Varistor*/
 class Varistor extends Spannung {
   constructor(Eigenschaften) {
-    super();
-    this.Eigenschaften = Eigenschaften;
+    super()
+    this.Eigenschaften = Eigenschaften
   }
 }
 
@@ -524,25 +524,25 @@ class Varistor extends Spannung {
 /** !SECTION  */
 /** !SECTION Betriebsmittel */
 
-exports.Verbraucher = Verbraucher;
-exports.Varistor = Varistor;
-exports.Spannung = Spannung;
-exports.ElektrischeParameter = ElektrischeParameter;
-exports.Druck = Druck;
-exports.Feldplatte = Feldplatte;
-exports.MagnetischesFeld = MagnetischesFeld;
-exports.Fotowiderstand = Fotowiderstand;
-exports.Strahlung = Strahlung;
-exports.KeramischerKaltleiter = KeramischerKaltleiter;
-exports.Kaltleiter = Kaltleiter;
-exports.Thermistor = Thermistor;
-exports.Temperatur = Temperatur;
-exports.NichtelektrischeParameter = NichtelektrischeParameter;
-exports.ParameterabhaengigeHalbleiterwiderstaende = ParameterabhaengigeHalbleiterwiderstaende;
-exports.Widerstand = Widerstand;
-exports.Widerstaende = Widerstaende;
-exports.Verschiedenes = Verschiedenes;
-exports.Gluehlampe = Gluehlampe;
+exports.Verbraucher = Verbraucher
+exports.Varistor = Varistor
+exports.Spannung = Spannung
+exports.ElektrischeParameter = ElektrischeParameter
+exports.Druck = Druck
+exports.Feldplatte = Feldplatte
+exports.MagnetischesFeld = MagnetischesFeld
+exports.Fotowiderstand = Fotowiderstand
+exports.Strahlung = Strahlung
+exports.KeramischerKaltleiter = KeramischerKaltleiter
+exports.Kaltleiter = Kaltleiter
+exports.Thermistor = Thermistor
+exports.Temperatur = Temperatur
+exports.NichtelektrischeParameter = NichtelektrischeParameter
+exports.ParameterabhaengigeHalbleiterwiderstaende = ParameterabhaengigeHalbleiterwiderstaende
+exports.Widerstand = Widerstand
+exports.Widerstaende = Widerstaende
+exports.Verschiedenes = Verschiedenes
+exports.Gluehlampe = Gluehlampe
 
 // exports.Erder = Erder;
 // exports.Erdungssammelleitung = Erdungssammelleitung;
@@ -552,7 +552,7 @@ exports.Gluehlampe = Gluehlampe;
 // exports.OffenGelegteLeing = OffenGelegteLeing;
 // exports.Sammelschiene = Sammelschiene;
 
-exports.Schiene = Schiene;
+exports.Schiene = Schiene
 
 // exports.Schleifenleitung = Schleifenleitung;
 // exports.Stromschiene = Stromschiene;
@@ -568,13 +568,13 @@ exports.Schiene = Schiene;
 // exports.Starkstromleitung = Starkstromleitung;
 // exports.Isolierteleitung = Isolierteleitung;
 
-exports.Leitung = Leitung;
+exports.Leitung = Leitung
 
 // exports.Fernmeldekabel = Fernmeldekabel;
 // exports.Hochfrequenzkabel = Hochfrequenzkabel;
 // exports.Starkstromkabel = Starkstromkabel;
 
-exports.Kabel = Kabel;
+exports.Kabel = Kabel
 
 // exports.Aluminiumdraht = Aluminiumdraht;
 // exports.Kupferdraht = Kupferdraht;
@@ -584,74 +584,75 @@ exports.Kabel = Kabel;
 // exports.Runddraht = Runddraht;
 // exports.Wickeldraht = Wickeldraht;
 
-exports.Draht = Draht;
+exports.Draht = Draht
 
 // exports.Draehte = Draehte;
 
-exports.Antenne = Antenne;
+exports.Antenne = Antenne
 
 // intern?  exports.Uebertragungswege = Uebertragungswege;
 
-exports.Steckvorrichtungen = Steckvorrichtungen;
-exports.Stecker = Stecker;
-exports.Steckerleiste = Steckerleiste;
-exports.Energiemesser = Energiemesser;
-exports.Frequenzmesser = Frequenzmesser;
-exports.Impedanzmesser = Impedanzmesser;
-exports.Leistungsmesser = Leistungsmesser;
-exports.MagnetischeGroessemesser = MagnetischeGroessemesser;
-exports.Phasenwinkelmesser = Phasenwinkelmesser;
-exports.Spannungsmesser = Spannungsmesser;
-exports.Strommesser = Strommesser;
-exports.Zeitmesser = Zeitmesser;
-exports.Messgeraete = Messgeraete;
-exports.Klemme = Klemme;
-exports.Klemmleiste = Klemmleiste;
-exports.Klemmvorrichtungen = Klemmvorrichtungen;
-exports.MagnetischeBauelementeDigitalerEinrichtungen = MagnetischeBauelementeDigitalerEinrichtungen;
-exports.Magnetspule = Magnetspule;
-exports.SpuleMitKern = SpuleMitKern;
-exports.AbgeschirmteSpule = AbgeschirmteSpule;
-exports.EinlagigeSpule = EinlagigeSpule;
-exports.MehrlagigeSpule = MehrlagigeSpule;
-exports.Ringspule = Ringspule;
-exports.Spulenkoerper = Spulenkoerper;
-exports.Zylinderspule = Zylinderspule;
-exports.SpuleOhneKern = SpuleOhneKern;
-exports.Variometer = Variometer;
-exports.Spule = Spule;
-exports.Spulenkoerper = Spulenkoerper;
-exports.Induktivitaet = Induktivitaet;
-exports.Rotierende = Rotierende;
-exports.Beweglich = Beweglich;
-exports.HFTransformator = HFTransformator;
-exports.Impulstransformator = Impulstransformator;
-exports.AudioTransformator = AudioTransformator;
-exports.Dreiphasentransformator = Dreiphasentransformator;
-exports.Einphasentransformator = Einphasentransformator;
-exports.Ringkerntransformator = Ringkerntransformator;
-exports.TransformatorMitMittenabgriff = TransformatorMitMittenabgriff;
-exports.Kerntransformator = Kerntransformator;
-exports.Manteltransformator = Manteltransformator;
-exports.Spannungswandler = Spannungswandler;
-exports.Stromwandler = Stromwandler;
-exports.Messwandler = Messwandler;
-exports.Transaktor = Transaktor;
-exports.Transformator = Transformator;
-exports.Transformatoren = Transformatoren;
-exports.RuhendeElektrischeMaschinen = RuhendeElektrischeMaschinen;
-exports.Starr = Starr;
-exports.ElektrischeMaschinen = ElektrischeMaschinen;
-exports.Umformer = Umformer;
-exports.Synchronmaschinen = Synchronmaschinen;
-exports.Motoren = Motoren;
-exports.KommutatorMaschinen = KommutatorMaschinen;
-exports.GleichstromMaschinen = GleichstromMaschinen;
-exports.EinphasenKommutatorMaschinen = EinphasenKommutatorMaschinen;
-exports.DreiphasenKommutatorMaschinen = DreiphasenKommutatorMaschinen;
-exports.Generatoren = Generatoren;
-exports.Asynchronmaschinen = Asynchronmaschinen;
-exports.PassiverZweipol = PassiverZweipol;
-exports.Zweipole = Zweipole;
-exports.Baugruppen = Baugruppen;
-exports.Betriebsmittel = Betriebsmittel;
+exports.Steckvorrichtungen = Steckvorrichtungen
+exports.Stecker = Stecker
+exports.Steckerleiste = Steckerleiste
+exports.Energiemesser = Energiemesser
+exports.Frequenzmesser = Frequenzmesser
+exports.Impedanzmesser = Impedanzmesser
+exports.Leistungsmesser = Leistungsmesser
+exports.MagnetischeGroessemesser = MagnetischeGroessemesser
+exports.Phasenwinkelmesser = Phasenwinkelmesser
+exports.Spannungsmesser = Spannungsmesser
+exports.Strommesser = Strommesser
+exports.Zeitmesser = Zeitmesser
+exports.Messgeraete = Messgeraete
+exports.Klemme = Klemme
+exports.Klemmleiste = Klemmleiste
+exports.Klemmvorrichtungen = Klemmvorrichtungen
+exports.MagnetischeBauelementeDigitalerEinrichtungen = MagnetischeBauelementeDigitalerEinrichtungen
+exports.Magnetspule = Magnetspule
+exports.SpuleMitKern = SpuleMitKern
+exports.AbgeschirmteSpule = AbgeschirmteSpule
+exports.EinlagigeSpule = EinlagigeSpule
+exports.MehrlagigeSpule = MehrlagigeSpule
+exports.Ringspule = Ringspule
+exports.Spulenkoerper = Spulenkoerper
+exports.Zylinderspule = Zylinderspule
+exports.SpuleOhneKern = SpuleOhneKern
+exports.Variometer = Variometer
+exports.Spule = Spule
+exports.Spulenkoerper = Spulenkoerper
+exports.Induktivitaet = Induktivitaet
+exports.Rotierende = Rotierende
+exports.Beweglich = Beweglich
+exports.HFTransformator = HFTransformator
+exports.Impulstransformator = Impulstransformator
+exports.AudioTransformator = AudioTransformator
+exports.Dreiphasentransformator = Dreiphasentransformator
+exports.Einphasentransformator = Einphasentransformator
+exports.Ringkerntransformator = Ringkerntransformator
+exports.TransformatorMitMittenabgriff = TransformatorMitMittenabgriff
+exports.Kerntransformator = Kerntransformator
+exports.Manteltransformator = Manteltransformator
+exports.Spannungswandler = Spannungswandler
+exports.Stromwandler = Stromwandler
+exports.Messwandler = Messwandler
+exports.Transaktor = Transaktor
+exports.Transformator = Transformator
+exports.Transformatoren = Transformatoren
+exports.RuhendeElektrischeMaschinen = RuhendeElektrischeMaschinen
+exports.Starr = Starr
+exports.ElektrischeMaschinen = ElektrischeMaschinen
+exports.Umformer = Umformer
+exports.Synchronmaschinen = Synchronmaschinen
+exports.Motoren = Motoren
+exports.KommutatorMaschinen = KommutatorMaschinen
+exports.GleichstromMaschinen = GleichstromMaschinen
+exports.EinphasenKommutatorMaschinen = EinphasenKommutatorMaschinen
+exports.DreiphasenKommutatorMaschinen = DreiphasenKommutatorMaschinen
+exports.Generatoren = Generatoren
+exports.Asynchronmaschinen = Asynchronmaschinen
+exports.PassiverZweipol = PassiverZweipol
+exports.Reihenschaltung = Reihenschaltung
+exports.Zweipole = Zweipole
+exports.Baugruppen = Baugruppen
+exports.Betriebsmittel = Betriebsmittel

@@ -1,1 +1,1 @@
-{"Berechnung":{"S":{"mathjs":"Unit","value":7.980332342227543,"unit":"A / mm^2","fixPrefix":true}},"Parameter":{"U":"124V","ρcu":"0.01786 ohm*mm^2/m"},"Eigenschaften":{"Material":"Kupfer","l":"870m"},"Kennzeichnung":{"Art":"L","Zählnummer":"1"}}
+{"Berechnung":{"S":{"mathjs":"Unit","value":1.5445804533343632,"unit":"A / mm^2","fixPrefix":true}},"Parameter":{"U":"24V","ρcu":"0.01786 ohm*mm^2/m"},"Eigenschaften":{"Material":"Kupfer","l":"870m"},"Kennzeichnung":{"Art":"L","Zählnummer":"1"}}

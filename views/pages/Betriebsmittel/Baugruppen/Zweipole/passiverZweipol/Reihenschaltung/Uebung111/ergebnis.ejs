@@ -1,19 +1,41 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
 
+import {Tabelle1} from "/sysFrontend/Tabelle.mjs";
 const data = await populate("example/Uebung111/data.json")
 
-drawkennzeichnung(data,"#kennzeichnung")
+// drawkennzeichnung(data,"#kennzeichnung")
 
-const table = new Tabelle(data,"#ergebnis")
+R1.value = data.Eigenschaften.R1;
+R2.value = data.Eigenschaften.R2;
+R3.value = data.Eigenschaften.R3;
+
+Φc.value = data.Schaltung.Klemme.C.Parameter.Φ;
+I.value = data.Parameter.I;
+
+const table = new Tabelle1(data,"#ergebnis")
 table.tabulate()
 
-const tab = d3.selectAll('tbody').selectAll('tr')._groups[0][0].innerText.split('\t')
+const view=new DrawBoard( 'grafik',640,480,[ 0,0,500,500 ] );
+import {vWiderstand} from '/components/Betriebsmittel.mjs';
+import {vKlemme} from '/components/Betriebsmittel.mjs';
 
-R1.value = tab[0] 
-R2.value = tab[1] 
-R2.value = tab[2] 
-Φc.value = tab[3] 
-I.value = tab[4]
+const points=[
+{x: 0,y: 240},
+{x: 200,y: 240},
+{x: 400,y: 240},
+];
+
+let vR1 = new vWiderstand(data.Schaltung.bm.R1,points[0]);
+vR1.createNode();
+view.addNode(vR1.node)
+
+let vR2 = new vWiderstand(data.Schaltung.bm.R2,points[1]);
+vR2.createNode();
+view.addNode(vR2.node)
+
+let vR3 = new vWiderstand(data.Schaltung.bm.R3,points[2]);
+vR3.createNode();
+view.addNode(vR3.node)
 
 </script>

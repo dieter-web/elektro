@@ -1,31 +1,22 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../../layouts/partials/ergebnis.ejs') %>
 
-
-import {vMagnetspule} from '/components/Betriebsmittel.mjs'
-
-// tabelle ergebnis
+import {Tabelle1} from "/sysFrontend/Tabelle.mjs"
 const data=await populate( "example/Uebung18/data.json" )
 
-// Ausgabe Kennzeichnung
-drawkennzeichnung(data, "#kennzeichnung")
+Material.value = data.Eigenschaften.Material;
+δ1.value = data.Parameter.δ1;
+δ2.value = data.Parameter.δ2;
 
-// Ausgabe Datentabelle
-const table = new Tabelle(data,"#ergebnis");
+drawkennzeichnung(data, "#kennzeichnung")
+const table = new Tabelle1(data,"#ergebnis");
 table.tabulate();
 
-// Rückkopplung zum Eingabeformular
-const sel = d3.selectAll('tbody').selectAll('tr')._groups[0][0].innerText.split('\t');
-Material.value = sel[0];
-δ1.value = sel[1]
-δ2.value = sel[2]
-
-
-// Visualisierung
+import {vSpule} from '/components/Betriebsmittel.mjs'
 const view=new DrawBoard('grafik', 640, 480,[0,0,500,500]);
 const point = { x: 320, y: 240};
 
-let L1 = new vMagnetspule(data, point)
+let L1 = new vSpule(data, point)
 L1.createNode();
 view.addNode(L1.node)
 

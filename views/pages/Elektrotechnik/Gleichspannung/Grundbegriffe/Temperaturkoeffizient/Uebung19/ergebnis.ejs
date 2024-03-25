@@ -1,33 +1,24 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../layouts/partials/ergebnis.ejs') %>
 
-
-
-import {vR} from '/d3/lib/Betriebsmittel/vR.mjs'
-
-
+import {Tabelle1} from "/sysFrontend/Tabelle.mjs";
 const data=await populate( "example/Uebung19/data.json" )
 
+drawkennzeichnung(data, "#kennzeichnung");
 
-const table=new Tabelle( data,"#ergebnis" );
+R20.value = data.Eigenschaften.R20;
+Rδ2.value= data.Parameter.Rδ2;
+δ2.value= data.Parameter.δ2;
+δ20.value= data.Parameter.δ20;
+
+const table=new Tabelle1( data,"#ergebnis" );
 table.tabulate();
 
+const view = new DrawBoard('grafik', 640, 480, [0, 0, 500, 500]);
+import {vWiderstand} from '/components/Betriebsmittel.mjs';
+const point = {x:320, y:240};
+let vR = new vWiderstand(data, point);
+vR.createNode();
+view.addNode(vR.node);
 
-// Rückkopplung
-const sel=d3.selectAll( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][ 0 ].innerText.split( '\t' );
-
-R20.value=sel[ 0 ]
-Rδ2.value=sel[ 1 ]
-δ2.value=sel[ 2 ]
-δ20.value=sel[ 3 ]
-
-// Visualisierung
-const g=drawboard()
-
-// data, das Element, Position im svg:g
-// TODO: Was wenn mehrere Elemente ?
-vR( data,[ 'R20' ],[ 50,50 ] ).map( ( e ) =>
-{
-g.append( () => e )
-} )
 </script>

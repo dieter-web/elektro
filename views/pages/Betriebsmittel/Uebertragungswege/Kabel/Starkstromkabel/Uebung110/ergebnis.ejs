@@ -1,25 +1,25 @@
 <%- include('aufgabe.ejs',{}) %>
 <%- include('../../../../../../layouts/partials/ergebnis.ejs') %>
 
-
-
+import {Tabelle1} from "/sysFrontend/Tabelle.mjs";
 const data=await populate( "example/uebung110/data.json" )
 
-const table=new Tabelle( data,"#ergebnis" );
+drawkennzeichnung(data,"#kennzeichnung");
+
+Material.value = data.Eigenschaften.Material;
+n.value = data.Eigenschaften.n;
+U.value = data.Parameter.U;
+S.value = data.Parameter.S;
+p.value = data.Parameter.p;
+
+const table=new Tabelle1( data,"#ergebnis" );
 table.tabulate();
 
-// Rückkopplung
-const sel=d3.select( 'tbody' ).selectAll( 'tr' )._groups[ 0 ][0].innerText.split('\t');
-
-Material.value=sel[ 0 ]
-n.value=sel[ 1 ]
-U.value=sel[ 2 ]
-S.value=sel[ 3 ]
-p.value=sel[ 4 ]
-
-
-// svg grafik
-const g=canvas( '#grafik',800,300,"0 0 200 100" )
-
+const view = new DrawBoard('grafik', 640, 480, [0, 0, 500, 500]);
+import { vKabel } from '/components/Betriebsmittel.mjs';
+const point = {x:320, y:240};
+let vW = new vKabel(data,point);
+vW.createNode();
+view.addNode(vW.node);
 
 </script>
