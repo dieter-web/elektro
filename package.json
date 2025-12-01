@@ -1,0 +1,45 @@
+{
+  "name": "elektro_linux",
+  "version": "1.0.0",
+  "main": "bin/www.mjs",
+  "type": "module",
+  "bin": {
+    "elektro_linux": "./bin/www.mjs"
+  },
+  "keywords": [],
+  "author": "dieterkrause31960@gmail.com",
+  "license": "ISC",
+  "description": "",
+  "scripts": {
+    "test": "jest",
+    "start": "node --max-old-space-size=4096 --optimize-for-size --inspect bin/www.mjs",
+    "dev": "NODE_ENV=development nodemon bin/www.mjs",
+    "debug": "node --inspect-brk bin/www.mjs"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.6",
+    "d3": "^7.9.0",
+    "d3-node": "^4.0.1",
+    "ejs": "^3.1.10",
+    "eslint": "^9.34.0",
+    "express": "^5.1.0",
+    "express-ejs-layouts": "^2.5.1",
+    "get-intrinsic": "^1.3.0",
+    "markdown-it": "^14.1.0",
+    "mathjs": "^14.4.0",
+    "nodemon": "^3.1.10",
+    "url-join": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/d3": "^7.4.3"
+  },
+  "private": true,
+  "repository" : {
+	"type" : "git",
+	"url": "git+https://github.com/dieter-web/elektro"
+  },
+  "bugs": {
+	"url": "https://github.com/dieter-web/elektro/issues"
+  },
+  "homepage": "https://github.com/dieter-web/elektro#readme"
+}
