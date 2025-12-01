@@ -1,0 +1,21 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-header bg-danger text-white">
+                    <h3 class="card-title mb-0">
+                        <%= typeof message !== 'undefined' ? message : 'Ein Fehler ist aufgetreten' %>
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <% if (process.env.NODE_ENV === 'development' && typeof error !== 'undefined') { %>
+                        <div class="alert alert-warning">
+                            <pre class="mb-0"><%= error.stack %></pre>
+                        </div>
+                    <% } %>
+                    <a href="/" class="btn btn-primary">Zurück zur Startseite</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

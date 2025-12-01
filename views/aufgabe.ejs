@@ -1,0 +1,34 @@
+<!-- Daten als JSON im DOM-->
+<section class="aufgabe-details">
+	<p>
+		<%= data.meta.beschreibung %>
+	</p>
+	<form method="post">
+		<% data.meta.felder.forEach(field=> { %>
+			<label>
+				<%= field.label %> (<%= field.unit %>)
+			</label>
+			<input name="<%= field.name %>" type="text" value="<%= field.value %><%= field.unit %>" />
+			<% }) %>
+				<button type="submit">Berechnen</button>
+	</form>
+
+	<script id="data" type="application/json">
+		<%- JSON.stringify(data) %>
+ 	</script>
+
+	<% if (data.tableHtml) { %>
+        <div class="result-table"><%- data.tableHtml %></div>
+    <% } %>
+
+	<% if (data.chartHtml) { %>
+        <div class="result-chart"><%- data.chartHtml %></div>
+	<% } %>
+
+	<% if (data.editorHtml) { %>
+		<div class="result-editor"><%- data.editorHtml %></div>
+	<% } %>
+
+      
+	
+</section>
