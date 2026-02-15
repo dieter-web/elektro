@@ -1,0 +1,19 @@
+<div class="page-content">
+
+	
+	<% if (setTypes.includes('markdown')) { %>
+		<%- include('partials/markdown', { markdown: markdownContent }) %>
+	<% } %>
+
+	<% if (setTypes.includes('formulas')) { %>
+		<%- include('partials/formulas', { formulas: formulasContent }) %>
+	<% } %>
+
+	<% if (setTypes.includes('examples')) { %>
+		<%- include('partials/examples', { examples: examplesContent }) %>
+	<% } %>
+
+	<% if (setTypes.includes('interactive')) { %>
+		<%- include('partials/interactive', { interactive: interactiveContent }) %>
+	<% } %>
+</div>

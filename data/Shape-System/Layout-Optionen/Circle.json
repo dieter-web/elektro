@@ -1,0 +1,13 @@
+{
+    "type":"circle",
+    "cx": 100,
+    "cy": 100,
+    "r": 20,
+    "meta": {
+        "selectable": true,
+        "draggable": true,
+        "onClick": "select",
+        "onDrag": "move"
+    }
+}
+

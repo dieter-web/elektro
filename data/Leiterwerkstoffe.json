@@ -1,0 +1,1210 @@
+{
+	"Ag": 
+		{
+			"code": "Ag",
+			"de": "Silber",
+			"en": "Silver",
+			"werte": {
+				"ρ": {
+					"wert": 0.016,
+					"einheit": "ohm*mm^2/m"
+				},
+				"κ": {
+					"wert": 62.5,
+					"einheit": "S*m/mm^2"
+				},
+				"δ0": {
+					"wert": 243,
+					"einheit": "K"
+				},
+				"α20": {
+					"wert": 0.038,
+					"einheit": "K^-1"
+				},
+				"β20": {
+					"wert": 0.0000007,
+					"einheit": "K/K^3"
+				}
+			},
+			"beschreibung": "Metall mit der höchsten elektrischen Leitfähigkeit.",
+			"quelle": "DIN 46438"
+		},
+		"Cu":{
+			"code": "Cu",
+			"de": "Kupfer",
+			"en": "Copper",
+			"werte": {
+				"ρ": {
+					"wert": 0.01786,
+					"einheit": "ohm*mm^2/m"
+				},
+				"κ": {
+					"wert": 56,
+					"einheit": "S*m/mm^2"
+				},
+				"δ0": {
+					"wert": 237,
+					"einheit": "K"
+				},
+				"α20": {
+					"wert": 0.00393,
+					"einheit": "K^-1"
+				},
+				"β20": {
+					"wert": 0.0000006,
+					"einheit": "K/K^3"
+				}
+			},
+			"beschreibung": "Standardmaterial für elektrische Leitungen.",
+			"quelle": "DIN 46438"
+		},
+		"BZ":{	
+			"code": "BZ",
+			"de": "Bronze",
+			"en": "Bronze",
+			"werte": {
+				"ρ": {
+					"wert": 0.018,
+					"einheit": "ohm*mm^2/m"
+				},
+				"κ_min": {
+					"wert": 18,
+					"einheit": "S*m/mm^2"
+				},
+				"κ_max": {
+					"wert": 55,
+					"einheit": "S*m/mm^2"
+				},
+				"δ0_min": {
+					"wert": 200,
+					"einheit": "K"
+				},
+				"δ0_max": {
+					"wert": 250,
+					"einheit": "K"
+				},
+				"α20_min": {
+					"wert": 0.0037,
+					"einheit": "K^-1"
+				},
+				"α20_max": {
+					"wert": 0.005,
+					"einheit": "K^-1"
+				},
+				"β20": {
+					"wert": 0.0000006,
+					"einheit": "K/K^3"
+				}
+			},
+			"beschreibung": "Kupfer-Zinn-Legierung, verwendet für Kontakte und Federn.",
+			"quelle": "DIN 46438"
+		},
+		"Au": {
+			"code": "Au",
+			"de": "Gold",
+			"en": "Gold",
+			"werte": {
+				"ρ": {
+					"wert": 0.023,
+					"einheit": "ohm*mm^2/m"
+				},
+				"κ": {
+					"wert": 44,
+					"einheit": "S*m/mm^2"
+				},
+				"δ0": {
+					"wert": 230,
+					"einheit": "K"
+				},
+				"α20": {
+					"wert": 0.004,
+					"einheit": "K^-1"
+				},
+				"β20": {
+					"wert": 0.0000005,
+					"einheit": "K/K^3"
+				}
+				
+			},
+			"beschreibung": "Korrosionsbeständiges Edelmetall, oft für hochwertige Kontakte.",
+			"quelle": "DIN 46438"
+		},
+		"Al": {
+			"code": "Al",
+			"de": "Aluminium",
+			"en": "Aluminum",
+			"werte": {
+				"ρ": {
+					"wert": 0.02857,
+					"einheit": "ohm*mm^2/m"
+				},
+				"κ": {
+					"wert": 35,
+					"einheit": "S*m/mm^2"
+				},
+				"δ0": {
+					"wert": 245,
+					"einheit": "K"
+				},
+				"α20": {
+					"wert": 0.00377,
+					"einheit": "K^-1"
+				},
+				"β20": {
+					"wert": 0.0000013,
+					"einheit": "K/K^3"
+				}
+				
+			},
+			"beschreibung": "Leichtmetall, verwendet für Leitungen und Gehäuse.",
+			"quelle": "DIN 46438"
+		},
+		"Mg": {
+			"code": "Mg",
+			"de": "Magnesium",
+			"en": "Magnesium",
+			"werte": {
+				"ρ": {
+					"wert": 0.045,
+					"einheit": "ohm*mm^2/m"
+				},
+				"κ": {
+					"wert": 22,
+					"einheit": "S*m/mm^2"
+				},
+				"δ0": {
+					"wert": 237,
+					"einheit": "K"
+				},
+				"α20": {
+					"wert": 0.0039,
+					"einheit": "K^-1"
+				},
+				"β20": {
+					"wert": 0.000001,
+					"einheit": "K/K^3"
+				}
+				
+			},
+			"beschreibung": "Leichtmetall mit guter Korrosionsbeständigkeit.",
+			"quelle": "DIN 46438"
+		},
+		"W": {
+			"code": "W",
+			"de": "Wolfram",
+			"en": "Tungsten",
+			"werte": {
+				"ρ": {
+					"wert": 0.055,
+					"einheit": "ohm*mm^2/m"
+				},
+				"κ": {
+					"wert": 18,
+					"einheit": "S*m/mm^2"
+				},
+				"δ0": {
+					"wert": 225,
+					"einheit": "K"
+				},
+				"α20": {
+					"wert": 0.0041,
+					"einheit": "K^-1"
+				},
+				"β20": {
+					"wert": 0.000001,
+					"einheit": "K/K^3"
+				}
+				
+			},
+			"beschreibung": "Metall mit dem höchsten Schmelzpunkt, verwendet in Hochtemperaturanwendungen.",
+			"quelle": "DIN 46438"
+		},
+		"Zn": {
+			"code": "Zn",
+			"de": "Zink",
+			"en": "Zinc",
+			"werte": {
+				"ρ": {
+					"wert": 0.063,
+					"einheit": "ohm*mm^2/m"
+				},
+				"κ": {
+					"wert": 16,
+					"einheit": "S*m/mm^2"
+				},
+				"δ0": {
+					"wert": 250,
+					"einheit": "K"
+				},
+				"α20": {
+					"wert": 0.0037,
+					"einheit": "K^-1"
+				},
+				"β20": {
+					"wert": 0.000002,
+					"einheit": "K/K^3"
+				}
+			},
+			"beschreibung": "Metall mit niedrigem Schmelzpunkt, verwendet in Legierungen und als Korrosionsschutz.",
+			"quelle": "DIN 46438"
+		},
+		"Ms":{
+			"code": "Ms",
+			"de": "Messing",
+			"en": "Brass",
+			"werte": {
+				"ρ": {
+					"wert": 0.07,
+					"einheit": "ohm*mm^2/m"
+				},
+				"κ": {
+					"wert": 14.11,
+					"einheit": "S*m/mm^2"
+				},
+				"δ0": {
+					"wert": 650,
+					"einheit": "K"
+				},
+				"α20": {
+					"wert": 0.0015,
+					"einheit": "K^-1"
+				}
+				
+			},
+			"beschreibung": "Kupfer-Zink-Legierung, häufig verwendet für Armaturen und Beschläge.",
+			"quelle": "DIN 46438"
+		},
+		"Ni":{
+			"code": "Ni",
+			"de": "Nickel",
+			"en": "Nickel",
+			"werte": {
+				"ρ": {
+					"wert": 0.08,
+					"einheit": "ohm*mm^2/m"
+				},
+				"κ": {
+					"wert": 13.9,
+					"einheit": "S*m/mm^2"
+				},
+				"δ0_min": {
+					"wert": 145,
+					"einheit": "K"
+				},
+				"δ0_max": {
+					"wert": 250,
+					"einheit": "K"
+				},
+				"α20_min": {
+					"wert": 0.0037,
+					"einheit": "K^-1"
+				},
+				"α20_max": {
+					"wert": 0.006,
+					"einheit": "K^-1"
+				},
+				"β20": {
+					"wert": 0.000009,
+					"einheit": "K/K^3"
+				}
+				
+			},
+			"beschreibung": "Metall mit ausgezeichneter Korrosionsbeständigkeit und guter Leitfähigkeit.",
+			"quelle": "DIN 46438"
+		},
+		"Fe":{
+			"code": "Fe",
+			"de": "Eisen",
+			"en": "Iron",
+			"werte": {
+				"ρ": {
+					"wert": 0.1,
+					"einheit": "ohm*mm^2/m"
+				},
+				"κ": {
+					"wert": 10.7,
+					"einheit": "S*m/mm^2"
+				},
+				"δ0_min": {
+					"wert": 145,
+					"einheit": "K"
+				},
+				"δ0_max": {
+					"wert": 202,
+					"einheit": "K"
+				},
+				"α20_min": {
+					"wert": 0.0045,
+					"einheit": "K^-1"
+				},
+				"α20_max": {
+					"wert": 0.006,
+					"einheit": "K^-1"
+				},
+				"β20": {
+					"wert": 0.000006,
+					"einheit": "K/K^3"
+				}
+			},
+			"beschreibung": "Häufigstes Metall der Erdkruste, verwendet in einer Vielzahl von Anwendungen.",
+			"quelle": "DIN 46438"
+		},
+		"Sn":{
+			"code": "Sn",
+			"de": "Zinn",
+			"en": "Tin",
+			"werte": {
+				"ρ": {
+					"wert": 0.11,
+					"einheit": "ohm*mm^2/m"
+				},
+				"κ": {
+					"wert": 9.1,
+					"einheit": "S*m/mm^2"
+				},
+				"δ0": {
+					"wert": 218,
+					"einheit": "K"
+				},
+				"α20": {
+					"wert": 0.0042,
+					"einheit": "K^-1"
+				},
+				"β20": {
+					"wert": 0.000006,
+					"einheit": "K/K^3"
+				}
+			},
+			"beschreibung": "Weiches Metall mit niedrigem Schmelzpunkt, verwendet in Lötlegierungen.",
+			"quelle": "DIN 46438"
+		},
+		"Pt":{
+			"code": "Pt",
+			"de": "Platin",
+			"en": "Platinum",
+			"werte": {
+				"ρ": {
+					"wert": 0.11,
+					"einheit": "ohm*mm^2/m"
+				},
+				"κ_min": {
+					"wert": 7,
+					"einheit": "S*m/mm^2"
+				},
+				"κ_max": {
+					"wert": 9,
+					"einheit": "S*m/mm^2"
+				},
+				"δ0_min": {
+					"wert": 310,
+					"einheit": "K"
+				},
+				"δ0_max": {
+					"wert": 480,
+					"einheit": "K"
+				},
+				"α20_min": {
+					"wert": 0.002,
+					"einheit": "K^-1"
+				},
+				"α20_max": {
+					"wert": 0.003,
+					"einheit": "K^-1"
+				},
+				"β20": {
+					"wert": 0.0000006,
+					"einheit": "K/K^3"
+				}
+			},
+			"beschreibung": "Seltenes Edelmetall, verwendet in Katalysatoren und für elektrische Kontakte.",
+			"quelle": "DIN 46438"
+		},
+		"Pb":{
+			"code": "Pb",
+			"de": "Blei",
+			"en": "Lead",
+			"werte": {
+				"ρ": {
+					"wert": 0.21,
+					"einheit": "ohm*mm^2/m"
+				},
+				"κ": {
+					"wert": 4.8,
+					"einheit": "S*m/mm^2"
+				},
+				"δ0": {
+					"wert": 218,
+					"einheit": "K"
+				},
+				"α20": {
+					"wert": 0.0042,
+					"einheit": "K^-1"
+				},
+				"β20": {
+					"wert": 0.000002,
+					"einheit": "K/K^3"
+				}
+			},
+			"beschreibung": "Schweres Metall mit niedriger Schmelztemperatur, verwendet in Akkumulatoren und als Strahlenschutz.",
+			"quelle": "DIN 46438"
+		},
+		"Ne":{
+			"code": "Ne",
+			"de": "Neusilber",
+			"en": "Nickel Silver",
+			"werte": {
+				"ρ": {
+					"wert": 0.3,
+					"einheit": "ohm*mm^2/m"
+				},
+				"κ": {
+					"wert": 3.33,
+					"einheit": "S*m/mm^2"
+				},
+				"α20": {
+					"wert": 0.00035,
+					"einheit": "K^-1"
+				}
+			},
+			"beschreibung": "Legierung aus Nickel, Kupfer und Zink, verwendet für Münzen und Schmuck.",
+			"quelle": "DIN 46438"
+		},
+		"AuCu":{
+			"code": "AuCu",
+			"de": "Gold-Chrom",
+			"en": "Gold Copper",
+			"werte": {
+				"ρ": {
+					"wert": 0.33,
+					"einheit": "ohm*mm^2/m"
+				},
+				"κ": {
+					"wert": 3.0,
+					"einheit": "S*m/mm^2"
+				},
+				"α20": {
+					"wert": -0.00001,
+					"einheit": "K^-1"
+				},
+				"β20": {
+					"wert": 0.0000001,
+					"einheit": "K/K^3"
+				}
+			},
+			"beschreibung": "Legierung aus Gold und Kupfer, verwendet in der Elektronik und für Schmuck.",
+			"quelle": "DIN 46438"
+		},
+		"NiCu":{
+			"code": "NiCu",
+			"de": "Nickelin",
+			"en": "Nickel Iron",
+			"werte": {
+				"ρ": {
+					"wert": 0.43,
+					"einheit": "ohm*mm^2/m"
+				},
+				"κ": {
+					"wert": 2.3,
+					"einheit": "S*m/mm^2"
+				},
+				"α20": {
+					"wert": 0.00011,
+					"einheit": "K^-1"
+				}
+			},
+			"beschreibung": "Legierung aus Nickel und Eisen, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"Mn":{
+			"code": "Mn",
+			"de": "Manganin",
+			"en": "Manganin",
+			"werte": {
+				"ρ": {
+					"wert": 0.43,
+					"einheit": "ohm*mm^2/m"
+				},
+				"κ": {
+					"wert": 2.3,
+					"einheit": "S*m/mm^2"
+				},
+				"α20": {
+					"wert": 0.00004,
+					"einheit": "K^-1"
+				}
+			},
+			"beschreibung": "Legierung aus Mangan und Kupfer, verwendet für Widerstände und Heizungen.",
+			"quelle": "DIN 46438"
+		},
+		"Kon":{
+			"code": "Kon",
+			"de": "Konstantan",
+			"en": "Constantan",
+			"werte": {
+				"ρ": {
+					"wert": 0.48,
+					"einheit": "ohm*mm^2/m"
+				},
+				"κ": {
+					"wert": 2.00,
+					"einheit": "S*m/mm^2"
+				},
+				"α20": {
+					"wert": -0.0000035,
+					"einheit": "K^-1"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer und Nickel, verwendet für Thermoelemente und Widerstände.",
+			"quelle": "DIN 46438"
+		},
+		"Re":{
+			"code": "Re",
+			"de": "Resistin",
+			"en": "Resistive Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.5,
+					"einheit": "ohm*mm^2/m"
+				},
+				"κ": {
+					"wert": 2.00,
+					"einheit": "S*m/mm^2"
+				},
+				"α20_min": {
+					"wert": -0.00002,
+					"einheit": "K^-1"
+				},
+				"α20_max": {
+					"wert": 0.00002,
+					"einheit": "K^-1"
+				}
+			},
+			"beschreibung": "Legierung mit hohem spezifischem Widerstand, verwendet für Präzisionswiderstände.",
+			"quelle": "DIN 46438"
+		},
+		"Kr":{
+			"code": "Kr",
+			"de": "Kruppin",
+			"en": "Kruppin",
+			"werte": {
+				"ρ": {
+					"wert": 0.85,
+					"einheit": "ohm*mm^2/m"
+				},
+				"κ": {
+					"wert": 1.18,
+					"einheit": "S*m/mm^2"
+				},
+				"α20": {
+					"wert": 0.0007,
+					"einheit": "K^-1"
+				}
+			},
+			"beschreibung": "Spezielle Legierung für elektrische Kontakte und Widerstände.",
+			"quelle": "DIN 46438"
+		},
+		"Hg":{
+			"code": "Hg",
+			"de": "Quecksilber",
+			"en": "Mercury",
+			"werte": {
+				"ρ": {
+					"wert": 0.96,
+					"einheit": "ohm*mm^2/m"
+				},
+				"κ": {
+					"wert": 1.04,
+					"einheit": "S*m/mm^2"
+				},
+				"α20": {
+					"wert": 0.00092,
+					"einheit": "K^-1"
+				},
+				"β20": {
+					"wert": 0.0000012,
+					"einheit": "K/K^3"
+				}
+			},
+			"beschreibung": "Das einzige Metall, das bei Raumtemperatur flüssig ist, verwendet in Thermometern und als elektrischer Kontakt.",
+			"quelle": "DIN 46438"
+		},
+		"CrNi":{
+			"code": "CrNi",
+			"de": "Chromnickel",
+			"en": "Chrome Nickel",
+			"werte": {
+				"ρ": {
+					"wert": 1.1,
+					"einheit": "ohm*mm^2/m"
+				},
+				"κ": {
+					"wert": 0.91,
+					"einheit": "S*m/mm^2"
+				},
+				"α20": {
+					"wert": 0.0002,
+					"einheit": "K^-1"
+				}
+			},
+			"beschreibung": "Edelstahllegierung, verwendet in der chemischen Industrie und für Küchenutensilien.",
+			"quelle": "DIN 46438"
+		},
+		"Bi":{
+			"code": "Bi",
+			"de": "Wismut",
+			"en": "Bismuth",
+			"werte": {
+				"ρ": {
+					"wert": 1.2,
+					"einheit": "ohm*mm^2/m"
+				},
+				"κ": {
+					"wert": 0.83,
+					"einheit": "S*m/mm^2"
+				},
+				"δ0": {
+					"wert": 218,
+					"einheit": "K"
+				},
+				"α20": {
+					"wert": 0.0042,
+					"einheit": "K^-1"
+				}
+			},
+			"beschreibung": "Sprödes Metall mit niedrigem Schmelzpunkt, verwendet in Legierungen und als Röntgenkontrastmittel.",
+			"quelle": "DIN 46438"
+		},
+		"G":{
+			"code": "G",
+			"de": "Glas",
+			"en": "Glass",
+			"werte": {
+				"ρ": {
+					"wert": 1E12,
+					"einheit": "ohm*cm"
+				}
+			},
+			"beschreibung": "Amorphe, durchsichtige Substanz, verwendet in Fenstern, Behältern und als Isolator.",
+			"quelle": "DIN 46438"
+		},
+		"K":{
+			"code": "K",
+			"de": "Keramik",
+			"en": "Ceramic",
+			"werte": {
+				"ρ": {
+					"wert": 1E12,
+					"einheit": "ohm*cm"
+				}
+			},
+			"beschreibung": "Anorganisches, nichtmetallisches Material, verwendet in Isolatoren und elektrischen Bauteilen.",
+			"quelle": "DIN 46438"
+		},
+		"Si":{
+			"code": "Si",
+			"de": "Silizium",
+			"en": "Silicon",
+			"werte": {
+				"ρ": {
+					"wert": 0.000001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Halbleitermaterial, verwendet in der Elektronik und Solarzellen.",
+			"quelle": "DIN 46438"
+		},
+		"Ge":{
+			"code": "Ge",
+			"de": "Germanium",
+			"en": "Germanium",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Halbleitermaterial, verwendet in Transistoren und Dioden.",
+			"quelle": "DIN 46438"
+		},
+		"Ga":{
+			"code": "Ga",
+			"de": "Gallium",
+			"en": "Gallium",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Weiches Metall mit niedrigem Schmelzpunkt, verwendet in LEDs und Solarzellen.",
+			"quelle": "DIN 46438"
+		},
+		"In":{
+			"code": "In",
+			"de": "Indium",
+			"en": "Indium",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Weiches Metall, verwendet in Legierungen und als Beschichtung.",
+			"quelle": "DIN 46438"
+		},
+		"SnPb":{
+			"code": "SnPb",
+			"de": "Zinn-Blei-Legierung",
+			"en": "Tin Lead Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.0001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Zinn und Blei, verwendet in Lötverbindungen.",
+			"quelle": "DIN 46438"
+		},
+		"AgCu":{
+			"code": "AgCu",
+			"de": "Silber-Kupfer-Legierung",
+			"en": "Silver Copper Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Silber und Kupfer, verwendet in elektrischen Kontakten.",
+			"quelle": "DIN 46438"
+		},
+		"CuNi":{
+			"code": "CuNi",
+			"de": "Kupfer-Nickel-Legierung",
+			"en": "Copper Nickel Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer und Nickel, verwendet in der Marine und für Münzen.",
+			"quelle": "DIN 46438"
+		},
+		"CuZn":{
+			"code": "CuZn",
+			"de": "Kupfer-Zink-Legierung",
+			"en": "Copper Zinc Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer und Zink, verwendet in Armaturen und Beschlägen.",
+			"quelle": "DIN 46438"
+		},
+		"CuSn":{
+			"code": "CuSn",
+			"de": "Kupfer-Zinn-Legierung",
+			"en": "Copper Tin Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer und Zinn, verwendet in elektrischen Kontakten.",
+			"quelle": "DIN 46438"
+		},
+		"CuAg":{
+			"code": "CuAg",
+			"de": "Kupfer-Silber-Legierung",
+			"en": "Copper Silver Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer und Silber, verwendet in elektrischen Anwendungen.",
+			"quelle": "DIN 46438"
+		},
+		"CuFe":{
+			"code": "CuFe",
+			"de": "Kupfer-Eisen-Legierung",
+			"en": "Copper Iron Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer und Eisen, verwendet in Elektromotoren und Transformatoren.",
+			"quelle": "DIN 46438"
+		},
+		"CuCo":{
+			"code": "CuCo",
+			"de": "Kupfer-Kobalt-Legierung",
+			"en": "Copper Cobalt Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer und Kobalt, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuNiZn":{
+			"code": "CuNiZn",
+			"de": "Kupfer-Nickel-Zink-Legierung",
+			"en": "Copper Nickel Zinc Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer, Nickel und Zink, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuMn":{
+			"code": "CuMn",
+			"de": "Kupfer-Mangan-Legierung",
+			"en": "Copper Manganese Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer und Mangan, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuTi":{
+			"code": "CuTi",
+			"de": "Kupfer-Titan-Legierung",
+			"en": "Copper Titanium Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer und Titan, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuZr":{
+			"code": "CuZr",
+			"de": "Kupfer-Zirkonium-Legierung",
+			"en": "Copper Zirconium Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer und Zirkonium, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuBe":{
+			"code": "CuBe",
+			"de": "Kupfer-Beryllium-Legierung",
+			"en": "Copper Beryllium Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer und Beryllium, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuAgZn":{
+			"code": "CuAgZn",
+			"de": "Kupfer-Silber-Zink-Legierung",
+			"en": "Copper Silver Zinc Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer, Silber und Zink, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuAgNi":{
+			"code": "CuAgNi",
+			"de": "Kupfer-Silber-Nickel-Legierung",
+			"en": "Copper Silver Nickel Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer, Silber und Nickel, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuAgSn":{
+			"code": "CuAgSn",
+			"de": "Kupfer-Silber-Zinn-Legierung",
+			"en": "Copper Silver Tin Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer, Silber und Zinn, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuAgPb":{
+			"code": "CuAgPb",
+			"de": "Kupfer-Silber-Blei-Legierung",
+			"en": "Copper Silver Lead Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer, Silber und Blei, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuAgAu":{
+			"code": "CuAgAu",
+			"de": "Kupfer-Silber-Gold-Legierung",
+			"en": "Copper Silver Gold Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer, Silber und Gold, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuAgIn":{
+			"code": "CuAgIn",
+			"de": "Kupfer-Silber-Indium-Legierung",
+			"en": "Copper Silver Indium Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer, Silber und Indium, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuAgZnSn":{
+			"code": "CuAgZnSn",
+			"de": "Kupfer-Silber-Zink-Zinn-Legierung",
+			"en": "Copper Silver Zinc Tin Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer, Silber, Zink und Zinn, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuAgNiZn":{
+			"code": "CuAgNiZn",
+			"de": "Kupfer-Silber-Nickel-Zink-Legierung",
+			"en": "Copper Silver Nickel Zinc Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer, Silber, Nickel und Zink, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuAgMn":{
+			"code": "CuAgMn",
+			"de": "Kupfer-Silber-Mangan-Legierung",
+			"en": "Copper Silver Manganese Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer, Silber und Mangan, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuAgTi":{
+			"code": "CuAgTi",
+			"de": "Kupfer-Silber-Titan-Legierung",
+			"en": "Copper Silver Titanium Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer, Silber und Titan, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuAgZr":{
+			"code": "CuAgZr",
+			"de": "Kupfer-Silber-Zirkonium-Legierung",
+			"en": "Copper Silver Zirconium Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer, Silber und Zirkonium, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuAgBe":{
+			"code": "CuAgBe",
+			"de": "Kupfer-Silber-Beryllium-Legierung",
+			"en": "Copper Silver Beryllium Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer, Silber und Beryllium, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuAgAuZn":{
+			"code": "CuAgAuZn",
+			"de": "Kupfer-Silber-Gold-Zink-Legierung",
+			"en": "Copper Silver Gold Zinc Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer, Silber, Gold und Zink, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuAgAuSn":{
+			"code": "CuAgAuSn",
+			"de": "Kupfer-Silber-Gold-Zinn-Legierung",
+			"en": "Copper Silver Gold Tin Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer, Silber, Gold und Zinn, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuAgAuPb":{
+			"code": "CuAgAuPb",
+			"de": "Kupfer-Silber-Gold-Blei-Legierung",
+			"en": "Copper Silver Gold Lead Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer, Silber, Gold und Blei, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuAgAuIn":{
+			"code": "CuAgAuIn",
+			"de": "Kupfer-Silber-Gold-Indium-Legierung",
+			"en": "Copper Silver Gold Indium Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer, Silber, Gold und Indium, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuAgAuZnSn":{
+			"code": "CuAgAuZnSn",
+			"de": "Kupfer-Silber-Gold-Zink-Zinn-Legierung",
+			"en": "Copper Silver Gold Zinc Tin Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer, Silber, Gold, Zink und Zinn, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuAgAuNi":{
+			"code": "CuAgAuNi",
+			"de": "Kupfer-Silber-Gold-Nickel-Legierung",
+			"en": "Copper Silver Gold Nickel Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer, Silber, Gold und Nickel, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuAgAuMn":{
+			"code": "CuAgAuMn",
+			"de": "Kupfer-Silber-Gold-Mangan-Legierung",
+			"en": "Copper Silver Gold Manganese Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer, Silber, Gold und Mangan, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuAgAuTi":{
+			"code": "CuAgAuTi",
+			"de": "Kupfer-Silber-Gold-Titan-Legierung",
+			"en": "Copper Silver Gold Titanium Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer, Silber, Gold und Titan, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuAgAuZr":{
+			"code": "CuAgAuZr",
+			"de": "Kupfer-Silber-Gold-Zirkonium-Legierung",
+			"en": "Copper Silver Gold Zirconium Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer, Silber, Gold und Zirkonium, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		},
+		"CuAgAuBe":{
+			"code": "CuAgAuBe",
+			"de": "Kupfer-Silber-Gold-Beryllium-Legierung",
+			"en": "Copper Silver Gold Beryllium Alloy",
+			"werte": {
+				"ρ": {
+					"wert": 0.00001,
+					"einheit": "ohm*m"
+				}
+			},
+			"beschreibung": "Legierung aus Kupfer, Silber, Gold und Beryllium, verwendet in der Elektrotechnik.",
+			"quelle": "DIN 46438"
+		}
+}

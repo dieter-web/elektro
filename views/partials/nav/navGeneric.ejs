@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary" aria-label="<%= navTitle %> Navigation">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="<%= navRoot %>"><%= navTitle %></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navGeneric"
+            aria-controls="navGeneric" aria-expanded="false" aria-label="Navigation ein/ausblenden">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navGeneric">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <% (navItems || []).forEach(item => { %>
+                    <% if (Array.isArray(item.items)) { %>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false"><%= item.title || 'Menü' %></a>
+                            <ul class="dropdown-menu">
+                                <% item.items.forEach(subitem => { %>
+                                    <li>
+                                        <a class="dropdown-item" href="<%= subitem.href %>">
+                                            <%= subitem.text %>
+                                            <% if (subitem.path) { %>
+                                                <span class="text-muted">(<%= subitem.path %>)</span>
+                                            <% } %>
+                                        </a>
+                                    </li>
+                                <% }) %>
+                            </ul>
+                        </li>
+                    <% } else { %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<%= item.href %>">
+                                <%= item.text %>
+                                <% if (item.path) { %>
+                                    <span class="text-muted">(<%= item.path %>)</span>
+                                <% } %>
+                            </a>
+                        </li>
+                    <% } %>
+                <% }) %>
+            </ul>
+        </div>
+    </div>
+</nav>

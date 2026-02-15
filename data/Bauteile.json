@@ -1,0 +1,193 @@
+{
+	"Bauteile": [
+		{
+			"code": "V",
+			"de": "Halbleiter",
+			"en": "Semiconductor",
+			"beschreibung": "Bauelement, das als Halbleiter fungiert (z.B. Diode, Transistor)",
+			"quelle": "DIN 40719"
+		},
+		{
+			"code": "T",
+			"de": "Transformator",
+			"en": "Transformer",
+			"beschreibung": "Elektromagnetisches Bauelement zur Spannungsanpassung",
+			"quelle": "DIN 40719"
+		},
+		{
+			"code": "C",
+			"de": "Kondensator",
+			"en": "Capacitor",
+			"beschreibung": "Elektrisches Bauelement zur Speicherung elektrischer Energie",
+			"quelle": "DIN 40719"
+		},	
+		{
+			"code": "D",
+			"de": "Diode",
+			"en": "Diode",
+			"beschreibung": "Halbleiterbauelement, das den Stromfluss in eine Richtung zulässt",
+			"quelle": "DIN 40719"
+		},
+		{
+			"code": "L",
+			"de": "Induktivität",
+			"en": "Inductance",
+			"beschreibung": "Bauelement zur Speicherung von Energie im Magnetfeld",
+			"quelle": "DIN 40719"
+		},
+		{
+			"code": "M",
+			"de": "Motor",
+			"en": "Motor",
+			"beschreibung": "Maschine zur Umwandlung elektrischer Energie in mechanische Energie",
+			"quelle": "DIN 40719"
+		},
+		{
+			"code": "R",
+			"de": "Widerstand",
+			"en": "Resistor",
+			"beschreibung": "Elektrisches Bauelement mit definiertem Widerstandswert",
+			"quelle": "DIN 40719"
+		},
+		{
+			"code": "Y",
+			"de": "Geräte mit elektrischem Antrieb",
+			"en": "Devices with electric drive",
+			"beschreibung": "Geräte, die durch elektrische Energie angetrieben werden",
+			"quelle": "DIN 40719"
+		},
+		{
+			"code": "A",
+			"de": "Baugruppe",
+			"en": "Assembly",
+			"beschreibung": "Zusammengefasste Funktionseinheit aus mehreren Bauteilen",
+			"quelle": "DIN 40719"
+		},
+		{
+			"code": "X",
+			"de": "Steckvorrichtung",
+			"en": "Plug device",
+			"beschreibung": "Vorrichtung zum elektrischen Verbinden und Trennen von Leitungen",
+			"quelle": "DIN 40719"
+		},
+		{
+			"code": "E",
+			"de": "Verschiedenes",
+			"en": "Miscellaneous",
+			"beschreibung": "Sonstige Bauteile oder Geräte, die keiner anderen Kategorie zugeordnet werden können",
+			"quelle": "DIN 40719"
+		},
+		{
+			"code": "B",
+			"de": "Umsetzer",
+			"en": "Converter",
+			"beschreibung": "Gerät zur Umwandlung einer Energieform in eine andere",
+			"quelle": "DIN 40719"
+		},
+		{
+			"code": "N",
+			"de": ["Verstärker","Regler"],
+			"en": ["Amplifier","Controller"],
+			"beschreibung": "Geräte zur Signalverstärkung oder Regelung",
+			"quelle": "DIN 40719"
+		},
+		{
+			"code": "W",
+			"de": "Übertragungsweg",
+			"en": "Transmission path",
+			"beschreibung": "Leitung oder Medium zur Übertragung elektrischer Signale",
+			"quelle": "DIN 40719"
+		},
+		{
+			"code": "Z",
+			"de": ["Abschlüsse","Filter"],
+			"en": ["Terminations","Filters"],
+			"beschreibung": "Abschlusselemente oder Filter in elektrischen Schaltungen",
+			"quelle": "DIN 40719"
+		},
+		{
+			"code": "Q",
+			"de": "Schalter für Starkstrom",
+			"en": "Power switch",
+			"beschreibung": "Schalter für hohe elektrische Leistungen",
+			"quelle": "DIN 40719"
+		},
+		{
+			"code": "S",
+			"de": ["Hilfsschalter","Wähler"],
+			"en": ["Auxiliary switch","Selector"],
+			"beschreibung": "Schalter mit Hilfsfunktion oder zur Auswahl von Betriebsarten",
+			"quelle": "DIN 40719"
+		},
+		{
+			"code": "K",
+			"de": ["Schütze","Relais"],
+			"en": ["Contactor","Relay"],
+			"beschreibung": "Schaltgeräte für Steuer- und Leistungsschaltungen",
+			"quelle": "DIN 40719"
+		},
+		{
+			"code": "F",
+			"de": "Schutzeinrichtung",
+			"en": "Protective device",
+			"beschreibung": "Gerät zum Schutz elektrischer Anlagen",
+			"quelle": "DIN 40719"
+		},
+		{
+			"code": "P",
+			"de": ["Messgeräte","Prüfgeräte"],
+			"en": ["Measuring device","Testing device"],
+			"beschreibung": "Geräte zur Messung oder Prüfung elektrischer Größen",
+			"quelle": "DIN 40719"
+		},
+		{
+			"code": "H",
+			"de": ["Sichtmelder","Hörmelder"],
+			"en": ["Visual indicator","Audible indicator"],
+			"beschreibung": "Geräte zur optischen oder akustischen Anzeige",
+			"quelle": "DIN 40719"
+		},
+		{
+			"code": "G",
+			"de": "Generator",
+			"en": "Generator",
+			"beschreibung": "Elektrische Maschine zur Umwandlung von mechanischer in elektrische Energie",
+			"quelle": "DIN 40719"
+		},
+		{
+			"code": "T",
+			"de": "Transformator",
+			"en": "Transformer",
+			"beschreibung": "Bauelement zur Spannungs- oder Stromanpassung mittels elektromagnetischer Induktion",
+			"quelle": "DIN 40719"
+		},
+		{
+			"code": "U",
+			"de": "Umformer",
+			"en": "Converter",
+			"beschreibung": "Gerät zur Umwandlung von Wechselstrom in Gleichstrom oder umgekehrt",
+			"quelle": "DIN 40719"
+		},
+		{
+			"code": "I",
+			"de": ["Sensoren","Aktoren"],
+			"en": ["Sensors","Actuators"],
+			"beschreibung": "Geräte zur Erfassung von physikalischen Größen oder zur Beeinflussung von Prozessen",
+			"quelle": "DIN 40719"
+		},
+		{
+			"code": "J",
+			"de": "Schaltgeräte",
+			"en": "Switching devices",
+			"beschreibung": "Geräte zur Steuerung und Schaltung elektrischer Signale",
+			"quelle": "DIN 40719"
+		},
+		{
+			"code": "O",
+			"de": "Optische Bauelemente",
+			"en": "Optical components",
+			"beschreibung": "Bauelemente zur Erzeugung, Modulation oder Detektion von Licht",
+			"quelle": "DIN 40719"
+		}
+	]
+}	

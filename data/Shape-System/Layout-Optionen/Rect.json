@@ -1,0 +1,10 @@
+{
+    "type":"rect",
+    "x":0,
+    "y":0,
+    "meta": {
+        "snap": true,
+        "grid":10,
+        "layer":2
+    }
+}

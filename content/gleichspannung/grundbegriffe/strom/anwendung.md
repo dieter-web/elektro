@@ -1,0 +1,1 @@
+Die Nutzung des elektrischen Stroms in Anwendungen.

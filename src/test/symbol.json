@@ -1,0 +1,15 @@
+{
+  "symbol" : "",
+  "pin_numbers" : false,
+  "pin_names" : { "offset" : 0 },
+  "in_bom" : "yes",
+  "on_board": "yes",
+  "property": {
+    "Referenz" : "",
+    "id" : 0,
+    "at": { "x": 0, "y": 0},
+    "effects" : { "font" : { "size" : { "x": 0, "y": 0}}},
+    "Value" : {},
+    "Datasheet": {}
+  }
+

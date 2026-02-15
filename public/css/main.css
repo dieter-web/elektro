@@ -1,0 +1,50 @@
+.menu-container {
+  margin-top: 20px;
+}
+.dropdown-menu {
+  position: absolute !important;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  font-size: 12px;
+  border-collapse: collapse;
+}
+table,
+th,
+td {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  padding: 8px;
+}
+
+.card {
+  width: 100%;
+  background-color: cornflowerblue;
+  text-align: left;
+}
+
+body {
+  background-image: url("../images/Dralektro.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.stromlinie {
+    stroke: stellblue;
+    stroke-width: 1.5px;
+    fill: none;
+}
+
+.potentiallinie {
+    stroke: gray;
+    stroke-dasharray: 4;
+    fill: none;
+}
+
+.halbkubel {
+    fill: lightgray;
+    stroke: black;
+}

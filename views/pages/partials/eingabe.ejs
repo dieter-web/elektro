@@ -1,0 +1,18 @@
+<div class="container mt-4">
+	<p>
+		<%= meta.beschreibung %>
+	</p>
+	<form method="POST" action="" class="mb-4">
+		<% if(meta.felder) { meta.felder.forEach(function(feld) { %>
+			<div class="input-group">
+				<label for="<%= feld.name %>" class="input-group-text">
+					<%= feld.label %>
+				</label>
+				<input type="text" , autocomplete="off" , class="form-control" id="<%= feld.name %>"
+					name="<%= feld.name %>" value="<%= feld.value %>" required=<%=feld.required ? "required" : "" %>>
+				</input>
+			</div>
+			<% }); } %>
+				<button type="submit" class="btn btn-primary">Berechnen</button>
+	</form>
+</div>

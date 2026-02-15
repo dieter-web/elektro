@@ -1,0 +1,283 @@
+{
+	"Art": [
+		{
+			"code": "A",
+			"de": "Anlage",
+			"en": "Plant/Installation",
+			"beschreibung": "Kennzeichnung für Anlagen gemäß DIN EN 81346.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "B",
+			"de": "Betriebsmittel",
+			"en": "Equipment",
+			"beschreibung": "Kennzeichnung für Betriebsmittel gemäß DIN EN 81346.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "C",
+			"de": "Komponente",
+			"en": "Component",
+			"beschreibung": "Kennzeichnung für Komponenten in elektrischen Anlagen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "D",
+			"de": [
+				"Gerät",
+				"Apparat"
+			],
+			"en": [
+				"Device",
+				"Apparatus"
+			],
+			"beschreibung": "Kennzeichnung für Geräte oder Apparate in elektrischen Systemen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "E",
+			"de": "Elektroinstallation",
+			"en": "Electrical installation",
+			"beschreibung": "Kennzeichnung für Elektroinstallationen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "F",
+			"de": "Funktionseinheit",
+			"en": "Functional unit",
+			"beschreibung": "Kennzeichnung für Funktionseinheiten in elektrischen Anlagen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "G",
+			"de": "Gerätegruppe",
+			"en": "Device group",
+			"beschreibung": "Kennzeichnung für Gruppen von Geräten.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "H",
+			"de": "Hilfseinrichtung",
+			"en": "Auxiliary device",
+			"beschreibung": "Kennzeichnung für Hilfseinrichtungen in elektrischen Anlagen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "I",
+			"de": "Instrument",
+			"en": "Instrument",
+			"beschreibung": "Kennzeichnung für Instrumente in elektrischen Systemen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "J",
+			"de": "Junction box",
+			"en": "Junction box",
+			"beschreibung": "Kennzeichnung für Verbindungsdosen in elektrischen Installationen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "K",
+			"de": "Kabel",
+			"en": "Cable",
+			"beschreibung": "Kennzeichnung für Kabel in elektrischen Anlagen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "L",
+			"de": "Leitung",
+			"en": "Line",
+			"beschreibung": "Kennzeichnung für Leitungen in elektrischen Systemen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "M",
+			"de": "Motor",
+			"en": "Motor",
+			"beschreibung": "Kennzeichnung für Motoren in elektrischen Anlagen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "N",
+			"de": "Netz",
+			"en": "Network",
+			"beschreibung": "Kennzeichnung für Netzwerke in elektrischen Systemen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "O",
+			"de": "Organisatorische Einheit",
+			"en": "Organizational unit",
+			"beschreibung": "Kennzeichnung für organisatorische Einheiten in elektrischen Anlagen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "P",
+			"de": "Prozess",
+			"en": "Process",
+			"beschreibung": "Kennzeichnung für Prozesse in elektrischen Systemen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "Q",
+			"de": "Qualitätseinheit",
+			"en": "Quality unit",
+			"beschreibung": "Kennzeichnung für Qualitätseinheiten in elektrischen Anlagen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "R",
+			"de": "Ressource",
+			"en": "Resource",
+			"beschreibung": "Kennzeichnung für Ressourcen in elektrischen Systemen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "S",
+			"de": "System",
+			"en": "System",
+			"beschreibung": "Kennzeichnung für Systeme in elektrischen Anlagen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "T",
+			"de": "Technische Einheit",
+			"en": "Technical unit",
+			"beschreibung": "Kennzeichnung für technische Einheiten in elektrischen Anlagen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "U",
+			"de": "Unterstützungseinheit",
+			"en": "Support unit",
+			"beschreibung": "Kennzeichnung für Unterstützungseinheiten in elektrischen Systemen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "V",
+			"de": "Verbindungseinheit",
+			"en": "Connection unit",
+			"beschreibung": "Kennzeichnung für Verbindungseinheiten in elektrischen Anlagen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "W",
+			"de": "Werkzeug",
+			"en": "Tool",
+			"beschreibung": "Kennzeichnung für Werkzeuge in elektrischen Systemen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "X",
+			"de": "Zusatzgerät",
+			"en": "Accessory device",
+			"beschreibung": "Kennzeichnung für Zusatzgeräte in elektrischen Anlagen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "Y",
+			"de": "Y-Adapter",
+			"en": "Y-adapter",
+			"beschreibung": "Kennzeichnung für Y-Adapter in elektrischen Systemen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "Z",
+			"de": "Zusatzfunktion",
+			"en": "Additional function",
+			"beschreibung": "Kennzeichnung für Zusatzfunktionen in elektrischen Anlagen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "AA",
+			"de": "Anschluss",
+			"en": "Connection",
+			"beschreibung": "Kennzeichnung für Anschlüsse in elektrischen Systemen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "AB",
+			"de": "Abzweig",
+			"en": "Branch",
+			"beschreibung": "Kennzeichnung für Abzweige in elektrischen Anlagen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "AC",
+			"de": "Anschlusskasten",
+			"en": "Connection box",
+			"beschreibung": "Kennzeichnung für Anschlusskästen in elektrischen Systemen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": "AD",
+			"de": "Adapter",
+			"en": "Adapter",
+			"beschreibung": "Kennzeichnung für Adapter in elektrischen Anlagen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": ["AE","AM","AU","BC","BK","BS","CA"],
+			"de": "Anschlussleitung",
+			"en": "Connection line",
+			"beschreibung": "Kennzeichnung für Anschlussleitungen in elektrischen Systemen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": ["AF","AO","AW","BE","BM","BU"],
+			"de": "Anschlussfeld",
+			"en": "Connection field",
+			"beschreibung": "Kennzeichnung für Anschlussfelder in elektrischen Anlagen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": ["AG","AN","AV","BD","BL","BT"],
+			"de": "Anschlussdose",
+			"en": "Connection box",
+			"beschreibung": "Kennzeichnung für Anschlussdosen in elektrischen Systemen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": ["AH","AP","AX","BN","BV","BF"],
+			"de": "Anschlussklemme",
+			"en": "Connection terminal",
+			"beschreibung": "Kennzeichnung für Anschlussklemmen in elektrischen Anlagen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": ["AI","AQ","BO","BW","AY","BG"],
+			"de": "Anschlussstecker",
+			"en": "Connection plug",
+			"beschreibung": "Kennzeichnung für Anschlussstecker in elektrischen Systemen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": ["AJ","AR","AZ","BH","BP","BX"],
+			"de": "Anschlussbuchse",
+			"en": "Connection socket",
+			"beschreibung": "Kennzeichnung für Anschlussbuchsen in elektrischen Anlagen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"code": ["AK","AS","BA","BI","BQ","BY"],
+			"de": "Anschlussadapter",
+			"en": "Connection adapter",
+			"beschreibung": "Kennzeichnung für Anschlussadapter in elektrischen Systemen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"codes": ["AL", "AT", "BB", "BJ", "BR", "BZ"],
+			"de": "Anschlusskabel",
+			"en": "Connection cable",
+			"beschreibung": "Kennzeichnung für Anschlusskabel in elektrischen Anlagen.",
+			"quelle": "DIN EN 81346"
+		},
+		{
+			"codes": ["AR", "AZ", "BH", "BP", "BX"],
+			"de": "Anschlussbuchse",
+			"en": "Connection socket",
+			"beschreibung": "Kennzeichnung für Anschlussbuchsen in elektrischen Anlagen.",
+			"quelle": "DIN EN 81346"
+		}
+	]
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body class="container" style="background-color: rgb(147, 91, 203);">
+    <header>
+        <%- include('../partials/nav/navGeneric', {
+            navTitle: typeof navTitle !== 'undefined' ? navTitle : '',
+            navRoot: typeof navRoot !== 'undefined' ? navRoot : '/',
+            navItems: typeof navItems !== 'undefined' ? navItems : []
+        }) %>
+    </header>
+    <div class="card text-left" style="width: 100%; background-color: cornflowerblue;">
+        <div class="card-body">
+            <p class="card-text">
+                <%- body %>
+            </p>
+        </div>
+    </div>
+    <footer>
+        <%- include('../partials/footer') %>
+    </footer>
+</body>
+</html>
