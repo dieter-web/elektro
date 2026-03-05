@@ -1,0 +1,29 @@
+
+@startuml
+title Sequenzdiagramm – Request-Verarbeitung in elektro
+
+actor User as U
+participant "Browser\n(Client)" as C
+participant "Node.js Server\n(server.mjs)" as S
+participant "Routing\n(routes/*.mjs)" as R
+participant "Haskell Backend\n(elektro-ghc)" as H
+participant "EJS Renderer\n(views/*.ejs)" as V
+
+U -> C : Öffnet Seite / klickt Interaktion
+C -> S : HTTP Request (GET/POST)
+
+S -> R : Route auswählen
+R -> R : Parameter prüfen\nContent laden (Markdown/JSON)
+
+alt Berechnung erforderlich
+    R -> H : Anfrage für elektrische Berechnung\n(z.B. Knotenpotential, Impedanz)
+    H --> R : Ergebnis zurückgeben
+end
+
+R -> V : Rendern der Seite\n(EJS + Daten + Diagramme)
+V --> S : Fertige HTML-Seite
+
+S --> C : HTTP Response (HTML + JS + SVG)
+C --> U : Darstellung im Browser\nInteraktive D3-Grafiken
+
+@enduml

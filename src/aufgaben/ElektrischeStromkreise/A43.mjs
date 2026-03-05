@@ -54,7 +54,9 @@ export default async function aufgabeFunc(input) {
     'Schleifendrahtbrücke',
   ]);
 
-  const erg = await transform('schleifendrahtbruecke', meta.felder);
+  // TODO: in meta.felder stehen nicht die aktuell eingegebenen Werte, wenn sie in der
+  //       Eingabemaske geändert werden.
+  const erg = await transform('a43', meta.felder);
 
   return {
     meta,
@@ -64,8 +66,8 @@ export default async function aufgabeFunc(input) {
         Parameter: A1.parameter,
         Eigenschaften: A1.eigenschaften,
         Berechnung: {
-          l1: erg[0],
-          l2: erg[1],
+          l2: erg.l2,
+          l3: erg.l3,
         },
       },
     ],

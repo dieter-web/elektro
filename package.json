@@ -15,6 +15,7 @@
     "start": "node --max-old-space-size=4096 --optimize-for-size --inspect bin/www.mjs",
     "dev": "NODE_ENV=development nodemon bin/www.mjs",
     "debug": "node --inspect-brk bin/www.mjs",
+    "hochladen" : "git push -u origin main",
     "stack-build": "rm elektro-linux.cabal; stack build"
   },
   "dependencies": {

@@ -12,7 +12,7 @@ export let meta = {
   name: 'A44',
   chart: false,
   beschreibung: `
-  In der Schaltung nach Bild haben die Widerstände folgende Werte: R1=20kohm, R2=50kohm, 
+  In der Schaltung nach Bild haben die Widerstände folgende Werte: R1=20kohm, R2=50kohm,
   R3=30kohm, R4=15kohm, R5=25kohm. Die Spannung U beträgt 20V.
   Wie groß ist der Itrom I3?
   `,
@@ -84,14 +84,15 @@ export default async function aufgabeFunc(input) {
 
   const erg = await transform('a44', meta.felder);
 
-  /*
   // Es werden nur die ersten drei meta.felder benutzt
+/*
   const erg = await transform(
     'dreiecksterntransformation',
     meta.felder.slice(0, 3)
   );
-  const units = meta.felder.slice(0, 3).map((f) => f.unit);
 */
+
+  const units = meta.felder.slice(0, 3).map((f) => f.unit);
 
   // Weiterrechnen mit Einheiten
 
@@ -143,7 +144,12 @@ export default async function aufgabeFunc(input) {
         Parameter: A1.parameter,
         Eigenschaften: A1.eigenschaften,
         Berechnung: {
-          I3: I3,
+          i : erg.i,
+          i4 : erg.i4,
+          i5 : erg.i5,
+          u4 : erg.u4,
+          u5 : erg.u5,
+          i3 : erg.i3
         },
       },
     ],

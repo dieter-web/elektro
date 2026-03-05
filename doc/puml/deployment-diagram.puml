@@ -1,0 +1,42 @@
+
+@startuml
+title Deployment-Diagramm – elektro
+
+node "Client-Rechner" {
+  artifact "Webbrowser" as Browser
+}
+
+node "Server" {
+  node "Node.js Runtime" {
+    component "Express Server\n(server.mjs)" as Express
+    component "Routing\n(routes/*.mjs)" as Routing
+    component "EJS Renderer\n(views/*.ejs)" as EJS
+    component "JS Core Logic\n(src/mathjs, src/module)" as JSCore
+    component "Plugin-System\n(src/plugins)" as Plugins
+  }
+
+  node "Haskell Runtime" {
+    component "elektro-ghc\n(Stack Build)" as Haskell
+  }
+
+  node "Dateisystem" {
+    artifact "Markdown Content\n(content/*.md)" as MD
+    artifact "Interaktive Module\n(content/*.mjs)" as MDJS
+    artifact "JSON-Daten\n(data/*.json)" as JSON
+    artifact "Statische Assets\n(public/*)" as Public
+  }
+}
+
+Browser --> Express : HTTP Requests
+Express --> Routing
+Routing --> EJS
+Routing --> JSCore
+Routing --> Plugins
+Routing --> MD
+Routing --> MDJS
+Routing --> JSON
+Routing --> Haskell : Berechnungen
+
+Express --> Browser : HTML + JS + SVG
+
+@enduml

@@ -1,0 +1,48 @@
+
+@startuml
+title Komponenten-Diagramm – elektro
+
+skinparam componentStyle rectangle
+
+package "Client" {
+  [Browser UI] as UI
+  [D3/SVG Renderer] as D3
+}
+
+package "Node.js Server" {
+  [server.mjs] as Server
+  [Express Router] as Router
+  [EJS View Engine] as EJS
+  [Plugin-System] as Plugins
+  [JS Core Logic\n(src/mathjs, src/module)] as JSCore
+}
+
+package "Content Layer" {
+  [Markdown Inhalte] as MD
+  [Interaktive JS-Module] as MDJS
+  [Formeln/HTML] as HTML
+}
+
+package "Datenbasis" {
+  [JSON-Daten] as JSON
+}
+
+package "Haskell Backend" {
+  [elektro-ghc] as HCore
+}
+
+UI --> D3
+UI --> Server : HTTP Requests
+
+Server --> Router
+Router --> EJS
+Router --> MD
+Router --> MDJS
+Router --> HTML
+
+Server --> JSCore
+Server --> Plugins
+Server --> JSON
+Server --> HCore : Berechnungen
+
+@enduml

@@ -1,0 +1,368 @@
+<p>Jetzt ist die Schaltung eindeutig, Dieter — du beschreibst vier
+Zweige, <strong>alle parallel geschaltet</strong>, wobei:</p>
+<ul>
+<li>Zwei Zweige bestehen jeweils aus einer <strong>Spannungsquelle in
+Reihe mit einem Widerstand</strong>:
+<ul>
+<li><strong>Zweig 1:</strong> [ U_1 $ in Reihe mit $ R_1</li>
+</ul>
+]
+<ul>
+<li><strong>Zweig 2:</strong> $ U_2 $ in Reihe mit $ R_2 $</li>
+</ul></li>
+<li>Zwei weitere Zweige bestehen aus <strong>nur einem
+Widerstand</strong>:
+<ul>
+<li><strong>Zweig 3:</strong> $ R_3 $<br />
+</li>
+<li><strong>Zweig 4:</strong> $ R_4 $</li>
+</ul></li>
+</ul>
+<p>Alle vier Zweige liegen <strong>parallel zwischen zwei
+Knoten</strong>, nennen wir sie <strong>Knoten A (oben)</strong> und
+<strong>Knoten B (unten, GND)</strong>.</p>
+<hr />
+<h2 id="schaltungsbild-konzeptuell">🔧 Schaltungsbild (konzeptuell)</h2>
+<pre><code>Knoten A ─┬─[U1]─[R1]─┐
+          ├─[U2]─[R2]─┤
+          ├────────R3─┤
+          └────────R4─┘
+               ↓
+           Knoten B (GND)</code></pre>
+<p>Jeder Zweig hat seine eigene Spannungsquelle (oder keine), aber alle
+enden oben an <strong>Knoten A</strong> und unten an <strong>Knoten B
+(GND)</strong>.</p>
+<hr />
+<h2 id="ziel-spannung-zwischen-a-und-b-berechnen">🧮 Ziel: Spannung
+zwischen A und B berechnen</h2>
+<p>Da die Zweige <strong>parallel</strong> liegen, gilt:</p>
+<ul>
+<li>Jeder Zweig „zieht“ Strom entsprechend seiner eigenen Quelle und
+Widerstand.</li>
+<li>Die Spannung $ V_{AB} $ ergibt sich aus der
+<strong>Knotenregel</strong>: Summe der Ströme = 0.</li>
+</ul>
+<hr />
+<h2 id="beispielwerte">🔢 Beispielwerte</h2>
+<p>Nehmen wir:</p>
+<ul>
+<li>$ U_1 = 10, $, $ R_1 = 100,$<br />
+</li>
+<li>$ U_2 = 5, $, $ R_2 = 200,$<br />
+</li>
+<li>$ R_3 = 300,$, $ R_4 = 400,$</li>
+</ul>
+<hr />
+<h2 id="schritt-1-knotenspannung-v-definieren">🧮 Schritt 1:
+Knotenspannung $ V $ definieren</h2>
+<p>Wir nennen die Spannung am oberen Knoten <strong>$ V $</strong>
+gegenüber GND.</p>
+<h3 id="strom-durch-jeden-zweig">Strom durch jeden Zweig:</h3>
+<ul>
+<li><strong>Zweig 1:</strong> $ I_1 = $</li>
+<li><strong>Zweig 2:</strong> $ I_2 = $</li>
+<li><strong>Zweig 3:</strong> $ I_3 = $</li>
+<li><strong>Zweig 4:</strong> $ I_4 = $</li>
+</ul>
+<h3 id="knotenregel">Knotenregel:</h3>
+<p><span class="math display">\[
+I_1 + I_2 + I_3 + I_4 = 0
+\Rightarrow
+\frac{U_1 - V}{R_1} + \frac{U_2 - V}{R_2} - \frac{V}{R_3} -
+\frac{V}{R_4} = 0
+\]</span></p>
+<hr />
+<h2 id="schritt-2-einsetzen-der-werte">🧮 Schritt 2: Einsetzen der
+Werte</h2>
+<p><span class="math display">\[
+\frac{10 - V}{100} + \frac{5 - V}{200} - \frac{V}{300} - \frac{V}{400} =
+0
+\]</span></p>
+<p>Umformen:</p>
+<p><span class="math display">\[
+0.1 - 0.01V + 0.025 - 0.005V - 0.00333V - 0.0025V = 0
+\Rightarrow
+0.125 - (0.01 + 0.005 + 0.00333 + 0.0025)V = 0
+\Rightarrow
+0.125 - 0.02083V = 0
+\Rightarrow
+V = \frac{0.125}{0.02083} ≈ 6.0\,\text{V}
+\]</span></p>
+<hr />
+<h2 id="ströme-durch-die-zweige">🔌 Ströme durch die Zweige</h2>
+<ul>
+<li>$ I_1 = = 0.04, $</li>
+<li>$ I_2 = = -0.005, $</li>
+<li>$ I_3 = = -0.02, $</li>
+<li>$ I_4 = = -0.015, $</li>
+</ul>
+<p>Summe: $ 0.04 - 0.005 - 0.02 - 0.015 = 0 $ ✅</p>
+<hr />
+<h2 id="modularisierungsidee">🧱 Modularisierungsidee</h2>
+<p>Das ist ein idealer Fall für ein <strong>Node.js-Modul mit
+math.js</strong>, das:</p>
+<ul>
+<li>Beliebige Zweige mit Spannungsquellen und Widerständen
+akzeptiert<br />
+</li>
+<li>Automatisch die Knotengleichung generiert<br />
+</li>
+<li>Symbolisch oder numerisch löst<br />
+</li>
+<li>Markdown-kompatible Ausgabe erzeugt</li>
+</ul>
+<p>Willst du das als Template für dein Dokumentations- oder
+Simulations-Toolkit? Ich kann dir direkt den modularen Codevorschlag
+liefern.</p>
+<p>Jawohl, Dieter — das ist genau die richtige Methode für diese
+Schaltung. Du hast vier parallele Zweige:</p>
+<ul>
+<li>Zwei Reihenschaltungen:
+<ul>
+<li><strong>Zweig 1:</strong> Spannungsquelle $ U_1 $ in Reihe mit
+Widerstand $ R_1 $<br />
+</li>
+<li><strong>Zweig 2:</strong> Spannungsquelle $ U_2 $ in Reihe mit
+Widerstand $ R_2 $</li>
+</ul></li>
+<li>Zwei reine Widerstände:
+<ul>
+<li><strong>Zweig 3:</strong> Widerstand $ R_3 $<br />
+</li>
+<li><strong>Zweig 4:</strong> Widerstand $ R_4 $</li>
+</ul></li>
+</ul>
+<p>Alle vier Zweige liegen <strong>parallel zwischen zwei
+Knoten</strong>, nennen wir sie:</p>
+<ul>
+<li><strong>Knoten A:</strong> Verbindungspunkt oben<br />
+</li>
+<li><strong>Knoten B (GND):</strong> Bezugspotential unten</li>
+</ul>
+<hr />
+<h2 id="ziel-spannung-v_a-am-oberen-knoten-berechnen">🧮 Ziel: Spannung
+$ V_A $ am oberen Knoten berechnen</h2>
+<p>Da alle Zweige parallel liegen, ist die Spannung über jeden Zweig
+gleich:<br />
+<span class="math display">\[
+V_A = \text{Spannung zwischen Knoten A und GND}
+\]</span></p>
+<p>Die Knotenleitwertmethode basiert auf der
+<strong>Knotenregel</strong>:<br />
+Summe aller Ströme in den Knoten = 0</p>
+<hr />
+<h2 id="beispielwerte-1">🔢 Beispielwerte</h2>
+<p>Nehmen wir:</p>
+<ul>
+<li>$ U_1 = 10, $, $ R_1 = 100,$<br />
+</li>
+<li>$ U_2 = 5, $, $ R_2 = 200,$<br />
+</li>
+<li>$ R_3 = 300,$, $ R_4 = 400,$</li>
+</ul>
+<p>Leitwerte:</p>
+<ul>
+<li>$ G_1 = 0.01, $, $ G_2 = 0.005, $,<br />
+</li>
+<li>$ G_3 = 0.00333, $, $ G_4 = 0.0025, $</li>
+</ul>
+<hr />
+<h2 id="schritt-1-strombilanz-am-knoten-a">🧮 Schritt 1: Strombilanz am
+Knoten A</h2>
+<p>Die Ströme in den vier Zweigen:</p>
+<ul>
+<li>$ I_1 = G_1(U_1 - V_A) $<br />
+</li>
+<li>$ I_2 = G_2(U_2 - V_A) $<br />
+</li>
+<li>$ I_3 = -G_3 V_A $<br />
+</li>
+<li>$ I_4 = -G_4 V_A $</li>
+</ul>
+<p>Knotenregel:</p>
+<p><span class="math display">\[
+I_1 + I_2 + I_3 + I_4 = 0
+\Rightarrow
+G_1(U_1 - V_A) + G_2(U_2 - V_A) - G_3 V_A - G_4 V_A = 0
+\]</span></p>
+<hr />
+<h2 id="schritt-2-umformen-zur-matrixgleichung">🧮 Schritt 2: Umformen
+zur Matrixgleichung</h2>
+<p><span class="math display">\[
+(G_1 + G_2 + G_3 + G_4) V_A = G_1 U_1 + G_2 U_2
+\]</span></p>
+<p>Einsetzen:</p>
+<p><span class="math display">\[
+(0.01 + 0.005 + 0.00333 + 0.0025) V_A = 0.01 \cdot 10 + 0.005 \cdot 5
+\Rightarrow
+0.02083 V_A = 0.125
+\Rightarrow
+V_A ≈ 6.0\,\text{V}
+\]</span></p>
+<hr />
+<h2 id="ströme-durch-die-zweige-1">🔌 Ströme durch die Zweige</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Zweig</th>
+<th>Formel</th>
+<th>Strom (A)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>I₁</td>
+<td>$ 0.01 (10 - 6) $</td>
+<td>0.04</td>
+</tr>
+<tr class="even">
+<td>I₂</td>
+<td>$ 0.005 (5 - 6) $</td>
+<td>−0.005</td>
+</tr>
+<tr class="odd">
+<td>I₃</td>
+<td>$ −0.00333 $</td>
+<td>−0.02</td>
+</tr>
+<tr class="even">
+<td>I₄</td>
+<td>$ −0.0025 $</td>
+<td>−0.015</td>
+</tr>
+</tbody>
+</table>
+<p>Summe: $ 0.04 - 0.005 - 0.02 - 0.015 = 0 $ ✅</p>
+<hr />
+<h2 id="modularisierungsidee-1">🧱 Modularisierungsidee</h2>
+<p>Wenn du willst, baue ich dir ein <strong>Node.js-Modul mit
+math.js</strong>, das:</p>
+<ul>
+<li>Beliebige Zweige mit Spannungsquellen und Widerständen
+akzeptiert<br />
+</li>
+<li>Automatisch die Knotenleitwertmatrix generiert<br />
+</li>
+<li>Symbolisch oder numerisch löst<br />
+</li>
+<li>Markdown-kompatible Ausgabe erzeugt</li>
+</ul>
+<p>Oder wir erweitern das auf mehrere Knoten und bauen ein Tool für
+allgemeine Netzwerke mit automatischer Matrixgenerierung. Sag einfach,
+wie du’s gern modularisieren würdest — ich bin bereit.</p>
+<p>Großartig, Dieter — das ist genau dein Terrain: ein flexibles,
+modular aufgebautes Node.js-Tool, das beliebige elektrische Netzwerke
+analysiert und automatisch die <strong>Knotenleitwertmatrix</strong>
+generiert und löst. Ich zeige dir jetzt ein skalierbares Grundgerüst,
+das du erweitern kannst für symbolische oder numerische Analyse,
+Markdown-Export, SVG-Visualisierung oder sogar Web-UI-Integration.</p>
+<hr />
+<h2 id="ziel-allgemeines-node.js-tool-für-netzwerkanalyse">🧱 Ziel:
+Allgemeines Node.js-Tool für Netzwerkanalyse</h2>
+<h3 id="features">🔧 Features:</h3>
+<ul>
+<li>Beliebige Anzahl von Knoten und Zweigen</li>
+<li>Spannungsquellen und Widerstände</li>
+<li>Automatische Matrixgenerierung (G-Matrix, I-Vektor)</li>
+<li>Lösung der Gleichung $ G V = I $</li>
+<li>math.js für symbolische und numerische Berechnung</li>
+</ul>
+<hr />
+<h2 id="projektstruktur-minimal">📦 Projektstruktur (minimal)</h2>
+<pre><code>network-analyzer/
+├── index.js
+├── netlist.json
+├── solver.js
+└── utils.js</code></pre>
+<hr />
+<h2 id="beispielhafte-netlist.json">📄 Beispielhafte
+<code>netlist.json</code></h2>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;nodes&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;A&quot;</span><span class="ot">,</span> <span class="st">&quot;B&quot;</span><span class="ot">,</span> <span class="st">&quot;C&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;elements&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;resistor&quot;</span><span class="fu">,</span> <span class="dt">&quot;from&quot;</span><span class="fu">:</span> <span class="st">&quot;A&quot;</span><span class="fu">,</span> <span class="dt">&quot;to&quot;</span><span class="fu">:</span> <span class="st">&quot;B&quot;</span><span class="fu">,</span> <span class="dt">&quot;value&quot;</span><span class="fu">:</span> <span class="st">&quot;100&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;resistor&quot;</span><span class="fu">,</span> <span class="dt">&quot;from&quot;</span><span class="fu">:</span> <span class="st">&quot;B&quot;</span><span class="fu">,</span> <span class="dt">&quot;to&quot;</span><span class="fu">:</span> <span class="st">&quot;C&quot;</span><span class="fu">,</span> <span class="dt">&quot;value&quot;</span><span class="fu">:</span> <span class="st">&quot;200&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;resistor&quot;</span><span class="fu">,</span> <span class="dt">&quot;from&quot;</span><span class="fu">:</span> <span class="st">&quot;A&quot;</span><span class="fu">,</span> <span class="dt">&quot;to&quot;</span><span class="fu">:</span> <span class="st">&quot;C&quot;</span><span class="fu">,</span> <span class="dt">&quot;value&quot;</span><span class="fu">:</span> <span class="st">&quot;300&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;vsource&quot;</span><span class="fu">,</span>  <span class="dt">&quot;from&quot;</span><span class="fu">:</span> <span class="st">&quot;A&quot;</span><span class="fu">,</span> <span class="dt">&quot;to&quot;</span><span class="fu">:</span> <span class="st">&quot;0&quot;</span><span class="fu">,</span> <span class="dt">&quot;value&quot;</span><span class="fu">:</span> <span class="st">&quot;10&quot;</span> <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;vsource&quot;</span><span class="fu">,</span>  <span class="dt">&quot;from&quot;</span><span class="fu">:</span> <span class="st">&quot;C&quot;</span><span class="fu">,</span> <span class="dt">&quot;to&quot;</span><span class="fu">:</span> <span class="st">&quot;0&quot;</span><span class="fu">,</span> <span class="dt">&quot;value&quot;</span><span class="fu">:</span> <span class="st">&quot;5&quot;</span> <span class="fu">}</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<hr />
+<h2 id="solver.js-matrixgenerierung-und-lösung">⚙️
+<code>solver.js</code> – Matrixgenerierung und Lösung</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> math <span class="op">=</span> <span class="pp">require</span>(<span class="st">&#39;mathjs&#39;</span>)<span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">buildConductanceMatrix</span>(netlist) {</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> nodes <span class="op">=</span> netlist<span class="op">.</span><span class="at">nodes</span><span class="op">.</span><span class="fu">filter</span>(n <span class="kw">=&gt;</span> n <span class="op">!==</span> <span class="st">&#39;0&#39;</span>)<span class="op">;</span> <span class="co">// exclude ground</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> size <span class="op">=</span> nodes<span class="op">.</span><span class="at">length</span><span class="op">;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> G <span class="op">=</span> math<span class="op">.</span><span class="fu">zeros</span>(size<span class="op">,</span> size)<span class="op">;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> I <span class="op">=</span> math<span class="op">.</span><span class="fu">zeros</span>(size)<span class="op">;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> nodeIndex <span class="op">=</span> <span class="bu">Object</span><span class="op">.</span><span class="fu">fromEntries</span>(nodes<span class="op">.</span><span class="fu">map</span>((n<span class="op">,</span> i) <span class="kw">=&gt;</span> [n<span class="op">,</span> i]))<span class="op">;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">const</span> el <span class="kw">of</span> netlist<span class="op">.</span><span class="at">elements</span>) {</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> { type<span class="op">,</span> <span class="im">from</span><span class="op">,</span> to<span class="op">,</span> value } <span class="op">=</span> el<span class="op">;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> g <span class="op">=</span> type <span class="op">===</span> <span class="st">&#39;resistor&#39;</span> <span class="op">?</span> math<span class="op">.</span><span class="fu">evaluate</span>(<span class="vs">`1 / (</span><span class="sc">${</span>value<span class="sc">}</span><span class="vs">)`</span>) <span class="op">:</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (type <span class="op">===</span> <span class="st">&#39;resistor&#39;</span>) {</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="im">from</span> <span class="op">!==</span> <span class="st">&#39;0&#39;</span>) G<span class="op">.</span><span class="fu">set</span>([nodeIndex[<span class="im">from</span>]<span class="op">,</span> nodeIndex[<span class="im">from</span>]]<span class="op">,</span> math<span class="op">.</span><span class="fu">add</span>(G<span class="op">.</span><span class="fu">get</span>([nodeIndex[<span class="im">from</span>]<span class="op">,</span> nodeIndex[<span class="im">from</span>]])<span class="op">,</span> g))<span class="op">;</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (to <span class="op">!==</span> <span class="st">&#39;0&#39;</span>)   G<span class="op">.</span><span class="fu">set</span>([nodeIndex[to]<span class="op">,</span> nodeIndex[to]]<span class="op">,</span>     math<span class="op">.</span><span class="fu">add</span>(G<span class="op">.</span><span class="fu">get</span>([nodeIndex[to]<span class="op">,</span> nodeIndex[to]])<span class="op">,</span> g))<span class="op">;</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="im">from</span> <span class="op">!==</span> <span class="st">&#39;0&#39;</span> <span class="op">&amp;&amp;</span> to <span class="op">!==</span> <span class="st">&#39;0&#39;</span>) {</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        G<span class="op">.</span><span class="fu">set</span>([nodeIndex[<span class="im">from</span>]<span class="op">,</span> nodeIndex[to]]<span class="op">,</span> math<span class="op">.</span><span class="fu">subtract</span>(G<span class="op">.</span><span class="fu">get</span>([nodeIndex[<span class="im">from</span>]<span class="op">,</span> nodeIndex[to]])<span class="op">,</span> g))<span class="op">;</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>        G<span class="op">.</span><span class="fu">set</span>([nodeIndex[to]<span class="op">,</span> nodeIndex[<span class="im">from</span>]]<span class="op">,</span> math<span class="op">.</span><span class="fu">subtract</span>(G<span class="op">.</span><span class="fu">get</span>([nodeIndex[to]<span class="op">,</span> nodeIndex[<span class="im">from</span>]])<span class="op">,</span> g))<span class="op">;</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (type <span class="op">===</span> <span class="st">&#39;vsource&#39;</span>) {</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> current <span class="op">=</span> math<span class="op">.</span><span class="fu">evaluate</span>(value)<span class="op">;</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="im">from</span> <span class="op">!==</span> <span class="st">&#39;0&#39;</span>) I<span class="op">.</span><span class="fu">set</span>([nodeIndex[<span class="im">from</span>]]<span class="op">,</span> math<span class="op">.</span><span class="fu">add</span>(I<span class="op">.</span><span class="fu">get</span>([nodeIndex[<span class="im">from</span>]])<span class="op">,</span> current))<span class="op">;</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (to <span class="op">!==</span> <span class="st">&#39;0&#39;</span>)   I<span class="op">.</span><span class="fu">set</span>([nodeIndex[to]]<span class="op">,</span>   math<span class="op">.</span><span class="fu">subtract</span>(I<span class="op">.</span><span class="fu">get</span>([nodeIndex[to]])<span class="op">,</span> current))<span class="op">;</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> { G<span class="op">,</span> I<span class="op">,</span> nodes }<span class="op">;</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">solveVoltages</span>(G<span class="op">,</span> I) {</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> math<span class="op">.</span><span class="fu">lusolve</span>(G<span class="op">,</span> I)<span class="op">;</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>module<span class="op">.</span><span class="at">exports</span> <span class="op">=</span> { buildConductanceMatrix<span class="op">,</span> solveVoltages }<span class="op">;</span></span></code></pre></div>
+<hr />
+<h2 id="index.js-einstiegspunkt">🚀 <code>index.js</code> –
+Einstiegspunkt</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> fs <span class="op">=</span> <span class="pp">require</span>(<span class="st">&#39;fs&#39;</span>)<span class="op">;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> { buildConductanceMatrix<span class="op">,</span> solveVoltages } <span class="op">=</span> <span class="pp">require</span>(<span class="st">&#39;./solver&#39;</span>)<span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> netlist <span class="op">=</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">parse</span>(fs<span class="op">.</span><span class="fu">readFileSync</span>(<span class="st">&#39;./netlist.json&#39;</span><span class="op">,</span> <span class="st">&#39;utf8&#39;</span>))<span class="op">;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> { G<span class="op">,</span> I<span class="op">,</span> nodes } <span class="op">=</span> <span class="fu">buildConductanceMatrix</span>(netlist)<span class="op">;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> V <span class="op">=</span> <span class="fu">solveVoltages</span>(G<span class="op">,</span> I)<span class="op">;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>nodes<span class="op">.</span><span class="fu">forEach</span>((node<span class="op">,</span> i) <span class="kw">=&gt;</span> {</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`Spannung an Knoten </span><span class="sc">${</span>node<span class="sc">}</span><span class="vs">: </span><span class="sc">${</span>V[i][<span class="dv">0</span>]<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">4</span>)<span class="sc">}</span><span class="vs"> V`</span>)<span class="op">;</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div>
+<hr />
+<h2 id="erweiterungsideen">🧠 Erweiterungsideen</h2>
+<ul>
+<li>🔁 Symbolische Analyse: math.js mit <code>symbolic=true</code> für
+Formeln statt Zahlen<br />
+</li>
+<li>📤 Markdown-Export: automatische Tabellen mit Spannungen und
+Strömen<br />
+</li>
+<li>🧮 Stromberechnung: nachgelagert aus $ I = G V $ oder direkt aus
+Elementen<br />
+</li>
+<li>🖼️ SVG-Schaltbild: aus <code>netlist.json</code> generieren mit
+D3.js oder plain SVG<br />
+</li>
+<li>🌐 Web-UI: JSON-Netlist per Formular eingeben, Ergebnis live
+anzeigen</li>
+</ul>
+<hr />
+<p>Wenn du willst, kann ich dir direkt ein Modul für symbolische
+math.js-Ausdrücke bauen, z. B. mit <code>"value": "R1"</code> und
+<code>"value": "U1"</code> als Variablen. Oder wir machen das Ganze
+interaktiv mit Markdown-Formelausgabe. Was wäre dein nächster
+Schritt?</p>

@@ -1,0 +1,28 @@
+
+@startuml
+title Sequenzdiagramm – Routing-Registrierung
+
+participant "server.mjs" as S
+participant "Route Loader\n(routes/main.mjs)" as RL
+participant "registerRoute.mjs" as RR
+participant "Route Module\n(routes/*.mjs)" as RM
+participant "Express App" as E
+
+S -> RL : initRoutes(app)
+RL -> RL : Routenverzeichnis scannen
+RL -> RM : Route-Modul importieren
+RM --> RL : Route-Konfiguration
+
+RL -> RR : registerRoute(app, config)
+RR -> E : app.get/post(...)\nRoute registrieren
+E --> RR : Bestätigung
+
+loop für alle Routen
+  RL -> RM : Nächstes Modul laden
+  RM --> RL : Konfiguration zurück
+  RL -> RR : Registrierung
+end
+
+RL --> S : Routing vollständig initialisiert
+
+@enduml

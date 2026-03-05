@@ -1,0 +1,49 @@
+
+@startuml
+title Klassendiagramm – elektro
+
+skinparam classAttributeIconSize 0
+
+class Server {
+  +start()
+  +configure()
+}
+
+class Router {
+  +registerRoutes()
+  +handleRequest()
+}
+
+class ContentParser {
+  +loadMarkdown(file)
+  +renderToHTML()
+}
+
+class JSONLoader {
+  +load(file)
+  +getBauteile()
+  +getWerkstoffe()
+}
+
+class HaskellAdapter {
+  +berechneNetzwerk(data)
+  +berechneImpedanz(data)
+}
+
+class D3Renderer {
+  +renderDiagram(data)
+}
+
+class Plugin {
+  +init()
+  +execute()
+}
+
+Server --> Router
+Router --> ContentParser
+Router --> JSONLoader
+Router --> HaskellAdapter
+Router --> Plugin
+Router --> D3Renderer
+
+@enduml

@@ -1,0 +1,56 @@
+
+@startuml
+title Architekturübersicht – elektro
+
+skinparam componentStyle rectangle
+skinparam shadowing false
+skinparam arrowColor #333
+skinparam componentBorderColor #555
+skinparam componentBackgroundColor #EEE
+
+package "Client (Browser)" {
+  [HTML/CSS/JS] as Client
+  [D3/SVG Visualisierungen] as D3
+  Client --> D3 : Interaktive Diagramme
+}
+
+package "Node.js Server" {
+  [server.mjs] as Server
+  [Express Routing\n(routes/*.mjs)] as Routing
+  [EJS Views\n(views/*)] as Views
+  [Plugins\n(src/plugins)] as Plugins
+  [MathJS / JS-Module\n(src/mathjs, src/module)] as JSCore
+}
+
+package "Content Layer" {
+  [Markdown Inhalte\n(content/*.md)] as MD
+  [Interaktive Module\n(content/*.mjs)] as MDJS
+  [Formeln/HTML\n(content/*.html)] as HTMLContent
+}
+
+package "Datenbasis" {
+  [JSON-Daten\n(data/*.json)] as JSONData
+}
+
+package "Haskell Backend" {
+  [elektro-ghc\n(src/elektro-ghc)] as HaskellCore
+  [Stack Build\n(stack.yaml)] as Stack
+}
+
+' Verbindungen
+Client --> Server : HTTP Requests
+Server --> Routing : Route Dispatch
+Routing --> Views : Render EJS Templates
+Views --> MD : Markdown Rendering
+Views --> MDJS : Interaktive Inhalte
+Views --> D3 : Diagramm-Einbettung
+
+Server --> JSCore : Berechnungen / Logik
+Server --> Plugins : Erweiterungen
+
+Server --> JSONData : Laden von Bauteil-/Materialdaten
+
+Server --> HaskellCore : Mathematische Kernfunktionen
+HaskellCore --> Stack : Build/Compile
+
+@enduml

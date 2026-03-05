@@ -1,0 +1,36 @@
+
+@startuml
+title Sequenzdiagramm – Interaktives Beispiel
+
+actor User
+participant "Browser\n(JS + D3)" as B
+participant "Node.js Server" as S
+participant "Routing" as R
+participant "ContentParser" as C
+participant "JSONLoader" as J
+participant "HaskellAdapter" as H
+participant "D3 Renderer" as D3
+
+User -> B : Klick auf interaktives Beispiel
+B -> S : GET /beispiel?id=123
+
+S -> R : Route auswählen
+R -> C : Markdown + Beispielmodul laden
+C --> R : HTML + JS
+
+R -> J : JSON-Daten laden
+J --> R : Bauteile/Werkstoffe
+
+alt Beispiel benötigt Berechnung
+    R -> H : Anfrage (z.B. Knotenpotential)
+    H --> R : Ergebnis
+end
+
+R -> D3 : Diagrammdaten erzeugen
+D3 --> R : SVG/JS
+
+R --> S : Fertige Seite
+S --> B : HTML + JS + SVG
+B --> User : Interaktive Darstellung
+
+@enduml

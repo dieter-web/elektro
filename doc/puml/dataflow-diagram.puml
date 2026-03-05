@@ -1,0 +1,47 @@
+
+@startuml
+title Datenflussdiagramm – elektro
+
+skinparam arrowColor #333
+
+actor User
+
+rectangle "Browser" as B {
+  [UI]
+  [D3/SVG]
+}
+
+rectangle "Node.js Server" as S {
+  [Routing]
+  [JS Core Logic]
+  [EJS Renderer]
+}
+
+rectangle "Content Layer" as C {
+  [Markdown Parser]
+  [Interaktive Module]
+}
+
+rectangle "Datenbasis" as D {
+  [JSON-Daten]
+}
+
+rectangle "Haskell Backend" as H {
+  [elektro-ghc]
+}
+
+User --> B : Interaktion
+B --> S : HTTP Request
+
+S --> C : Markdown / Content laden
+C --> S : Gerenderter Content
+
+S --> D : JSON lesen
+D --> S : Daten (Bauteile, Werkstoffe)
+
+S --> H : Berechnungsanfrage
+H --> S : Ergebnisse
+
+S --> B : HTML + JS + SVG Response
+
+@enduml

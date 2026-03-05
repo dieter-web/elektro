@@ -1,6 +1,6 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.37.0.
+-- This file has been generated from package.yaml by hpack version 0.38.1.
 --
 -- see: https://github.com/sol/hpack
 
@@ -15,14 +15,14 @@ extra-source-files:
 
 library
   exposed-modules:
-      Resistor
-      Dreiecksterntransformation
+      A43
+      A44
       A45
       A46
+      Dreiecksterntransformation
       FrustumResistance
+      Resistor
   other-modules:
-      A44
-      A50
       Main
       Paths_elektro_linux
   hs-source-dirs:
@@ -36,10 +36,10 @@ library
 executable elektro-exe
   main-is: Main.hs
   other-modules:
+      A43
       A44
       A45
       A46
-      A50
       Dreiecksterntransformation
       FrustumResistance
       Resistor

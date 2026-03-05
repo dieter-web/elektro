@@ -4,7 +4,6 @@ module Dreiecksterntransformation where
 dreiecksterntransformation :: Double -> Double -> Double -> (Double, Double, Double)
 dreiecksterntransformation r1 r2 r3 =
    let rges = r1 + r2 + r3
-   in [ (r2*r3)/rges
-      , (r1*r3)/rges
-      , (r1*r2)/rges
-   ]
+   in  ((r2*r3)/rges,(r1*r3)/rges,(r1*r2)/rges)
+       
+

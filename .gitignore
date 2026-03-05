@@ -1,4 +1,5 @@
 node_modules/
-copilot/
+dist-newstyle/
 build/
+.stack-work/
 

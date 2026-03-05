@@ -1,0 +1,35 @@
+
+@startuml
+title Datenmodell – elektro JSON-Strukturen
+
+skinparam classAttributeIconSize 0
+
+class Bauteil {
+  +id : String
+  +name : String
+  +symbol : String
+  +parameter : Map
+}
+
+class Leiterwerkstoff {
+  +name : String
+  +sigma : Number
+  +temperaturkoeff : Number
+}
+
+class Kennzeichnung {
+  +code : String
+  +beschreibung : String
+}
+
+class Shape {
+  +id : String
+  +type : String
+  +points : List
+}
+
+Bauteil "1" --> "n" Kennzeichnung : verwendet
+Shape --> Bauteil : grafische Darstellung
+Leiterwerkstoff --> Bauteil : Materialeigenschaften
+
+@enduml

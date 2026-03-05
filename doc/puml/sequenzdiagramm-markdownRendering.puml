@@ -1,0 +1,26 @@
+
+@startuml
+title Sequenzdiagramm – Markdown-Rendering
+
+actor User
+participant "Browser" as B
+participant "Node.js Server" as S
+participant "Routing\n(routes/*.mjs)" as R
+participant "ContentParser\n(Markdown → HTML)" as C
+participant "EJS Renderer\n(views/*.ejs)" as V
+
+User -> B : Öffnet Seite
+B -> S : GET /kapitel/elektro
+
+S -> R : Route auswählen
+R -> C : Markdown-Datei laden\n(content/elektro.md)
+C -> C : Markdown parsen\n→ HTML erzeugen
+C --> R : HTML-Fragment
+
+R -> V : EJS-Template rendern\n(HTML + Layout + JS)
+V --> S : Fertige HTML-Seite
+
+S --> B : HTTP Response
+B --> User : Darstellung der gerenderten Seite
+
+@enduml

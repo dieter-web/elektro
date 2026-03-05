@@ -1,0 +1,51 @@
+
+@startuml
+title Sequenzdiagramm – Haskell-Berechnung in elektro
+
+actor User
+participant "Browser\n(JS + D3)" as B
+participant "Node.js Server\n(server.mjs)" as S
+participant "Routing\n(routes/*.mjs)" as R
+participant "JSONBridge\n(Node → Haskell)" as JB
+participant "Haskell API\n(API.hs)" as API
+participant "Parser\n(NetlistParser.hs)" as P
+participant "Solver\n(DC/AC Analysis)" as Solver
+participant "MatrixSolver\n(Linear Algebra)" as MS
+participant "JSONBridge\n(Haskell → Node)" as HB
+
+User -> B : Interaktion (z.B. Berechnung starten)
+B -> S : POST /compute (JSON Input)
+
+S -> R : Route auswählen
+R -> JB : Input in Haskell-Format serialisieren
+
+JB -> API : computeDC/computeAC(Input)
+
+API -> P : parseNetlist / decodeInput
+P --> API : Network-Struktur
+
+API -> Solver : solveDC / solveAC(Network)
+
+alt DC-Analyse
+    Solver -> MS : solveLinear(Matrix, Vector)
+    MS --> Solver : Lösung
+end
+
+alt AC-Analyse
+    Solver -> MS : solveLinear(komplexe Matrix)
+    MS --> Solver : komplexe Lösung
+end
+
+Solver --> API : Result
+
+API -> HB : Ergebnis in JSON serialisieren
+HB --> API : JSON Result
+
+API --> JB : JSON Result
+JB --> R : Ergebnis zurück
+R --> S : HTTP Response vorbereiten
+
+S --> B : JSON Result
+B --> User : Darstellung (z.B. D3-Diagramm)
+
+@enduml
