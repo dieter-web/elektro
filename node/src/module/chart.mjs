@@ -1,5 +1,7 @@
 import * as d3 from "d3";
-import { JSDOM } from "jsdom";
+//import { JSDOM } from 'jsdom';
+import jsdom from 'jsdom';
+const { JSDOM } = jsdom;
 
 export function createChartHtml(chartData) {
   const data = chartData;

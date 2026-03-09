@@ -5,7 +5,9 @@ import * as d3 from 'd3';
 
 import { createGrafik } from './../svgD3Grafik/A49g.mjs';
 
-import { JSDOM } from 'jsdom';
+//import { JSDOM } from 'jsdom';
+import jsdom from 'jsdom';
+const { JSDOM } = jsdom;
 
 export function createSvgD3Html(svgD3Data) {
   const data = svgD3Data;

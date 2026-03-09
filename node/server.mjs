@@ -1,4 +1,5 @@
 import express from "express";
+import { hs_add } from "./ipc.mjs";
 import path from "path";
 import { fileURLToPath } from "url";
 import expressLayouts from "express-ejs-layouts";
@@ -38,6 +39,19 @@ app.set("layout", "layout/main");
 app.set("layout extractScripts", true);
 app.set("layout extractStyles", true);
 app.use(expressLayouts);
+
+// Beispiel-Route: Haskell-Funktion über HTTP verfügbar machen 
+app.get("/add/:x/:y", async (req, res) => {
+	try {
+		const x = Number(req.params.x);
+		const y = Number(req.params.y);
+
+		const result = await hs_add(x,y);
+		res.json({result});
+	} catch (err) {
+		res.status(500).json({error: err.message });
+	}
+});
 
 // Routes
 app.use("/", routes);
