@@ -13,20 +13,9 @@ const app = express();
 // Static Files für Frontend !!
 app.use("/public", express.static(path.join(__dirname, "public")));
 app.use("/data", express.static(path.join(__dirname,"data")));
-app.use(
-  "/bootstrap",
-  express.static(path.join(__dirname, "node_modules", "bootstrap", "dist")),
-);
-app.use(
-  "/d3",
-  express.static(path.join(__dirname, "node_modules", "d3", "dist")),
-);
-app.use(
-  "/math",
-  express.static(
-    path.join(__dirname, "node_modules", "mathjs", "lib", "browser"),
-  ),
-);
+app.use("/bootstrap", express.static(path.join(__dirname, "node_modules", "bootstrap", "dist")));
+app.use("/d3", express.static(path.join(__dirname, "node_modules", "d3", "dist")));
+app.use("/math", express.static( path.join(__dirname, "node_modules", "mathjs", "lib", "browser")));
 
 // Body Parser
 app.use(express.json());

@@ -6,7 +6,8 @@ import Componente from '../../componente.mjs';
 import { Elektro } from '../../mathjs/elektro.mjs';
 import { Arithmetik } from '../../mathjs/arithmetik.mjs';
 import { localstart } from '../../module/localstart.mjs';
-import { transform } from '../../module/haskell.mjs';
+// import { transform } from '../../module/haskell.mjs';i
+import { spawnSync } from 'child_process';
 
 export let meta = {
   name: 'A44',
@@ -17,48 +18,48 @@ export let meta = {
   Wie groß ist der Itrom I3?
   `,
   felder: [
-    {
+      {
       name: 'R1',
       label: 'R1',
       type: 'unit',
-      value: '20',
-      unit: 'kohm',
+      value: '20000',
+      unit: 'ohm',
       description: 'R1',
       required: true,
-    },
+      },
     {
       name: 'R2',
       label: 'R2',
       type: 'unit',
-      value: '50',
-      unit: 'kohm',
+      value: '50000',
+      unit: 'ohm',
       description: 'R2',
       required: true,
-    },
+      },
     {
       name: 'R3',
       label: 'R3',
       type: 'unit',
-      value: '30',
-      unit: 'kohm',
+      value: '30000',
+      unit: 'ohm',
       description: 'R3',
       required: true,
-    },
+      },
     {
       name: 'R4',
       label: 'R4',
       type: 'unit',
-      value: '15',
-      unit: 'kohm',
+      value: '15000',
+      unit: 'ohm',
       description: 'R4',
       required: true,
-    },
+      },
     {
       name: 'R5',
       label: 'R5',
       type: 'unit',
-      value: '25',
-      unit: 'kohm',
+      value: '25000',
+      unit: 'ohm',
       description: 'R5',
       required: true,
     },
@@ -70,8 +71,8 @@ export let meta = {
       unit: 'V',
       description: 'U',
       required: true,
-    },
-  ],
+    }
+  ]
 };
 
 export default async function aufgabeFunc(input) {
@@ -82,10 +83,19 @@ export default async function aufgabeFunc(input) {
     'Brückenschaltung',
   ]);
 
-  const erg = await transform('a44', meta.felder);
+  const erg = spawnSync(
+    './mylib-ipc',
+    ['elektro.dreister', '20000', '50000', '30000'],  // felder[0]
+    { encoding: 'utf8' }
+  );
+
+  const raw = erg.stdout.trim();
+  const cleaned = raw.replace(/[()]/g, '');
+  const [_r1, _r2, _r3] = cleaned.split(',').map(Number);
+  const _erg = [_r1, _r2, _r3];
 
   // Es werden nur die ersten drei meta.felder benutzt
-/*
+  /*
   const erg = await transform(
     'dreiecksterntransformation',
     meta.felder.slice(0, 3)
@@ -98,7 +108,7 @@ export default async function aufgabeFunc(input) {
 
   const AK = new Arithmetik(['add', 'sub']);
   const EK = new Elektro(['IUR', 'UIR']);
-  const [R1p, R2p, R3p] = erg.map((val, i) => EK.Num2Unit(val, units[i])); //  math.unit(val, units[i]))
+  const [R1p, R2p, R3p] = _erg.map((val, i) => EK.Num2Unit(val, units[i])); //  math.unit(val, units[i])
 
   const R24 = AK.berechne({ a: input.R4, b: R2p }, 'add');
   A1.parameter['R24'] = R24;
@@ -144,12 +154,12 @@ export default async function aufgabeFunc(input) {
         Parameter: A1.parameter,
         Eigenschaften: A1.eigenschaften,
         Berechnung: {
-          i : erg.i,
-          i4 : erg.i4,
-          i5 : erg.i5,
-          u4 : erg.u4,
-          u5 : erg.u5,
-          i3 : erg.i3
+          //i: erg.i,
+          //i4: erg.i4,
+          //i5: erg.i5,
+          //u4: erg.u4,
+          //u5: erg.u5,
+          i3: I3,
         },
       },
     ],

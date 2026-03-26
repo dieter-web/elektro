@@ -7,9 +7,9 @@ const aufgabenNummern_ElektrischeStromkreise = [
   43, 44, 45, 46,
 ];
 
-const aufgabenNummern_ElektrischeEnergieLeistung = [47];
+const aufgabenNummern_ElektrischeEnergieLeistung = [47, 48];
 
-const aufgabenNummern_Feld = [48, 49, 50];
+const aufgabenNummern_Feld = [49, 50];
 
 const aufgabenNummern_Magnetfeld = [];
 

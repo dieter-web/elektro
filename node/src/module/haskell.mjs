@@ -65,3 +65,27 @@ export async function transform(modulName, felder) {
     );
   }
 }
+
+export function rpc(method, params = {}, id = 1) {
+  return new Promise((resolve, reject) => {
+    const client = net.createConnection(SOCK_PATH);
+
+    client.on('connect', () => {
+      const req = JSON.stringify({
+        jsonrpc: '2.0',
+        id,
+        method,
+        params,
+      });
+      client.write(req + '\n');
+    });
+
+    client.on('data', (data) => {
+      const res = JSON.parse(data.toString());
+      if (res.error) reject(res.error);
+      else resolve(res.result);
+      client.end();
+    });
+    client.on('error', reject);
+  });
+}

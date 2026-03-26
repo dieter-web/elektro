@@ -4,7 +4,9 @@
 
 import Componente from '../../componente.mjs';
 import { localstart } from '../../module/localstart.mjs';
-import { transform } from '../../module/haskell.mjs';
+import { spawnSync } from 'child_process';
+
+//import { transform } from '../../module/haskell.mjs';
 
 export let meta = {
   name: 'A45',
@@ -85,7 +87,6 @@ export default async function aufgabeFunc(input) {
     meta,
     parameter: [
       {
-        Kennzeichnung: A1.kennzeichnung,
         Parameter: A1.parameter,
         Eigenschaften: A1.eigenschaften,
         Berechnung: {

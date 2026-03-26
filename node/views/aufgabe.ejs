@@ -1,17 +1,40 @@
 <!-- Daten als JSON im DOM-->
 <section class="aufgabe-details">
   <p><%= data.meta.beschreibung %></p>
-  <form method="post">
+
+  <form method="post" class="calc-form grid-2col">
+
+    <% data.meta.felder.forEach(field => { %>
+    <div class="form-row">
+      <label for="<%= field.name%>">
+        <%= field.label %> (<%= field.unit %>)
+      </label>
+
+      <input
+        id="<%= field.name %>"
+        name="<%= field.name %>"
+        type="text"
+        value="<%= field.value %><%= field.unit %>"
+        class="form-input"
+      />
+    </div>
+    <% }) %>
+    
+    <div class="form-actions">
+      <button type="submit" class="btn-primary">Berechnen</button>
+    </div>
+  </form>
+
+  <!--
+<form method="post">
     <% data.meta.felder.forEach(field=> { %>
     <label> <%= field.label %> (<%= field.unit %>) </label>
-    <input
-      name="<%= field.name %>"
-      type="text"
-      value="<%= field.value %><%= field.unit %>"
+    <input name="<%= field.name %>" type="text" value="<%= field.value %><%= field.unit %>"
     />
     <% }) %>
     <button type="submit">Berechnen</button>
   </form>
+-->
 
   <script id="data" type="application/json">
     <%- JSON.stringify(data) %>

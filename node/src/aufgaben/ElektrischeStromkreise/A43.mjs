@@ -7,6 +7,8 @@ import { localstart } from '../../module/localstart.mjs';
 // import { Elektro } from '../../mathjs/elektro.mjs';
 import { transform } from '../../module/haskell.mjs';
 
+import { spawnSync } from 'child_process';
+
 export let meta = {
   name: 'A43',
   chart: false,
@@ -54,9 +56,22 @@ export default async function aufgabeFunc(input) {
     'Schleifendrahtbrücke',
   ]);
 
-  // TODO: in meta.felder stehen nicht die aktuell eingegebenen Werte, wenn sie in der
-  //       Eingabemaske geändert werden.
-  const erg = await transform('a43', meta.felder);
+  let l = meta.felder[0].value;
+  let R1 = meta.felder[1].value;
+  let Rx = meta.felder[2].value;
+
+  const erg = spawnSync(
+    './mylib-ipc',
+    //['elektro.wheatston', '2', '520', '730'], // TODO: Felder eintragen
+    ['elektro.wheatston', l, R1, Rx],
+    { encoding: 'utf8' }
+  );
+
+  // console.log('stdout:', erg.stdout);
+
+  const raw = erg.stdout.trim();
+  const cleaned = raw.replace(/[()]/g, '');
+  const [el2, el3] = cleaned.split(',').map(Number);
 
   return {
     meta,
@@ -66,8 +81,8 @@ export default async function aufgabeFunc(input) {
         Parameter: A1.parameter,
         Eigenschaften: A1.eigenschaften,
         Berechnung: {
-          l2: erg.l2,
-          l3: erg.l3,
+          l2: el2,
+          l3: el3,
         },
       },
     ],

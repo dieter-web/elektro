@@ -1,5 +1,5 @@
-import {hs_add} from "./ipc.js";
+import {hs_mul} from "./ipc.mjs";
 
-const result = await hs_add(10, 32);
+const result = await hs_mul(10, 32);
 
 console.log("Ergebnis:", result);

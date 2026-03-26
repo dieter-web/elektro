@@ -1,4 +1,4 @@
-cabal-version:       2.2
+cabal-version:       3.14 
 name:                mylib
 version:             0.1.0.0
 build-type:          Simple
@@ -11,8 +11,22 @@ library
   default-language:    Haskell2010
 
 executable mylib-ipc
-  main-is:             Main.hs
-  hs-source-dirs:      app, src
-  other-modules:       MyApi
-  build-depends:       base, bytestring, aeson, network, unix, directory
+  main-is:
+     Main.hs
+  hs-source-dirs:
+     app,
+     src
+  other-modules:
+     MyApi,
+     Math,
+     Elektro,
+     Energie
+     -- ElectricCost
+  build-depends:
+     base,
+     bytestring,
+     aeson,
+     network,
+     unix,
+     directory
   default-language:    Haskell2010

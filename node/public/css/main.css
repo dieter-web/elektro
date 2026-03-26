@@ -26,7 +26,6 @@ td {
 }
 
 body {
-  background-image: url("../images/Dralektro.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -48,3 +47,77 @@ body {
     fill: lightgray;
     stroke: black;
 }
+
+
+
+.calc-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 480px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc
+  border-radius: 4px;
+  font-size: 1rem
+}
+
+.btn-primary {
+  padding: 0.6rem 1rem;
+  margin: 1rem;
+  color: #cornflowerblue;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background: yellow;
+}
+
+
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem 2rem; /* row-gap, column-gap */
+  max-width: 800px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-actions {
+  grid-column: 1 / -1; /* Button über gesamte Breite */
+  margin-top: 1rem;
+}
+
+.btn-primary {
+  padding: 0.6rem 1rem;
+  background: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #004999;
+}
+

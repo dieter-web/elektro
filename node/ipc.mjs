@@ -1,33 +1,34 @@
-import net from "node:net";
-import fs from "fs";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
+import net from 'node:net';
+import fs from 'fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-// __dirname in ES modules nachbauen
+// _dirname in ES modules nachbauen
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-
 // Absoluter Pfad zum Socket in haskell/
-const SOCKET_PATH = path.join(__dirname,"..","haskell", "elektro.sock");
+const SOCKET_PATH = path.join(__dirname, '..', 'haskell', 'elektro.sock');
 
-export function hs_add(x, y) {
+//export
+function call(method, params = {}) {
   return new Promise((resolve, reject) => {
     const client = net.createConnection(SOCKET_PATH);
 
-    client.on("connect", () => {
-      const req = JSON.stringify({ x, y });
-      client.write(req + "\n");
+    client.on('connect', () => {
+      const req = JSON.stringify({ method, params });
+      client.write(req + '\n');
     });
 
-    client.on("data", (data) => {
-      resolve(Number(data.toString()));
+    client.on('data', (data) => {
+      const json = JSON.parse(data.toString());
+      resolve(json.result);
       client.end();
     });
 
-    client.on("error", (err) => {
-	    reject(err);
-    });
+    client.on('error', reject);
   });
 }
 
+export const hs_add = (x, y) => call('add', { x, y });
+export const hs_mul = (x, y) => call('mul', { x, y });
